@@ -62,3 +62,4 @@ export * from './DruideDesRecifs';
 export * from './DruideDesBois';
 export * from './DruideDeFeu';
 export * from './DruideDesMontagnes';
+export * from './Chasseur';

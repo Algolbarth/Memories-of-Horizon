@@ -13,3 +13,6 @@ export * from './TirHydraulique';
 export * from './CanonAEau';
 export * from './Noyade';
 export * from './Metamorphose';
+export * from './Croissance';
+export * from './Affaiblissement';
+export * from './Biodiversite';

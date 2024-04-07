@@ -27,3 +27,5 @@ export * from './HacheDePlatine';
 export * from './Pelle';
 export * from './CapeDAgilite';
 export * from './CarapaceDeTortue';
+export * from './CollierEnDentDeLoup';
+export * from './PeauDOurs';

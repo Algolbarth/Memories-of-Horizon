@@ -2,13 +2,14 @@ import { Equipment } from '../Equipement.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Couronne extends Equipment {
-    name = "Couronne";
+export class PeauDOurs extends Equipment {
+    name = "Peau d'ours";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 100]]);
+        this.init([["Or", 50]]);
+        this.familles.base.push("Bête");
 
         this.text = Text;
     };
@@ -42,11 +43,10 @@ export class Couronne extends Equipment {
         this.pose();
     };
 
-    otherPoseEffect = function (card) {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner) {
-            card.stat("Attaque").add += this.bearer.level;
-            card.stat("Vie").add += this.bearer.level;
-            card.stat("Vie").current += this.bearer.level;
+    otherDieEffect = function (card) {
+        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.familles.base.includes("Bête")) {
+            this.bearer.stat("Vie").add += 8;
+            this.bearer.stat("Vie").add += 8;
         }
     };
 }

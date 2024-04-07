@@ -3,4 +3,4 @@
     export let card;
 </script>
 
-Découvre 4 cartes.
+Diminue de 20 l'attaque d'une créature adverse sur le terrain.

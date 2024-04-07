@@ -12,6 +12,7 @@ export class Equipment extends Objet {
         this.familles.base.push("Équipement");
 
         this.addEquipTrait("Légendaire", false);
+        this.addEquipTrait("Rare", false);
 
         this.addEquipStat("Attaque", 0);
         this.addEquipStat("Vie", 0);

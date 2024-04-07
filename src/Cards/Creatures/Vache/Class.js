@@ -11,6 +11,6 @@ export class Vache extends Creature {
         
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
-        this.stat("Vie").base = 5;
+        this.stat("Attaque").base = 5;
     };
 }

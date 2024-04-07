@@ -1,14 +1,14 @@
-import { Equipment } from '../Equipement.js';
+import { Action } from '../Action.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class Couronne extends Equipment {
-    name = "Couronne";
+export class Croissance extends Action {
+    name = "Croissance";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 100]]);
+        this.init([["Or", 25], ["Végétal", 25]]);
 
         this.text = Text;
     };
@@ -26,7 +26,7 @@ export class Couronne extends Equipment {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.canEquip()) {
+                if (target == undefined && card.type == "Créature") {
                     target = card;
                 }
             }
@@ -38,15 +38,10 @@ export class Couronne extends Equipment {
     };
 
     useEffect = function (target) {
-        target.equip(this);
+        target.stat("Attaque").add += 50;
+        target.stat("Vie").add += 50;
+        target.stat("Vie").current += 50;
+        this.move("Défausse");
         this.pose();
-    };
-
-    otherPoseEffect = function (card) {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner) {
-            card.stat("Attaque").add += this.bearer.level;
-            card.stat("Vie").add += this.bearer.level;
-            card.stat("Vie").current += this.bearer.level;
-        }
     };
 }
