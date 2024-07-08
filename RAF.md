@@ -1,3 +1,5 @@
+# Mécaniques
+
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones)
 Intégrer les combats automatiques
 Ajouter un paramètre de la vitesse des combats
@@ -13,6 +15,8 @@ Ranger les chapitres dans des dossier
 Ajouter un texte explicatif pour les stats et effets
 Ajouter un tutoriel dans jouer, avec les mecaniques du jeu
 Corriger la pose des créatures avec la limite de carte
+
+# Cartes
 
 Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain
 Cape de voleur : augmente la valeur de vente en or de la créature équipée
@@ -120,10 +124,14 @@ Jungle
 
 Limace : créature ombre, supprime la protection des creatures qu'elle attaque
 
+# Boss
+
 Zenoh : boss de niv 2, quand attaque gagne autant d'attaque que d'or et quand tue produis autant d'or que de vie
 Kanki : boss de niv 4, quand une unité adverse meurt : crée un bandit, quand une unité allié meurt : produis de l'or, quand joue : dépense de l'or pour améliorer les bandits
 Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : rapidité, bâtiment : attaque, objet : vie)
 Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'attaque des cavaliers, quand un cavalier attaque : augmente la vie de gyoun
+
+# Lore
 
 Gydeon : dieu du courage, paladin. Ne peux pas subir de dégâts de ce dont il n'a pas peur.
 Nana : liche d'apparence enfantile. Peux lier des âmes : l'âme liée à une autre personne voir son porteur affaibli. L'autre entité peux profiter des pouvoirs absorbés. Si le porteur meurt, le lien est cassé.
