@@ -3,7 +3,7 @@
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
 Intégrer les combats automatiques \
 Ajouter un paramètre de la vitesse des combats \
-Ajouter une limite de tour aux combats, après quoi ya ex eaquo \
+Ajouter une limite de tour aux combats, après quoi ya ex eaquo (3 pour le moment) \
 Ajouter une option finir automatiquement pour les combats \
 Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) \
 Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la boutique) \
@@ -21,7 +21,9 @@ Ajouter l'étourdissement et la paralysie (paralysie => X actions, gel => X tour
 
 *Mimique => Mimique de coffre* \
 Mimique de jarre : se pose sur le terrain adverse. Quand meurt : ajoute de l'or dans la réserve adverse. \
-Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse.
+Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse. \
+Mimique de pomme : se pose sur le terrain adevrse. Quand meurt au combat : augmente la vie de la créature attaquante. \
+Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
 
 Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain. \
 Cape de voleur : au dbut de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
@@ -30,14 +32,16 @@ Guilde des voleurs : batiment, quand une unité alliée est vendue : crée Voleu
 
 Exploration : augmente la taille de la boutique \
 Agrandissement : augmente la taille de la main \
- : augmente la taille du terrain 
+Etendre : augmente la taille du terrain \
+Savoir interdit : diminue la taille du terrain et augmente la taille de la main \
+Omniscience : 
 
 Frappe : choisis une créature alliée sur le terrain. inflige autant de dégâts que l'attaque de la créature choisie à une créature adverse sur le terrain. \
 Écrasement : choisis une créature alliée sur le terrain. inflige autant de dégâts que la vie de la créature choisie à une créature adverse sur le terrain. \
 Coup de bouclier : choisis une créature alliée sur le terrain. inflige autant de dégâts que la défense de la créature choisie à une créature adverse sur le terrain.
 
 Masse de fer : augmente la charge de la créature équipée. \
-Robe de mage \
+Robe de mage : augmente la \
 Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Heaume de fer : au début de la phase de préparation : fixe la garde de la créature équipée.
@@ -55,7 +59,7 @@ Alchimiste : quand posé : pioche 2 objets potion.
 *Ajouter l'effet d'être ciblé par une carte*
 Restaurant : quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
 Biscuit \
-Bonhomme biscuit
+Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -63,13 +67,13 @@ Enflammer : enflamme une unité adverse sur le terrain. \
 Incendie : enflamme toutes les unités adverses sur le terrain. \
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse. \
 Flèche de feu : inflige des dégâts et enflamme une unité adverse. \
-Lac de lave \
-Épée enflammée \
-Lance incendiaire \
+Lac de lave : quand une créature feu arrive sur le terrain : augmente son attaque. Quand une créature non feu arrive sur le terrain : lui inflige des dégâts. \
+Épée enflammée : augmente l'attaque de la créature équipée. quand la créature équipée attaque : inflige des dgéâts à l'unité attaquée. \
+Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée. \
 Mage de feu \
 Wyverne rouge \
 Pyromancien \
-Baguette explosive
+Baguette explosive : augmente la magie de la créature équipée. quand la créature équipée attaque : 
 
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
@@ -96,11 +100,11 @@ Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 Vague déferlante \
 Raz de marée \
 Bouée \
-Garde Côte \
+Garde Côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
 Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
 Baguette des marées \
-Ondin guerrier : quand posé : dépense de l'eau et . \
+Ondin guerrier : quand posé : dépense de l'eau et augmente son attaque et sa vie. \
 Mage d'eau \
 Wyverne marine \
 Aquomancien \
@@ -110,6 +114,7 @@ Banc de poisson : crée 5 Sardine dans la main. \
 Sardine : créature poisson.
 
 Écraseur nain : charge \
+Masse de pierre : augmente la charge de la créature équipée. \
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Éboulement : applique étourdissement à une créature adverse sur le terrain. \
 Jet de pierre : inflige des dégats et applique paralysie à une créature adverse sur le terrain. \
@@ -121,6 +126,7 @@ Sources chaudes : soigne et augmente la jauge critique de toutes les créatures 
 Plage : lieu pour les cartes d'élement Eau et Feu
 
 Pillard du désert : quand se fait attaquer, augmente son attaque. Quand attaque, augmente sa défense. \
+Ver des sables \
 Désert : lieu pour les cartes d'élement Feu et Terre
 
 Tortue terrestre \
@@ -138,18 +144,41 @@ Savane : lieu pour les cartes d'élement Feu et Végétal
 
 Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre
 
+Satyre \
+Eclair \
+Bottes d'éclair \
+Lames d'éclairs : objet équipement, augmente le multicoup de la créature équipée. \
+Chaînes d'éclairs \
+Centaure \
+Cyclope \
+Plateau : lieu pour les cartes d'élément Foudre
+
+Gnome \
+Automate \
+Mines : lieu pour les cartes d'élement métal
+
 Drow \
 Limace : créature ombre, supprime la protection des creatures qu'elle attaque \
+Vampire \
+Oni \
 Caverne : lieu pour les cartes d'élément Ombre
 
 Goliath : résistance \
 Jarl \
+Berserker \
+Ours des neiges \
+Loup des neiges \
 Toundra : lieu pour les cartes d'élement Glace
 
+Démon \
+Pacte démoniaque \
+Epée vorpale \
 Enfers : lieu pour les cartes d'élement Feu et Mort
 
+Ange \
 Paradis : lieu pour les cartes d'élement Air et Lumière
 
+Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie \
 Glacier : lieu pour les cartes d'élement Glace et Terre
 
 Banquise : lieu pour les cartes d'élement Glace et Eau
