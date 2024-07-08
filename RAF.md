@@ -18,17 +18,22 @@ Corriger la pose des créatures avec la limite de carte
 
 # Cartes
 
+*Mimique => Mimique de coffre* \
+Mimique de jarre : se pose sur le terrain adverse. Quand meurt : ajoute de l'or dans la réserve adverse. \
+Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse.
+
 Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain \
-Cape de voleur : augmente la valeur de vente en or de la créature équipée \
-Dague de voleur : quand la créature tue une unité, augmente sa valeur en or équivalent à la valeur de vente en or de l'unite
+Cape de voleur : au dbut de la phase de préparation : augmente la valeur de vente en or de la créature équipée \
+Dague de voleur : quand la créature tue une unité, augmente sa valeur en or équivalent à la valeur de vente en or de l'unite \
+Guilde des voleurs : batiment, quand une unité alliée est vendue : 
 
 Exploration : augmente la taille de la boutique \
 Agrandissement : augmente la taille de la main \
  : augmente la taille du terrain 
 
 Frappe : choisis une créature alliée sur le terrain. inflige autant de dégâts que l'attaque de la créature choisie à une créature adverse sur le terrain. \
-Écrasement \
-Coup de bouclier
+Écrasement : choisis une créature alliée sur le terrain. inflige autant de dégâts que la vie de la créature choisie à une créature adverse sur le terrain. \
+Coup de bouclier : choisis une créature alliée sur le terrain. inflige autant de dégâts que la défense de la créature choisie à une créature adverse sur le terrain.
 
 Masse de fer : augmente la charge de la créature équipée \
 Robe de mage \
