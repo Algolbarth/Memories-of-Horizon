@@ -14,7 +14,8 @@ Afficher les cartes du deck, les cartes piochables, les cartes decouvrables via 
 Ranger les chapitres dans des dossier \
 Ajouter un texte explicatif pour les stats et effets \
 Ajouter un tutoriel dans jouer, avec les mecaniques du jeu \
-Corriger la pose des créatures avec la limite de carte
+Corriger la pose des créatures avec la limite de carte \
+Ajouter l'étourdissement et la paralysie (paralysie => X actions, gel => X tours, étourdissement => X étapes)
 
 # Cartes
 
@@ -22,10 +23,10 @@ Corriger la pose des créatures avec la limite de carte
 Mimique de jarre : se pose sur le terrain adverse. Quand meurt : ajoute de l'or dans la réserve adverse. \
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse.
 
-Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain \
-Cape de voleur : au dbut de la phase de préparation : augmente la valeur de vente en or de la créature équipée \
-Dague de voleur : quand la créature tue une unité, augmente sa valeur en or équivalent à la valeur de vente en or de l'unite \
-Guilde des voleurs : batiment, quand une unité alliée est vendue : 
+Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain. \
+Cape de voleur : au dbut de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
+Dague de voleur : quand la créature tue une unité, augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
+Guilde des voleurs : batiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
 
 Exploration : augmente la taille de la boutique \
 Agrandissement : augmente la taille de la main \
@@ -35,11 +36,11 @@ Frappe : choisis une créature alliée sur le terrain. inflige autant de dégât
 Écrasement : choisis une créature alliée sur le terrain. inflige autant de dégâts que la vie de la créature choisie à une créature adverse sur le terrain. \
 Coup de bouclier : choisis une créature alliée sur le terrain. inflige autant de dégâts que la défense de la créature choisie à une créature adverse sur le terrain.
 
-Masse de fer : augmente la charge de la créature équipée \
+Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage \
-Brassard de santé : augmente la régénération de la créature équipée \
-Plastron de piques : augmente la vie et l'épine de la créature équipée \
-Heaume de fer : au début de la phase de préparation : 
+Brassard de santé : augmente la régénération de la créature équipée. \
+Plastron de piques : augmente la vie et l'épine de la créature équipée. \
+Heaume de fer : au début de la phase de préparation : fixe la garde de la créature équipée.
 
 *Revoir les potions* \
 *Chaque potion a 5 compteurs quand créée* \
@@ -47,20 +48,21 @@ Heaume de fer : au début de la phase de préparation :
 *Potion de mana : Produis 1 Mana pour chaque compteur* \
 Potion de force \
 Potion d'endurance \
-Concoction : applique l'effet associé à chaque type de compteur à une créature sur le terrain \
-Mélange : détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main \
-Alchimiste : quand posé : pioche 2 objets potion
+Concoction : applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
+Mélange : détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
+Alchimiste : quand posé : pioche 2 objets potion.
 
 *Ajouter l'effet d'être ciblé par une carte*
 Restaurant : quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
 Biscuit \
 Bonhomme biscuit
 
-Pyromane : enflamme quand attaque \
-Enflammer : enflamme une unité adverse \
-Incendie : enflamme en aoe \
-Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse \
-Flèche de feu : inflige des dégâts et enflamme une unité adverse \
+Pyromane : quand attaque : enflamme l'unité attaquée. \
+Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
+Enflammer : enflamme une unité adverse sur le terrain. \
+Incendie : enflamme toutes les unités adverses sur le terrain. \
+Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse. \
+Flèche de feu : inflige des dégâts et enflamme une unité adverse. \
 Lac de lave \
 Épée enflammée \
 Lance incendiaire \
@@ -69,46 +71,48 @@ Wyverne rouge \
 Pyromancien \
 Baguette explosive
 
-Spores : empoisonne une créature adverse sur le terrain  \
-Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain \
-Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain \
-Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain\
-Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisament de poison sur elle \
-Plante vénéneuse : créature plante, empoisonne quand attaque \
-Rose : bâtiment épine, quand arrive sur le terrain : crée Spores dans la main \
-Plante carnivore : créature plante \
-Mur de haie : bâtiment plante \
-Écorce de treant : augmente la régénération d'une créature alliée sur le terrain \
-Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération \
-Manteau de ronce : objet équipement, augmente l'épine de la créature équipée \
-Élémentaire de ronce : \
+Spores : empoisonne une créature adverse sur le terrain. \
+Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
+Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
+Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain. \
+Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisament de poison sur elle. \
+Plante vénéneuse : créature plante, empoisonne quand attaque. \
+Rose : bâtiment épine, quand arrive sur le terrain : crée Spores dans la main. \
+Plante carnivore : créature plante. \
+Mur de haie : bâtiment plante. \
+Écorce de treant : augmente la régénération d'une créature alliée sur le terrain. \
+Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération. \
+Manteau de ronce : objet équipement, augmente l'épine de la créature équipée. \
+Élémentaire de ronce \
 Cochon truffier : créature bête, quand posé : fouille 1 carte. \
-Sanglier : créature bête, charge \
-Cerf : créature bête, rapidité et percée \
-Hérisson  : créature bête, épine \
+Sanglier : créature bête, charge. \
+Cerf : créature bête, rapidité et percée. \
+Hérisson : créature bête, épine. \
 Mage de la nature \
 Wyverne verte \
 Phitomancien \
-Ancien serpent : au début de la phase de préparation : crée mue dans la main
+Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
 Vague déferlante \
 Raz de marée \
 Bouée \
 Garde Côte \
-Barrière de corail \
-Ondin ministre : produis eau quand ondin posé \
+Barrière de corail : régénération. \
+Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
 Baguette des marées \
-Ondin guerrier \
+Ondin guerrier : quand posé : dépense de l'eau et . \
 Mage d'eau \
 Wyverne marine \
 Aquomancien \
-Pêcheur  \
-Requin
+Pêcheur : quand posé : pioche 1 créature poisson. \
+Requin : créature poisson. \
+Banc de poisson : crée 5 Sardine dans la main. \
+Sardine : créature poisson.
 
 Écraseur nain : charge \
-Séisme : aoe \
-Éboulement : étourdissement \
-Jet de pierre \
+Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
+Éboulement : applique étourdissement à une créature adverse sur le terrain. \
+Jet de pierre : inflige des dégats et applique paralysie à une créature adverse sur le terrain. \
 Mage de terre \
 Wyverne terrestre \
 Géomancien
@@ -132,7 +136,7 @@ Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main \
 Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain \
 Savane : lieu pour les cartes d'élement Feu et Végétal
 
-Jungle
+Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre
 
 Drow \
 Limace : créature ombre, supprime la protection des creatures qu'elle attaque \
