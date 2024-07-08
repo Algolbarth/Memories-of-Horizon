@@ -18,15 +18,15 @@ Corriger la pose des créatures avec la limite de carte
 
 # Cartes
 
-Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain
-Cape de voleur : augmente la valeur de vente en or de la créature équipée
+Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain \n
+Cape de voleur : augmente la valeur de vente en or de la créature équipée \n
 Dague de voleur : quand la créature tue une unité, augmente sa valeur en or équivalent à la valeur de vente en or de l'unite
 
-Exploration : augmente la taille du terrain
+Exploration : augmente la taille du terrain \n
 Agrandissement : augmente la taille de la main
 
-Frappe
-Écrasement
+Frappe \n
+Écrasement \n
 Coup de bouclier
 
 Masse de fer
