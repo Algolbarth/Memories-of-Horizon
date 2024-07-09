@@ -34,7 +34,7 @@ Exploration : augmente la taille de la boutique \
 Agrandissement : augmente la taille de la main \
 Etendre : augmente la taille du terrain \
 Savoir interdit : diminue la taille du terrain et augmente la taille de la main \
-Omniscience : 
+Omniscience
 
 Frappe : choisis une créature alliée sur le terrain. inflige autant de dégâts que l'attaque de la créature choisie à une créature adverse sur le terrain. \
 Écrasement : choisis une créature alliée sur le terrain. inflige autant de dégâts que la vie de la créature choisie à une créature adverse sur le terrain. \
@@ -192,20 +192,20 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 
 # Lore
 
-Gydeon : dieu du courage, paladin. Ne peux pas subir de dégâts de ce dont il n'a pas peur.
+Gydeon : dieu du courage, paladin. Ne peux pas subir de dégâts de ce dont il n'a pas peur. \
 Nana : liche d'apparence enfantile. Peux lier des âmes : l'âme liée à une autre personne voir son porteur affaibli. L'autre entité peux profiter des pouvoirs absorbés. Si le porteur meurt, le lien est cassé.
-Ogre pirate : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken.
-Yotanwa : reine des barbares.
-Belagor : drow avec un masque doré dieu des complots
-Antidieu : dieu de la loi peut appliquer dans une zone des restrictions à tous ceux qui y sont y compris lui même
-Boréalis : ryu dieu de la météo
-Bombay : djinn chat dieu du repos
-Déesse de la loi : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche) . Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. À l'apparence du titan paladin dans hs.
-Dieux gardiens de l'empire : un chat (manx) et un chien (medox)
-Mania : golem géant (le géant de mha)
-Kotor : archidémon chevalier, a affronté et tué l'empereur barbare
-Tragoedia : liche corrompue par le néant. A reçu une baguette.
-Ananta : dragon corrompue par le néant. A reçu une armure.
-Déesse du corail : sirène pouvant utilser le sang afin de produire du corail, régénérant les blessures. Peux durcir une partie du corps en transformant tout le sang en corail.
-Balor : archidémon dragon, plus puissante créature connue des enfers
-Amelia : archange, plus puissante créature connue au paradis
+Ogre pirate : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken. \
+Yotanwa : reine des barbares. \
+Belagor : drow avec un masque doré dieu des complots \
+Antidieu : dieu de la loi peut appliquer dans une zone des restrictions à tous ceux qui y sont y compris lui même \
+Boréalis : ryu dieu de la météo \
+Bombay : djinn chat dieu du repos \
+Déesse de la loi : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche) . Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. A l'apparence du titan paladin dans hs. \
+Dieux gardiens de l'empire : un chat (manx) et un chien (medox) \
+Mania : golem géant (le géant de mha) \
+Kotor : archidémon chevalier, a affronté et tué l'empereur barbare \
+Tragoedia : liche corrompue par le néant. A reçu une baguette. \
+Ananta : dragon corrompue par le néant. A reçu une armure. \
+Déesse du corail : sirène pouvant utilser le sang afin de produire du corail, régénérant les blessures. Peux durcir une partie du corps en transformant tout le sang en corail. \
+Balor : archidémon dragon, plus puissante créature connue des enfers \
+Amelia : archange, plus puissante créature connue au paradis \
