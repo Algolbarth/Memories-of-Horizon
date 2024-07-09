@@ -146,6 +146,13 @@ Savane : lieu pour les cartes d'élement Feu et Végétal.
 
 Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
 
+Revenant \
+Squelette \
+Zombie \
+Ogre \
+Faucheue \
+Cimetière : lieu pour les cartes d'élément Mort.
+
 Satyre \
 Eclair \
 Bottes d'éclair \
@@ -157,7 +164,7 @@ Plateau : lieu pour les cartes d'élément Foudre.
 
 Gnome \
 Automate \
-Mines : lieu pour les cartes d'élement métal.
+Mines : lieu pour les cartes d'élement Métal.
 
 Drow \
 Limace : créature ombre, supprime la protection des creatures qu'elle attaque. \
