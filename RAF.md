@@ -97,6 +97,7 @@ Hérisson : créature bête, épine. \
 Mage de la nature \
 Wyverne verte \
 Phitomancien \
+Massue de chêne : objet équipement, charge. \
 Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
 Vague déferlante : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
