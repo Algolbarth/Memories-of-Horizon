@@ -193,7 +193,7 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 # Lore
 
 Gydeon : dieu du courage, paladin. Ne peux pas subir de dégâts de ce dont il n'a pas peur. \
-Nana : liche d'apparence enfantile. Peux lier des âmes : l'âme liée à une autre personne voir son porteur affaibli. L'autre entité peux profiter des pouvoirs absorbés. Si le porteur meurt, le lien est cassé.
+Nana : liche d'apparence enfantile. Peux lier des âmes : l'âme liée à une autre personne voir son porteur affaibli. L'autre entité peux profiter des pouvoirs absorbés. Si le porteur meurt, le lien est cassé. \
 Ogre pirate : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken. \
 Yotanwa : reine des barbares. \
 Belagor : drow avec un masque doré dieu des complots \
