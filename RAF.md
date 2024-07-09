@@ -150,7 +150,9 @@ Revenant \
 Squelette \
 Zombie \
 Ogre \
-Faucheue \
+Faucheuse \
+Rat \
+Hyène \
 Cimetière : lieu pour les cartes d'élément Mort.
 
 Satyre \
@@ -207,14 +209,14 @@ Ogre pirate : a appris sa capacité auprès de liche dans une cité inca. Peut e
 Yotanwa : reine des barbares. \
 Belagor : drow avec un masque doré dieu des complots. A l'apparence de Phenax dans mtg. \
 Boréalis : ryu dieu de la météo. \
-Bombay : djinn chat dieu des rêves. \
-Déesse de la loi : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche) . Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. A l'apparence du titan paladin dans hs. \
+Bombay : djinn chat dieu des rêves. Il a l'apparence de l'hypnomiaou dark dans sw. \
+Déesse de la loi : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche). Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. A l'apparence du titan paladin dans hs. \
 Manx : dieu chat, gardien de la citadelle impérialle. Peux "garder" un territoire. Il est présent à tout endroit de ce territoire. Plus le territoire est petit plus il gagne en force mais perd en contrôle.  \
 Medox : dieu chien, gardien de l'empire. Peux "garder" un territoire. Il peux se déplacer instantannement au sien de ce territoire. Sa force est proportionelle à la taille de ce territoire. \
 Mania : golem géant (le géant de mha). \
 Kotor : archidémon chevalier, a affronté et tué l'empereur barbare. \
 Ananta : liche habitant dans les récifs noirs, une zone déserte et hostile. En cherchant à s'approprier la puissance du néant il se fait offrir une baguette qui lui confère plus de pouvoir. \
-Tragoedia : dragon corrompue par le néant. Régnait sur un A reçu une armure. \
+Tragoedia : dragon corrompue par le néant. Régnait sur un volcan situé par dessus une faille du néant.  A reçu une armure. \
 Déesse du corail : sirène pouvant utilser le sang afin de produire du corail, régénérant les blessures. Peux durcir une partie du corps en transformant tout le sang en corail. \
 Balor : archidémon dragon, plus puissante créature connue des enfers. \
 Amelia : archange, plus puissante créature connue au paradis. \
