@@ -41,7 +41,7 @@ Frappe : choisis une créature alliée sur le terrain. inflige autant de dégât
 Coup de bouclier : choisis une créature alliée sur le terrain. inflige autant de dégâts que la défense de la créature choisie à une créature adverse sur le terrain.
 
 Masse de fer : augmente la charge de la créature équipée. \
-Robe de mage : augmente la \
+Robe de mage : augmente la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Heaume de fer : au début de la phase de préparation : fixe la garde de la créature équipée.
@@ -61,6 +61,8 @@ Restaurant : quand posé : choisis un objet nourriture alliée dans la main. Au 
 Biscuit \
 Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
 
+Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain.
+
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
 Enflammer : enflamme une unité adverse sur le terrain. \
@@ -73,7 +75,7 @@ Lance incendiaire : quand la créature équipée attaque : applique brûlure sur
 Mage de feu \
 Wyverne rouge \
 Pyromancien \
-Baguette explosive : augmente la magie de la créature équipée. quand la créature équipée attaque : 
+Baguette explosive : augmente la magie de la créature équipée. quand la créature équipée attaque : inflige autant de dégâts à l'unité attaquée que la magie de la créature équipée.
 
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
@@ -90,20 +92,20 @@ Manteau de ronce : objet équipement, augmente l'épine de la créature équipé
 Élémentaire de ronce \
 Cochon truffier : créature bête, quand posé : fouille 1 carte. \
 Sanglier : créature bête, charge. \
-Cerf : créature bête, rapidité et percée. \
+Cerf : créature bête, vitesse et percée. \
 Hérisson : créature bête, épine. \
 Mage de la nature \
 Wyverne verte \
 Phitomancien \
 Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
-Vague déferlante \
-Raz de marée \
+Vague déferlante : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
+Raz de marée : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
 Bouée \
 Garde Côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
 Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
-Baguette des marées \
+Baguette des marées : augmente la magie de la créature équipée. quand la créature équipée joue : stocke de l'eau en réserve. \
 Ondin guerrier : quand posé : dépense de l'eau et augmente son attaque et sa vie. \
 Mage d'eau \
 Wyverne marine \
@@ -113,7 +115,7 @@ Requin : créature poisson. \
 Banc de poisson : crée 5 Sardine dans la main. \
 Sardine : créature poisson.
 
-Écraseur nain : charge \
+Écraseur nain : charge. \
 Masse de pierre : augmente la charge de la créature équipée. \
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Éboulement : applique étourdissement à une créature adverse sur le terrain. \
@@ -122,27 +124,27 @@ Mage de terre \
 Wyverne terrestre \
 Géomancien
 
-Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain \
-Plage : lieu pour les cartes d'élement Eau et Feu
+Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
+Plage : lieu pour les cartes d'élement Eau et Feu.
 
 Pillard du désert : quand se fait attaquer, augmente son attaque. Quand attaque, augmente sa défense. \
 Ver des sables \
-Désert : lieu pour les cartes d'élement Feu et Terre
+Désert : lieu pour les cartes d'élement Feu et Terre.
 
 Tortue terrestre \
 Barrage
 
 Élémentaire d'algue \
 Castor \
-Mangroves : lieu pour les cartes d'élement Eau et Végétal
+Mangroves : lieu pour les cartes d'élement Eau et Végétal.
 
-Lézard : quand meurt : ajoute une Queue de lézard dans la main \
-Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main \
-Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main \
-Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain \
-Savane : lieu pour les cartes d'élement Feu et Végétal
+Lézard : quand meurt : ajoute une Queue de lézard dans la main. \
+Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main. \
+Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main. \
+Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain. \
+Savane : lieu pour les cartes d'élement Feu et Végétal.
 
-Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre
+Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
 
 Satyre \
 Eclair \
@@ -151,61 +153,61 @@ Lames d'éclairs : objet équipement, augmente le multicoup de la créature équ
 Chaînes d'éclairs \
 Centaure \
 Cyclope \
-Plateau : lieu pour les cartes d'élément Foudre
+Plateau : lieu pour les cartes d'élément Foudre.
 
 Gnome \
 Automate \
-Mines : lieu pour les cartes d'élement métal
+Mines : lieu pour les cartes d'élement métal.
 
 Drow \
-Limace : créature ombre, supprime la protection des creatures qu'elle attaque \
+Limace : créature ombre, supprime la protection des creatures qu'elle attaque. \
 Vampire \
 Oni \
-Caverne : lieu pour les cartes d'élément Ombre
+Caverne : lieu pour les cartes d'élément Ombre.
 
-Goliath : résistance \
+Goliath : résistance. \
 Jarl \
 Berserker \
 Ours des neiges \
 Loup des neiges \
-Toundra : lieu pour les cartes d'élement Glace
+Toundra : lieu pour les cartes d'élement Glace.
 
 Démon \
 Pacte démoniaque \
 Epée vorpale \
-Enfers : lieu pour les cartes d'élement Feu et Mort
+Enfers : lieu pour les cartes d'élement Feu et Mort.
 
 Ange \
-Paradis : lieu pour les cartes d'élement Air et Lumière
+Paradis : lieu pour les cartes d'élement Air et Lumière.
 
-Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie \
-Glacier : lieu pour les cartes d'élement Glace et Terre
+Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
+Glacier : lieu pour les cartes d'élement Glace et Terre.
 
-Banquise : lieu pour les cartes d'élement Glace et Eau
+Banquise : lieu pour les cartes d'élement Glace et Eau.
 
 # Boss
 
 Zenoh : boss de niv 2, quand attaque gagne autant d'attaque que d'or et quand tue produis autant d'or que de vie \
 Kanki : boss de niv 4, quand une unité adverse meurt : crée un bandit, quand une unité allié meurt : produis de l'or, quand joue : dépense de l'or pour améliorer les bandits \
-Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : rapidité, bâtiment : attaque, objet : vie) \
+Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : attaque, objet : vie) \
 Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'attaque des cavaliers, quand un cavalier attaque : augmente la vie de gyoun
 
 # Lore
 
-Gydeon : dieu du courage, paladin. Ne peux pas subir de dégâts de ce dont il n'a pas peur. \
+Gydeon : dieu du courage, paladin. Ne peux pas subir de blessures de ce dont il n'a pas peur. \
 Nana : liche d'apparence enfantile. Peux lier des âmes : l'âme liée à une autre personne voir son porteur affaibli. L'autre entité peux profiter des pouvoirs absorbés. Si le porteur meurt, le lien est cassé. \
 Ogre pirate : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken. \
 Yotanwa : reine des barbares. \
-Belagor : drow avec un masque doré dieu des complots \
-Antidieu : dieu de la loi peut appliquer dans une zone des restrictions à tous ceux qui y sont y compris lui même \
-Boréalis : ryu dieu de la météo \
-Bombay : djinn chat dieu du repos \
+Belagor : drow avec un masque doré dieu des complots. A l'apparence de Phenax dans mtg. \
+Boréalis : ryu dieu de la météo. \
+Bombay : djinn chat dieu des rêves. \
 Déesse de la loi : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche) . Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. A l'apparence du titan paladin dans hs. \
-Dieux gardiens de l'empire : un chat (manx) et un chien (medox) \
-Mania : golem géant (le géant de mha) \
-Kotor : archidémon chevalier, a affronté et tué l'empereur barbare \
-Tragoedia : liche corrompue par le néant. A reçu une baguette. \
-Ananta : dragon corrompue par le néant. A reçu une armure. \
+Manx : dieu chat, gardien de la citadelle impérialle. Peux "garder" un territoire. Il est présent à tout endroit de ce territoire. Plus le territoire est petit plus il gagne en force mais perd en contrôle.  \
+Medox : dieu chien, gardien de l'empire. Peux "garder" un territoire. Il peux se déplacer instantannement au sien de ce territoire. Sa force est proportionelle à la taille de ce territoire. \
+Mania : golem géant (le géant de mha). \
+Kotor : archidémon chevalier, a affronté et tué l'empereur barbare. \
+Ananta : liche habitant dans les récifs noirs, une zone déserte et hostile. En cherchant à s'approprier la puissance du néant il se fait offrir une baguette qui lui confère plus de pouvoir. \
+Tragoedia : dragon corrompue par le néant. Régnait sur un A reçu une armure. \
 Déesse du corail : sirène pouvant utilser le sang afin de produire du corail, régénérant les blessures. Peux durcir une partie du corps en transformant tout le sang en corail. \
-Balor : archidémon dragon, plus puissante créature connue des enfers \
-Amelia : archange, plus puissante créature connue au paradis \
+Balor : archidémon dragon, plus puissante créature connue des enfers. \
+Amelia : archange, plus puissante créature connue au paradis. \
