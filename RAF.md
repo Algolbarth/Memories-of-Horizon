@@ -184,10 +184,10 @@ Centaure \
 Cyclope \
 Wyverne jaune \
 Mage de foudre \
-Electromancien : quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant.\
+Electromancien : quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
 Plateau : lieu pour les cartes d'élément Foudre.
 
-Gnome : \
+Gnome \
 Automate \
 Wyverne grise \
 Mage des métaux \
@@ -196,11 +196,11 @@ Mines : lieu pour les cartes d'élement Métal.
 
 Aasimar : régénération. \
 Nova sacrée : inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain. \
-Fidèle : \
+Fidèle \
 Prière : pioche des cartes OU soigne une créature alliée sur le terrain. \
 Cierge : pioche des cartes OU produis de la lumière. \
 Paladin : garde. \
-Luxomancien \
+Luxomancien : quand une carte alliée Lumière est posée : . \
 Wyverne lumineuse \
 Mage de lumière \
 Terre sacrée : lieu pour les cartes d'élément Lumière.
