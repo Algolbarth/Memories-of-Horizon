@@ -99,7 +99,7 @@ Cerf : créature bête, vitesse et percée. \
 Hérisson : créature bête, épine. \
 Mage de la nature \
 Wyverne verte \
-Phitomancien \
+Phitomancien : quand une carte alliée Végétal est posée : augmente sa vie. \
 Massue de chêne : objet équipement, charge. \
 Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
@@ -113,7 +113,7 @@ Baguette des marées : augmente la magie de la créature équipée. quand la cr�
 Ondin guerrier : quand posé : dépense de l'eau et augmente son attaque et sa vie. \
 Mage d'eau \
 Wyverne marine \
-Aquomancien \
+Aquomancien : quand une carte alliée Eau est posée : produis de l'eau. \
 Pêcheur : quand posé : pioche 1 créature poisson. \
 Requin : créature poisson. \
 Banc de poisson : crée 5 Sardine dans la main. \
@@ -124,11 +124,11 @@ Masse de pierre : augmente la charge de la créature équipée. \
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Éboulement : applique étourdissement à une créature adverse sur le terrain. \
 Jet de pierre : inflige des dégats et applique paralysie à une créature adverse sur le terrain. \
-Mage de terre \
-Wyverne terrestre \
 Loup des montagnes \
 Taupe \
-Géomancien
+Mage de terre \
+Wyverne terrestre \ 
+Géomancien : quand une carte alliée Terre est posée : augmente sa défense.
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
 Plage : lieu pour les cartes d'élement Eau et Feu.
@@ -161,16 +161,17 @@ Mage des airs \
 Ile volante : lieu pour les cartes d'élement Air.
 
 Revenant \
-Squelette \
-Zombie \
-Ogre \
+Squelette : 1 vie. \
+Zombie : 1 attaque. \
+Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente son attaque et sa vie. \
 Faucheuse \
+Fantome \
 Rat \
 Hyène \
 Araignée \
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain. \
 Wyverne noire \
-Nécromancien \
+Nécromancien : quand une carte alliée Mort est posée : crée Squelette sur le terrain. \
 Mage des morts \
 Cimetière : lieu pour les cartes d'élément Mort.
 
@@ -183,14 +184,14 @@ Centaure \
 Cyclope \
 Wyverne jaune \
 Mage de foudre \
-Electromancien \
+Electromancien : quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant.\
 Plateau : lieu pour les cartes d'élément Foudre.
 
 Gnome : \
 Automate \
 Wyverne grise \
 Mage des métaux \
-Metallomancien \
+Metallomancien : quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
 Mines : lieu pour les cartes d'élement Métal.
 
 Aasimar : régénération. \
