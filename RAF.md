@@ -59,7 +59,7 @@ Alchimiste : quand posé : pioche 2 objets potion.
 *Ajouter l'effet d'être ciblé par une carte*
 Restaurant : quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
 Biscuit \
-Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, augmente son attaque et sa défense à la place. \
+Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, augmente son attaque et sa vie à la place. \
 Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
 
 Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
