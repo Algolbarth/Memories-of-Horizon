@@ -26,8 +26,8 @@ Mimique de pomme : se pose sur le terrain adevrse. Quand meurt au combat : augme
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
 
 Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain. \
-Cape de voleur : au dbut de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
-Dague de voleur : quand la créature tue une unité, augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
+Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
+Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
 Guilde des voleurs : batiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
 
 Exploration : augmente la taille de la boutique \
@@ -59,9 +59,11 @@ Alchimiste : quand posé : pioche 2 objets potion.
 *Ajouter l'effet d'être ciblé par une carte*
 Restaurant : quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
 Biscuit \
+Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, augmente son attaque et sa défense à la place. \
 Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
 
-Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain.
+Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
+Baton de druide :  objet equipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -102,7 +104,7 @@ Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
 Vague déferlante : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
 Raz de marée : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
-Bouée \
+Bouée : ajoute l'élement Eau à la créature équipée.\
 Garde Côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
 Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
