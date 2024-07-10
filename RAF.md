@@ -30,10 +30,10 @@ Cape de voleur : au début de la phase de préparation : augmente la valeur de v
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
 Guilde des voleurs : batiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
 
-Exploration : augmente la taille de la boutique \
-Agrandissement : augmente la taille de la main \
-Etendre : augmente la taille du terrain \
-Savoir interdit : diminue la taille du terrain et augmente la taille de la main \
+Exploration : augmente la taille de la boutique. \
+Agrandissement : augmente la taille de la main. \
+Etendre : augmente la taille du terrain. \
+Savoir interdit : diminue la taille du terrain et augmente la taille de la main. \
 Omniscience
 
 Frappe : choisis une créature alliée sur le terrain. inflige autant de dégâts que l'attaque de la créature choisie à une créature adverse sur le terrain. \
@@ -63,7 +63,8 @@ Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa 
 Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
 
 Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
-Baton de druide :  objet equipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme.
+Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
+Aiguisage
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -76,7 +77,7 @@ Lac de lave : quand une créature feu arrive sur le terrain : augmente son attaq
 Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée. \
 Mage de feu \
 Wyverne rouge \
-Pyromancien \
+Pyromancien : quand une carte feu est posé : augmente son attaque. \
 Baguette explosive : augmente la magie de la créature équipée. quand la créature équipée attaque : inflige autant de dégâts à l'unité attaquée que la magie de la créature équipée.
 
 Spores : empoisonne une créature adverse sur le terrain. \
@@ -125,6 +126,8 @@ Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Jet de pierre : inflige des dégats et applique paralysie à une créature adverse sur le terrain. \
 Mage de terre \
 Wyverne terrestre \
+Loup des montagnes \
+Taupe \
 Géomancien
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
@@ -149,6 +152,14 @@ Savane : lieu pour les cartes d'élement Feu et Végétal.
 
 Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
 
+Aarakocra : quand posé : pioche une carte. \
+Griffon : quand posé : augmente son attaque et sa vie suivant le niveau de la boutique. \
+Aigle \
+Wyverne blanche \
+Aéromancien : quand une carte d'élément Air est posé : diminue le cout d'amélioration de la boutique. \
+Mage des airs \
+Ile volante : lieu pour les cartes d'élement Air.
+
 Revenant \
 Squelette \
 Zombie \
@@ -156,32 +167,59 @@ Ogre \
 Faucheuse \
 Rat \
 Hyène \
+Araignée \
+Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain. \
+Wyverne noire \
+Nécromancien \
+Mage des morts \
 Cimetière : lieu pour les cartes d'élément Mort.
 
 Satyre \
-Eclair \
-Bottes d'éclair \
+Eclair : inflige des dégâts à l'unité adverse la plus en avant. \
+Bottes d'éclair : objet équipement, augmente la vitesse de la créature équipée. \
 Lames d'éclairs : objet équipement, augmente le multicoup de la créature équipée. \
 Chaînes d'éclairs \
 Centaure \
 Cyclope \
+Wyverne jaune \
+Mage de foudre \
+Electromancien \
 Plateau : lieu pour les cartes d'élément Foudre.
 
-Gnome \
+Gnome : \
 Automate \
+Wyverne grise \
+Mage des métaux \
+Metallomancien \
 Mines : lieu pour les cartes d'élement Métal.
+
+Aasimar : régénération. \
+Nova sacrée : inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain. \
+Fidèle : \
+Prière : pioche des cartes OU soigne une créature alliée sur le terrain. \
+Cierge : pioche des cartes OU produis de la lumière. \
+Paladin : garde. \
+Luxomancien \
+Wyverne lumineuse \
+Mage de lumière \
+Terre sacrée : lieu pour les cartes d'élément Lumière.
 
 Drow \
 Limace : créature ombre, supprime la protection des creatures qu'elle attaque. \
 Vampire \
 Oni \
+Wyverne sombre \
+Ombromancien \
+Mage sombre \
 Caverne : lieu pour les cartes d'élément Ombre.
 
 Goliath : résistance. \
 Jarl \
+Nova de glace \
 Berserker \
 Ours des neiges \
 Loup des neiges \
+Wyverne des neiges \
 Toundra : lieu pour les cartes d'élement Glace.
 
 Démon \
