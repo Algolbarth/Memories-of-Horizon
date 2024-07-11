@@ -64,7 +64,8 @@ Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son at
 
 Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
-Aiguisage
+Aiguisage \
+Polissage
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
