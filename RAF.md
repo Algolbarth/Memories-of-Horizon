@@ -15,7 +15,8 @@ Ranger les chapitres dans des dossier \
 Ajouter un texte explicatif pour les stats et effets \
 Ajouter un tutoriel dans jouer, avec les mecaniques du jeu \
 Corriger la pose des créatures avec la limite de carte \
-Ajouter l'étourdissement et la paralysie (paralysie => X actions, gel => X tours, étourdissement => X étapes)
+Ajouter l'étourdissement et la paralysie (paralysie => X actions, gel => X tours, étourdissement => X étapes) \
+Ajouter les familles Arme et Armure
 
 # Cartes
 
@@ -34,7 +35,7 @@ Exploration : augmente la taille de la boutique. \
 Agrandissement : augmente la taille de la main. \
 Etendre : augmente la taille du terrain. \
 Savoir interdit : diminue la taille du terrain et augmente la taille de la main. \
-Omniscience
+Omniscience : pioche 10 cartes. sorcellerie : si la boutique est pleine, augmente la taille de la boutique.
 
 Frappe : choisis une créature alliée sur le terrain. inflige autant de dégâts que l'attaque de la créature choisie à une créature adverse sur le terrain. \
 Écrasement : choisis une créature alliée sur le terrain. inflige autant de dégâts que la vie de la créature choisie à une créature adverse sur le terrain. \
@@ -58,14 +59,14 @@ Alchimiste : quand posé : pioche 2 objets potion.
 
 *Ajouter l'effet d'être ciblé par une carte*
 Restaurant : quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
-Biscuit \
+Biscuit : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, crée Biscuit sur le terrain. \
 Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, augmente son attaque et sa vie à la place. \
 Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
 
 Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
-Aiguisage \
-Polissage
+Aiguisage : augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
+Polissage : augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -74,7 +75,7 @@ Incendie : enflamme toutes les unités adverses sur le terrain. \
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse. \
 Flèche de feu : inflige des dégâts et enflamme une unité adverse. \
 Lac de lave : quand une créature feu arrive sur le terrain : augmente son attaque. Quand une créature non feu arrive sur le terrain : lui inflige des dégâts. \
-Épée enflammée : augmente l'attaque de la créature équipée. quand la créature équipée attaque : inflige des dgéâts à l'unité attaquée. \
+Épée enflammée : augmente l'attaque de la créature équipée. quand la créature équipée attaque : inflige des dégâts à l'unité attaquée. \
 Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée. \
 Mage de feu \
 Wyverne rouge \
@@ -141,6 +142,10 @@ Désert : lieu pour les cartes d'élement Feu et Terre.
 Tortue terrestre \
 Barrage
 
+Dinosaure \
+Blaireau \
+Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
+
 Élémentaire d'algue \
 Castor \
 Mangroves : lieu pour les cartes d'élement Eau et Végétal.
@@ -156,9 +161,9 @@ Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
 Aarakocra : quand posé : pioche une carte. \
 Griffon : quand posé : augmente son attaque et sa vie suivant le niveau de la boutique. \
 Aigle \
-Wyverne blanche \
 Aéromancien : quand une carte d'élément Air est posé : diminue le cout d'amélioration de la boutique. \
 Mage des airs \
+Ascension : pioche une créature wyverne et change la ressource \
 Ile volante : lieu pour les cartes d'élement Air.
 
 Revenant \
@@ -171,7 +176,8 @@ Rat \
 Hyène \
 Araignée \
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain. \
-Wyverne noire \
+Wyverne zombie \
+Wyverne squelette : quand une créature alliée meurt : diminue son cout de 5. \
 Nécromancien : quand une carte alliée Mort est posée : crée Squelette sur le terrain. \
 Mage des morts \
 Cimetière : lieu pour les cartes d'élément Mort.
@@ -183,14 +189,14 @@ Lames d'éclairs : objet équipement, augmente le multicoup de la créature équ
 Chaînes d'éclairs \
 Centaure \
 Cyclope \
-Wyverne jaune \
+Wyverne de foudre \
 Mage de foudre \
 Electromancien : quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
 Plateau : lieu pour les cartes d'élément Foudre.
 
 Gnome \
 Automate \
-Wyverne grise \
+Wyverne d'acier \
 Mage des métaux \
 Metallomancien : quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
 Mines : lieu pour les cartes d'élement Métal.
@@ -202,7 +208,7 @@ Prière : pioche des cartes OU soigne une créature alliée sur le terrain. \
 Cierge : pioche des cartes OU produis de la lumière. \
 Paladin : garde. \
 Luxomancien : quand une carte alliée Lumière est posée : . \
-Wyverne lumineuse \
+Wyverne blanche \
 Mage de lumière \
 Terre sacrée : lieu pour les cartes d'élément Lumière.
 
@@ -210,7 +216,7 @@ Drow \
 Limace : créature ombre, supprime la protection des creatures qu'elle attaque. \
 Vampire \
 Oni \
-Wyverne sombre \
+Wyverne noire \
 Ombromancien \
 Mage sombre \
 Caverne : lieu pour les cartes d'élément Ombre.
@@ -288,10 +294,10 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Rowane` : tréant femelle habitante de la forêt d'épine. son mari est devenu fou et détruis petit à petit le forêt par sa violence. elle guidera le héros pour qu'il stop ce dernier sans lui réveler qu'il était son amant. l'elfe avelorn, souverain de la forêt, épagnera rowan pour son courage mais du la contraindre à quitter la forêt pour que les autres habitants ne se venge. elle suivra le héros qui refusait de la voir se laisser mourir. \
 `Emperina` : wyverne de gammes vivant dans une cité nain, Khaziel. est la descendante des créateurs des gemmes. cherche à stopper l'archonte de Khaziel qui souhaite continuer à creuser alors qu'un golem de lave, gorgotha, y est enfermé. après avoir révélé que gorgotha servait à forger les gemmes grâce à s achaleur, emperina comprends qu'elle peux le controler grâce à ses ancêtres. cependant elle devine aussi que beaucoup de créature ou pouvoir liés aux gemmes se réveillent un peu partout et qu'il faut enquêter sur ces phénomènes. \
 `Raven` : frère de tyri et assassin. \
-`Vieux sorcier` : sorcier,
+`Tassarion` : sorcier aasimar servant le royaume haut elfe de la clairière d'argent. est en mision aux pics glacés pour convaincre la jarl Mab de ne pas déclencher une guerre contre les vikings de Stormheim. suivra le héros et emperina pour découvrir la source des événements récents autour des gemmes. est le tuteur d'elspeth mais n'est pas souvent là pour l'encadrer. \
 `Amira` : loup garou de type renard, c'est un assassin recruté pour tuer l'empereur de léonis par les rebelles donc indirectement par Dao. Rencontre le héros sans lui dire son véritable rôle mais finit par abandonner son objectif et aide l'empereur à s'enfuir de la capitale. plus tard Dao retrouvera sa trace à cause des affrontements entre la compagnie et la cabale. amira décide de fuir en conséquence afin de ne pas mettre en danger ses camarades. \
 `Ethoras` : prince elfe en voyage diplomatique dans le royaume des fées (dirigée par titania et oberron). dois épouser la princesse Eastatem. peu concerné par son rôle princier il garde un bon fond et est coutageux au combat. après avoir affronter des ennemis des fées, il a décliner son mariage (pour le moment) Eastratem n'étant pas prête non plus. devra encaisser un coup de titania pour refuser le mariage mais suna arrivera à convaincre oberon de laisser du temps aux jeunes. ethoras choisira une vie d'aventure, suivant le héros et promettant de revenir pour donner sa décision finale. \
-`Elspeth` : princesse haut elfe de la clairière d'argent. hautaine, égoiste, inculte et insolente, elle est détestée de son peuple. ses parents sont trop occupés pour la remettre à sa place mais n'en pense pas moins. invité à la cour grâce à éthoras, le héros devra escorter elspeth pour recevoir l'aide du royaume. absolument insuportable, même pour tyri ou ethoras, elle se fera reprendre par luther mais l'ignore totalement. une fois de retour au palais, elle ne remercie même pas le héros pour le voyage malgré ses multiples bourdes. pendant le vol des écrits du royaume par vanya, silenus pénètre la chambre d'elspeth et l'agresse sexuellement.
+`Elspeth` : princesse haut elfe de la clairière d'argent. hautaine, égoiste, inculte et insolente, elle est détestée de son peuple. ses parents sont trop occupés pour la remettre à sa place mais n'en pense pas moins. invité à la cour grâce à éthoras, le héros devra escorter elspeth pour recevoir l'aide du royaume. absolument insuportable, même pour tyri ou ethoras, elle se fera reprendre par luther mais l'ignore totalement. une fois de retour au palais, elle ne remercie même pas le héros pour le voyage malgré ses multiples bourdes. pendant le vol des écrits du royaume par vanya, silenus pénètre la chambre d'elspeth et l'agresse sexuellement. sera gravement traumatisé et restera en état de choc après cette attaque. 
 
 `Marid` : guide le héros pour traverser le désert. ils devront affronter la grande gueule, un ver des sables gigantesque. \
 `Squelette de dragon` : n'a pas d'identité particulière mais est un très puissant squelette situé dans khetar. \
