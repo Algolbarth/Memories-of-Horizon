@@ -68,6 +68,11 @@ Bâton de druide :  objet équipement, au début de la phase de préparation et 
 Aiguisage : augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
 Polissage : augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape.
 
+*Afficher l'intelligence en option* \
+*Régler le son en option* \
+*Changer la valeur de padding* \
+*Ranger les fichiers du jeu dans un dossier* \
+*Ajouter les menus de lore et de mise à jour* \
 *Ajouter l'intensité et corriger les haches* \
 *Fusionner les chevaliers monté et non monté* \
 *Corriger les effets de transformation* \
@@ -107,7 +112,10 @@ Lance de fer \
 Trident \
 Baliste \
 Catapulte \
-Tour de siège
+Tour de siège \
+Defrichage \
+Désarmer \
+Piquier gobelin
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
