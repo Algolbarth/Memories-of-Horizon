@@ -375,7 +375,7 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Medox` : dieu chien, gardien de l'empire. Peux "garder" un territoire. Il peux se déplacer instantannement au sien de ce territoire. Sa force est proportionelle à la taille de ce territoire. \
 `Mania` : golem géant (le géant de mha). \
 `Kotor` : archidémon chevalier, a affronté et tué l'empereur barbare. \
-`Yotanwa` : reine des barbares. \
+`Yotanwa` : reine des barbares. une des meilleures cavalière de l'horizon.\
 `Belagor` : drow avec un masque doré dieu des complots. A l'apparence de Phenax dans mtg. Détecte n'importe quel mensonge et peux les sanctionner suivant l'ampleur du mensonge.  \
 `Balor` : archidémon dragon, plus puissante créature connue des enfers. \
 `Amelia` : archange, plus puissante créature connue au paradis. \
