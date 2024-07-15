@@ -356,7 +356,7 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Khorvash` : ancien membre du conseil et empereur de léonis. la cabale ayant créer une armée rebelle dans l'ombre, il doit faire face à une guerre civile. il s'enfuira dans le désert grâce au héros. quand la cabale décide de le tuer en personne il est d'abord aidé par carmella et amira, vaincues par oni, puis par seth.
 
 `Drenza` : nain forgeron originaire de Khaziel, membre de la cabale. \
-`Scorpius` : homme insecte de type scorpion, membre de la cabale. originaire du désert il y est enfermé depuis longtemps pour ses meurtres. se libère de temps à autre mais abeilla l'humilia en prison pour qu'il ne recommence plus. affrontera abeilla une nouvelle fois et la blessera mortellement quand il reviendra après avoir rejoint la cabale. \
+`Scorpius` : homme insecte de type scorpion, membre de la cabale. originaire du désert il y est enfermé depuis longtemps pour ses meurtres. se libère de temps à autre mais abeilla l'humilia en prison pour qu'il ne recommence plus. affrontera abeilla une nouvelle fois et la blessera mortellement quand il reviendra après avoir rejoint la cabale. a une peau extrêmement solide et peux faire apparaitre une armure incassable. affrontera morrigan lors de sa venue. perdra un coeur dans cet affrontement mais en possède plusieurs. \
 `Morterra` : drow utilisant les champignons elle prendra contrôle des morts vivants de Khetar afin de divertir alastair pour que le reste de la cabale fouille les cavernes de la région. \
 `Silènus` : satyre de l'école foudrefeu, membre de la cabale. il abusera d'elspeth dans la clairière et volera les écrits des hauts elfes avec vanya. à khetar il affrontera seth dans le désert, soldant par un match nul. \
 `Vanya` : revenante membre de la cabale, elle collecte les informations à propos des gemmes et de leurs origines. elle volera les livres des hauts elfes. \
@@ -380,3 +380,4 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Balor` : archidémon dragon, plus puissante créature connue des enfers. \
 `Amelia` : archange, plus puissante créature connue au paradis. \
 `Ogre pirate` : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken. \
+`Morrigan` : revenante capable de se changer en fantôme. contrairement aux autres fantôme elle peux agir rapidement pour frapper à l'intérieur de sa cible. ressemble à l'eneripsa dephasage.
