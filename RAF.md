@@ -66,7 +66,48 @@ Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son at
 Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
 Aiguisage : augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
-Polissage : augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape
+Polissage : augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape.
+
+*Ajouter l'intensité et corriger les haches* \
+*Fusionner les chevaliers monté et non monté* \
+*Corriger les effets de transformation* \
+Maléfice : transforme une créatur adverse sur le terrain en Grenouille \
+Tour d'archer \
+Tour de guet \
+Cibler \
+Puit de mana \
+General \
+Menace \
+Charisme \
+Epouventail \
+Bouclier de roche \
+Bière \
+Tournée générale \
+Soldat nain \
+Garde nain \
+Chevalier noir \
+Chavlier noir (monté) \
+Ecuyer \
+Chevalier géant (monté) \
+Grenouille \
+Rapière \
+Ville des géants \
+Inondation \
+Hydratation \
+Milieu aquatique \
+Sang chaud \
+Cautériser \
+Ruée \
+Cascade \
+Fontaine \
+Puit \
+Blason \
+Garnison des monts \
+Lance de fer \
+Trident \
+Baliste \
+Catapulte \
+Tour de siège
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
