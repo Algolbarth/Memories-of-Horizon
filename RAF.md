@@ -327,45 +327,59 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 # Saga des gemmes de la guerre
 
 `Conseil des gemmes` : assemblée des 100 individus les plus puissants du continent. s'est opposé à l'empire et dirige le continent de manière autonome. \
+`Gaard` : membre plus puissant du conseil, très discret. \
 `Abeilla` : femme insecte de type guêpe, membre du conseil. est la reine des insectes sur le contient et réside dans le désert. ses serviteurs les plus proches sont des mages hommes insecte de type mite. sera mortellement blessée par scorpius après son retour mais sera finalement sauvé par le héros et son groupe. \
 `Boissanglant` : membre du conseil et bras droit d'avelorn. tréant qui peux utiliser son écorce pour former une armure de bois. de forme plus humanoide que la norme, c'est un très bon combatant au cac. \
 `Suna` : avienne membre du conseil maitrisant le feu, elle encadre la princesse fée Eastratem. \
 `Alastair` : membre du conseil, guerrier solitaire vivant dans la région de khetar, peuplé de mort vivant qui semblent controlé par la région elle même. à lui seul il endigue la progression des morts vivants en dehors de khetar et empêche les intrus d'y voyager pour que personne ne veuille contrôler cette armmée potentielle. il ne quitte jamais khetar et a une dérogation spéciale par le conseil. \
 `Yvendra` : régente de Zhul'Kari, capitale des drows et procureuse du conseil. \
 `Liang` : avien, ancien empereur de shantang et membre du conseil. fuit après l'invasion de yao Guai pour éviter une guerre, il empecha se dernier de récupérer des informations sur les gemmes. \
-`Huanglong` : deuxième dragon de shentang et membre du conseil.
+`Huanglong` : deuxième dragon de shentang et membre du conseil. \
+`Artemas` : centauresse lancière membre du conseil. grande soeur d'atlanta. \
+`Bénie sainte Astra` : sainte du continent et membre du conseil, dirige l'église travaillant avec les paladins de heaume blanc. \
+`Mab` : goliath jarl de stromhein, membre du conseil. peux créer des surfaces glacées faisant office de sol. voulait déclencher une guerre contre les vikings pour leur activité guerrière mais sera convaincue de ne pas le faire par tassarion. \
+`Cornedure` : minotaure membre du conseil. considère que le conseil a atteint ses limites et défendra le conseil face à la cabale en terrassant silenus et affrontant oneiros. \
+`Chromite` : sphinx membre du conseil, peux se figer en pierre. \
+`Dame Morana` :  meneuse de la Horde, membre du conseil et chef des revenants sur le continent. meilleure cavalière du conseil. extrais les pouvoirs des os.
 
 `Luther` : vieux chevalier devenu mercenaire auprès de royaumes. mentor du héros, rencontré durant la campagne des pics brisés. \
 `Poncemine` : gnome spécialisé dans la construction d'un automate invincible dont il a conçu les plans. le héros parvient à stopper la machine inachevée lors de son voyage à Adana, ville des gnomes. accompagne le héros par grattitude mais aussi pour apprendre à perfectionner son automate et prôtéger les plans. \
 `Tyri` : voleuse cherchant un trésor parmi ceux des régentes de Zhul'Kari. en voulant chercher un trésor, elle tombe avec une créature araignée vampire qui manque de la tuer. après avoir risqué sa vie, le héros l'aidera mais lui passera un savon. honteuse mais reconnaissante, elle suivra le héros. \
-`Archère plaine d'eidolon` : elfe archère \
+`Atlanta` : centaure archère chasseuse, soeur d'artéma. veux se venger d'orion qui profite de l'absence de sa soeur pour semer la terreur. le blessera lourdement à l'épaule et  la tribu. \
 `Saphira` : vampire habitant dans les terres du Heaume-Blanc, un fief de paladin. en raison de sa race elle est persecutée et cherche à se défendre de l'ordre quand le héros la trouve. luther découvrira que c'est en réalité une puissante gargouille, quatramanus, qui manipule les paladins en se faisant passer comme un envoyé des anges. perdra contre quatramanus, ce dernier étant en pierre, lé héros s'en chargera. continue à suivre le héros. \
 `Rowane` : tréant femelle habitante de la forêt d'épine. son mari est devenu fou et détruis petit à petit le forêt par sa violence. elle guidera le héros pour qu'il stop ce dernier sans lui réveler qu'il était son amant. l'elfe avelorn, souverain de la forêt, épagnera rowan pour son courage mais du la contraindre à quitter la forêt pour que les autres habitants ne se venge. elle suivra le héros qui refusait de la voir se laisser mourir. \
 `Emperina` : wyverne de gammes vivant dans une cité nain, Khaziel. est la descendante des créateurs des gemmes. cherche à stopper l'archonte de Khaziel qui souhaite continuer à creuser alors qu'un golem de lave, gorgotha, y est enfermé. après avoir révélé que gorgotha servait à forger les gemmes grâce à s achaleur, emperina comprends qu'elle peux le controler grâce à ses ancêtres. cependant elle devine aussi que beaucoup de créature ou pouvoir liés aux gemmes se réveillent un peu partout et qu'il faut enquêter sur ces phénomènes. \
 `Raven` : frère de tyri et assassin. \
+`Brian` : barde lâche capable de se changer en coq. connait des chants pour augmenter la chance d'une personne. sera kidnapé par les gobelins pour son talent. le héros sauvera brian et sympathisera avec les gobelins, qui utiliseront le chant de brian pour guérir les maux d'estomac du chef de clan. suivra le héros pour trouver des artefacts à l'aide de sa chance. \
 `Tassarion` : sorcier aasimar servant le royaume haut elfe de la clairière d'argent. est en mision aux pics glacés pour convaincre la jarl Mab de ne pas déclencher une guerre contre les vikings de Stormheim. suivra le héros et emperina pour découvrir la source des événements récents autour des gemmes. est le tuteur d'elspeth mais n'est pas souvent là pour l'encadrer. \
 `Amira` : loup garou de type renard, c'est un assassin recruté pour tuer l'empereur de léonis par les rebelles donc indirectement par Dao. Rencontre le héros sans lui dire son véritable rôle mais finit par abandonner son objectif et aide l'empereur à s'enfuir de la capitale. plus tard Dao retrouvera sa trace à cause des affrontements entre la compagnie et la cabale. amira décide de fuir en conséquence afin de ne pas mettre en danger ses camarades. \
 `Ethoras` : prince elfe en voyage diplomatique dans le royaume des fées (dirigée par titania et oberron). dois épouser la princesse Eastatem. peu concerné par son rôle princier il garde un bon fond et est coutageux au combat. après avoir affronter des ennemis des fées, il a décliner son mariage (pour le moment) Eastratem n'étant pas prête non plus. devra encaisser un coup de titania pour refuser le mariage mais suna arrivera à convaincre oberon de laisser du temps aux jeunes. ethoras choisira une vie d'aventure, suivant le héros et promettant de revenir pour donner sa décision finale. \
 `Elspeth` : princesse haut elfe de la clairière d'argent. hautaine, égoiste, inculte et insolente, elle est détestée de son peuple. ses parents sont trop occupés pour la remettre à sa place mais n'en pense pas moins. invité à la cour grâce à éthoras, le héros devra escorter elspeth pour recevoir l'aide du royaume. absolument insuportable, même pour tyri ou ethoras, elle se fera reprendre par luther mais l'ignore totalement. une fois de retour au palais, elle ne remercie même pas le héros pour le voyage malgré ses multiples bourdes. pendant le vol des écrits du royaume par vanya, silenus pénètre la chambre d'elspeth et l'agresse sexuellement. sera gravement traumatisé et restera en état de choc après cette attaque.
-`Scarlet` : chasseuse adopté par des loups garous. aidera le héros pour chercher du secours après l'agression d'elspeth et pour affronter la cabale. les loups garous font partis de ceux qui s'opposent au conseil. peux absorber le sang afin d'en faire un tissu qu'elle porte comme cape (et donc cacher l'modeur du sang\ 
+`Scarlet` : chasseuse adoptée par des loups garous. aidera le héros pour chercher du secours après l'agression d'elspeth et pour affronter la cabale. les loups garous font partis de ceux qui s'opposent au conseil. peux absorber le sang afin d'en faire un tissu qu'elle porte comme cape (et donc cacher l'odeur du sang). \
+`Cernunnos` : Goliath capable de forger des armes en glace. aidera le héros à joindre les vikings avec l'aide de tassarion. 
 
+`quatramanus` : gargouille à quatre bras, se faisant passer pour un envoyé de dieu dans des cathédrales pour orienter l'ordre du Heaume blanc. \
+`Centauragon` : centaures contaminées par le néant. \
+`Orion` : chef de sa tribu. arrive à prédire les déplacements de ses proies. pille les peuples des les champs de divinion mais sera vaincu par atlanta. sera finalement tué par oneiros. \
 `Marid` : guide le héros pour traverser le désert. ils devront affronter la grande gueule, un ver des sables gigantesque. \
 `Squelette de dragon` : n'a pas d'identité particulière mais est un très puissant squelette situé dans khetar. \
 `Seth` : homme lézard type crocodile affrontant le conseil car il considère que les gemmes sont un source trop dangereuse de pouvoir. peux modifier la résistance des matériaux à l'aide d'un artefact, le rouage fondateur, contenu dans son bras gauche artificiel. après avoir été repoussé une première fois par le dragon squelette, il cherchera à aller à khetar. alastair ne le laisant pas faire, il profitera plus tard de l'intervention de la cabale pour les stopper. plus tard quand le héros arrivera à convaincre alastair après un duel, seth l'affrontera à nouveau mais soldera par un match nul là aussi. après une attaque du dragon squelette, il s'enfuit. \
 `Penlong` : ryu voulant destituer l'empereur Yoa Guai du trone de shentang. le héros parvenant à tuer Yao Guai, Liang pu reprendre son poste. \
-`Khorvash` : ancien membre du conseil et empereur de léonis. la cabale ayant créer une armée rebelle dans l'ombre, il doit faire face à une guerre civile. il s'enfuira dans le désert grâce au héros. quand la cabale décide de le tuer en personne il est d'abord aidé par carmella et amira, vaincues par oni, puis par seth.
+`Khorvash` : ancien membre du conseil et empereur de léonis. la cabale ayant créer une armée rebelle dans l'ombre, il doit faire face à une guerre civile. il s'enfuira dans le désert grâce au héros. quand la cabale décide de le tuer en personne il est d'abord aidé par carmella et amira, vaincues par oni, puis par seth. \
+`Ahriman` : dragonien surnommé le rouge, d'origine étrangère au continent. gère l'immigration des personnalités atypiques. fera rentrer morrigan sur le territoire pour vérifier la menace de la cabale.
 
 `Drenza` : nain forgeron originaire de Khaziel, membre de la cabale. \
 `Scorpius` : homme insecte de type scorpion, membre de la cabale. originaire du désert il y est enfermé depuis longtemps pour ses meurtres. se libère de temps à autre mais abeilla l'humilia en prison pour qu'il ne recommence plus. affrontera abeilla une nouvelle fois et la blessera mortellement quand il reviendra après avoir rejoint la cabale. a une peau extrêmement solide et peux faire apparaitre une armure incassable. affrontera morrigan lors de sa venue. perdra un coeur dans cet affrontement mais en possède plusieurs. \
 `Morterra` : drow utilisant les champignons elle prendra contrôle des morts vivants de Khetar afin de divertir alastair pour que le reste de la cabale fouille les cavernes de la région. \
 `Silènus` : satyre de l'école foudrefeu, membre de la cabale. il abusera d'elspeth dans la clairière et volera les écrits des hauts elfes avec vanya. à khetar il affrontera seth dans le désert, soldant par un match nul. \
 `Vanya` : revenante membre de la cabale, elle collecte les informations à propos des gemmes et de leurs origines. elle volera les livres des hauts elfes. \
-`Chalcedony`: archère genasi memebre de la cabale. applique des éléments à ses flèches et peux se rendre indétectable. \
-`Kurandara` : démon membre de la cabale \
+`Chalcedony`: archère genasi membre de la cabale. applique des éléments à ses flèches et peux se rendre indétectable. \
+`Kurandara` : puissant démon membre de la cabale. \
 `Dao` : djiin membre de la cabale. complote contre l'empire de léonis. \
-`Flaming` : oni membre de la cabale. \
+`Flaming` : oni membre de la cabale. se bat avec une bannière capable de générer des pions. chaque pion agit automatiquement avec un rôle prédefini. \
+`Oneiros` : centaure maniant les illusions. crée une fumée capable de modifier la perception de la réalité. tuera orion pour regrouper les rebelles centaures sous sa propre coupe. \
 `Tourmaline` : démon ancien membre de la cabale, rival de kurandara. \
-`Yao Guai` : possible recrue de la cabale, sera tué avant par le héros et considéré comme un echec par le reste du groupe.
+`Yao Guai` : avien à la tête d'une armée, fera un coup d'état contre l'empereur Liang. possible recrue de la cabale, sera tué avant par le héros et considéré comme un echec par le reste du groupe.
 
 ## Autre
 
