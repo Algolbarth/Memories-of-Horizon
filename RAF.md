@@ -76,46 +76,46 @@ Polissage : augmente la défense d'une créature alliée sur le terrain équipé
 *Ajouter l'intensité et corriger les haches* \
 *Fusionner les chevaliers monté et non monté* \
 *Corriger les effets de transformation* \
-Maléfice : transforme une créatur adverse sur le terrain en Grenouille \
-Tour d'archer \
-Tour de guet \
-Cibler \
-Puit de mana \
-General \
-Menace \
-Charisme \
-Epouventail \
-Bouclier de roche \
-Bière \
-Tournée générale \
-Soldat nain \
+Maléfice : transforme une créature adverse sur le terrain en Grenouille \
+Grenouille : créature, au début d'une phase de préparation : se place dans la main. \
+Tour d'archer : bâtiment, au début de la phase de préparation : créé flèche en bois dans la main. \
+Tour de guet : bâtiment, au début de la phase de préparation : créé cibler dans la main.\
+Cibler : action, augmente la protection d'une unité adverse sur le terrain. \
+Puit de mana : bâtiment, au début de la phase de préparation : créé potion de mana dans la main.\
+General : créature, au début de la phase de préparation : augmente l'attaque et la vie de toutes les créatures alliées sur le terrain. \
+Menace : action, augmente la protection d'une créature sur le terrain. \
+Charisme : action, augmente selon sa protection l'attaque et la défense d'une créature alliée sur le terrain. \
+Epouventail : bâtiment, protection 2. \
+Bouclier de roche : objet équipement, augmente la défense de la créature équipée. quand la créature équipée est attaquée : augmente la défense de la créature équipée. \
+Bière : objet nourriture : soigne ou augmente la jauge critique d'une créature alliée sur le terrain.  \
+Tournée générale : action nourriture : créée Bière dans la main autant de fois qu'il y des créatures alliées sur le terrain. \
+Garnison des monts : bâtiment nain : au début de la phase de préparation : créé Soldat nain sur le terrain. \
+Soldat nain : créature nain : quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
 Garde nain \
 Chevalier noir \
-Chavlier noir (monté) \
+Chevalier noir (monté) \
 Ecuyer \
 Chevalier géant (monté) \
-Grenouille \
-Rapière \
 Ville des géants \
-Inondation \
+Inondation : action, détruis un bâtiment adverse sur le terrain.  \
 Hydratation \
 Milieu aquatique \
-Sang chaud \
-Cautériser \
-Ruée \
-Cascade \
-Fontaine \
-Puit \
-Blason \
-Garnison des monts \
-Lance de fer \
-Trident \
+Rapière \
+Sang chaud : remplis la jauge critique d'une créature alliée sur le terrain. \
+Cautériser : action, fixe la vie max d'une créature adverse sur le terrain à sa vie restante. \
+Ruée : action, augmente la vitesse de toutes les créatures alliées sur le terrain pendant cette étape. \
+Cascade : bâtiment, quand une carte Eau est posée : produis de l'eau. \
+Fontaine : bâtiment, quand une carte Eau est posée : produis de l'or. \
+Puit : bâtiment, quand une carte Eau est posée : pioche une carte. \
+Blason : objet, augmente la défense de toutes les créatures alliées sur le terrain. \
+Lance de fer : objet équipement, augmente la percée de la créature équipée. \
+Trident : objet équipement, augmente la percée de la créature équipée. quand la créature équipée tue une unité : stocke de l'eau en réserve. \
+Piquier gobelin \
 Baliste \
 Catapulte \
 Tour de siège \
 Defrichage \
-Désarmer \
-Piquier gobelin
+Désarmer
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
