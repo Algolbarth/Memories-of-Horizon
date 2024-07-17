@@ -100,7 +100,7 @@ Ville des géants \
 Inondation : action, détruis un bâtiment adverse sur le terrain.  \
 Hydratation \
 Milieu aquatique \
-Rapière \
+Rapière : objet equipement, au debut de la phase de combat : remplis la jauge critique de la créature équipée. \
 Sang chaud : remplis la jauge critique d'une créature alliée sur le terrain. \
 Cautériser : action, fixe la vie max d'une créature adverse sur le terrain à sa vie restante. \
 Ruée : action, augmente la vitesse de toutes les créatures alliées sur le terrain pendant cette étape. \
