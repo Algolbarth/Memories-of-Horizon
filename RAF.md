@@ -89,7 +89,7 @@ Epouventail : bâtiment, protection 2. \
 Bouclier de roche : objet équipement, augmente la défense de la créature équipée. quand la créature équipée est attaquée : augmente la défense de la créature équipée. \
 Bière : objet nourriture : soigne ou augmente la jauge critique d'une créature alliée sur le terrain.  \
 Tournée générale : action nourriture : créée Bière dans la main autant de fois qu'il y des créatures alliées sur le terrain. \
-Garnison des monts : bâtiment nain : au début de la phase de préparation : créé Soldat nain sur le terrain. \
+Garnison des monts : bâtiment nain : au début d'un tour de combat : créé Soldat nain sur le terrain. \
 Soldat nain : créature nain : quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
 Garde nain \
 Chevalier noir \
@@ -115,7 +115,9 @@ Baliste \
 Catapulte \
 Tour de siège \
 Defrichage \
-Désarmer
+Désarmer \
+Brique \
+Mue
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -131,6 +133,7 @@ Wyverne rouge \
 Pyromancien : quand une carte feu est posé : augmente son attaque. \
 Baguette explosive : augmente la magie de la créature équipée. quand la créature équipée attaque : inflige autant de dégâts à l'unité attaquée que la magie de la créature équipée.
 
+Bûcheron : créature elfe, quand une unité Végétal meurt : augmente son attaque et produis du végétal. \
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
@@ -207,17 +210,20 @@ Savane : lieu pour les cartes d'élement Feu et Végétal.
 
 Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
 
-Aarakocra : quand posé : pioche une carte. \
+Sylphe : quand posé : pioche une carte. \
 Griffon : quand posé : augmente son attaque et sa vie suivant le niveau de la boutique. \
 Aigle \
+Envol : action, applique esquive à une créature alliée sur le terrain. \
+Archer sylphe : créature, portée. \
 Aéromancien : quand une carte d'élément Air est posé : diminue le cout d'amélioration de la boutique. \
 Mage des airs \
-Ascension : pioche une créature wyverne et change la ressource \
+Ascension : pioche une créature wyverne et change le cout en ressource en air. \
 Ile volante : lieu pour les cartes d'élement Air.
 
-Revenant \
+Revenant : \
 Squelette : 1 vie. \
 Zombie : 1 attaque. \
+Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. \
 Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente son attaque et sa vie. \
 Faucheuse \
 Fantome \
