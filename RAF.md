@@ -434,7 +434,18 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Yao Guai` : avien à la tête d'une armée, fera un coup d'état contre l'empereur Liang. possible recrue de la cabale, sera tué avant par le héros et considéré comme un echec par le reste du groupe.
 
 ## Autre
-
+`Légionnaires` : guerriers d'élite revenants, possedants un corps amélioré et entrainés depuis leurs morts. \
+`Croisée des chemins` : continent partagé par les 12 éléments à la fois sur l'ensemble du territoire. instable, le relief change sans cesse et seuls des aventuriers et des scientifiques s'y risquent. \
+`Cheonpung` : général capable d'appliquer des phrases sur des objets ou individus et de les faire réalité. \
+`Rihaku` : dieu de la poésie. muet, la moindre de ses paroles influence son environnement proche. \
+`Borgne` : revenant ayant perdu son oeil droit, général à l'armure de rhinocéros. \
+`Tou` : guerrier humain d'élite de l'empire. utilise une épée et un bouclier. plutôt discret. \
+`Shibasho` : combattant haut elfe. blond avec de grandes boucles. utilise une double lame et un large bouclier. \
+`Gyoun` : guerrier d'élite elfe, surnomme le colosse de jade. \
+`Go Houmei` : archonte naine, connue pour son génie tactique lors de siège. surnommée la reine des tours. \
+`Ordo` : goliath utilisant une lance et une épée. utilise un mécanisme en glace (similaire à une moto) pour se déplacer. \
+`Kouen` : avien parmis les meilleurs archers de l'horizon. utilise ses flèches pour communiquer avec ses alliés. \
+`Ouquidekin` : grand guerrier alishtar. communique avec l'esprit de sa femme. \
 `Bombay` : djinn chat dieu des rêves. Il a l'apparence de l'hypnomiaou dark dans sw. \
 `Déesse de la loi` : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche). Si la règle est un droit lors c un buff, si la règle est un devoir alors c une obligation, si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. A l'apparence d'Amitus. \
 `Manx` : dieu chat, gardien de la citadelle impérialle. Peux "garder" un territoire. Il est présent à tout endroit de ce territoire. Plus le territoire est petit plus il gagne en force mais perd en contrôle.  \
