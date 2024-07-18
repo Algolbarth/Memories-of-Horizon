@@ -45,7 +45,9 @@ Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage : augmente la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
-Heaume de fer : au début de la phase de préparation : fixe la garde de la créature équipée.
+Heaume de fer : au début de la phase de préparation : fixe la garde de la créature équipée. \
+Cotte de maille : augmente l'endurance de la créature équipée. \
+Cape de cuir
 
 *Revoir les potions* \
 *Chaque potion a 5 compteurs quand créée* \
@@ -53,20 +55,22 @@ Heaume de fer : au début de la phase de préparation : fixe la garde de la cré
 *Potion de mana : Produis 1 Mana pour chaque compteur* \
 Potion de force \
 Potion d'endurance \
-Concoction : applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
-Mélange : détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
-Alchimiste : quand posé : pioche 2 objets potion.
+Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
+Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
+Alchimiste : créature, quand posé : pioche 2 objets potion.
 
 *Ajouter l'effet d'être ciblé par une carte*
-Restaurant : quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
+Restaurant : bâtiment, quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
 Biscuit : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, crée Biscuit sur le terrain. \
 Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, augmente son attaque et sa vie à la place. \
-Bonhomme biscuit : quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
+Bonhomme biscuit : créature nourriture, quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
 
-Cheval de guerre : quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
+Cheval de guerre : créature, quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
-Aiguisage : augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
-Polissage : augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape.
+Aiguisage : action, augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
+Polissage : action, augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape. \
+Vague de soin : action, soigne toutes les créatures alliées sur le terrain. \
+Repos : action, place dans la boutique une créature alliée sur le terrain et la soigne totalement.
 
 *Afficher l'intelligence en option* \
 *Régler le son en option* \
@@ -117,7 +121,10 @@ Tour de siège \
 Defrichage \
 Désarmer \
 Brique \
-Mue
+Mue \
+Brise garde \
+Parade \
+Blocage
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -185,10 +192,12 @@ Wyverne terrestre \
 Géomancien : quand une carte alliée Terre est posée : augmente sa défense.
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
+Epée flammes toxiques \
 Plage : lieu pour les cartes d'élement Eau et Feu.
 
 Pillard du désert : quand se fait attaquer, augmente son attaque. Quand attaque, augmente sa défense. \
 Ver des sables \
+Elementaire de sable \
 Désert : lieu pour les cartes d'élement Feu et Terre.
 
 Tortue terrestre \
@@ -210,24 +219,24 @@ Savane : lieu pour les cartes d'élement Feu et Végétal.
 
 Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
 
-Sylphe : quand posé : pioche une carte. \
+Sylphe : quand arrive sur le terrain : pioche une carte. \
 Griffon : quand posé : augmente son attaque et sa vie suivant le niveau de la boutique. \
 Aigle \
-Envol : action, applique esquive à une créature alliée sur le terrain. \
+Envol : action, applique esquive à une créature Air alliée sur le terrain. \
 Archer sylphe : créature, portée. \
-Aéromancien : quand une carte d'élément Air est posé : diminue le cout d'amélioration de la boutique. \
+Aéromancien : quand une carte Air est posé : diminue le cout d'amélioration de la boutique. \
 Mage des airs \
-Ascension : pioche une créature wyverne et change le cout en ressource en air. \
+Ascension : pioche une créature wyverne et change son cout en ressource en air. \
 Ile volante : lieu pour les cartes d'élement Air.
 
-Revenant : \
+Revenant \
 Squelette : 1 vie. \
 Zombie : 1 attaque. \
-Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. \
+Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. sorcellerie : la soigne complétement. \
 Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente son attaque et sa vie. \
 Faucheuse \
-Fantome \
-Rat \
+Fantome : créature, éphèmère. \
+Rat : créature, quand attaque : applique maladie à la créature attaquée. \
 Hyène \
 Araignée \
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain. \
@@ -237,32 +246,34 @@ Nécromancien : quand une carte alliée Mort est posée : crée Squelette sur le
 Mage des morts \
 Cimetière : lieu pour les cartes d'élément Mort.
 
-Satyre \
-Eclair : inflige des dégâts à l'unité adverse la plus en avant. \
+Satyre : quand arrive sur le terrain : augmente son attaque et sa vie pendant cette étape. \
+Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain. \
+Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.\
 Bottes d'éclair : objet équipement, augmente la vitesse de la créature équipée. \
 Lames d'éclairs : objet équipement, augmente le multicoup de la créature équipée. \
-Chaînes d'éclairs \
-Centaure \
+Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures. \
+Centaure : créature, vitesse. \
 Cyclope \
 Wyverne de foudre \
 Mage de foudre \
-Electromancien : quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
+Electromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
 Plateau : lieu pour les cartes d'élément Foudre.
 
 Gnome \
 Automate \
 Wyverne d'acier \
 Mage des métaux \
-Metallomancien : quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
+Metallomancien : créature, quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
 Mines : lieu pour les cartes d'élement Métal.
 
-Aasimar : régénération. \
-Nova sacrée : inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain. \
+Aasimar : créature, régénération. \
+Rayon de lumière : action, inflige des dégâts à une créature adverse sur le terrain OU soigne une créature alliée sur le terrain. \
+Nova sacrée : action, inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain. \
 Fidèle \
-Prière : pioche des cartes OU soigne une créature alliée sur le terrain. \
-Cierge : pioche des cartes OU produis de la lumière. \
-Paladin : garde. \
-Luxomancien : quand une carte alliée Lumière est posée : . \
+Prière : action, pioche des cartes OU soigne une créature alliée sur le terrain. \
+Cierge : objet, pioche des cartes OU produis de la lumière. \
+Paladin : créature, garde. \
+Luxomancien : créature, quand une carte alliée Lumière est posée : . \
 Wyverne blanche \
 Mage de lumière \
 Terre sacrée : lieu pour les cartes d'élément Lumière.
