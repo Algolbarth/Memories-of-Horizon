@@ -198,13 +198,19 @@ Plage : lieu pour les cartes d'élement Eau et Feu.
 Pillard du désert : quand se fait attaquer, augmente son attaque. Quand attaque, augmente sa défense. \
 Ver des sables \
 Elementaire de sable \
+Golem de lave \
 Désert : lieu pour les cartes d'élement Feu et Terre.
 
 Tortue terrestre \
-Barrage
+Barrage \
+Golem de boue
 
-Dinosaure \
-Blaireau \
+Tyranosaure \
+Brachiosaure \
+Vélociraptor \
+Stégosaure \
+Blaireau : créature, bête : quand joue, si camouflé : s'applique paralysie et augmente son attaque et sa vie. \
+Terrier : bâtiment, bête : applique camouflage à la créature bête alliée sur le terrain la plus en avant qui ne possède pas camouflage. \
 Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 
 Élémentaire d'algue \
@@ -215,6 +221,8 @@ Lézard : quand meurt : ajoute une Queue de lézard dans la main. \
 Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main. \
 Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main. \
 Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain. \
+Cactus \
+Buisson ardent \
 Savane : lieu pour les cartes d'élement Feu et Végétal.
 
 Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
@@ -226,23 +234,34 @@ Envol : action, applique esquive à une créature Air alliée sur le terrain. \
 Archer sylphe : créature, portée. \
 Aéromancien : quand une carte Air est posé : diminue le cout d'amélioration de la boutique. \
 Mage des airs \
+Hibours : créature bête oiseau \
 Ascension : pioche une créature wyverne et change son cout en ressource en air. \
 Ile volante : lieu pour les cartes d'élement Air.
 
 Revenant \
+Légionnaire \
 Squelette : 1 vie. \
+Chevalier squelette \
+Garde squelette \
+Squelette mage \
+Serpent squelette \
+Cheval squelette \
 Zombie : 1 attaque. \
+Zombie recousu : créature, régénération. \
 Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. sorcellerie : la soigne complétement. \
 Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente son attaque et sa vie. \
 Faucheuse \
 Fantome : créature, éphèmère. \
 Rat : créature, quand attaque : applique maladie à la créature attaquée. \
+Zombie épidémique : créature, quand attaqué : applique maladie à la créature attaquante. \
 Hyène \
 Araignée \
+Mère pondeuse \
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain. \
 Wyverne zombie \
 Wyverne squelette : quand une créature alliée meurt : diminue son cout de 5. \
 Nécromancien : quand une carte alliée Mort est posée : crée Squelette sur le terrain. \
+Nécromage \
 Mage des morts \
 Cimetière : lieu pour les cartes d'élément Mort.
 
@@ -304,10 +323,26 @@ Enfers : lieu pour les cartes d'élement Feu et Mort.
 Ange \
 Paradis : lieu pour les cartes d'élement Air et Lumière.
 
+Dragon \
+Dragonnet \
+Vieux dragon \
+Dragon planeur \
+Dragon souffle explosif \
+Dragon gardien \
+Phoenix \
+Aigle de feu \
+Cimes volcaniques
+
+Champignon \
+Homme champignon \
+Foret noire
+
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
 Glacier : lieu pour les cartes d'élement Glace et Terre.
 
 Banquise : lieu pour les cartes d'élement Glace et Eau.
+
+Armure possédé
 
 # Boss
 
