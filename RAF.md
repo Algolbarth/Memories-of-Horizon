@@ -203,7 +203,7 @@ Wyverne terrestre \
 Géomancien : quand une carte alliée Terre est posée : augmente sa défense.
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
-Epée flammes toxiques \
+Epée des flammes toxiques \
 Plage : lieu pour les cartes d'élement Eau et Feu.
 
 Pillard du désert : quand se fait attaquer, augmente son attaque. Quand attaque, augmente sa défense. \
