@@ -70,7 +70,18 @@ Bâton de druide :  objet équipement, au début de la phase de préparation et 
 Aiguisage : action, augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
 Polissage : action, augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape. \
 Vague de soin : action, soigne toutes les créatures alliées sur le terrain. \
-Repos : action, place dans la boutique une créature alliée sur le terrain et la soigne totalement.
+Repos : action, place dans la boutique une créature alliée sur le terrain et la soigne totalement. \
+Barde : créature, quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape. \
+Danseuse : créature, quand arrive sur le terrain : esquive. \
+Mouton : créature bête, endurance. \
+Mouton laineux : créature bête, quand arrive sur le terrain : crée Laine dans la main. \
+Mouton cornu : créature bête, charge et endurance. \
+Berger : créature humain, quand joue : crée Mouton sur le terrain. \
+Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain. \
+Gladiateur : créature humain. \
+Armagicien : créature humain, magie. \
+Sage : créature humain, au début de la phase de préparation : augmente son intelligence. \
+Célebrité : créature humain, au début de la phase de préparation : produis autant d'or que de créature alliée sur le terrain.
 
 *Afficher l'intelligence en option* \
 *Régler le son en option* \
