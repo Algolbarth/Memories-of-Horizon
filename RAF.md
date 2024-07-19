@@ -308,6 +308,7 @@ Caverne : lieu pour les cartes d'élément Ombre.
 
 Goliath : résistance. \
 Jarl \
+Stalactites \
 Nova de glace \
 Berserker \
 Ours des neiges \
