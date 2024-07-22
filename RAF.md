@@ -105,16 +105,16 @@ Bouclier de roche : objet équipement, augmente la défense de la créature équ
 Bière : objet nourriture : soigne ou augmente la jauge critique d'une créature alliée sur le terrain.  \
 Tournée générale : action nourriture : créée Bière dans la main autant de fois qu'il y des créatures alliées sur le terrain. \
 Garnison des monts : bâtiment nain : au début d'un tour de combat : créé Soldat nain sur le terrain. \
-Soldat nain : créature nain : quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
-Garde nain \
-Chevalier noir \
-Chevalier noir (monté) \
-Ecuyer \
-Chevalier géant (monté) \
-Ville des géants \
-Inondation : action, détruis un bâtiment adverse sur le terrain.  \
-Hydratation \
-Milieu aquatique \
+Soldat nain : créature nain, quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
+Garde nain : créature nain, quand un bâtiment alliée est posé : augmente sa vie. \
+Chevalier noir : créature humain chevalier, quand meurt : dépense 20 or, fixe sa vie à 1 et reste sur le terrain. \
+Chevalier noir (monté) : créature humain chevalier, quand posé : inflige autant de dégâts que possible à une unité adverse et dépense autant d'or. Quand meurt : se tranforme en Chevalier noir. \
+Ecuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
+Chevalier géant (monté) : créature géant chevalier, quand meurt : se transforme en Chevalier géant. \
+Ville des géants : lieu pour les cartes de niveau égal ou supérieur à 5. \
+Inondation : action, détruis un bâtiment adverse sur le terrain. \
+Hydratation : action, augmente l'attaque et la vie d'une créature Eau alliée sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
+Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatues Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
 Rapière : objet equipement, au debut de la phase de combat : remplis la jauge critique de la créature équipée. \
 Sang chaud : remplis la jauge critique d'une créature alliée sur le terrain. \
 Cautériser : action, fixe la vie max d'une créature adverse sur le terrain à sa vie restante. \
@@ -125,17 +125,17 @@ Puit : bâtiment, quand une carte Eau est posée : pioche une carte. \
 Blason : objet, augmente la défense de toutes les créatures alliées sur le terrain. \
 Lance de fer : objet équipement, augmente la percée de la créature équipée. \
 Trident : objet équipement, augmente la percée de la créature équipée. quand la créature équipée tue une unité : stocke de l'eau en réserve. \
-Piquier gobelin \
-Baliste \
-Catapulte \
-Tour de siège \
-Defrichage \
-Désarmer \
-Brique \
-Mue \
-Brise garde \
-Parade \
-Blocage
+Piquier gobelin : créature gobelin, percée. \
+Baliste : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
+Catapulte : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
+Tour de siège : bâtiment, au début d'un tour de combat : augmente l'attaque et la vie de la créature alliée la plus en avant sur le terrain. \
+Defrichage : action, augmente la taille du terrain. \
+Désarmer : action, détruis tous les équipements d'uné créature adverse sur le terrain.  \
+Brique : objet, soigne un bâtiment allié sur le terrain OU inflige des dégâts à une créature adverse sur le terrain. \
+Mue : action, augmente la vie maximale d'une créature de famille Reptile alliée sur le terrain. \
+Brise garde : action, fixe à 0 la garde d'une créature adverse sur le terrain. \
+Parade : action \
+Blocage : action
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -157,6 +157,7 @@ Dague empoisonnée : quand la créature équipée attaque : empoisonne la créat
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain. \
 Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisament de poison sur elle. \
+Vipère : créature reptile, quand attaque : empoisonne la créature équipée. \
 Plante vénéneuse : créature plante, empoisonne quand attaque. \
 Rose : bâtiment épine, quand arrive sur le terrain : crée Spores dans la main. \
 Plante carnivore : créature plante. \
@@ -177,7 +178,7 @@ Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
 Vague déferlante : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
 Raz de marée : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
-Bouée : ajoute l'élement Eau à la créature équipée.\
+Bouée : ajoute l'élement Eau à la créature équipée. \
 Garde Côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
 Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
@@ -343,23 +344,24 @@ Dragon souffle explosif \
 Dragon gardien \
 Phoenix \
 Aigle de feu \
-Cimes volcaniques
+Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 
 Champignon \
 Homme champignon \
-Foret noire
+Foret noire : lieu pour les cartes d'élément Végétal et Ombre.
 
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
 Glacier : lieu pour les cartes d'élement Glace et Terre.
 
 Banquise : lieu pour les cartes d'élement Glace et Eau.
 
-Armure possédé
+Armure possédée
+
+Oiseau floral : créature oiseau plante.
 
 # Boss
 
 Zenoh : boss de niv 2, quand attaque gagne autant d'attaque que d'or et quand tue produis autant d'or que de vie \
-Kanki : boss de niv 4, quand une unité adverse meurt : crée un bandit, quand une unité allié meurt : produis de l'or, quand joue : dépense de l'or pour améliorer les bandits \
 Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : attaque, objet : vie) \
 Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'attaque des cavaliers, quand un cavalier attaque : augmente la vie de gyoun
 
