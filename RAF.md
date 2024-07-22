@@ -292,6 +292,7 @@ Plateau : lieu pour les cartes d'élément Foudre.
 
 Gnome \
 Automate \
+Automate armé: maniement 4. \
 Wyverne d'acier \
 Mage des métaux \
 Metallomancien : créature, quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
