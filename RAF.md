@@ -179,7 +179,7 @@ Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 Vague déferlante : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
 Raz de marée : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
 Bouée : ajoute l'élement Eau à la créature équipée. \
-Garde Côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
+Garde côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
 Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
 Baguette des marées : augmente la magie de la créature équipée. quand la créature équipée joue : stocke de l'eau en réserve. \
@@ -205,9 +205,13 @@ Géomancien : quand une carte alliée Terre est posée : augmente sa défense.
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
 Epée des flammes toxiques \
+Salamandre d'acide \
+Salamandre fumante \
+Grande salamandre \
+Souffle de flammes toxiques \
 Plage : lieu pour les cartes d'élement Eau et Feu.
 
-Pillard du désert : quand se fait attaquer, augmente son attaque. Quand attaque, augmente sa défense. \
+Pillard du désert : quand se fait attaquer : augmente son attaque. Quand attaque : augmente sa défense. \
 Ver des sables \
 Elementaire de sable \
 Golem de lave \
@@ -240,10 +244,12 @@ Savane : lieu pour les cartes d'élement Feu et Végétal.
 Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
 
 Sylphe : quand arrive sur le terrain : pioche une carte. \
+Sylphe : quand attaque : pioche une carte et la verrouille. \
+Sylphe : quand attaque : augmente son esquive. \
+Archer sylphe : créature, portée. \
 Griffon : quand posé : augmente son attaque et sa vie suivant le niveau de la boutique. \
 Aigle \
 Envol : action, applique esquive à une créature Air alliée sur le terrain. \
-Archer sylphe : créature, portée. \
 Aéromancien : quand une carte Air est posé : diminue le cout d'amélioration de la boutique. \
 Mage des airs \
 Hibours : créature bête oiseau \
@@ -278,21 +284,31 @@ Mage des morts \
 Cimetière : lieu pour les cartes d'élément Mort.
 
 Satyre : quand arrive sur le terrain : augmente son attaque et sa vie pendant cette étape. \
+Acolyte satyre : quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape. \
+Barde satyre : quand posé : augmente l'attaque et la vie de toutes les créatues alliées sur le terrain pendant cette étape. \
 Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain. \
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.\
+Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures. \
 Bottes d'éclair : objet équipement, augmente la vitesse de la créature équipée. \
 Lames d'éclairs : objet équipement, augmente le multicoup de la créature équipée. \
-Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures. \
+Lances de foudre : objet équipement, augmente l'attaque de la créature équipée selon sa vitesse. \
 Centaure : créature, vitesse. \
+Meneur centaure : créature, quand posé : augmente la vitesse de toutes les créatures alliées sur le terrain. \
+Chasseur centaure : créature, quand attaque : inflige autant de dégâts que sa vitesse à la créature attaquée. \
+Rabatteur centaure : créature, quand posé : augmente la vitesse d'une créature alliée sur le terrain. \
 Cyclope \
 Wyverne de foudre \
 Mage de foudre \
 Electromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
 Plateau : lieu pour les cartes d'élément Foudre.
 
-Gnome \
-Automate \
-Automate armé: maniement 4. \
+Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain. \
+Mini automate : créature machine. \
+Ingénieur : créature, augmente l'attaque et la vie d'une créature de famille machine alliée sur le terrain. \
+Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduis son cout de 10 or. \
+Automate : créature machine, maniement 1. \
+Automate armé : créature machine, maniement 4. \
+Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain. \
 Wyverne d'acier \
 Mage des métaux \
 Metallomancien : créature, quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
