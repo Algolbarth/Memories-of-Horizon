@@ -483,11 +483,14 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Medox` : dieu chien, gardien de l'empire. Peux "garder" un territoire. Il peux se déplacer instantannement au sien de ce territoire. Sa force est proportionelle à la taille de ce territoire. \
 `Mania` : golem géant (le géant de mha). \
 `Kotor` : archidémon chevalier du chaos, a affronté et tué l'empereur barbare. \
-`Gael` : né d'un ange et d'un démon, mi-géant difforme mais sage et surpuissant, il ère dans l'horizon en quête d'un adversaire philosophique. \
+`Gael` : né d'un ange et d'un démon, géant difforme mais sage et surpuissant, il ère dans l'horizon en quête d'un adversaire philosophique. \
 `Algolbarth` : drow allié au néant, il porte une cape qui le recouvre entièrement. garde sa propre conscience mais peux contrôler aux créatures du néant. ne montre jamais son véritable corps, jeune et beau. est le seul à maitriser la synthèse, technique utilisant tous les éléments pour fusionner n'importe quel élément afin de créer un nouveau, indépendant des anciens. peux par exemple fusionner deux créatures pour en faire apparaitre une nouvelle, fusionner des soldats ou créatures du néant avec l'environnement ou des armes, fusionner deux espaces ou dimensions afin de créer un portail, fusionner deux moments proches pour "couper" le temps (comme diavolo dans jojo). a l'apparence de myst vearn. \
-`Yotanwa` : reine des barbares. une des meilleures cavalière de l'horizon.\
+`Yotanwa` : reine des barbares. une des meilleures cavalière de l'horizon. \
+`Rokyokou` : cavalier avec un casque de lion. cavalier le plus courageux, comparé à Akou. \
+`Onimusha` : gobelin cavalier utilisant une lance de souffre. peux créer des explosions en mélangeant de la poudre à ses flammes. \
+`Ordo` : goliath cavalier et chef de guerre. roi d'une montagne de yéti. \
 `Belagor` : drow avec un masque doré dieu des complots. A l'apparence de Phenax dans mtg. Détecte n'importe quel mensonge et peux les sanctionner suivant l'ampleur du mensonge.  \
-`Balor` : archidémon dragon, plus puissante créature connue des enfers. \
-`Amelia` : archange, plus puissante créature connue au paradis. \
+`Balor` : archidémon dragon, plus puissante créature connue des enfers. ses flammes ignorent toutes capacités, éléments ou magie. \
+`Amelia` : archange, plus puissante créature connue au paradis. se renforce et réssucite pour chaque personne ressentant de l'amour. \
 `Ogre pirate` : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken. \
 `Morrigan` : revenante capable de se changer en fantôme. contrairement aux autres fantôme elle peux agir rapidement pour frapper à l'intérieur de sa cible. ressemble à l'eneripsa dephasage.
