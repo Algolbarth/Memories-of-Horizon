@@ -464,7 +464,25 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Tourmaline` : démon ancien membre de la cabale, rival de kurandara. \
 `Yao Guai` : avien à la tête d'une armée, fera un coup d'état contre l'empereur Liang. possible recrue de la cabale, sera tué avant par le héros et considéré comme un echec par le reste du groupe.
 
+## Guerre en Morte-Terres
+
+`Zodd` : né-mort (mort avant de naitre donc revenant dès la naissance) devenu dieu de l'immunité. devenu guerrier puis seigneur de guerre, il fondera les morte-terres au nord de l'empire avec son armée. \
+`Centurions` : guerriers d'élite des morte-terres et formant l'armée personnelle du général Zodd. doit être général de l'armée des morts depuis 100 ans pour en devenir un. \
+`Brimaz` : seul centurion resté général malgré son ancienneté, nommé maréchal des morts. homme-lion revenant ayant maitrisé l'arcane du sang de pierre. \
+`Lokiasse` : surnommé l'imposteur, drow revenant centurion. est accompagné d'un serpent enroulé autour de lui. ses capacités de tromperie fonctionnent en deux temps : \
+  - les adversaires ne peuvent pas prédire les mouvements du serpent. \
+  - les actions de lokiasse sont toujours prévisibles mais impossibles à bloquer. \
+`Saintclair` : elfe centurion maitrisant les végétaux morts. \
+`Dents jaunes` : revenant centurion avec des dents en or. se véritable apparence est un monstre aveugle doté de nombreuses machoires. \
+`Hecate` : ancienne servante de Drenza devenue centurion. peux annuler toutes les fonctions élémentaires autour d'elle. ne veux pas se mêler de la guerre entre l'empereur et zodd.
+
+`Victoria` : aalistar générale de l'empire qui a capturé drenza. veux retrouver hécate. peux forger des armes avec la lumière. \
+`Milen Kuva` : dieu des maitres d'armes, créateur de la tour de milen kuva. a formé alexei avant qu'il ne devienne empereur. \
+`Cristal` : nomade du désert gravement malade manipulant l'eau et la lumière. \
+`John` : gnome manipulant le mercure liquide.
+
 ## Autre
+
 `Légionnaires` : guerriers d'élite revenants, possedants un corps amélioré et entrainés depuis leurs morts. \
 `Croisée des chemins` : continent partagé par les 12 éléments à la fois sur l'ensemble du territoire. instable, le relief change sans cesse et seuls des aventuriers et des scientifiques s'y risquent. \
 `Cheonpung` : général capable d'appliquer des phrases sur des objets ou individus et de les faire réalité. \
