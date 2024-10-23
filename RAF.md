@@ -489,6 +489,7 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Rokyokou` : cavalier avec un casque de lion. cavalier le plus courageux, comparé à Akou. \
 `Onimusha` : gobelin cavalier utilisant une lance de souffre. peux créer des explosions en mélangeant de la poudre à ses flammes. \
 `Ordo` : goliath cavalier et chef de guerre. roi d'une montagne de yéti. \
+`Borgne` : chef de guerre ayant perdu son oeil droit. \
 `Belagor` : drow avec un masque doré dieu des complots. A l'apparence de Phenax dans mtg. Détecte n'importe quel mensonge et peux les sanctionner suivant l'ampleur du mensonge.  \
 `Balor` : archidémon dragon, plus puissante créature connue des enfers. ses flammes ignorent toutes capacités, éléments ou magie. \
 `Amelia` : archange, plus puissante créature connue au paradis. se renforce et réssucite pour chaque personne ressentant de l'amour. \
