@@ -134,8 +134,8 @@ Désarmer : action, détruis tous les équipements d'uné créature adverse sur 
 Brique : objet, soigne un bâtiment allié sur le terrain OU inflige des dégâts à une créature adverse sur le terrain. \
 Mue : action, augmente la vie maximale d'une créature de famille Reptile alliée sur le terrain. \
 Brise garde : action, fixe à 0 la garde d'une créature adverse sur le terrain. \
-Parade : action, augmente l'esquive \
-Blocage : action, augmente la défense et la garde
+Parade : action, augmente l'esquive. \
+Blocage : action, augmente la défense et la garde.
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
