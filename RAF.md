@@ -253,7 +253,7 @@ Envol : action, applique esquive à une créature Air alliée sur le terrain. \
 Aéromancien : quand une carte Air est posé : diminue le cout d'amélioration de la boutique. \
 Mage des airs \
 Hibours : créature bête oiseau \
-Ascension : pioche une créature wyverne et change son cout en ressource en air. \
+Ascension : pioche une créature wyverne et la verrouille. \
 Ile volante : lieu pour les cartes d'élement Air.
 
 Revenant \
@@ -346,6 +346,7 @@ Wyverne des neiges \
 Toundra : lieu pour les cartes d'élement Glace.
 
 Démon \
+Diablotin \
 Pacte démoniaque \
 Epée vorpale \
 Enfers : lieu pour les cartes d'élement Feu et Mort.
@@ -360,6 +361,8 @@ Dragon planeur \
 Dragon souffle explosif \
 Dragon gardien \
 Phoenix \
+Plume de phoenix \
+Robe de phoenix \
 Aigle de feu \
 Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 
@@ -370,6 +373,7 @@ Foret noire : lieu pour les cartes d'élément Végétal et Ombre.
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
 Glacier : lieu pour les cartes d'élement Glace et Terre.
 
+Kraken \
 Banquise : lieu pour les cartes d'élement Glace et Eau.
 
 Armure possédée
