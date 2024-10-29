@@ -491,12 +491,11 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Centurions` : guerriers d'élite des morte-terres et formant l'armée personnelle du général Zodd. doit être général de l'armée des morts depuis 100 ans pour en devenir un. \
 `Brimaz` : seul centurion resté général malgré son ancienneté, nommé maréchal des morts. homme-lion revenant ayant maitrisé l'arcane du sang de pierre. \
 `Lokiasse` : surnommé l'imposteur, drow revenant centurion. est accompagné d'un serpent enroulé autour de lui. ses capacités de tromperie fonctionnent en deux temps : \
-  - les adversaires ne peuvent pas prédire les mouvements du serpent. \
-  - les actions de lokiasse sont toujours prévisibles mais impossibles à bloquer. \
+- les adversaires ne peuvent pas prédire les mouvements du serpent. \
+- les actions de lokiasse sont toujours prévisibles mais impossibles à bloquer. \
 `Saintclair` : elfe centurion maitrisant les végétaux morts. \
 `Dents jaunes` : revenant centurion avec des dents en or. se véritable apparence est un monstre aveugle doté de nombreuses machoires. \
-`Hecate` : ancienne servante de Drenza devenue centurion. peux annuler toutes les fonctions élémentaires autour d'elle. ne veux pas se mêler de la guerre entre l'empereur et zodd.
-
+`Hecate` : ancienne servante de Drenza devenue centurion. peux annuler toutes les fonctions élémentaires autour d'elle. ne veux pas se mêler de la guerre entre l'empereur et zodd. \
 `Victoria` : aalistar générale de l'empire qui a capturé drenza. veux retrouver hécate. peux forger des armes avec la lumière. \
 `Milen Kuva` : dieu des maitres d'armes, créateur de la tour de milen kuva. a formé alexei avant qu'il ne devienne empereur. \
 `Cristal` : nomade du désert gravement malade manipulant l'eau et la lumière. \
