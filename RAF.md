@@ -59,7 +59,7 @@ Concoction : objet potion, applique l'effet associé à chaque type de compteur 
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
 Alchimiste : créature, quand posé : pioche 2 objets potion.
 
-*Ajouter l'effet d'être ciblé par une carte*
+*Ajouter l'effet d'être ciblé par une carte* \
 Restaurant : bâtiment, quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
 Biscuit : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, crée Biscuit sur le terrain. \
 Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, augmente son attaque et sa vie à la place. \
