@@ -490,9 +490,10 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Zodd` : né-mort (mort avant de naitre donc revenant dès la naissance) devenu dieu de l'immunité. devenu guerrier puis seigneur de guerre, il fondera les morte-terres au nord de l'empire avec son armée. \
 `Centurions` : guerriers d'élite des morte-terres et formant l'armée personnelle du général Zodd. doit être général de l'armée des morts depuis 100 ans pour en devenir un. \
 `Brimaz` : seul centurion resté général malgré son ancienneté, nommé maréchal des morts. homme-lion revenant ayant maitrisé l'arcane du sang de pierre. \
-`Lokiasse` : surnommé l'imposteur, drow revenant centurion. est accompagné d'un serpent enroulé autour de lui. ses capacités de tromperie fonctionnent en deux temps : \
-- les adversaires ne peuvent pas prédire les mouvements du serpent. \
-- les actions de lokiasse sont toujours prévisibles mais impossibles à bloquer. \
+`Lokiasse` : surnommé l'imposteur, drow revenant centurion. est accompagné d'un serpent enroulé autour de lui. ses capacités de tromperie fonctionnent en deux temps :
+- les adversaires ne peuvent pas prédire les mouvements du serpent.
+- les actions de lokiasse sont toujours prévisibles mais impossibles à bloquer.
+
 `Saintclair` : elfe centurion maitrisant les végétaux morts. \
 `Dents jaunes` : revenant centurion avec des dents en or. se véritable apparence est un monstre aveugle doté de nombreuses machoires. \
 `Hecate` : ancienne servante de Drenza devenue centurion. peux annuler toutes les fonctions élémentaires autour d'elle. ne veux pas se mêler de la guerre entre l'empereur et zodd. \
