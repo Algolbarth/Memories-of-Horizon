@@ -394,6 +394,8 @@ Banquise : lieu pour les cartes d'élement Glace et Eau.
 
 Armure possédée
 
+Eclipse solaire : révèle toutes les cartes dans la main adverse et en détruis une.
+
 Oiseau floral : créature oiseau plante. \
 Jardin suspendu : lieu pour les cartes d'élément Végétal et Air.
 
