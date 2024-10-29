@@ -81,7 +81,13 @@ Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain
 Gladiateur : créature humain. \
 Armagicien : créature humain, magie. \
 Sage : créature humain, au début de la phase de préparation : augmente son intelligence. \
-Célebrité : créature humain, au début de la phase de préparation : produis autant d'or que de créature alliée sur le terrain.
+Célebrité : créature humain, au début de la phase de préparation : produis autant d'or que de créature alliée sur le terrain. \
+Colère : inflige autant dégâts que les blessures du meneur. \
+Envie : vole une carte dans la main adverse. \
+Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. \
+Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et la vie d'une autre créature alliée sur le terrain d'autant que la vie et l'attaque de la créature détruite. \
+Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
+Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
 
 *Afficher l'intelligence en option* \
 *Régler le son en option* \
@@ -212,6 +218,8 @@ Souffle de flammes toxiques \
 Plage : lieu pour les cartes d'élement Eau et Feu.
 
 Pillard du désert : quand se fait attaquer : augmente son attaque. Quand attaque : augmente sa défense. \
+Guerrier du désert \
+Assassin du désert \
 Ver des sables \
 Elementaire de sable \
 Golem de lave \
@@ -322,6 +330,9 @@ Prière : action, pioche des cartes OU soigne une créature alliée sur le terra
 Cierge : objet, pioche des cartes OU produis de la lumière. \
 Paladin : créature, garde. \
 Luxomancien : créature, quand une carte alliée Lumière est posée : . \
+Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégats. \
+Epée de pure lumière : objet équipement, quand la créature équipée attaque : si pas blessée alors inflige des dégats. \
+Révélations de lumière : action, révèle toutes les cartes dans la main et étourdis toutes les créatures sur le terrain. \
 Wyverne blanche \
 Mage de lumière \
 Terre sacrée : lieu pour les cartes d'élément Lumière.
@@ -356,6 +367,7 @@ Paradis : lieu pour les cartes d'élement Air et Lumière.
 
 Dragon \
 Dragonnet \
+Dragonne mère \
 Vieux dragon \
 Dragon planeur \
 Dragon souffle explosif \
@@ -364,21 +376,26 @@ Phoenix \
 Plume de phoenix \
 Robe de phoenix \
 Aigle de feu \
+Proto dragon : créature wyverne dragon \
 Cimes volcaniques : lieu pour les cartes d'élément Feu et Air.
 
 Champignon \
 Homme champignon \
+Tréant carmin \
 Foret noire : lieu pour les cartes d'élément Végétal et Ombre.
 
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
 Glacier : lieu pour les cartes d'élement Glace et Terre.
 
+Requin articque : poisson \
 Kraken \
+Tentacule \
 Banquise : lieu pour les cartes d'élement Glace et Eau.
 
 Armure possédée
 
-Oiseau floral : créature oiseau plante.
+Oiseau floral : créature oiseau plante. \
+Jardin suspendu : lieu pour les cartes d'élément Végétal et Air.
 
 # Boss
 
