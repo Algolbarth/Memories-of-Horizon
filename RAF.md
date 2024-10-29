@@ -206,7 +206,7 @@ Jet de pierre : inflige des dégats et applique paralysie à une créature adver
 Loup des montagnes \
 Taupe \
 Mage de terre \
-Wyverne terrestre \ 
+Wyverne terrestre \
 Géomancien : quand une carte alliée Terre est posée : augmente sa défense.
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
