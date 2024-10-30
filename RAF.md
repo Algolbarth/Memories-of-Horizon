@@ -1,3 +1,42 @@
+<div id="html">
+    <div id="header">Bonjour je suis un header hihihi</div>
+    <div id="body">
+        <textarea value="Bonjour je suis un textarea hihihi"></textarea>
+    </div>
+</div>
+
+<style>
+    /*en gros ça c'est ta page*/
+    div#html {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+
+        background: grey;
+    }
+
+    div#header {
+        width: 100%;
+        padding: 8px;
+        background: red;
+    }
+
+    div#body {
+        padding: 1%;
+        text-align:center;
+    }
+
+    textarea {
+        border: solid red 2px;
+        resize: none;
+        width: 98%; /*100% - 2% à cause du padding: 1% à gauche et 1% à droite*/
+        height: 80vh; /*c'est arbitraire mais tu peux le changer*/
+    }
+</style>
+
+
 # Mécaniques
 
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
