@@ -1,8 +1,3 @@
-```
-https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=f4756a0a925c36d1ec853dd0afd06e4ac52238f9
-```
-
-
 # Mécaniques
 
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
