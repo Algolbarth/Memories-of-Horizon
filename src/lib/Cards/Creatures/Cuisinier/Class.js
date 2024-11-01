@@ -9,7 +9,7 @@ export class Cuisinier extends Creature {
 
         this.init([["Or", 30]]);
         this.familles.base.push("Humain");
-        
+
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;
         this.stat("Attaque").base = 5;

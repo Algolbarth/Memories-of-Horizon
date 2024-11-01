@@ -4,10 +4,10 @@ export class Card {
     vente = [];
     elements = [];
     familles = {
-        base : [],
-        add : [],
-        step : [],
-        total :  function () {
+        base: [],
+        add: [],
+        step: [],
+        total: function () {
             let array = [];
             for (const b of this.base) {
                 array.push(b);
@@ -336,7 +336,7 @@ export class Card {
     transform = function (name) {
         let newCard = this.System.cards.getByName(name);
         this.zone.cards[this.slot] = newCard;
-        
+
         this.zone.cards[this.slot].owner = this.owner;
         this.zone.cards[this.slot].zone = this.zone;
         this.zone.cards[this.slot].slot = this.slot;

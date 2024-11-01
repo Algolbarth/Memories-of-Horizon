@@ -1,6 +1,6 @@
 <script>
-    export let System;
-    export let card;
+	export let System;
+	export let card;
 </script>
 
 Toutes les cartes sont piochables.

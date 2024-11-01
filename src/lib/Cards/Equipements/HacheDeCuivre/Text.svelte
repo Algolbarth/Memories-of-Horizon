@@ -1,8 +1,8 @@
 <script>
-    export let System;
-    export let card;
+	export let System;
+	export let card;
 </script>
 
 S'équipe sur une créature alliée sur le terrain.
-<br/>
+<br />
 Augmente de 10 l'adresse de la créature équipée.

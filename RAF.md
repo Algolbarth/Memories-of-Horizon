@@ -81,7 +81,7 @@ Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain
 Gladiateur : créature humain. \
 Armagicien : créature humain, magie. \
 Sage : créature humain, au début de la phase de préparation : augmente son intelligence. \
-Célebrité : créature humain, au début de la phase de préparation : produis autant d'or que de créature alliée sur le terrain. \
+Célébrité : créature humain, au début de la phase de préparation : produis autant d'or que de créature alliée sur le terrain. \
 Colère : inflige autant dégâts que les blessures du meneur. \
 Envie : vole une carte dans la main adverse. \
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. \
@@ -89,13 +89,7 @@ Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
 Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
 
-*Afficher l'intelligence en option* \
-*Régler le son en option* \
-*Changer la valeur de padding* \
-*Ranger les fichiers du jeu dans un dossier* \
-*Ajouter les menus de lore et de mise à jour* \
 *Ajouter l'intensité et corriger les haches* \
-*Fusionner les chevaliers monté et non monté* \
 *Corriger les effets de transformation* \
 Maléfice : transforme une créature adverse sur le terrain en Grenouille \
 Grenouille : créature, au début d'une phase de préparation : se place dans la main. \
@@ -106,7 +100,7 @@ Puit de mana : bâtiment, au début de la phase de préparation : créé potion 
 General : créature, au début de la phase de préparation : augmente l'attaque et la vie de toutes les créatures alliées sur le terrain. \
 Menace : action, augmente la protection d'une créature sur le terrain. \
 Charisme : action, augmente selon sa protection l'attaque et la défense d'une créature alliée sur le terrain. \
-Epouventail : bâtiment, protection 2. \
+Épouvantail : bâtiment, protection 2. \
 Bouclier de roche : objet équipement, augmente la défense de la créature équipée. quand la créature équipée est attaquée : augmente la défense de la créature équipée. \
 Bière : objet nourriture : soigne ou augmente la jauge critique d'une créature alliée sur le terrain.  \
 Tournée générale : action nourriture : créée Bière dans la main autant de fois qu'il y des créatures alliées sur le terrain. \
@@ -114,14 +108,13 @@ Garnison des monts : bâtiment nain : au début d'un tour de combat : créé Sol
 Soldat nain : créature nain, quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
 Garde nain : créature nain, quand un bâtiment alliée est posé : augmente sa vie. \
 Chevalier noir : créature humain chevalier, quand meurt : dépense 20 or, fixe sa vie à 1 et reste sur le terrain. \
-Chevalier noir (monté) : créature humain chevalier, quand posé : inflige autant de dégâts que possible à une unité adverse et dépense autant d'or. Quand meurt : se tranforme en Chevalier noir. \
-Ecuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
-Chevalier géant (monté) : créature géant chevalier, quand meurt : se transforme en Chevalier géant. \
+Chevalier noir (monté) : créature humain chevalier, quand posé : inflige autant de dégâts que possible à une unité adverse et dépense autant d'or. Quand meurt : se transforme en Chevalier noir. \
+Écuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
 Ville des géants : lieu pour les cartes de niveau égal ou supérieur à 5. \
 Inondation : action, détruis un bâtiment adverse sur le terrain. \
 Hydratation : action, augmente l'attaque et la vie d'une créature Eau alliée sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
-Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatues Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
-Rapière : objet equipement, au debut de la phase de combat : remplis la jauge critique de la créature équipée. \
+Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatures Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
+Rapière : objet équipement, au début de la phase de combat : remplis la jauge critique de la créature équipée. \
 Sang chaud : remplis la jauge critique d'une créature alliée sur le terrain. \
 Cautériser : action, fixe la vie max d'une créature adverse sur le terrain à sa vie restante. \
 Ruée : action, augmente la vitesse de toutes les créatures alliées sur le terrain pendant cette étape. \
@@ -135,8 +128,8 @@ Piquier gobelin : créature gobelin, percée. \
 Baliste : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
 Catapulte : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
 Tour de siège : bâtiment, au début d'un tour de combat : augmente l'attaque et la vie de la créature alliée la plus en avant sur le terrain. \
-Defrichage : action, augmente la taille du terrain. \
-Désarmer : action, détruis tous les équipements d'uné créature adverse sur le terrain.  \
+Défrichage : action, augmente la taille du terrain. \
+Désarmer : action, détruis tous les équipements d'une créature adverse sur le terrain.  \
 Brique : objet, soigne un bâtiment allié sur le terrain OU inflige des dégâts à une créature adverse sur le terrain. \
 Mue : action, augmente la vie maximale d'une créature de famille Reptile alliée sur le terrain. \
 Brise garde : action, fixe à 0 la garde d'une créature adverse sur le terrain. \
@@ -162,13 +155,13 @@ Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain. \
-Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisament de poison sur elle. \
+Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle. \
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée. \
 Plante vénéneuse : créature plante, empoisonne quand attaque. \
 Rose : bâtiment épine, quand arrive sur le terrain : crée Spores dans la main. \
 Plante carnivore : créature plante. \
 Mur de haie : bâtiment plante. \
-Écorce de treant : augmente la régénération d'une créature alliée sur le terrain. \
+Écorce de tréant : augmente la régénération d'une créature alliée sur le terrain. \
 Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération. \
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée. \
 Élémentaire de ronce \
@@ -184,7 +177,7 @@ Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
 Vague déferlante : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
 Raz de marée : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
-Bouée : ajoute l'élement Eau à la créature équipée. \
+Bouée : ajoute l'élément Eau à la créature équipée. \
 Garde côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
 Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
@@ -202,7 +195,7 @@ Sardine : créature poisson.
 Masse de pierre : augmente la charge de la créature équipée. \
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Éboulement : applique étourdissement à une créature adverse sur le terrain. \
-Jet de pierre : inflige des dégats et applique paralysie à une créature adverse sur le terrain. \
+Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. \
 Loup des montagnes \
 Taupe \
 Mage de terre \
@@ -215,7 +208,7 @@ Salamandre d'acide \
 Salamandre fumante \
 Grande salamandre \
 Souffle de flammes toxiques \
-Plage : lieu pour les cartes d'élement Eau et Feu.
+Plage : lieu pour les cartes d'élément Eau et Feu.
 
 Pillard du désert : quand se fait attaquer : augmente son attaque. Quand attaque : augmente sa défense. \
 Guerrier du désert \
@@ -223,7 +216,7 @@ Assassin du désert \
 Ver des sables \
 Elementaire de sable \
 Golem de lave \
-Désert : lieu pour les cartes d'élement Feu et Terre.
+Désert : lieu pour les cartes d'élément Feu et Terre.
 
 Tortue terrestre \
 Barrage \
@@ -239,7 +232,7 @@ Ruines antiques : lieu pour les cartes d'élément Végétal et Terre.
 
 Élémentaire d'algue \
 Castor \
-Mangroves : lieu pour les cartes d'élement Eau et Végétal.
+Mangroves : lieu pour les cartes d'élément Eau et Végétal.
 
 Lézard : quand meurt : ajoute une Queue de lézard dans la main. \
 Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans la main. \
@@ -247,9 +240,9 @@ Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main. 
 Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain. \
 Cactus \
 Buisson ardent \
-Savane : lieu pour les cartes d'élement Feu et Végétal.
+Savane : lieu pour les cartes d'élément Feu et Végétal.
 
-Jungle : lieu pour les cartes d'élement Feu, Végétal, Eau ou Terre.
+Jungle : lieu pour les cartes d'élément Feu, Végétal, Eau ou Terre.
 
 Sylphe : quand arrive sur le terrain : pioche une carte. \
 Sylphe : quand attaque : pioche une carte et la verrouille. \
@@ -258,11 +251,11 @@ Archer sylphe : créature, portée. \
 Griffon : quand posé : augmente son attaque et sa vie suivant le niveau de la boutique. \
 Aigle \
 Envol : action, applique esquive à une créature Air alliée sur le terrain. \
-Aéromancien : quand une carte Air est posé : diminue le cout d'amélioration de la boutique. \
+Aéromancien : quand une carte Air est posé : diminue le coût d'amélioration de la boutique. \
 Mage des airs \
 Hibours : créature bête oiseau \
 Ascension : pioche une créature wyverne et la verrouille. \
-Ile volante : lieu pour les cartes d'élement Air.
+Ile volante : lieu pour les cartes d'élément Air.
 
 Revenant \
 Légionnaire \
@@ -277,7 +270,7 @@ Zombie recousu : créature, régénération. \
 Réanimation : action sort, place sur le terrain une créature alliée dans la défausse. sorcellerie : la soigne complétement. \
 Ogre : quand posé : choisis une famille parmi les créatures adverses sur le terrain. quand tue une créature adverse de la famille choisie : augmente son attaque et sa vie. \
 Faucheuse \
-Fantome : créature, éphèmère. \
+Fantôme : créature, éphémère. \
 Rat : créature, quand attaque : applique maladie à la créature attaquée. \
 Zombie épidémique : créature, quand attaqué : applique maladie à la créature attaquante. \
 Hyène \
@@ -285,7 +278,7 @@ Araignée \
 Mère pondeuse \
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain. \
 Wyverne zombie \
-Wyverne squelette : quand une créature alliée meurt : diminue son cout de 5. \
+Wyverne squelette : quand une créature alliée meurt : diminue son coût de 5. \
 Nécromancien : quand une carte alliée Mort est posée : crée Squelette sur le terrain. \
 Nécromage \
 Mage des morts \
@@ -293,7 +286,7 @@ Cimetière : lieu pour les cartes d'élément Mort.
 
 Satyre : quand arrive sur le terrain : augmente son attaque et sa vie pendant cette étape. \
 Acolyte satyre : quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape. \
-Barde satyre : quand posé : augmente l'attaque et la vie de toutes les créatues alliées sur le terrain pendant cette étape. \
+Barde satyre : quand posé : augmente l'attaque et la vie de toutes les créatures alliées sur le terrain pendant cette étape. \
 Cage d'éclair : action, applique une paralysie à une créature adverse sur le terrain. \
 Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.\
 Chaînes d'éclairs : action sort, inflige des dégâts à une créature adverse sur le terrain et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures. \
@@ -313,14 +306,14 @@ Plateau : lieu pour les cartes d'élément Foudre.
 Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain. \
 Mini automate : créature machine. \
 Ingénieur : créature, augmente l'attaque et la vie d'une créature de famille machine alliée sur le terrain. \
-Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduis son cout de 10 or. \
+Forgeron gnome : créature, quand posé : pioche 1 objet équipement et réduis son coût de 10 or. \
 Automate : créature machine, maniement 1. \
 Automate armé : créature machine, maniement 4. \
 Réparation : action, soigne une créature machine ou un bâtiment allié sur le terrain. \
 Wyverne d'acier \
 Mage des métaux \
 Metallomancien : créature, quand une carte alliée Metal est posée : augmente son attaque et sa vie. \
-Mines : lieu pour les cartes d'élement Métal.
+Mines : lieu pour les cartes d'élément Métal.
 
 Aasimar : créature, régénération. \
 Rayon de lumière : action, inflige des dégâts à une créature adverse sur le terrain OU soigne une créature alliée sur le terrain. \
@@ -330,15 +323,15 @@ Prière : action, pioche des cartes OU soigne une créature alliée sur le terra
 Cierge : objet, pioche des cartes OU produis de la lumière. \
 Paladin : créature, garde. \
 Luxomancien : créature, quand une carte alliée Lumière est posée : . \
-Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégats. \
-Epée de pure lumière : objet équipement, quand la créature équipée attaque : si pas blessée alors inflige des dégats. \
+Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts. \
+Épée de pure lumière : objet équipement, quand la créature équipée attaque : si pas blessée alors inflige des dégaâts. \
 Révélations de lumière : action, révèle toutes les cartes dans la main et étourdis toutes les créatures sur le terrain. \
 Wyverne blanche \
 Mage de lumière \
 Terre sacrée : lieu pour les cartes d'élément Lumière.
 
 Drow \
-Limace : créature ombre, supprime la protection des creatures qu'elle attaque. \
+Limace : créature ombre, supprime la protection des créatures qu'elle attaque. \
 Vampire \
 Oni \
 Wyverne noire \
@@ -354,16 +347,16 @@ Berserker \
 Ours des neiges \
 Loup des neiges \
 Wyverne des neiges \
-Toundra : lieu pour les cartes d'élement Glace.
+Toundra : lieu pour les cartes d'élément Glace.
 
 Démon \
 Diablotin \
 Pacte démoniaque \
 Epée vorpale \
-Enfers : lieu pour les cartes d'élement Feu et Mort.
+Enfers : lieu pour les cartes d'élément Feu et Mort.
 
 Ange \
-Paradis : lieu pour les cartes d'élement Air et Lumière.
+Paradis : lieu pour les cartes d'élément Air et Lumière.
 
 Dragon \
 Dragonnet \
@@ -430,7 +423,7 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Ananta` : liche habitant dans les récifs noirs, une zone déserte et hostile. En cherchant à s'approprier la puissance du néant, il a été chargé de récupérer un metal précieux dans la caverne de tragoedia. En s'alliant avec le dragon ils réussissent à obtenir l'acier. En rapportant le butin aux récifs noirs, le néant forge l'acier afin de fabriquer une baguette et un casque. Ananta hérite de la baguette, le recouvrant d'une armure dès qu'il la saisit. Plus le temps passe plus la baguette peux détruire des âmes facilement. Envahit par un sentiment de puissance, d'avidité et perdant en lucidité, les deux suivront les ordres du néant demandant de détruire des îles ou tuer des dieux. En s'interposant dans un combat qui oppose Progenitus et Adama, fâchés de voir leurs semblable smourir alors que leur race est quasi immortelle et qui étaient en train de s'accuser mutuellement, ils feront face à Borealis qui les repoussera sans difficulté. Avide de se venger de lui, ils absorberont plus de puissance offert par le néant mais perdront toute trace de lucidité. Après avoir tué plusieurs dieux, une coallition se formera entre divinité et héros afin de les vaincre. Après qu'un piège ai échoué, il sera décidé de les suivre pour les attaquer aux récifs noirs. Ananta vaincra Sartorias en "duel", ainsi que Gabriela. Nana utilisera ses pouvoirs pour que ananta détruise sa propre âme. \
 `Tragoedia` : dragon corrompue par le néant. Régnait sur un volcan situé par dessus une faille du néant. Après avoir récupéré l'acier caché sous sa caverne, il a reçu le casque forgé par le néant qui recouvre tragoedia d'une épaisse armure. Plus le temps passe plus l'armure fusionne avec son porteur, devenant une seconde peau impenetrable. Ses flammes deviennent capables de détruire les âmes de n'importe qui. Lors du siège des récifs noirs, tragoedia semble intuable et détruira les flottes armées en s'amusant, ne prenant rien au sérieux. Il incinerera Carole qui tentait de soigner Gidéon. Après que ce dernier face un pacte avec Rakdos, ils attaqueront ensemble pour démolir le monstre et son armure.
 
-# Saga des gemmes de la guerre
+## Saga des gemmes de la guerre
 
 `Conseil des gemmes` : assemblée des 100 individus les plus puissants du continent. s'est opposé à l'empire et dirige le continent de manière autonome. \
 `Gaard` : membre plus puissant du conseil, très discret. \

@@ -12,11 +12,7 @@
 	};
 
 	const handleDropdownFocusLoss = ({ relatedTarget, currentTarget }) => {
-		if (
-			relatedTarget instanceof HTMLElement &&
-			currentTarget.contains(relatedTarget)
-		)
-			return;
+		if (relatedTarget instanceof HTMLElement && currentTarget.contains(relatedTarget)) return;
 		isDropdownOpen = false;
 	};
 
@@ -30,11 +26,7 @@
 <div style:height="3vh">
 	<div on:focusout={handleDropdownFocusLoss}>
 		<div>
-			<button
-				class="main"
-				style:width={width + "vw"}
-				on:click={handleDropdownClick}
-			>
+			<button class="main" style:width={width + 'vw'} on:click={handleDropdownClick}>
 				{#if selected != undefined}
 					{selected}
 				{:else}
@@ -43,11 +35,7 @@
 			</button>
 		</div>
 		{#if isDropdownOpen}
-			<div
-				class="list scroll"
-				style:width={width + "vw"}
-				style:max-height={height + "vh"}
-			>
+			<div class="list scroll" style:width={width + 'vw'} style:max-height={height + 'vh'}>
 				{#each array as element}
 					<button
 						on:click={() => {

@@ -29,7 +29,7 @@ export class Raido extends Boss {
 
     otherDieEffect = function (card) {
         if (this.zone.name == "Terrain" && card.owner != this.owner) {
-            this.owner.ressource("Or").current += card.stat("Vie").value(); 
+            this.owner.ressource("Or").current += card.stat("Vie").value();
         }
     };
 

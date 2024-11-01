@@ -1,10 +1,10 @@
-import {Objet} from '../Objet.js';
+import { Objet } from '../Objet.js';
 import Text from './Text.svelte';
 
 export class Trefle extends Objet {
     name = "Trèfle";
 
-    constructor (System) {
+    constructor(System) {
         super(System);
 
         this.init([["Or", 10], ["Végétal", 10]]);

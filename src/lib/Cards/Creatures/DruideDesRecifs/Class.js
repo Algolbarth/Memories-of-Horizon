@@ -46,7 +46,7 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
         super(System);
 
         this.familles.base.push("Ondin");
-        
+
         this.stat("Vie").base = 30;
         this.stat("Vie").current = 30;
         this.stat("Attaque").base = 30;
@@ -69,7 +69,7 @@ export class DruideDesRecifsTortue extends DruideDesRecifs {
         this.familles.base.push("Reptile");
 
         this.trait("Rare").base = true;
-        
+
         this.stat("Vie").base = 40;
         this.stat("Vie").current = 40;
         this.stat("Attaque").base = 40;

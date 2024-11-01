@@ -12,7 +12,7 @@ export class PeauDePierre extends Sort {
 
         this.text = Text;
     };
-    
+
     use = function () {
         this.select();
     };

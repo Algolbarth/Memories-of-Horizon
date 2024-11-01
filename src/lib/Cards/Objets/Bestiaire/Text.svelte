@@ -1,8 +1,8 @@
 <script>
-    export let System;
-    export let card;
+	export let System;
+	export let card;
 </script>
 
 Découvre 3 créatures.
-<br/>
+<br />
 Ruse 10 : Découvre 5 créatures à la place.

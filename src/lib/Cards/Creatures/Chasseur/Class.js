@@ -9,7 +9,7 @@ export class Chasseur extends Creature {
 
         this.init([["Or", 30]]);
         this.familles.base.push("Humain");
-        
+
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
         this.stat("Attaque").base = 10;

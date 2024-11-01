@@ -12,7 +12,7 @@ export class Lv6_Roi extends Chapter {
 
 export class Lv6_Gyoun extends Chapter {
     boss = true;
-    
+
     constructor(System, number) {
         super(System, number);
 

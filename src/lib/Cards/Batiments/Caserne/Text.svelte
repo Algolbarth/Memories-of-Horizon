@@ -1,6 +1,8 @@
 <script>
-    export let System;
-    export let card;
+	import Info from '../../Info.svelte';
+
+	export let System;
+	export let card;
 </script>
 
-Au début de la phase de préparation : crée 1 Soldat sur le terrain.
+Au début de la phase de préparation : crée 1 <Info bind:System name={"Soldat"} /> sur le terrain.

@@ -1,5 +1,5 @@
 <script>
-	import { Train } from "../lib/Training/Train.js";
+	import { Train } from '../lib/Training/Train.js';
 
 	export const System = {
 		pages: {
@@ -8,7 +8,7 @@
 			add: function (name, svelte) {
 				System.pages.list.push({
 					name: name,
-					svelte: svelte,
+					svelte: svelte
 				});
 			},
 			getByName: function (name) {
@@ -20,23 +20,23 @@
 			},
 			change: function (name) {
 				System.pages.actual = System.pages.getByName(name);
-			},
+			}
 		},
 		ressources: [
-			"Or",
-			"Feu",
-			"Eau",
-			"Terre",
-			"Air",
-			"Végétal",
-			"Mort",
-			"Metal",
-			"Arcane",
-			"Foudre",
-			"Glace",
-			"Lumière",
-			"Ombre",
-			"Mana",
+			'Or',
+			'Feu',
+			'Eau',
+			'Terre',
+			'Air',
+			'Végétal',
+			'Mort',
+			'Metal',
+			'Arcane',
+			'Foudre',
+			'Glace',
+			'Lumière',
+			'Ombre',
+			'Mana'
 		],
 		cards: {
 			class: [],
@@ -48,33 +48,35 @@
 					}
 				}
 				return undefined;
-			},
+			}
 		},
 		chapters: {
 			class: [],
 			instance: [],
 			getRandom: function (number) {
 				let level = parseInt((number - 1) / 5) + 1;
-				return new this.class[level][
-					parseInt(Math.random() * this.class[level].length)
-				](System, number);
-			},
+				return new this.class[level][parseInt(Math.random() * this.class[level].length)](
+					System,
+					number
+				);
+			}
 		},
 		bosses: {
 			class: [],
 			instance: [],
 			getRandom: function (number) {
 				let level = parseInt((number - 1) / 10) + 1;
-				return new this.class[level][
-					parseInt(Math.random() * this.class[level].length)
-				](System, number);
-			},
+				return new this.class[level][parseInt(Math.random() * this.class[level].length)](
+					System,
+					number
+				);
+			}
 		},
 		sort: {
-			levels: ["Tous"],
-			types: ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"],
-			familles: ["Toutes"],
-			elements: ["Tous"],
+			levels: ['Tous'],
+			types: ['Tous', 'Action', 'Bâtiment', 'Créature', 'Objet', 'Lieu'],
+			familles: ['Toutes'],
+			elements: ['Tous']
 		},
 		copy: function (array) {
 			let tab = [];
@@ -93,10 +95,10 @@
 			}
 		},
 		several: function (value, name) {
-			let text = "";
-			text += value + " " + name;
+			let text = '';
+			text += value + ' ' + name;
 			if (value > 1) {
-				text += "s";
+				text += 's';
 			}
 			return text;
 		},
@@ -106,14 +108,14 @@
 			reset: function () {
 				this.quick = undefined;
 				this.card = undefined;
-			},
+			}
 		},
 		decks: [],
 		train: new Train(),
 		game: undefined,
 		music: {
 			current: undefined,
-			volume: 0.5,
+			volume: 50,
 			list: [],
 			slot: 0,
 			number: 4,
@@ -125,21 +127,20 @@
 			},
 			play: function () {
 				if (this.slot < this.list.length - 1) {
-					this.current = new Audio(
-						"./Music/" + this.list[this.slot] + ".mp3",
-					);
-					this.current.addEventListener("ended", function () {
+					this.current = new Audio('./Music/' + this.list[this.slot] + '.mp3');
+					this.current.addEventListener('ended', function () {
 						this.play();
 					});
-					this.current.volume = this.volume;
+					this.current.volume = this.volume / 100;
 					this.current.play();
 					this.slot++;
 				} else {
 					this.slot = 0;
 					this.play();
 				}
-			},
+			}
 		},
+		show_intelligence: false,
 	};
 
 	for (let i = 0; i < 20; i++) {
@@ -147,14 +148,14 @@
 	}
 
 	for (const element of System.ressources) {
-		if (element == "Or") {
-			System.sort.elements.push("Neutre");
-		} else if (element != "Mana") {
+		if (element == 'Or') {
+			System.sort.elements.push('Neutre');
+		} else if (element != 'Mana') {
 			System.sort.elements.push(element);
 		}
 	}
 
-	import * as cards from "../lib/Cards";
+	import * as cards from '../lib/Cards';
 	for (const card of Object.keys(cards)) {
 		let cardClass = cards[card];
 		let cardInstance = new cardClass(System);
@@ -171,11 +172,7 @@
 
 	for (let i = 0; i < System.sort.familles.length; i++) {
 		let j = i;
-		while (
-			j > 1 &&
-			System.sort.familles[j - 1].localeCompare(System.sort.familles[j]) >
-				0
-		) {
+		while (j > 1 && System.sort.familles[j - 1].localeCompare(System.sort.familles[j]) > 0) {
 			let swap = System.sort.familles[j];
 			System.sort.familles[j] = System.sort.familles[j - 1];
 			System.sort.familles[j - 1] = swap;
@@ -192,7 +189,7 @@
 		System.bosses.instance.push([]);
 	}
 
-	import * as chapters from "../lib/Chapters/index.js";
+	import * as chapters from '../lib/Chapters/index.js';
 	for (const chapter of Object.keys(chapters)) {
 		let chapterClass = chapters[chapter];
 		let chapterInstance = new chapterClass(System, 0);
@@ -202,16 +199,15 @@
 			let ressources = [];
 			for (const ressource of System.ressources) {
 				ressources.push({
-					name : ressource,
-					value : 0
+					name: ressource,
+					value: 0
 				});
 			}
 			for (const card of step.cards) {
 				if (System.cards.getByName(card) == undefined) {
-					console.log("Invalid card in a chapter : " + card);
+					console.log('Invalid card in a chapter : ' + card);
 					error = true;
-				}
-				else {
+				} else {
 					for (let i = 0; i < System.cards.getByName(card).cout.length; i++) {
 						ressources[i].value += System.cards.getByName(card).cout[i].value();
 					}
@@ -220,7 +216,12 @@
 			for (const ressource of chapterInstance.ressources) {
 				for (const cout of ressources) {
 					if (cout.name == ressource.name && cout.value > ressource.value) {
-						console.log("Invalid ressources in a chapter : " + ressource.name + " " + (cout.value - ressource.value));
+						console.log(
+							'Invalid ressources in a chapter : ' +
+								ressource.name +
+								' ' +
+								(cout.value - ressource.value)
+						);
 						error = true;
 					}
 				}
@@ -241,61 +242,67 @@
 		}
 	}
 
-	import BlackScreen from "../lib/Login/BlackScreen.svelte";
-	System.pages.add("BlackScreen", BlackScreen);
+	import BlackScreen from '../lib/Login/BlackScreen.svelte';
+	System.pages.add('BlackScreen', BlackScreen);
 
-	import TitleScreen from "../lib/Login/TitleScreen.svelte";
-	System.pages.add("TitleScreen", TitleScreen);
+	import TitleScreen from '../lib/Login/TitleScreen.svelte';
+	System.pages.add('TitleScreen', TitleScreen);
 
-	import Login from "../lib/Login/Login.svelte";
-	System.pages.add("Login", Login);
+	import Login from '../lib/Login/Login.svelte';
+	System.pages.add('Login', Login);
 
-	import Register from "../lib/Login/Register.svelte";
-	System.pages.add("Register", Register);
+	import Register from '../lib/Login/Register.svelte';
+	System.pages.add('Register', Register);
 
-	import Menu from "../lib/Menu/Menu.svelte";
-	System.pages.add("Menu", Menu);
+	import Menu from '../lib/Menu/Menu.svelte';
+	System.pages.add('Menu', Menu);
 
-	import Play from "../lib/Menu/Play.svelte";
-	System.pages.add("Play", Play);
+	import Play from '../lib/Menu/Play.svelte';
+	System.pages.add('Play', Play);
 
-	import Construit from "../lib/Menu/Construit.svelte";
-	System.pages.add("Construit", Construit);
+	import Construit from '../lib/Menu/Construit.svelte';
+	System.pages.add('Construit', Construit);
 
-	import Library from "../lib/Menu/Library.svelte";
-	System.pages.add("Library", Library);
+	import Library from '../lib/Menu/Library.svelte';
+	System.pages.add('Library', Library);
 
-	import Profil from "../lib/Menu/Profil.svelte";
-	System.pages.add("Profil", Profil);
+	import Profil from '../lib/Menu/Profil.svelte';
+	System.pages.add('Profil', Profil);
 
-	import Training from "../lib/Training/Main.svelte";
-	System.pages.add("Training", Training);
+	import Universe from '../lib/Menu/Universe.svelte';
+	System.pages.add('Universe', Universe);
 
-	import Game from "../lib/Game/Game.svelte";
-	System.pages.add("Game", Game);
+	import News from '../lib/Menu/News.svelte';
+	System.pages.add('News', News);
 
-	import Settings from "../lib/Game/Settings.svelte";
-	System.pages.add("Settings", Settings);
+	import Training from '../lib/Training/Main.svelte';
+	System.pages.add('Training', Training);
 
-	import Dialog from "../lib/Game/Dialog.svelte";
-	System.pages.add("Dialog", Dialog);
+	import Game from '../lib/Game/Game.svelte';
+	System.pages.add('Game', Game);
 
-	import Finish from "../lib/Game/Finish.svelte";
-	System.pages.add("Finish", Finish);
+	import Settings from '../lib/Game/Settings.svelte';
+	System.pages.add('Settings', Settings);
 
-	import GameOver from "../lib/Game/GameOver.svelte";
-	System.pages.add("GameOver", GameOver);
+	import Dialog from '../lib/Game/Dialog.svelte';
+	System.pages.add('Dialog', Dialog);
 
-	import Decks from "../lib/Decks/List.svelte";
-	System.pages.add("Decks", Decks);
+	import Finish from '../lib/Game/Finish.svelte';
+	System.pages.add('Finish', Finish);
 
-	import Deck from "../lib/Decks/Deck.svelte";
-	System.pages.add("Deck", Deck);
+	import GameOver from '../lib/Game/GameOver.svelte';
+	System.pages.add('GameOver', GameOver);
 
-	import Add from "../lib/Decks/Add.svelte";
-	System.pages.add("Add", Add);
+	import Decks from '../lib/Decks/List.svelte';
+	System.pages.add('Decks', Decks);
 
-	System.pages.change("BlackScreen");
+	import Deck from '../lib/Decks/Deck.svelte';
+	System.pages.add('Deck', Deck);
+
+	import Add from '../lib/Decks/Add.svelte';
+	System.pages.add('Add', Add);
+
+	System.pages.change('BlackScreen');
 
 	System.music.init();
 </script>
@@ -332,10 +339,11 @@
 		height: 100vh;
 
 		background-color: var(--background);
-		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu,
+			Cantarell, 'Helvetica Neue', sans-serif;
 		font-weight: bold;
 
-		cursor: url("../Pictures/Hand.cur"), default;
+		cursor: url('../Pictures/Hand.cur'), default;
 		overflow: hidden;
 	}
 
@@ -352,7 +360,7 @@
 		box-sizing: border-box;
 		border: 1px solid #ccc;
 		border-radius: 2px;
-		cursor: url("../Pictures/Select.cur"), pointer;
+		cursor: url('../Pictures/Select.cur'), pointer;
 		background: var(--hover);
 	}
 
@@ -422,5 +430,9 @@
 
 	:global(.scroll::-webkit-scrollbar) {
 		display: none;
+	}
+
+	:global(label) {
+		cursor: url('../Pictures/Select.cur'), pointer;
 	}
 </style>

@@ -9,14 +9,14 @@ export class Fermier extends Creature {
 
         this.init([["Or", 15]]);
         this.familles.base.push("Humain");
-        
+
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;
         this.stat("Attaque").base = 5;
 
         this.text = Text;
     };
-    
+
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
             this.owner.ressource("Or").current += 5;

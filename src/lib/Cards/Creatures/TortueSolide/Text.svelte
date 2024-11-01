@@ -1,6 +1,8 @@
 <script>
-    export let System;
-    export let card;
+	import Info from '../../Info.svelte';
+
+	export let System;
+	export let card;
 </script>
 
-Quand meurt : crée Carapace de tortue dans la main.
+Quand meurt : crée <Info bind:System name={"Carapace de tortue"} /> dans la main.

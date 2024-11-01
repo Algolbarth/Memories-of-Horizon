@@ -30,7 +30,7 @@ export class PotionDeSoin extends Objet {
                     target = card;
                 }
             }
-            
+
             if (target != undefined) {
                 this.useEffect(target);
             }

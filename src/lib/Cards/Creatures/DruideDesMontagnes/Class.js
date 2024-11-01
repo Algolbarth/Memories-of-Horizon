@@ -46,7 +46,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
         super(System);
 
         this.familles.base.push("Nain");
-        
+
         this.stat("Vie").base = 25;
         this.stat("Vie").current = 25;
         this.stat("Attaque").base = 25;
@@ -72,7 +72,7 @@ export class DruideDesMontagnesOurs extends DruideDesMontagnes {
         this.familles.base.push("Bête");
 
         this.trait("Rare").base = true;
-        
+
         this.stat("Vie").base = 50;
         this.stat("Vie").current = 50;
         this.stat("Attaque").base = 50;

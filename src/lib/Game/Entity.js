@@ -124,7 +124,7 @@ export class Entity {
         return nameList;
     };
 
-    draw = function (number, condition, drawer, array=[]) {
+    draw = function (number, condition, drawer, array = []) {
         let nameList = this.cardList(condition, drawer);
         let card = undefined;
 
@@ -141,7 +141,7 @@ export class Entity {
         return array;
     };
 
-    discover = function (number, condition, drawer, array=[]) {
+    discover = function (number, condition, drawer, array = []) {
         let nameList = this.cardList(condition, drawer);
         let card = undefined;
 

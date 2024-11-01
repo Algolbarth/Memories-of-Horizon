@@ -46,7 +46,7 @@ export class DruideMarchandHumain extends DruideMarchand {
         super(System);
 
         this.familles.base.push("Humain");
-        
+
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
         this.stat("Attaque").base = 10;
@@ -67,7 +67,7 @@ export class DruideMarchandBoeuf extends DruideMarchand {
         this.familles.base.push("Bête");
 
         this.trait("Rare").base = true;
-        
+
         this.stat("Vie").base = 30;
         this.stat("Vie").current = 30;
         this.stat("Attaque").base = 10;

@@ -1,10 +1,10 @@
-import {Objet} from '../Objet.js';
+import { Objet } from '../Objet.js';
 import Text from './Text.svelte';
 
 export class CorDeGuerre extends Objet {
     name = "Cor de guerre";
 
-    constructor (System) {
+    constructor(System) {
         super(System);
 
         this.init([["Or", 25]]);

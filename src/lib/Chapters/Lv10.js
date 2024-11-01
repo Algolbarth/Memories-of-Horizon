@@ -16,12 +16,24 @@ export class Lv10_Reine extends Chapter {
 
 export class Lv10_Atlas extends Chapter {
     boss = true;
-    
+
     constructor(System, number) {
         super(System, number);
 
         this.addRessource("Or", 500);
 
         this.addStep(80, "Montagne", ["Atlas, marche-cratère"], "Dans la plus grande grotte de la plus haute montagne de l'île, vit un géant hors du commun.", "Atlas est reputé pour sa taille qui impressionne même les dieux.", "Mais son manque d'éducation en fit un individu solitaire et bête, écrasant des paysages par inattention.");
+    }
+}
+
+export class Lv10_Godrick extends Chapter {
+    boss = true;
+
+    constructor(System, number) {
+        super(System, number);
+
+        this.addRessource("Or", 500);
+
+        this.addStep(80, "Ville", ["Godrick, roi des rois"], "");
     }
 }

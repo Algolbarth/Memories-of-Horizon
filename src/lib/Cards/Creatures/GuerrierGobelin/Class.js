@@ -8,7 +8,7 @@ export class GuerrierGobelin extends Creature {
 
         this.init([["Or", 10], ["Feu", 10]]);
         this.familles.base.push("Gobelin");
-        
+
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
         this.stat("Attaque").base = 20;

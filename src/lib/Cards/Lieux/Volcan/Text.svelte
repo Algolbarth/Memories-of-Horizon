@@ -1,6 +1,6 @@
 <script>
-    export let System;
-    export let card;
+	export let System;
+	export let card;
 </script>
 
-Les cartes piochables sont d'élement Feu.
+Les cartes piochables sont d'élément Feu.

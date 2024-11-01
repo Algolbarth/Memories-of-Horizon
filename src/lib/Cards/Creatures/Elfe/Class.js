@@ -8,7 +8,7 @@ export class Elfe extends Creature {
 
         this.init([["Or", 4], ["Végétal", 4]]);
         this.familles.base.push("Elfe");
-        
+
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
         this.stat("Attaque").base = 5;

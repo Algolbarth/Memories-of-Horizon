@@ -46,7 +46,7 @@ export class DruideDeFeuGobelin extends DruideDeFeu {
         super(System);
 
         this.familles.base.push("Gobelin");
-        
+
         this.stat("Vie").base = 40;
         this.stat("Vie").current = 40;
         this.stat("Attaque").base = 40;
@@ -69,7 +69,7 @@ export class DruideDeFeuLezard extends DruideDeFeu {
         this.familles.base.push("Reptile");
 
         this.trait("Rare").base = true;
-        
+
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;
         this.stat("Attaque").base = 5;

@@ -16,7 +16,6 @@ export * from './MaitreChien';
 export * from './Mendiant';
 export * from './Bagarreur';
 export * from './Chevalier';
-export * from './ChevalierMonte';
 export * from './Geant';
 export * from './Forgeron';
 export * from './Pretre';

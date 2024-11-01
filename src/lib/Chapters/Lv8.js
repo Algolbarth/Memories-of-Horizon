@@ -12,7 +12,7 @@ export class Lv8_Geant extends Chapter {
 
 export class Lv8_GoHoumei extends Chapter {
     boss = true;
-    
+
     constructor(System, number) {
         super(System, number);
 

@@ -1,10 +1,10 @@
-import {Objet} from '../Objet.js';
+import { Objet } from '../Objet.js';
 import Text from './Text.svelte';
 
 export class Sifflet extends Objet {
     name = "Sifflet";
 
-    constructor (System) {
+    constructor(System) {
         super(System);
 
         this.init([["Or", 10]]);

@@ -1,6 +1,9 @@
 <script>
-    export let System;
-    export let card;
+	import Info from '../../Info.svelte';
+
+	export let System;
+	export let card;
 </script>
 
-Quand posé : crée 2 Chien sur le terrain. Au début de la phase de préparation : crée Chien sur le terrain.
+Quand posé : crée 2 <Info bind:System name={"Chien"} /> sur le terrain. Au début de la phase de préparation : crée <Info bind:System name={"Chien"} /> sur le
+terrain.

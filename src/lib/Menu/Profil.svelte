@@ -1,25 +1,28 @@
 <script>
-    export let System;
+	export let System;
 
-    let name = System.account.name;
+	let name = System.account.name;
 </script>
 
 <button
-    class="close"
-    on:click={() => {
-        System.pages.change("Menu");
-    }}>X</button
+	class="close"
+	on:click={() => {
+		System.pages.change('Menu');
+	}}>X</button
 >
-<br /><br />
+
+<br />
+<br />
+
 <input type="text" bind:value={name} />
 {#if name != System.account.name}
-    <button
-        class="classic"
-        on:click={() => {
-            System.account.name = name;
-            System.pages.change("Profil");
-        }}>Renommer</button
-    >
+	<button
+		class="classic"
+		on:click={() => {
+			System.account.name = name;
+			System.pages.change('Profil');
+		}}>Renommer</button
+	>
 {/if}
 
 <br /><br />

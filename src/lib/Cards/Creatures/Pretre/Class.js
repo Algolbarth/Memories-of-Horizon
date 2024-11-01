@@ -10,14 +10,14 @@ export class Prêtre extends Creature {
 
         this.init([["Or", 15]]);
         this.familles.base.push("Humain");
-        
+
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;
         this.stat("Attaque").base = 5;
 
         this.text = Text;
     };
-    
+
     use = function () {
         this.select();
     };

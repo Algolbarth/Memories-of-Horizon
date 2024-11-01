@@ -8,7 +8,7 @@ export class Renard extends Creature {
 
         this.init([["Or", 8], ["Végétal", 8]]);
         this.familles.base.push("Bête");
-        
+
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;
         this.stat("Attaque").base = 5;

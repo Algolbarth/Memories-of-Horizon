@@ -12,7 +12,7 @@ export class BulleProtectrice extends Sort {
 
         this.text = Text;
     };
-    
+
     use = function () {
         this.select();
     };

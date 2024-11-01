@@ -28,7 +28,7 @@ export class Champion extends Creature {
             if (this.card.System.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
                 total += total;
             }
-    
+
             if (total > 0) {
                 return total;
             }
@@ -48,7 +48,7 @@ export class Champion extends Creature {
             if (this.card.System.game != undefined && this.card.zone.name == "Terrain" && this.card.slot == 0) {
                 total += total;
             }
-    
+
             if (total > 0) {
                 return total;
             }

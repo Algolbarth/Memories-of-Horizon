@@ -1,10 +1,10 @@
-import {Unit} from '../Unit.js';
+import { Unit } from '../Unit.js';
 
 export class Creature extends Unit {
     type = "Créature";
     equipments = [];
 
-    constructor (System) {
+    constructor(System) {
         super(System);
 
         this.addStat("Attaque", 0);
@@ -29,7 +29,7 @@ export class Creature extends Unit {
 
     fight = function () {
         this.fightEffect();
-        
+
         let defender = this.findTarget();
 
         let isDie = false;

@@ -19,8 +19,8 @@ export class Train {
     entity = function () {
         return {
             life: 100,
-            gold : 0,
-            flux : 0,
+            gold: 0,
+            flux: 0,
             zones: [
                 {
                     name: "Lieux",

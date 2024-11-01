@@ -46,7 +46,7 @@ export class DruideDesBoisElfe extends DruideDesBois {
         super(System);
 
         this.familles.base.push("Elfe");
-        
+
         this.stat("Vie").base = 20;
         this.stat("Vie").current = 20;
         this.stat("Attaque").base = 20;
@@ -70,7 +70,7 @@ export class DruideDesBoisRenard extends DruideDesBois {
         this.familles.base.push("Bête");
 
         this.trait("Rare").base = true;
-        
+
         this.stat("Vie").base = 25;
         this.stat("Vie").current = 25;
         this.stat("Attaque").base = 25;

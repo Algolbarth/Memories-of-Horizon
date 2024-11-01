@@ -66,7 +66,7 @@ export class Game extends Battle {
             this.player.place = this.player.zone("Lieux").cards[0];
 
             this.player.getCard("Humain").add("Terrain");
-            
+
             this.chapter = new Chapter(this.System, 0);
 
             this.nextChapter();

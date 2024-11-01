@@ -1,278 +1,275 @@
 <script>
-    import Filter from "../Menu/Filter.svelte";
-    import View from "../View/Main.svelte";
-    export let System;
+	import Filter from '../Menu/Filter.svelte';
+	import View from '../View/Main.svelte';
+	export let System;
 
-    let name = System.deck.name;
-    let sorted = false;
-    let move;
-    if (System.deck.canModify()) {
-        move = false;
-    }
-    else {
-        move = true;
-    }
+	let name = System.deck.name;
+	let sorted = false;
+	let move;
+	if (System.deck.canModify()) {
+		move = false;
+	} else {
+		move = true;
+	}
 
-    let levelSelect = "Tous";
-    let typeSelect = "Tous";
-    let familleSelect = "Toutes";
-    let elementSelect = "Tous";
+	let levelSelect = 'Tous';
+	let typeSelect = 'Tous';
+	let familleSelect = 'Toutes';
+	let elementSelect = 'Tous';
 
-    let cardList = [];
-    cards();
+	let cardList = [];
+	cards();
 
-    function cards() {
-        let tab = [];
-        for (const cardName of System.deck.cards) {
-            let card = System.cards.getByName(cardName);
-            if (
-                !card.onlyBot &&
-                card.playable &&
-                (levelSelect == "Tous" || card.level == levelSelect) &&
-                (typeSelect == "Tous" || card.type == typeSelect) &&
-                (familleSelect == "Toutes" ||
-                    card.familles.base.includes(familleSelect)) &&
-                (elementSelect == "Tous" ||
-                    card.elements.includes(elementSelect))
-            ) {
-                tab.push(cardName);
-            }
-        }
-        cardList = tab;
-    }
+	function cards() {
+		let tab = [];
+		for (const cardName of System.deck.cards) {
+			let card = System.cards.getByName(cardName);
+			if (
+				!card.onlyBot &&
+				card.playable &&
+				(levelSelect == 'Tous' || card.level == levelSelect) &&
+				(typeSelect == 'Tous' || card.type == typeSelect) &&
+				(familleSelect == 'Toutes' || card.familles.base.includes(familleSelect)) &&
+				(elementSelect == 'Tous' || card.elements.includes(elementSelect))
+			) {
+				tab.push(cardName);
+			}
+		}
+		cardList = tab;
+	}
 
-    function sorting(level, type, famille, element) {
-        levelSelect = level;
-        typeSelect = type;
-        familleSelect = famille;
-        elementSelect = element;
-        cards();
-        closing();
-    }
+	function sorting(level, type, famille, element) {
+		levelSelect = level;
+		typeSelect = type;
+		familleSelect = famille;
+		elementSelect = element;
+		cards();
+		closing();
+	}
 
-    function closing() {
-        sorted = false;
-        System.pages.change("Deck");
-    }
+	function closing() {
+		sorted = false;
+		System.pages.change('Deck');
+	}
 </script>
 
 <button
-    class="close"
-    on:click={() => {
-        System.view.reset();
-        System.pages.change("Decks");
-    }}>X</button
+	class="close"
+	on:click={() => {
+		System.view.reset();
+		System.pages.change('Decks');
+	}}>X</button
 >
 <br />
 <div id="head" class="zone">
-    <div>
-        <input type="text" bind:value={name} />
-        {#if name != System.deck.name}
-            <button
-                class="classic"
-                on:click={() => {
-                    System.deck.changeName(name, 0);
-                    System.pages.change("Deck");
-                }}>Renommer</button
-            >
-        {/if}
-        <br />
-        <button
-            class="classic"
-            on:click={() => {
-                System.view.reset();
-                System.deck.clone();
-            }}>Cloner</button
-        >
-    </div>
-    <div style="text-align:right;">
-        <button
-            class="classic delete"
-            on:click={() => {
-                System.view.reset();
-                System.deck.delete();
-            }}>Supprimer</button
-        >
-    </div>
+	<div>
+		<input type="text" bind:value={name} />
+		{#if name != System.deck.name}
+			<button
+				class="classic"
+				on:click={() => {
+					System.deck.changeName(name, 0);
+					System.pages.change('Deck');
+				}}>Renommer</button
+			>
+		{/if}
+		<br />
+		<button
+			class="classic"
+			on:click={() => {
+				System.view.reset();
+				System.deck.clone();
+			}}>Cloner</button
+		>
+	</div>
+	<div style="text-align:right;">
+		<button
+			class="classic delete"
+			on:click={() => {
+				System.view.reset();
+				System.deck.delete();
+			}}>Supprimer</button
+		>
+	</div>
 </div>
 <div class="zone">
-    {cardList.length}
-    /
-    {System.several(System.deck.cards.length, "carte")}
-    -
-    <button
-        class="classic"
-        on:click={() => {
-            sorted = true;
-            System.pages.change("Deck");
-        }}
-    >
-        Filtrer
-    </button>
-    {#if System.deck.canModify()}
-        -
-        {#if move}
-            <button
-                class="classic"
-                on:click={() => {
-                    move = false;
-                    System.pages.change("Deck");
-                }}>Enlever</button
-            >
-        {:else}
-            <button
-                class="classic"
-                on:click={() => {
-                    move = true;
-                    System.pages.change("Deck");
-                }}>Déplacer</button
-            >
-        {/if}
-        -
-        <button
-            class="classic"
-            on:click={() => {
-                System.view.reset();
-                System.pages.change("Add");
-            }}>Ajouter une carte</button
-        >
-    {/if}
-    <div id="list">
-        {#each cardList as card, i}
-            <div class="preview">
-                <div>
-                    <button
-                        class="classic"
-                        on:click={() => {
-                            System.view.card = System.cards.getByName(card);
-                            System.pages.change("Deck");
-                        }}
-                        on:mouseenter={() => {
-                            System.view.quick = System.cards.getByName(card);
-                            System.pages.change("Deck");
-                        }}
-                        on:mouseleave={() => {
-                            System.view.quick = undefined;
-                            System.pages.change("Deck");
-                        }}>{card}</button
-                    >
-                </div>
-                <div style="text-align:right;">
-                    {#if move}
-                        {#if i > 0}
-                            <button
-                                class="classic"
-                                on:click={() => {
-                                    let temp = System.deck.cards[i - 1];
-                                    System.deck.cards[i - 1] = card;
-                                    System.deck.cards[i] = temp;
-                                    cards();
-                                    System.pages.change("Deck");
-                                }}>&#9650</button
-                            >
-                        {:else}
-                            <button class="classic useless">&#9650</button>
-                        {/if}
-                        {#if i < System.deck.cards.length - 1}
-                            <button
-                                class="classic"
-                                on:click={() => {
-                                    let temp = System.deck.cards[i + 1];
-                                    System.deck.cards[i + 1] = card;
-                                    System.deck.cards[i] = temp;
-                                    cards();
-                                    System.pages.change("Deck");
-                                }}>&#9660</button
-                            >
-                        {:else}
-                            <button class="classic useless">&#9660</button>
-                        {/if}
-                    {:else}
-                        <button
-                            class="classic"
-                            on:click={() => {
-                                System.deck.remove(card);
-                                cards();
-                                System.pages.change("Deck");
-                            }}>Enlever</button
-                        >
-                    {/if}
-                </div>
-            </div>
-        {/each}
-    </div>
+	{cardList.length}
+	/
+	{System.several(System.deck.cards.length, 'carte')}
+	-
+	<button
+		class="classic"
+		on:click={() => {
+			sorted = true;
+			System.pages.change('Deck');
+		}}
+	>
+		Filtrer
+	</button>
+	{#if System.deck.canModify()}
+		-
+		{#if move}
+			<button
+				class="classic"
+				on:click={() => {
+					move = false;
+					System.pages.change('Deck');
+				}}>Enlever</button
+			>
+		{:else}
+			<button
+				class="classic"
+				on:click={() => {
+					move = true;
+					System.pages.change('Deck');
+				}}>Déplacer</button
+			>
+		{/if}
+		-
+		<button
+			class="classic"
+			on:click={() => {
+				System.view.reset();
+				System.pages.change('Add');
+			}}>Ajouter une carte</button
+		>
+	{/if}
+	<div id="list">
+		{#each cardList as card, i}
+			<div class="preview">
+				<div>
+					<button
+						class="classic"
+						on:click={() => {
+							System.view.card = System.cards.getByName(card);
+							System.pages.change('Deck');
+						}}
+						on:mouseenter={() => {
+							System.view.quick = System.cards.getByName(card);
+							System.pages.change('Deck');
+						}}
+						on:mouseleave={() => {
+							System.view.quick = undefined;
+							System.pages.change('Deck');
+						}}>{card}</button
+					>
+				</div>
+				<div style="text-align:right;">
+					{#if move}
+						{#if i > 0}
+							<button
+								class="classic"
+								on:click={() => {
+									let temp = System.deck.cards[i - 1];
+									System.deck.cards[i - 1] = card;
+									System.deck.cards[i] = temp;
+									cards();
+									System.pages.change('Deck');
+								}}>&#9650</button
+							>
+						{:else}
+							<button class="classic useless">&#9650</button>
+						{/if}
+						{#if i < System.deck.cards.length - 1}
+							<button
+								class="classic"
+								on:click={() => {
+									let temp = System.deck.cards[i + 1];
+									System.deck.cards[i + 1] = card;
+									System.deck.cards[i] = temp;
+									cards();
+									System.pages.change('Deck');
+								}}>&#9660</button
+							>
+						{:else}
+							<button class="classic useless">&#9660</button>
+						{/if}
+					{:else}
+						<button
+							class="classic"
+							on:click={() => {
+								System.deck.remove(card);
+								cards();
+								System.pages.change('Deck');
+							}}>Enlever</button
+						>
+					{/if}
+				</div>
+			</div>
+		{/each}
+	</div>
 </div>
 
 <div id="view">
-    <svelte:component this={View} {System} />
+	<svelte:component this={View} {System} />
 </div>
 
 {#if sorted}
-    <svelte:component
-        this={Filter}
-        {System}
-        {levelSelect}
-        {typeSelect}
-        {familleSelect}
-        {elementSelect}
-        {sorting}
-        {closing}
-    />
+	<svelte:component
+		this={Filter}
+		{System}
+		{levelSelect}
+		{typeSelect}
+		{familleSelect}
+		{elementSelect}
+		{sorting}
+		{closing}
+	/>
 {/if}
 
 <style>
-    #head {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+	#head {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-    :global(input[type="text"]) {
-        font: inherit;
-        margin: 0;
-        padding: 0;
-        background: none;
-        border: none;
-        border-bottom: 2px solid transparent;
-    }
+	:global(input[type='text']) {
+		font: inherit;
+		margin: 0;
+		padding: 0;
+		background: none;
+		border: none;
+		border-bottom: 2px solid transparent;
+	}
 
-    :global(input[type="text"]:focus) {
-        outline: none;
-        border-bottom: 2px solid black;
-    }
+	:global(input[type='text']:focus) {
+		outline: none;
+		border-bottom: 2px solid black;
+	}
 
-    .delete {
-        color: red;
-    }
+	.delete {
+		color: red;
+	}
 
-    .delete:hover {
-        color: gold;
-    }
+	.delete:hover {
+		color: gold;
+	}
 
-    .zone {
-        background-color: var(--zone);
-        border: solid;
-        margin: 1%;
-        padding: 1%;
-        width: 50vw;
-    }
+	.zone {
+		background-color: var(--zone);
+		border: solid;
+		margin: 1%;
+		padding: 1%;
+		width: 50vw;
+	}
 
-    #list {
-        max-height: 85vh;
-        overflow-y: scroll;
-    }
+	#list {
+		max-height: 85vh;
+		overflow-y: scroll;
+	}
 
-    .preview {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
+	.preview {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-    .useless {
-        color:lightgrey;
-    }
+	.useless {
+		color: lightgrey;
+	}
 
-    #view {
-        position: fixed;
-        top: 0%;
-        left: 54vw;
-    }
+	#view {
+		position: fixed;
+		top: 0%;
+		left: 54vw;
+	}
 </style>

@@ -1,20 +1,20 @@
 export class Account {
     aventure = {
-        victory : 0,
-        defeat : 0,
-        total : function () {
+        victory: 0,
+        defeat: 0,
+        total: function () {
             return this.victory + this.defeat;
         }
     };
     construct = {
-        victory : 0,
-        defeat : 0,
-        total : function () {
+        victory: 0,
+        defeat: 0,
+        total: function () {
             return this.victory + this.defeat;
         }
     };
 
-    constructor (System, name) {
+    constructor(System, name) {
         this.System = System;
         this.name = name;
     };

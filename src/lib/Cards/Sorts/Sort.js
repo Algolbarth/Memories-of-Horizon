@@ -1,4 +1,4 @@
-import {Action } from '../Actions/Action.js';
+import { Action } from '../Actions/Action.js';
 
 export class Sort extends Action {
     constructor(System) {
@@ -12,7 +12,7 @@ export class Sort extends Action {
         if (value < 0) {
             value = 0;
         }
-        
+
         return value;
     };
 }
