@@ -25,8 +25,6 @@
 		for (const cardName of System.deck.cards) {
 			let card = System.cards.getByName(cardName);
 			if (
-				!card.onlyBot &&
-				card.playable &&
 				(levelSelect == 'Tous' || card.level == levelSelect) &&
 				(typeSelect == 'Tous' || card.type == typeSelect) &&
 				(familleSelect == 'Toutes' || card.familles.base.includes(familleSelect)) &&
@@ -60,7 +58,9 @@
 		System.pages.change('Decks');
 	}}>X</button
 >
+
 <br />
+
 <div id="head" class="zone">
 	<div>
 		<input type="text" bind:value={name} />

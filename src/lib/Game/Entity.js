@@ -108,7 +108,7 @@ export class Entity {
         let nameList = [];
         if (this.System.game.deck == undefined) {
             for (const card of this.System.cards.instance) {
-                if (card.playable && this.place.condition(card) && card.level <= this.zone("Boutique").level && (condition == undefined || condition(card, drawer))) {
+                if (this.place.condition(card) && card.level <= this.zone("Boutique").level && (condition == undefined || condition(card, drawer))) {
                     nameList.push(card.name);
                 }
             }

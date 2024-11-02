@@ -18,7 +18,9 @@
 		System.pages.change('Menu');
 	}}>X</button
 >
+
 <br />
+
 <div id="zone">
 	{System.several(System.decks.length, 'deck')} -
 	<button

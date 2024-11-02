@@ -19,3 +19,6 @@ export * from './Biodiversite';
 export * from './Malefice';
 export * from './Cibler';
 export * from './Inondation';
+export * from './Menace';
+export * from './Charisme';
+export * from './TourneeGenerale';

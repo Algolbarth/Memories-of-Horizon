@@ -274,6 +274,10 @@ export class Card {
 
     };
 
+    startBattleEffect = function () {
+
+    };
+
     turnEffect = function () {
 
     };

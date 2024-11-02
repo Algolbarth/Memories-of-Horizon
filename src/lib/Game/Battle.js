@@ -1,4 +1,4 @@
-export class Battle {
+export class Battle {   
     fighter = undefined;
 
     constructor(System) {
@@ -15,6 +15,19 @@ export class Battle {
     newBattle = function () {
         this.phase = "Combat";
         this.turn = 0;
+        for (const entity of [this.player, this.bot]) {
+            for (const zone of entity.zones) {
+                let cpy = this.System.copy(zone.cards);
+                for (const card of cpy) {
+                    card.startBattleEffect();
+                    if (card.type == "Créature") {
+                        for (const e of card.equipments) {
+                            e.startBattleEffect();
+                        }
+                    }
+                }
+            }
+        }
         this.nextTurn();
         this.System.pages.change("Game");
     };

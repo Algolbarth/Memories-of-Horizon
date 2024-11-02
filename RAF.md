@@ -89,23 +89,15 @@ Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
 Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
 
-General : créature, au début de la phase de préparation : augmente l'attaque et la vie de toutes les créatures alliées sur le terrain. \
-Menace : action, augmente la protection d'une créature sur le terrain. \
-Charisme : action, augmente selon sa protection l'attaque et la défense d'une créature alliée sur le terrain. \
-Épouvantail : bâtiment, protection 2. \
 Bouclier de roche : objet équipement, augmente la défense de la créature équipée. quand la créature équipée est attaquée : augmente la défense de la créature équipée. \
-Bière : objet nourriture : soigne ou augmente la jauge critique d'une créature alliée sur le terrain.  \
-Tournée générale : action nourriture : créée Bière dans la main autant de fois qu'il y des créatures alliées sur le terrain. \
 Garnison des monts : bâtiment nain : au début d'un tour de combat : créé Soldat nain sur le terrain. \
 Soldat nain : créature nain, quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
 Garde nain : créature nain, quand un bâtiment alliée est posé : augmente sa vie. \
 Chevalier noir : créature humain chevalier, quand meurt : dépense 20 or, fixe sa vie à 1 et reste sur le terrain. \
 Chevalier noir (monté) : créature humain chevalier, quand posé : inflige autant de dégâts que possible à une unité adverse et dépense autant d'or. Quand meurt : se transforme en Chevalier noir. \
 Écuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
-Inondation : action, détruis un bâtiment adverse sur le terrain. \
 Hydratation : action, augmente l'attaque et la vie d'une créature Eau alliée sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
 Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatures Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
-Rapière : objet équipement, au début de la phase de combat : remplis la jauge critique de la créature équipée. \
 Sang chaud : remplis la jauge critique d'une créature alliée sur le terrain. \
 Cautériser : action, fixe la vie max d'une créature adverse sur le terrain à sa vie restante. \
 Ruée : action, augmente la vitesse de toutes les créatures alliées sur le terrain pendant cette étape. \
@@ -125,7 +117,8 @@ Brique : objet, soigne un bâtiment allié sur le terrain OU inflige des dégât
 Mue : action, augmente la vie maximale d'une créature de famille Reptile alliée sur le terrain. \
 Brise garde : action, fixe à 0 la garde d'une créature adverse sur le terrain. \
 Parade : action, augmente l'esquive. \
-Blocage : action, augmente la défense et la garde.
+Blocage : action, augmente la défense et la garde. \
+Wyverne : créature
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \

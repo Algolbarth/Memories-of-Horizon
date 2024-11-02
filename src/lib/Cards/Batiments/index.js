@@ -12,3 +12,4 @@ export * from './BibliothequeElfique';
 export * from './TourDeGuet';
 export * from './PuitDeMana';
 export * from './TourDArcher';
+export * from './Epouvantail';
