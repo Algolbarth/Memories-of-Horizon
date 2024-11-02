@@ -2,7 +2,7 @@ import { Batiment } from '../Batiment.js';
 import Text from './Text.svelte';
 
 export class TourDArcher extends Batiment {
-    name = "Tour d'archer'";
+    name = "Tour d'archer";
 
     constructor(System) {
         super(System);
