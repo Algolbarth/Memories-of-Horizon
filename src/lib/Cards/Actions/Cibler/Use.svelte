@@ -1,0 +1,23 @@
+<script>
+	import Zone from '../../../Game/Zone.svelte';
+	export let System;
+	System;
+
+	function condition() {
+		return true;
+	}
+
+	function fonction(card) {
+		System.game.use.card.useEffect(card);
+		System.game.use.reset();
+	}
+</script>
+
+<svelte:component
+	this={Zone}
+	{System}
+	entity={System.game.use.card.owner.adversary()}
+	zone={System.game.use.card.owner.adversary().zone('Terrain')}
+	{condition}
+	{fonction}
+/>

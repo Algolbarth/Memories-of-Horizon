@@ -9,3 +9,6 @@ export * from './MurDeRoche';
 export * from './MurDePierre';
 export * from './Bibliotheque';
 export * from './BibliothequeElfique';
+export * from './TourDeGuet';
+export * from './PuitDeMana';
+export * from './TourDArcher';

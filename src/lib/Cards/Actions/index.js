@@ -16,3 +16,6 @@ export * from './Metamorphose';
 export * from './Croissance';
 export * from './Affaiblissement';
 export * from './Biodiversite';
+export * from './Malefice';
+export * from './Cibler';
+export * from './Inondation';

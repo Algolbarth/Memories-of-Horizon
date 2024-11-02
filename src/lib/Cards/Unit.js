@@ -14,7 +14,7 @@ export class Unit extends Card {
 
         this.addStat("Défense", 0);
 
-        this.addStat("Vie", 1);
+        this.addStat("Vie", 1, 1);
         this.stat("Vie").current = 1;
 
         this.addStat("Endurance", 0);

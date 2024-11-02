@@ -13,6 +13,8 @@ export class Creature extends Unit {
 
         this.addStat("Adresse", 0);
 
+        this.addStat("Intensité", 2);
+
         this.addStat("Critique", 0);
         this.stat("Critique").current = 0;
     };
@@ -38,7 +40,7 @@ export class Creature extends Unit {
             let difDamage = this.stat("Attaque").value() - defender.stat("Défense").value();
             if (this.stat("Critique").current == 100) {
                 this.stat("Critique").current = 0;
-                difDamage += difDamage;
+                difDamage = difDamage * this.stat("Intensité").value();
             }
             if (difDamage < 0) {
                 difDamage = 0;

@@ -292,8 +292,8 @@ export class Card {
         }
     };
 
-    addStat = function (name, value) {
-        this.stats.push(new Stat(name, value, this));
+    addStat = function (name, value, min = 0) {
+        this.stats.push(new Stat(name, value, min, this));
     };
 
     hasStat = function () {
@@ -347,7 +347,11 @@ export class Card {
         for (const stat of this.stats) {
             newCard.stat(stat.name).add = stat.add;
             newCard.stat(stat.name).step = stat.step;
-            newCard.stat(stat.name).current = stat.current + newCard.stat(stat.name).base - this.stat(stat.name).base;
+            newCard.stat(stat.name).turn = stat.turn;
+            newCard.stat(stat.name).current = stat.current;
+            if (newCard.stat(stat.name).current > newCard.stat(stat.name).value()) {
+                newCard.stat(stat.name).current = newCard.stat(stat.name).value();
+            }
         }
         for (const e of this.equipments) {
             newCard.equipments.push(e);
@@ -374,9 +378,10 @@ export class Stat {
     step = 0;
     turn = 0;
 
-    constructor(name, value, card) {
+    constructor(name, value, min, card) {
         this.name = name;
         this.base = value;
+        this.min = min;
         this.card = card;
     };
 

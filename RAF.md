@@ -89,14 +89,6 @@ Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
 Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
 
-*Ajouter l'intensité et corriger les haches* \
-*Corriger les effets de transformation* \
-Maléfice : transforme une créature adverse sur le terrain en Grenouille \
-Grenouille : créature, au début d'une phase de préparation : se place dans la main. \
-Tour d'archer : bâtiment, au début de la phase de préparation : créé flèche en bois dans la main. \
-Tour de guet : bâtiment, au début de la phase de préparation : créé cibler dans la main.\
-Cibler : action, augmente la protection d'une unité adverse sur le terrain. \
-Puit de mana : bâtiment, au début de la phase de préparation : créé potion de mana dans la main.\
 General : créature, au début de la phase de préparation : augmente l'attaque et la vie de toutes les créatures alliées sur le terrain. \
 Menace : action, augmente la protection d'une créature sur le terrain. \
 Charisme : action, augmente selon sa protection l'attaque et la défense d'une créature alliée sur le terrain. \
@@ -110,7 +102,6 @@ Garde nain : créature nain, quand un bâtiment alliée est posé : augmente sa 
 Chevalier noir : créature humain chevalier, quand meurt : dépense 20 or, fixe sa vie à 1 et reste sur le terrain. \
 Chevalier noir (monté) : créature humain chevalier, quand posé : inflige autant de dégâts que possible à une unité adverse et dépense autant d'or. Quand meurt : se transforme en Chevalier noir. \
 Écuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
-Ville des géants : lieu pour les cartes de niveau égal ou supérieur à 5. \
 Inondation : action, détruis un bâtiment adverse sur le terrain. \
 Hydratation : action, augmente l'attaque et la vie d'une créature Eau alliée sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
 Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatures Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \

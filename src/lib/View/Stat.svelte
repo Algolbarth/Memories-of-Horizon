@@ -58,6 +58,11 @@
 		<br />
 	{/if}
 
+	{#if card.type == 'Créature' && card.stat('Intensité').value() != 2}
+		Intensité : x{card.stat('Intensité').value()}
+		<br />
+	{/if}
+
 	{#if card.isUnit() && card.stat('Multicoup').value() > 1}
 		Multicoup : {card.stat('Multicoup').value()}
 		<br />

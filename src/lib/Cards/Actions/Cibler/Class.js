@@ -1,15 +1,14 @@
-import { Equipment } from '../Equipement.js';
+import { Action } from '../Action.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class HacheDeCuivre extends Equipment {
-    name = "Hache de cuivre";
+export class Cibler extends Action {
+    name = "Cibler";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 20]]);
-        this.equipStat("Adresse").base = 20;
+        this.init([["Or", 10]]);
 
         this.text = Text;
     };
@@ -26,8 +25,8 @@ export class HacheDeCuivre extends Equipment {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.canEquip()) {
+            for (const card of this.owner.adversary().zone("Terrain").cards) {
+                if (target == undefined) {
                     target = card;
                 }
             }
@@ -39,7 +38,8 @@ export class HacheDeCuivre extends Equipment {
     };
 
     useEffect = function (target) {
-        target.equip(this);
+        target.stat("Protection").add++;
+        this.move("Défausse");
         this.pose();
     };
 }

@@ -5,4 +5,4 @@
 
 S'équipe sur une créature alliée sur le terrain.
 <br />
-Augmente de 10 l'adresse de la créature équipée.
+Augmente de 20 l'adresse de la créature équipée.

@@ -10,6 +10,7 @@ export class HacheDePlatine extends Equipment {
 
         this.init([["Or", 100]]);
         this.equipStat("Adresse").base = 50;
+        this.equipStat("Intensité").base = 2;
 
         this.text = Text;
     };
