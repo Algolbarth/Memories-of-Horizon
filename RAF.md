@@ -87,7 +87,7 @@ Envie : vole une carte dans la main adverse. \
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. \
 Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et la vie d'une autre créature alliée sur le terrain d'autant que la vie et l'attaque de la créature détruite. \
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
-Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
+Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque. \
 
 Bouclier de roche : objet équipement, augmente la défense de la créature équipée. quand la créature équipée est attaquée : augmente la défense de la créature équipée. \
 Garnison des monts : bâtiment nain : au début d'un tour de combat : créé Soldat nain sur le terrain. \
@@ -98,13 +98,7 @@ Chevalier noir (monté) : créature humain chevalier, quand posé : inflige auta
 Écuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
 Hydratation : action, augmente l'attaque et la vie d'une créature Eau alliée sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
 Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatures Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
-Sang chaud : remplis la jauge critique d'une créature alliée sur le terrain. \
 Cautériser : action, fixe la vie max d'une créature adverse sur le terrain à sa vie restante. \
-Ruée : action, augmente la vitesse de toutes les créatures alliées sur le terrain pendant cette étape. \
-Cascade : bâtiment, quand une carte Eau est posée : produis de l'eau. \
-Fontaine : bâtiment, quand une carte Eau est posée : produis de l'or. \
-Puit : bâtiment, quand une carte Eau est posée : pioche une carte. \
-Blason : objet, augmente la défense de toutes les créatures alliées sur le terrain. \
 Lance de fer : objet équipement, augmente la percée de la créature équipée. \
 Trident : objet équipement, augmente la percée de la créature équipée. quand la créature équipée tue une unité : stocke de l'eau en réserve. \
 Piquier gobelin : créature gobelin, percée. \
@@ -114,10 +108,6 @@ Tour de siège : bâtiment, au début d'un tour de combat : augmente l'attaque e
 Défrichage : action, augmente la taille du terrain. \
 Désarmer : action, détruis tous les équipements d'une créature adverse sur le terrain.  \
 Brique : objet, soigne un bâtiment allié sur le terrain OU inflige des dégâts à une créature adverse sur le terrain. \
-Mue : action, augmente la vie maximale d'une créature de famille Reptile alliée sur le terrain. \
-Brise garde : action, fixe à 0 la garde d'une créature adverse sur le terrain. \
-Parade : action, augmente l'esquive. \
-Blocage : action, augmente la défense et la garde. \
 Wyverne : créature
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \

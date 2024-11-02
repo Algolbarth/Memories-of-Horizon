@@ -11,8 +11,8 @@
 		<br />
 	{/if}
 
-	{#if card.isUnit() && card.stat('Endurance').value() > 0}
-		Endurance : {card.stat('Endurance').value()}
+	{#if card.isUnit() && card.stat('Garde').value() > 0}
+		Garde : {card.stat('Garde').value()}
 		<br />
 	{/if}
 

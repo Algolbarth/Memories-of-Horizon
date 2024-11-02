@@ -44,7 +44,7 @@ export class CasqueEnCuir extends Equipment {
 
     startStepEffect = function () {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain") {
-            this.bearer.stat("Endurance").fix(5);
+            this.bearer.stat("Garde").fix(5);
         }
     };
 }

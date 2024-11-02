@@ -1,14 +1,14 @@
-import { Sort } from '../Sort.js';
+import { Action } from '../Action.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class BulleProtectrice extends Sort {
-    name = "Bulle protectrice";
+export class BriseGarde extends Action {
+    name = "Brise garde";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 15], ["Eau", 15]]);
+        this.init([["Or", 25]]);
 
         this.text = Text;
     };
@@ -25,8 +25,8 @@ export class BulleProtectrice extends Sort {
         else {
             let target = undefined;
 
-            for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+            for (const card of this.owner.adversary().zone("Terrain").cards) {
+                if (target == undefined) {
                     target = card;
                 }
             }
@@ -38,13 +38,9 @@ export class BulleProtectrice extends Sort {
     };
 
     useEffect = function (target) {
-        if (this.owner.ressource("Mana").total() >= this.manaCost(25)) {
-            this.owner.ressource("Mana").spend(this.manaCost(25));
-            target.stat("Garde").fix(50);
-        }
-        else {
-            target.stat("Garde").fix(25);
-        }
+        target.stat("Garde").current = 0;
+        target.stat("Garde").step = 0;
+        target.stat("Garde").turn = 0;
         this.move("Défausse");
         this.pose();
     };

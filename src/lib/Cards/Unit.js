@@ -17,7 +17,7 @@ export class Unit extends Card {
         this.addStat("Vie", 1, 1);
         this.stat("Vie").current = 1;
 
-        this.addStat("Endurance", 0);
+        this.addStat("Garde", 0);
 
         this.addStat("Actions", 1);
         this.stat("Actions").current = 1;
@@ -54,14 +54,14 @@ export class Unit extends Card {
         }
 
         if (this.stat("Esquive").value() == 0) {
-            if (this.stat("Endurance").value() > result.value) {
-                this.stat("Endurance").remove(result.value);
+            if (this.stat("Garde").value() > result.value) {
+                this.stat("Garde").remove(result.value);
                 result.value = 0;
             }
             else {
-                result.value -= this.stat("Endurance").value();
-                this.stat("Endurance").add = 0;
-                this.stat("Endurance").step = 0;
+                result.value -= this.stat("Garde").value();
+                this.stat("Garde").add = 0;
+                this.stat("Garde").step = 0;
             }
 
             this.stat("Vie").current -= result.value;

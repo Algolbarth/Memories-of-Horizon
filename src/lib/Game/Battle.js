@@ -1,4 +1,4 @@
-export class Battle {   
+export class Battle {
     fighter = undefined;
 
     constructor(System) {

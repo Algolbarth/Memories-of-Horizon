@@ -1,14 +1,14 @@
-import { Sort } from '../Sort.js';
+import { Action } from '../Action.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class BulleProtectrice extends Sort {
-    name = "Bulle protectrice";
+export class Parade extends Action {
+    name = "Parade";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 15], ["Eau", 15]]);
+        this.init([["Or", 20]]);
 
         this.text = Text;
     };
@@ -38,13 +38,7 @@ export class BulleProtectrice extends Sort {
     };
 
     useEffect = function (target) {
-        if (this.owner.ressource("Mana").total() >= this.manaCost(25)) {
-            this.owner.ressource("Mana").spend(this.manaCost(25));
-            target.stat("Garde").fix(50);
-        }
-        else {
-            target.stat("Garde").fix(25);
-        }
+        target.stat("Esquive").current += 1;
         this.move("Défausse");
         this.pose();
     };

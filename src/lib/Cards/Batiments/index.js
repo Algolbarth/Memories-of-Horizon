@@ -13,3 +13,6 @@ export * from './TourDeGuet';
 export * from './PuitDeMana';
 export * from './TourDArcher';
 export * from './Epouvantail';
+export * from './Puit';
+export * from './Cascade';
+export * from './Fontaine';
