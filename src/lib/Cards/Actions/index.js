@@ -28,3 +28,5 @@ export * from './Blocage';
 export * from './Parade';
 export * from './BriseGarde';
 export * from './Mue';
+export * from './Cauteriser';
+export * from './Desarmer';

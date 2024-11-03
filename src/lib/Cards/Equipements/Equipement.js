@@ -33,13 +33,23 @@ export class Equipment extends Objet {
     };
 
     remove = function () {
-        this.zone.cards.splice(this.slot, 1);
-        for (let i = this.slot; i < this.zone.cards.length; i++) {
-            this.zone.cards[i].slot--;
+        if (this.bearer != undefined) {
+            for (let i = 0; i < this.bearer.equipments.length; i++) {
+                if (this.bearer.equipments[i] == this) {
+                    this.bearer.equipments.splice(i, 1);
+                    i--;
+                }
+            }
+            this.bearer = undefined;
+        }
+        else {
+            this.zone.cards.splice(this.slot, 1);
+            for (let i = this.slot; i < this.zone.cards.length; i++) {
+                this.zone.cards[i].slot--;
+            }
         }
         this.zone = undefined;
         this.slot = undefined;
-        this.bearer = undefined;
     };
 
     equipStat = function (name) {

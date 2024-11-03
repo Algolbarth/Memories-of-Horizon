@@ -19,7 +19,6 @@ export class Raido extends Boss {
     };
 
     otherPoseEffect = function (card) {
-        console.log(card.owner == this.owner)
         if (this.zone.name == "Terrain" && card.owner == this.owner && card.type == "Créature") {
             card.stat("Attaque").base += 5;
             card.stat("Vie").current += 5;

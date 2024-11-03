@@ -400,9 +400,8 @@
 
 	:global(button.close) {
 		text-align: center;
-		width: 2.5vw;
-		height: 2.5vw;
-		padding: 0.4em;
+		width: 2em;
+		height: 2em;
 		margin: 0.25em 0 0.25em 0;
 		background: var(--close);
 		border: solid;

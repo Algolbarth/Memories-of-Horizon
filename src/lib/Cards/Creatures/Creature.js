@@ -83,8 +83,8 @@ export class Creature extends Unit {
     };
 
     equip = function (equipment) {
-        this.equipments.push(equipment);
         equipment.remove();
+        this.equipments.push(equipment);
         equipment.bearer = this;
 
         this.owner.ressource("Mana").current += equipment.equipStat("Magie").value();

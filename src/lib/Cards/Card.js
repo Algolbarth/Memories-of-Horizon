@@ -260,8 +260,8 @@ export class Card {
 
     };
 
-    detroy = function () {
-        if (!this.trait("Légendaire")) {
+    destroy = function () {
+        if (!this.trait("Légendaire").value()) {
             this.move("Défausse");
         }
     };
@@ -357,9 +357,11 @@ export class Card {
                 newCard.stat(stat.name).current = newCard.stat(stat.name).value();
             }
         }
-        for (const e of this.equipments) {
-            newCard.equipments.push(e);
-            e.bearer = newCard;
+        if (this.zone.cards[this.slot].type == "Créature") {
+            for (const e of this.equipments) {
+                newCard.equipments.push(e);
+                e.bearer = newCard;
+            }
         }
     };
 }

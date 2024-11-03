@@ -21,3 +21,4 @@ export * from './Torche';
 export * from './Trefle';
 export * from './Biere';
 export * from './Blason';
+export * from './Brique';
