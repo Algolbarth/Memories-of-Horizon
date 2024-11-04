@@ -33,7 +33,7 @@
 	</div>
 {:else}
 	<button
-		class="classic"
+		
 		on:click={() => {
 			choice = undefined;
 		}}>Retour</button

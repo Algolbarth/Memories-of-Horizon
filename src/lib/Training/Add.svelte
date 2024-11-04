@@ -1,9 +1,10 @@
 <script>
 	import View from '../View/Main.svelte';
 	import Filter from '../Menu/Filter.svelte';
+
 	export let System;
 
-	function close() {
+	function closing() {
 		filterWindow = false;
 		System.view.reset();
 		System.train.add.reset();
@@ -23,7 +24,6 @@
 		let tab = [];
 		for (const card of System.cards.instance) {
 			if (
-				!card.trait('Rare').value() &&
 				(!card.trait('Légendaire').value() || System.train.add.entity == 'bot') &&
 				(levelSelect == 'Tous' || card.level == levelSelect) &&
 				(typeSelect == 'Tous' || card.type == typeSelect) &&
@@ -48,10 +48,10 @@
 		familleSelect = famille;
 		elementSelect = element;
 		filter();
-		closing();
+		close();
 	}
 
-	function closing() {
+	function close() {
 		filterWindow = false;
 		System.pages.change('Training');
 	}
@@ -63,14 +63,15 @@
 		<button
 			class="close"
 			on:click={() => {
-				close();
+				closing();
 			}}>X</button
 		>
+		
 		<div id="side">
 			{System.several(cardList.length, 'carte')}
 			-
 			<button
-				class="classic"
+				
 				on:click={() => {
 					filterWindow = true;
 					System.pages.change('Training');
@@ -83,7 +84,7 @@
 					<div class="preview">
 						<div>
 							<button
-								class="classic"
+								
 								on:click={() => {
 									System.view.card = card;
 									System.pages.change('Training');
@@ -100,7 +101,7 @@
 						</div>
 						<div style="text-align:right;">
 							<button
-								class="classic"
+								
 								on:click={() => {
 									System.train.add.zone.cards.push(card.name);
 								}}>Ajouter</button
@@ -126,7 +127,7 @@
 		{familleSelect}
 		{elementSelect}
 		{sorting}
-		close={closing}
+		{close}
 	/>
 {/if}
 

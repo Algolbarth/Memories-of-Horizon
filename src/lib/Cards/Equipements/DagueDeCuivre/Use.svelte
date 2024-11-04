@@ -40,7 +40,7 @@
 	</div>
 {:else if choice == 'equip'}
 	<button
-		class="classic"
+		
 		on:click={() => {
 			choice = undefined;
 		}}>Retour</button
@@ -55,7 +55,7 @@
 	/>
 {:else if choice == 'damage'}
 	<button
-		class="classic"
+		
 		on:click={() => {
 			choice = undefined;
 		}}>Retour</button

@@ -379,10 +379,6 @@
 		color: var(--link_hover);
 	}
 
-	:global(button.classic:focus) {
-		background-color: transparent;
-	}
-
 	:global(button.big) {
 		text-align: center;
 		padding: 1em;

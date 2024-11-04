@@ -66,7 +66,7 @@
 		<input type="text" bind:value={name} />
 		{#if name != System.deck.name}
 			<button
-				class="classic"
+				
 				on:click={() => {
 					System.deck.changeName(name, 0);
 					System.pages.change('Deck');
@@ -75,7 +75,7 @@
 		{/if}
 		<br />
 		<button
-			class="classic"
+			
 			on:click={() => {
 				System.view.reset();
 				System.deck.clone();
@@ -98,7 +98,7 @@
 	{System.several(System.deck.cards.length, 'carte')}
 	-
 	<button
-		class="classic"
+		
 		on:click={() => {
 			sorted = true;
 			System.pages.change('Deck');
@@ -110,7 +110,7 @@
 		-
 		{#if move}
 			<button
-				class="classic"
+				
 				on:click={() => {
 					move = false;
 					System.pages.change('Deck');
@@ -118,7 +118,7 @@
 			>
 		{:else}
 			<button
-				class="classic"
+				
 				on:click={() => {
 					move = true;
 					System.pages.change('Deck');
@@ -127,7 +127,7 @@
 		{/if}
 		-
 		<button
-			class="classic"
+			
 			on:click={() => {
 				System.view.reset();
 				System.pages.change('Add');
@@ -139,7 +139,7 @@
 			<div class="preview">
 				<div>
 					<button
-						class="classic"
+						
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
 							System.pages.change('Deck');
@@ -158,7 +158,7 @@
 					{#if move}
 						{#if i > 0}
 							<button
-								class="classic"
+								
 								on:click={() => {
 									let temp = System.deck.cards[i - 1];
 									System.deck.cards[i - 1] = card;
@@ -172,7 +172,7 @@
 						{/if}
 						{#if i < System.deck.cards.length - 1}
 							<button
-								class="classic"
+								
 								on:click={() => {
 									let temp = System.deck.cards[i + 1];
 									System.deck.cards[i + 1] = card;
@@ -186,7 +186,7 @@
 						{/if}
 					{:else}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								System.deck.remove(card);
 								cards();

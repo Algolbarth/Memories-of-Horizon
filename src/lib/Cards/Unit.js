@@ -82,8 +82,6 @@ export class Unit extends Card {
     die = function () {
         this.stat("Vie").current = 0;
 
-        this.dieGo();
-
         this.dieEffect();
         for (const entity of [this.System.game.player, this.System.game.bot]) {
             for (const zone of entity.zones) {
@@ -100,6 +98,8 @@ export class Unit extends Card {
                 }
             }
         }
+
+        this.dieGo();
     };
 
     dieGo = function () {

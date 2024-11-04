@@ -2,9 +2,8 @@
 	export let System;
 
 	function save() {
-		let text =
-			System.account.name +
-			'_' +
+		let text = "JsRPG_" + System.account.name + '_';
+		text +=
 			System.account.aventure.victory +
 			'_' +
 			System.account.aventure.defeat +
@@ -12,9 +11,9 @@
 			System.account.construct.victory +
 			'_' +
 			System.account.construct.defeat +
-			'_' +
-			System.decks.length +
 			'_';
+		text += System.show_intelligence + '_';
+		text += System.decks.length + '_';
 		for (const deck of System.decks) {
 			text += deck.name + '_' + deck.victory + '_' + deck.defeat + '_' + deck.cards.length + '_';
 			for (const card of deck.cards) {
@@ -24,7 +23,7 @@
 
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-		element.setAttribute('download', System.account.name);
+		element.setAttribute('download', "JsRPG_" + System.account.name);
 		element.style.display = 'none';
 		document.body.appendChild(element);
 		element.click();
@@ -100,7 +99,6 @@
 			>
 			<br />
 			<button
-				class="classic"
 				on:click={() => {
 					logout();
 				}}>Se déconnecter</button

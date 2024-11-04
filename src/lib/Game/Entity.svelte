@@ -8,28 +8,28 @@
 
 	<br />
 
-	{#if System.game.phase == 'Préparation'}
-		{#each entity.ressources as ressource}
-			{#if ressource.current > 0 || ressource.max > 0 || ressource.stock > 0}
-				{ressource.name} : {ressource.current} / {ressource.max}
-				{#if ressource.stock > 0}
-					+ {ressource.stock}
-				{/if}
-				<br />
+	{#each entity.ressources as ressource}
+		{#if ressource.current > 0 || ressource.max > 0 || ressource.stock > 0}
+			{ressource.name} : {ressource.current} / {ressource.max}
+			{#if ressource.stock > 0}
+				+ {ressource.stock}
 			{/if}
-		{/each}
-		{#if entity == System.game.player && entity.flux > 0}
-			Flux : {entity.flux}
+			<br />
+		{/if}
+	{/each}
+
+	{#if entity.flux > 0}
+		Flux : {entity.flux}
+		{#if System.game.phase == 'Préparation'}
 			<br />
 			<button
-				class="classic"
 				on:click={() => {
 					System.game.flux = true;
 					System.pages.change('Game');
 				}}>Gérer les éléments</button
 			>
-			<br />
 		{/if}
+		<br />
 	{/if}
 
 	{#if System.show_intelligence}

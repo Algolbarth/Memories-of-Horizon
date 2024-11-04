@@ -5,7 +5,7 @@
 <div id="body">
 	<div class="center">
 		<button
-			class="classic"
+			
 			on:click={() => {
 				System.music.play();
 				System.pages.change('TitleScreen');
@@ -15,7 +15,7 @@
 	<div id="credits">
 		by
 		<button
-			class="classic"
+			
 			on:click={() => {
 				window.open('https://github.com/Algolbarth');
 			}}
@@ -24,7 +24,7 @@
 		</button>
 		-
 		<button
-			class="classic"
+			
 			on:click={() => {
 				window.open('https://github.com/Algolbarth/JsRPG');
 			}}
@@ -33,7 +33,7 @@
 		</button>
 		-
 		<button
-			class="classic"
+			
 			on:click={() => {
 				window.open('https://algolbarth.github.io/');
 			}}

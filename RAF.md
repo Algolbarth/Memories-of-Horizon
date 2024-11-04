@@ -93,17 +93,15 @@ Bouclier de roche : objet équipement, augmente la défense de la créature équ
 Garnison des monts : bâtiment nain : au début d'un tour de combat : créé Soldat nain sur le terrain. \
 Soldat nain : créature nain, quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
 Garde nain : créature nain, quand un bâtiment alliée est posé : augmente sa vie. \
-Chevalier noir : créature humain chevalier, quand meurt : dépense 20 or, fixe sa vie à 1 et reste sur le terrain. \
-Chevalier noir (monté) : créature humain chevalier, quand posé : inflige autant de dégâts que possible à une unité adverse et dépense autant d'or. Quand meurt : se transforme en Chevalier noir. \
+Baliste : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
+Catapulte : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
+Tour de siège : bâtiment, au début d'un tour de combat : augmente l'attaque et la vie de la créature alliée la plus en avant sur le terrain. \
 Écuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
 Hydratation : action, augmente l'attaque et la vie d'une créature Eau alliée sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
 Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatures Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
 Lance de fer : objet équipement, augmente la percée de la créature équipée. \
 Trident : objet équipement, augmente la percée de la créature équipée. quand la créature équipée tue une unité : stocke de l'eau en réserve. \
 Piquier gobelin : créature gobelin, percée. \
-Baliste : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
-Catapulte : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
-Tour de siège : bâtiment, au début d'un tour de combat : augmente l'attaque et la vie de la créature alliée la plus en avant sur le terrain. \
 Défrichage : action, augmente la taille du terrain. \
 Wyverne : créature
 

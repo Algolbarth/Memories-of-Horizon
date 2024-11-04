@@ -9,7 +9,7 @@
 	<br />
 	{#each card.equipments as equipment}
 		<button
-			class="classic"
+			
 			on:click={() => {
 				System.view.card = equipment;
 				System.pages.change('Game');

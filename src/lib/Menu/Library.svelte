@@ -2,6 +2,7 @@
 	import Filter from './Filter.svelte';
 	import Dropdown from './Dropdown.svelte';
 	import View from '../View/Main.svelte';
+
 	export let System;
 
 	let filterWindow = false;
@@ -11,6 +12,9 @@
 	let typeSelect = 'Tous';
 	let familleSelect = 'Toutes';
 	let elementSelect = 'Tous';
+	let communSelect = true;
+	let rareSelect = false;
+	let legendarySelect = false;
 
 	let cardList = [];
 	filter();
@@ -20,11 +24,13 @@
 
 		for (const card of System.cards.instance) {
 			if (
-				!card.trait('Rare').value() &&
 				(levelSelect == 'Tous' || card.level == levelSelect) &&
 				(typeSelect == 'Tous' || card.type == typeSelect) &&
 				(familleSelect == 'Toutes' || card.familles.base.includes(familleSelect)) &&
-				(elementSelect == 'Tous' || card.elements.includes(elementSelect))
+				(elementSelect == 'Tous' || card.elements.includes(elementSelect)) &&
+				((legendarySelect && card.trait("Légendaire").value()) ||
+				(rareSelect && card.trait("Rare").value()) ||
+				(communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))
 			) {
 				tab.push(card);
 			}
@@ -50,11 +56,14 @@
 		return tab;
 	}
 
-	function sorting(level, type, famille, element) {
+	function sorting(level, type, famille, element, commun, rare, legendary) {
 		levelSelect = level;
 		typeSelect = type;
 		familleSelect = famille;
 		elementSelect = element;
+		communSelect = commun;
+		rareSelect = rare;
+		legendarySelect = legendary;
 		filter();
 		close();
 	}
@@ -101,7 +110,7 @@
 		{#each cardList as card}
 			<div class="preview">
 				<button
-					class="classic"
+					
 					on:click={() => {
 						System.view.card = card;
 						System.pages.change('Library');
@@ -134,6 +143,9 @@
 		{typeSelect}
 		{familleSelect}
 		{elementSelect}
+		{communSelect}
+		{rareSelect}
+		{legendarySelect}
 		{sorting}
 		{close}
 	/>

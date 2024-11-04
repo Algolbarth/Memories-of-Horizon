@@ -18,7 +18,7 @@ export class ChevalierGeant extends Creature {
 }
 
 export class ChevalierGeantMonte extends Creature {
-    name = "Chevalier géant monté";
+    name = "Chevalier géant (monté)";
 
     constructor(System) {
         super(System);

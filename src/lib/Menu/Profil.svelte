@@ -17,7 +17,7 @@
 <input type="text" bind:value={name} />
 {#if name != System.account.name}
 	<button
-		class="classic"
+		
 		on:click={() => {
 			System.account.name = name;
 			System.pages.change('Profil');

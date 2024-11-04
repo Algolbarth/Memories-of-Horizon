@@ -18,7 +18,7 @@
 		{/if}
 		{#if !card.cache}
 			<button
-				class="classic"
+				
 				on:click={() => {
 					System.view.card = card;
 					System.pages.change('Game');
@@ -44,7 +44,7 @@
 			{#if System.game.phase == 'Préparation' && fonction == undefined}
 				{#if card.zone.name == 'Main' || card.zone.name == 'Terrain'}
 					<button
-						class="classic"
+						
 						on:click={() => {
 							card.sell();
 						}}>Vendre</button
@@ -52,14 +52,14 @@
 				{/if}
 				{#if card.zone.name == 'Boutique'}
 					<button
-						class="classic"
+						
 						on:click={() => {
 							card.buy();
 						}}>Acheter</button
 					>
 				{:else if card.zone.name == 'Main'}
 					<button
-						class="classic"
+						
 						on:click={() => {
 							card.use();
 						}}>Poser</button
@@ -69,7 +69,7 @@
 						Actif
 					{:else}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								card.owner.place = card;
 								System.pages.change('Game');
@@ -80,7 +80,7 @@
 				{#if card.zone.name == 'Main' || (card.zone.name == 'Terrain' && card.type == 'Créature')}
 					{#if card.slot > 0}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								card.up();
 								System.pages.change('Game');
@@ -91,7 +91,7 @@
 					{/if}
 					{#if card.slot < card.zone.cards.length - 1}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								card.down();
 								System.pages.change('Game');
@@ -105,7 +105,7 @@
 			{#if fonction != undefined}
 				{#if condition(card)}
 					<button
-						class="classic"
+						
 						on:click={() => {
 							fonction(card);
 						}}>Sélectionner</button

@@ -20,7 +20,7 @@
 		{#if entity == System.game.player && fonction == undefined && System.game.phase == 'Préparation'}
 			-
 			<button
-				class="classic"
+				
 				on:click={() => {
 					entity.actualiseShop();
 				}}>Actualiser</button
@@ -30,7 +30,7 @@
 		{#if entity == System.game.player && zone.level < 20 && fonction == undefined && System.game.phase == 'Préparation'}
 			-
 			<button
-				class="classic"
+				
 				on:click={() => {
 					entity.upShop();
 				}}>Améliorer</button
@@ -40,7 +40,7 @@
 		{#if entity == System.game.player && fonction == undefined && System.game.phase == 'Préparation'}
 			-
 			<button
-				class="classic"
+				
 				on:click={() => {
 					entity.lock();
 				}}>Verrouiller</button

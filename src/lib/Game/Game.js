@@ -43,8 +43,9 @@ export class Game extends Battle {
             this.player.place = this.player.zone("Lieux").cards[0];
 
             this.bot.life.set(this.System.train.bot.life);
-            this.player.ressource("Or").max = this.System.train.player.gold;
-            this.player.flux = this.System.train.player.flux;
+            this.bot.ressource("Or").max = this.System.train.bot.gold;
+            this.bot.ressource("Or").current = this.System.train.bot.gold;
+            this.bot.flux = this.System.train.bot.flux;
             this.bot.zone("Boutique").level = this.System.train.bot.zones[1].level;
             for (const zone of this.System.train.bot.zones) {
                 for (const card_name of zone.cards) {

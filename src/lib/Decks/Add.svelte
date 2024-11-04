@@ -36,7 +36,7 @@
 		familleSelect = famille;
 		elementSelect = element;
 		filter();
-		closing();
+		close();
 	}
 
 	function close() {
@@ -57,7 +57,7 @@
 	{System.several(cardList.length, 'carte')}
 	-
 	<button
-		class="classic"
+		
 		on:click={() => {
 			filterWindow = true;
 			System.pages.change('Add');
@@ -70,7 +70,7 @@
 			<div class={(System.deck.check(card.name) ? 'present ' : '') + 'preview'}>
 				<div>
 					<button
-						class="classic"
+						
 						on:click={() => {
 							System.view.card = card;
 							System.pages.change('Add');
@@ -88,14 +88,14 @@
 				<div style="text-align:right;">
 					{#if !System.deck.check(card.name)}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								System.deck.add(card.name);
 							}}>Ajouter</button
 						>
 					{:else}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								System.deck.remove(card.name);
 								System.pages.change('Add');

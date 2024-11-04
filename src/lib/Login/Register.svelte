@@ -16,7 +16,7 @@
 	<img src="Pictures/Title.png" alt="Logo" class="logo" />
 	<br />
 	<button
-		class="classic"
+		
 		on:click={() => {
 			System.pages.change('TitleScreen');
 		}}>Retour</button

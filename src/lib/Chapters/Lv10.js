@@ -6,7 +6,7 @@ export class Lv10_Reine extends Chapter {
 
         this.addRessource("Or", 550);
 
-        let array = ["Chevalier monté"];
+        let array = ["Chevalier (monté)"];
         for (let i = 0; i < 4; i++) {
             array.push("Reine");
         }

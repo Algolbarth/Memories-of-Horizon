@@ -29,7 +29,7 @@
 			<div class="preview">
 				<div>
 					<button
-						class="classic"
+						
 						on:mouseenter={() => {
 							System.view.quick = deck;
 							System.pages.change('Construit');

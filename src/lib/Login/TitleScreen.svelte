@@ -26,7 +26,7 @@
 	>
 	<br /><br />
 	<button
-		class="classic"
+		
 		on:click={() => {
 			invite();
 		}}>Jouer en tant qu'invité</button

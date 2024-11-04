@@ -12,11 +12,16 @@
 			save = await files[0].text();
 			step = 0;
 
+			if (readValue() != "JsRPG") {
+				console.log("Ce fichier n'est pas une sauvegarde pour JsRPG");
+				return 0;
+			}
 			System.account = new Account(System, readValue());
 			System.account.aventure.victory = readInt();
 			System.account.aventure.defeat = readInt();
 			System.account.construct.victory = readInt();
 			System.account.construct.defeat = readInt();
+			System.show_intelligence = readBool();
 			let decks = readInt();
 			for (let i = 0; i < decks; i++) {
 				let deck = new Deck(System);
@@ -50,13 +55,17 @@
 	function readInt() {
 		return parseInt(readValue());
 	}
+
+	function readBool() {
+		return readValue() == "true";
+	}
 </script>
 
 <div id="body">
 	<img src="Pictures/Title.png" alt="Logo" class="logo" />
 	<br />
 	<button
-		class="classic"
+		
 		on:click={() => {
 			System.pages.change('TitleScreen');
 		}}>Retour</button

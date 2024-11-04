@@ -28,7 +28,7 @@
 	{/if}
 	-
 	<button
-		class="classic"
+		
 		on:click={() => {
 			System.view.reset();
 			System.train.add.entity = entity;
@@ -43,7 +43,7 @@
 			{#if entity == 'player'}
 				<div>
 					<button
-						class="classic"
+						
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
 							System.pages.change('Training');
@@ -61,7 +61,7 @@
 				<div style="text-align:right;">
 					{#if zone.name != 'Lieux' || zone.cards.length > 1}
 						<button
-							class="classic"
+							class="remove"
 							on:click={() => {
 								zone.cards.splice(i, 1);
 								System.pages.change('Training');
@@ -73,7 +73,7 @@
 				<div>
 					{#if zone.name != 'Lieux' || zone.cards.length > 1}
 						<button
-							class="classic"
+							class="remove"
 							on:click={() => {
 								zone.cards.splice(i, 1);
 								System.pages.change('Training');
@@ -83,7 +83,7 @@
 				</div>
 				<div style="text-align:right;">
 					<button
-						class="classic"
+						
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
 							System.pages.change('Training');
@@ -114,6 +114,14 @@
 	.preview {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.remove {
+		color: var(--close_hover);
+	}
+
+	.remove:hover {
+		color: var(--close);
 	}
 
 	:global(input[type='number']) {

@@ -6,8 +6,8 @@ export class Lv4_Chevalier extends Chapter {
 
         this.addRessource("Or", 100);
 
-        this.addStep(40, "Plaine", ["Chevalier monté", "Chevalier monté"], ["Une troupe de chevalier errant terrorise la région en usant de leur privilège pour vivre aux dépends des habitants."]);
-        this.addStep(40, "Plaine", ["Chevalier monté", "Chevalier monté"]);
+        this.addStep(40, "Plaine", ["Chevalier (monté)", "Chevalier (monté)"], ["Une troupe de chevalier errant terrorise la région en usant de leur privilège pour vivre aux dépends des habitants."]);
+        this.addStep(40, "Plaine", ["Chevalier (monté)", "Chevalier (monté)"]);
     }
 }
 

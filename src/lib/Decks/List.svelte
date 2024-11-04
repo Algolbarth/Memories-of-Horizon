@@ -24,7 +24,7 @@
 <div id="zone">
 	{System.several(System.decks.length, 'deck')} -
 	<button
-		class="classic"
+		
 		on:click={() => {
 			newDeck();
 		}}>Créer un nouveau deck</button
@@ -35,7 +35,7 @@
 			<div class="preview">
 				<div>
 					<button
-						class="classic"
+						
 						on:mouseenter={() => {
 							System.view.quick = deck;
 							System.pages.change('Decks');
@@ -62,7 +62,7 @@
 					</button>
 					{#if i > 0}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								let temp = System.decks[i - 1];
 								System.decks[i - 1] = deck;
@@ -75,7 +75,7 @@
 					{/if}
 					{#if i < System.decks.length - 1}
 						<button
-							class="classic"
+							
 							on:click={() => {
 								let temp = System.decks[i + 1];
 								System.decks[i + 1] = deck;
