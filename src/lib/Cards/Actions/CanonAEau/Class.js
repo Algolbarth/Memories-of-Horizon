@@ -30,13 +30,12 @@ export class CanonAEau extends Action {
     };
 
     useEffect = function (target) {
-        if (this.owner.ressource("Eau").total() >= 50) {
-            this.owner.ressource("Eau").spend(50);
-            target.damage(200);
-        }
-        else {
-            target.damage(100);
-        }
+        let value = 100;
+
+        value += this.owner.ressource("Eau").total();
+        this.owner.ressource("Eau").spend(this.owner.ressource("Eau").total());
+
+        target.damage(value);
         this.move("Défausse");
         this.pose();
     };

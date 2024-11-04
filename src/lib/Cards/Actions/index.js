@@ -30,3 +30,7 @@ export * from './BriseGarde';
 export * from './Mue';
 export * from './Cauteriser';
 export * from './Desarmer';
+export * from './VagueDeferlante';
+export * from './RazDeMaree';
+export * from './Hydratation';
+export * from './MilieuAquatique';

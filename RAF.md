@@ -97,13 +97,13 @@ Baliste : bâtiment, au début d'un tour de combat : inflige des dégâts à l'u
 Catapulte : bâtiment, au début d'un tour de combat : inflige des dégâts à l'unité adverse la plus en avant sur le terrain. \
 Tour de siège : bâtiment, au début d'un tour de combat : augmente l'attaque et la vie de la créature alliée la plus en avant sur le terrain. \
 Écuyer : créature humain, quand posé : place dans la main une créature de famille chevalier alliée sur le terrain et la transforme. \
-Hydratation : action, augmente l'attaque et la vie d'une créature Eau alliée sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
-Milieu aquatique : action, augmente l'attaque et la vie de toutes les créatures Eau alliées sur le terrain. dépense de l'eau pour plus augmenter l'attaque et la vie. \
 Lance de fer : objet équipement, augmente la percée de la créature équipée. \
 Trident : objet équipement, augmente la percée de la créature équipée. quand la créature équipée tue une unité : stocke de l'eau en réserve. \
 Piquier gobelin : créature gobelin, percée. \
 Défrichage : action, augmente la taille du terrain. \
-Wyverne : créature
+Wyverne : créature \
+Wyverne mage : créature \
+Chimère : créature
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
