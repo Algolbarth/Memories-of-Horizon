@@ -44,7 +44,7 @@ export class PeauDOurs extends Equipment {
     };
 
     otherDieEffect = function (card) {
-        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.familles.base.includes("Bête")) {
+        if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.familles.total().includes("Bête")) {
             this.bearer.stat("Vie").add += 8;
             this.bearer.stat("Vie").add += 8;
         }

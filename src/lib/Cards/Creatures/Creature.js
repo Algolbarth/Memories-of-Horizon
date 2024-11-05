@@ -11,6 +11,8 @@ export class Creature extends Unit {
 
         this.addStat("Maniement", 1);
 
+        this.addStat("Percée", 0);
+
         this.addStat("Adresse", 0);
 
         this.addStat("Intensité", 2);
@@ -37,7 +39,11 @@ export class Creature extends Unit {
         let isDie = false;
         let repeat = this.stat("Multicoup").value();
         while (!isDie && repeat > 0) {
-            let difDamage = this.stat("Attaque").value() - defender.stat("Défense").value();
+            let reduceDamage = defender.stat("Défense").value() - this.stat("Percée").value();
+            if (reduceDamage < 0) {
+                reduceDamage = 0;
+            }
+            let difDamage = this.stat("Attaque").value() - reduceDamage;
             if (this.stat("Critique").current == 100) {
                 this.stat("Critique").current = 0;
                 difDamage = difDamage * this.stat("Intensité").value();

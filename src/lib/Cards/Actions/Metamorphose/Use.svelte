@@ -4,7 +4,7 @@
 	System;
 
 	function condition(card) {
-		if (card.type == 'Créature' && card.familles.base.includes('Druide')) {
+		if (card.type == 'Créature' && card.familles.total().includes('Druide')) {
 			return true;
 		}
 		return false;

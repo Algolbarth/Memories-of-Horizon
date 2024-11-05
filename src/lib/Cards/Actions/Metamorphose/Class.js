@@ -27,7 +27,7 @@ export class Metamorphose extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.familles.base.includes("Druide")) {
+                if (target == undefined && card.type == "Créature" && card.familles.total().includes("Druide")) {
                     target = card;
                 }
             }

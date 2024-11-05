@@ -30,3 +30,5 @@ export * from './CarapaceDeTortue';
 export * from './CollierEnDentDeLoup';
 export * from './PeauDOurs';
 export * from './Rapiere';
+export * from './LanceDeFer';
+export * from './Trident';

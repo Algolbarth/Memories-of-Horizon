@@ -19,7 +19,7 @@ export class Elementaliste extends Creature {
 
     useEffect = function () {
         let condition = function (card) {
-            if (card.familles.base.includes("Élémentaire")) {
+            if (card.familles.total().includes("Élémentaire")) {
                 return true;
             }
             return false;

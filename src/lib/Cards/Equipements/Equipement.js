@@ -24,6 +24,7 @@ export class Equipment extends Objet {
         this.addEquipStat("Maniement", 0);
         this.addEquipStat("Magie", 0);
         this.addEquipStat("Intelligence", 0);
+        this.addEquipStat("Percée", 0);
         this.addEquipStat("Adresse", 0);
         this.addEquipStat("Intensité", 0);
 

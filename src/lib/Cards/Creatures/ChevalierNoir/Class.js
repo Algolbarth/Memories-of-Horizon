@@ -5,13 +5,15 @@ import Use from './Use.svelte';
 
 export class ChevalierNoir extends Creature {
     name = "Chevalier noir";
+    otherForm = "Chevalier noir (monté)";
+    mounted = false;
     rez = false;
 
     constructor(System) {
         super(System);
 
         this.init([["Or", 30]]);
-        this.familles.base.push("Humain");
+        this.familles.base.push("Humain", "Chevalier");
 
         this.stat("Vie").base = 20;
         this.stat("Vie").current = 20;
@@ -41,12 +43,14 @@ export class ChevalierNoir extends Creature {
 
 export class ChevalierNoirMonte extends Creature {
     name = "Chevalier noir (monté)";
+    otherForm = "Chevalier noir";
+    mounted = true;
 
     constructor(System) {
         super(System);
 
         this.init([["Or", 60]]);
-        this.familles.base.push("Humain");
+        this.familles.base.push("Humain", "Chevalier");
 
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;

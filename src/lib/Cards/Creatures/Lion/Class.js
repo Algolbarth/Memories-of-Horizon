@@ -20,7 +20,7 @@ export class Lion extends Creature {
     useEffect = function () {
         let terrain = this.System.copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
-            if (card.type == "Créature" && card.familles.base.includes("Bête")) {
+            if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 card.stat("Attaque").add += 5;
                 card.stat("Vie").current += 5;
                 card.stat("Vie").add += 5;

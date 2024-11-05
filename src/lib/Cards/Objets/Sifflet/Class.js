@@ -14,7 +14,7 @@ export class Sifflet extends Objet {
 
     useEffect = function () {
         let condition = function (card) {
-            if (card.type == "Créature" && card.familles.base.includes("Bête")) {
+            if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 return true;
             }
             return false;
@@ -23,7 +23,7 @@ export class Sifflet extends Objet {
 
         let terrain = this.System.copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
-            if (card.type == "Créature" && card.familles.base.includes("Bête")) {
+            if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 card.stat("Attaque").add += 1;
                 card.stat("Vie").current += 1;
                 card.stat("Vie").add += 1;

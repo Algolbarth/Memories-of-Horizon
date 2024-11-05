@@ -46,6 +46,11 @@
 		<br />
 	{/if}
 
+	{#if card.type == 'Créature' && card.stat('Percée').value() > 0}
+		Percée : {card.stat('Percée').value()}
+		<br />
+	{/if}
+
 	{#if card.type == 'Créature' && card.stat('Adresse').value() > 0}
 		Adresse : {card.stat('Adresse').value()}
 		<br />

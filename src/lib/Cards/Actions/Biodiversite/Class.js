@@ -23,9 +23,11 @@ export class Biodiversite extends Action {
         let terrain = this.System.copy(this.owner.zone("Terrain").cards);
 
         for (const card of terrain) {
-            for (const famille of card.familles.base) {
-                if (!list.includes(famille)) {
-                    list.push(famille);
+            if (card.type == "Créature") {
+                for (const famille of card.familles.total()) {
+                    if (!list.includes(famille)) {
+                        list.push(famille);
+                    }
                 }
             }
         }

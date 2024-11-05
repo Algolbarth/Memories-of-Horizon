@@ -16,3 +16,5 @@ export * from './Epouvantail';
 export * from './Puit';
 export * from './Cascade';
 export * from './Fontaine';
+export * from './Baliste';
+export * from './Catapulte';

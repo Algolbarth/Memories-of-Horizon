@@ -2,7 +2,7 @@
 	export let System;
 
 	function save() {
-		let text = "JsRPG_" + System.account.name + '_';
+		let text = 'JsRPG_' + System.account.name + '_';
 		text +=
 			System.account.aventure.victory +
 			'_' +
@@ -12,7 +12,7 @@
 			'_' +
 			System.account.construct.defeat +
 			'_';
-		text += System.show_intelligence + '_';
+		text += System.music.volume + '_' + System.show_intelligence + '_';
 		text += System.decks.length + '_';
 		for (const deck of System.decks) {
 			text += deck.name + '_' + deck.victory + '_' + deck.defeat + '_' + deck.cards.length + '_';
@@ -23,7 +23,7 @@
 
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-		element.setAttribute('download', "JsRPG_" + System.account.name);
+		element.setAttribute('download', 'JsRPG_' + System.account.name);
 		element.style.display = 'none';
 		document.body.appendChild(element);
 		element.click();
@@ -40,69 +40,85 @@
 <div id="body">
 	<img src="Pictures/Title.png" alt="Logo" class="logo" />
 	<div id="list">
-		<div>
-			<button
-				class="big"
-				on:click={() => {
-					System.pages.change('Play');
-				}}>Jouer</button
-			>
-			<br /><br />
-			<button
-				class="big"
-				on:click={() => {
-					System.pages.change('Decks');
-				}}>Decks</button
-			>
-			<br /><br />
-			<button
-				class="big"
-				on:click={() => {
-					System.pages.change('Library');
-				}}>Bibliothèque</button
-			>
-			<br /><br />
-			<button
-				class="big"
-				on:click={() => {
-					System.pages.change('Universe');
-				}}>Univers</button
-			>
+		<div class="column">
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						System.pages.change('Play');
+					}}>Jouer</button
+				>
+			</div>
+
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						System.pages.change('Decks');
+					}}>Decks</button
+				>
+			</div>
+
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						System.pages.change('Library');
+					}}>Bibliothèque</button
+				>
+			</div>
+
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						System.pages.change('Universe');
+					}}>Univers</button
+				>
+			</div>
 		</div>
-		<div>
-			<button
-				class="big"
-				on:click={() => {
-					System.pages.change('Profil');
-				}}>Profil</button
-			>
-			<br /><br />
-			<button
-				class="big"
-				on:click={() => {
-					System.pages.change('Settings');
-				}}>Options</button
-			>
-			<br /><br />
-			<button
-				class="big"
-				on:click={() => {
-					System.pages.change('News');
-				}}>Nouveautés</button
-			>
-			<br /><br />
-			<button
-				class="big"
-				on:click={() => {
-					save();
-				}}>Sauvegarder</button
-			>
-			<br />
-			<button
-				on:click={() => {
-					logout();
-				}}>Se déconnecter</button
-			>
+		<div class="column">
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						System.pages.change('Profil');
+					}}>Profil</button
+				>
+			</div>
+
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						System.pages.change('Settings');
+					}}>Options</button
+				>
+			</div>
+
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						System.pages.change('News');
+					}}>Nouveautés</button
+				>
+			</div>
+
+			<div>
+				<button
+					class="big"
+					on:click={() => {
+						save();
+					}}>Sauvegarder</button
+				>
+				<br />
+				<button
+					on:click={() => {
+						logout();
+					}}>Se déconnecter</button
+				>
+			</div>
 		</div>
 	</div>
 </div>
@@ -115,6 +131,11 @@
 	#list {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.column {
+		display: grid;
+		grid-template-rows: repeat(4, 1fr);
 	}
 
 	button.big {

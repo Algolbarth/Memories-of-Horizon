@@ -3,12 +3,14 @@ import Text from './Text.svelte';
 
 export class Chevalier extends Creature {
     name = "Chevalier";
+    otherForm = "Chevalier (monté)";
+    mounted = false;
 
     constructor(System) {
         super(System);
 
         this.init([["Or", 25]]);
-        this.familles.base.push("Humain");
+        this.familles.base.push("Humain", "Chevalier");
 
         this.stat("Vie").base = 20;
         this.stat("Vie").current = 20;
@@ -19,12 +21,14 @@ export class Chevalier extends Creature {
 
 export class ChevalierMonte extends Creature {
     name = "Chevalier (monté)";
+    otherForm = "Chevalier";
+    mounted = true;
 
     constructor(System) {
         super(System);
 
         this.init([["Or", 50]]);
-        this.familles.base.push("Humain");
+        this.familles.base.push("Humain", "Chevalier");
 
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;

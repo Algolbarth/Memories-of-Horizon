@@ -65,3 +65,8 @@ export * from './Chasseur';
 export * from './Grenouille';
 export * from './General';
 export * from './ChevalierNoir';
+export * from './Chimere';
+export * from './Wyverne';
+export * from './WyverneMage';
+export * from './Ecuyer';
+export * from './PiquierGobelin';

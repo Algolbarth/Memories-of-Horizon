@@ -31,7 +31,7 @@
 					(System.train.add.zone != undefined && System.train.add.zone.name != 'Lieux')) &&
 				(card.isUnit() ||
 					(System.train.add.zone != undefined && System.train.add.zone.name != 'Terrain')) &&
-				(familleSelect == 'Toutes' || card.familles.base.includes(familleSelect)) &&
+				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
 				(elementSelect == 'Tous' || card.elements.includes(elementSelect))
 			) {
 				tab.push(card);

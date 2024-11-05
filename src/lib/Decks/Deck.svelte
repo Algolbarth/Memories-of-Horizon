@@ -27,7 +27,7 @@
 			if (
 				(levelSelect == 'Tous' || card.level == levelSelect) &&
 				(typeSelect == 'Tous' || card.type == typeSelect) &&
-				(familleSelect == 'Toutes' || card.familles.base.includes(familleSelect)) &&
+				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
 				(elementSelect == 'Tous' || card.elements.includes(elementSelect))
 			) {
 				tab.push(cardName);

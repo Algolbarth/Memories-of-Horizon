@@ -281,7 +281,7 @@
 	import Game from '../lib/Game/Game.svelte';
 	System.pages.add('Game', Game);
 
-	import Settings from '../lib/Game/Settings.svelte';
+	import Settings from '../lib/Menu/Settings.svelte';
 	System.pages.add('Settings', Settings);
 
 	import Dialog from '../lib/Game/Dialog.svelte';

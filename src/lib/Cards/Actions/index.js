@@ -34,3 +34,4 @@ export * from './VagueDeferlante';
 export * from './RazDeMaree';
 export * from './Hydratation';
 export * from './MilieuAquatique';
+export * from './Defrichage';

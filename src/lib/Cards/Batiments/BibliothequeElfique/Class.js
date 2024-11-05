@@ -17,7 +17,7 @@ export class BibliothequeElfique extends Batiment {
     };
 
     otherPoseEffect = function (card) {
-        if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.base.includes("Elfe")) {
+        if (this.zone.name == "Terrain" && card.type == "Créature" && card.familles.total().includes("Elfe")) {
             this.stat("Intelligence").add += 1;
         }
     }

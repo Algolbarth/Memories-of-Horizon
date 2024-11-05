@@ -7,14 +7,14 @@ export class Caserne extends Batiment {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 25]]);
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
+        this.init([["Or", 40]]);
+        this.stat("Vie").base = 20;
+        this.stat("Vie").current = 20;
 
         this.text = Text;
     };
 
-    startStepEffect = function () {
+    turnEffect = function () {
         if (this.zone.name == "Terrain") {
             this.owner.getCard("Soldat").add("Terrain");
         }

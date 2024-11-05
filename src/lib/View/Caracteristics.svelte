@@ -65,9 +65,9 @@
 
 <div class="box">
 	{card.type}
-	{#if card.familles.base.length > 0}
+	{#if card.familles.total().length > 0}
 		-
-		{#each card.familles.base as famille, i}
+		{#each card.familles.total() as famille, i}
 			{#if i > 0}&nbsp{/if}{famille}
 		{/each}
 	{/if}

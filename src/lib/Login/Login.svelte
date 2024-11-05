@@ -1,6 +1,7 @@
 <script>
 	import { Account } from './Account.js';
 	import { Deck } from '../Decks/Deck.js';
+	
 	export let System;
 
 	let files;
@@ -21,6 +22,7 @@
 			System.account.aventure.defeat = readInt();
 			System.account.construct.victory = readInt();
 			System.account.construct.defeat = readInt();
+			System.music.volume = readInt();
 			System.show_intelligence = readBool();
 			let decks = readInt();
 			for (let i = 0; i < decks; i++) {

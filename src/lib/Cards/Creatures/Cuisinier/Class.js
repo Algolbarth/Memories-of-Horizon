@@ -18,7 +18,7 @@ export class Cuisinier extends Creature {
     };
 
     otherPoseEffect = function (card) {
-        if (this.zone.name == "Terrain" && card.familles.base.includes("Nourriture") && card.owner == this.owner) {
+        if (this.zone.name == "Terrain" && card.familles.total().includes("Nourriture") && card.owner == this.owner) {
             for (const e of card.elements) {
                 if (e != "Neutre") {
                     this.owner.ressource(e).current += 3;

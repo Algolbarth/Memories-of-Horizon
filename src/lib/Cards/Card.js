@@ -51,13 +51,13 @@ export class Card {
                 this.elements.push(element[0]);
             }
         }
+        if (this.elements.length == 0) {
+            this.elements.push("Neutre");
+        }
 
         this.level = parseInt((total - 1) / 10) + 1;
         if (this.level > 20) {
             this.level = 20;
-        }
-        if (this.elements.length == 0) {
-            this.elements.push("Neutre");
         }
 
         let total_vente = 0;
@@ -367,6 +367,8 @@ export class Card {
 }
 
 class Cout {
+    add = 0;
+
     constructor(name, value, card) {
         this.name = name;
         this.card = card;
@@ -374,7 +376,7 @@ class Cout {
     };
 
     value = function () {
-        let total = this.base;
+        let total = this.base + this.add;
         return total;
     };
 }

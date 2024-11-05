@@ -19,7 +19,7 @@ export class Dresseur extends Creature {
 
     useEffect = function () {
         let condition = function (card) {
-            if (card.type == "Créature" && card.familles.base.includes("Bête")) {
+            if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 return true;
             }
             return false;

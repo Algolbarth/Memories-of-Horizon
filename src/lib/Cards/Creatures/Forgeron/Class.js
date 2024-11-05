@@ -19,7 +19,7 @@ export class Forgeron extends Creature {
 
     useEffect = function () {
         let condition = function (card) {
-            if (card.familles.base.includes("Équipement")) {
+            if (card.familles.total().includes("Équipement")) {
                 return true;
             }
             return false;
