@@ -39,6 +39,7 @@ export class Pomme extends Objet {
     };
 
     useEffect = function (target) {
+        this.targeting(target);
         if (target.stat("Vie").current == target.stat("Vie").value()) {
             target.stat("Vie").add += 5;
             target.stat("Vie").current += 5;

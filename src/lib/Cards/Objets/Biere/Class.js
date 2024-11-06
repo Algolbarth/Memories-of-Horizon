@@ -39,6 +39,7 @@ export class Biere extends Objet {
     };
 
     useEffect = function (target) {
+        this.targeting(target);
         if (target.stat("Vie").current == target.stat("Vie").value()) {
             target.stat("Critique").current += 50;
             if (target.stat("Critique").current > 100) {

@@ -1,13 +1,13 @@
 import { Creature } from '../Creature.js';
 import Text from './Text.svelte';
 
-export class Mimique extends Creature {
-    name = "Mimique";
+export class MimiqueDeJarre extends Creature {
+    name = "Mimique de jarre";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 5]]);
+        this.init([["Or", 10]]);
 
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
@@ -22,6 +22,6 @@ export class Mimique extends Creature {
     };
 
     dieEffect = function () {
-        this.owner.adversary().draw(2);
+        this.owner.adversary().ressource("Or").stock += 10;
     };
 }

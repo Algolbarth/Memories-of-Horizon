@@ -21,8 +21,6 @@ Ajouter les familles Arme et Armure
 # Cartes
 
 ## A ajouter
-*Mimique => Mimique de coffre* \
-Mimique de jarre : se pose sur le terrain adverse. Quand meurt : ajoute de l'or dans la réserve adverse. \
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse. \
 Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la vie de la créature attaquante. \
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
@@ -34,13 +32,17 @@ Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Vole
 
 Exploration : augmente la taille de la boutique. \
 Agrandissement : augmente la taille de la main. \
-Savoir interdit : diminue la taille du terrain et augmente la taille de la main. \
-Étendre : augmente la taille du terrain. \
-Omniscience : pioche 10 cartes. sorcellerie : si la boutique est pleine, augmente la taille de la boutique.
+ : augmente la taille du terrain. \
+Chercheur : si la boutique est pleine, augmente la taille de la boutique. \
+Entrepôt : si la main est pleine, augmente la taille de la main. \
+Conquérant : si le terrain est plein, augmente la taille du terrain. \
+Omniscience : découvre des cartes jusqu'à remplir la boutique. \
+Savoir interdit : diminue la taille du terrain et augmente la taille de la main et de la boutique.
 
-Frappe : choisis une créature alliée sur le terrain. inflige autant de dégâts que l'attaque de la créature choisie à une créature adverse sur le terrain. \
-Écrasement : choisis une créature alliée sur le terrain. inflige autant de dégâts que la vie de la créature choisie à une créature adverse sur le terrain. \
-Coup de bouclier : choisis une créature alliée sur le terrain. inflige autant de dégâts que la défense de la créature choisie à une créature adverse sur le terrain.
+Frappe : inflige autant de dégâts à une unité adverse que la valeur d'attaque la plus haute parmi les créatures alliées sur le terrain. \
+Écrasement : inflige autant de dégâts à une unité adverse que la valeur de vie la plus haute parmi les créatures alliées sur le terrain. \
+Coup de bouclier : inflige autant de dégâts à une unité adverse que la valeur de défense la plus haute parmi les créatures alliées sur le terrain. \
+Coup de boule : inflige autant de dégâts à l'unité ayant le plus de vie sur le terrain adverse que la valeur d'attaque la plus haute parmi les créatures alliées sur le terrain.
 
 Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage : augmente la résistance de la créature équipée. \
@@ -60,11 +62,7 @@ Concoction : objet potion, applique l'effet associé à chaque type de compteur 
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
 Alchimiste : créature, quand posé : pioche 2 objets potion.
 
-*Ajouter l'effet d'être ciblé par une carte* \
-Restaurant : bâtiment, quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main. \
-Biscuit : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, crée Biscuit sur le terrain. \
-Chocolat : objet nourriture, soigne une créature alliée sur le terrain. si sa vie était pleine, augmente son attaque et sa vie à la place. \
-Bonhomme biscuit : créature nourriture, quand ciblé par un objet nourriture allié : augmente son attaque et sa défense.
+Restaurant : bâtiment, quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main.
 
 Cheval de guerre : créature, quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \

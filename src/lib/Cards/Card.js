@@ -364,6 +364,15 @@ export class Card {
             }
         }
     };
+
+    targeting = function (target) {
+        target.targetEffect(this);
+        return true;
+    };
+
+    targetEffect = function (card) {
+
+    };
 }
 
 class Cout {

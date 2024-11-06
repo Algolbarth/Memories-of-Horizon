@@ -2,13 +2,13 @@ import { Objet } from '../Objet.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
 
-export class SardinesEnBoite extends Objet {
-    name = "Sardines en boîte";
+export class Biscuit extends Objet {
+    name = "Biscuit";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 4], ["Eau", 4]]);
+        this.init([["Or", 15]]);
         this.familles.base.push("Nourriture");
 
         this.text = Text;
@@ -41,10 +41,10 @@ export class SardinesEnBoite extends Objet {
     useEffect = function (target) {
         this.targeting(target);
         if (target.stat("Vie").current == target.stat("Vie").value()) {
-            target.owner.ressource("Eau").current += 5;
+            this.owner.getCard("Bonhomme biscuit").add("Terrain");
         }
         else {
-            target.heal(10);
+            target.heal(25);
         }
         this.move("Défausse");
         this.pose();

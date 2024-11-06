@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Quand une carte de famille Nourriture est posée : produis 3 ressources de l'élément de cette carte.
+Quand une carte de famille Nourriture est posée : produis 3 ressources de chaque élément de cette carte.

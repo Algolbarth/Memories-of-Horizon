@@ -1,7 +1,7 @@
 <script>
 	import Zone from '../../../Game/Zone.svelte';
-	
 	export let System;
+	System;
 
 	function condition(card) {
 		if (card.type == 'Créature') {

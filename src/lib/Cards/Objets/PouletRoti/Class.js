@@ -39,6 +39,7 @@ export class PouletRoti extends Objet {
     };
 
     useEffect = function (target) {
+        this.targeting(target);
         if (target.stat("Vie").current == target.stat("Vie").value()) {
             target.stat("Attaque").add += 10;
         }
