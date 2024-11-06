@@ -124,4 +124,12 @@ export class Unit extends Card {
     playEffect = function () {
 
     };
+
+    defend = function (attacker) {
+        this.defendEffect(attacker);
+    };
+
+    defendEffect = function (attacker) {
+
+    };
 }

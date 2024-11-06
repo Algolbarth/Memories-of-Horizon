@@ -10,31 +10,32 @@ Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la 
 Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues) \
 Ajouter ces stats pour le compte \
 Ajouter les stats des decks (types de carte, éléments, familles, niveau) \
-Afficher les cartes du deck, les cartes piochables, les cartes decouvrables via la boutique \
+Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la boutique \
 Ranger les chapitres dans des dossier \
 Ajouter un texte explicatif pour les stats et effets \
-Ajouter un tutoriel dans jouer, avec les mecaniques du jeu \
+Ajouter un tutoriel dans jouer, avec les mécaniques du jeu \
 Corriger la pose des créatures avec la limite de carte \
 Ajouter l'étourdissement et la paralysie (paralysie => X actions, gel => X tours, étourdissement => X étapes) \
 Ajouter les familles Arme et Armure
 
 # Cartes
 
+## A ajouter
 *Mimique => Mimique de coffre* \
 Mimique de jarre : se pose sur le terrain adverse. Quand meurt : ajoute de l'or dans la réserve adverse. \
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse. \
-Mimique de pomme : se pose sur le terrain adevrse. Quand meurt au combat : augmente la vie de la créature attaquante. \
+Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la vie de la créature attaquante. \
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
 
 Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain. \
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
-Guilde des voleurs : batiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
+Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
 
 Exploration : augmente la taille de la boutique. \
 Agrandissement : augmente la taille de la main. \
-Etendre : augmente la taille du terrain. \
 Savoir interdit : diminue la taille du terrain et augmente la taille de la main. \
+Étendre : augmente la taille du terrain. \
 Omniscience : pioche 10 cartes. sorcellerie : si la boutique est pleine, augmente la taille de la boutique.
 
 Frappe : choisis une créature alliée sur le terrain. inflige autant de dégâts que l'attaque de la créature choisie à une créature adverse sur le terrain. \
@@ -89,12 +90,6 @@ Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
 Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque. \
 
-Bouclier de roche : objet équipement, augmente la défense de la créature équipée. quand la créature équipée est attaquée : augmente la défense de la créature équipée. \
-Garnison des monts : bâtiment nain : au début d'un tour de combat : créé Soldat nain sur le terrain. \
-Soldat nain : créature nain, quand arrive sur le terrain : augmente son attaque et sa vie selon le nombre de bâtiment allié sur le terrain. \
-Garde nain : créature nain, quand un bâtiment alliée est posé : augmente sa vie. \
-Tour de siège : bâtiment, au début d'un tour de combat : augmente l'attaque et la vie de la créature alliée la plus en avant sur le terrain.
-
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
 Enflammer : enflamme une unité adverse sur le terrain. \
@@ -134,8 +129,6 @@ Phitomancien : quand une carte alliée Végétal est posée : augmente sa vie. \
 Massue de chêne : objet équipement, charge. \
 Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
 
-Vague déferlante : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
-Raz de marée : inflige des dégâts à toutes les unités adverses sur le terrain. dépense de l'eau pour infliger plus de dégâts à la place. \
 Bouée : ajoute l'élément Eau à la créature équipée. \
 Garde côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
@@ -162,18 +155,18 @@ Wyverne terrestre \
 Géomancien : quand une carte alliée Terre est posée : augmente sa défense.
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
-Epée des flammes toxiques \
 Salamandre d'acide \
+Épée des flammes toxiques \
 Salamandre fumante \
 Grande salamandre \
 Souffle de flammes toxiques \
 Plage : lieu pour les cartes d'élément Eau et Feu.
 
-Pillard du désert : quand se fait attaquer : augmente son attaque. Quand attaque : augmente sa défense. \
-Guerrier du désert \
+Pillard du désert : quand se fait attaquer : produis de la terre. Quand attaque : produis du feu. \
+Guerrier du désert : quand se fait attaquer : augmente sa défense. Quand attaque : augmente son attaque.\
 Assassin du désert \
-Ver des sables \
-Elementaire de sable \
+Ver des sables : quand attaque : détruis la carte dans la main adverse en première position. quand est attaquée : détruis la carte dans la main en première position. \
+Élémentaire de sable \
 Golem de lave \
 Désert : lieu pour les cartes d'élément Feu et Terre.
 
@@ -259,8 +252,8 @@ Rabatteur centaure : créature, quand posé : augmente la vitesse d'une créatur
 Cyclope \
 Wyverne de foudre \
 Mage de foudre \
-Electromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
 Plateau : lieu pour les cartes d'élément Foudre.
+Électromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
 
 Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain. \
 Mini automate : créature machine. \
@@ -337,12 +330,12 @@ Tréant carmin \
 Foret noire : lieu pour les cartes d'élément Végétal et Ombre.
 
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie. \
-Glacier : lieu pour les cartes d'élement Glace et Terre.
+Glacier : lieu pour les cartes d'élément Glace et Terre.
 
 Requin articque : poisson \
 Kraken \
 Tentacule \
-Banquise : lieu pour les cartes d'élement Glace et Eau.
+Banquise : lieu pour les cartes d'élément Glace et Eau.
 
 Armure possédée
 

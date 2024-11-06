@@ -32,3 +32,4 @@ export * from './PeauDOurs';
 export * from './Rapiere';
 export * from './LanceDeFer';
 export * from './Trident';
+export * from './BouclierDeRoche';

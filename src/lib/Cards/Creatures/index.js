@@ -70,3 +70,5 @@ export * from './Wyverne';
 export * from './WyverneMage';
 export * from './Ecuyer';
 export * from './PiquierGobelin';
+export * from './SoldatNain';
+export * from './GardeNain';

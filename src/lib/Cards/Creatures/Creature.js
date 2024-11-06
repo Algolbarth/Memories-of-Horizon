@@ -39,6 +39,8 @@ export class Creature extends Unit {
         let isDie = false;
         let repeat = this.stat("Multicoup").value();
         while (!isDie && repeat > 0) {
+            defender.defend(this);
+
             let reduceDamage = defender.stat("Défense").value() - this.stat("Percée").value();
             if (reduceDamage < 0) {
                 reduceDamage = 0;
@@ -59,6 +61,7 @@ export class Creature extends Unit {
                     card.killEffect();
                 }
             }
+
             repeat--;
         }
     };
@@ -69,6 +72,15 @@ export class Creature extends Unit {
 
     killEffect = function () {
 
+    };
+
+    defend = function (attacker) {
+        this.defendEffect(attacker);
+        if (this.type == "Créature") {
+            for (const e of this.equipments) {
+                e.defendEffect(this);
+            }
+        }
     };
 
     findTarget = function () {
