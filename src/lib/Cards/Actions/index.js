@@ -35,3 +35,7 @@ export * from './RazDeMaree';
 export * from './Hydratation';
 export * from './MilieuAquatique';
 export * from './Defrichage';
+export * from './Etendre';
+export * from './Exploration';
+export * from './Agrandissement';
+export * from './Multisoin';

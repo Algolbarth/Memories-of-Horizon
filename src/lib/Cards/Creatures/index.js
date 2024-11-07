@@ -74,3 +74,6 @@ export * from './SoldatNain';
 export * from './GardeNain';
 export * from './MimiqueDeJarre';
 export * from './BonhommeBiscuit';
+export * from './ChevalDeGuerre';
+export * from './Maire';
+export * from './Sage';

@@ -30,14 +30,11 @@ Cape de voleur : au début de la phase de préparation : augmente la valeur de v
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
 Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
 
-Exploration : augmente la taille de la boutique. \
-Agrandissement : augmente la taille de la main. \
- : augmente la taille du terrain. \
-Chercheur : si la boutique est pleine, augmente la taille de la boutique. \
-Entrepôt : si la main est pleine, augmente la taille de la main. \
-Conquérant : si le terrain est plein, augmente la taille du terrain. \
-Omniscience : découvre des cartes jusqu'à remplir la boutique. \
-Savoir interdit : diminue la taille du terrain et augmente la taille de la main et de la boutique.
+Chercheur : créature, quand posé : pioche 1 carte. si la boutique est pleine, augmente la taille de la boutique. \
+Entrepôt : bâtiment, quand acheté : si la main est pleine, augmente la taille de la main. \
+Conquérant : créature, si le terrain est plein, augmente la taille du terrain. \
+Omniscience : action, découvre des cartes jusqu'à remplir la boutique. \
+Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main et de la boutique.
 
 Frappe : inflige autant de dégâts à une unité adverse que la valeur d'attaque la plus haute parmi les créatures alliées sur le terrain. \
 Écrasement : inflige autant de dégâts à une unité adverse que la valeur de vie la plus haute parmi les créatures alliées sur le terrain. \
@@ -64,11 +61,9 @@ Alchimiste : créature, quand posé : pioche 2 objets potion.
 
 Restaurant : bâtiment, quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main.
 
-Cheval de guerre : créature, quand posé : augmente l'attaque, la vie et la vitesse d'une créature alliée sur le terrain. \
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
 Aiguisage : action, augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
 Polissage : action, augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape. \
-Vague de soin : action, soigne toutes les créatures alliées sur le terrain. \
 Repos : action, place dans la boutique une créature alliée sur le terrain et la soigne totalement. \
 Barde : créature, quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape. \
 Danseuse : créature, quand arrive sur le terrain : esquive. \
