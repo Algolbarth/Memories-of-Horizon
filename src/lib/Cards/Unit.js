@@ -60,8 +60,7 @@ export class Unit extends Card {
             }
             else {
                 result.value -= this.stat("Garde").value();
-                this.stat("Garde").add = 0;
-                this.stat("Garde").step = 0;
+                this.stat("Garde").remove(this.stat("Garde").value());
             }
 
             this.stat("Vie").current -= result.value;

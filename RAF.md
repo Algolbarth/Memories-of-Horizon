@@ -74,7 +74,6 @@ Berger : créature humain, quand joue : crée Mouton sur le terrain. \
 Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain. \
 Gladiateur : créature humain. \
 Armagicien : créature humain, magie. \
-Sage : créature humain, au début de la phase de préparation : augmente son intelligence. \
 Célébrité : créature humain, au début de la phase de préparation : produis autant d'or que de créature alliée sur le terrain. \
 Colère : inflige autant dégâts que les blessures du meneur. \
 Envie : vole une carte dans la main adverse. \

@@ -26,7 +26,7 @@ export class Mue extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.familles.includes("Reptile")) {
+                if (target == undefined && card.type == "Créature" && card.familles.total().includes("Reptile")) {
                     target = card;
                 }
             }
@@ -38,7 +38,7 @@ export class Mue extends Action {
     };
 
     useEffect = function (target) {
-        target.stat("Vie").max += 15;
+        target.stat("Vie").add += 15;
         this.move("Défausse");
         this.pose();
     };

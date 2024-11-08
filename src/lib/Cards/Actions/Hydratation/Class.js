@@ -26,7 +26,7 @@ export class Hydratation extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature") {
+                if (target == undefined && card.type == "Créature" && card.elements.includes("Eau")) {
                     target = card;
                 }
             }
@@ -38,7 +38,7 @@ export class Hydratation extends Action {
     };
 
     useEffect = function (target) {
-        value = 15;
+        let value = 15;
 
         if (this.owner.ressource("Eau").total() >= 15) {
             this.owner.ressource("Eau").spend(15);

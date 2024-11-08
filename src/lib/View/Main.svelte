@@ -111,8 +111,4 @@
 		transition: all var(--delay_hover) ease-in-out;
 		background-color: var(--preview_hover);
 	}
-
-	.close {
-		padding: 1%;
-	}
 </style>

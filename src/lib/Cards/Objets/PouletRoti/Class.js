@@ -3,7 +3,7 @@ import Text from './Text.svelte';
 import Use from './Use.svelte';
 
 export class PouletRoti extends Objet {
-    name = "Poulet roti";
+    name = "Poulet rôti";
 
     constructor(System) {
         super(System);

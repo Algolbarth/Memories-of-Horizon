@@ -3,7 +3,7 @@
 	export let System;
 
 	function condition(card) {
-		if (card.type == "Créature") {
+		if (card.type == "Créature" && card.elements.includes("Eau")) {
 			return true;
 		}
 		return false;

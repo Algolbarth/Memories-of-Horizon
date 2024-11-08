@@ -13,23 +13,29 @@ export class Battle {
     };
 
     newBattle = function () {
-        this.phase = "Combat";
-        this.turn = 0;
-        for (const entity of [this.player, this.bot]) {
-            for (const zone of entity.zones) {
-                let cpy = this.System.copy(zone.cards);
-                for (const card of cpy) {
-                    card.startBattleEffect();
-                    if (card.type == "Créature") {
-                        for (const e of card.equipments) {
-                            e.startBattleEffect();
+        if (this.player.zone("Terrain").cards.length > 0 && this.bot.zone("Terrain").cards.length > 0) {
+            this.phase = "Combat";
+            this.turn = 0;
+
+            for (const entity of [this.player, this.bot]) {
+                for (const zone of entity.zones) {
+                    let cpy = this.System.copy(zone.cards);
+                    for (const card of cpy) {
+                        card.startBattleEffect();
+                        if (card.type == "Créature") {
+                            for (const e of card.equipments) {
+                                e.startBattleEffect();
+                            }
                         }
                     }
                 }
             }
+            this.nextTurn();
+            this.System.pages.change("Game");
         }
-        this.nextTurn();
-        this.System.pages.change("Game");
+        else {
+            this.endBattle();
+        }
     };
 
     nextTurn = function () {

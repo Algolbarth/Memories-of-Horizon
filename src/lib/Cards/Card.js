@@ -414,6 +414,7 @@ export class Stat {
             return total;
         }
         else {
+            this.add -= total;
             return 0;
         }
     };

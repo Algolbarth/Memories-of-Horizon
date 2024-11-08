@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Augmente de 10 l'attaque et la vie d'une créature alliée sur le terrain.
+Augmente l'attaque et la vie d'une créature alliée sur le terrain de 10 fois sa protection.

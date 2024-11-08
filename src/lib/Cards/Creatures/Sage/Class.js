@@ -13,7 +13,7 @@ export class Sage extends Creature {
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;
         this.stat("Attaque").base = 5;
-        this.stat("Intelligence").base = 5;
+        this.stat("Intelligence").base = 1;
 
         this.text = Text;
     };

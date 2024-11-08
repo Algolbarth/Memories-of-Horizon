@@ -4,4 +4,4 @@
 </script>
 
 Inflige 100 dégâts à une unité adverse sur le terrain. Dépense autant d'eau que possible et inflige
-autant de dégât supplémentaire.
+deux fois plus de dégâts supplémentaires.

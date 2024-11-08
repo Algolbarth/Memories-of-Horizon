@@ -18,8 +18,7 @@ export class Multisoin extends Action {
 
     select = function () {
         if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
-            this.System.pages.change("Game");
+            this.useEffect();
         }
         else {
             let check = false;
