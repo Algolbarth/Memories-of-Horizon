@@ -19,10 +19,6 @@ export class ChevalDeGuerre extends Creature {
         this.text = Text;
     };
 
-    use = function () {
-        this.select();
-    };
-
     select = function () {
         if (this.owner == this.System.game.player) {
             let check = false;

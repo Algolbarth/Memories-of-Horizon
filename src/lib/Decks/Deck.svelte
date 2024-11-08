@@ -1,6 +1,7 @@
 <script>
 	import Filter from '../Menu/Filter.svelte';
 	import View from '../View/Main.svelte';
+
 	export let System;
 
 	let name = System.deck.name;
@@ -42,10 +43,10 @@
 		familleSelect = famille;
 		elementSelect = element;
 		cards();
-		closing();
+		close();
 	}
 
-	function closing() {
+	function close() {
 		sorted = false;
 		System.pages.change('Deck');
 	}
@@ -212,8 +213,9 @@
 		{typeSelect}
 		{familleSelect}
 		{elementSelect}
+		rarity={false}
 		{sorting}
-		{closing}
+		{close}
 	/>
 {/if}
 

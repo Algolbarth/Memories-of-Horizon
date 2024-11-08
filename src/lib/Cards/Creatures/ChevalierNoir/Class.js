@@ -60,10 +60,6 @@ export class ChevalierNoirMonte extends Creature {
         this.text = Text;
     };
 
-    use = function () {
-        this.select();
-    };
-
     select = function () {
         if (this.owner == this.System.game.player) {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {

@@ -27,6 +27,10 @@
 		/>
 	{/if}
 	-
+	{#if zone.name != "Défausse"}
+		({zone.cards.length} / {zone.size})
+		-
+	{/if}
 	<button
 		
 		on:click={() => {
@@ -38,6 +42,7 @@
 	>
 		Ajouter une carte
 	</button>
+
 	{#each zone.cards as card, i}
 		<div class="preview">
 			{#if entity == 'player'}

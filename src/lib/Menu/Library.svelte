@@ -155,14 +155,12 @@
 	#zone {
 		background-color: var(--zone);
 		border: solid;
-		margin: 1vh;
-		padding: 1vh;
+		padding: 1%;
 		width: 50vw;
-		max-height: 85vh;
 	}
 
 	#list {
-		max-height: 80vh;
+		max-height: 85vh;
 	}
 
 	#view {

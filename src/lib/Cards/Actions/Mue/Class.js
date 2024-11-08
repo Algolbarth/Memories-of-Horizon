@@ -13,10 +13,6 @@ export class Mue extends Action {
         this.text = Text;
     };
 
-    use = function () {
-        this.select();
-    };
-
     select = function () {
         if (this.owner == this.System.game.player) {
             this.System.game.use.set(this, Use);

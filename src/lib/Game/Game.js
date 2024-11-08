@@ -36,6 +36,7 @@ export class Game extends Battle {
             this.player.flux = this.System.train.player.flux;
             this.player.zone("Boutique").level = this.System.train.player.zones[1].level;
             for (const zone of this.System.train.player.zones) {
+                this.player.zone(zone.name).size = zone.size;
                 for (const card_name of zone.cards) {
                     this.player.getCard(card_name).add(zone.name);
                 }
@@ -48,6 +49,7 @@ export class Game extends Battle {
             this.bot.flux = this.System.train.bot.flux;
             this.bot.zone("Boutique").level = this.System.train.bot.zones[1].level;
             for (const zone of this.System.train.bot.zones) {
+                this.bot.zone(zone.name).size = zone.size;
                 for (const card_name of zone.cards) {
                     let card = this.bot.getCard(card_name);
                     card.add(zone.name);

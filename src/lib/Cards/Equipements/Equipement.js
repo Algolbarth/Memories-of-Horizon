@@ -1,5 +1,6 @@
 import { Stat, Trait } from '../Card.js';
 import { Objet } from '../Objets/Objet.js';
+import Use from './Use.svelte';
 
 export class Equipment extends Objet {
     equipTraits = [];
@@ -31,6 +32,31 @@ export class Equipment extends Objet {
         this.addEquipStat("Garde", 0);
         this.addEquipStat("Perpétuité", 0);
         this.addEquipStat("Esquive", 0);
+    };
+
+    select = function () {
+        if (this.owner == this.System.game.player) {
+            this.System.game.use.set(this, Use);
+            this.System.pages.change("Game");
+        }
+        else {
+            let target = undefined;
+
+            for (const card of this.owner.zone("Terrain").cards) {
+                if (target == undefined && card.type == "Créature" && card.canEquip()) {
+                    target = card;
+                }
+            }
+
+            if (target != undefined) {
+                this.useEffect(target);
+            }
+        }
+    };
+
+    useEffect = function (target) {
+        target.equip(this);
+        this.pose();
     };
 
     remove = function () {
@@ -86,6 +112,10 @@ export class Equipment extends Objet {
     };
 
     killEffect = function () {
+
+    };
+
+    defendEffect = function () {
 
     };
 }

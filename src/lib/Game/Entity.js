@@ -7,31 +7,11 @@ export class Entity {
             this.max = value;
         }
     };
-    zones = [{
-        name: "Lieux",
-        cards: [],
-        size: 3
-    },
-    {
-        name: "Boutique",
-        level: 1,
-        cards: [],
-        size: 10
-    },
-    {
-        name: "Main",
-        cards: [],
-        size: 10
-    },
-    {
-        name: "Terrain",
-        cards: [],
-        size: 10
-    },
-    {
-        name: "Défausse",
-        cards: []
-    }];
+    zones = [new Zone("Lieux", 3),
+    new Shop(),
+    new Zone("Main", 10),
+    new Zone("Terrain", 10),
+    new Zone("Défausse")];
     ressources = [];
     place = undefined;
 
@@ -266,4 +246,25 @@ export class Entity {
         }
         return total;
     };
+}
+
+class Zone {
+    cards = [];
+
+    constructor(name, size = undefined) {
+        this.name = name;
+        this.size = size;
+    };
+
+    isFull = function () {
+        return this.cards.length == this.size;
+    };
+}
+
+class Shop extends Zone {
+    level = 1;
+
+    constructor() {
+        super("Boutique", 10);
+    }
 }

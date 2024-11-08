@@ -17,8 +17,13 @@
 	let typeSelect = 'Tous';
 	let familleSelect = 'Toutes';
 	let elementSelect = 'Tous';
+	let communSelect = true;
+	let rareSelect = false;
+	let legendarySelect = false;
 
 	let cardList = [];
+
+	$: zone = System.train.add.zone;
 
 	function filter() {
 		let tab = [];
@@ -27,12 +32,13 @@
 				(!card.trait('Légendaire').value() || System.train.add.entity == 'bot') &&
 				(levelSelect == 'Tous' || card.level == levelSelect) &&
 				(typeSelect == 'Tous' || card.type == typeSelect) &&
-				(card.type == 'Lieu' ||
-					(System.train.add.zone != undefined && System.train.add.zone.name != 'Lieux')) &&
-				(card.isUnit() ||
-					(System.train.add.zone != undefined && System.train.add.zone.name != 'Terrain')) &&
+				(card.type == 'Lieu' || (zone != undefined && zone.name != 'Lieux')) &&
+				(card.isUnit() || (zone != undefined && zone.name != 'Terrain')) &&
 				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
-				(elementSelect == 'Tous' || card.elements.includes(elementSelect))
+				(elementSelect == 'Tous' || card.elements.includes(elementSelect)) &&
+				((legendarySelect && card.trait("Légendaire").value()) ||
+				(rareSelect && card.trait("Rare").value()) ||
+				(communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))
 			) {
 				tab.push(card);
 			}
@@ -42,11 +48,14 @@
 		return '';
 	}
 
-	function sorting(level, type, famille, element) {
+	function sorting(level, type, famille, element, commun, rare, legendary) {
 		levelSelect = level;
 		typeSelect = type;
 		familleSelect = famille;
 		elementSelect = element;
+		communSelect = commun;
+		rareSelect = rare;
+		legendarySelect = legendary;
 		filter();
 		close();
 	}
@@ -57,7 +66,7 @@
 	}
 </script>
 
-{#if System.train.add.zone != undefined}
+{#if zone != undefined}
 	{filter()}
 	<div id="body">
 		<button
@@ -66,12 +75,16 @@
 				closing();
 			}}>X</button
 		>
-		
+
 		<div id="side">
+			{zone.name}
+			-
+			{#if zone.name != 'Défausse'}
+				({zone.cards.length} / {zone.size}) -
+			{/if}
 			{System.several(cardList.length, 'carte')}
 			-
 			<button
-				
 				on:click={() => {
 					filterWindow = true;
 					System.pages.change('Training');
@@ -84,7 +97,6 @@
 					<div class="preview">
 						<div>
 							<button
-								
 								on:click={() => {
 									System.view.card = card;
 									System.pages.change('Training');
@@ -96,16 +108,22 @@
 								on:mouseleave={() => {
 									System.view.quick = undefined;
 									System.pages.change('Training');
-								}}>{card.name}</button
+								}}
 							>
+								{card.name}
+							</button>
 						</div>
 						<div style="text-align:right;">
-							<button
-								
-								on:click={() => {
-									System.train.add.zone.cards.push(card.name);
-								}}>Ajouter</button
-							>
+							{#if zone.name == 'Défausse' || zone.size > zone.cards.length}
+								<button
+									on:click={() => {
+										zone.cards.push(card.name);
+										System = System;
+									}}
+								>
+									Ajouter
+								</button>
+							{/if}
 						</div>
 					</div>
 				{/each}
@@ -126,6 +144,9 @@
 		{typeSelect}
 		{familleSelect}
 		{elementSelect}
+		{communSelect}
+		{rareSelect}
+		{legendarySelect}
 		{sorting}
 		{close}
 	/>

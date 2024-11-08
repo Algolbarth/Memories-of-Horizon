@@ -139,29 +139,31 @@ export class Card {
     };
 
     add = function (zone, entity = this.owner) {
-        this.owner = entity;
-        this.zone = entity.zone(zone);
-        this.slot = entity.zone(zone).cards.length;
-
-        if (zone == "Défausse") {
-            this.stat("Perpétuité").current = 2;
+        if (!entity.zone(zone).isFull()) {
+            this.owner = entity;
+            this.zone = entity.zone(zone);
+            this.slot = entity.zone(zone).cards.length;
+    
+            if (zone == "Défausse") {
+                this.stat("Perpétuité").current = 2;
+            }
+            else {
+                this.stat("Perpétuité").current = 0;
+            }
+    
+            if (!["Main", "Boutique"].includes(zone)) {
+                this.cache = false;
+            }
+    
+            if (this.isUnit() && zone == "Terrain") {
+                entity.ressource("Mana").current += this.stat("Magie").value();
+                entity.ressource("Mana").max += this.stat("Magie").value();
+            }
+    
+            this.addEffect(zone);
+    
+            entity.zone(zone).cards.push(this);
         }
-        else {
-            this.stat("Perpétuité").current = 0;
-        }
-
-        if (!["Main", "Boutique"].includes(zone)) {
-            this.cache = false;
-        }
-
-        if (this.isUnit() && zone == "Terrain") {
-            entity.ressource("Mana").current += this.stat("Magie").value();
-            entity.ressource("Mana").max += this.stat("Magie").value();
-        }
-
-        this.addEffect(zone);
-
-        entity.zone(zone).cards.push(this);
     };
 
     addEffect = function () {
@@ -199,6 +201,9 @@ export class Card {
                 return false;
             }
         }
+        if (this.owner.zone("Main").isFull()) {
+            return false;
+        }
         return true;
     };
 
@@ -226,6 +231,10 @@ export class Card {
     };
 
     use = function () {
+        this.select();
+    };
+
+    select = function () {
         this.useEffect();
     };
 

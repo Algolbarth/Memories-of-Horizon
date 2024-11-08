@@ -1,5 +1,5 @@
 <script>
-	import Zone from '../../../Game/Zone.svelte';
+	import Zone from '../../Game/Zone.svelte';
 	export let System;
 	System;
 

@@ -33,6 +33,7 @@
 		class="slider"
 		id="volume"
 	/>
+	<label for="volume" style="transform: translate(0, 20%);text-align:center;">{System.music.volume}%</label>
 </div>
 
 <br />
@@ -44,8 +45,8 @@
 
 <style>
 	div.slidecontainer {
-		width: 30%;
+		width: 40%;
 		display: grid;
-		grid-template-columns: 3fr 10fr;
+		grid-template-columns: 3fr 10fr 3fr;
 	}
 </style>

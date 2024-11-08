@@ -19,10 +19,6 @@ export class ElementaireDeRoche extends Creature {
         this.text = Text;
     };
 
-    use = function () {
-        this.select();
-    };
-
     select = function () {
         if (this.owner == this.System.game.player) {
             this.System.game.use.set(this, Use);

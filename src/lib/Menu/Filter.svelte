@@ -6,6 +6,7 @@
 	export let typeSelect;
 	export let familleSelect;
 	export let elementSelect;
+	export let rarity = true;
 	export let communSelect = false;
 	export let rareSelect = false;
 	export let legendarySelect = false;
@@ -79,39 +80,45 @@
 		</div>
 	</div>
 
-	<div class="checkboxes">
-		<div>Rareté</div>
+	{#if rarity}
+		<div class="checkboxes">
+			<div>Rareté</div>
 
-		<div>
-			<input type="checkbox" bind:checked={communSelect} id="commun" />
-			<label for="commun">Commune</label>
-		</div>
+			<div>
+				<input type="checkbox" bind:checked={communSelect} id="commun" />
+				<label for="commun">Commune</label>
+			</div>
 
-		<div>
-			<input type="checkbox" bind:checked={rareSelect} id="rare" />
-			<label for="rare">Rare</label>
-		</div>
+			<div>
+				<input type="checkbox" bind:checked={rareSelect} id="rare" />
+				<label for="rare">Rare</label>
+			</div>
 
-		<div>
-			<input type="checkbox" bind:checked={legendarySelect} id="legendary" />
-			<label for="legendary">Légendaire</label>
+			<div>
+				<input type="checkbox" bind:checked={legendarySelect} id="legendary" />
+				<label for="legendary">Légendaire</label>
+			</div>
 		</div>
-	</div>
+	{/if}
 
 	<br />
 
 	<button
 		class="big"
 		on:click={() => {
-			sorting(
-				levelSelect,
-				typeSelect,
-				familleSelect,
-				elementSelect,
-				communSelect,
-				rareSelect,
-				legendarySelect
-			);
+			if (rarity) {
+				sorting(
+					levelSelect,
+					typeSelect,
+					familleSelect,
+					elementSelect,
+					communSelect,
+					rareSelect,
+					legendarySelect
+				);
+			} else {
+				sorting(levelSelect, typeSelect, familleSelect, elementSelect);
+			}
 		}}>Valider</button
 	>
 </div>

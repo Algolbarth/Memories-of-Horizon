@@ -18,9 +18,9 @@ export class MaitreChien extends Creature {
     };
 
     useEffect = function () {
-        this.owner.getCard("Chien").add("Terrain");
-        this.owner.getCard("Chien").add("Terrain");
         this.move("Terrain");
+        this.owner.getCard("Chien").add("Terrain");
+        this.owner.getCard("Chien").add("Terrain");
         this.pose();
     };
 

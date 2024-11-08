@@ -35,6 +35,16 @@ export class Unit extends Card {
         this.addStat("Intelligence", 0);
     };
 
+    use = function () {
+        if (!this.owner.zone("Terrain").isFull()) {
+            this.select();
+        }
+    };
+
+    select = function () {
+        this.useEffect();
+    };
+
     useEffect = function () {
         this.move("Terrain");
         this.pose();
