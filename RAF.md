@@ -14,7 +14,6 @@ Afficher les cartes du deck, les cartes piochables, les cartes découvrables via
 Ranger les chapitres dans des dossier \
 Ajouter un texte explicatif pour les stats et effets \
 Ajouter un tutoriel dans jouer, avec les mécaniques du jeu \
-Corriger la pose des créatures avec la limite de carte \
 Ajouter l'étourdissement et la paralysie (paralysie => X actions, gel => X tours, étourdissement => X étapes) \
 Ajouter les familles Arme et Armure
 
@@ -36,11 +35,6 @@ Conquérant : créature, si le terrain est plein, augmente la taille du terrain.
 Omniscience : action, découvre des cartes jusqu'à remplir la boutique. \
 Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main et de la boutique.
 
-Frappe : inflige autant de dégâts à une unité adverse que la valeur d'attaque la plus haute parmi les créatures alliées sur le terrain. \
-Écrasement : inflige autant de dégâts à une unité adverse que la valeur de vie la plus haute parmi les créatures alliées sur le terrain. \
-Coup de bouclier : inflige autant de dégâts à une unité adverse que la valeur de défense la plus haute parmi les créatures alliées sur le terrain. \
-Coup de boule : inflige autant de dégâts à l'unité ayant le plus de vie sur le terrain adverse que la valeur d'attaque la plus haute parmi les créatures alliées sur le terrain.
-
 Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage : augmente la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
@@ -59,8 +53,6 @@ Concoction : objet potion, applique l'effet associé à chaque type de compteur 
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
 Alchimiste : créature, quand posé : pioche 2 objets potion.
 
-Restaurant : bâtiment, quand posé : choisis un objet nourriture alliée dans la main. Au début de la phase de préparation : crée l'objet choisis dans la main.
-
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
 Aiguisage : action, augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
 Polissage : action, augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape. \
@@ -74,7 +66,7 @@ Berger : créature humain, quand joue : crée Mouton sur le terrain. \
 Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain. \
 Gladiateur : créature humain. \
 Armagicien : créature humain, magie. \
-Célébrité : créature humain, au début de la phase de préparation : produis autant d'or que de créature alliée sur le terrain. \
+Célébrité : créature humain. \
 Colère : inflige autant dégâts que les blessures du meneur. \
 Envie : vole une carte dans la main adverse. \
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. \

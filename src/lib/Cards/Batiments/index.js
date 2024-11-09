@@ -20,3 +20,4 @@ export * from './Baliste';
 export * from './Catapulte';
 export * from './TourDeSiege';
 export * from './GarnisonDesMonts';
+export * from './Restaurant';

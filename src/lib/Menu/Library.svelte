@@ -160,7 +160,7 @@
 	}
 
 	#list {
-		max-height: 85vh;
+		max-height: 80vh;
 	}
 
 	#view {

@@ -39,3 +39,7 @@ export * from './Etendre';
 export * from './Exploration';
 export * from './Agrandissement';
 export * from './Multisoin';
+export * from './Frappe';
+export * from './Ecrasement';
+export * from './CoupDeBouclier';
+export * from './CoupDeBoule';

@@ -7,13 +7,14 @@ export class GardeNain extends Creature {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 12], ["Terre", 12]]);
+        this.init([["Or", 18], ["Terre", 18]]);
         this.familles.base.push("Nain");
 
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
         this.stat("Attaque").base = 10;
         this.stat("Défense").base = 5;
+        this.stat("Protection").base = 1;
 
         this.text = Text;
     };
