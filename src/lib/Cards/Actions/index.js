@@ -43,3 +43,7 @@ export * from './Frappe';
 export * from './Ecrasement';
 export * from './CoupDeBouclier';
 export * from './CoupDeBoule';
+export * from './SouffleEnflamme';
+export * from './Retablissement';
+export * from './Repos';
+export * from './Autodafe';

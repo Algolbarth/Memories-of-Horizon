@@ -7,7 +7,7 @@ export class CoupDeBoule extends Action {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 15]]);
 
         this.text = Text;
     };

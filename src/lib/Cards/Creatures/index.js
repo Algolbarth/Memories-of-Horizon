@@ -77,3 +77,4 @@ export * from './BonhommeBiscuit';
 export * from './ChevalDeGuerre';
 export * from './Maire';
 export * from './Sage';
+export * from './Bucheron';

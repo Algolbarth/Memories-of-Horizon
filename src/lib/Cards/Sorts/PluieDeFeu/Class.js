@@ -7,7 +7,7 @@ export class PluieDeFeu extends Sort {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 15], ["Feu", 15]]);
+        this.init([["Or", 25], ["Feu", 25]]);
         this.familles.base.push("Sort");
 
         this.text = Text;
@@ -21,12 +21,12 @@ export class PluieDeFeu extends Sort {
 
     useEffect = function () {
         let damage;
-        if (this.owner.ressource("Mana").total() >= this.manaCost(25)) {
-            this.owner.ressource("Mana").spend(this.manaCost(25));
-            damage = 10;
+        if (this.owner.ressource("Mana").total() >= this.manaCost(50)) {
+            this.owner.ressource("Mana").spend(this.manaCost(50));
+            damage = 20;
         }
         else {
-            damage = 5;
+            damage = 10;
         }
 
         let terrain = this.System.copy(this.owner.adversary().zone("Terrain").cards);

@@ -56,7 +56,6 @@ Alchimiste : créature, quand posé : pioche 2 objets potion.
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
 Aiguisage : action, augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
 Polissage : action, augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape. \
-Repos : action, place dans la boutique une créature alliée sur le terrain et la soigne totalement. \
 Barde : créature, quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape. \
 Danseuse : créature, quand arrive sur le terrain : esquive. \
 Mouton : créature bête, endurance. \
@@ -72,7 +71,7 @@ Envie : vole une carte dans la main adverse. \
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. \
 Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et la vie d'une autre créature alliée sur le terrain d'autant que la vie et l'attaque de la créature détruite. \
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
-Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque. \
+Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -88,7 +87,6 @@ Wyverne rouge \
 Pyromancien : quand une carte feu est posé : augmente son attaque. \
 Baguette explosive : augmente la magie de la créature équipée. quand la créature équipée attaque : inflige autant de dégâts à l'unité attaquée que la magie de la créature équipée.
 
-Bûcheron : créature elfe, quand une unité Végétal meurt : augmente son attaque et produis du végétal. \
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
@@ -236,8 +234,8 @@ Rabatteur centaure : créature, quand posé : augmente la vitesse d'une créatur
 Cyclope \
 Wyverne de foudre \
 Mage de foudre \
-Plateau : lieu pour les cartes d'élément Foudre.
-Électromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant. \
+Plateau : lieu pour les cartes d'élément Foudre. \
+Électromancien : créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité adverse sur le terrain la plus en avant.
 
 Gnome : créature, quand arrive sur le terrain : crée un Mini automate sur le terrain. \
 Mini automate : créature machine. \

@@ -57,6 +57,10 @@ export class Unit extends Card {
         }
     };
 
+    healFull = function () {
+        this.stat("Vie").current = this.stat("Vie").value();
+    };
+
     damage = function (value) {
         let result = {
             value: value,

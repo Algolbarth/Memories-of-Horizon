@@ -9,9 +9,9 @@ export class Restaurant extends Batiment {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 40]]);
-        this.stat("Vie").base = 20;
-        this.stat("Vie").current = 20;
+        this.init([["Or", 35]]);
+        this.stat("Vie").base = 10;
+        this.stat("Vie").current = 10;
 
         this.text = Text;
     };
