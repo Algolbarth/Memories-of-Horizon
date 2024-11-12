@@ -7,7 +7,7 @@ export class Lv7_Eruption extends Chapter {
         this.addRessource("Or", 140);
         this.addRessource("Feu", 140);
 
-        this.addStep(70, "Volcan", ["Éruption", "Pluie de feu", "Pluie de feu", "Pluie de feu", "Pluie de feu"], ["Une violente éruption volcanique surprend votre groupe !", "Pas le temps de vous enfuir, il faudra encaisser les dégâts."]);
+        this.addStep(70, "Volcan", ["Éruption", "Pluie de feu", "Pluie de feu"], ["Une violente éruption volcanique surprend votre groupe !", "Pas le temps de vous enfuir, il faudra encaisser les dégâts."]);
     }
 }
 

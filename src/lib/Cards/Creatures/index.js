@@ -78,3 +78,8 @@ export * from './ChevalDeGuerre';
 export * from './Maire';
 export * from './Sage';
 export * from './Bucheron';
+export * from './AncienSerpent';
+export * from './Danseuse';
+export * from './Troubadour';
+export * from './Bouffon';
+export * from './Barde';

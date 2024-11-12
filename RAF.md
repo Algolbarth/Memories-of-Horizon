@@ -1,7 +1,6 @@
 # Mécaniques
 
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
-Intégrer les combats automatiques \
 Ajouter un paramètre de la vitesse des combats \
 Ajouter une limite de tour aux combats, après quoi ya ex eaquo (3 pour le moment) \
 Ajouter une option finir automatiquement pour les combats \
@@ -56,8 +55,6 @@ Alchimiste : créature, quand posé : pioche 2 objets potion.
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
 Aiguisage : action, augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
 Polissage : action, augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape. \
-Barde : créature, quand posé : augmente l'attaque et la vie d'une créature alliée sur le terrain pendant cette étape. \
-Danseuse : créature, quand arrive sur le terrain : esquive. \
 Mouton : créature bête, endurance. \
 Mouton laineux : créature bête, quand arrive sur le terrain : crée Laine dans la main. \
 Mouton cornu : créature bête, charge et endurance. \
@@ -108,8 +105,7 @@ Hérisson : créature bête, épine. \
 Mage de la nature \
 Wyverne verte \
 Phitomancien : quand une carte alliée Végétal est posée : augmente sa vie. \
-Massue de chêne : objet équipement, charge. \
-Ancien serpent : au début de la phase de préparation : crée Mue dans la main.
+Massue de chêne : objet équipement, charge.
 
 Bouée : ajoute l'élément Eau à la créature équipée. \
 Garde côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \

@@ -1,5 +1,6 @@
 export class Battle {
     fighter = undefined;
+    auto = null;
 
     constructor(System) {
         this.System = System;
@@ -30,12 +31,29 @@ export class Battle {
                     }
                 }
             }
+
             this.nextTurn();
+
+            if (this.System.autoplay) {
+                this.startAuto();
+            }
+
             this.System.pages.change("Game");
         }
         else {
             this.endBattle();
         }
+    };
+
+    startAuto = function () {
+        if (!this.isEndBattle()) {
+            this.auto = setInterval(this.actionBattle.bind(this), this.System.auto_speed);
+        }
+    };
+
+    stopAuto = function () {
+        clearInterval(this.auto);
+        this.auto = null;
     };
 
     nextTurn = function () {
@@ -177,6 +195,7 @@ export class Battle {
         this.phase = "Préparation";
         this.fighter = undefined;
 
+        this.stopAuto();
         this.endStep();
 
         if (this.isVictory()) {

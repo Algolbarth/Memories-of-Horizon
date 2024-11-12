@@ -17,7 +17,6 @@
 		{/if}
 		{#if !System.game.isBattle()}
 			<button
-				
 				on:click={() => {
 					System.view.reset();
 					System.game.newBattle();
@@ -26,7 +25,6 @@
 			{#if System.game.mode == 'Entraînement'}
 				-
 				<button
-					
 					on:click={() => {
 						System.view.reset();
 						System.game.bot.play();
@@ -37,17 +35,31 @@
 		{:else if !System.game.isEndBattle()}
 			Tour de combat {System.game.turn}
 			-
-			<button
-				
-				on:click={() => {
-					System.view.reset();
-					System.game.actionBattle();
-				}}>Prochaine action</button
-			>
+			{#if System.game.auto != null}
+				<button
+					on:click={() => {
+						System.game.stopAuto();
+						System.pages.change('Game');
+					}}>Désactiver mode auto</button
+				>
+			{:else}
+				<button
+					on:click={() => {
+						System.game.startAuto();
+						System.pages.change('Game');
+					}}>Activer mode auto</button
+				>
+				-
+				<button
+					on:click={() => {
+						System.view.reset();
+						System.game.actionBattle();
+					}}>Prochaine action</button
+				>
+			{/if}
 		{:else}
 			Combat fini -
 			<button
-				
 				on:click={() => {
 					System.view.reset();
 					System.game.actionBattle();
@@ -57,7 +69,6 @@
 	</div>
 	<div style="text-align:right">
 		<button
-			
 			on:click={() => {
 				System.game.pause = true;
 				System.pages.change('Game');

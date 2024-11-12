@@ -419,13 +419,16 @@ export class Stat {
             }
         }
 
-        if (total > 0) {
-            return total;
+        if (total < this.min) {
+            this.add -= total + this.min;
+            total = this.min;
         }
-        else {
-            this.add -= total;
-            return 0;
+
+        if (this.current != undefined && this.current > total) {
+            this.current = total;
         }
+
+        return total;
     };
 
     increase = function (value) {

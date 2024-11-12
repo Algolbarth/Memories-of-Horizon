@@ -141,6 +141,8 @@
 			}
 		},
 		show_intelligence: false,
+		autoplay: false,
+		auto_speed: 1000
 	};
 
 	for (let i = 0; i < 20; i++) {
