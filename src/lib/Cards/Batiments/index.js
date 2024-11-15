@@ -21,3 +21,4 @@ export * from './Catapulte';
 export * from './TourDeSiege';
 export * from './GarnisonDesMonts';
 export * from './Restaurant';
+export * from './LacDeLave';

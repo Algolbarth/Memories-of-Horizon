@@ -7,13 +7,13 @@ export class Livre extends Objet {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 8]]);
+        this.init([["Or", 5]]);
 
         this.text = Text;
     };
 
     useEffect = function () {
-        if (this.owner.totalIntelligence() >= 2) {
+        if (this.owner.totalIntelligence() >= 10) {
             this.owner.discover(2);
         }
         else {

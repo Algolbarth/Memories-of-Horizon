@@ -20,7 +20,7 @@ export class Bestiaire extends Objet {
             return false;
         };
 
-        if (this.owner.totalIntelligence() >= 10) {
+        if (this.owner.totalIntelligence() >= 20) {
             this.owner.discover(5, condition);
         }
         else {

@@ -111,6 +111,10 @@ export class Equipment extends Objet {
         this.equipStats.push(trait);
     };
 
+    fightEffect = function () {
+
+    };
+
     killEffect = function () {
 
     };

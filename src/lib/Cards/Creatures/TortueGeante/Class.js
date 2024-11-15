@@ -1,13 +1,13 @@
 import { Creature } from '../Creature.js';
 import Text from './Text.svelte';
 
-export class TortueSolide extends Creature {
-    name = "Tortue solide";
+export class TortueGéante extends Creature {
+    name = "Tortue géante";
 
     constructor(System) {
         super(System);
 
-        this.init([["Or", 15], ["Eau", 15]]);
+        this.init([["Or", 18], ["Eau", 18]]);
         this.familles.base.push("Reptile");
 
         this.stat("Vie").base = 15;

@@ -5,4 +5,4 @@
 
 Découvre 3 créatures.
 <br />
-Ruse 10 : Découvre 5 créatures à la place.
+Ruse 20 : Découvre 5 créatures à la place.

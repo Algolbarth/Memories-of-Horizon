@@ -1,7 +1,6 @@
 # Mécaniques
 
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
-Ajouter un paramètre de la vitesse des combats \
 Ajouter une limite de tour aux combats, après quoi ya ex eaquo (3 pour le moment) \
 Ajouter une option finir automatiquement pour les combats \
 Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) \
@@ -76,13 +75,10 @@ Enflammer : enflamme une unité adverse sur le terrain. \
 Incendie : enflamme toutes les unités adverses sur le terrain. \
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse. \
 Flèche de feu : inflige des dégâts et enflamme une unité adverse. \
-Lac de lave : quand une créature feu arrive sur le terrain : augmente son attaque. Quand une créature non feu arrive sur le terrain : lui inflige des dégâts. \
-Épée enflammée : augmente l'attaque de la créature équipée. quand la créature équipée attaque : inflige des dégâts à l'unité attaquée. \
 Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée. \
 Mage de feu \
 Wyverne rouge \
-Pyromancien : quand une carte feu est posé : augmente son attaque. \
-Baguette explosive : augmente la magie de la créature équipée. quand la créature équipée attaque : inflige autant de dégâts à l'unité attaquée que la magie de la créature équipée.
+Pyromancien : quand une carte feu est posé : augmente son attaque.
 
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \

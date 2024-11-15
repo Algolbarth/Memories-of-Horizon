@@ -5,4 +5,4 @@
 
 Découvre 1 carte.
 <br />
-Ruse 2 : Découvre 2 cartes à la place.
+Ruse 10 : Découvre 2 cartes à la place.
