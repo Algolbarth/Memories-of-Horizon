@@ -13,7 +13,7 @@ export class Volcan extends Lieu {
     };
 
     condition = function (card) {
-        if (card.elements.includes("Feu")) {
+        if (card.elements.total().includes("Feu")) {
             return true;
         }
         return false;

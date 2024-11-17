@@ -69,6 +69,7 @@ Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
 Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
 
+Chef de clan \
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
 Enflammer : enflamme une unité adverse sur le terrain. \
@@ -80,6 +81,7 @@ Mage de feu \
 Wyverne rouge \
 Pyromancien : quand une carte feu est posé : augmente son attaque.
 
+Roi elfe \
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
@@ -103,12 +105,9 @@ Wyverne verte \
 Phitomancien : quand une carte alliée Végétal est posée : augmente sa vie. \
 Massue de chêne : objet équipement, charge.
 
+Seigneur ondin \
 Bouée : ajoute l'élément Eau à la créature équipée. \
-Garde côte : protection. Au début de la phase de préparation : dépense de l'eau et se soigne. \
 Barrière de corail : régénération. \
-Ondin ministre : quand une créature alliée Ondin est posée : produis de l'eau. \
-Baguette des marées : augmente la magie de la créature équipée. quand la créature équipée joue : stocke de l'eau en réserve. \
-Ondin guerrier : quand posé : dépense de l'eau et augmente son attaque et sa vie. \
 Mage d'eau \
 Wyverne marine \
 Aquomancien : quand une carte alliée Eau est posée : produis de l'eau. \
@@ -117,12 +116,12 @@ Requin : créature poisson. \
 Banc de poisson : crée 5 Sardine dans la main. \
 Sardine : créature poisson.
 
+Archonte \
 Écraseur nain : charge. \
 Masse de pierre : augmente la charge de la créature équipée. \
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
 Éboulement : applique étourdissement à une créature adverse sur le terrain. \
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. \
-Loup des montagnes \
 Taupe \
 Mage de terre \
 Wyverne terrestre \

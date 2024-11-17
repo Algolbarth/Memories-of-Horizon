@@ -16,7 +16,7 @@ export class LacDeLave extends Batiment {
 
     otherPoseEffect = function (card) {
         if (this.zone.name == "Terrain" && card.isUnit()) {
-            if (card.elements.includes("Feu") && card.type == "Créature") {
+            if (card.elements.total().includes("Feu") && card.type == "Créature") {
                 card.stat("Attaque").add += 5;
             }
             else {

@@ -35,7 +35,7 @@
 				(card.type == 'Lieu' || (zone != undefined && zone.name != 'Lieux')) &&
 				(card.isUnit() || (zone != undefined && zone.name != 'Terrain')) &&
 				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
-				(elementSelect == 'Tous' || card.elements.includes(elementSelect)) &&
+				(elementSelect == 'Tous' || card.elements.total().includes(elementSelect)) &&
 				((legendarySelect && card.trait("Légendaire").value()) ||
 				(rareSelect && card.trait("Rare").value()) ||
 				(communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))

@@ -13,7 +13,7 @@ export class PluieDeFeu extends Sort {
         this.text = Text;
     };
 
-    use = function () {
+    select = function () {
         if (this.owner == this.System.game.player || this.owner.adversary().zone("Terrain").cards.length > 0) {
             this.useEffect();
         }

@@ -13,7 +13,7 @@ export class Montagne extends Lieu {
     };
 
     condition = function (card) {
-        if (card.elements.includes("Terre")) {
+        if (card.elements.total().includes("Terre")) {
             return true;
         }
         return false;

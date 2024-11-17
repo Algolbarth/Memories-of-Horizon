@@ -12,8 +12,8 @@ export class PierrePhilosophale extends Objet {
         this.text = Text;
     };
 
-    use = function () {
-        if (this.owner == this.System.game.player || this.owner.flux > 0) {
+    select = function () {
+        if (this.owner.flux > 0) {
             this.useEffect();
         }
     };

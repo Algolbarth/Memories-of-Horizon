@@ -18,7 +18,7 @@ export class Bucheron extends Creature {
     };
 
     otherDieEffect = function (card) {
-        if (this.zone.name == "Terrain" && card.elements.includes("Végétal")) {
+        if (this.zone.name == "Terrain" && card.elements.total().includes("Végétal")) {
             this.stat("Attaque").add += 2;
             this.owner.ressource("Végétal").stock += 1;
         }

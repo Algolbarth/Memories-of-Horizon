@@ -29,7 +29,7 @@
 <div class="box">
 	Nv {card.level}
 	-
-	{#each card.elements as element, i}
+	{#each card.elements.total() as element, i}
 		{#if i > 0}
 			&nbsp
 		{/if}

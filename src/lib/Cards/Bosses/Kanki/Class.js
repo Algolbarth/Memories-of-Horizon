@@ -7,7 +7,7 @@ export class Kanki extends Boss {
         super(System);
 
         this.level = 4;
-        this.elements = ["Neutre"];
+        this.elements.base = ["Neutre"];
         this.familles.base.push("Humain");
 
         this.stat("Attaque").base = 25;

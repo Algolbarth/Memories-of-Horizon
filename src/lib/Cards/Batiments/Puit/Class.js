@@ -15,7 +15,7 @@ export class Fontaine extends Batiment {
     };
 
     otherPoseEffect = function (card) {
-        if (this.zone.name == "Terrain" && card.elements.includes("Eau") && this.owner == card.owner) {
+        if (this.zone.name == "Terrain" && card.elements.total().includes("Eau") && this.owner == card.owner) {
             this.owner.ressource("Or").current += 2;
         }
     };

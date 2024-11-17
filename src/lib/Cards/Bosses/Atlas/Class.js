@@ -7,7 +7,7 @@ export class Atlas extends Boss {
         super(System);
 
         this.level = 10;
-        this.elements = ["Neutre"];
+        this.elements.base = ["Neutre"];
         this.familles.base.push("Géant");
 
         this.stat("Attaque").base = 100;

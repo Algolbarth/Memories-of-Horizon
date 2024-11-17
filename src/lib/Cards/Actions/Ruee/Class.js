@@ -12,7 +12,7 @@ export class Ruee extends Action {
         this.text = Text;
     };
 
-    use = function () {
+    select = function () {
         if (this.owner == this.System.game.player || this.owner.zone("Terrain").cards.length > 0) {
             this.useEffect();
         }

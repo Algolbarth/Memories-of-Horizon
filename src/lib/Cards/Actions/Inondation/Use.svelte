@@ -4,7 +4,7 @@
 	System;
 
 	function condition(card) {
-		if (card.type == 'Bâtiment' && !card.elements.includes('Eau')) {
+		if (card.type == 'Bâtiment' && !card.elements.total().includes('Eau')) {
 			return true;
 		}
 		return false;

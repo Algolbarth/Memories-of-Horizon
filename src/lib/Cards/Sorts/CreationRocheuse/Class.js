@@ -13,7 +13,7 @@ export class CreationRocheuse extends Sort {
         this.text = Text;
     };
 
-    use = function () {
+    select = function () {
         if (this.owner.ressource("Mana").total() >= 50) {
             this.useEffect();
         }

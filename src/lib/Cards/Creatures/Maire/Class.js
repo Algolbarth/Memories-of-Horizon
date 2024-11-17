@@ -7,7 +7,7 @@ export class Maire extends Creature {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 55]]);
+        this.init([["Or", 105]]);
         this.familles.base.push("Humain");
 
         this.stat("Vie").base = 5;

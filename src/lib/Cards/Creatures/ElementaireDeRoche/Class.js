@@ -19,16 +19,25 @@ export class ElementaireDeRoche extends Creature {
         this.text = Text;
     };
 
+    use = function () {
+        this.select();
+    };
+
     select = function () {
         if (this.owner == this.System.game.player) {
-            this.System.game.use.set(this, Use);
-            this.System.pages.change("Game");
+            if (this.owner.adversary().zone("Terrain").cards.length > 0) {
+                this.System.game.use.set(this, Use);
+                this.System.pages.change("Game");
+            }
+            else if (!this.owner.zone("Terrain").isFull()) {
+                this.useEffect("Créature");
+            }
         }
         else {
             if (this.owner.adversary().zone("Terrain").cards.length > 5) {
                 this.useEffect("Effet");
             }
-            else {
+            else if (!this.owner.zone("Terrain").isFull()) {
                 this.useEffect("Créature");
             }
         }

@@ -3,6 +3,7 @@ import { Objet } from '../Objets/Objet.js';
 import Use from './Use.svelte';
 
 export class Equipment extends Objet {
+    equipElements = [];
     equipTraits = [];
     equipStats = [];
     bearer = undefined;
@@ -61,6 +62,7 @@ export class Equipment extends Objet {
 
     remove = function () {
         if (this.bearer != undefined) {
+            this.owner.ressource("Mana").max -= this.equipStat("Magie").value();
             for (let i = 0; i < this.bearer.equipments.length; i++) {
                 if (this.bearer.equipments[i] == this) {
                     this.bearer.equipments.splice(i, 1);
@@ -109,6 +111,10 @@ export class Equipment extends Objet {
             return this.base;
         };
         this.equipStats.push(trait);
+    };
+
+    playEffect = function () {
+
     };
 
     fightEffect = function () {

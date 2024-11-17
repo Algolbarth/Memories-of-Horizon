@@ -35,3 +35,5 @@ export * from './Trident';
 export * from './BouclierDeRoche';
 export * from './EpeeEnflammee';
 export * from './BaguetteExplosive';
+export * from './BaguetteDesMarees';
+export * from './Bouee';

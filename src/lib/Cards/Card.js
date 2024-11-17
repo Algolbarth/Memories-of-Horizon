@@ -2,11 +2,11 @@ export class Card {
     name = "Carte";
     cout = [];
     vente = [];
-    elements = [];
     familles = {
         base: [],
         add: [],
         step: [],
+        turn: [],
         total: function () {
             let array = [];
             for (const b of this.base) {
@@ -17,6 +17,9 @@ export class Card {
             }
             for (const s of this.step) {
                 array.push(s);
+            }
+            for (const t of this.turn) {
+                array.push(t);
             }
             return array;
         }
@@ -40,6 +43,8 @@ export class Card {
             this.cout.push(new Cout(ressource, 0, this));
             this.vente.push(new Cout(ressource, 0, this));
         }
+
+        this.elements = new Elements(this);
     };
 
     init = function (array) {
@@ -48,11 +53,11 @@ export class Card {
             this.getCout(element[0]).base += element[1];
             total += element[1];
             if (element[0] != "Or") {
-                this.elements.push(element[0]);
+                this.elements.base.push(element[0]);
             }
         }
-        if (this.elements.length == 0) {
-            this.elements.push("Neutre");
+        if (this.elements.base.length == 0) {
+            this.elements.base.push("Neutre");
         }
 
         this.level = parseInt((total - 1) / 10) + 1;
@@ -143,25 +148,25 @@ export class Card {
             this.owner = entity;
             this.zone = entity.zone(zone);
             this.slot = entity.zone(zone).cards.length;
-    
+
             if (zone == "Défausse") {
                 this.stat("Perpétuité").current = 2;
             }
             else {
                 this.stat("Perpétuité").current = 0;
             }
-    
+
             if (!["Main", "Boutique"].includes(zone)) {
                 this.cache = false;
             }
-    
+
             if (this.isUnit() && zone == "Terrain") {
                 entity.ressource("Mana").current += this.stat("Magie").value();
                 entity.ressource("Mana").max += this.stat("Magie").value();
             }
-    
+
             this.addEffect(zone);
-    
+
             entity.zone(zone).cards.push(this);
         }
     };
@@ -396,6 +401,41 @@ class Cout {
     value = function () {
         let total = this.base + this.add;
         return total;
+    };
+}
+
+class Elements {
+    base = [];
+    add = [];
+
+    constructor(card) {
+        this.card = card;
+    };
+
+    total = function () {
+        let array = [];
+        for (const b of this.base) {
+            array.push(b);
+        }
+        for (const a of this.add) {
+            array.push(a);
+        }
+        if (this.card.type == "Créature") {
+            for (const e of this.card.equipments) {
+                for (const i of e.equipElements) {
+                    array.push(i);
+                }
+            }
+        }
+        for (let i = 0; i < array.length; i++) {
+            for (let j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    array.splice(j);
+                    j--;
+                }
+            }
+        }
+        return array;
     };
 }
 

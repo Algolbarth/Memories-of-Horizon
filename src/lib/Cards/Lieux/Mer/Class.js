@@ -13,7 +13,7 @@ export class Mer extends Lieu {
     };
 
     condition = function (card) {
-        if (card.elements.includes("Eau")) {
+        if (card.elements.total().includes("Eau")) {
             return true;
         }
         return false;

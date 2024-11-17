@@ -7,7 +7,7 @@ export class Godrick extends Boss {
         super(System);
 
         this.level = 10;
-        this.elements = ["Neutre"];
+        this.elements.base = ["Neutre"];
         this.familles.base.push("Humain");
 
         this.stat("Attaque").base = 100;

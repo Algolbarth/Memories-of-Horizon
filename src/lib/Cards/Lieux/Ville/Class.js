@@ -13,7 +13,7 @@ export class Ville extends Lieu {
     };
 
     condition = function (card) {
-        if (card.elements.includes("Neutre")) {
+        if (card.elements.total().includes("Neutre")) {
             return true;
         }
         return false;

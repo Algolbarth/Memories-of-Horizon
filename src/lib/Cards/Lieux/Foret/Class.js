@@ -13,7 +13,7 @@ export class Foret extends Lieu {
     };
 
     condition = function (card) {
-        if (card.elements.includes("Végétal")) {
+        if (card.elements.total().includes("Végétal")) {
             return true;
         }
         return false;

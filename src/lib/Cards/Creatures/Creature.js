@@ -23,28 +23,32 @@ export class Creature extends Unit {
 
     play = function () {
         this.stat("Actions").current--;
-        this.playEffect();
-        for (const e of this.equipments) {
-            e.fightEffect();
-        }
+
         this.stat("Critique").current += this.stat("Adresse").value();
         if (this.stat("Critique").current > 100) {
             this.stat("Critique").current = 100;
         }
-        this.fight();
-    };
 
-    fight = function () {
         let defender = this.findTarget();
 
-        this.fightEffect(defender);
+        this.playEffect(defender);
         for (const e of this.equipments) {
-            e.fightEffect(defender);
+            e.playEffect(defender);
         }
 
+        this.fight(defender);
+    };
+
+    fight = function (defender) {
         let isDie = defender.zone.name != "Terrain";
         let repeat = this.stat("Multicoup").value();
         while (!isDie && repeat > 0) {
+
+            this.fightEffect(defender);
+            for (const e of this.equipments) {
+                e.fightEffect(defender);
+            }
+
             defender.defend(this);
 
             let reduceDamage = defender.stat("Défense").value() - this.stat("Percée").value();
@@ -70,6 +74,10 @@ export class Creature extends Unit {
 
             repeat--;
         }
+    };
+
+    playEffect = function () {
+
     };
 
     fightEffect = function () {

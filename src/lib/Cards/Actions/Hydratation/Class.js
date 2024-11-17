@@ -22,7 +22,7 @@ export class Hydratation extends Action {
             let target = undefined;
 
             for (const card of this.owner.zone("Terrain").cards) {
-                if (target == undefined && card.type == "Créature" && card.elements.includes("Eau")) {
+                if (target == undefined && card.type == "Créature" && card.elements.total().includes("Eau")) {
                     target = card;
                 }
             }

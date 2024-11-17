@@ -85,3 +85,5 @@ export * from './Bouffon';
 export * from './Barde';
 export * from './GuerrierElfe';
 export * from './CavalierElfe';
+export * from './LoupDesMontagnes';
+export * from './MinistreOndin';

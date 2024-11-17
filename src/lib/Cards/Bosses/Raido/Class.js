@@ -8,7 +8,7 @@ export class Raido extends Boss {
         super(System);
 
         this.level = 2;
-        this.elements = ["Neutre"];
+        this.elements.base = ["Neutre"];
         this.familles.base.push("Humain");
 
         this.stat("Attaque").base = 10;
