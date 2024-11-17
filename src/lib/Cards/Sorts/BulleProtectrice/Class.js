@@ -36,10 +36,10 @@ export class BulleProtectrice extends Sort {
     useEffect = function (target) {
         if (this.owner.ressource("Mana").total() >= this.manaCost(25)) {
             this.owner.ressource("Mana").spend(this.manaCost(25));
-            target.stat("Garde").fix(50);
+            target.stat("Garde").fix(100);
         }
         else {
-            target.stat("Garde").fix(25);
+            target.stat("Garde").fix(50);
         }
         this.move("Défausse");
         this.pose();

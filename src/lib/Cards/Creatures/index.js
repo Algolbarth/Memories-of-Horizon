@@ -87,3 +87,7 @@ export * from './GuerrierElfe';
 export * from './CavalierElfe';
 export * from './LoupDesMontagnes';
 export * from './MinistreOndin';
+export * from './SeigneurOndin';
+export * from './ChefDeClan';
+export * from './Archonte';
+export * from './RoiElfe';

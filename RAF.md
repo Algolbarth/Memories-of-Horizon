@@ -37,7 +37,6 @@ Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage : augmente la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
-Heaume de fer : au début de la phase de préparation : fixe la garde de la créature équipée. \
 Cotte de maille : augmente l'endurance de la créature équipée. \
 Cape de cuir
 
@@ -69,7 +68,6 @@ Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
 Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
 
-Chef de clan \
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
 Enflammer : enflamme une unité adverse sur le terrain. \
@@ -81,7 +79,6 @@ Mage de feu \
 Wyverne rouge \
 Pyromancien : quand une carte feu est posé : augmente son attaque.
 
-Roi elfe \
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
 Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le terrain. \
@@ -105,8 +102,6 @@ Wyverne verte \
 Phitomancien : quand une carte alliée Végétal est posée : augmente sa vie. \
 Massue de chêne : objet équipement, charge.
 
-Seigneur ondin \
-Bouée : ajoute l'élément Eau à la créature équipée. \
 Barrière de corail : régénération. \
 Mage d'eau \
 Wyverne marine \
@@ -116,7 +111,6 @@ Requin : créature poisson. \
 Banc de poisson : crée 5 Sardine dans la main. \
 Sardine : créature poisson.
 
-Archonte \
 Écraseur nain : charge. \
 Masse de pierre : augmente la charge de la créature équipée. \
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \

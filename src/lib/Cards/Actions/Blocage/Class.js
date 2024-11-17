@@ -34,7 +34,7 @@ export class Blocage extends Action {
     };
 
     useEffect = function (target) {
-        target.stat("Garde").fix(10);
+        target.stat("Garde").fix(20);
         this.move("Défausse");
         this.pose();
     };
