@@ -8,8 +8,10 @@
 	class="close"
 	on:click={() => {
 		System.pages.change('Menu');
-	}}>X</button
+	}}
 >
+	X
+</button>
 
 <br />
 <br />
@@ -39,8 +41,10 @@
 				class="close"
 				on:click={() => {
 					story = undefined;
-				}}>X</button
+				}}
 			>
+				X
+			</button>
 
 			<br />
 			<br />
@@ -133,6 +137,6 @@
 	}
 
 	.window {
-		background: rgba(0, 0, 0, 0.5);
+		background: var(--shadow);
 	}
 </style>

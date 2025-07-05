@@ -1,6 +1,6 @@
 <script>
 	import Preview from './Preview.svelte';
-	
+
 	export let System;
 	export let zone;
 	export let entity;
@@ -20,31 +20,34 @@
 		{#if entity == System.game.player && fonction == undefined && System.game.phase == 'Préparation'}
 			-
 			<button
-				
 				on:click={() => {
 					entity.actualiseShop();
-				}}>Actualiser</button
+				}}
 			>
+				Actualiser
+			</button>
 			{10} Or
 		{/if}
 		{#if entity == System.game.player && zone.level < 20 && fonction == undefined && System.game.phase == 'Préparation'}
 			-
 			<button
-				
 				on:click={() => {
 					entity.upShop();
-				}}>Améliorer</button
+				}}
 			>
+				Améliorer
+			</button>
 			{zone.level * 10} Or
 		{/if}
 		{#if entity == System.game.player && fonction == undefined && System.game.phase == 'Préparation'}
 			-
 			<button
-				
 				on:click={() => {
 					entity.lock();
-				}}>Verrouiller</button
+				}}
 			>
+				Verrouiller
+			</button>
 		{/if}
 	{/if}
 	<div id="list">

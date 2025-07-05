@@ -13,10 +13,14 @@
 			class="close"
 			on:click={() => {
 				close();
-			}}>X</button
+			}}
 		>
+			X
+		</button>
+
 		<br />
 		<br />
+
 		<div id="side">
 			<svelte:component this={System.game.use.svelte} {System} />
 		</div>

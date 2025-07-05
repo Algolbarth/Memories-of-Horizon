@@ -4,13 +4,17 @@
 
 <div id="body">
 	L'histoire s'arrête ici...
+
 	<br /><br />
+	
 	<button
 		class="big"
 		on:click={() => {
 			System.pages.change('Menu');
-		}}>Retour à l'écran titre</button
+		}}
 	>
+		Retour à l'écran titre
+	</button>
 </div>
 
 <style>

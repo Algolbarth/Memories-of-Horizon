@@ -202,7 +202,7 @@ export class Game extends Battle {
             this.System.account.construct.victory++;
         }
         this.deck.victory++;
-        this.System.pages.change("Finish");
+        this.System.pages.change("Victory");
     };
 
     defeat = function () {

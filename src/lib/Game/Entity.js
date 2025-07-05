@@ -266,5 +266,5 @@ class Shop extends Zone {
 
     constructor() {
         super("Boutique", 10);
-    }
+    };
 }

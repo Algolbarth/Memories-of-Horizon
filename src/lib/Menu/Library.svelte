@@ -28,9 +28,9 @@
 				(typeSelect == 'Tous' || card.type == typeSelect) &&
 				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
 				(elementSelect == 'Tous' || card.elements.total().includes(elementSelect)) &&
-				((legendarySelect && card.trait("Légendaire").value()) ||
-				(rareSelect && card.trait("Rare").value()) ||
-				(communSelect && !card.trait("Légendaire").value() && !card.trait("Rare").value()))
+				((legendarySelect && card.trait('Légendaire').value()) ||
+					(rareSelect && card.trait('Rare').value()) ||
+					(communSelect && !card.trait('Légendaire').value() && !card.trait('Rare').value()))
 			) {
 				tab.push(card);
 			}
@@ -79,8 +79,10 @@
 	on:click={() => {
 		System.view.reset();
 		System.pages.change('Menu');
-	}}>X</button
+	}}
 >
+	X
+</button>
 
 <div id="zone">
 	<div style="display:flex;margin-bottom:2%;">
@@ -111,7 +113,6 @@
 		{#each cardList as card}
 			<div class="preview">
 				<button
-					
 					on:click={() => {
 						System.view.card = card;
 						System.pages.change('Library');
@@ -125,8 +126,8 @@
 						System.pages.change('Library');
 					}}
 				>
-					{card.name}</button
-				>
+					{card.name}
+				</button>
 			</div>
 		{/each}
 	</div>

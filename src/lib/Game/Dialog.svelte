@@ -3,9 +3,9 @@
 </script>
 
 <div id="body" class="center">
-	Chapitre {System.game.chapter.number} - Étape {System.game.player.step} / {System.game.chapter
-		.steps.length}
-	
+	Chapitre {System.game.chapter.number}
+	- Étape {System.game.player.step} / {System.game.chapter.steps.length}
+
 	<br />
 	<br />
 
@@ -18,8 +18,10 @@
 		class="big"
 		on:click={() => {
 			System.game.chapter.nextDialog();
-		}}>Suivant</button
+		}}
 	>
+		Suivant
+	</button>
 </div>
 
 <style>

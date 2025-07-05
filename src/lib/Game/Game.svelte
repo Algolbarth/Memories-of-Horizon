@@ -1,5 +1,5 @@
 <script>
-	import Zone2 from './Zone2.svelte';
+	import DoubleZone from './DoubleZone.svelte';
 	import Entity from './Entity.svelte';
 	import View from '../View/Main.svelte';
 	import Use from './Use.svelte';
@@ -20,8 +20,10 @@
 				on:click={() => {
 					System.view.reset();
 					System.game.newBattle();
-				}}>Combattre</button
+				}}
 			>
+				Combattre
+			</button>
 			{#if System.game.mode == 'Entraînement'}
 				-
 				<button
@@ -29,8 +31,10 @@
 						System.view.reset();
 						System.game.bot.play();
 						System.pages.change('Game');
-					}}>Tour de l'ordi</button
+					}}
 				>
+					Tour de l'ordi
+				</button>
 			{/if}
 		{:else if !System.game.isEndBattle()}
 			Tour de combat {System.game.turn}
@@ -40,22 +44,28 @@
 					on:click={() => {
 						System.game.stopAuto();
 						System.pages.change('Game');
-					}}>Désactiver mode auto</button
+					}}
 				>
+					Désactiver mode auto
+				</button>
 			{:else}
 				<button
 					on:click={() => {
 						System.game.startAuto();
 						System.pages.change('Game');
-					}}>Activer mode auto</button
+					}}
 				>
+					Activer mode auto
+				</button>
 				-
 				<button
 					on:click={() => {
 						System.view.reset();
 						System.game.actionBattle();
-					}}>Prochaine action</button
+					}}
 				>
+					Prochaine action
+				</button>
 			{/if}
 		{:else}
 			Combat fini -
@@ -63,8 +73,10 @@
 				on:click={() => {
 					System.view.reset();
 					System.game.actionBattle();
-				}}>Résultats</button
+				}}
 			>
+				Résultats
+			</button>
 		{/if}
 	</div>
 	<div style="text-align:right">
@@ -72,8 +84,10 @@
 			on:click={() => {
 				System.game.pause = true;
 				System.pages.change('Game');
-			}}>Pause</button
+			}}
 		>
+			Pause
+		</button>
 	</div>
 </div>
 
@@ -90,15 +104,15 @@
 	</div>
 
 	{#if !System.game.isBattle()}
-		<svelte:component this={Zone2} {System} zone={'Lieux'} />
-		<svelte:component this={Zone2} {System} zone={'Boutique'} />
-		<svelte:component this={Zone2} {System} zone={'Main'} />
+		<svelte:component this={DoubleZone} {System} zone={'Lieux'} />
+		<svelte:component this={DoubleZone} {System} zone={'Boutique'} />
+		<svelte:component this={DoubleZone} {System} zone={'Main'} />
 	{/if}
 
-	<svelte:component this={Zone2} {System} zone={'Terrain'} />
+	<svelte:component this={DoubleZone} {System} zone={'Terrain'} />
 
 	{#if !System.game.isBattle()}
-		<svelte:component this={Zone2} {System} zone={'Défausse'} />
+		<svelte:component this={DoubleZone} {System} zone={'Défausse'} />
 	{/if}
 </div>
 

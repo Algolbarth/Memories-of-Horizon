@@ -304,8 +304,8 @@
 	import Dialog from '../lib/Game/Dialog.svelte';
 	System.pages.add('Dialog', Dialog);
 
-	import Finish from '../lib/Game/Finish.svelte';
-	System.pages.add('Finish', Finish);
+	import Victory from '../lib/Game/Victory.svelte';
+	System.pages.add('Victory', Victory);
 
 	import GameOver from '../lib/Game/GameOver.svelte';
 	System.pages.add('GameOver', GameOver);

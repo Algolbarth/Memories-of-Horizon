@@ -18,7 +18,6 @@
 		{/if}
 		{#if !card.cache}
 			<button
-				
 				on:click={() => {
 					System.view.card = card;
 					System.pages.change('Game');
@@ -44,59 +43,65 @@
 			{#if System.game.phase == 'Préparation' && fonction == undefined}
 				{#if card.zone.name == 'Main' || card.zone.name == 'Terrain'}
 					<button
-						
 						on:click={() => {
 							card.sell();
-						}}>Vendre</button
+						}}
 					>
+						Vendre
+					</button>
 				{/if}
 				{#if card.zone.name == 'Boutique'}
 					<button
-						
 						on:click={() => {
 							card.buy();
-						}}>Acheter</button
+						}}
 					>
+						Acheter
+					</button>
 				{:else if card.zone.name == 'Main'}
 					<button
-						
 						on:click={() => {
 							card.use();
-						}}>Poser</button
+						}}
 					>
+						Poser
+					</button>
 				{:else if card.zone.name == 'Lieux'}
 					{#if card == card.owner.place}
 						Actif
 					{:else}
 						<button
-							
 							on:click={() => {
 								card.owner.place = card;
 								System.pages.change('Game');
-							}}>Changer</button
+							}}
 						>
+							Changer
+						</button>
 					{/if}
 				{/if}
 				{#if card.zone.name == 'Main' || (card.zone.name == 'Terrain' && card.type == 'Créature')}
 					{#if card.slot > 0}
 						<button
-							
 							on:click={() => {
 								card.up();
 								System.pages.change('Game');
-							}}>&#9650</button
+							}}
 						>
+							&#9650
+						</button>
 					{:else}
 						<button class="classic useless">&#9650</button>
 					{/if}
 					{#if card.slot < card.zone.cards.length - 1}
 						<button
-							
 							on:click={() => {
 								card.down();
 								System.pages.change('Game');
-							}}>&#9660</button
+							}}
 						>
+							&#9660
+						</button>
 					{:else}
 						<button class="classic useless">&#9660</button>
 					{/if}
@@ -105,11 +110,12 @@
 			{#if fonction != undefined}
 				{#if condition(card)}
 					<button
-						
 						on:click={() => {
 							fonction(card);
-						}}>Sélectionner</button
+						}}
 					>
+						Sélectionner
+					</button>
 				{/if}
 			{/if}
 		</div>

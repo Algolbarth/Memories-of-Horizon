@@ -14,116 +14,124 @@
 	export let close;
 </script>
 
-<div id="body" class="center">
-	<div style="text-align:right">
+<div class="window">
+	<div id="body" class="center">
+		<div style="text-align:right">
+			<button
+				class="close"
+				on:click={() => {
+					close();
+				}}
+			>
+				X
+			</button>
+		</div>
+		<div id="options">
+			<div class="container">
+				Niveau
+				<div>
+					<svelte:component
+						this={Dropdown}
+						array={System.sort.levels}
+						selected={levelSelect}
+						selecting={function (element) {
+							levelSelect = element;
+						}}
+					/>
+				</div>
+			</div>
+			<div class="container">
+				Type
+				<div>
+					<svelte:component
+						this={Dropdown}
+						array={System.sort.types}
+						selected={typeSelect}
+						selecting={function (element) {
+							typeSelect = element;
+						}}
+					/>
+				</div>
+			</div>
+			<div class="container">
+				Famille
+				<div>
+					<svelte:component
+						this={Dropdown}
+						array={System.sort.familles}
+						selected={familleSelect}
+						selecting={function (element) {
+							familleSelect = element;
+						}}
+					/>
+				</div>
+			</div>
+			<div class="container">
+				Élément
+				<div>
+					<svelte:component
+						this={Dropdown}
+						array={System.sort.elements}
+						selected={elementSelect}
+						selecting={function (element) {
+							elementSelect = element;
+						}}
+					/>
+				</div>
+			</div>
+		</div>
+
+		{#if rarity}
+			<div class="checkboxes">
+				<div>Rareté</div>
+
+				<div>
+					<input type="checkbox" bind:checked={communSelect} id="commun" />
+					<label for="commun">Commune</label>
+				</div>
+
+				<div>
+					<input type="checkbox" bind:checked={rareSelect} id="rare" />
+					<label for="rare">Rare</label>
+				</div>
+
+				<div>
+					<input type="checkbox" bind:checked={legendarySelect} id="legendary" />
+					<label for="legendary">Légendaire</label>
+				</div>
+			</div>
+		{/if}
+
+		<br />
+
 		<button
-			class="close"
+			class="big"
 			on:click={() => {
-				close();
+				if (rarity) {
+					sorting(
+						levelSelect,
+						typeSelect,
+						familleSelect,
+						elementSelect,
+						communSelect,
+						rareSelect,
+						legendarySelect
+					);
+				} else {
+					sorting(levelSelect, typeSelect, familleSelect, elementSelect);
+				}
 			}}
 		>
-			X
+			Valider
 		</button>
 	</div>
-	<div id="options">
-		<div class="container">
-			Niveau
-			<div>
-				<svelte:component
-					this={Dropdown}
-					array={System.sort.levels}
-					selected={levelSelect}
-					selecting={function (element) {
-						levelSelect = element;
-					}}
-				/>
-			</div>
-		</div>
-		<div class="container">
-			Type
-			<div>
-				<svelte:component
-					this={Dropdown}
-					array={System.sort.types}
-					selected={typeSelect}
-					selecting={function (element) {
-						typeSelect = element;
-					}}
-				/>
-			</div>
-		</div>
-		<div class="container">
-			Famille
-			<div>
-				<svelte:component
-					this={Dropdown}
-					array={System.sort.familles}
-					selected={familleSelect}
-					selecting={function (element) {
-						familleSelect = element;
-					}}
-				/>
-			</div>
-		</div>
-		<div class="container">
-			Élément
-			<div>
-				<svelte:component
-					this={Dropdown}
-					array={System.sort.elements}
-					selected={elementSelect}
-					selecting={function (element) {
-						elementSelect = element;
-					}}
-				/>
-			</div>
-		</div>
-	</div>
-
-	{#if rarity}
-		<div class="checkboxes">
-			<div>Rareté</div>
-
-			<div>
-				<input type="checkbox" bind:checked={communSelect} id="commun" />
-				<label for="commun">Commune</label>
-			</div>
-
-			<div>
-				<input type="checkbox" bind:checked={rareSelect} id="rare" />
-				<label for="rare">Rare</label>
-			</div>
-
-			<div>
-				<input type="checkbox" bind:checked={legendarySelect} id="legendary" />
-				<label for="legendary">Légendaire</label>
-			</div>
-		</div>
-	{/if}
-
-	<br />
-
-	<button
-		class="big"
-		on:click={() => {
-			if (rarity) {
-				sorting(
-					levelSelect,
-					typeSelect,
-					familleSelect,
-					elementSelect,
-					communSelect,
-					rareSelect,
-					legendarySelect
-				);
-			} else {
-				sorting(levelSelect, typeSelect, familleSelect, elementSelect);
-			}
-		}}>Valider</button
-	>
 </div>
 
 <style>
+	.window {
+		background: var(--shadow);
+	}
+
 	#body {
 		width: 30vw;
 		padding: 1%;
