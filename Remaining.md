@@ -1,3 +1,8 @@
+# Prochaines MAJ
+
+Changer le logo
+Finir l'histoire impériale (pk c'est souvent des humains)
+
 # Mécaniques
 
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
@@ -12,8 +17,7 @@ Afficher les cartes du deck, les cartes piochables, les cartes découvrables via
 Ranger les chapitres dans des dossier \
 Ajouter un texte explicatif pour les stats et effets \
 Ajouter un tutoriel dans jouer, avec les mécaniques du jeu \
-Ajouter l'étourdissement et la paralysie (paralysie => X actions, gel => X tours, étourdissement => X étapes) \
-Ajouter les familles Arme et Armure
+Ajouter l'étourdissement, la paralysie et l'aveuglement (paralysie => X actions, gel => X tours, étourdissement => X étapes, auglement => X attaques)
 
 # Cartes
 
@@ -25,11 +29,13 @@ Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'inte
 Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain. \
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
 Dague de voleur : quand la créature tue une unité : augmente sa valeur en or équivalent à la valeur de vente en or de l'unité. \
-Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain.
+Guilde des voleurs : bâtiment, quand une unité alliée est vendue : crée Voleur sur le terrain. \
+Marchand de miracle : créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : crée une carte du même nom dans la main.
 
 Chercheur : créature, quand posé : pioche 1 carte. si la boutique est pleine, augmente la taille de la boutique. \
 Entrepôt : bâtiment, quand acheté : si la main est pleine, augmente la taille de la main. \
-Conquérant : créature, si le terrain est plein, augmente la taille du terrain. \
+Conquérant : créature, quand posé : si le terrain est plein, augmente la taille du terrain. \
+Carte de la région : objet, pioche des cartes jusqu'à remplir la boutique. \
 Omniscience : action, découvre des cartes jusqu'à remplir la boutique. \
 Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main et de la boutique.
 
@@ -38,21 +44,21 @@ Robe de mage : augmente la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Cotte de maille : augmente l'endurance de la créature équipée. \
+Hache lourde : augmente l'intensité de la créature équipée. \
 Cape de cuir
 
 *Revoir les potions* \
 *Chaque potion a 5 compteurs quand créée* \
 *Potion de vie : Soigne 2 blessures pour chaque compteur à une créature alliée sur le terrain* \
-*Potion de mana : Produis 1 Mana pour chaque compteur* \
+*Potion de mana : produit 1 Mana pour chaque compteur* \
 Potion de force \
 Potion d'endurance \
 Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
-Alchimiste : créature, quand posé : pioche 2 objets potion.
+Alchimiste : créature, quand posé : pioche 2 objets potion. \
+Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main.
 
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
-Aiguisage : action, augmente l'attaque d'une créature alliée sur le terrain équipée d'une arme pendant le reste de l'étape. \
-Polissage : action, augmente la défense d'une créature alliée sur le terrain équipée d'une armure pendant le reste de l'étape. \
 Mouton : créature bête, endurance. \
 Mouton laineux : créature bête, quand arrive sur le terrain : crée Laine dans la main. \
 Mouton cornu : créature bête, charge et endurance. \
@@ -66,7 +72,14 @@ Envie : vole une carte dans la main adverse. \
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité. \
 Avarice : détruis une créature alliée sur le terrain et augmente l'attaque et la vie d'une autre créature alliée sur le terrain d'autant que la vie et l'attaque de la créature détruite. \
 Gourmandise : inflige à une créature adverse sur le terrain autant de dégâts que de créatures qui partagent au moins une famille avec elle. \
-Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque.
+Paresse : soigne une créature alliée d'autant que la différence entre sa vie maximale et son attaque. \
+Lignes de ley : bâtiment, quand une créature de famille Elementaire alliée est posée : augmente la capacité de chaque élément de cette créature. \
+Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain. \
+Établi : bâtiment \
+Trône : bâtiment \
+Sort vivant : créature sort \
+Anneau doré :  objet équipement, au début de la phase de préparation : augmente de 2 la vie et l'attaque de la créature équipée. \
+Barbare : créature humain, si n'est pas équipé d'un Objet de famille Armure : sa défense de base est égale à la moitié de sa vie maximale.
 
 Pyromane : quand attaque : enflamme l'unité attaquée. \
 Salamandre de flamme : quand posé : enflamme une unité adverse sur le terrain. \
@@ -74,10 +87,7 @@ Enflammer : enflamme une unité adverse sur le terrain. \
 Incendie : enflamme toutes les unités adverses sur le terrain. \
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse. \
 Flèche de feu : inflige des dégâts et enflamme une unité adverse. \
-Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée. \
-Mage de feu \
-Wyverne rouge \
-Pyromancien : quand une carte feu est posé : augmente son attaque.
+Lance incendiaire : quand la créature équipée attaque : applique brûlure sur l'unité attaquée.
 
 Spores : empoisonne une créature adverse sur le terrain. \
 Dague empoisonnée : quand la créature équipée attaque : empoisonne la créature attaquée ou empoisonne une créature adverse sur le terrain. \
@@ -85,10 +95,12 @@ Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain. \
 Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle. \
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée. \
-Plante vénéneuse : créature plante, empoisonne quand attaque. \
-Rose : bâtiment épine, quand arrive sur le terrain : crée Spores dans la main. \
-Plante carnivore : créature plante. \
-Mur de haie : bâtiment plante. \
+Rose : créature plante : épine, quand posé : se pose ou se détruis pour empoisonner une créature adverse. \
+Plante carnivore : créature plante, quand joue : inflige des dégâts à l'unité adverse en première position. \
+Plante vénéneuse : créature plante, empoisonne quand joue. \
+Haie taillée : créature plante. \
+Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain. \
+Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduis son cout. \
 Écorce de tréant : augmente la régénération d'une créature alliée sur le terrain. \
 Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération. \
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée. \
@@ -97,29 +109,24 @@ Cochon truffier : créature bête, quand posé : fouille 1 carte. \
 Sanglier : créature bête, charge. \
 Cerf : créature bête, vitesse et percée. \
 Hérisson : créature bête, épine. \
-Mage de la nature \
-Wyverne verte \
-Phitomancien : quand une carte alliée Végétal est posée : augmente sa vie. \
 Massue de chêne : objet équipement, charge.
 
-Barrière de corail : régénération. \
-Mage d'eau \
-Wyverne marine \
-Aquomancien : quand une carte alliée Eau est posée : produis de l'eau. \
+Barrière de corail : créature plante, régénération. \
 Pêcheur : quand posé : pioche 1 créature poisson. \
 Requin : créature poisson. \
 Banc de poisson : crée 5 Sardine dans la main. \
-Sardine : créature poisson.
+Sardine : créature poisson. \
+Leviathan : quand posé : change l'élément terre de toutes les unités sur le terrain en élément eau. augmente son attaque pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : change l'élément terre en élément eau et augmente son attaque.
 
 Écraseur nain : charge. \
+Carrière de pierre : bâtiment, au début de la phase de préparation : produit de la terre. \
 Masse de pierre : augmente la charge de la créature équipée. \
+Géomarteau : quand la créature équipée attaque : inflige des dégâts à toutes les unités adverses. \
 Séisme : inflige des dégâts à toutes les unités adverses sur le terrain. \
-Éboulement : applique étourdissement à une créature adverse sur le terrain. \
+Éboulement : inflige des dégâts et applique étourdissement à une créature adverse sur le terrain. \
 Jet de pierre : inflige des dégâts et applique paralysie à une créature adverse sur le terrain. \
 Taupe \
-Mage de terre \
-Wyverne terrestre \
-Géomancien : quand une carte alliée Terre est posée : augmente sa défense.
+Elémentaire de caillou : 3/3 ou inflige 5 dégâts.
 
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain. \
 Salamandre d'acide \
@@ -129,7 +136,7 @@ Grande salamandre \
 Souffle de flammes toxiques \
 Plage : lieu pour les cartes d'élément Eau et Feu.
 
-Pillard du désert : quand se fait attaquer : produis de la terre. Quand attaque : produis du feu. \
+Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu. \
 Guerrier du désert : quand se fait attaquer : augmente sa défense. Quand attaque : augmente son attaque.\
 Assassin du désert \
 Ver des sables : quand attaque : détruis la carte dans la main adverse en première position. quand est attaquée : détruis la carte dans la main en première position. \
@@ -159,6 +166,13 @@ Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans la main. 
 Queue de lézard : augmente l'attaque ou la vie d'une créature alliée sur le terrain. \
 Cactus \
 Buisson ardent \
+Fumigation : action, empoisonne et brûle une créature à la fois. \
+Archer charboneux \
+Epeiste de la foret incendiée \
+Mage des spores de feu \
+Feu de forêt \
+Guerrier aux écorces incandescantes \
+Druide des racines noires \
 Savane : lieu pour les cartes d'élément Feu et Végétal.
 
 Jungle : lieu pour les cartes d'élément Feu, Végétal, Eau ou Terre.
@@ -239,7 +253,7 @@ Rayon de lumière : action, inflige des dégâts à une créature adverse sur le
 Nova sacrée : action, inflige des dégâts à toutes les créatures adverses sur le terrain. soigne toutes les créatures alliées sur le terrain. \
 Fidèle \
 Prière : action, pioche des cartes OU soigne une créature alliée sur le terrain. \
-Cierge : objet, pioche des cartes OU produis de la lumière. \
+Cierge : objet, pioche des cartes OU produit de la lumière. \
 Paladin : créature, garde. \
 Luxomancien : créature, quand une carte alliée Lumière est posée : . \
 Elementaire de lumière : créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts. \
@@ -266,6 +280,7 @@ Berserker \
 Ours des neiges \
 Loup des neiges \
 Wyverne des neiges \
+Manteau de laine \
 Toundra : lieu pour les cartes d'élément Glace.
 
 Démon \
@@ -313,7 +328,7 @@ Jardin suspendu : lieu pour les cartes d'élément Végétal et Air.
 
 # Boss
 
-Zenoh : boss de niv 2, quand attaque gagne autant d'attaque que d'or et quand tue produis autant d'or que de vie \
+Zenoh : boss de niv 2, quand attaque gagne autant d'attaque que d'or et quand tue produit autant d'or que de vie \
 Ousen : boss de niv 4, créer des soldats avec des effets selon le type de carte joué (créature : protection, action : vitesse, bâtiment : attaque, objet : vie) \
 Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'attaque des cavaliers, quand un cavalier attaque : augmente la vie de gyoun
 
@@ -447,4 +462,10 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Balor` : archidémon dragon, plus puissante créature connue des enfers. ses flammes ignorent toutes capacités, éléments ou magie. \
 `Amelia` : archange, plus puissante créature connue au paradis. se renforce et réssucite pour chaque personne ressentant de l'amour. \
 `Ogre pirate` : a appris sa capacité auprès de liche dans une cité inca. Peut enchanter des pièces qui maudiront leur porteur. Le maudit peux parier. S'il gagne alors il obtient des pouvoirs ou un buff. S'il perd il subit un contrecoup. Le gain ou le risque est proportionnel à la probabilité. À un équipage pirate de flottes. Son bateau principal est un kraken. \
-`Morrigan` : revenante capable de se changer en fantôme. contrairement aux autres fantôme elle peux agir rapidement pour frapper à l'intérieur de sa cible. ressemble à l'eneripsa dephasage.
+`Morrigan` : revenante capable de se changer en fantôme. contrairement aux autres fantôme elle peux agir rapidement pour frapper à l'intérieur de sa cible. ressemble à l'eneripsa dephasage. \
+`Mesmer` : ancien seigneur de guerre des chevaliers du chaos, il a passé un pacte avec le démon "serpent de aux yeux de contemplation". il vit depuis en symbiose avec ce dernier, devenant fou et passif malgré des pouvoirs basé sur l'infini. il règne sur des terres désolées, provinces oubliées des esprits et des cartes. \
+`Rivalia` : prêtresse des 12 lunes, plus grande prêtresse de la lune vivante. capable de manipuler tous les éléments en utilisant l'ombre et l'eau. se bat souvent en invoquant un dome d'ombre et un sol couvert d'eau. se bat avec des lames doubles d'où sort les éléments illuminant l'intérieur du dome. a disparu pour rejoindre mesmer. \
+`Jodratoa` : lézard pouvant agglomérer les matières inertes à son corps, devenu gigantesque avec les siècles. \
+`Epoch` : baudroie affiliée à la lune. dieu de la lanterne sombre il peux générer une obscurité totale dans l'eau ou de l'eau dans le noir. il peux se camoufler et nager dans l'eau comme dans le noir, ressemble à une téléportation. \
+`Margoth` : dieu solaire \
+`Elise` : enfant couvert d'une toison d'or et d'une couronne en feuilles dorées. capable de manipuler la source de vie, des avatars dorés d'animaux.
