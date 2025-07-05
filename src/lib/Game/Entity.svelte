@@ -11,7 +11,7 @@
 	{#each entity.ressources as ressource}
 		{#if ressource.current > 0 || ressource.max > 0 || ressource.stock > 0}
 			{ressource.name} : {ressource.current}
-			{#if ressource.max > 0 }
+			{#if ressource.max > 0}
 				/ {ressource.max}
 			{/if}
 			{#if ressource.stock > 0}
@@ -29,8 +29,10 @@
 				on:click={() => {
 					System.game.flux = true;
 					System.pages.change('Game');
-				}}>Gérer les éléments</button
+				}}
 			>
+				Transformer le flux
+			</button>
 		{/if}
 		<br />
 	{/if}
