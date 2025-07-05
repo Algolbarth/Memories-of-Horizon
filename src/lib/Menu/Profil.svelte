@@ -8,8 +8,10 @@
 	class="close"
 	on:click={() => {
 		System.pages.change('Menu');
-	}}>X</button
+	}}
 >
+	X
+</button>
 
 <br />
 <br />
@@ -17,12 +19,13 @@
 <input type="text" bind:value={name} />
 {#if name != System.account.name}
 	<button
-		
 		on:click={() => {
 			System.account.name = name;
 			System.pages.change('Profil');
-		}}>Renommer</button
+		}}
 	>
+		Renommer
+	</button>
 {/if}
 
 <br /><br />

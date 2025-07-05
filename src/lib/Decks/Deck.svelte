@@ -57,8 +57,10 @@
 	on:click={() => {
 		System.view.reset();
 		System.pages.change('Decks');
-	}}>X</button
+	}}
 >
+	X
+</button>
 
 <br />
 
@@ -67,21 +69,23 @@
 		<input type="text" bind:value={name} />
 		{#if name != System.deck.name}
 			<button
-				
 				on:click={() => {
 					System.deck.changeName(name, 0);
 					System.pages.change('Deck');
-				}}>Renommer</button
+				}}
 			>
+				Renommer
+			</button>
 		{/if}
 		<br />
 		<button
-			
 			on:click={() => {
 				System.view.reset();
 				System.deck.clone();
-			}}>Cloner</button
+			}}
 		>
+			Cloner
+		</button>
 	</div>
 	<div style="text-align:right;">
 		<button
@@ -89,8 +93,10 @@
 			on:click={() => {
 				System.view.reset();
 				System.deck.delete();
-			}}>Supprimer</button
+			}}
 		>
+			Supprimer
+		</button>
 	</div>
 </div>
 <div class="zone">
@@ -99,7 +105,6 @@
 	{System.several(System.deck.cards.length, 'carte')}
 	-
 	<button
-		
 		on:click={() => {
 			sorted = true;
 			System.pages.change('Deck');
@@ -111,36 +116,38 @@
 		-
 		{#if move}
 			<button
-				
 				on:click={() => {
 					move = false;
 					System.pages.change('Deck');
-				}}>Enlever</button
+				}}
 			>
+				Enlever
+			</button>
 		{:else}
 			<button
-				
 				on:click={() => {
 					move = true;
 					System.pages.change('Deck');
-				}}>Déplacer</button
+				}}
 			>
+				Déplacer
+			</button>
 		{/if}
 		-
 		<button
-			
 			on:click={() => {
 				System.view.reset();
 				System.pages.change('Add');
-			}}>Ajouter une carte</button
+			}}
 		>
+			Ajouter une carte
+		</button>
 	{/if}
 	<div id="list">
 		{#each cardList as card, i}
 			<div class="preview">
 				<div>
 					<button
-						
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
 							System.pages.change('Deck');
@@ -152,48 +159,53 @@
 						on:mouseleave={() => {
 							System.view.quick = undefined;
 							System.pages.change('Deck');
-						}}>{card}</button
+						}}
 					>
+						{card}
+					</button>
 				</div>
 				<div style="text-align:right;">
 					{#if move}
 						{#if i > 0}
 							<button
-								
 								on:click={() => {
 									let temp = System.deck.cards[i - 1];
 									System.deck.cards[i - 1] = card;
 									System.deck.cards[i] = temp;
 									cards();
 									System.pages.change('Deck');
-								}}>&#9650</button
+								}}
 							>
+								&#9650
+							</button>
 						{:else}
 							<button class="classic useless">&#9650</button>
 						{/if}
 						{#if i < System.deck.cards.length - 1}
 							<button
-								
 								on:click={() => {
 									let temp = System.deck.cards[i + 1];
 									System.deck.cards[i + 1] = card;
 									System.deck.cards[i] = temp;
 									cards();
 									System.pages.change('Deck');
-								}}>&#9660</button
+								}}
 							>
+								&#9660
+							</button>
 						{:else}
 							<button class="classic useless">&#9660</button>
 						{/if}
 					{:else}
 						<button
-							
 							on:click={() => {
 								System.deck.remove(card);
 								cards();
 								System.pages.change('Deck');
-							}}>Enlever</button
+							}}
 						>
+							Enlever
+						</button>
 					{/if}
 				</div>
 			</div>

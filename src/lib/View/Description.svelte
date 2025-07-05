@@ -5,6 +5,6 @@
 <div class="box">
 	<i>Description</i>
 	<div style="text-align:center;">
-		"{card.description()}"
+		"{@html card.description()}"
 	</div>
 </div>

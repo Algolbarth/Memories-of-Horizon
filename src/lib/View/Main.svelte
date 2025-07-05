@@ -24,8 +24,10 @@
 						class="close"
 						on:click={() => {
 							close();
-						}}>X</button
+						}}
 					>
+						X
+					</button>
 				</div>
 				<svelte:component this={Caracteristics} {card} />
 				{#if card.text != undefined}

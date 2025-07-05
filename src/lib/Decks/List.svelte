@@ -24,18 +24,20 @@
 <div id="zone">
 	{System.several(System.decks.length, 'deck')} -
 	<button
-		
 		on:click={() => {
 			newDeck();
-		}}>Créer un nouveau deck</button
+		}}
 	>
+		Créer un nouveau deck
+	</button>
+
 	<br />
+
 	<div id="list" class="scroll">
 		{#each System.decks as deck, i}
 			<div class="preview">
 				<div>
 					<button
-						
 						on:mouseenter={() => {
 							System.view.quick = deck;
 							System.pages.change('Decks');
@@ -47,8 +49,10 @@
 						on:click={() => {
 							System.view.card = deck;
 							System.pages.change('Decks');
-						}}>{deck.name}</button
+						}}
 					>
+						{deck.name}
+					</button>
 				</div>
 				<div style="text-align:right">
 					<button
@@ -62,27 +66,29 @@
 					</button>
 					{#if i > 0}
 						<button
-							
 							on:click={() => {
 								let temp = System.decks[i - 1];
 								System.decks[i - 1] = deck;
 								System.decks[i] = temp;
 								System.pages.change('Decks');
-							}}>&#9650</button
+							}}
 						>
+							&#9650
+						</button>
 					{:else}
 						<button class="classic useless">&#9650</button>
 					{/if}
 					{#if i < System.decks.length - 1}
 						<button
-							
 							on:click={() => {
 								let temp = System.decks[i + 1];
 								System.decks[i + 1] = deck;
 								System.decks[i] = temp;
 								System.pages.change('Decks');
-							}}>&#9660</button
+							}}
 						>
+							&#9660
+						</button>
 					{:else}
 						<button class="classic useless">&#9660</button>
 					{/if}

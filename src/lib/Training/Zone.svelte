@@ -27,12 +27,10 @@
 		/>
 	{/if}
 	-
-	{#if zone.name != "Défausse"}
-		({zone.cards.length} / {zone.size})
-		-
+	{#if zone.name != 'Défausse'}
+		({zone.cards.length} / {zone.size}) -
 	{/if}
 	<button
-		
 		on:click={() => {
 			System.view.reset();
 			System.train.add.entity = entity;
@@ -48,7 +46,6 @@
 			{#if entity == 'player'}
 				<div>
 					<button
-						
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
 							System.pages.change('Training');
@@ -60,8 +57,10 @@
 						on:mouseleave={() => {
 							System.view.quick = undefined;
 							System.pages.change('Training');
-						}}>{card}</button
+						}}
 					>
+						{card}
+					</button>
 				</div>
 				<div style="text-align:right;">
 					{#if zone.name != 'Lieux' || zone.cards.length > 1}
@@ -70,8 +69,10 @@
 							on:click={() => {
 								zone.cards.splice(i, 1);
 								System.pages.change('Training');
-							}}>Enlever</button
+							}}
 						>
+							Enlever
+						</button>
 					{/if}
 				</div>
 			{:else}
@@ -82,13 +83,14 @@
 							on:click={() => {
 								zone.cards.splice(i, 1);
 								System.pages.change('Training');
-							}}>Enlever</button
+							}}
 						>
+							Enlever
+						</button>
 					{/if}
 				</div>
 				<div style="text-align:right;">
 					<button
-						
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
 							System.pages.change('Training');
@@ -100,8 +102,10 @@
 						on:mouseleave={() => {
 							System.view.quick = undefined;
 							System.pages.change('Training');
-						}}>{card}</button
+						}}
 					>
+						{card}
+					</button>
 				</div>
 			{/if}
 		</div>

@@ -16,8 +16,10 @@
 	class="close"
 	on:click={() => {
 		close();
-	}}>X</button
+	}}
 >
+	X
+</button>
 
 <br />
 <br />
@@ -35,7 +37,9 @@
 		class="slider"
 		id="volume"
 	/>
-	<label for="volume" style="transform: translate(0, 20%);text-align:center;">{System.music.volume}%</label>
+	<label for="volume" style="transform: translate(0, 20%);text-align:center;">
+		{System.music.volume}%
+	</label>
 </div>
 
 <br />

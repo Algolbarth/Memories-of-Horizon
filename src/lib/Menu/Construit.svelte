@@ -17,8 +17,10 @@
 	on:click={() => {
 		System.view.reset();
 		System.pages.change('Play');
-	}}>X</button
+	}}
 >
+	X
+</button>
 
 <br />
 
@@ -29,7 +31,6 @@
 			<div class="preview">
 				<div>
 					<button
-						
 						on:mouseenter={() => {
 							System.view.quick = deck;
 							System.pages.change('Construit');
@@ -41,8 +42,10 @@
 						on:click={() => {
 							System.view.card = deck;
 							System.pages.change('Construit');
-						}}>{deck.name}</button
+						}}
 					>
+						{deck.name}
+					</button>
 				</div>
 				<div style="text-align:right">
 					<button
@@ -52,7 +55,8 @@
 							System.game.deck = deck;
 							System.game.init();
 						}}
-						>Jouer
+					>
+						Jouer
 					</button>
 				</div>
 			</div>

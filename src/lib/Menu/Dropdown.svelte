@@ -40,8 +40,10 @@
 					<button
 						on:click={() => {
 							select(element);
-						}}>{element}</button
+						}}
 					>
+						{element}
+					</button>
 					<br />
 				{/each}
 			</div>

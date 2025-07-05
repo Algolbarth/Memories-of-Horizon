@@ -13,8 +13,10 @@
 		on:click={() => {
 			System.view.reset();
 			System.pages.change('Play');
-		}}>X</button
+		}}
 	>
+		X
+	</button>
 	<div style="text-align:center">
 		<button
 			class="big"
@@ -23,8 +25,10 @@
 				System.game = new Game(System, 'Entraînement');
 				System.game.deck = System.train.deck;
 				System.game.init();
-			}}>Jouer</button
+			}}
 		>
+			Jouer
+		</button>
 	</div>
 </div>
 

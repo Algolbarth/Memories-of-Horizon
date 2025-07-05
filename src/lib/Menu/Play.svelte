@@ -13,31 +13,39 @@
 	class="close"
 	on:click={() => {
 		System.pages.change('Menu');
-	}}>X</button
+	}}
 >
+	X
+</button>
 
 <div id="body">
 	<button
 		class="big"
 		on:click={() => {
 			aventure();
-		}}>Aventure</button
+		}}
 	>
+		Aventure
+	</button>
 	<br />
 	<button
 		class="big"
 		on:click={() => {
 			System.pages.change('Construit');
-		}}>Construit</button
+		}}
 	>
+		Construit
+	</button>
 	<br />
 	<br />
 	<button
 		class="big"
 		on:click={() => {
 			System.pages.change('Training');
-		}}>Entraînement</button
+		}}
 	>
+		Entraînement
+	</button>
 </div>
 
 <style>

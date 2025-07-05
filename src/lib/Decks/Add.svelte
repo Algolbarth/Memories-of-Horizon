@@ -50,9 +50,13 @@
 	on:click={() => {
 		System.view.reset();
 		System.pages.change('Deck');
-	}}>X</button
+	}}
 >
+	X
+</button>
+
 <br />
+
 <div id="zone">
 	{System.several(cardList.length, 'carte')}
 	-
@@ -64,12 +68,13 @@
 	>
 		Filtrer
 	</button>
+	
 	<div id="list" class="scroll">
 		{#each cardList as card}
 			<div class={(System.deck.check(card.name) ? 'present ' : '') + 'preview'}>
 				<div>
 					<button
-						class={(System.deck.check(card.name) ? 'present ' : '')}
+						class={System.deck.check(card.name) ? 'present ' : ''}
 						on:click={() => {
 							System.view.card = card;
 							System.pages.change('Add');
@@ -97,7 +102,7 @@
 						</button>
 					{:else}
 						<button
-						class="present"
+							class="present"
 							on:click={() => {
 								System.deck.remove(card.name);
 								System.pages.change('Add');

@@ -46,8 +46,10 @@
 					class="big"
 					on:click={() => {
 						System.pages.change('Play');
-					}}>Jouer</button
+					}}
 				>
+					Jouer
+				</button>
 			</div>
 
 			<div>
@@ -55,8 +57,10 @@
 					class="big"
 					on:click={() => {
 						System.pages.change('Decks');
-					}}>Decks</button
+					}}
 				>
+					Decks
+				</button>
 			</div>
 
 			<div>
@@ -64,8 +68,10 @@
 					class="big"
 					on:click={() => {
 						System.pages.change('Library');
-					}}>Bibliothèque</button
+					}}
 				>
+					Bibliothèque
+				</button>
 			</div>
 
 			<div>
@@ -73,8 +79,10 @@
 					class="big"
 					on:click={() => {
 						System.pages.change('Universe');
-					}}>Univers</button
+					}}
 				>
+					Univers
+				</button>
 			</div>
 		</div>
 		<div class="column">
@@ -83,8 +91,10 @@
 					class="big"
 					on:click={() => {
 						System.pages.change('Profil');
-					}}>Profil</button
+					}}
 				>
+					Profil
+				</button>
 			</div>
 
 			<div>
@@ -92,8 +102,10 @@
 					class="big"
 					on:click={() => {
 						System.pages.change('Settings');
-					}}>Options</button
+					}}
 				>
+					Options
+				</button>
 			</div>
 
 			<div>
@@ -101,8 +113,10 @@
 					class="big"
 					on:click={() => {
 						System.pages.change('News');
-					}}>Nouveautés</button
+					}}
 				>
+					Nouveautés
+				</button>
 			</div>
 
 			<div>
@@ -110,14 +124,18 @@
 					class="big"
 					on:click={() => {
 						save();
-					}}>Sauvegarder</button
+					}}
 				>
+					Sauvegarder
+				</button>
 				<br />
 				<button
 					on:click={() => {
 						logout();
-					}}>Se déconnecter</button
+					}}
 				>
+					Se déconnecter
+				</button>
 			</div>
 		</div>
 	</div>
