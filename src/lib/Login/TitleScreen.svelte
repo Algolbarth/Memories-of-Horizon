@@ -1,5 +1,6 @@
 <script>
 	import { Account } from './Account.js';
+
 	export let System;
 
 	function invite() {
@@ -10,23 +11,33 @@
 
 <div id="body">
 	<img src="Pictures/Title.png" alt="Logo" class="logo" />
+
 	<br />
+
 	<button
 		class="big"
 		on:click={() => {
 			System.pages.change('Login');
-		}}>Connexion</button
+		}}
 	>
+		Connexion
+	</button>
+
 	<br />
+
 	<button
 		class="big"
 		on:click={() => {
 			System.pages.change('Register');
-		}}>Inscription</button
+		}}
 	>
-	<br /><br />
+		Inscription
+	</button>
+
+	<br />
+	<br />
+
 	<button
-		
 		on:click={() => {
 			invite();
 		}}>Jouer en tant qu'invité</button

@@ -5,17 +5,17 @@
 <div id="body">
 	<div class="center">
 		<button
-			
 			on:click={() => {
 				System.music.play();
 				System.pages.change('TitleScreen');
-			}}>Jouer</button
+			}}
 		>
+			Jouer
+		</button>
 	</div>
 	<div id="credits">
 		by
 		<button
-			
 			on:click={() => {
 				window.open('https://github.com/Algolbarth');
 			}}
@@ -24,7 +24,6 @@
 		</button>
 		-
 		<button
-			
 			on:click={() => {
 				window.open('https://github.com/Algolbarth/MoH');
 			}}
@@ -33,7 +32,6 @@
 		</button>
 		-
 		<button
-			
 			on:click={() => {
 				window.open('https://algolbarth.github.io/');
 			}}
