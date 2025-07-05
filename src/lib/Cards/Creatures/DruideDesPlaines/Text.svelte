@@ -5,9 +5,12 @@
 	export let card;
 </script>
 
-Quand posé, au choix : se transforme en <Info bind:System name={"Druide des plaines (forme humain)"} /> OU se transforme en
-<Info bind:System name={"Druide des plaines (forme loup)"} />.
-<br />
+Quand posé, au choix :
+<ul>
+	<li>Se transforme en <Info bind:System name={"Druide des plaines (forme humain)"} />.</li>
+	<li>Se transforme en <Info bind:System name={"Druide des plaines (forme loup)"} />.</li>
+</ul>
+
 {#if card.name == 'Druide des plaines (forme humain)'}
 	Au début de la phase de préparation : pioche 2 cartes.
 {/if}

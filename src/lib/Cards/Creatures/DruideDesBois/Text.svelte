@@ -5,8 +5,12 @@
 	export let card;
 </script>
 
-Quand posé, au choix : se transforme en <Info bind:System name={"Druide des bois (forme elfe)"} /> OU se transforme en <Info bind:System name={"Druide des bois (forme renard)"} />.
-<br />
+Quand posé, au choix :
+<ul>
+	<li>Se transforme en <Info bind:System name={"Druide des bois (forme elfe)"} />.</li>
+	<li>Se transforme en <Info bind:System name={"Druide des bois (forme renard)"} />.</li>
+</ul>
+
 {#if card.name == 'Druide des bois (forme elfe)'}
 	Quand une action alliée est jouée : augmente de 3 sa vie.
 {/if}
