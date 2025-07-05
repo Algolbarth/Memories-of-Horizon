@@ -1,7 +1,6 @@
 <script>
 	import Zone from '../../../Game/Zone.svelte';
 	export let System;
-	System;
 
 	let choice = undefined;
 

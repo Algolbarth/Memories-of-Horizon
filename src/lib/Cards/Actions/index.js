@@ -47,3 +47,6 @@ export * from './SouffleEnflamme';
 export * from './Retablissement';
 export * from './Repos';
 export * from './Autodafe';
+export * from './PasseDArmes';
+export * from './Aiguisage';
+export * from './Polissage';

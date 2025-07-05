@@ -7,16 +7,16 @@ export class Puit extends Batiment {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 12], ["Eau", 12]]);
-        this.stat("Vie").base = 10;
-        this.stat("Vie").current = 10;
+        this.init([["Or", 25], ["Eau", 25]]);
+        this.stat("Vie").base = 20;
+        this.stat("Vie").current = 20;
 
         this.text = Text;
     };
 
     otherPoseEffect = function (card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Eau") && this.owner == card.owner) {
-            this.owner.draw(1);
+            this.owner.ressource("Or").current += 5;
         }
     };
 }

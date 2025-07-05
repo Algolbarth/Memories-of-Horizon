@@ -7,7 +7,7 @@ export class Fontaine extends Batiment {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 12], ["Eau", 12]]);
+        this.init([["Or", 10], ["Eau", 10]]);
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
 
@@ -16,7 +16,7 @@ export class Fontaine extends Batiment {
 
     otherPoseEffect = function (card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Eau") && this.owner == card.owner) {
-            this.owner.ressource("Or").current += 2;
+            this.owner.draw(1);
         }
     };
 }

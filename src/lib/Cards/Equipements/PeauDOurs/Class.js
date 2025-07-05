@@ -8,6 +8,8 @@ export class PeauDOurs extends Equipment {
         super(System);
 
         this.init([["Or", 50]]);
+        this.familles.base.push("Armure");
+        
         this.familles.base.push("Bête");
 
         this.text = Text;
@@ -15,8 +17,8 @@ export class PeauDOurs extends Equipment {
 
     otherDieEffect = function (card) {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.familles.total().includes("Bête")) {
-            this.bearer.stat("Vie").add += 8;
-            this.bearer.stat("Vie").add += 8;
+            this.bearer.stat("Vie").add += 10;
+            this.bearer.stat("Vie").add += 10;
         }
     };
 }

@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Quand une créature de famille Bête meurt : augmente de 1 son attaque et sa vie.
+Quand une créature alliée de famille Bête meurt : augmente de 5 son attaque et de 2 sa vie.

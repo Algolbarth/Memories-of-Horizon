@@ -129,18 +129,7 @@
 		color: var(--close);
 	}
 
-	:global(input[type='number']) {
-		font: inherit;
-		margin: 0;
-		padding: 0;
-		width: 3em;
-		background: none;
-		border: none;
-		border-bottom: 2px solid transparent;
-	}
-
-	:global(input[type='number']:focus) {
-		outline: none;
-		border-bottom: 2px solid black;
+	input[type='number'] {
+		width: 1.5em;
 	}
 </style>

@@ -60,9 +60,11 @@ export class Card {
             this.elements.base.push("Neutre");
         }
 
-        this.level = parseInt((total - 1) / 10) + 1;
-        if (this.level > 20) {
-            this.level = 20;
+        if (this.level == undefined) {
+            this.level = parseInt((total - 1) / 10) + 1;
+            if (this.level > 20) {
+                this.level = 20;
+            }
         }
 
         let total_vente = 0;

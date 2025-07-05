@@ -12,6 +12,6 @@ export class Archimage extends Creature {
         this.stat("Vie").base = 50;
         this.stat("Vie").current = 50;
         this.stat("Attaque").base = 50;
-        this.stat("Magie").base = 50;
+        this.stat("Magie").base = 25;
     };
 }

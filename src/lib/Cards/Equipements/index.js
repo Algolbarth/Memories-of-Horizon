@@ -38,3 +38,4 @@ export * from './BaguetteExplosive';
 export * from './BaguetteDesMarees';
 export * from './Bouee';
 export * from './HeaumeDeFer';
+export * from './DoublesHachettesBarbare';

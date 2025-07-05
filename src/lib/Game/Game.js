@@ -1,5 +1,5 @@
 import { Entity } from './Entity.js';
-import { Chapter } from './Chapter.js';
+import { Chapter } from '../Chapters/Chapter.js';
 import { Battle } from './Battle.js';
 
 export class Game extends Battle {

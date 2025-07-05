@@ -23,3 +23,4 @@ export * from './GarnisonDesMonts';
 export * from './Restaurant';
 export * from './LacDeLave';
 export * from './BassinDeReproduction';
+export * from './Siphon';

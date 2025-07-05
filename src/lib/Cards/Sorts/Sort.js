@@ -8,7 +8,6 @@ export class Sort extends Action {
     }
 
     manaCost = function (value) {
-        value -= this.owner.totalIntelligence();
         if (value < 0) {
             value = 0;
         }

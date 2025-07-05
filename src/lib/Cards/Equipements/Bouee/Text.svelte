@@ -5,4 +5,5 @@
 
 S'équipe sur une créature alliée sur le terrain.
 <br />
+<br />
 La créature équipée est d'élément Eau.

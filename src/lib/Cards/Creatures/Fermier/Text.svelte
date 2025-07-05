@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Au début de la phase de préparation : produis 5 or.
+Au début de la phase de préparation : produit 5 or.

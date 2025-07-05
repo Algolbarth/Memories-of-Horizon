@@ -6,7 +6,7 @@ export class GoHoumei extends Boss {
     constructor(System) {
         super(System);
 
-        this.level = 8;
+        this.level = 6;
         this.elements.base = ["Terre"];
         this.familles.base.push("Nain");
 

@@ -13,9 +13,6 @@ export class Equipment extends Objet {
 
         this.familles.base.push("Équipement");
 
-        this.addEquipTrait("Légendaire", false);
-        this.addEquipTrait("Rare", false);
-
         this.addEquipStat("Attaque", 0);
         this.addEquipStat("Vie", 0);
         this.addEquipStat("Défense", 0);
@@ -92,7 +89,7 @@ export class Equipment extends Objet {
     addEquipStat = function (name, value) {
         let stat = new Stat(name, value, this);
         stat.value = function () {
-            return this.base;
+            return this.base + this.add;
         };
         this.equipStats.push(stat);
     };

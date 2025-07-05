@@ -1,5 +1,5 @@
 import { Equipment } from '../Equipement.js';
-import Text from './Text.svelte';
+import Text from '../Text.svelte';
 
 export class BaguetteDArchimage extends Equipment {
     name = "Baguette d'archimage";
@@ -8,7 +8,9 @@ export class BaguetteDArchimage extends Equipment {
         super(System);
 
         this.init([["Or", 100]]);
-        this.equipStat("Magie").base = 100;
+        this.familles.base.push("Arme");
+
+        this.equipStat("Magie").base = 50;
 
         this.text = Text;
     };

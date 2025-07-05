@@ -8,6 +8,8 @@ export class BaguetteExplosive extends Equipment {
         super(System);
 
         this.init([["Or", 40], ["Feu", 40]]);
+        this.familles.base.push("Arme");
+        
         this.equipStat("Magie").base = 10;
 
         this.text = Text;

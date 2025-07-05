@@ -8,6 +8,7 @@ export class CasqueEnCuir extends Equipment {
         super(System);
 
         this.init([["Or", 5]]);
+        this.familles.base.push("Armure");
 
         this.text = Text;
     };

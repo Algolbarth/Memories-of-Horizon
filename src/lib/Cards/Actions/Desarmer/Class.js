@@ -8,7 +8,7 @@ export class Desarmer extends Action {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 25]]);
 
         this.text = Text;
     };

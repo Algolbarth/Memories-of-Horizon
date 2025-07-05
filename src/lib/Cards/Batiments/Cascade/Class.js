@@ -7,7 +7,7 @@ export class Cascade extends Batiment {
     constructor(System) {
         super(System);
 
-        this.init([["Or", 12], ["Eau", 12]]);
+        this.init([["Or", 15], ["Eau", 15]]);
         this.stat("Vie").base = 10;
         this.stat("Vie").current = 10;
 
@@ -16,7 +16,13 @@ export class Cascade extends Batiment {
 
     otherPoseEffect = function (card) {
         if (this.zone.name == "Terrain" && card.elements.total().includes("Eau") && this.owner == card.owner) {
-            this.owner.ressource("Eau").current += 2;
+            let condition = function (card) {
+                if (card.elements.total().includes("Eau")) {
+                    return true;
+                }
+                return false;
+            };
+            this.owner.draw(1, condition);
         }
     };
 }

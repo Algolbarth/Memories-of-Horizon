@@ -57,7 +57,6 @@
 	{System.several(cardList.length, 'carte')}
 	-
 	<button
-		
 		on:click={() => {
 			filterWindow = true;
 			System.pages.change('Add');
@@ -70,7 +69,7 @@
 			<div class={(System.deck.check(card.name) ? 'present ' : '') + 'preview'}>
 				<div>
 					<button
-						
+						class={(System.deck.check(card.name) ? 'present ' : '')}
 						on:click={() => {
 							System.view.card = card;
 							System.pages.change('Add');
@@ -82,25 +81,30 @@
 						on:mouseleave={() => {
 							System.view.quick = undefined;
 							System.pages.change('Add');
-						}}>{card.name}</button
+						}}
 					>
+						{card.name}
+					</button>
 				</div>
 				<div style="text-align:right;">
 					{#if !System.deck.check(card.name)}
 						<button
-							
 							on:click={() => {
 								System.deck.add(card.name);
-							}}>Ajouter</button
+							}}
 						>
+							Ajouter
+						</button>
 					{:else}
 						<button
-							
+						class="present"
 							on:click={() => {
 								System.deck.remove(card.name);
 								System.pages.change('Add');
-							}}>Enlever</button
+							}}
 						>
+							Enlever
+						</button>
 					{/if}
 				</div>
 			</div>
@@ -144,11 +148,13 @@
 	}
 
 	.present {
-		background-color: rgb(183, 119, 0);
+		background-color: rgb(86, 58, 7);
+		color: gold;
 	}
 
 	.present:hover {
-		background-color: rgb(225, 146, 0);
+		background-color: rgb(86, 58, 7);
+		color: gold;
 	}
 
 	#view {

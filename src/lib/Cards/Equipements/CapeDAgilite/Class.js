@@ -8,6 +8,7 @@ export class CapeDAgilite extends Equipment {
         super(System);
 
         this.init([["Or", 20]]);
+        this.familles.base.push("Armure");
 
         this.text = Text;
     };

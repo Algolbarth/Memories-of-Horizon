@@ -15,7 +15,7 @@ export class CollierEnDentDeLoup extends Equipment {
 
     otherDieEffect = function (card) {
         if (this.bearer != undefined && this.bearer.zone.name == "Terrain" && card.type == "Créature" && card.owner == this.bearer.owner && card.familles.total().includes("Bête")) {
-            this.bearer.stat("Attaque").add += 10;
+            this.bearer.stat("Attaque").add += 20;
         }
     };
 }

@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Produis 5 mana.
+produit 5 mana.

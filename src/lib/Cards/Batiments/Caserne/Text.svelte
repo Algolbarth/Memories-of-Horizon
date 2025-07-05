@@ -5,4 +5,4 @@
 	export let card;
 </script>
 
-Au début d'un tour de combat : crée 1 <Info bind:System name={"Soldat"} /> sur le terrain.
+Au début d'un tour de combat : crée <Info bind:System name={"Soldat"} /> sur le terrain.

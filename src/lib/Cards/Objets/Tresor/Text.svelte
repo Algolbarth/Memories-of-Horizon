@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Pioche 5 cartes et produis 10 or.
+Pioche 5 cartes et produit 10 or.

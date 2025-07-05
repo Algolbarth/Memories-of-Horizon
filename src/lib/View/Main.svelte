@@ -37,6 +37,18 @@
 				{#if card.hasStat()}
 					<svelte:component this={Stat} {card} />
 				{/if}
+				{#if card.familles.total().includes('Équipement')}
+					<div class="box">
+						<i>Statistiques</i>
+						<br />
+						{#each card.equipStats as e}
+							{#if e.value() > 0}
+								{e.name} : {e.value()}
+								<br />
+							{/if}
+						{/each}
+					</div>
+				{/if}
 				{#if card.type == 'Créature'}
 					<svelte:component this={Equipments} {card} {System} />
 				{/if}

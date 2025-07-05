@@ -5,4 +5,4 @@
 	export let card;
 </script>
 
-Au début de la phase de préparation : crée 1 <Info bind:System name={"Flèche en bois"} /> dans la main.
+Au début de la phase de préparation : crée <Info bind:System name={"Flèche en bois"} /> dans la main.

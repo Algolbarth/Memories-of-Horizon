@@ -8,6 +8,7 @@ export class BaguetteDesMarees extends Equipment {
         super(System);
 
         this.init([["Or", 40], ["Eau", 40]]);
+        this.familles.base.push("Arme");
 
         this.equipStat("Magie").base = 10;
 

@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Quand une carte Eau est posée : pioche 1 carte.
+Quand une carte d'élément Eau alliée est posée : produit 2 or.

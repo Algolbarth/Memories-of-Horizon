@@ -1,5 +1,5 @@
 import { Equipment } from '../Equipement.js';
-import Text from './Text.svelte';
+import Text from '../Text.svelte';
 
 export class HacheDeFer extends Equipment {
     name = "Hache de fer";
@@ -8,6 +8,8 @@ export class HacheDeFer extends Equipment {
         super(System);
 
         this.init([["Or", 50]]);
+        this.familles.base.push("Arme");
+        
         this.equipStat("Adresse").base = 30;
         this.equipStat("Intensité").base = 1;
 

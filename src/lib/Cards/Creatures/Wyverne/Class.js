@@ -20,7 +20,7 @@ export class Wyverne extends Creature {
 
     otherPoseEffect = function (card) {
         if (this.zone.name == "Boutique" && card.owner == this.owner) {
-            this.getCout("Or").add -= 5;
+            this.coutReduce(5);
         }
     };
 }

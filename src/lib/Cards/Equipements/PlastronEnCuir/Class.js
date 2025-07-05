@@ -1,5 +1,5 @@
 import { Equipment } from '../Equipement.js';
-import Text from './Text.svelte';
+import Text from '../Text.svelte';
 
 export class PlastronEnCuir extends Equipment {
     name = "Plastron en cuir";
@@ -8,6 +8,8 @@ export class PlastronEnCuir extends Equipment {
         super(System);
 
         this.init([["Or", 5]]);
+        this.familles.base.push("Armure");
+        
         this.equipStat("Vie").base = 8;
 
         this.text = Text;

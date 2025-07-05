@@ -3,4 +3,4 @@
 	export let card;
 </script>
 
-Quand arrive sur le terrain : produis 5 eau.
+Quand arrive sur le terrain : produit 5 eau.

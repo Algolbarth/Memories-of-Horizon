@@ -5,6 +5,6 @@
 
 Quand une unité est posée :
 <br />
-Si c'est une créature d'élément feu augmente son attaque de 5. 
+Si c'est une créature d'élément Feu : augmente de 5 l'attaque de cette créature. 
 <br />
-Si c'est une unité qui n'est pas d'élément feu lui inflige 5 dégâts.
+Si c'est une unité qui n'est pas d'élément Feu : inflige 5 dégâts à cette unité.

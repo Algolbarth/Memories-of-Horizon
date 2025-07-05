@@ -8,6 +8,7 @@ export class HeaumeDeFer extends Equipment {
         super(System);
 
         this.init([["Or", 25]]);
+        this.familles.base.push("Armure");
 
         this.text = Text;
     };
