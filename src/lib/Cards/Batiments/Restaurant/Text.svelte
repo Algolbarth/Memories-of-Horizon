@@ -1,5 +1,5 @@
 <script>
-	import Info from '../../Info.svelte';
+	import CardInfo from '../../Info.svelte';
 
 	export let System;
 	export let card;
@@ -14,5 +14,5 @@ Au début d'une étape de préparation : crée un objet de même nom que l'objet
 	<br />
 	<br />
 
-	Objet choisi : <Info bind:System name={card.product} />
+	Objet choisi : <CardInfo bind:System name={card.product} />
 {/if}

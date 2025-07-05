@@ -9,5 +9,17 @@
 	on:click={() => {
 		System.view.card = card;
 		System.pages.change(System.pages.actual.name);
-	}}>{name}</button
+	}}
 >
+	{name}
+</button>
+
+<style>
+	button {
+		color: darkgreen;
+	}
+
+	button:hover {
+		color: greenyellow;
+	}
+</style>
