@@ -26,7 +26,7 @@
 		<button
 			
 			on:click={() => {
-				window.open('https://github.com/Algolbarth/JsRPG');
+				window.open('https://github.com/Algolbarth/MoH');
 			}}
 		>
 			Github Repository

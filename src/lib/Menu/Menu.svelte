@@ -2,7 +2,7 @@
 	export let System;
 
 	function save() {
-		let text = 'JsRPG_' + System.account.name + '_';
+		let text = 'MoH_' + System.account.name + '_';
 		text +=
 			System.account.aventure.victory +
 			'_' +
@@ -23,7 +23,7 @@
 
 		var element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-		element.setAttribute('download', 'JsRPG_' + System.account.name);
+		element.setAttribute('download', 'MoH_' + System.account.name);
 		element.style.display = 'none';
 		document.body.appendChild(element);
 		element.click();

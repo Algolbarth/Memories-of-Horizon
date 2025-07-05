@@ -140,6 +140,7 @@
 				}
 			}
 		},
+		stories: [],
 		show_intelligence: false,
 		autoplay: false,
 		auto_speed: 1000
@@ -191,7 +192,7 @@
 		System.bosses.instance.push([]);
 	}
 
-	import * as chapters from '../lib/Chapters/index.js';
+	import * as chapters from '../lib/Chapters/Data';
 	for (const chapter of Object.keys(chapters)) {
 		let chapterClass = chapters[chapter];
 		let chapterInstance = new chapterClass(System, 0);
@@ -241,6 +242,20 @@
 
 		if (error) {
 			console.log(chapterClass);
+		}
+	}
+
+	import * as stories from '../lib/Stories';
+	for (const story of Object.keys(stories)) {
+		System.stories.push(new stories[story]());
+	}
+	for (let i = 0; i < System.stories.length; i++) {
+		let j = i;
+		while (j > 0 && System.stories[j - 1].id > System.stories[j].id) {
+			let trans = System.stories[j];
+			System.stories[j] = System.stories[j - 1];
+			System.stories[j - 1] = trans;
+			j--;
 		}
 	}
 
@@ -328,6 +343,7 @@
 		--link_hover: gold;
 		--close: crimson;
 		--close_hover: darkred;
+		--story: #fffbca;
 
 		--delay: 1s;
 		--delay_hover: 0.1s;
@@ -427,6 +443,28 @@
 
 	:global(.scroll::-webkit-scrollbar) {
 		display: none;
+	}
+
+	:global(input[type='number']) {
+		font: inherit;
+		margin: 0;
+		padding: 0;
+		width: 2em;
+		background: none;
+		border: none;
+		border-bottom: 2px solid transparent;
+
+		-moz-appearance: textfield;
+	}
+
+	:global(input[type='number']:focus) {
+		outline: none;
+		border-bottom: 2px solid black;
+	}
+
+	:global(input::-webkit-outer-spin-button, input::-webkit-inner-spin-button) {
+		-webkit-appearance: none;
+		margin: 0;
 	}
 
 	:global(label) {

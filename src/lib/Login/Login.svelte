@@ -13,8 +13,8 @@
 			save = await files[0].text();
 			step = 0;
 
-			if (readValue() != "JsRPG") {
-				console.log("Ce fichier n'est pas une sauvegarde pour JsRPG");
+			if (readValue() != "MoH") {
+				console.log("Ce fichier n'est pas une sauvegarde pour MoH");
 				return 0;
 			}
 			System.account = new Account(System, readValue());
