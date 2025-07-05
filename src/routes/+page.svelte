@@ -332,18 +332,19 @@
 
 <style>
 	:root {
-		--background: gray;
-		--zone: darkgray;
-		--card: dimgray;
-		--preview: rgb(147, 108, 11);
-		--preview_hover: darkgoldenrod;
-		--preview_deck: saddlebrown;
-		--attacker: rgb(175, 0, 0);
-		--attacker_hover: rgb(125, 0, 0);
-		--link_hover: gold;
-		--close: crimson;
-		--close_hover: darkred;
-		--story: #fffbca;
+		--background: rgba(128, 128, 128, 1);
+		--zone: rgba(169, 169, 169, 1);
+		--card: rgba(105, 105, 105, 1);
+		--preview: rgba(147, 108, 11, 1);
+		--preview_hover: rgba(184, 134, 11, 1);
+		--preview_deck: rgba(139, 69, 19, 1);
+		--attacker: rgba(175, 0, 0, 1);
+		--attacker_hover: rgba(125, 0, 0, 1);
+		--link_hover: rgba(255, 215, 0, 1);
+		--close: rgba(220, 20, 60, 1);
+		--close_hover: rgba(139, 0, 0, 1);
+		--story: rgba(255, 251, 202, 1);
+		--shadow: rgba(0, 0, 0, 0.5);
 
 		--delay: 1s;
 		--delay_hover: 0.1s;
