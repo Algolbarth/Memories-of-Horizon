@@ -5,4 +5,4 @@
 	export let card;
 </script>
 
-Au début de la phase de préparation : crée <CardInfo bind:System name={"Boule de feu"} /> dans la boutique.
+Quand <CardInfo bind:System name={"Boule de feu"} /> est posée : crée <CardInfo bind:System name={"Boule de feu"} /> dans la boutique.

@@ -1,8 +1,8 @@
 import { Creature } from '../Creature.js';
 import Text from './Text.svelte';
 
-export class JongleurDeBouleDeFeu extends Creature {
-    name = "Jongleur de boule de feu";
+export class LanceurDeBouleDeFeu extends Creature {
+    name = "Lanceur de boule de feu";
 
     constructor(System) {
         super(System);
@@ -18,8 +18,8 @@ export class JongleurDeBouleDeFeu extends Creature {
         this.text = Text;
     };
 
-    otherPoseEffect = function (card) {
-        if (card.owner == this.owner && card.name == "Boule de feu") {
+    startStepEffect = function () {
+        if (this.zone.name == "Terrain") {
             this.owner.getCard("Boule de feu").add("Boutique");
         }
     };

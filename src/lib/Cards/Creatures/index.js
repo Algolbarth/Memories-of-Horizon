@@ -106,3 +106,4 @@ export * from './MageDeLaTerre';
 export * from './ElementaireDeCaillou';
 export * from './SageDeLaForet';
 export * from './JongleurDeBouleDeFeu';
+export * from './LanceurDeBouleDeFeu';
