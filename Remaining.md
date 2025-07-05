@@ -37,10 +37,11 @@ Entrepôt : bâtiment, quand acheté : si la main est pleine, augmente la taille
 Conquérant : créature, quand posé : si le terrain est plein, augmente la taille du terrain. \
 Carte de la région : objet, pioche des cartes jusqu'à remplir la boutique. \
 Omniscience : action, découvre des cartes jusqu'à remplir la boutique. \
-Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main et de la boutique.
+Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main et de la boutique. \
+ : action, diminue la taille de la main et augmente la taille du terrain et de la boutique.
 
 Masse de fer : augmente la charge de la créature équipée. \
-Robe de mage : augmente la résistance de la créature équipée. \
+Robe de mage : augmente la magie et la résistance de la créature équipée. \
 Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Cotte de maille : augmente l'endurance de la créature équipée. \
@@ -65,6 +66,7 @@ Mouton cornu : créature bête, charge et endurance. \
 Berger : créature humain, quand joue : crée Mouton sur le terrain. \
 Laine : objet bête, augmente l'endurance d'une créature alliée sur le terrain. \
 Gladiateur : créature humain. \
+Hache lourde : objet équipement, augmente l'intensité de la créature équipée. \
 Armagicien : créature humain, magie. \
 Célébrité : créature humain. \
 Colère : inflige autant dégâts que les blessures du meneur. \
@@ -95,12 +97,13 @@ Intoxication : augmente la toxicité d'une créature adverse empoisonnée sur le
 Fiole de poison : empoisonne et augmente la toxicité d'une créature adverse sur le terrain. \
 Dose mortelle : détruis une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle. \
 Vipère : créature reptile, quand attaque : empoisonne la créature équipée. \
-Rose : créature plante : épine, quand posé : se pose ou se détruis pour empoisonner une créature adverse. \
-Plante carnivore : créature plante, quand joue : inflige des dégâts à l'unité adverse en première position. \
-Plante vénéneuse : créature plante, empoisonne quand joue. \
-Haie taillée : créature plante. \
+Mur de haie : créature plante. 0 atk inactif \
+Rose : créature plante, 0 atk inactif, épine, quand se fait attaquer : applique poison à la créature attaquante. \
+Plante carnivore : créature plante. 0 atk inactif, au début du tour de combat : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain. \
+Plante vénéneuse : créature plante, 0 atk inactif, au début du tour de combat : applique poison à la créature adverse la plus en avant sur le terrain. \
 Jardinier : créature elfe, au début de la phase de préparation : soigne toutes les créatures alliées de famille Plante sur le terrain. \
 Botaniste : créature elfe, quand posé : pioche une créature de famille Plante et réduis son cout. \
+Pommier : créature plante, 0 atk inactif, au début de la phase de préparation : crée Pomme dans la main. \
 Écorce de tréant : augmente la régénération d'une créature alliée sur le terrain. \
 Poire : objet nourriture, soigne une créature alliée sur le terrain si elle est blessée, sinon augmente sa régénération. \
 Manteau de ronce : objet équipement, augmente l'épine de la créature équipée. \
@@ -425,8 +428,11 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 
 `Saintclair` : elfe centurion maitrisant les végétaux morts. \
 `Dents jaunes` : revenant centurion avec des dents en or. se véritable apparence est un monstre aveugle doté de nombreuses machoires. \
-`Hecate` : ancienne servante de Drenza devenue centurion. peux annuler toutes les fonctions élémentaires autour d'elle. ne veux pas se mêler de la guerre entre l'empereur et zodd. \
-`Victoria` : aalistar générale de l'empire qui a capturé drenza. veux retrouver hécate. peux forger des armes avec la lumière. \
+`Reina` : ancienne servante de Drenza devenue centurion. ne veux pas se mêler de la guerre entre l'empereur et zodd.
+
+`Alexei` :  empereur actuel de l'empire. ancien maitre d'armes, il ne parle jamais et s'exprime par le biais d'Hécate ou par le language des signes. \
+`Hecate` : servante personnelle et confidante de l'empereur. peux annuler toutes les éléments autour d'elle. \
+`Victoria` : aalistar générale de l'empire qui a capturé drenza. veux retrouver reina. peux forger des armes avec la lumière. \
 `Milen Kuva` : dieu des maitres d'armes, créateur de la tour de milen kuva. a formé alexei avant qu'il ne devienne empereur. \
 `Cristal` : nomade du désert gravement malade manipulant l'eau et la lumière. \
 `John` : gnome manipulant le mercure liquide.
@@ -450,8 +456,8 @@ Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente l'a
 `Manx` : dieu chat, gardien de la citadelle impérialle. Peux "garder" un territoire. Il est présent à tout endroit de ce territoire. Plus le territoire est petit plus il gagne en force mais perd en contrôle.  \
 `Medox` : dieu chien, gardien de l'empire. Peux "garder" un territoire. Il peux se déplacer instantannement au sien de ce territoire. Sa force est proportionelle à la taille de ce territoire. \
 `Mania` : golem géant (le géant de mha). \
-`Kotor` : archidémon chevalier du chaos, a affronté et tué l'empereur barbare. \
-`Gael` : né d'un ange et d'un démon, géant difforme mais sage et surpuissant, il ère dans l'horizon en quête d'un adversaire philosophique. \
+`Kotorbahn` : archidémon chevalier du chaos, a affronté et tué l'empereur barbare. \
+`Gael` : né d'un ange et d'un démon, géant difforme mais sage et surpuissant, il ère dans l'horizon en quête d'un adversaire aussi bien combattant que philosophe. \
 `Algolbarth` : drow allié au néant, il porte une cape qui le recouvre entièrement. garde sa propre conscience mais peux contrôler aux créatures du néant. ne montre jamais son véritable corps, jeune et beau. est le seul à maitriser la synthèse, technique utilisant tous les éléments pour fusionner n'importe quel élément afin de créer un nouveau, indépendant des anciens. peux par exemple fusionner deux créatures pour en faire apparaitre une nouvelle, fusionner des soldats ou créatures du néant avec l'environnement ou des armes, fusionner deux espaces ou dimensions afin de créer un portail, fusionner deux moments proches pour "couper" le temps (comme diavolo dans jojo). a l'apparence de myst vearn. \
 `Yotanwa` : reine des barbares. une des meilleures cavalière de l'horizon. \
 `Rokyokou` : cavalier avec un casque de lion. cavalier le plus courageux, comparé à Akou. \
