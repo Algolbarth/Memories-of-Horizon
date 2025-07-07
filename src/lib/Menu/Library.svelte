@@ -70,7 +70,6 @@
 
 	function close() {
 		filterWindow = false;
-		System.pages.change('Library');
 	}
 </script>
 
@@ -78,7 +77,7 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.pages.change('Menu');
+		System.page = 'Menu';
 	}}
 >
 	X
@@ -92,15 +91,13 @@
 			<button
 				on:click={() => {
 					filterWindow = true;
-					System.pages.change('Library');
 				}}
 			>
 				Filtrer
 			</button>
 			- Trier par
 		</div>
-		<svelte:component
-			this={Dropdown}
+		<Dropdown
 			array={['Nom', 'Niveau']}
 			selected={sortType}
 			selecting={function (element) {
@@ -115,15 +112,12 @@
 				<button
 					on:click={() => {
 						System.view.card = card;
-						System.pages.change('Library');
 					}}
 					on:mouseenter={() => {
 						System.view.quick = card;
-						System.pages.change('Library');
 					}}
 					on:mouseleave={() => {
 						System.view.quick = undefined;
-						System.pages.change('Library');
 					}}
 				>
 					{card.name}
@@ -134,13 +128,12 @@
 </div>
 
 <div id="view">
-	<svelte:component this={View} {System} />
+	<View bind:System />
 </div>
 
 {#if filterWindow}
-	<svelte:component
-		this={Filter}
-		{System}
+	<Filter
+		bind:System
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

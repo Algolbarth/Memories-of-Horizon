@@ -22,6 +22,7 @@
 			<button
 				on:click={() => {
 					entity.actualiseShop();
+					System = System;
 				}}
 			>
 				Actualiser
@@ -33,6 +34,7 @@
 			<button
 				on:click={() => {
 					entity.upShop();
+					System = System;
 				}}
 			>
 				Améliorer
@@ -44,6 +46,7 @@
 			<button
 				on:click={() => {
 					entity.lock();
+					System = System;
 				}}
 			>
 				Verrouiller
@@ -53,7 +56,7 @@
 	<div id="list">
 		{#if zone.cards.length > 0}
 			{#each zone.cards as card}
-				<svelte:component this={Preview} {System} {card} {condition} {fonction} />
+				<Preview bind:System bind:card bind:condition bind:fonction />
 			{/each}
 		{:else}
 			<i>Vide</i>

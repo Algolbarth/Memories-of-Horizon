@@ -5,7 +5,7 @@
 	let choice = undefined;
 
 	function condition(card) {
-		if (card.type == "Bâtiment") {
+		if (card.type == 'Bâtiment') {
 			return true;
 		}
 		return false;
@@ -41,29 +41,25 @@
 	</div>
 {:else if choice == 'heal'}
 	<button
-		
 		on:click={() => {
 			choice = undefined;
 		}}>Retour</button
 	>
-	<svelte:component
-		this={Zone}
-		{System}
-		entity={System.game.use.card.owner}
+	<Zone
+		bind:System
+		bind:entity={System.game.use.card.owner}
 		zone={System.game.use.card.owner.zone('Terrain')}
 		{condition}
 		{fonction}
 	/>
 {:else if choice == 'damage'}
 	<button
-		
 		on:click={() => {
 			choice = undefined;
 		}}>Retour</button
 	>
-	<svelte:component
-		this={Zone}
-		{System}
+	<Zone
+		bind:System
 		entity={System.game.use.card.owner.adversary()}
 		zone={System.game.use.card.owner.adversary().zone('Terrain')}
 		condition={condition2}

@@ -1,5 +1,6 @@
 <script>
 	import Zone from '../../../Game/Zone.svelte';
+
 	export let System;
 
 	let choice = undefined;
@@ -20,26 +21,32 @@
 			class="big"
 			on:click={() => {
 				fonction(undefined);
-			}}>Se place sur le terrain</button
+			}}
 		>
+			Se place sur le terrain
+		</button>
+
 		<br />
+
 		<button
 			class="big"
 			on:click={() => {
 				choice = 'damage';
-			}}>Se détruis pour infliger 3 dégâts à une unité adverse sur le terrain</button
+			}}
 		>
+			Se détruis pour infliger 3 dégâts à une unité adverse sur le terrain
+		</button>
 	</div>
 {:else}
 	<button
-		
 		on:click={() => {
 			choice = undefined;
-		}}>Retour</button
+		}}
 	>
-	<svelte:component
-		this={Zone}
-		{System}
+		Retour
+	</button>
+	<Zone
+		bind:System
 		entity={System.game.use.card.owner.adversary()}
 		zone={System.game.use.card.owner.adversary().zone('Terrain')}
 		{condition}

@@ -20,15 +20,12 @@
 			<button
 				on:click={() => {
 					System.view.card = card;
-					System.pages.change('Game');
 				}}
 				on:mouseenter={() => {
 					System.view.quick = card;
-					System.pages.change('Game');
 				}}
 				on:mouseleave={() => {
 					System.view.quick = undefined;
-					System.pages.change('Game');
 				}}
 			>
 				{card.name}
@@ -45,6 +42,7 @@
 					<button
 						on:click={() => {
 							card.sell();
+							System = System;
 						}}
 					>
 						Vendre
@@ -54,6 +52,7 @@
 					<button
 						on:click={() => {
 							card.buy();
+							System = System;
 						}}
 					>
 						Acheter
@@ -62,6 +61,7 @@
 					<button
 						on:click={() => {
 							card.use();
+							System = System;
 						}}
 					>
 						Poser
@@ -73,7 +73,6 @@
 						<button
 							on:click={() => {
 								card.owner.place = card;
-								System.pages.change('Game');
 							}}
 						>
 							Changer
@@ -85,7 +84,7 @@
 						<button
 							on:click={() => {
 								card.up();
-								System.pages.change('Game');
+								System = System;
 							}}
 						>
 							&#9650
@@ -97,7 +96,7 @@
 						<button
 							on:click={() => {
 								card.down();
-								System.pages.change('Game');
+								System = System;
 							}}
 						>
 							&#9660
@@ -112,6 +111,7 @@
 					<button
 						on:click={() => {
 							fonction(card);
+							System = System;
 						}}
 					>
 						Sélectionner

@@ -1,10 +1,10 @@
 <script>
 	import Zone from '../../../Game/Zone.svelte';
-	
+
 	export let System;
 
 	function condition(card) {
-		if (card.stat("Vie").current < card.stat("Vie").value()) {
+		if (card.stat('Vie').current < card.stat('Vie').value()) {
 			return true;
 		}
 		return false;
@@ -16,10 +16,9 @@
 	}
 </script>
 
-<svelte:component
-	this={Zone}
-	{System}
-	entity={System.game.use.card.owner}
+<Zone
+	bind:System
+	bind:entity={System.game.use.card.owner}
 	zone={System.game.use.card.owner.zone('Terrain')}
 	{condition}
 	{fonction}

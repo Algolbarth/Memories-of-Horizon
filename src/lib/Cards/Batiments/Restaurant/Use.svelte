@@ -4,7 +4,7 @@
 	export let System;
 
 	function condition(card) {
-		if (card.type == 'Objet' && card.familles.total().includes("Nourriture")) {
+		if (card.type == 'Objet' && card.familles.total().includes('Nourriture')) {
 			return true;
 		}
 		return false;
@@ -16,10 +16,9 @@
 	}
 </script>
 
-<svelte:component
-	this={Zone}
-	{System}
-	entity={System.game.use.card.owner}
+<Zone
+	bind:System
+	bind:entity={System.game.use.card.owner}
 	zone={System.game.use.card.owner.zone('Main')}
 	{condition}
 	{fonction}

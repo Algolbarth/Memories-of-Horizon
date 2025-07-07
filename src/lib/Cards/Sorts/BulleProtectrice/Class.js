@@ -12,11 +12,10 @@ export class BulleProtectrice extends Sort {
 
         this.text = Text;
     };
-    
+
     select = function () {
         if (this.owner == this.System.game.player) {
             this.System.game.use.set(this, Use);
-            this.System.pages.change("Game");
         }
         else {
             let target = undefined;

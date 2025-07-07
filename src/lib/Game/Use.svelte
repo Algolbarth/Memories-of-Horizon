@@ -3,7 +3,7 @@
 
 	function close() {
 		System.game.use.reset();
-		System.pages.change('Game');
+		System = System;
 	}
 </script>
 
@@ -22,7 +22,7 @@
 		<br />
 
 		<div id="side">
-			<svelte:component this={System.game.use.svelte} {System} />
+			<svelte:component this={System.game.use.svelte} bind:System />
 		</div>
 	</div>
 {/if}

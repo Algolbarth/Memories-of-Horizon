@@ -3,7 +3,6 @@
 
 	function close() {
 		System.game.flux = false;
-		System.pages.change('Game');
 	}
 
 	let tab = [
@@ -50,7 +49,6 @@
 								if (System.game.player.flux == 0) {
 									System.game.flux = false;
 								}
-								System.pages.change('Game');
 							}}
 						>
 							{ressource}

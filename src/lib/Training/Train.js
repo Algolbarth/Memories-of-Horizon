@@ -25,23 +25,23 @@ export class Train {
                 {
                     name: "Lieux",
                     cards: ["Plaine"],
-                    size : 3,
+                    size: 3,
                 },
                 {
                     name: "Boutique",
                     cards: [],
                     level: 1,
-                    size : 10,
+                    size: 10,
                 },
                 {
                     name: "Main",
                     cards: [],
-                    size : 10,
+                    size: 10,
                 },
                 {
                     name: "Terrain",
                     cards: [],
-                    size : 10,
+                    size: 10,
                 },
                 {
                     name: "Défausse",

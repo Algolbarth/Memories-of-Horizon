@@ -7,7 +7,7 @@
 		<button
 			on:click={() => {
 				System.music.play();
-				System.pages.change('TitleScreen');
+				System.page = 'TitleScreen';
 			}}
 		>
 			Jouer

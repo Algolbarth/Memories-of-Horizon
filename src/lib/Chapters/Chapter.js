@@ -2,7 +2,6 @@ export class Chapter {
     steps = [];
     ressources = [];
     boss = false;
-    dialog = 0;
 
     constructor(System, number) {
         this.System = System;
@@ -30,17 +29,18 @@ export class Chapter {
             life: life,
             place: place,
             cards: cards,
-            dialogs: dialogs
+            dialogs: dialogs,
+            dialog: 0,
         });
     };
 
     nextDialog = function () {
-        if (this.dialog < this.steps[this.System.game.player.step - 1].dialogs.length - 1) {
-            this.dialog++;
-            this.System.pages.change("Dialog");
+        let step = this.steps[this.System.game.player.step - 1];
+        if (step.dialog < step.dialogs.length - 1) {
+            step.dialog++;
         }
         else {
-            this.System.pages.change("Game");
+            this.System.page = "Game";
         }
     };
 

@@ -28,7 +28,6 @@ export class Restaurant extends Batiment {
         if (check != undefined) {
             if (this.owner == this.System.game.player) {
                 this.System.game.use.set(this, Use);
-                this.System.pages.change("Game");
             }
             else {
                 this.useEffect(check);

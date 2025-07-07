@@ -1,10 +1,10 @@
 <script>
 	export let System;
-	System;
 
 	function fonction(choice) {
 		System.game.use.card.useEffect(choice);
 		System.game.use.reset();
+		System = System;
 	}
 </script>
 
@@ -15,7 +15,9 @@
 			fonction('Gobelin');
 		}}>Forme gobelin</button
 	>
+
 	<br />
+
 	<button
 		class="big"
 		on:click={() => {

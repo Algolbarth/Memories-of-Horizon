@@ -10,7 +10,7 @@ export class DagueDeCuivre extends Equipment {
 
         this.init([["Or", 3]]);
         this.familles.base.push("Arme");
-        
+
         this.equipStat("Attaque").base = 5;
 
         this.text = Text;
@@ -19,7 +19,6 @@ export class DagueDeCuivre extends Equipment {
     select = function () {
         if (this.owner == this.System.game.player) {
             this.System.game.use.set(this, Use);
-            this.System.pages.change("Game");
         }
         else {
             let target = undefined;

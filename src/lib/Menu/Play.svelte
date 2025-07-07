@@ -6,13 +6,14 @@
 	function aventure() {
 		System.game = new Game(System, 'Aventure');
 		System.game.init();
+		System = System;
 	}
 </script>
 
 <button
 	class="close"
 	on:click={() => {
-		System.pages.change('Menu');
+		System.page = 'Menu';
 	}}
 >
 	X
@@ -27,21 +28,25 @@
 	>
 		Aventure
 	</button>
+
 	<br />
+
 	<button
 		class="big"
 		on:click={() => {
-			System.pages.change('Construit');
+			System.page = 'Construit';
 		}}
 	>
 		Construit
 	</button>
+
 	<br />
 	<br />
+
 	<button
 		class="big"
 		on:click={() => {
-			System.pages.change('Training');
+			System.page = 'Training';
 		}}
 	>
 		Entraînement

@@ -88,7 +88,7 @@ export class Entity {
         let nameList = [];
         if (this.System.game.deck == undefined) {
             for (const card of this.System.cards.instance) {
-                if (this.place.condition(card) && card.level <= this.zone("Boutique").level && (condition == undefined || condition(card, drawer))) {
+                if (this.place.condition(card) && card.level <= this.zone("Boutique").level && !card.trait("Rare").value() && !card.trait("Légendaire").value() &&(condition == undefined || condition(card, drawer))) {
                     nameList.push(card.name);
                 }
             }
@@ -149,7 +149,6 @@ export class Entity {
             this.ressource("Or").spend(this.zone("Boutique").level * 10);
             this.zone("Boutique").level++;
             this.refreshShop();
-            this.System.pages.change("Game");
         }
     };
 
@@ -157,7 +156,6 @@ export class Entity {
         if (this.ressource("Or").total() >= 10) {
             this.ressource("Or").spend(10);
             this.refreshShop();
-            this.System.pages.change("Game");
         }
     };
 
@@ -191,7 +189,6 @@ export class Entity {
                 card.lock(false);
             }
         }
-        this.System.pages.change("Game");
     };
 
     play = function () {

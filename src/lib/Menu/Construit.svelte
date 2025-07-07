@@ -1,6 +1,7 @@
 <script>
 	import { Game } from '../Game/Game.js';
 	import View from '../Decks/View.svelte';
+
 	export let System;
 
 	let array = [];
@@ -16,7 +17,7 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.pages.change('Play');
+		System.page = 'Play';
 	}}
 >
 	X
@@ -33,15 +34,12 @@
 					<button
 						on:mouseenter={() => {
 							System.view.quick = deck;
-							System.pages.change('Construit');
 						}}
 						on:mouseleave={() => {
 							System.view.quick = undefined;
-							System.pages.change('Construit');
 						}}
 						on:click={() => {
 							System.view.card = deck;
-							System.pages.change('Construit');
 						}}
 					>
 						{deck.name}
@@ -54,6 +52,7 @@
 							System.game = new Game(System, 'Construit');
 							System.game.deck = deck;
 							System.game.init();
+							System = System;
 						}}
 					>
 						Jouer
@@ -65,7 +64,7 @@
 </div>
 
 <div id="view">
-	<svelte:component this={View} {System} />
+	<View bind:System />
 </div>
 
 <style>

@@ -3,7 +3,6 @@
 
 	function close() {
 		System.game.pause = false;
-		System.pages.change('Game');
 	}
 </script>
 
@@ -24,7 +23,7 @@
 			<button
 				class="big"
 				on:click={() => {
-					System.pages.change('Settings');
+					System.page = 'Settings';
 				}}
 			>
 				Options
@@ -37,7 +36,7 @@
 					class="big"
 					on:click={() => {
 						System.view.reset();
-						System.pages.change('Training');
+						System.page = 'Training';
 						System.game = undefined;
 					}}
 				>
@@ -51,7 +50,7 @@
 				class="big"
 				on:click={() => {
 					System.view.reset();
-					System.pages.change('Menu');
+					System.page = 'Menu';
 					System.game = undefined;
 				}}
 			>
@@ -65,7 +64,7 @@
 	.window {
 		background: var(--shadow);
 	}
-	
+
 	#body {
 		background-color: var(--card);
 		width: 20vw;

@@ -1,6 +1,8 @@
 <script>
+	import CardInfo from '../../Info.svelte';
+
 	export let System;
 	export let card;
 </script>
 
-Détruis une créature adverse sur le terrain.
+Transforme en <CardInfo bind:System name={'Grenouille'} /> une créature adverse sur le terrain.

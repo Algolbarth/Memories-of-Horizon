@@ -1,5 +1,7 @@
 <script>
 	export let System;
+
+	let step = System.game.chapter.steps[System.game.player.step - 1];
 </script>
 
 <div id="body" class="center">
@@ -9,7 +11,7 @@
 	<br />
 	<br />
 
-	{System.game.chapter.steps[System.game.player.step - 1].dialogs[System.game.chapter.dialog]}
+	{step.dialogs[step.dialog]}
 
 	<br />
 	<br />
@@ -18,6 +20,8 @@
 		class="big"
 		on:click={() => {
 			System.game.chapter.nextDialog();
+			step = step;
+			System = System;
 		}}
 	>
 		Suivant

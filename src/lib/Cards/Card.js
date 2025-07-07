@@ -221,7 +221,6 @@ export class Card {
             }
             this.verrou = false;
             this.move("Main");
-            this.System.pages.change("Game");
         }
     };
 
@@ -234,7 +233,6 @@ export class Card {
             this.owner.ressource(v.name).current += v.value();
         }
         this.remove();
-        this.System.pages.change("Game");
     };
 
     use = function () {
@@ -268,8 +266,6 @@ export class Card {
                 }
             }
         }
-
-        this.System.pages.change("Game");
     };
 
     otherPoseEffect = function () {

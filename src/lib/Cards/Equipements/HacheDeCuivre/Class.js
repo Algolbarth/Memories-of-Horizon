@@ -9,7 +9,7 @@ export class HacheDeCuivre extends Equipment {
 
         this.init([["Or", 20]]);
         this.familles.base.push("Arme");
-        
+
         this.equipStat("Adresse").base = 20;
 
         this.text = Text;

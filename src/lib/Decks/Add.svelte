@@ -1,6 +1,7 @@
 <script>
 	import Filter from '../Menu/Filter.svelte';
 	import View from '../View/Main.svelte';
+
 	export let System;
 
 	let filterWindow = false;
@@ -41,7 +42,6 @@
 
 	function close() {
 		filterWindow = false;
-		System.pages.change('Add');
 	}
 </script>
 
@@ -49,7 +49,7 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.pages.change('Deck');
+		System.page = 'Deck';
 	}}
 >
 	X
@@ -63,12 +63,11 @@
 	<button
 		on:click={() => {
 			filterWindow = true;
-			System.pages.change('Add');
 		}}
 	>
 		Filtrer
 	</button>
-	
+
 	<div id="list" class="scroll">
 		{#each cardList as card}
 			<div class={(System.deck.check(card.name) ? 'present ' : '') + 'preview'}>
@@ -77,15 +76,12 @@
 						class={System.deck.check(card.name) ? 'present ' : ''}
 						on:click={() => {
 							System.view.card = card;
-							System.pages.change('Add');
 						}}
 						on:mouseenter={() => {
 							System.view.quick = card;
-							System.pages.change('Add');
 						}}
 						on:mouseleave={() => {
 							System.view.quick = undefined;
-							System.pages.change('Add');
 						}}
 					>
 						{card.name}
@@ -96,6 +92,7 @@
 						<button
 							on:click={() => {
 								System.deck.add(card.name);
+								System = System;
 							}}
 						>
 							Ajouter
@@ -105,7 +102,7 @@
 							class="present"
 							on:click={() => {
 								System.deck.remove(card.name);
-								System.pages.change('Add');
+								System = System;
 							}}
 						>
 							Enlever
@@ -118,13 +115,12 @@
 </div>
 
 <div id="view">
-	<svelte:component this={View} {System} />
+	<View bind:System />
 </div>
 
 {#if filterWindow}
-	<svelte:component
-		this={Filter}
-		{System}
+	<Filter
+		bind:System
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

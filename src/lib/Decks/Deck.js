@@ -32,7 +32,6 @@ export class Deck {
     add = function (name) {
         if (!this.check(name)) {
             this.cards.push(name);
-            this.System.pages.change("Add");
         }
     };
 
@@ -60,7 +59,6 @@ export class Deck {
             deck.add(card);
         }
         this.System.decks.push(deck);
-        this.System.pages.change("Decks");
     };
 
     delete = function () {
@@ -70,7 +68,6 @@ export class Deck {
             }
         }
         this.System.deck = undefined;
-        this.System.pages.change("Decks");
     };
 
     playable = function () {

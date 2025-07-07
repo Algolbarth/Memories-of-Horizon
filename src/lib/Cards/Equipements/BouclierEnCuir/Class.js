@@ -9,7 +9,7 @@ export class BouclierEnCuir extends Equipment {
 
         this.init([["Or", 5]]);
         this.familles.base.push("Armure");
-        
+
         this.equipStat("Défense").base = 5;
 
         this.text = Text;

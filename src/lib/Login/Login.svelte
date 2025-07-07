@@ -1,7 +1,7 @@
 <script>
 	import { Account } from './Account.js';
 	import { Deck } from '../Decks/Deck.js';
-	
+
 	export let System;
 
 	let files;
@@ -13,7 +13,7 @@
 			save = await files[0].text();
 			step = 0;
 
-			if (readValue() != "MoH") {
+			if (readValue() != 'MoH') {
 				console.log("Ce fichier n'est pas une sauvegarde pour MoH");
 				return 0;
 			}
@@ -40,7 +40,7 @@
 				System.decks.push(deck);
 			}
 
-			System.pages.change('Menu');
+			System.page = 'Menu';
 		}
 	}
 
@@ -59,30 +59,42 @@
 	}
 
 	function readBool() {
-		return readValue() == "true";
+		return readValue() == 'true';
 	}
 </script>
 
 <div id="body">
 	<img src="Pictures/Title.png" alt="Logo" class="logo" />
+
 	<br />
+
 	<button
-		
 		on:click={() => {
-			System.pages.change('TitleScreen');
-		}}>Retour</button
+			System.page = 'TitleScreen';
+		}}
 	>
-	<br /><br />
+		Retour
+	</button>
+
+	<br />
+	<br />
+
 	Fichier de la save
+
 	<br />
+
 	<input type="file" bind:files />
+
 	<br />
+
 	<button
 		class="big"
 		on:click={() => {
 			login();
-		}}>Valider</button
+		}}
 	>
+		Valider
+	</button>
 </div>
 
 <style>

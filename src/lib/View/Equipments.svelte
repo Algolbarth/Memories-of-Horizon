@@ -8,12 +8,11 @@
 	({card.equipments.length} / {card.stat('Maniement').value()})
 
 	<br />
-	
+
 	{#each card.equipments as equipment}
 		<button
 			on:click={() => {
 				System.view.card = equipment;
-				System.pages.change('Game');
 			}}
 		>
 			{equipment.name}

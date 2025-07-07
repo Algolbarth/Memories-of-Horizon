@@ -37,8 +37,6 @@ export class Battle {
             if (this.System.autoplay) {
                 this.startAuto();
             }
-
-            this.System.pages.change("Game");
         }
         else {
             this.endBattle();
@@ -96,7 +94,6 @@ export class Battle {
                 this.endTurn();
                 this.nextTurn();
             }
-            this.System.pages.change("Game");
         }
         else {
             this.endTurn();
@@ -213,7 +210,6 @@ export class Battle {
             }
             else {
                 this.startStep();
-                this.System.pages.change("Game");
             }
         }
     };

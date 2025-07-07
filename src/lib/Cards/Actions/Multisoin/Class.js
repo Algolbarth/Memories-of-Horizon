@@ -11,7 +11,7 @@ export class Multisoin extends Action {
 
         this.text = Text;
     };
-    
+
     select = function () {
         if (this.owner == this.System.game.player) {
             this.useEffect();

@@ -5,7 +5,7 @@
 
 	function invite() {
 		System.account = new Account(System, 'Invité');
-		System.pages.change('Menu');
+		System.page = 'Menu';
 	}
 </script>
 
@@ -17,7 +17,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			System.pages.change('Login');
+			System.page = 'Login';
 		}}
 	>
 		Connexion
@@ -28,7 +28,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			System.pages.change('Register');
+			System.page = 'Register';
 		}}
 	>
 		Inscription

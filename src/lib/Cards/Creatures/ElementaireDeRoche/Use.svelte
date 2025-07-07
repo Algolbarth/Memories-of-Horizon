@@ -1,6 +1,5 @@
 <script>
 	export let System;
-	System;
 
 	function fonction(choice) {
 		System.game.use.card.useEffect(choice);
@@ -13,13 +12,19 @@
 		class="big"
 		on:click={() => {
 			fonction('Créature');
-		}}>Se place sur le terrain</button
+		}}
 	>
+		Se place sur le terrain
+	</button>
+
 	<br />
+
 	<button
 		class="big"
 		on:click={() => {
 			fonction('Effet');
-		}}>Se détruis pour infliger 5 dégâts à toutes les unités adverses</button
+		}}
 	>
+		Se détruis pour infliger 5 dégâts à toutes les unités adverses
+	</button>
 </div>

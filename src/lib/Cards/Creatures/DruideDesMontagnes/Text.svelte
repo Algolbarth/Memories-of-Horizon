@@ -7,8 +7,8 @@
 
 Quand posé, au choix :
 <ul>
-	<li>Se transforme en <CardInfo bind:System name={"Druide des montagnes (forme nain)"} />.</li>
-	<li>Se transforme en <CardInfo bind:System name={"Druide des montagnes (forme ours)"} />.</li>
+	<li>Se transforme en <CardInfo bind:System name={'Druide des montagnes (forme nain)'} />.</li>
+	<li>Se transforme en <CardInfo bind:System name={'Druide des montagnes (forme ours)'} />.</li>
 </ul>
 
 {#if card.name == 'Druide des montagnes (forme nain)'}

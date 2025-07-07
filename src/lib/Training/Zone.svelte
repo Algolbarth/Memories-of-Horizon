@@ -35,7 +35,6 @@
 			System.view.reset();
 			System.train.add.entity = entity;
 			System.train.add.zone = zone;
-			System.pages.change('Training');
 		}}
 	>
 		Ajouter une carte
@@ -48,15 +47,12 @@
 					<button
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
-							System.pages.change('Training');
 						}}
 						on:mouseenter={() => {
 							System.view.quick = System.cards.getByName(card);
-							System.pages.change('Training');
 						}}
 						on:mouseleave={() => {
 							System.view.quick = undefined;
-							System.pages.change('Training');
 						}}
 					>
 						{card}
@@ -68,7 +64,7 @@
 							class="remove"
 							on:click={() => {
 								zone.cards.splice(i, 1);
-								System.pages.change('Training');
+								System = System;
 							}}
 						>
 							Enlever
@@ -82,7 +78,7 @@
 							class="remove"
 							on:click={() => {
 								zone.cards.splice(i, 1);
-								System.pages.change('Training');
+								System = System;
 							}}
 						>
 							Enlever
@@ -93,15 +89,12 @@
 					<button
 						on:click={() => {
 							System.view.card = System.cards.getByName(card);
-							System.pages.change('Training');
 						}}
 						on:mouseenter={() => {
 							System.view.quick = System.cards.getByName(card);
-							System.pages.change('Training');
 						}}
 						on:mouseleave={() => {
 							System.view.quick = undefined;
-							System.pages.change('Training');
 						}}
 					>
 						{card}

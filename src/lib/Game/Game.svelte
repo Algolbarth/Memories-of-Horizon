@@ -5,21 +5,39 @@
 	import Use from './Use.svelte';
 	import Flux from './Flux.svelte';
 	import Pause from './Pause.svelte';
+	import { onDestroy, onMount } from 'svelte';
 
 	export let System;
+
+	let auto;
+
+	function refresh() {
+		System = System;
+	};
+
+	onMount(() => {
+		auto = setInterval(refresh, 100);
+	});
+
+	onDestroy(() => {
+		clearInterval(auto);
+		auto = null;
+	});
 </script>
 
 <div id="taskbar">
 	<div>
 		{#if System.game.mode != 'Entraînement'}
-			Chapitre {System.game.chapter.number} - Étape {System.game.player.step} / {System.game.chapter
-				.steps.length} -
+			Chapitre {System.game.chapter.number}
+			- Étape {System.game.player.step} / {System.game.chapter.steps.length}
+			-
 		{/if}
 		{#if !System.game.isBattle()}
 			<button
 				on:click={() => {
 					System.view.reset();
 					System.game.newBattle();
+					System = System;
 				}}
 			>
 				Combattre
@@ -30,7 +48,7 @@
 					on:click={() => {
 						System.view.reset();
 						System.game.bot.play();
-						System.pages.change('Game');
+						System = System;
 					}}
 				>
 					Tour de l'ordi
@@ -43,7 +61,6 @@
 				<button
 					on:click={() => {
 						System.game.stopAuto();
-						System.pages.change('Game');
 					}}
 				>
 					Désactiver mode auto
@@ -52,7 +69,6 @@
 				<button
 					on:click={() => {
 						System.game.startAuto();
-						System.pages.change('Game');
 					}}
 				>
 					Activer mode auto
@@ -73,6 +89,7 @@
 				on:click={() => {
 					System.view.reset();
 					System.game.actionBattle();
+					System = System;
 				}}
 			>
 				Résultats
@@ -83,7 +100,7 @@
 		<button
 			on:click={() => {
 				System.game.pause = true;
-				System.pages.change('Game');
+				System.page = 'Game';
 			}}
 		>
 			Pause
@@ -96,35 +113,35 @@
 <div id="container" class="scroll">
 	<div class="zone">
 		<div>
-			<svelte:component this={Entity} {System} entity={System.game.player} />
+			<Entity bind:System bind:entity={System.game.player} />
 		</div>
 		<div style="text-align:right;">
-			<svelte:component this={Entity} {System} entity={System.game.bot} />
+			<Entity bind:System bind:entity={System.game.bot} />
 		</div>
 	</div>
 
 	{#if !System.game.isBattle()}
-		<svelte:component this={DoubleZone} {System} zone={'Lieux'} />
-		<svelte:component this={DoubleZone} {System} zone={'Boutique'} />
-		<svelte:component this={DoubleZone} {System} zone={'Main'} />
+		<DoubleZone bind:System zone={'Lieux'} />
+		<DoubleZone bind:System zone={'Boutique'} />
+		<DoubleZone bind:System zone={'Main'} />
 	{/if}
 
-	<svelte:component this={DoubleZone} {System} zone={'Terrain'} />
+	<DoubleZone bind:System zone={'Terrain'} />
 
 	{#if !System.game.isBattle()}
-		<svelte:component this={DoubleZone} {System} zone={'Défausse'} />
+		<DoubleZone bind:System zone={'Défausse'} />
 	{/if}
 </div>
 
-<svelte:component this={Use} {System} />
+<Use bind:System />
 
-<svelte:component this={Flux} {System} />
+<Flux bind:System />
 
 <div class="center">
-	<svelte:component this={View} {System} />
+	<View bind:System />
 </div>
 
-<svelte:component this={Pause} {System} />
+<Pause bind:System />
 
 <style>
 	#taskbar {

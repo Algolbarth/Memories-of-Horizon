@@ -137,16 +137,17 @@ export class Game extends Battle {
             }
         }
 
-        if (this.mode == "Entraînement") {
-            this.System.pages.change("Game");
-        }
-        else {
-            if (this.chapter.steps[this.player.step - 1].dialogs.length > 0) {
-                this.System.pages.change("Dialog");
+        if (this.mode != "Entraînement") {
+            let step = this.chapter.steps[this.player.step - 1];
+            if (step.dialog < step.dialogs.length) {
+                this.System.page = "Dialog";
             }
             else {
-                this.System.pages.change("Game");
+                this.System.page = "Game";
             }
+        }
+        else {
+            this.System.page = "Game";
         }
     };
 
@@ -202,7 +203,7 @@ export class Game extends Battle {
             this.System.account.construct.victory++;
         }
         this.deck.victory++;
-        this.System.pages.change("Victory");
+        this.System.page = "Victory";
     };
 
     defeat = function () {
@@ -213,6 +214,6 @@ export class Game extends Battle {
             this.System.account.construct.defeat++;
         }
         this.deck.defeat++;
-        this.System.pages.change("GameOver");
+        this.System.page = "GameOver";
     };
 }

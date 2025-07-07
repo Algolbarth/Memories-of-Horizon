@@ -1,7 +1,7 @@
 <script>
 	import Zone from '../../../Game/Zone.svelte';
+
 	export let System;
-	System;
 
 	let choice = undefined;
 
@@ -30,7 +30,9 @@
 				choice = 'equip';
 			}}>S'équipe à une créature alliée sur le terrain</button
 		>
+
 		<br />
+
 		<button
 			class="big"
 			on:click={() => {
@@ -40,29 +42,29 @@
 	</div>
 {:else if choice == 'equip'}
 	<button
-		
 		on:click={() => {
 			choice = undefined;
-		}}>Retour</button
+		}}
 	>
-	<svelte:component
-		this={Zone}
-		{System}
-		entity={System.game.use.card.owner}
+		Retour
+	</button>
+	<Zone
+		bind:System
+		bind:entity={System.game.use.card.owner}
 		zone={System.game.use.card.owner.zone('Terrain')}
 		{condition}
 		{fonction}
 	/>
 {:else if choice == 'damage'}
 	<button
-		
 		on:click={() => {
 			choice = undefined;
-		}}>Retour</button
+		}}
 	>
-	<svelte:component
-		this={Zone}
-		{System}
+		Retour
+	</button>
+	<Zone
+		bind:System
 		entity={System.game.use.card.owner.adversary()}
 		zone={System.game.use.card.owner.adversary().zone('Terrain')}
 		condition={condition2}

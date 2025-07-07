@@ -7,7 +7,6 @@ export class Grenouille extends Creature {
         super(System);
 
         this.init([["Or", 5], ["Eau", 5]]);
-        this.familles.base.push("Reptile");
 
         this.stat("Vie").base = 5;
         this.stat("Vie").current = 5;

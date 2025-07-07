@@ -9,7 +9,7 @@ export class Egide extends Equipment {
 
         this.init([["Or", 10]]);
         this.familles.base.push("Armure");
-        
+
         this.equipStat("Protection").base = 1;
 
         this.text = Text;

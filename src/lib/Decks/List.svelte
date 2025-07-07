@@ -1,13 +1,14 @@
 <script>
 	import { Deck } from './Deck.js';
 	import View from './View.svelte';
+
 	export let System;
 
 	function newDeck() {
 		let deck = new Deck(System);
 		System.decks.push(deck);
 		System.deck = deck;
-		System.pages.change('Deck');
+		System.page = 'Deck';
 	}
 </script>
 
@@ -15,9 +16,11 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.pages.change('Menu');
-	}}>X</button
+		System.page = 'Menu';
+	}}
 >
+	X
+</button>
 
 <br />
 
@@ -40,15 +43,12 @@
 					<button
 						on:mouseenter={() => {
 							System.view.quick = deck;
-							System.pages.change('Decks');
 						}}
 						on:mouseleave={() => {
 							System.view.quick = undefined;
-							System.pages.change('Decks');
 						}}
 						on:click={() => {
 							System.view.card = deck;
-							System.pages.change('Decks');
 						}}
 					>
 						{deck.name}
@@ -59,7 +59,7 @@
 						on:click={() => {
 							System.deck = deck;
 							System.view.reset();
-							System.pages.change('Deck');
+							System.page = 'Deck';
 						}}
 					>
 						Modifier
@@ -70,7 +70,6 @@
 								let temp = System.decks[i - 1];
 								System.decks[i - 1] = deck;
 								System.decks[i] = temp;
-								System.pages.change('Decks');
 							}}
 						>
 							&#9650
@@ -84,7 +83,6 @@
 								let temp = System.decks[i + 1];
 								System.decks[i + 1] = deck;
 								System.decks[i] = temp;
-								System.pages.change('Decks');
 							}}
 						>
 							&#9660
@@ -99,7 +97,7 @@
 </div>
 
 <div id="view">
-	<svelte:component this={View} {System} />
+	<View bind:System />
 </div>
 
 <style>

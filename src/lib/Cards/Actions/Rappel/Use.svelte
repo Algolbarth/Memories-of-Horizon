@@ -1,7 +1,7 @@
 <script>
 	import Zone from '../../../Game/Zone.svelte';
+
 	export let System;
-	System;
 
 	function condition(card) {
 		return true;
@@ -13,10 +13,9 @@
 	}
 </script>
 
-<svelte:component
-	this={Zone}
-	{System}
-	entity={System.game.use.card.owner}
+<Zone
+	bind:System
+	bind:entity={System.game.use.card.owner}
 	zone={System.game.use.card.owner.zone('Défausse')}
 	{condition}
 	{fonction}

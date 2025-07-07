@@ -3,13 +3,13 @@
 
 	function close() {
 		if (System.game == undefined) {
-			System.pages.change('Menu');
+			System.page = 'Menu';
 		} else {
-			System.pages.change('Game');
+			System.page = 'Game';
 		}
 	}
 
-	let delay = 1 + System.auto_speed / 500;
+	let delay = System.auto_speed / 500;
 </script>
 
 <button

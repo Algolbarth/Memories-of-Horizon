@@ -4,6 +4,7 @@
 	import Add from './Add.svelte';
 	import View from '../View/Main.svelte';
 	import { Game } from '../Game/Game.js';
+
 	export let System;
 </script>
 
@@ -12,7 +13,7 @@
 		class="close"
 		on:click={() => {
 			System.view.reset();
-			System.pages.change('Play');
+			System.page = 'Play';
 		}}
 	>
 		X
@@ -25,31 +26,32 @@
 				System.game = new Game(System, 'Entraînement');
 				System.game.deck = System.train.deck;
 				System.game.init();
+				System.page = 'Game';
 			}}
 		>
-			Jouer
+			Lancer l'entraînement
 		</button>
 	</div>
 </div>
 
 <div id="body" class="scroll">
 	<div class="bi-zone">
-		<svelte:component this={Entity} entity={System.train.player} />
-		<svelte:component this={Entity} entity={System.train.bot} />
+		<Entity bind:entity={System.train.player} />
+		<Entity bind:entity={System.train.bot} />
 	</div>
 	{#each System.train.bot.zones as zone, i}
 		<div class="bi-zone">
-			<svelte:component this={Zone} {System} entity="player" zone={System.train.player.zones[i]} />
-			<svelte:component this={Zone} {System} entity="bot" {zone} />
+			<Zone bind:System entity="player" bind:zone={System.train.player.zones[i]} />
+			<Zone bind:System entity="bot" bind:zone />
 		</div>
 	{/each}
 </div>
 
-<svelte:component this={Add} {System} />
+<Add bind:System />
 
 {#if System.train.add.zone == undefined}
 	<div class="center">
-		<svelte:component this={View} {System} />
+		<View bind:System />
 	</div>
 {/if}
 

@@ -8,7 +8,6 @@
 <button
 	on:click={() => {
 		System.view.card = card;
-		System.pages.change(System.pages.actual.name);
 	}}
 >
 	{name}

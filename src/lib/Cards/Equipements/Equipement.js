@@ -30,12 +30,14 @@ export class Equipment extends Objet {
         this.addEquipStat("Garde", 0);
         this.addEquipStat("Perpétuité", 0);
         this.addEquipStat("Esquive", 0);
+
+        this.addEquipTrait("Rare", false);
+        this.addEquipTrait("Légendaire", false);
     };
 
     select = function () {
         if (this.owner == this.System.game.player) {
             this.System.game.use.set(this, Use);
-            this.System.pages.change("Game");
         }
         else {
             let target = undefined;

@@ -30,8 +30,7 @@
 			<div class="container">
 				Niveau
 				<div>
-					<svelte:component
-						this={Dropdown}
+					<Dropdown
 						array={System.sort.levels}
 						selected={levelSelect}
 						selecting={function (element) {
@@ -43,8 +42,7 @@
 			<div class="container">
 				Type
 				<div>
-					<svelte:component
-						this={Dropdown}
+					<Dropdown
 						array={System.sort.types}
 						selected={typeSelect}
 						selecting={function (element) {
@@ -56,8 +54,7 @@
 			<div class="container">
 				Famille
 				<div>
-					<svelte:component
-						this={Dropdown}
+					<Dropdown
 						array={System.sort.familles}
 						selected={familleSelect}
 						selecting={function (element) {
@@ -69,8 +66,7 @@
 			<div class="container">
 				Élément
 				<div>
-					<svelte:component
-						this={Dropdown}
+					<Dropdown
 						array={System.sort.elements}
 						selected={elementSelect}
 						selecting={function (element) {

@@ -30,7 +30,6 @@ export class Troubadour extends Creature {
 
             if (check) {
                 this.System.game.use.set(this, Use);
-                this.System.pages.change("Game");
             }
             else {
                 this.useEffect(undefined);

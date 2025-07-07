@@ -5,7 +5,7 @@
 <button
 	class="close"
 	on:click={() => {
-		System.pages.change('Menu');
+		System.page = 'Menu';
 	}}
 >
 	X

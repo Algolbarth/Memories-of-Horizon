@@ -33,7 +33,7 @@
 	function logout() {
 		System.decks = [];
 		System.account = '';
-		System.pages.change('TitleScreen');
+		System.page = 'TitleScreen';
 	}
 </script>
 
@@ -45,7 +45,7 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.pages.change('Play');
+						System.page = 'Play';
 					}}
 				>
 					Jouer
@@ -56,7 +56,7 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.pages.change('Decks');
+						System.page = 'Decks';
 					}}
 				>
 					Decks
@@ -67,7 +67,7 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.pages.change('Library');
+						System.page = 'Library';
 					}}
 				>
 					Bibliothèque
@@ -78,7 +78,7 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.pages.change('Universe');
+						System.page = 'Universe';
 					}}
 				>
 					Univers
@@ -90,7 +90,7 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.pages.change('Profil');
+						System.page = 'Profil';
 					}}
 				>
 					Profil
@@ -101,7 +101,7 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.pages.change('Settings');
+						System.page = 'Settings';
 					}}
 				>
 					Options
@@ -112,7 +112,7 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.pages.change('News');
+						System.page = 'News';
 					}}
 				>
 					Nouveautés

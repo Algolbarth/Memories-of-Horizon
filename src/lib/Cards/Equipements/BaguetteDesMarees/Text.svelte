@@ -6,4 +6,5 @@
 S'équipe sur une créature alliée sur le terrain.
 <br />
 <br />
-Au début de la phase de préparation, quand équipé : produit autant d'eau que la magie de la créature équipée.
+Au début de la phase de préparation, quand équipé : produit autant d'eau que la magie de la créature
+équipée.

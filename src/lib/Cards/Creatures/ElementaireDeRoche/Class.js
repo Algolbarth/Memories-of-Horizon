@@ -27,7 +27,6 @@ export class ElementaireDeRoche extends Creature {
         if (this.owner == this.System.game.player) {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {
                 this.System.game.use.set(this, Use);
-                this.System.pages.change("Game");
             }
             else if (!this.owner.zone("Terrain").isFull()) {
                 this.useEffect("Créature");

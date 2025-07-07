@@ -8,7 +8,7 @@
 		filterWindow = false;
 		System.view.reset();
 		System.train.add.reset();
-		System.pages.change('Training');
+		System = System;
 	}
 
 	let filterWindow = false;
@@ -62,7 +62,6 @@
 
 	function close() {
 		filterWindow = false;
-		System.pages.change('Training');
 	}
 </script>
 
@@ -89,11 +88,11 @@
 			<button
 				on:click={() => {
 					filterWindow = true;
-					System.pages.change('Training');
 				}}
 			>
 				Filtrer
 			</button>
+
 			<div id="list" class="scroll">
 				{#each cardList as card}
 					<div class="preview">
@@ -101,15 +100,12 @@
 							<button
 								on:click={() => {
 									System.view.card = card;
-									System.pages.change('Training');
 								}}
 								on:mouseenter={() => {
 									System.view.quick = card;
-									System.pages.change('Training');
 								}}
 								on:mouseleave={() => {
 									System.view.quick = undefined;
-									System.pages.change('Training');
 								}}
 							>
 								{card.name}
@@ -134,14 +130,13 @@
 	</div>
 
 	<div id="view">
-		<svelte:component this={View} {System} />
+		<View bind:System />
 	</div>
 {/if}
 
 {#if filterWindow}
-	<svelte:component
-		this={Filter}
-		{System}
+	<Filter
+		bind:System
 		{levelSelect}
 		{typeSelect}
 		{familleSelect}

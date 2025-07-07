@@ -32,7 +32,7 @@ export class Chimere extends Creature {
         }
 
         console.log(list)
-        
+
         this.stat("Attaque").add += 10 * list.length;
         this.stat("Vie").current += 10 * list.length;
         this.stat("Vie").add += 10 * list.length;

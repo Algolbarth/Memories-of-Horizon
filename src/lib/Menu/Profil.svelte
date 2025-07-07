@@ -7,7 +7,7 @@
 <button
 	class="close"
 	on:click={() => {
-		System.pages.change('Menu');
+		System.page = 'Menu';
 	}}
 >
 	X
@@ -21,7 +21,6 @@
 	<button
 		on:click={() => {
 			System.account.name = name;
-			System.pages.change('Profil');
 		}}
 	>
 		Renommer

@@ -1,27 +1,8 @@
 <script>
+	import Root from '../lib/Root/Page.svelte';
 	import { Train } from '../lib/Training/Train.js';
 
-	export const System = {
-		pages: {
-			actual: {},
-			list: [],
-			add: function (name, svelte) {
-				System.pages.list.push({
-					name: name,
-					svelte: svelte
-				});
-			},
-			getByName: function (name) {
-				for (const page of System.pages.list) {
-					if (page.name == name) {
-						return page;
-					}
-				}
-			},
-			change: function (name) {
-				System.pages.actual = System.pages.getByName(name);
-			}
-		},
+	export let System = {
 		ressources: [
 			'Or',
 			'Feu',
@@ -259,74 +240,13 @@
 		}
 	}
 
-	import BlackScreen from '../lib/Login/BlackScreen.svelte';
-	System.pages.add('BlackScreen', BlackScreen);
-
-	import TitleScreen from '../lib/Login/TitleScreen.svelte';
-	System.pages.add('TitleScreen', TitleScreen);
-
-	import Login from '../lib/Login/Login.svelte';
-	System.pages.add('Login', Login);
-
-	import Register from '../lib/Login/Register.svelte';
-	System.pages.add('Register', Register);
-
-	import Menu from '../lib/Menu/Menu.svelte';
-	System.pages.add('Menu', Menu);
-
-	import Play from '../lib/Menu/Play.svelte';
-	System.pages.add('Play', Play);
-
-	import Construit from '../lib/Menu/Construit.svelte';
-	System.pages.add('Construit', Construit);
-
-	import Library from '../lib/Menu/Library.svelte';
-	System.pages.add('Library', Library);
-
-	import Profil from '../lib/Menu/Profil.svelte';
-	System.pages.add('Profil', Profil);
-
-	import Universe from '../lib/Menu/Universe.svelte';
-	System.pages.add('Universe', Universe);
-
-	import News from '../lib/Menu/News.svelte';
-	System.pages.add('News', News);
-
-	import Training from '../lib/Training/Main.svelte';
-	System.pages.add('Training', Training);
-
-	import Game from '../lib/Game/Game.svelte';
-	System.pages.add('Game', Game);
-
-	import Settings from '../lib/Menu/Settings.svelte';
-	System.pages.add('Settings', Settings);
-
-	import Dialog from '../lib/Game/Dialog.svelte';
-	System.pages.add('Dialog', Dialog);
-
-	import Victory from '../lib/Game/Victory.svelte';
-	System.pages.add('Victory', Victory);
-
-	import GameOver from '../lib/Game/GameOver.svelte';
-	System.pages.add('GameOver', GameOver);
-
-	import Decks from '../lib/Decks/List.svelte';
-	System.pages.add('Decks', Decks);
-
-	import Deck from '../lib/Decks/Deck.svelte';
-	System.pages.add('Deck', Deck);
-
-	import Add from '../lib/Decks/Add.svelte';
-	System.pages.add('Add', Add);
-
-	System.pages.change('BlackScreen');
-
 	System.music.init();
+	System.page = "BlackScreen";
 </script>
 
 <div class="window">
 	<div class="body">
-		<svelte:component this={System.pages.actual.svelte} {System} />
+		<Root bind:System  />
 	</div>
 </div>
 

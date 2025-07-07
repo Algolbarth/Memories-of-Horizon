@@ -3,7 +3,7 @@
 	export let System;
 
 	function condition(card) {
-		if (card.type == "Créature" && card.elements.total().includes("Eau")) {
+		if (card.type == 'Créature' && card.elements.total().includes('Eau')) {
 			return true;
 		}
 		return false;
@@ -15,10 +15,9 @@
 	}
 </script>
 
-<svelte:component
-	this={Zone}
-	{System}
-	entity={System.game.use.card.owner}
+<Zone
+	bind:System
+	bind:entity={System.game.use.card.owner}
 	zone={System.game.use.card.owner.zone('Terrain')}
 	{condition}
 	{fonction}

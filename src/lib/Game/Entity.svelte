@@ -28,7 +28,6 @@
 			<button
 				on:click={() => {
 					System.game.flux = true;
-					System.pages.change('Game');
 				}}
 			>
 				Transformer le flux

@@ -6,6 +6,6 @@
 	<i>Effet</i>
 
 	<br />
-	
-	<svelte:component this={card.text} System={card.System} {card} />
+
+	<svelte:component this={card.text} bind:System={card.System} bind:card />
 </div>

@@ -20,7 +20,6 @@ export class CreationRocheuse extends Sort {
         else {
             if (this.owner == this.System.game.player) {
                 this.System.game.use.set(this, Use);
-                this.System.pages.change("Game");
             }
             else {
                 this.useEffect("Créature");

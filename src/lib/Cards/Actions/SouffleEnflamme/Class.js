@@ -16,7 +16,6 @@ export class SouffleEnflamme extends Action {
     select = function () {
         if (this.owner == this.System.game.player) {
             this.System.game.use.set(this, Use);
-            this.System.pages.change("Game");
         }
         else {
             if (this.owner.adversary().zone("Terrain").cards.length > 0) {
@@ -33,7 +32,7 @@ export class SouffleEnflamme extends Action {
         if (target.slot < target.zone.cards.length - 1) {
             target.zone.cards[target.slot + 1].damage(20);
         }
-        
+
         this.move("Défausse");
         this.pose();
     };

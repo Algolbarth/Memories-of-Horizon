@@ -12,6 +12,7 @@
 
 	function close() {
 		System.view.card = undefined;
+		System = System;
 	}
 </script>
 
@@ -29,43 +30,44 @@
 						X
 					</button>
 				</div>
-				<svelte:component this={Caracteristics} {card} />
+				<Caracteristics bind:card />
 				{#if card.text != undefined}
-					<svelte:component this={Effet} {card} />
+					<Effet bind:card />
 				{/if}
 				{#if card.hasTrait()}
-					<svelte:component this={Trait} {card} />
+					<Trait bind:card />
 				{/if}
 				{#if card.hasStat()}
-					<svelte:component this={Stat} {card} />
+					<Stat bind:card />
 				{/if}
 				{#if card.familles.total().includes('Équipement')}
 					<div class="box">
 						<i>Statistiques</i>
+
 						<br />
+
 						{#each card.equipStats as e}
 							{#if e.value() > 0}
 								{e.name} : {e.value()}
+
 								<br />
 							{/if}
 						{/each}
 					</div>
 				{/if}
 				{#if card.type == 'Créature'}
-					<svelte:component this={Equipments} {card} {System} />
+					<Equipments bind:card bind:System />
 				{/if}
+
 				<br />
-				<svelte:component this={Description} {card} />
+
+				<Description bind:card />
 			</div>
 		</div>
 	</div>
 {/if}
 
 <style>
-	:root {
-		--shadow: rgba(0, 0, 0, 0.5);
-	}
-
 	#shadow {
 		width: 40vw;
 		height: 90vh;

@@ -1,5 +1,6 @@
 <script>
 	import { Account } from './Account.js';
+
 	export let System;
 
 	let name = '';
@@ -7,31 +8,43 @@
 	function register() {
 		if (name != '') {
 			System.account = new Account(System, name);
-			System.pages.change('Menu');
+			System.page = 'Menu';
 		}
 	}
 </script>
 
 <div id="body">
 	<img src="Pictures/Title.png" alt="Logo" class="logo" />
+
 	<br />
+
 	<button
-		
 		on:click={() => {
-			System.pages.change('TitleScreen');
-		}}>Retour</button
+			System.page = 'TitleScreen';
+		}}
 	>
-	<br /><br />
+		Retour
+	</button>
+
+	<br />
+	<br />
+
 	Nom du compte
 	<br />
+
 	<input type="text" bind:value={name} />
-	<br /><br />
+
+	<br />
+	<br />
+
 	<button
 		class="big"
 		on:click={() => {
 			register();
-		}}>Valider</button
+		}}
 	>
+		Valider
+	</button>
 </div>
 
 <style>
