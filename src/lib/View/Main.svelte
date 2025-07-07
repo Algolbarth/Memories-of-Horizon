@@ -114,17 +114,4 @@
 	#content {
 		padding: 2%;
 	}
-
-	:global(.box) {
-		transition: all var(--delay) ease-in-out;
-		background-color: var(--preview);
-		border: solid;
-		padding: 1%;
-		margin-bottom: 1%;
-	}
-
-	:global(.box:hover) {
-		transition: all var(--delay_hover) ease-in-out;
-		background-color: var(--preview_hover);
-	}
 </style>

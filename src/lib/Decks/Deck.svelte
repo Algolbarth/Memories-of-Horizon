@@ -201,20 +201,6 @@
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	:global(input[type='text']) {
-		font: inherit;
-		margin: 0;
-		padding: 0;
-		background: none;
-		border: none;
-		border-bottom: 2px solid transparent;
-	}
-
-	:global(input[type='text']:focus) {
-		outline: none;
-		border-bottom: 2px solid black;
-	}
-
 	.delete {
 		color: red;
 	}

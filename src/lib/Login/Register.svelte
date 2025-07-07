@@ -14,7 +14,7 @@
 </script>
 
 <div id="body">
-	<img src="Pictures/Title.png" alt="Logo" class="logo" />
+	<img src="src/assets/Pictures/Title.png" alt="Logo" class="logo" />
 
 	<br />
 
@@ -38,7 +38,7 @@
 	<br />
 
 	<button
-		class="big"
+		class="big menu"
 		on:click={() => {
 			register();
 		}}
@@ -50,10 +50,6 @@
 <style>
 	#body {
 		text-align: center;
-	}
-
-	button.big {
-		width: 15vw;
 	}
 
 	input[type='text'] {

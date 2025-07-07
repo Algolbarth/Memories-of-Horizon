@@ -33,10 +33,6 @@
 {/if}
 
 <style>
-	:root {
-		--shadow: rgba(0, 0, 0, 0.5);
-	}
-
 	#shadow {
 		width: 40vw;
 		height: 90vh;

@@ -38,12 +38,12 @@
 </script>
 
 <div id="body">
-	<img src="Pictures/Title.png" alt="Logo" class="logo" />
+	<img src="src/assets/Pictures/Title.png" alt="Logo" class="logo" />
 	<div id="list">
 		<div class="column">
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						System.page = 'Play';
 					}}
@@ -54,7 +54,7 @@
 
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						System.page = 'Decks';
 					}}
@@ -65,7 +65,7 @@
 
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						System.page = 'Library';
 					}}
@@ -76,7 +76,7 @@
 
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						System.page = 'Universe';
 					}}
@@ -88,7 +88,7 @@
 		<div class="column">
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						System.page = 'Profil';
 					}}
@@ -99,7 +99,7 @@
 
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						System.page = 'Settings';
 					}}
@@ -110,7 +110,7 @@
 
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						System.page = 'News';
 					}}
@@ -121,7 +121,7 @@
 
 			<div>
 				<button
-					class="big"
+					class="big menu"
 					on:click={() => {
 						save();
 					}}
@@ -154,9 +154,5 @@
 	.column {
 		display: grid;
 		grid-template-rows: repeat(4, 1fr);
-	}
-
-	button.big {
-		width: 15vw;
 	}
 </style>

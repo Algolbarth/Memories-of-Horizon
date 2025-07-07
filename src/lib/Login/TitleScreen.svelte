@@ -9,13 +9,13 @@
 	}
 </script>
 
-<div id="body">
-	<img src="Pictures/Title.png" alt="Logo" class="logo" />
+<div class="container">
+	<img src="src/assets/Pictures/Title.png" alt="Logo" class="logo" />
 
 	<br />
 
 	<button
-		class="big"
+		class="big menu"
 		on:click={() => {
 			System.page = 'Login';
 		}}
@@ -26,7 +26,7 @@
 	<br />
 
 	<button
-		class="big"
+		class="big menu"
 		on:click={() => {
 			System.page = 'Register';
 		}}
@@ -45,17 +45,7 @@
 </div>
 
 <style>
-	:global(.logo) {
-		height: 30vh;
-		margin: 2%;
-		border: solid;
-	}
-
-	#body {
+	div.container {
 		text-align: center;
-	}
-
-	button.big {
-		width: 15vw;
 	}
 </style>

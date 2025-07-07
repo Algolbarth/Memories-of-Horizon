@@ -21,7 +21,7 @@
 
 <div id="body">
 	<button
-		class="big"
+		class="big menu"
 		on:click={() => {
 			aventure();
 		}}
@@ -32,7 +32,7 @@
 	<br />
 
 	<button
-		class="big"
+		class="big menu"
 		on:click={() => {
 			System.page = 'Construit';
 		}}
@@ -44,7 +44,7 @@
 	<br />
 
 	<button
-		class="big"
+		class="big menu"
 		on:click={() => {
 			System.page = 'Training';
 		}}
@@ -56,9 +56,5 @@
 <style>
 	#body {
 		text-align: center;
-	}
-
-	button {
-		width: 15vw;
 	}
 </style>

@@ -1,0 +1,285 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: black;
+  background-color: var(--background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background: rgba(128, 128, 128, 1);
+  --zone: rgba(169, 169, 169, 1);
+  --card: rgba(105, 105, 105, 1);
+  --preview: rgba(147, 108, 11, 1);
+  --preview_hover: rgba(184, 134, 11, 1);
+  --preview_deck: rgba(139, 69, 19, 1);
+  --attacker: rgba(175, 0, 0, 1);
+  --attacker_hover: rgba(125, 0, 0, 1);
+  --link_hover: rgba(255, 215, 0, 1);
+  --close: rgba(220, 20, 60, 1);
+  --close_hover: rgba(139, 0, 0, 1);
+  --story: rgba(255, 251, 202, 1);
+  --shadow: rgba(0, 0, 0, 0.5);
+
+  --delay: 1s;
+  --delay_hover: 0.1s;
+}
+
+div.window {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--background);
+  font-weight: bold;
+
+  cursor: url('./assets/Pictures/Hand.cur'), default;
+  overflow: hidden;
+}
+
+div.body {
+  padding: 8px;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0.25em 0 0.25em 0;
+  box-sizing: border-box;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: url('./assets/Pictures/Select.cur'), pointer;
+  background: var(--hover);
+  transition: border-color 0.25s;
+}
+
+button {
+  text-align: left;
+  font-weight: bold;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  background-color: transparent;
+}
+
+button:hover {
+  color: var(--link_hover);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button.big {
+  text-align: center;
+  padding: 1em;
+  margin: 0.25em 0 0.25em 0;
+  border: solid;
+  color: black;
+  transition: background-color var(--delay) ease-in-out;
+  background-color: var(--preview);
+}
+
+button.big:hover {
+  background-color: var(--preview_hover);
+  transition: background-color var(--delay_hover) ease-in-out;
+}
+
+button.menu {
+  width: 15vw;
+}
+
+button.close {
+  text-align: center;
+  width: 2em;
+  height: 2em;
+  margin: 0.25em 0 0.25em 0;
+  background: var(--close);
+  border: solid;
+  border-color: var(--close);
+  font-weight: bold;
+  color: white;
+}
+
+button.close:hover {
+  background: var(--close_hover);
+  border: solid;
+}
+
+hr {
+  color: black;
+  border: none;
+  border-top: solid;
+}
+
+div.scroll {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+div.scroll::-webkit-scrollbar {
+  display: none;
+}
+
+div.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.box {
+  transition: all var(--delay) ease-in-out;
+  background-color: var(--preview);
+  border: solid;
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+div.box:hover {
+  transition: all var(--delay_hover) ease-in-out;
+  background-color: var(--preview_hover);
+}
+
+div.preview {
+  border: solid;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: 2%;
+  padding: 1%;
+  transition: all var(--delay) ease-in-out;
+  background-color: var(--preview);
+}
+
+div.preview:hover {
+  transition: all var(--delay_hover) ease-in-out;
+  background-color: var(--preview_hover);
+}
+
+input[type='number'] {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  width: 2em;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  appearance: textfield;
+}
+
+input[type='number']:focus {
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+input[type='text'] {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+}
+
+input[type='text']:focus {
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+.form-control {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.5em;
+}
+
+.form-control + .form-control {
+  margin-top: 1em;
+}
+
+.form-control--disabled {
+  color: var(--form-control-disabled);
+  cursor: not-allowed;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--card);
+  margin: 0;
+
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transform-origin: bottom left;
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--link_hover);
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+  outline: max(2px, 0.15em) solid var(--link_hover);
+  outline-offset: max(2px, 0.15em);
+}
+
+input[type="checkbox"]:disabled {
+  color: var(--zone);
+  cursor: not-allowed;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+label {
+  cursor: url('./assets/Pictures/Select.cur'), pointer;
+}
+
+img.logo {
+  height: 30vh;
+  margin: 2%;
+  border: solid;
+}

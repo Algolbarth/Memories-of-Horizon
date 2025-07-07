@@ -123,21 +123,6 @@
 </div>
 
 <style>
-	:global(.preview) {
-		border: solid;
-		margin-top: 1%;
-		margin-bottom: 1%;
-		margin-right: 2%;
-		padding: 1%;
-		transition: all var(--delay) ease-in-out;
-		background-color: var(--preview);
-	}
-
-	:global(.preview:hover) {
-		transition: all var(--delay_hover) ease-in-out;
-		background-color: var(--preview_hover);
-	}
-
 	.container {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);

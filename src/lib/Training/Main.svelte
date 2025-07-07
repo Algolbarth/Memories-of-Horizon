@@ -18,9 +18,10 @@
 	>
 		X
 	</button>
+	
 	<div style="text-align:center">
 		<button
-			class="big"
+			class="big menu"
 			on:click={() => {
 				System.view.reset();
 				System.game = new Game(System, 'Entraînement');
