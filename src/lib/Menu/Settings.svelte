@@ -1,5 +1,5 @@
-<script>
-	export let System;
+<script lang="ts">
+	export let System: any;
 
 	function close() {
 		if (System.game == undefined) {
@@ -25,7 +25,7 @@
 <br />
 
 <div class="slidecontainer">
-	<label for="volume" style="transform: translate(0, 20%)">Musique</label>
+	<label for="volume"> Musique </label>
 	<input
 		type="range"
 		min="0"
@@ -37,7 +37,7 @@
 		class="slider"
 		id="volume"
 	/>
-	<label for="volume" style="transform: translate(0, 20%);text-align:center;">
+	<label for="volume" style="text-align:center;">
 		{System.music.volume}%
 	</label>
 </div>
@@ -60,22 +60,24 @@
 	</label>
 </div>
 
+<br />
+
 <div class="slidecontainer">
-	<label for="delay" style="transform: translate(0, 20%)">
-		Vitesse des combats automatiques
-	</label>
-	<input
-		type="range"
-		min="1"
-		max="4"
-		bind:value={delay}
-		on:change={() => {
-			System.auto_speed = delay * 500;
-		}}
-		class="slider"
-		id="delay"
-	/>
-	<label for="delay" style="transform: translate(0, 20%);text-align:center;">
+	<label for="delay"> Vitesse des combats automatiques </label>
+	<div>
+		<input
+			type="range"
+			min="1"
+			max="4"
+			bind:value={delay}
+			on:change={() => {
+				System.auto_speed = delay * 500;
+			}}
+			class="slider"
+			id="delay"
+		/>
+	</div>
+	<label for="delay" style="text-align:center;">
 		{delay / 2}s
 	</label>
 </div>
@@ -84,22 +86,24 @@
 	div.slidecontainer {
 		width: 50%;
 		display: grid;
-		grid-template-columns: 10em 10fr 3fr;
+		grid-template-columns: 17em 10fr 3fr;
 	}
 
 	.slider {
+		-webkit-appearance: none;
 		appearance: none;
 		width: 100%;
 		height: 10px;
+		padding: 0;
 		border-radius: 5px;
 		background: var(--card);
 		border: solid;
 		border-color: black;
 		outline: none;
-		opacity: 0.7;
 		-webkit-transition: 0.2s;
 		transition: opacity 0.2s;
-		cursor: url("./assets/Pictures/Select.cur"), pointer;
+		cursor: url("../../assets/Pictures/Select.cur"), pointer;
+		transform: translateY(50%);
 	}
 
 	.slider::-webkit-slider-thumb {
@@ -108,8 +112,10 @@
 		width: 25px;
 		height: 25px;
 		border-radius: 50%;
-		background: #04aa6d;
-		cursor: url("./assets/Pictures/Select.cur"), pointer;
+		background: gold;
+		border: solid;
+		border-color: black;
+		cursor: url("../../assets/Pictures/Select.cur"), pointer;
 	}
 
 	.slider::-moz-range-thumb {
@@ -119,6 +125,6 @@
 		background: gold;
 		border: solid;
 		border-color: black;
-		cursor: url("./assets/Pictures/Select.cur"), pointer;
+		cursor: url("../../assets/Pictures/Select.cur"), pointer;
 	}
 </style>
