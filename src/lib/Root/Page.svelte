@@ -12,7 +12,7 @@
 	import News from '../Menu/News.svelte';
 	import Training from '../Training/Main.svelte';
 	import Game from '../Game/Game.svelte';
-	import Settings from '../Menu/Settings.svelte';
+	import Settings from '../Settings/View.svelte';
 	import Dialog from '../Game/Dialog.svelte';
 	import Victory from '../Game/Victory.svelte';
 	import GameOver from '../Game/GameOver.svelte';
