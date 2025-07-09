@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Action } from '../Action.js';
 import Text from './Text.svelte';
 
@@ -21,13 +22,13 @@ export class Autodafe extends Action {
     useEffect = function () {
         let value = 0;
 
-        let shop = this.System.copy(this.owner.zone("Boutique").cards);
+        let shop = copy(this.owner.zone("Boutique").cards);
         for (const card of shop) {
             card.destroy();
             value++;
         }
 
-        let terrain = this.System.copy(this.owner.adversary().zone("Terrain").cards);
+        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
             card.damage(value);
         }

@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Action } from '../Action.js';
 import Text from './Text.svelte';
 
@@ -25,7 +26,7 @@ export class MilieuAquatique extends Action {
             value = 10;
         }
 
-        let terrain = this.System.copy(this.owner.zone("Terrain").cards);
+        let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature" && card.elements.total().includes("Eau")) {
                 card.stat("Vie").add += value;

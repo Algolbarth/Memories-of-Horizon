@@ -1,6 +1,7 @@
 import { Entity } from './Entity.js';
 import { Chapter } from '../Chapters/Chapter.js';
 import { Battle } from './Battle.js';
+import { copy } from '../Utils/Class.js';
 
 export class Game extends Battle {
     use = {
@@ -125,7 +126,7 @@ export class Game extends Battle {
 
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
-                let cpy = this.System.copy(zone.cards);
+                let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     card.startStepEffect();
                     if (card.type == "Créature") {
@@ -157,7 +158,7 @@ export class Game extends Battle {
 
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
-                let cpy = this.System.copy(zone.cards);
+                let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     for (const stat of card.stats) {
                         stat.step = 0;

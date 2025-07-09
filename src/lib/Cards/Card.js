@@ -1,3 +1,5 @@
+import { copy } from "../Utils/Class";
+
 export class Card {
     name = "Carte";
     cout = [];
@@ -253,7 +255,7 @@ export class Card {
 
         for (const entity of [this.System.game.player, this.System.game.bot]) {
             for (const zone of entity.zones) {
-                let cpy = this.System.copy(zone.cards);
+                let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     if (card != this) {
                         card.otherPoseEffect(this);

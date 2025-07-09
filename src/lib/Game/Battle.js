@@ -1,3 +1,5 @@
+import { copy } from "../Utils/Class";
+
 export class Battle {
     fighter = undefined;
     auto = null;
@@ -20,7 +22,7 @@ export class Battle {
 
             for (const entity of [this.player, this.bot]) {
                 for (const zone of entity.zones) {
-                    let cpy = this.System.copy(zone.cards);
+                    let cpy = copy(zone.cards);
                     for (const card of cpy) {
                         card.startBattleEffect();
                         if (card.type == "Créature") {
@@ -34,7 +36,7 @@ export class Battle {
 
             this.nextTurn();
 
-            if (this.System.autoplay) {
+            if (this.System.settings.autoplay) {
                 this.startAuto();
             }
         }
@@ -45,7 +47,7 @@ export class Battle {
 
     startAuto = function () {
         if (!this.isEndBattle()) {
-            this.auto = setInterval(this.actionBattle.bind(this), this.System.auto_speed);
+            this.auto = setInterval(this.actionBattle.bind(this), this.System.settings.auto_speed);
         }
     };
 
@@ -62,7 +64,7 @@ export class Battle {
 
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
-                let cpy = this.System.copy(zone.cards);
+                let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     card.turnEffect();
                     if (card.type == "Créature") {
@@ -159,7 +161,7 @@ export class Battle {
     endTurn = function () {
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
-                let cpy = this.System.copy(zone.cards);
+                let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     for (const stat of card.stats) {
                         stat.turn = 0;

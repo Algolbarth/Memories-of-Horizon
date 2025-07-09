@@ -1,3 +1,5 @@
+import { copy } from "../Utils/Class";
+
 export class Entity {
     life = {
         current: 0,
@@ -160,7 +162,7 @@ export class Entity {
     };
 
     refreshShop = function () {
-        let boutique = this.System.copy(this.zone("Boutique").cards);
+        let boutique = copy(this.zone("Boutique").cards);
         for (const card of boutique) {
             if (!card.verrou) {
                 card.remove();
@@ -195,7 +197,7 @@ export class Entity {
         let playable = true;
         while (playable) {
             playable = false;
-            let main = this.System.copy(this.zone("Main").cards);
+            let main = copy(this.zone("Main").cards);
             for (const card of main) {
                 card.use();
                 if (card.zone == undefined || card.zone.name != "Main") {
@@ -204,7 +206,7 @@ export class Entity {
             }
         }
 
-        let boutique = this.System.copy(this.zone("Boutique").cards);
+        let boutique = copy(this.zone("Boutique").cards);
         for (const card of boutique) {
             card.buy();
         }
@@ -225,7 +227,7 @@ export class Entity {
     };
 
     checkPerpetuite = function () {
-        let defausse = this.System.copy(this.zone("Défausse").cards);
+        let defausse = copy(this.zone("Défausse").cards);
         for (const card of defausse) {
             if (card.stat("Perpétuité").current == 1) {
                 card.remove();

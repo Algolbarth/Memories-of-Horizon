@@ -1,4 +1,5 @@
 <script>
+    import { several } from '../Utils/Class.js';
 	import { Deck } from './Deck.js';
 	import View from './View.svelte';
 
@@ -25,7 +26,7 @@
 <br />
 
 <div id="zone">
-	{System.several(System.decks.length, 'deck')} -
+	{several(System.decks.length, 'deck')} -
 	<button
 		on:click={() => {
 			newDeck();

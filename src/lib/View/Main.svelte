@@ -32,7 +32,7 @@
 				</div>
 				<Caracteristics bind:card />
 				{#if card.text != undefined}
-					<Effet bind:card />
+					<Effet bind:card bind:System />
 				{/if}
 				{#if card.hasTrait()}
 					<Trait bind:card />

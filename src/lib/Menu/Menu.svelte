@@ -12,7 +12,7 @@
 			'_' +
 			System.account.construct.defeat +
 			'_';
-		text += System.music.volume + '_' + System.show_intelligence + '_';
+		text += System.music.volume + '_' + System.settings.show_intelligence + '_';
 		text += System.decks.length + '_';
 		for (const deck of System.decks) {
 			text += deck.name + '_' + deck.victory + '_' + deck.defeat + '_' + deck.cards.length + '_';

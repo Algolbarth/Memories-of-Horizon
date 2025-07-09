@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Creature } from '../Creature.js';
 import Text from './Text.svelte';
 
@@ -20,7 +21,7 @@ export class SoldatNain extends Creature {
 
     addEffect = function (zone) {
         if (zone == "Terrain") {
-            let terrain = this.System.copy(this.owner.zone("Terrain").cards);
+            let terrain = copy(this.owner.zone("Terrain").cards);
             for (const card of terrain) {
                 if (card.type == "Bâtiment") {
                     this.stat("Attaque").add += 2;

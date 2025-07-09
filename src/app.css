@@ -80,11 +80,6 @@ button:hover {
   color: var(--link_hover);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 button.big {
   text-align: center;
   padding: 1em;

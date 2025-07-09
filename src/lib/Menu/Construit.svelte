@@ -1,6 +1,7 @@
 <script>
 	import { Game } from '../Game/Game.js';
 	import View from '../Decks/View.svelte';
+    import { several } from '../Utils/Class.js';
 
 	export let System;
 
@@ -26,7 +27,7 @@
 <br />
 
 <div id="zone">
-	{System.several(array.length, 'deck')} jouable{#if array.length > 1}s{/if}
+	{several(array.length, 'deck')} jouable{#if array.length > 1}s{/if}
 	<div id="list" class="scroll">
 		{#each array as deck}
 			<div class="preview">

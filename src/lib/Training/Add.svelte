@@ -1,6 +1,7 @@
 <script>
 	import View from '../View/Main.svelte';
 	import Filter from '../Menu/Filter.svelte';
+    import { several } from '../Utils/Class';
 
 	export let System;
 
@@ -83,7 +84,7 @@
 			{#if zone.name != 'Défausse'}
 				({zone.cards.length} / {zone.size}) -
 			{/if}
-			{System.several(cardList.length, 'carte')}
+			{several(cardList.length, 'carte')}
 			-
 			<button
 				on:click={() => {

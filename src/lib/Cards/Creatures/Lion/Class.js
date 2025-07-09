@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Creature } from '../Creature.js';
 import Text from './Text.svelte';
 
@@ -18,7 +19,7 @@ export class Lion extends Creature {
     };
 
     useEffect = function () {
-        let terrain = this.System.copy(this.owner.zone("Terrain").cards);
+        let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             if (card.type == "Créature" && card.familles.total().includes("Bête")) {
                 card.stat("Attaque").add += 5;

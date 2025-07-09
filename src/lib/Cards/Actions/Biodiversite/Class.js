@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Action } from '../Action.js';
 import Text from './Text.svelte';
 
@@ -20,7 +21,7 @@ export class Biodiversite extends Action {
 
     useEffect = function () {
         let list = [];
-        let terrain = this.System.copy(this.owner.zone("Terrain").cards);
+        let terrain = copy(this.owner.zone("Terrain").cards);
 
         for (const card of terrain) {
             if (card.type == "Créature") {

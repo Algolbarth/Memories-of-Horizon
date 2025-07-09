@@ -1,5 +1,6 @@
 <script>
 	import Filter from '../Menu/Filter.svelte';
+    import { several } from '../Utils/Class';
 	import View from '../View/Main.svelte';
 
 	export let System;
@@ -58,7 +59,7 @@
 <br />
 
 <div id="zone">
-	{System.several(cardList.length, 'carte')}
+	{several(cardList.length, 'carte')}
 	-
 	<button
 		on:click={() => {

@@ -19,7 +19,7 @@ export class PluieDeFleche extends Action {
     };
 
     useEffect = function () {
-        let terrain = this.System.copy(this.owner.adversary().zone("Terrain").cards);
+        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
             card.damage(5);
         }

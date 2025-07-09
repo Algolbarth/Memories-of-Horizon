@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Sort } from '../Sort.js';
 import Text from './Text.svelte';
 
@@ -29,7 +30,7 @@ export class PluieDeFeu extends Sort {
             damage = 10;
         }
 
-        let terrain = this.System.copy(this.owner.adversary().zone("Terrain").cards);
+        let terrain = copy(this.owner.adversary().zone("Terrain").cards);
         for (const card of terrain) {
             card.damage(damage);
         }

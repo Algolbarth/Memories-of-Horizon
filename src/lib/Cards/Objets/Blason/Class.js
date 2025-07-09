@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Objet } from '../Objet.js';
 import Text from './Text.svelte';
 
@@ -19,7 +20,7 @@ export class Blason extends Objet {
     };
 
     useEffect = function () {
-        let terrain = this.System.copy(this.owner.zone("Terrain").cards);
+        let terrain = copy(this.owner.zone("Terrain").cards);
         for (const card of terrain) {
             card.stat("Défense").add += 3;
         }

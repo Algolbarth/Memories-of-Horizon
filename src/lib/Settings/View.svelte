@@ -9,7 +9,7 @@
 		}
 	}
 
-	let delay = System.auto_speed / 500;
+	let delay = System.settings.auto_speed / 500;
 </script>
 
 <button
@@ -48,14 +48,14 @@
 	<label class="form-control" for="show_intelligence">
 		<input
 			type="checkbox"
-			bind:checked={System.show_intelligence}
+			bind:checked={System.settings.show_intelligence}
 			id="show_intelligence"
 		/>
 		Afficher l'intelligence totale
 	</label>
 
 	<label class="form-control" for="autoplay">
-		<input type="checkbox" bind:checked={System.autoplay} id="autoplay" />
+		<input type="checkbox" bind:checked={System.settings.autoplay} id="autoplay" />
 		Lance les combats automatiques
 	</label>
 </div>
@@ -71,7 +71,7 @@
 			max="4"
 			bind:value={delay}
 			on:change={() => {
-				System.auto_speed = delay * 500;
+				System.settings.auto_speed = delay * 500;
 			}}
 			class="slider"
 			id="delay"

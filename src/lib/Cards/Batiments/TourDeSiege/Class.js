@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Batiment } from '../Batiment.js';
 import Text from './Text.svelte';
 
@@ -17,7 +18,7 @@ export class TourDeSiege extends Batiment {
     turnEffect = function () {
         if (this.zone.name == "Terrain") {
             let target = undefined;
-            let terrain = this.System.copy(this.zone.cards);
+            let terrain = copy(this.zone.cards);
 
             for (const card of terrain) {
                 if (target == undefined && card.type == "Créature") {

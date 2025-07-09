@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Creature } from '../Creature.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
@@ -47,7 +48,7 @@ export class ElementaireDeRoche extends Creature {
             this.move("Terrain");
         }
         else if (choice == "Effet") {
-            let terrain = this.System.copy(this.owner.adversary().zone("Terrain").cards);
+            let terrain = copy(this.owner.adversary().zone("Terrain").cards);
             for (const card of terrain) {
                 card.damage(5);
             }

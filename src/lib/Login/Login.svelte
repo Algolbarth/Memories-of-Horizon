@@ -23,7 +23,7 @@
 			System.account.construct.victory = readInt();
 			System.account.construct.defeat = readInt();
 			System.music.volume = readInt();
-			System.show_intelligence = readBool();
+			System.settings.show_intelligence = readBool();
 			let decks = readInt();
 			for (let i = 0; i < decks; i++) {
 				let deck = new Deck(System);

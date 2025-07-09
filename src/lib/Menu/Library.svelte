@@ -2,6 +2,7 @@
 	import Filter from './Filter.svelte';
 	import Dropdown from './Dropdown.svelte';
 	import View from '../View/Main.svelte';
+    import { several } from '../Utils/Class';
 
 	export let System;
 
@@ -86,7 +87,7 @@
 <div id="zone">
 	<div style="display:flex;margin-bottom:2%;">
 		<div style="transform:translate(0,25%);margin-right:1%;">
-			{System.several(cardList.length, 'carte')}
+			{several(cardList.length, 'carte')}
 			-
 			<button
 				on:click={() => {

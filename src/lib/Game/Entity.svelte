@@ -36,7 +36,7 @@
 		<br />
 	{/if}
 
-	{#if System.show_intelligence}
+	{#if System.settings.show_intelligence}
 		Intelligence : {entity.totalIntelligence()}
 	{/if}
 </div>

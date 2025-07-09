@@ -1,3 +1,4 @@
+import { copy } from '../../../Utils/Class.js';
 import { Batiment } from '../Batiment.js';
 import Text from './Text.svelte';
 
@@ -16,7 +17,7 @@ export class Bivouac extends Batiment {
 
     startStepEffect = function () {
         if (this.zone.name == "Terrain") {
-            let terrain = this.System.copy(this.zone.cards);
+            let terrain = copy(this.zone.cards);
             for (const card of terrain) {
                 if (card.type == "Créature") {
                     card.heal(10);

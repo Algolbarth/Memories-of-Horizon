@@ -1,3 +1,4 @@
+import { copy } from '../Utils/Class.js';
 import { Card } from './Card.js';
 
 export class Unit extends Card {
@@ -98,7 +99,7 @@ export class Unit extends Card {
         this.dieEffect();
         for (const entity of [this.System.game.player, this.System.game.bot]) {
             for (const zone of entity.zones) {
-                let cpy = this.System.copy(zone.cards);
+                let cpy = copy(zone.cards);
                 for (const card of cpy) {
                     if (card != this) {
                         card.otherDieEffect(this);
