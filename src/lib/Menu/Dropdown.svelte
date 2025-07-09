@@ -27,12 +27,11 @@
 	}
 </script>
 
-<div style:height="3vh">
-	<div on:focusout={handleDropdownFocusLoss}>
+<div style:height="1.4em" style:width={width + "vw"}>
+	<div on:focusout={handleDropdownFocusLoss} class="container">
 		<div>
 			<button
 				class="main"
-				style:width={width + "vw"}
 				on:click={handleDropdownClick}
 			>
 				{#if selected != undefined}
@@ -42,6 +41,7 @@
 				{/if}
 			</button>
 		</div>
+
 		{#if isDropdownOpen}
 			<div
 				class="list scroll"
@@ -50,6 +50,7 @@
 			>
 				{#each array as element}
 					<button
+						class="element"
 						on:click={() => {
 							select(element);
 						}}
@@ -64,16 +65,15 @@
 </div>
 
 <style>
-	.list {
-		position: relative;
-		background: grey;
-		border: solid;
+	div.container {
+		width: 100%;
+		display: grid;
+		grid-template-rows: auto 1fr;
 	}
 
 	button.main {
 		border: solid;
-		width: 100%;
-		padding: 1%;
+		padding: 0.2em 1.2em;
 	}
 
 	button:hover {
@@ -84,10 +84,16 @@
 		background: grey;
 	}
 
+	div.list {
+		position: relative;
+		background: grey;
+		border: solid;
+		z-index: 1;
+	}
+
 	button {
 		text-align: center;
 		margin: 0;
-		padding: 1%;
 		border: none;
 		background: grey;
 		width: 100%;

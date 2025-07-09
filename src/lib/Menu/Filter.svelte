@@ -77,6 +77,8 @@
 			</div>
 		</div>
 
+		<br />
+
 		{#if rarity}
 			<div class="checkboxes">
 				<div>Rareté</div>

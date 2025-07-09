@@ -288,7 +288,7 @@ input[type="range"] {
 		outline: none;
 		-webkit-transition: 0.2s;
 		transition: opacity 0.2s;
-		cursor: url("../../assets/Pictures/Select.cur"), pointer;
+		cursor: url("assets/Pictures/Select.cur"), pointer;
 		transform: translateY(50%);
 	}
 
@@ -301,7 +301,7 @@ input[type="range"] {
 		background: gold;
 		border: solid;
 		border-color: black;
-		cursor: url("../../assets/Pictures/Select.cur"), pointer;
+		cursor: url("assets/Pictures/Select.cur"), pointer;
 	}
 
 	input[type="range"]::-moz-range-thumb {
@@ -311,7 +311,7 @@ input[type="range"] {
 		background: gold;
 		border: solid;
 		border-color: black;
-		cursor: url("../../assets/Pictures/Select.cur"), pointer;
+		cursor: url("assets/Pictures/Select.cur"), pointer;
 	}
 
 input[type=file] {
