@@ -1,9 +1,9 @@
 <script>
-	import Entity from './Entity.svelte';
-	import Zone from './Zone.svelte';
-	import Add from './Add.svelte';
-	import View from '../Cards/View/Main.svelte';
-	import { Game } from '../Game/Game.js';
+	import Entity from "./Entity.svelte";
+	import Zone from "./Zone.svelte";
+	import Add from "./Add.svelte";
+	import View from "../Cards/View/Main.svelte";
+	import { Game } from "../Game/Game.js";
 
 	export let System;
 </script>
@@ -13,21 +13,21 @@
 		class="close"
 		on:click={() => {
 			System.view.reset();
-			System.page = 'Play';
+			System.page = "Play";
 		}}
 	>
 		X
 	</button>
-	
+
 	<div style="text-align:center">
 		<button
 			class="big menu"
 			on:click={() => {
 				System.view.reset();
-				System.game = new Game(System, 'Entraînement');
+				System.game = new Game(System, "Entraînement");
 				System.game.deck = System.train.deck;
 				System.game.init();
-				System.page = 'Game';
+				System.page = "Game";
 			}}
 		>
 			Lancer l'entraînement
@@ -42,7 +42,11 @@
 	</div>
 	{#each System.train.bot.zones as zone, i}
 		<div class="bi-zone">
-			<Zone bind:System entity="player" bind:zone={System.train.player.zones[i]} />
+			<Zone
+				bind:System
+				entity="player"
+				bind:zone={System.train.player.zones[i]}
+			/>
 			<Zone bind:System entity="bot" bind:zone />
 		</div>
 	{/each}

@@ -1,5 +1,5 @@
 <script>
-	import Zone from '../../../../Game/Zone.svelte';
+	import Zone from "../../../../Game/Zone.svelte";
 
 	export let System;
 
@@ -16,7 +16,7 @@
 <Zone
 	bind:System
 	bind:entity={System.game.use.card.owner}
-	zone={System.game.use.card.owner.zone('Terrain')}
+	zone={System.game.use.card.owner.zone("Terrain")}
 	{condition}
 	{fonction}
 />

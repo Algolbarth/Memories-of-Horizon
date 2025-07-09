@@ -1,7 +1,8 @@
 <script>
 	export let System;
 
-	$: deck = System.view.quick == undefined ? System.view.card : System.view.quick;
+	$: deck =
+		System.view.quick == undefined ? System.view.card : System.view.quick;
 </script>
 
 {#if deck != undefined}
@@ -40,7 +41,7 @@
 	}
 
 	#shadow::before {
-		content: '';
+		content: "";
 		position: absolute;
 		z-index: -1;
 		width: 40vw;

@@ -2,29 +2,41 @@
 	export let System;
 
 	function save() {
-		let text = 'MoH_' + System.account.name + '_';
+		let text = "MoH_" + System.account.name + "_";
 		text +=
 			System.account.aventure.victory +
-			'_' +
+			"_" +
 			System.account.aventure.defeat +
-			'_' +
+			"_" +
 			System.account.construct.victory +
-			'_' +
+			"_" +
 			System.account.construct.defeat +
-			'_';
-		text += System.music.volume + '_' + System.settings.show_intelligence + '_';
-		text += System.decks.length + '_';
+			"_";
+		text +=
+			System.music.volume + "_" + System.settings.show_intelligence + "_";
+		text += System.decks.length + "_";
 		for (const deck of System.decks) {
-			text += deck.name + '_' + deck.victory + '_' + deck.defeat + '_' + deck.cards.length + '_';
+			text +=
+				deck.name +
+				"_" +
+				deck.victory +
+				"_" +
+				deck.defeat +
+				"_" +
+				deck.cards.length +
+				"_";
 			for (const card of deck.cards) {
-				text += card + '_';
+				text += card + "_";
 			}
 		}
 
-		var element = document.createElement('a');
-		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-		element.setAttribute('download', 'MoH_' + System.account.name);
-		element.style.display = 'none';
+		var element = document.createElement("a");
+		element.setAttribute(
+			"href",
+			"data:text/plain;charset=utf-8," + encodeURIComponent(text),
+		);
+		element.setAttribute("download", "MoH_" + System.account.name);
+		element.style.display = "none";
 		document.body.appendChild(element);
 		element.click();
 		document.body.removeChild(element);
@@ -32,8 +44,8 @@
 
 	function logout() {
 		System.decks = [];
-		System.account = '';
-		System.page = 'TitleScreen';
+		System.account = "";
+		System.page = "TitleScreen";
 	}
 </script>
 
@@ -45,7 +57,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = 'Play';
+						System.page = "Play";
 					}}
 				>
 					Jouer
@@ -56,7 +68,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = 'Decks';
+						System.page = "Decks";
 					}}
 				>
 					Decks
@@ -67,7 +79,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = 'Library';
+						System.page = "Library";
 					}}
 				>
 					Bibliothèque
@@ -78,7 +90,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = 'Universe';
+						System.page = "Universe";
 					}}
 				>
 					Univers
@@ -90,7 +102,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = 'Profil';
+						System.page = "Profil";
 					}}
 				>
 					Profil
@@ -101,7 +113,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = 'Settings';
+						System.page = "Settings";
 					}}
 				>
 					Options
@@ -112,7 +124,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						System.page = 'News';
+						System.page = "News";
 					}}
 				>
 					Nouveautés

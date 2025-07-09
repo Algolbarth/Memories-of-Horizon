@@ -1,7 +1,7 @@
 <script>
-    import { several } from '../Utils';
-	import { Deck } from './Deck.js';
-	import View from './View.svelte';
+	import { several } from "../Utils";
+	import { Deck } from "./Deck.js";
+	import View from "./View.svelte";
 
 	export let System;
 
@@ -9,7 +9,7 @@
 		let deck = new Deck(System);
 		System.decks.push(deck);
 		System.deck = deck;
-		System.page = 'Deck';
+		System.page = "Deck";
 	}
 </script>
 
@@ -17,7 +17,7 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.page = 'Menu';
+		System.page = "Menu";
 	}}
 >
 	X
@@ -26,7 +26,7 @@
 <br />
 
 <div id="zone">
-	{several(System.decks.length, 'deck')} -
+	{several(System.decks.length, "deck")} -
 	<button
 		on:click={() => {
 			newDeck();
@@ -60,7 +60,7 @@
 						on:click={() => {
 							System.deck = deck;
 							System.view.reset();
-							System.page = 'Deck';
+							System.page = "Deck";
 						}}
 					>
 						Modifier

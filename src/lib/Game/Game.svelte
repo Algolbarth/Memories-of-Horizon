@@ -1,11 +1,11 @@
 <script>
-	import DoubleZone from './DoubleZone.svelte';
-	import Entity from './Entity.svelte';
-	import View from '../Cards/View/Main.svelte';
-	import Use from './Use.svelte';
-	import Flux from './Flux.svelte';
-	import Pause from './Pause.svelte';
-	import { onDestroy, onMount } from 'svelte';
+	import DoubleZone from "./DoubleZone.svelte";
+	import Entity from "./Entity.svelte";
+	import View from "../Cards/View/Main.svelte";
+	import Use from "./Use.svelte";
+	import Flux from "./Flux.svelte";
+	import Pause from "./Pause.svelte";
+	import { onDestroy, onMount } from "svelte";
 
 	export let System;
 
@@ -13,7 +13,7 @@
 
 	function refresh() {
 		System = System;
-	};
+	}
 
 	onMount(() => {
 		auto = setInterval(refresh, 100);
@@ -27,9 +27,10 @@
 
 <div id="taskbar">
 	<div>
-		{#if System.game.mode != 'Entraînement'}
+		{#if System.game.mode != "Entraînement"}
 			Chapitre {System.game.chapter.number}
-			- Étape {System.game.player.step} / {System.game.chapter.steps.length}
+			- Étape {System.game.player.step} / {System.game.chapter.steps
+				.length}
 			-
 		{/if}
 		{#if !System.game.isBattle()}
@@ -42,7 +43,7 @@
 			>
 				Combattre
 			</button>
-			{#if System.game.mode == 'Entraînement'}
+			{#if System.game.mode == "Entraînement"}
 				-
 				<button
 					on:click={() => {
@@ -100,7 +101,7 @@
 		<button
 			on:click={() => {
 				System.game.pause = true;
-				System.page = 'Game';
+				System.page = "Game";
 			}}
 		>
 			Pause
@@ -121,15 +122,15 @@
 	</div>
 
 	{#if !System.game.isBattle()}
-		<DoubleZone bind:System zone={'Lieux'} />
-		<DoubleZone bind:System zone={'Boutique'} />
-		<DoubleZone bind:System zone={'Main'} />
+		<DoubleZone bind:System zone={"Lieux"} />
+		<DoubleZone bind:System zone={"Boutique"} />
+		<DoubleZone bind:System zone={"Main"} />
 	{/if}
 
-	<DoubleZone bind:System zone={'Terrain'} />
+	<DoubleZone bind:System zone={"Terrain"} />
 
 	{#if !System.game.isBattle()}
-		<DoubleZone bind:System zone={'Défausse'} />
+		<DoubleZone bind:System zone={"Défausse"} />
 	{/if}
 </div>
 

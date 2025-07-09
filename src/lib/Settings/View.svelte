@@ -55,7 +55,11 @@
 	</label>
 
 	<label class="form-control" for="autoplay">
-		<input type="checkbox" bind:checked={System.settings.autoplay} id="autoplay" />
+		<input
+			type="checkbox"
+			bind:checked={System.settings.autoplay}
+			id="autoplay"
+		/>
 		Lance les combats automatiques
 	</label>
 </div>

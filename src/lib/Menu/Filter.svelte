@@ -1,5 +1,5 @@
 <script>
-	import Dropdown from './Dropdown.svelte';
+	import Dropdown from "./Dropdown.svelte";
 
 	export let System;
 	export var levelSelect;
@@ -82,17 +82,29 @@
 				<div>Rareté</div>
 
 				<div>
-					<input type="checkbox" bind:checked={communSelect} id="commun" />
+					<input
+						type="checkbox"
+						bind:checked={communSelect}
+						id="commun"
+					/>
 					<label for="commun">Commune</label>
 				</div>
 
 				<div>
-					<input type="checkbox" bind:checked={rareSelect} id="rare" />
+					<input
+						type="checkbox"
+						bind:checked={rareSelect}
+						id="rare"
+					/>
 					<label for="rare">Rare</label>
 				</div>
 
 				<div>
-					<input type="checkbox" bind:checked={legendarySelect} id="legendary" />
+					<input
+						type="checkbox"
+						bind:checked={legendarySelect}
+						id="legendary"
+					/>
 					<label for="legendary">Légendaire</label>
 				</div>
 			</div>
@@ -111,10 +123,15 @@
 						elementSelect,
 						communSelect,
 						rareSelect,
-						legendarySelect
+						legendarySelect,
 					);
 				} else {
-					sorting(levelSelect, typeSelect, familleSelect, elementSelect);
+					sorting(
+						levelSelect,
+						typeSelect,
+						familleSelect,
+						elementSelect,
+					);
 				}
 			}}
 		>

@@ -1,9 +1,9 @@
 <script>
-	import Zone from '../../../Game/Zone.svelte';
+	import Zone from "../../../Game/Zone.svelte";
 	export let System;
 
 	function condition(card) {
-		if (card.type == 'Créature' && card.canEquip()) {
+		if (card.type == "Créature" && card.canEquip()) {
 			return true;
 		}
 		return false;
@@ -18,7 +18,7 @@
 <Zone
 	bind:System
 	bind:entity={System.game.use.card.owner}
-	zone={System.game.use.card.owner.zone('Terrain')}
+	zone={System.game.use.card.owner.zone("Terrain")}
 	{condition}
 	{fonction}
 />

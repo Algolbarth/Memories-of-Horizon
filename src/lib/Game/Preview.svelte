@@ -8,11 +8,11 @@
 </script>
 
 <div
-	class={(isPlayer || fonction != undefined ? 'container ' : '') +
-		(card == System.game.fighter ? 'attacker ' : '') +
-		'preview'}
+	class={(isPlayer || fonction != undefined ? "container " : "") +
+		(card == System.game.fighter ? "attacker " : "") +
+		"preview"}
 >
-	<div id={isPlayer || fonction != undefined ? 'infos' : ''}>
+	<div id={isPlayer || fonction != undefined ? "infos" : ""}>
 		{#if card.verrou}
 			<div id="verrou">&#x1F512</div>
 		{/if}
@@ -37,8 +37,8 @@
 
 	{#if isPlayer || fonction != undefined}
 		<div id="actions">
-			{#if System.game.phase == 'Préparation' && fonction == undefined}
-				{#if card.zone.name == 'Main' || card.zone.name == 'Terrain'}
+			{#if System.game.phase == "Préparation" && fonction == undefined}
+				{#if card.zone.name == "Main" || card.zone.name == "Terrain"}
 					<button
 						on:click={() => {
 							card.sell();
@@ -48,7 +48,7 @@
 						Vendre
 					</button>
 				{/if}
-				{#if card.zone.name == 'Boutique'}
+				{#if card.zone.name == "Boutique"}
 					<button
 						on:click={() => {
 							card.buy();
@@ -57,7 +57,7 @@
 					>
 						Acheter
 					</button>
-				{:else if card.zone.name == 'Main'}
+				{:else if card.zone.name == "Main"}
 					<button
 						on:click={() => {
 							card.use();
@@ -66,7 +66,7 @@
 					>
 						Poser
 					</button>
-				{:else if card.zone.name == 'Lieux'}
+				{:else if card.zone.name == "Lieux"}
 					{#if card == card.owner.place}
 						Actif
 					{:else}
@@ -79,7 +79,7 @@
 						</button>
 					{/if}
 				{/if}
-				{#if card.zone.name == 'Main' || (card.zone.name == 'Terrain' && card.type == 'Créature')}
+				{#if card.zone.name == "Main" || (card.zone.name == "Terrain" && card.type == "Créature")}
 					{#if card.slot > 0}
 						<button
 							on:click={() => {

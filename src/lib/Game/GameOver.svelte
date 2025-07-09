@@ -10,7 +10,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			System.page = 'Menu';
+			System.page = "Menu";
 		}}
 	>
 		Retour à l'écran titre

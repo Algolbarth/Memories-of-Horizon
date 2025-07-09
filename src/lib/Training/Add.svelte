@@ -1,7 +1,7 @@
 <script>
-	import View from '../Cards/View/Main.svelte';
-	import Filter from '../Menu/Filter.svelte';
-    import { several } from '../Utils';
+	import View from "../Cards/View/Main.svelte";
+	import Filter from "../Menu/Filter.svelte";
+	import { several } from "../Utils";
 
 	export let System;
 
@@ -14,10 +14,10 @@
 
 	let filterWindow = false;
 
-	let levelSelect = 'Tous';
-	let typeSelect = 'Tous';
-	let familleSelect = 'Toutes';
-	let elementSelect = 'Tous';
+	let levelSelect = "Tous";
+	let typeSelect = "Tous";
+	let familleSelect = "Toutes";
+	let elementSelect = "Tous";
 	let communSelect = true;
 	let rareSelect = false;
 	let legendarySelect = false;
@@ -30,23 +30,30 @@
 		let tab = [];
 		for (const card of System.cards.instance) {
 			if (
-				(!card.trait('Légendaire').value() || System.train.add.entity == 'bot') &&
-				(levelSelect == 'Tous' || card.level == levelSelect) &&
-				(typeSelect == 'Tous' || card.type == typeSelect) &&
-				(card.type == 'Lieu' || (zone != undefined && zone.name != 'Lieux')) &&
-				(card.isUnit() || (zone != undefined && zone.name != 'Terrain')) &&
-				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
-				(elementSelect == 'Tous' || card.elements.total().includes(elementSelect)) &&
-				((legendarySelect && card.trait('Légendaire').value()) ||
-					(rareSelect && card.trait('Rare').value()) ||
-					(communSelect && !card.trait('Légendaire').value() && !card.trait('Rare').value()))
+				(!card.trait("Légendaire").value() ||
+					System.train.add.entity == "bot") &&
+				(levelSelect == "Tous" || card.level == levelSelect) &&
+				(typeSelect == "Tous" || card.type == typeSelect) &&
+				(card.type == "Lieu" ||
+					(zone != undefined && zone.name != "Lieux")) &&
+				(card.isUnit() ||
+					(zone != undefined && zone.name != "Terrain")) &&
+				(familleSelect == "Toutes" ||
+					card.familles.total().includes(familleSelect)) &&
+				(elementSelect == "Tous" ||
+					card.elements.total().includes(elementSelect)) &&
+				((legendarySelect && card.trait("Légendaire").value()) ||
+					(rareSelect && card.trait("Rare").value()) ||
+					(communSelect &&
+						!card.trait("Légendaire").value() &&
+						!card.trait("Rare").value()))
 			) {
 				tab.push(card);
 			}
 		}
 		cardList = tab;
 
-		return '';
+		return "";
 	}
 
 	function sorting(level, type, famille, element, commun, rare, legendary) {
@@ -81,10 +88,10 @@
 		<div id="side">
 			{zone.name}
 			-
-			{#if zone.name != 'Défausse'}
+			{#if zone.name != "Défausse"}
 				({zone.cards.length} / {zone.size}) -
 			{/if}
-			{several(cardList.length, 'carte')}
+			{several(cardList.length, "carte")}
 			-
 			<button
 				on:click={() => {
@@ -113,7 +120,7 @@
 							</button>
 						</div>
 						<div style="text-align:right;">
-							{#if zone.name == 'Défausse' || zone.size > zone.cards.length}
+							{#if zone.name == "Défausse" || zone.size > zone.cards.length}
 								<button
 									on:click={() => {
 										zone.cards.push(card.name);

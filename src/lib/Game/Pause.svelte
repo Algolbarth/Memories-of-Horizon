@@ -24,18 +24,18 @@
 				<button
 					class="big"
 					on:click={() => {
-						System.page = 'Settings';
+						System.page = "Settings";
 					}}
 				>
 					Options
 				</button>
 
-				{#if System.game.mode == 'Entraînement'}
+				{#if System.game.mode == "Entraînement"}
 					<button
 						class="big"
 						on:click={() => {
 							System.view.reset();
-							System.page = 'Training';
+							System.page = "Training";
 							System.game = undefined;
 						}}
 					>
@@ -47,7 +47,7 @@
 					class="big"
 					on:click={() => {
 						System.view.reset();
-						System.page = 'Menu';
+						System.page = "Menu";
 						System.game = undefined;
 					}}
 				>

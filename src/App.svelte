@@ -1,6 +1,6 @@
 <script>
   import Root from "./lib/Root/Page.svelte";
-  import { System as Sys } from './lib/System/Class';
+  import { System as Sys } from "./lib/System/Class";
 
   let System = new Sys();
   System.music.init();

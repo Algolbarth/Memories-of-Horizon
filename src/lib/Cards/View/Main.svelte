@@ -1,14 +1,15 @@
 <script>
-	import Caracteristics from './Caracteristics.svelte';
-	import Description from './Description.svelte';
-	import Effet from './Effet.svelte';
-	import Equipments from './Equipments.svelte';
-	import Stat from './Stat.svelte';
-	import Trait from './Trait.svelte';
+	import Caracteristics from "./Caracteristics.svelte";
+	import Description from "./Description.svelte";
+	import Effet from "./Effet.svelte";
+	import Equipments from "./Equipments.svelte";
+	import Stat from "./Stat.svelte";
+	import Trait from "./Trait.svelte";
 
 	export let System;
 
-	$: card = System.view.quick == undefined ? System.view.card : System.view.quick;
+	$: card =
+		System.view.quick == undefined ? System.view.card : System.view.quick;
 
 	function close() {
 		System.view.card = undefined;
@@ -40,7 +41,7 @@
 				{#if card.hasStat()}
 					<Stat bind:card />
 				{/if}
-				{#if card.familles.total().includes('Équipement')}
+				{#if card.familles.total().includes("Équipement")}
 					<div class="box">
 						<i>Statistiques</i>
 
@@ -55,7 +56,7 @@
 						{/each}
 					</div>
 				{/if}
-				{#if card.type == 'Créature'}
+				{#if card.type == "Créature"}
 					<Equipments bind:card bind:System />
 				{/if}
 
@@ -75,7 +76,7 @@
 	}
 
 	#shadow::before {
-		content: '';
+		content: "";
 		position: absolute;
 		z-index: -1;
 		width: 40vw;

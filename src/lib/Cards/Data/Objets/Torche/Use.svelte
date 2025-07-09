@@ -1,5 +1,5 @@
 <script>
-	import Zone from '../../../../Game/Zone.svelte';
+	import Zone from "../../../../Game/Zone.svelte";
 
 	export let System;
 
@@ -27,11 +27,11 @@
 		<button
 			class="big"
 			on:click={() => {
-				choice = 'damage';
+				choice = "damage";
 			}}>Inflige 20 dégâts à une unité adverse sur le terrain</button
 		>
 	</div>
-{:else if choice == 'damage'}
+{:else if choice == "damage"}
 	<button
 		on:click={() => {
 			choice = undefined;
@@ -40,7 +40,7 @@
 	<Zone
 		bind:System
 		entity={System.game.use.card.owner.adversary()}
-		zone={System.game.use.card.owner.adversary().zone('Terrain')}
+		zone={System.game.use.card.owner.adversary().zone("Terrain")}
 		{condition}
 		{fonction}
 	/>

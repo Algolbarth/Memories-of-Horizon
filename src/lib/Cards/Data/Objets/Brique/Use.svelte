@@ -1,11 +1,11 @@
 <script>
-	import Zone from '../../../../Game/Zone.svelte';
+	import Zone from "../../../../Game/Zone.svelte";
 	export let System;
 
 	let choice = undefined;
 
 	function condition(card) {
-		if (card.type == 'Bâtiment') {
+		if (card.type == "Bâtiment") {
 			return true;
 		}
 		return false;
@@ -26,7 +26,7 @@
 		<button
 			class="big"
 			on:click={() => {
-				choice = 'heal';
+				choice = "heal";
 			}}>Soigne 20 blessures à un bâtiment allié sur le terrain</button
 		>
 
@@ -35,11 +35,11 @@
 		<button
 			class="big"
 			on:click={() => {
-				choice = 'damage';
+				choice = "damage";
 			}}>Inflige 20 dégâts à une unité adverse sur le terrain</button
 		>
 	</div>
-{:else if choice == 'heal'}
+{:else if choice == "heal"}
 	<button
 		on:click={() => {
 			choice = undefined;
@@ -48,11 +48,11 @@
 	<Zone
 		bind:System
 		bind:entity={System.game.use.card.owner}
-		zone={System.game.use.card.owner.zone('Terrain')}
+		zone={System.game.use.card.owner.zone("Terrain")}
 		{condition}
 		{fonction}
 	/>
-{:else if choice == 'damage'}
+{:else if choice == "damage"}
 	<button
 		on:click={() => {
 			choice = undefined;
@@ -61,7 +61,7 @@
 	<Zone
 		bind:System
 		entity={System.game.use.card.owner.adversary()}
-		zone={System.game.use.card.owner.adversary().zone('Terrain')}
+		zone={System.game.use.card.owner.adversary().zone("Terrain")}
 		condition={condition2}
 		{fonction}
 	/>

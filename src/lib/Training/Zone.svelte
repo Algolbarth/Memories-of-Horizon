@@ -8,7 +8,7 @@
 
 <div class="zone">
 	{zone.name}
-	{#if zone.name == 'Boutique'}
+	{#if zone.name == "Boutique"}
 		Nv
 		<input
 			type="number"
@@ -27,7 +27,7 @@
 		/>
 	{/if}
 	-
-	{#if zone.name != 'Défausse'}
+	{#if zone.name != "Défausse"}
 		({zone.cards.length} / {zone.size}) -
 	{/if}
 	<button
@@ -42,7 +42,7 @@
 
 	{#each zone.cards as card, i}
 		<div class="preview">
-			{#if entity == 'player'}
+			{#if entity == "player"}
 				<div>
 					<button
 						on:click={() => {
@@ -59,7 +59,7 @@
 					</button>
 				</div>
 				<div style="text-align:right;">
-					{#if zone.name != 'Lieux' || zone.cards.length > 1}
+					{#if zone.name != "Lieux" || zone.cards.length > 1}
 						<button
 							class="remove"
 							on:click={() => {
@@ -73,7 +73,7 @@
 				</div>
 			{:else}
 				<div>
-					{#if zone.name != 'Lieux' || zone.cards.length > 1}
+					{#if zone.name != "Lieux" || zone.cards.length > 1}
 						<button
 							class="remove"
 							on:click={() => {
@@ -126,7 +126,7 @@
 		color: var(--close);
 	}
 
-	input[type='number'] {
+	input[type="number"] {
 		width: 1.5em;
 	}
 </style>

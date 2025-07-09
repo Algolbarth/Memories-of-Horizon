@@ -1,6 +1,6 @@
 <script>
-	import { Account } from './Account.js';
-	import { Deck } from '../Decks/Deck.js';
+	import { Account } from "./Account.js";
+	import { Deck } from "../Decks/Deck.js";
 
 	export let System;
 
@@ -13,7 +13,7 @@
 			save = await files[0].text();
 			step = 0;
 
-			if (readValue() != 'MoH') {
+			if (readValue() != "MoH") {
 				console.log("Ce fichier n'est pas une sauvegarde pour MoH");
 				return 0;
 			}
@@ -40,13 +40,13 @@
 				System.decks.push(deck);
 			}
 
-			System.page = 'Menu';
+			System.page = "Menu";
 		}
 	}
 
 	function readValue() {
-		let value = '';
-		while (save[step] != '_' && step < save.length) {
+		let value = "";
+		while (save[step] != "_" && step < save.length) {
 			value += save[step];
 			step++;
 		}
@@ -59,7 +59,7 @@
 	}
 
 	function readBool() {
-		return readValue() == 'true';
+		return readValue() == "true";
 	}
 </script>
 
@@ -70,7 +70,7 @@
 
 	<button
 		on:click={() => {
-			System.page = 'TitleScreen';
+			System.page = "TitleScreen";
 		}}
 	>
 		Retour
@@ -102,7 +102,7 @@
 		text-align: center;
 	}
 
-	input[type='file'] {
+	input[type="file"] {
 		border: none;
 	}
 </style>

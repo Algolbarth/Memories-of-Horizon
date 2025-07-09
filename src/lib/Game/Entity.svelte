@@ -23,7 +23,7 @@
 
 	{#if entity.flux > 0}
 		Flux : {entity.flux}
-		{#if System.game.phase == 'Préparation'}
+		{#if System.game.phase == "Préparation"}
 			<br />
 			<button
 				on:click={() => {

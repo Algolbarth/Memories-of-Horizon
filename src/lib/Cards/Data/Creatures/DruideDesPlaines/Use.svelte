@@ -12,7 +12,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			fonction('Humain');
+			fonction("Humain");
 		}}>Forme humain</button
 	>
 
@@ -21,7 +21,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			fonction('Loup');
+			fonction("Loup");
 		}}>Forme loup</button
 	>
 </div>

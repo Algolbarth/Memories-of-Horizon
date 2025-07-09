@@ -1,9 +1,9 @@
 <script>
-	import Zone from '../../../../Game/Zone.svelte';
+	import Zone from "../../../../Game/Zone.svelte";
 	export let System;
 
 	function condition(card) {
-		if (card.familles.total().includes('Arme')) {
+		if (card.familles.total().includes("Arme")) {
 			return true;
 		}
 		return false;
@@ -18,7 +18,7 @@
 <Zone
 	bind:System
 	bind:entity={System.game.use.card.owner}
-	zone={System.game.use.card.owner.zone('Main')}
+	zone={System.game.use.card.owner.zone("Main")}
 	{condition}
 	{fonction}
 />

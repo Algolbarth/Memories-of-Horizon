@@ -1,5 +1,5 @@
 <script>
-	import Preview from './Preview.svelte';
+	import Preview from "./Preview.svelte";
 
 	export let System;
 	export let zone;
@@ -10,14 +10,14 @@
 
 <div id="body">
 	{zone.name}
-	{#if zone.name == 'Boutique'}
+	{#if zone.name == "Boutique"}
 		Nv {zone.level}
 	{/if}
-	{#if zone.name != 'Défausse'}
+	{#if zone.name != "Défausse"}
 		- ({zone.cards.length} / {zone.size})
 	{/if}
-	{#if zone.name == 'Boutique'}
-		{#if entity == System.game.player && fonction == undefined && System.game.phase == 'Préparation'}
+	{#if zone.name == "Boutique"}
+		{#if entity == System.game.player && fonction == undefined && System.game.phase == "Préparation"}
 			-
 			<button
 				on:click={() => {
@@ -29,7 +29,7 @@
 			</button>
 			{10} Or
 		{/if}
-		{#if entity == System.game.player && zone.level < 20 && fonction == undefined && System.game.phase == 'Préparation'}
+		{#if entity == System.game.player && zone.level < 20 && fonction == undefined && System.game.phase == "Préparation"}
 			-
 			<button
 				on:click={() => {
@@ -41,7 +41,7 @@
 			</button>
 			{zone.level * 10} Or
 		{/if}
-		{#if entity == System.game.player && fonction == undefined && System.game.phase == 'Préparation'}
+		{#if entity == System.game.player && fonction == undefined && System.game.phase == "Préparation"}
 			-
 			<button
 				on:click={() => {

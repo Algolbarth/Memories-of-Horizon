@@ -1,7 +1,7 @@
 <script>
-	import Filter from '../Menu/Filter.svelte';
-    import { several } from '../Utils';
-	import View from '../Cards/View/Main.svelte';
+	import Filter from "../Menu/Filter.svelte";
+	import { several } from "../Utils";
+	import View from "../Cards/View/Main.svelte";
 
 	export let System;
 
@@ -14,10 +14,10 @@
 		move = true;
 	}
 
-	let levelSelect = 'Tous';
-	let typeSelect = 'Tous';
-	let familleSelect = 'Toutes';
-	let elementSelect = 'Tous';
+	let levelSelect = "Tous";
+	let typeSelect = "Tous";
+	let familleSelect = "Toutes";
+	let elementSelect = "Tous";
 
 	let cardList = [];
 	cards();
@@ -27,10 +27,12 @@
 		for (const cardName of System.deck.cards) {
 			let card = System.cards.getByName(cardName);
 			if (
-				(levelSelect == 'Tous' || card.level == levelSelect) &&
-				(typeSelect == 'Tous' || card.type == typeSelect) &&
-				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
-				(elementSelect == 'Tous' || card.elements.total().includes(elementSelect))
+				(levelSelect == "Tous" || card.level == levelSelect) &&
+				(typeSelect == "Tous" || card.type == typeSelect) &&
+				(familleSelect == "Toutes" ||
+					card.familles.total().includes(familleSelect)) &&
+				(elementSelect == "Tous" ||
+					card.elements.total().includes(elementSelect))
 			) {
 				tab.push(cardName);
 			}
@@ -56,7 +58,7 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.page = 'Decks';
+		System.page = "Decks";
 	}}
 >
 	X
@@ -83,7 +85,7 @@
 			on:click={() => {
 				System.view.reset();
 				System.deck.clone();
-				System.page = 'Decks';
+				System.page = "Decks";
 			}}
 		>
 			Cloner
@@ -96,7 +98,7 @@
 				System.view.reset();
 				System.deck.delete();
 				System = System;
-				System.page = 'Decks';
+				System.page = "Decks";
 			}}
 		>
 			Supprimer
@@ -106,7 +108,7 @@
 <div class="zone">
 	{cardList.length}
 	/
-	{several(System.deck.cards.length, 'carte')}
+	{several(System.deck.cards.length, "carte")}
 	-
 	<button
 		on:click={() => {
@@ -120,7 +122,7 @@
 		<button
 			on:click={() => {
 				System.view.reset();
-				System.page = 'Add';
+				System.page = "Add";
 			}}
 		>
 			Modifier les cartes

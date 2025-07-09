@@ -5,7 +5,7 @@
 
 <div class="box">
 	<i>Équipements</i>
-	({card.equipments.length} / {card.stat('Maniement').value()})
+	({card.equipments.length} / {card.stat("Maniement").value()})
 
 	<br />
 

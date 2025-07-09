@@ -7,7 +7,7 @@
 <button
 	class="close"
 	on:click={() => {
-		System.page = 'Menu';
+		System.page = "Menu";
 	}}
 >
 	X
@@ -127,7 +127,7 @@
 	}
 
 	hr:after {
-		content: '§';
+		content: "§";
 		display: inline-block;
 		position: relative;
 		top: -0.9em;

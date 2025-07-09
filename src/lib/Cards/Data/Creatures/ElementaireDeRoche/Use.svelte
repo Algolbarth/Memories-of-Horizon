@@ -11,7 +11,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			fonction('Créature');
+			fonction("Créature");
 		}}
 	>
 		Se place sur le terrain
@@ -22,7 +22,7 @@
 	<button
 		class="big"
 		on:click={() => {
-			fonction('Effet');
+			fonction("Effet");
 		}}
 	>
 		Se détruis pour infliger 5 dégâts à toutes les unités adverses

@@ -73,7 +73,7 @@
 		grid-template-columns: 0.15fr 1fr;
 	}
 
-	input[type='number'] {
+	input[type="number"] {
 		width: 2em;
 	}
 </style>

@@ -207,7 +207,7 @@ input[type='text']:focus {
   gap: 0.5em;
 }
 
-.form-control + .form-control {
+.form-control+.form-control {
   margin-top: 1em;
 }
 

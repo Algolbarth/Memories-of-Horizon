@@ -1,16 +1,16 @@
 <script>
-	import Filter from '../Menu/Filter.svelte';
-    import { several } from '../Utils';
-	import View from '../Cards/View/Main.svelte';
+	import Filter from "../Menu/Filter.svelte";
+	import { several } from "../Utils";
+	import View from "../Cards/View/Main.svelte";
 
 	export let System;
 
 	let filterWindow = false;
 
-	let levelSelect = 'Tous';
-	let typeSelect = 'Tous';
-	let familleSelect = 'Toutes';
-	let elementSelect = 'Tous';
+	let levelSelect = "Tous";
+	let typeSelect = "Tous";
+	let familleSelect = "Toutes";
+	let elementSelect = "Tous";
 
 	let cardList = [];
 	filter();
@@ -19,12 +19,14 @@
 		let tab = [];
 		for (const card of System.cards.instance) {
 			if (
-				!card.trait('Rare').value() &&
-				!card.trait('Légendaire').value() &&
-				(levelSelect == 'Tous' || card.level == levelSelect) &&
-				(typeSelect == 'Tous' || card.type == typeSelect) &&
-				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
-				(elementSelect == 'Tous' || card.elements.total().includes(elementSelect))
+				!card.trait("Rare").value() &&
+				!card.trait("Légendaire").value() &&
+				(levelSelect == "Tous" || card.level == levelSelect) &&
+				(typeSelect == "Tous" || card.type == typeSelect) &&
+				(familleSelect == "Toutes" ||
+					card.familles.total().includes(familleSelect)) &&
+				(elementSelect == "Tous" ||
+					card.elements.total().includes(elementSelect))
 			) {
 				tab.push(card);
 			}
@@ -50,7 +52,7 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.page = 'Deck';
+		System.page = "Deck";
 	}}
 >
 	X
@@ -59,7 +61,7 @@
 <br />
 
 <div id="zone">
-	{several(cardList.length, 'carte')}
+	{several(cardList.length, "carte")}
 	-
 	<button
 		on:click={() => {
@@ -71,10 +73,13 @@
 
 	<div id="list" class="scroll">
 		{#each cardList as card}
-			<div class={(System.deck.check(card.name) ? 'present ' : '') + 'preview'}>
+			<div
+				class={(System.deck.check(card.name) ? "present " : "") +
+					"preview"}
+			>
 				<div>
 					<button
-						class={System.deck.check(card.name) ? 'present ' : ''}
+						class={System.deck.check(card.name) ? "present " : ""}
 						on:click={() => {
 							System.view.card = card;
 						}}

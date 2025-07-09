@@ -3,4 +3,5 @@
 	export let card;
 </script>
 
-Transforme une créature alliée de famille druide sur le terrain en son autre forme.
+Transforme une créature alliée de famille druide sur le terrain en son autre
+forme.

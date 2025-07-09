@@ -7,7 +7,7 @@
 		<button
 			on:click={() => {
 				System.music.play();
-				System.page = 'TitleScreen';
+				System.page = "TitleScreen";
 			}}
 		>
 			Jouer
@@ -17,7 +17,7 @@
 		by
 		<button
 			on:click={() => {
-				window.open('https://github.com/Algolbarth');
+				window.open("https://github.com/Algolbarth");
 			}}
 		>
 			Algolbarth
@@ -25,7 +25,7 @@
 		-
 		<button
 			on:click={() => {
-				window.open('https://github.com/Algolbarth/MoH');
+				window.open("https://github.com/Algolbarth/MoH");
 			}}
 		>
 			Github Repository
@@ -33,7 +33,7 @@
 		-
 		<button
 			on:click={() => {
-				window.open('https://algolbarth.github.io/');
+				window.open("https://algolbarth.github.io/");
 			}}
 		>
 			Website

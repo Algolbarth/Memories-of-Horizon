@@ -6,18 +6,18 @@
 	}
 
 	let tab = [
-		'Feu',
-		'Terre',
-		'Végétal',
-		'Eau',
-		'Air',
-		'Mort',
-		'Metal',
-		'Foudre',
-		'Lumière',
-		'Arcane',
-		'Glace',
-		'Ombre'
+		"Feu",
+		"Terre",
+		"Végétal",
+		"Eau",
+		"Air",
+		"Mort",
+		"Metal",
+		"Foudre",
+		"Lumière",
+		"Arcane",
+		"Glace",
+		"Ombre",
 	];
 </script>
 
@@ -43,7 +43,8 @@
 						<button
 							class="big"
 							on:click={() => {
-								System.game.player.ressource(ressource).current++;
+								System.game.player.ressource(ressource)
+									.current++;
 								System.game.player.ressource(ressource).max++;
 								System.game.player.flux--;
 								if (System.game.player.flux == 0) {

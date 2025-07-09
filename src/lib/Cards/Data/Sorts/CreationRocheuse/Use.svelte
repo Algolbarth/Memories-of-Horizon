@@ -12,14 +12,14 @@
 	<button
 		class="big"
 		on:click={() => {
-			fonction('Créature');
+			fonction("Créature");
 		}}>Élémentaire de roche</button
 	>
 	<br />
 	<button
 		class="big"
 		on:click={() => {
-			fonction('Bâtiment');
+			fonction("Bâtiment");
 		}}>Mur de roche</button
 	>
 </div>

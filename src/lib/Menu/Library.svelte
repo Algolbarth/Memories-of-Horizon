@@ -1,18 +1,18 @@
 <script>
-	import Filter from './Filter.svelte';
-	import Dropdown from './Dropdown.svelte';
-	import View from '../Cards/View/Main.svelte';
-    import { several } from '../Utils';
+	import Filter from "./Filter.svelte";
+	import Dropdown from "./Dropdown.svelte";
+	import View from "../Cards/View/Main.svelte";
+	import { several } from "../Utils";
 
 	export let System;
 
 	let filterWindow = false;
-	let sortType = 'Nom';
+	let sortType = "Nom";
 
-	let levelSelect = 'Tous';
-	let typeSelect = 'Tous';
-	let familleSelect = 'Toutes';
-	let elementSelect = 'Tous';
+	let levelSelect = "Tous";
+	let typeSelect = "Tous";
+	let familleSelect = "Toutes";
+	let elementSelect = "Tous";
 	let communSelect = true;
 	let rareSelect = false;
 	let legendarySelect = false;
@@ -25,13 +25,17 @@
 
 		for (const card of System.cards.instance) {
 			if (
-				(levelSelect == 'Tous' || card.level == levelSelect) &&
-				(typeSelect == 'Tous' || card.type == typeSelect) &&
-				(familleSelect == 'Toutes' || card.familles.total().includes(familleSelect)) &&
-				(elementSelect == 'Tous' || card.elements.total().includes(elementSelect)) &&
-				((legendarySelect && card.trait('Légendaire').value()) ||
-					(rareSelect && card.trait('Rare').value()) ||
-					(communSelect && !card.trait('Légendaire').value() && !card.trait('Rare').value()))
+				(levelSelect == "Tous" || card.level == levelSelect) &&
+				(typeSelect == "Tous" || card.type == typeSelect) &&
+				(familleSelect == "Toutes" ||
+					card.familles.total().includes(familleSelect)) &&
+				(elementSelect == "Tous" ||
+					card.elements.total().includes(elementSelect)) &&
+				((legendarySelect && card.trait("Légendaire").value()) ||
+					(rareSelect && card.trait("Rare").value()) ||
+					(communSelect &&
+						!card.trait("Légendaire").value() &&
+						!card.trait("Rare").value()))
 			) {
 				tab.push(card);
 			}
@@ -43,7 +47,7 @@
 	}
 
 	function sort(tab) {
-		if (sortType == 'Niveau') {
+		if (sortType == "Niveau") {
 			for (let i = 0; i < tab.length; i++) {
 				let j = i;
 				while (j > 0 && tab[j].level < tab[j - 1].level) {
@@ -78,7 +82,7 @@
 	class="close"
 	on:click={() => {
 		System.view.reset();
-		System.page = 'Menu';
+		System.page = "Menu";
 	}}
 >
 	X
@@ -87,7 +91,7 @@
 <div id="zone">
 	<div style="display:flex;margin-bottom:2%;">
 		<div style="transform:translate(0,25%);margin-right:1%;">
-			{several(cardList.length, 'carte')}
+			{several(cardList.length, "carte")}
 			-
 			<button
 				on:click={() => {
@@ -99,7 +103,7 @@
 			- Trier par
 		</div>
 		<Dropdown
-			array={['Nom', 'Niveau']}
+			array={["Nom", "Niveau"]}
 			selected={sortType}
 			selecting={function (element) {
 				sortType = element;

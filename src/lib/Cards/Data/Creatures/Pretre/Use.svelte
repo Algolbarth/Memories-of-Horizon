@@ -1,12 +1,12 @@
 <script>
-	import Zone from '../../../../Game/Zone.svelte';
+	import Zone from "../../../../Game/Zone.svelte";
 
 	export let System;
 
 	let choice = undefined;
 
 	function condition(card) {
-		if (card.type == 'Créature') {
+		if (card.type == "Créature") {
 			return true;
 		}
 		return false;
@@ -23,14 +23,14 @@
 		<button
 			class="big"
 			on:click={() => {
-				choice = 'life';
+				choice = "life";
 			}}>Augmenter la vie de 10</button
 		>
 		<br />
 		<button
 			class="big"
 			on:click={() => {
-				choice = 'heal';
+				choice = "heal";
 			}}>Soigner 20 blessures</button
 		>
 	</div>
@@ -43,7 +43,7 @@
 	<Zone
 		bind:System
 		bind:entity={System.game.use.card.owner}
-		zone={System.game.use.card.owner.zone('Terrain')}
+		zone={System.game.use.card.owner.zone("Terrain")}
 		{condition}
 		{fonction}
 	/>
