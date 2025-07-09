@@ -3,6 +3,7 @@ import * as cards from "../Cards/Data/index.js";
 import * as chapters from "../Chapters/Data";
 import * as stories from "../Stories";
 import { Music } from "../Music/Class.js";
+import { Settings } from "../Settings/Class.js";
 
 export class System {
     stories = [];
@@ -202,12 +203,6 @@ class Bosses {
             parseInt(Math.random() * this.class[level].length)
         ](this.System, number);
     };
-};
-
-class Settings {
-    show_intelligence = false;
-    autoplay = false;
-    auto_speed = 1000;
 };
 
 class View {
