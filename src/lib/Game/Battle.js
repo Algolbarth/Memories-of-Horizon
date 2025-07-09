@@ -1,4 +1,4 @@
-import { copy } from "../Utils/Class";
+import { copy } from "../Utils";
 
 export class Battle {
     fighter = undefined;

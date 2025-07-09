@@ -1,4 +1,4 @@
-import { shuffle } from '../Utils/Class';
+import { shuffle } from '../Utils';
 
 export class Music {
     current = undefined;

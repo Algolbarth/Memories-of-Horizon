@@ -1,6 +1,6 @@
 <script>
 	import Filter from '../Menu/Filter.svelte';
-    import { several } from '../Utils/Class';
+    import { several } from '../Utils';
 	import View from '../Cards/View/Main.svelte';
 
 	export let System;

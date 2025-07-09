@@ -2,7 +2,7 @@
 	import Filter from './Filter.svelte';
 	import Dropdown from './Dropdown.svelte';
 	import View from '../Cards/View/Main.svelte';
-    import { several } from '../Utils/Class';
+    import { several } from '../Utils';
 
 	export let System;
 
