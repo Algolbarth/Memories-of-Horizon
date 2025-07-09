@@ -1,4 +1,4 @@
-import { copy } from '../Utils/Class.js';
+import { copy } from '../Utils';
 import { Card } from './Card.js';
 
 export class Unit extends Card {

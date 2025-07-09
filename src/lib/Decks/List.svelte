@@ -1,5 +1,5 @@
 <script>
-    import { several } from '../Utils/Class.js';
+    import { several } from '../Utils';
 	import { Deck } from './Deck.js';
 	import View from './View.svelte';
 

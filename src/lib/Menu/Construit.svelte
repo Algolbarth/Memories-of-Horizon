@@ -1,7 +1,7 @@
 <script>
 	import { Game } from '../Game/Game.js';
 	import View from '../Decks/View.svelte';
-    import { several } from '../Utils/Class.js';
+    import { several } from '../Utils';
 
 	export let System;
 

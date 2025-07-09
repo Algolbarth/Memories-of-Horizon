@@ -1,4 +1,4 @@
-import { copy } from '../../../../Utils/Class.js';
+import { copy } from '../../../../Utils';
 import { Creature } from '../Creature.js';
 import Text from './Text.svelte';
 import Use from './Use.svelte';
