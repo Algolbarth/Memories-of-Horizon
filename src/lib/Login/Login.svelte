@@ -1,65 +1,15 @@
 <script>
-	import { Account } from "./Account.js";
-	import { Deck } from "../Decks/Deck.js";
+	import { load } from "./Load";
 
 	export let System;
 
 	let files;
-	let step;
-	let save;
 
 	async function login() {
-		if (files != undefined) {
-			save = await files[0].text();
-			step = 0;
-
-			if (readValue() != "MoH") {
-				console.log("Ce fichier n'est pas une sauvegarde pour MoH");
-				return 0;
-			}
-			System.account = new Account(System, readValue());
-			System.account.aventure.victory = readInt();
-			System.account.aventure.defeat = readInt();
-			System.account.construct.victory = readInt();
-			System.account.construct.defeat = readInt();
-			System.music.volume = readInt();
-			System.settings.show_intelligence = readBool();
-			let decks = readInt();
-			for (let i = 0; i < decks; i++) {
-				let deck = new Deck(System);
-				deck.changeName(readValue(), 0);
-				deck.victory = readInt();
-				deck.defeat = readInt();
-				let cards = readInt();
-				for (let j = 0; j < cards; j++) {
-					let name = readValue();
-					if (System.cards.getByName(name) != undefined) {
-						deck.add(name);
-					}
-				}
-				System.decks.push(deck);
-			}
-
-			System.page = "Menu";
+		let log = await load(files, System);
+		if (log != undefined) {
+			System = log;
 		}
-	}
-
-	function readValue() {
-		let value = "";
-		while (save[step] != "_" && step < save.length) {
-			value += save[step];
-			step++;
-		}
-		step++;
-		return value;
-	}
-
-	function readInt() {
-		return parseInt(readValue());
-	}
-
-	function readBool() {
-		return readValue() == "true";
 	}
 </script>
 
@@ -82,27 +32,42 @@
 	Fichier de la save
 
 	<br />
-
-	<input type="file" bind:files />
-
 	<br />
 
-	<button
-		class="big menu"
-		on:click={() => {
-			login();
-		}}
-	>
-		Valider
-	</button>
+	<label for="images">
+		<span>Choisir un fichier</span>
+		<input type="file" id="images" bind:files />
+	</label>
+
+	<br />
+	<br />
+
+	{#if files != undefined}
+		{files[0].name}
+
+		<br />
+		<br />
+
+		<button
+			class="big menu"
+			on:click={() => {
+				login();
+			}}
+		>
+			Valider
+		</button>
+	{:else}
+		Aucun fichier selectionné
+
+		<br />
+		<br />
+
+		<button class="big menu desactivate"> Valider </button>
+	{/if}
 </div>
 
 <style>
 	#body {
 		text-align: center;
-	}
-
-	input[type="file"] {
-		border: none;
 	}
 </style>

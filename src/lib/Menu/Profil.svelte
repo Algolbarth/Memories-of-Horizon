@@ -29,11 +29,11 @@
 
 <br /><br />
 
-Total des parties : {System.account.matchs()}
+Total des parties : {System.account.total_match()}
 <br />
-Victoires : {System.account.victory()}
+Victoires : {System.account.total_victory()}
 <br />
-Défaites : {System.account.defeat()}
+Défaites : {System.account.total_defeat()}
 
 <br /><br />
 

@@ -1,33 +1,30 @@
 export class Account {
-    aventure = {
-        victory: 0,
-        defeat: 0,
-        total: function () {
-            return this.victory + this.defeat;
-        }
-    };
-    construct = {
-        victory: 0,
-        defeat: 0,
-        total: function () {
-            return this.victory + this.defeat;
-        }
-    };
+    aventure = new Gamemode();
+    construct = new Gamemode();
 
     constructor(System, name) {
         this.System = System;
         this.name = name;
     };
 
-    victory = function () {
+    total_victory = function () {
         return this.aventure.victory + this.construct.victory;
     };
 
-    defeat = function () {
+    total_defeat = function () {
         return this.aventure.defeat + this.construct.defeat;
     };
 
-    matchs = function () {
+    total_match = function () {
         return this.aventure.total() + this.construct.total();
+    };
+}
+
+class Gamemode {
+    victory = 0;
+    defeat = 0;
+
+    total() {
+        return this.victory + this.defeat;
     };
 }

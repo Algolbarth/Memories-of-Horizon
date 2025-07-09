@@ -1,7 +1,6 @@
 # Prochaines MAJ
 
 Ajouter les couleurs sur la transfo du flux
-Ajouter une class Settings
 Mettre les getter dans leurs dossiers respectifs
 Changer le logo
 Finir l'histoire impériale (pk c'est souvent des humains)

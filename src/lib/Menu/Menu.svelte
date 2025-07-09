@@ -1,46 +1,7 @@
 <script>
+    import { save } from "../Login/Save";
+
 	export let System;
-
-	function save() {
-		let text = "MoH_" + System.account.name + "_";
-		text +=
-			System.account.aventure.victory +
-			"_" +
-			System.account.aventure.defeat +
-			"_" +
-			System.account.construct.victory +
-			"_" +
-			System.account.construct.defeat +
-			"_";
-		text +=
-			System.music.volume + "_" + System.settings.show_intelligence + "_";
-		text += System.decks.length + "_";
-		for (const deck of System.decks) {
-			text +=
-				deck.name +
-				"_" +
-				deck.victory +
-				"_" +
-				deck.defeat +
-				"_" +
-				deck.cards.length +
-				"_";
-			for (const card of deck.cards) {
-				text += card + "_";
-			}
-		}
-
-		var element = document.createElement("a");
-		element.setAttribute(
-			"href",
-			"data:text/plain;charset=utf-8," + encodeURIComponent(text),
-		);
-		element.setAttribute("download", "MoH_" + System.account.name);
-		element.style.display = "none";
-		document.body.appendChild(element);
-		element.click();
-		document.body.removeChild(element);
-	}
 
 	function logout() {
 		System.decks = [];
@@ -135,7 +96,7 @@
 				<button
 					class="big menu"
 					on:click={() => {
-						save();
+						save(System);
 					}}
 				>
 					Sauvegarder

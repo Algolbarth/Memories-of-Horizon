@@ -34,7 +34,6 @@
 		on:change={() => {
 			System.music.current.volume = System.music.volume / 100;
 		}}
-		class="slider"
 		id="volume"
 	/>
 	<label for="volume" style="text-align:center;">
@@ -77,7 +76,6 @@
 			on:change={() => {
 				System.settings.auto_speed = delay * 500;
 			}}
-			class="slider"
 			id="delay"
 		/>
 	</div>
@@ -91,44 +89,5 @@
 		width: 50%;
 		display: grid;
 		grid-template-columns: 17em 10fr 3fr;
-	}
-
-	.slider {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 100%;
-		height: 10px;
-		padding: 0;
-		border-radius: 5px;
-		background: var(--card);
-		border: solid;
-		border-color: black;
-		outline: none;
-		-webkit-transition: 0.2s;
-		transition: opacity 0.2s;
-		cursor: url("../../assets/Pictures/Select.cur"), pointer;
-		transform: translateY(50%);
-	}
-
-	.slider::-webkit-slider-thumb {
-		-webkit-appearance: none;
-		appearance: none;
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-		background: gold;
-		border: solid;
-		border-color: black;
-		cursor: url("../../assets/Pictures/Select.cur"), pointer;
-	}
-
-	.slider::-moz-range-thumb {
-		width: 25px;
-		height: 25px;
-		border-radius: 50%;
-		background: gold;
-		border: solid;
-		border-color: black;
-		cursor: url("../../assets/Pictures/Select.cur"), pointer;
 	}
 </style>

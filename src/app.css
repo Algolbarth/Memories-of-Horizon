@@ -25,6 +25,8 @@
   --close_hover: rgba(139, 0, 0, 1);
   --story: rgba(255, 251, 202, 1);
   --shadow: rgba(0, 0, 0, 0.5);
+  --desactivate: rgba(69, 69, 69, 1);
+  --desactivate_hover: rgba(85, 85, 85, 1);
 
   --delay: 1s;
   --delay_hover: 0.1s;
@@ -97,6 +99,16 @@ button.big:hover {
 
 button.menu {
   width: 15vw;
+}
+
+button.desactivate {
+  background: var(--desactivate);
+  color: white;
+  border-color: black;
+}
+
+button.desactivate:hover {
+  background: var(--desactivate_hover);
 }
 
 button.close {
@@ -261,6 +273,63 @@ input[type="checkbox"]:focus {
 input[type="checkbox"]:disabled {
   color: var(--zone);
   cursor: not-allowed;
+}
+
+input[type="range"] {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 100%;
+		height: 10px;
+		padding: 0;
+		border-radius: 5px;
+		background: var(--card);
+		border: solid;
+		border-color: black;
+		outline: none;
+		-webkit-transition: 0.2s;
+		transition: opacity 0.2s;
+		cursor: url("../../assets/Pictures/Select.cur"), pointer;
+		transform: translateY(50%);
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background: gold;
+		border: solid;
+		border-color: black;
+		cursor: url("../../assets/Pictures/Select.cur"), pointer;
+	}
+
+	input[type="range"]::-moz-range-thumb {
+		width: 25px;
+		height: 25px;
+		border-radius: 50%;
+		background: gold;
+		border: solid;
+		border-color: black;
+		cursor: url("../../assets/Pictures/Select.cur"), pointer;
+	}
+
+input[type=file] {
+  display: none;
+}
+
+label span {
+  background: var(--preview);
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 0.6em 1.2em;
+  border: solid;
+  border-radius: 5px;
+}
+
+label span:hover {
+  background: var(--preview_hover);
 }
 
 input::-webkit-outer-spin-button,
