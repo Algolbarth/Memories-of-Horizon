@@ -1,7 +1,7 @@
 <script>
 	import DoubleZone from './DoubleZone.svelte';
 	import Entity from './Entity.svelte';
-	import View from '../View/Main.svelte';
+	import View from '../Cards/View/Main.svelte';
 	import Use from './Use.svelte';
 	import Flux from './Flux.svelte';
 	import Pause from './Pause.svelte';

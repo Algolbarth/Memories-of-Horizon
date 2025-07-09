@@ -1,5 +1,5 @@
 import { Train } from "../Training/Train.js";
-import * as cards from "../Cards";
+import * as cards from "../Cards/Data/index.js";
 import * as chapters from "../Chapters/Data";
 import * as stories from "../Stories";
 import { Music } from "../Music/Class.js";

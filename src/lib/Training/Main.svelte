@@ -2,7 +2,7 @@
 	import Entity from './Entity.svelte';
 	import Zone from './Zone.svelte';
 	import Add from './Add.svelte';
-	import View from '../View/Main.svelte';
+	import View from '../Cards/View/Main.svelte';
 	import { Game } from '../Game/Game.js';
 
 	export let System;
