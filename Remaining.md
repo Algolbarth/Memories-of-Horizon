@@ -13,16 +13,27 @@ Finir l'histoire impériale (pk c'est souvent des humains)
 # Mécaniques
 
 Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones)
+
 Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment)
+
 Ajouter une option finir automatiquement pour les combats
-Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) \
-Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la boutique) \
-Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues) \
-Ajouter ces stats pour le compte \
-Ajouter les stats des decks (types de carte, éléments, familles, niveau) \
-Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la boutique \
-Ajouter un texte explicatif pour les stats et effets \
-Ajouter un tutoriel dans jouer, avec les mécaniques du jeu \
+
+Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) 
+
+Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la boutique) 
+
+Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues)
+
+Ajouter ces stats pour le compte
+
+Ajouter les stats des decks (types de carte, éléments, familles, niveau)
+
+Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la boutique
+
+Ajouter un texte explicatif pour les stats et effets
+
+Ajouter un tutoriel dans jouer, avec les mécaniques du jeu
+
 Ajouter l'étourdissement, la paralysie et l'aveuglement (paralysie => X actions, gel => X tours, étourdissement => X étapes, auglement => X attaques)
 
 # Cartes
