@@ -1,9 +1,13 @@
 # Prochaines MAJ
 
 Ajouter les couleurs sur la transfo du flux
-Mettre les getter dans leurs dossiers respectifs
+
+Mettre les getter dans leurs dossiers respectif
+
 Changer le logo
+
 Modifier l'histoire pour intégrer les planètes et l'espace
+
 Finir l'histoire impériale (pk c'est souvent des humains)
 
 # Mécaniques
