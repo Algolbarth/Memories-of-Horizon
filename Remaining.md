@@ -3,13 +3,14 @@
 Ajouter les couleurs sur la transfo du flux
 Mettre les getter dans leurs dossiers respectifs
 Changer le logo
+Modifier l'histoire pour intégrer les planètes et l'espace
 Finir l'histoire impériale (pk c'est souvent des humains)
 
 # Mécaniques
 
-Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
-Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment) \
-Ajouter une option finir automatiquement pour les combats \
+Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones)
+Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment)
+Ajouter une option finir automatiquement pour les combats
 Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) \
 Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la boutique) \
 Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues) \
