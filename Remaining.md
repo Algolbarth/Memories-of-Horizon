@@ -55,7 +55,7 @@ Conquérant : créature, quand posé : si le terrain est plein, augmente la tail
 Carte de la région : objet, pioche des cartes jusqu'à remplir la boutique. \
 Omniscience : action, découvre des cartes jusqu'à remplir la boutique. \
 Savoir interdit : action, diminue la taille du terrain et augmente la taille de la main et de la boutique. \
- : action, diminue la taille de la main et augmente la taille du terrain et de la boutique.
+Requisition : action, diminue la taille de la main et augmente la taille du terrain et de la boutique.
 
 Masse de fer : augmente la charge de la créature équipée. \
 Robe de mage : augmente la magie et la résistance de la créature équipée. \
@@ -63,7 +63,7 @@ Brassard de santé : augmente la régénération de la créature équipée. \
 Plastron de piques : augmente la vie et l'épine de la créature équipée. \
 Cotte de maille : augmente l'endurance de la créature équipée. \
 Hache lourde : augmente l'intensité de la créature équipée. \
-Cape de cuir
+Cape de cuir : augmente la défense et la résistance de la créature équipée
 
 *Revoir les potions* \
 *Chaque potion a 5 compteurs quand créée* \
@@ -74,7 +74,8 @@ Potion d'endurance \
 Concoction : objet potion, applique l'effet associé à chaque type de compteur à une créature sur le terrain. \
 Mélange : action, détruis deux objets potion alliés dans la main. créé Concoction avec les compteurs équivalents dans la main. \
 Alchimiste : créature, quand posé : pioche 2 objets potion. \
-Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main.
+Chaudron : bâtiment, au début de la phase de préparation : crée Mélange dans la main. \
+Alambic : objet, créé mélange à partir des potions de la boutique.
 
 Bâton de druide :  objet équipement, au début de la phase de préparation et de combat : transforme la créature équipée dans son autre forme. \
 Mouton : créature bête, endurance. \
