@@ -45,7 +45,6 @@
 		{#if isDropdownOpen}
 			<div
 				class="list scroll"
-				style:width={width + "vw"}
 				style:max-height={height + "vh"}
 			>
 				{#each array as element}
@@ -88,6 +87,7 @@
 		position: relative;
 		background: grey;
 		border: solid;
+		border-radius: 5px;
 		z-index: 1;
 	}
 

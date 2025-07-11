@@ -1,5 +1,5 @@
 <script>
-	import Dropdown from "./Dropdown.svelte";
+	import Dropdown from "../Utils/Dropdown.svelte";
 
 	export let System;
 	export var levelSelect;
@@ -26,6 +26,9 @@
 				X
 			</button>
 		</div>
+
+		<br />
+
 		<div id="options">
 			<div class="container">
 				Niveau

@@ -1,39 +1,24 @@
 # Prochaines MAJ
 
-Ajouter les couleurs sur la transfo du flux
-
-Mettre les getter dans leurs dossiers respectif
-
-Changer le logo
-
-Modifier l'histoire pour intégrer les planètes et l'espace
-
+Ajouter les couleurs sur la transfo du flux \
+Mettre les getter dans leurs dossiers respectif \
+Changer le logo \
+Modifier l'histoire pour intégrer les planètes et l'espace \
 Finir l'histoire impériale (pk c'est souvent des humains)
 
 # Mécaniques
 
-Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones)
-
-Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment)
-
-Ajouter une option finir automatiquement pour les combats
-
-Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) 
-
-Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la boutique) 
-
-Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues)
-
-Ajouter ces stats pour le compte
-
-Ajouter les stats des decks (types de carte, éléments, familles, niveau)
-
-Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la boutique
-
-Ajouter un texte explicatif pour les stats et effets
-
-Ajouter un tutoriel dans jouer, avec les mécaniques du jeu
-
+Ajouter les éléments manquants dans le mode entraînement (deck, taille des zones) \
+Ajouter une limite de tour aux combats, après quoi ya ex eaquo (5 pour le moment) \
+Ajouter une option finir automatiquement pour les combats \
+Ajouter les options pour afficher des infos lors des combats (ressources, défausse, main) \
+Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la boutique)  \
+Ajouter des stats lors d'une partie (nombres de cartes jouées, d'étapes, de phases de combats perdues) \
+Ajouter ces stats pour le compte \
+Ajouter les stats des decks (types de carte, éléments, familles, niveau) \
+Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la boutique \
+Ajouter un texte explicatif pour les stats et effets \
+Ajouter un tutoriel dans jouer, avec les mécaniques du jeu \
 Ajouter l'étourdissement, la paralysie et l'aveuglement (paralysie => X actions, gel => X tours, étourdissement => X étapes, auglement => X attaques)
 
 # Cartes
@@ -41,7 +26,10 @@ Ajouter l'étourdissement, la paralysie et l'aveuglement (paralysie => X actions
 ## A ajouter
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente la capacité en eau adverse. \
 Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la vie de la créature attaquante. \
-Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
+Mimique de boule de feu : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la main adverse. \
+Mimique de roche : se pose sur le terrain adverse. Quand meurt au combat : crée une boule de feu dans la main adverse. \
+Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape. \
+Mimique : se pose sur le terrain adverse. Quand meurt : Crée humain sur le terrain adverse.
 
 Homme d'affaire : augmente la valeur de vente des unités alliées sur le terrain. \
 Cape de voleur : au début de la phase de préparation : augmente la valeur de vente en or de la créature équipée. \
