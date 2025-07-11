@@ -31,38 +31,40 @@
 						X
 					</button>
 				</div>
-				<Caracteristics bind:card />
-				{#if card.text != undefined}
-					<Effet bind:card bind:System />
-				{/if}
-				{#if card.hasTrait()}
-					<Trait bind:card />
-				{/if}
-				{#if card.hasStat()}
-					<Stat bind:card />
-				{/if}
-				{#if card.familles.total().includes("Équipement")}
-					<div class="box">
-						<i>Statistiques</i>
+				<div style="max-height: 80vh;" class="scroll">
+					<Caracteristics bind:card />
+					{#if card.text != undefined}
+						<Effet bind:card bind:System />
+					{/if}
+					{#if card.hasTrait()}
+						<Trait bind:card />
+					{/if}
+					{#if card.hasStat()}
+						<Stat bind:card />
+					{/if}
+					{#if card.familles.total().includes("Équipement")}
+						<div class="box">
+							<i>Statistiques</i>
 
-						<br />
+							<br />
 
-						{#each card.equipStats as e}
-							{#if e.value() > 0}
-								{e.name} : {e.value()}
+							{#each card.equipStats as e}
+								{#if e.value() > 0}
+									{e.name} : {e.value()}
 
-								<br />
-							{/if}
-						{/each}
-					</div>
-				{/if}
-				{#if card.type == "Créature"}
-					<Equipments bind:card bind:System />
-				{/if}
+									<br />
+								{/if}
+							{/each}
+						</div>
+					{/if}
+					{#if card.type == "Créature"}
+						<Equipments bind:card bind:System />
+					{/if}
 
-				<br />
+					<br />
 
-				<Description bind:card />
+					<Description bind:card />
+				</div>
 			</div>
 		</div>
 	</div>
@@ -114,5 +116,7 @@
 
 	#content {
 		padding: 2%;
+		display: grid;
+		grid-template-rows: auto 1fr;
 	}
 </style>
