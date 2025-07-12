@@ -4,6 +4,7 @@ import * as chapters from "../Chapters/Data";
 import * as stories from "../Stories";
 import { Music } from "../Music/Class.js";
 import { Settings } from "../Settings/Class.js";
+import { ressources } from "../Ressources/Class.js";
 
 export class System {
     stories = [];
@@ -11,22 +12,7 @@ export class System {
     decks = [];
     train = new Train();
     game = undefined;
-    ressources = [
-        "Or",
-        "Feu",
-        "Eau",
-        "Terre",
-        "Air",
-        "Végétal",
-        "Mort",
-        "Metal",
-        "Arcane",
-        "Foudre",
-        "Glace",
-        "Lumière",
-        "Ombre",
-        "Mana",
-    ];
+    ressources = ressources;
     sort = {
         levels: ["Tous"],
         types: ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"],
@@ -45,10 +31,10 @@ export class System {
         }
 
         for (const element of this.ressources) {
-            if (element == "Or") {
+            if (element.name == "Or") {
                 this.sort.elements.push("Neutre");
-            } else if (element != "Mana") {
-                this.sort.elements.push(element);
+            } else if (element.name != "Mana") {
+                this.sort.elements.push(element.name);
             }
         }
 

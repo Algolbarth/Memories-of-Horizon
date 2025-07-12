@@ -391,11 +391,13 @@ export class Card {
 
 class Cout {
     add = 0;
+    base = 0
 
-    constructor(name, value, card) {
-        this.name = name;
+    constructor(ressource, card) {
+        this.name = ressource.name;
+        this.color = ressource.color;
+        this.light_font = ressource.light_font;
         this.card = card;
-        this.base = value;
     };
 
     value = function () {

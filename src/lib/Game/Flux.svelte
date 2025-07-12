@@ -41,7 +41,14 @@
 				{#each tab as ressource}
 					<div class="ressource">
 						<button
-							class="big"
+							style={"background:" +
+								System.game.player.ressource(ressource).color +
+								";color:" +
+								(System.game.player.ressource(ressource)
+									.light_font
+									? "rgba(255, 255, 255, 1)"
+									: "rgba(0, 0, 0, 1)")}
+							class="big flux"
 							on:click={() => {
 								System.game.player.ressource(ressource)
 									.current++;
@@ -85,8 +92,13 @@
 		text-align: center;
 	}
 
-	button.big {
+	button.flux {
 		height: 10vh;
 		width: 80%;
+		border-color:black;
+	}
+
+	button.flux:hover {
+		border-color: gold;
 	}
 </style>

@@ -49,7 +49,9 @@
 		{:else}
 			<i>Rien</i>
 		{/if}
+
 		<hr />
+
 		{#if vente(card).length > 0}
 			{#each vente(card) as sell, i}
 				{#if i > 0}
