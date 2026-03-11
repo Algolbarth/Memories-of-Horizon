@@ -32,6 +32,7 @@ export * from './lait';
 export * from './livre';
 export * from './livre-de-recette';
 export * from './meteore';
+export * from './meule-a-grains';
 export * from './noix-de-coco';
 export * from './pain';
 export * from './panacee';

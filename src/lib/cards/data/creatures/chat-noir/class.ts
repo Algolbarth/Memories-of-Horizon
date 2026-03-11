@@ -18,6 +18,13 @@ export class ChatNoir extends Creature {
         this.text = Text;
     };
 
+    canUse = () => {
+        if (this.owner().ressource("Or").production >= 5 && this.owner().zone("Terrain").isNotFull()) {
+            return true;
+        }
+        return false;
+    };
+
     useEffect = () => {
         this.owner().ressource("Or").decrease(5);
     };
