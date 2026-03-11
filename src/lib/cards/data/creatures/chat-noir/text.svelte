@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Quand posé : diminue de 5 votre production d'or.
+Quand posé : réduit de 5 votre production d'or.
 
 <br />
 <br />

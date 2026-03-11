@@ -47,6 +47,7 @@ export * from './chimere';
 export * from './commissaire-priseur';
 export * from './coupe-bourse';
 export * from './danseuse';
+export * from './dauphin';
 export * from './defenseur-de-la-cite';
 export * from './doyen';
 export * from './dresseur';

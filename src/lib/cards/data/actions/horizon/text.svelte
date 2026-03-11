@@ -8,7 +8,7 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée est posée : si dans la pile : diminue son coût de 10.
+Quand une carte alliée est posée : si dans la pile : réduit son coût de 10.
 
 <br />
 <br />

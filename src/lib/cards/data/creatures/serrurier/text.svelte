@@ -13,4 +13,4 @@ Quand <CardInfo bind:system name={"Clé en or"} /> est posée : si sur le terrai
 <br />
 <br />
 
-Quand <CardInfo bind:system name={"Crochetage"} /> est posée : si sur le terrain : diminue de 1 le niveau de votre pile pendant ce tour.
+Quand <CardInfo bind:system name={"Crochetage"} /> est posée : si sur le terrain : réduit de 1 le niveau de votre pile pendant ce tour.

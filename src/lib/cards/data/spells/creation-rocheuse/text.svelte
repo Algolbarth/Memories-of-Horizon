@@ -11,10 +11,10 @@
 Au choix :
 <ul>
 	<li>
-		Génère un <CardInfo bind:system name={"Élémentaire de roche"} /> sur votre terrain.
+		Génère <CardInfo bind:system name={"Élémentaire de roche"} /> sur votre terrain.
 	</li>
 	<li>
-		Génère un <CardInfo bind:system name={"Mur de roche"} /> sur votre terrain.
+		Génère <CardInfo bind:system name={"Mur de roche"} /> sur votre terrain.
 	</li>
 </ul>
 

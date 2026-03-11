@@ -42,7 +42,7 @@ Arbalète : objet équipement, génère des carreaux dans l'inventaire qui scale
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
 Pistolet double : objet équipement
-Dague magique : objet équipement, s'équipe à une créature sur votre terrain OU produis X mana.
+Dague magique : objet équipement, s'équipe à une créature sur votre terrain OU produit X mana.
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature sur le terrain adverse.
 ??? barbare : créature humain, quand une créature alliée attaque : augmente la force de la créature alliée.
 Gladiateur : créature humain.
@@ -95,7 +95,7 @@ Archer sylphe : créature, portée.
 Griffon : quand posé : augmente sa constitution et sa force suivant le niveau de la pile.
 Aigle 
 Envol : action, applique esquive à une créature Air sur votre terrain.
-Aéromancien : quand une carte Air est posé : diminue le coût d'amélioration de la pile.
+Aéromancien : quand une carte Air est posé : réduit le coût d'amélioration de la pile.
 Mage des airs 
 Hibours : créature bête oiseau 
 Ascension : pioche une créature wyverne et la verrouille.
@@ -123,12 +123,12 @@ Araignée
 Mère pondeuse 
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain.
 Wyverne zombie 
-Wyverne squelette : quand une créature alliée périt : diminue son coût de 5.
+Wyverne squelette : quand une créature alliée périt : réduit son coût de 5.
 Nécromancien : quand une carte alliée Mort est posée : génère Squelette sur le terrain.
 Nécromage 
 Mage des morts 
 Cimetière : lieu pour les cartes d'élément Mort.
-Cadavre : objet, découvre 1 créature de famille mort-vivant ou produis X mort.
+Cadavre : objet, découvre 1 créature de famille mort-vivant ou produit X mort.
 
 ### Arcane
 Git : créature, quand arrive sur le terrain : génère un esprit temporaire.

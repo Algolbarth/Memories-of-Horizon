@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Terre est posée : si dans la pile : diminue son coût de 6.
+Quand une carte alliée d'élément Terre est posée : si dans la pile : réduit son coût de 6.

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée de niveau 1 est posée : si dans la pile : diminue son coût de 3.
+Quand une carte alliée de niveau 1 est posée : si dans la pile : réduit son coût de 3.

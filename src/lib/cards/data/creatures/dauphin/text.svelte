@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée d'élément Feu est posée : si dans la pile : réduit son coût de 6.
+Quand posé : pioche 1 créature et réduit d'autant le coût de cette créature que votre production d'eau.

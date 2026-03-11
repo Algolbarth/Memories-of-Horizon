@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Diminue de 5 la protection d'une créature sur le terrain adverse.
+Réduit de 5 la protection d'une créature sur le terrain adverse.

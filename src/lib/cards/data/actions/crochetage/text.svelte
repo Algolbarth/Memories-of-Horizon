@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Diminue de 1 le niveau de votre pile pendant ce tour.
+Réduit de 1 le niveau de votre pile pendant ce tour.

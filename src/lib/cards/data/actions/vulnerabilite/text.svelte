@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Diminue de 20 la résistance d'une unité sur le terrain adverse.
+Réduit de 20 la résistance d'une unité sur le terrain adverse.

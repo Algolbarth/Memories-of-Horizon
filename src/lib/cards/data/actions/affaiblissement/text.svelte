@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Diminue de 20 la force d'une créature sur le terrain adverse.
+Réduit de 20 la force d'une créature sur le terrain adverse.

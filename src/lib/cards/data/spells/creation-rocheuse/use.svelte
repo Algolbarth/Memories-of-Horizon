@@ -21,7 +21,7 @@
 			selectAction("creature");
 		}}
 	>
-		Génère un Élémentaire de roche sur votre terrain
+		Génère Élémentaire de roche sur votre terrain
 	</button>
 
 	<br />
@@ -32,6 +32,6 @@
 			selectAction("building");
 		}}
 	>
-		Génère un Mur de roche sur votre terrain
+		Génère Mur de roche sur votre terrain
 	</button>
 </div>

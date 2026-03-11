@@ -8,6 +8,6 @@
 	export let card: Card;
 </script>
 
-Diminue de 1 la taille de votre terrain.
+Réduit de 1 la taille de votre terrain.
 <br />
 Augmente de 1 la taille de votre inventaire.

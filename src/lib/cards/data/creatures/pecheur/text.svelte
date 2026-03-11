@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : pioche 1 créature de famille Poisson et diminue de 20 le coût de cette carte.
+Quand posé : pioche 1 créature de famille Poisson et réduit de 20 le coût de cette carte.
