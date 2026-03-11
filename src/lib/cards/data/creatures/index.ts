@@ -30,6 +30,7 @@ export * from './chat';
 export * from './chat-de-gouttiere';
 export * from './chat-domestique';
 export * from './chat-errant';
+export * from './chat-noir';
 export * from './chef-barbare';
 export * from './chef-cuisinier';
 export * from './chef-de-clan';

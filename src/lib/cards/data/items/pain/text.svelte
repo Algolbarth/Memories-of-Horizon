@@ -11,4 +11,4 @@
 
 Soigne 10 blessures à une créature sur votre terrain.
 
-<Satiety bind:system bind:card text={"augmente de 1 la production d'or à la place."} />
+<Satiety bind:system bind:card text={"augmente de 1 votre production d'or à la place."} />

@@ -29,7 +29,7 @@
 				selectAction(undefined);
 			}}
 		>
-			Augmente de 2 la production en feu
+			Augmente de 2 votre production en feu
 		</button>
 
 		<br />

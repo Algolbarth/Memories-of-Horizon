@@ -17,7 +17,7 @@ Ajouter la paralysie, le gel et la cécité (gel => X tours, paralysie => X acti
 
 ## À ajouter
 ### Mimique
-Mimique de puit : se pose sur le terrain adverse. Quand périt : augmente la production en eau adverse.
+Mimique de puit : se pose sur le terrain adverse. Quand périt : augmente votre production en eau adverse.
 Mimique de pomme : se pose sur le terrain adverse. Quand périt au combat : augmente la constitution de la créature attaquante.
 Mimique de livre : se pose sur le terrain adverse. Quand périt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
 Mimique : se pose sur le terrain adverse. Quand périt : Génère humain sur le terrain adverse.

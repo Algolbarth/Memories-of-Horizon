@@ -1,6 +1,6 @@
 produit X ressource => X
 stocke X ressource => 3X/2
-augmente la production d'une ressource de X => 5X
+augmente de X votre production d'une ressource => 5X
 diminue le cout d'une carte de X => X
 augmente la vente d'une carte de X => X/2
 

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand périt : diminue la production en feu de 5 pour infliger 5 dégâts à toutes les unités adverse.
+Quand périt : diminue votre production en feu de 5 pour infliger 5 dégâts à toutes les unités adverse.

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand périt : diminue la production en feu de 3.
+Quand périt : diminue votre production en feu de 3.

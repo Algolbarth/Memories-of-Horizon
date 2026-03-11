@@ -10,5 +10,5 @@
 <DruidText bind:system bind:card />
 
 {#if card.name == "Druide marchand (forme humain)"}
-	Quand se prépare sur le terrain : augmente de 1 la production en or.
+	Quand se prépare sur le terrain : augmente de 1 votre production en or.
 {/if}
