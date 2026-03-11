@@ -129,6 +129,7 @@ export * from './palefrenier';
 export * from './pecheur';
 export * from './petite-fille';
 export * from './phytomancien';
+export * from './pionnier';
 export * from './piquier-gobelin';
 export * from './pretre';
 export * from './prince';
