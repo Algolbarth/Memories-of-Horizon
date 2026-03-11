@@ -88,6 +88,7 @@ export * from './robe-de-velours';
 export * from './robe-en-soie';
 export * from './sac-de-bombe';
 export * from './sac-en-toile';
+export * from './sac-sans-fond';
 export * from './sacoche-en-cuir';
 export * from './sandales';
 export * from './trident';

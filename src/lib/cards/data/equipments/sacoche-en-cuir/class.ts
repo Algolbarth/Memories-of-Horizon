@@ -18,4 +18,4 @@ export class SacocheEnCuir extends Equipment {
             this.owner().discover(2);
         }
     };
-}
+};
