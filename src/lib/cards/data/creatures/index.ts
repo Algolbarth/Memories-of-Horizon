@@ -71,6 +71,7 @@ export * from './elementaliste';
 export * from './elfe';
 export * from './empereur';
 export * from './epaulard';
+export * from './explorateur';
 export * from './fermier';
 export * from './forgeron';
 export * from './garde';
