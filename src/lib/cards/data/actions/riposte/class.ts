@@ -5,8 +5,8 @@ import { Creature } from '$lib/cards/class/creature';
 import Text from './text.svelte';
 import Use from './use.svelte';
 
-export class AttaqueResiliente extends Action {
-    name = "Attaque résiliente";
+export class Riposte extends Action {
+    name = "Riposte";
 
     constructor(system: System) {
         super(system);
