@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une créature alliée de famille Élémentaire est posée : si sur le terrain : augmente de 1 votre production en ressources de chaque élément de cette carte.
+Quand une créature alliée de famille Élémentaire est posée : si sur le terrain : augmente de 1 votre production de ressources de chaque élément de cette carte.

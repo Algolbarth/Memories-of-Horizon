@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé et quand se prépare sur le terrain : augmente de 1 votre production en or.
+Quand posé et quand se prépare sur le terrain : augmente de 1 votre production d'or.

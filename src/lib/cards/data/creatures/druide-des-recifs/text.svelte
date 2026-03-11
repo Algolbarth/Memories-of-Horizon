@@ -10,5 +10,5 @@
 <DruidText bind:system bind:card />
 
 {#if card.name == "Druide des récifs (forme ondin)"}
-	Quand se prépare sur le terrain : augmente de 1 votre production en eau.
+	Quand se prépare sur le terrain : augmente de 1 votre production d'eau.
 {/if}

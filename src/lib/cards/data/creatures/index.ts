@@ -7,6 +7,7 @@ export * from './architecte';
 export * from './archonte';
 export * from './aventurier';
 export * from './bagarreur';
+export * from './baleine';
 export * from './bandit';
 export * from './barbare';
 export * from './barde';

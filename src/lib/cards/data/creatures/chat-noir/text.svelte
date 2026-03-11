@@ -8,9 +8,9 @@
 	export let card: Card;
 </script>
 
-Quand posé : diminue de 5 votre production en or.
+Quand posé : diminue de 5 votre production d'or.
 
 <br />
 <br />
 
-Quand attaque : produit 1 or, stocke 1 or et augmente de 1 votre production en or.
+Quand attaque : produit 1 or, stocke 1 or et augmente de 1 votre production d'or.

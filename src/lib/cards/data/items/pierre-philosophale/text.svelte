@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Dépense jusqu'à 5 flux pour augmenter d'autant votre production en or.
+Dépense jusqu'à 5 flux pour augmenter d'autant votre production d'or.

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Diminue de 5 votre production en or pour augmenter de 5 votre production en eau.
+Diminue de 5 votre production d'or pour augmenter de 5 votre production d'eau.
