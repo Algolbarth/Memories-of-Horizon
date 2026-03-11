@@ -23,7 +23,7 @@ export * from './cercles-magiques';
 export * from './charisme';
 export * from './cibler';
 export * from './conquete';
-export * from './coup-de-bouclier';
+export * from './contre';
 export * from './coup-de-boule';
 export * from './cri-de-guerre';
 export * from './crochetage';

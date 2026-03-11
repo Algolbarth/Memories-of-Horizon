@@ -21,7 +21,7 @@ export class BuletteBriseRoc extends Creature {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            this.owner().getCard("Coup de bouclier").add("Inventaire");
+            this.owner().getCard("Contre").add("Inventaire");
         }
     };
 };

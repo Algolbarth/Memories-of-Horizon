@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : génère <CardInfo bind:system name={"Coup de bouclier"} /> dans votre inventaire.
+Quand posé : génère <CardInfo bind:system name={"Contre"} /> dans votre inventaire.
