@@ -50,6 +50,7 @@ export * from './salle-darmes';
 export * from './salle-des-coffres';
 export * from './satellite';
 export * from './scierie';
+export * from './silo';
 export * from './siphon';
 export * from './tente';
 export * from './tour-darcher';
