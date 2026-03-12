@@ -22,7 +22,7 @@ export class Palefrenier extends Creature {
     useEffect = () => {
         if (this.owner().zone("Pile").isNotFull()) {
             let card: Card = this.owner().getCard("Monture de chevalier");
-            card.costReduce(20);
+            card.costReduce(40);
             card.add("Pile");
         }
 

@@ -47,6 +47,7 @@ export class Repos extends Action {
         this.targeting(target);
 
         target.fullHeal();
+
         target.move("Pile");
 
         this.move("Défausse");

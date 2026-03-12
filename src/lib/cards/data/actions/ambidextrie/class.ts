@@ -10,7 +10,7 @@ export class Ambidextrie extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 50]]);
 
         this.text = Text;
     };

@@ -57,3 +57,25 @@ X pendant ce round => X/3
 X choix parmis de effets de coût Y => Y + (XY/10)
 
 résolution d'un effet coutant X => 2X
+
+Ressources disponibles par chapitre :
+Niveau 1  => 10
+Niveau 2  => 25
+Niveau 3  => 50
+Niveau 4  => 75
+Niveau 5  => 100
+Niveau 6  => 150
+Niveau 7  => 200
+Niveau 8  => 250
+Niveau 9  => 325
+Niveau 10 => 400
+Niveau 11 => 500
+Niveau 12 => 600
+Niveau 13 => 700
+Niveau 14 => 850
+Niveau 15 => 1000
+Niveau 16 => 1250
+Niveau 17 => 1500
+Niveau 18 => 2000
+Niveau 19 => 2500
+Niveau 20 => 3000

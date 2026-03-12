@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : augmente de 50 la force d'une créature de famille Chevalier sur votre terrain. Si cette créature est à terre, augmente de 35 la constitution de cette créature à la place.
+Quand posé : augmente de 5 la vitesse d'une créature de famille Chevalier sur votre terrain. Si cette créature est à terre, augmente de 25 l'endurance et la résistance de cette créature à la place.

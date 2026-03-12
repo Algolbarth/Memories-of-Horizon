@@ -69,9 +69,6 @@ export class Chapter {
                 total += ressource.value;
             }
 
-
-
-
             let level = 1;
             let array = [
                 10,

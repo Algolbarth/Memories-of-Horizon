@@ -4,13 +4,13 @@ import Text from './text.svelte';
 import Use from './use.svelte';
 import { Knight } from '$lib/cards/class/knight';
 
-export class Ecuyer extends Creature {
-    name = "Écuyer";
+export class DameDuChevalier extends Creature {
+    name = "Dame du chevalier";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 45]]);
 
         this.initFamily(["Humain"]);
 
@@ -60,10 +60,11 @@ export class Ecuyer extends Creature {
             this.targeting(target);
 
             if (target.trait("À terre").value()) {
-                target.stat("Constitution").increase(35);
+                target.stat("Endurance").increase(25);
+                target.stat("Résistance").increase(25);
             }
             else {
-                target.stat("Force").increase(50);
+                target.stat("Vitesse").increase(5);
             }
         }
 
