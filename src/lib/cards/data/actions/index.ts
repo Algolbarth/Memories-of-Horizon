@@ -105,4 +105,5 @@ export * from './tremblement-de-terre';
 export * from './vague-deferlante';
 export * from './vigilance';
 export * from './vol-a-la-tire';
+export * from './voyage-initiatique';
 export * from './vulnerabilite';
