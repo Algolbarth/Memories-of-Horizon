@@ -1,4 +1,3 @@
-import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
 import Text from './text.svelte';
@@ -23,14 +22,10 @@ export class Sifflet extends Item {
             }
             return false;
         };
-        this.owner().draw(1, readCondition);
+        let cards = this.owner().draw(1, readCondition);
 
-        let battlefield = copy(this.owner().zone("Terrain").cards);
-        for (const card of battlefield) {
-            if (card instanceof Creature && card.isFamily("Bête")) {
-                card.stat("Constitution").increase(1);
-                card.stat("Force").increase(1);
-            }
+        if (cards[0] != undefined) {
+            cards[0].costReduce(15);
         }
 
         this.move("Défausse");

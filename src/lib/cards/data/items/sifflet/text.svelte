@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Pioche 1 créature de famille Bête. Augmente de 1 la constitution et la force de toutes les créatures de famille Bête sur votre terrain.
+Pioche 1 créature de famille Bête et réduis de 15 le coût de cette créature.

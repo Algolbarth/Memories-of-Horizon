@@ -19,8 +19,7 @@
 
 			<div>
 				{#if zone.name != "Défausse"}
-					(
-					{zone.cards.length} /
+					({zone.cards.length} /
 					<input
 						type="number"
 						min="1"
@@ -33,10 +32,9 @@
 								zone.size = size;
 							}
 						}}
-					/>
-					)
+					/>)
 				{:else}
-					( {zone.cards.length} / ∞ )
+					({zone.cards.length} / ∞)
 				{/if}
 			</div>
 
@@ -232,5 +230,10 @@
 
 	.remove:hover {
 		color: var(--close);
+	}
+
+	div.zone_taskbar {
+		grid-template-columns: 1fr 2fr;
+		text-align: left;
 	}
 </style>
