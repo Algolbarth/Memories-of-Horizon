@@ -8,9 +8,9 @@ export class TourDArcher extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 35]]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(25);
 
         this.text = Text;
     };

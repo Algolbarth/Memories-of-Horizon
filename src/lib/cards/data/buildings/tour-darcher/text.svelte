@@ -9,3 +9,8 @@
 </script>
 
 Quand se prépare sur le terrain : génère <CardInfo bind:system name={"Flèche en bois"} /> dans votre inventaire.
+
+<br />
+<br />
+
+Quand <CardInfo bind:system name={"Flèche en bois"} /> est posée : si sur le terrain : augmente de 5 les dégâts de cette carte.
