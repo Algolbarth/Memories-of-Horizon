@@ -57,6 +57,7 @@ export * from './druide-des-montagnes';
 export * from './druide-des-plaines';
 export * from './druide-des-recifs';
 export * from './druide-marchand';
+export * from './ecuyer';
 export * from './elementaire-de-caillou';
 export * from './elementaire-de-feu';
 export * from './elementaire-de-roche';
