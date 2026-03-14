@@ -18,8 +18,8 @@ export class Marche extends Building {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let reserve = copy(this.owner().zone("Pile").cards);
-            for (const card of reserve) {
+            let inventory = copy(this.owner().zone("Pile").cards);
+            for (const card of inventory) {
                 card.getCost("Or").decrease(5);
             }
         }

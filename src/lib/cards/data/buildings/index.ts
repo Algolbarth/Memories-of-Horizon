@@ -20,6 +20,7 @@ export * from './chaudron';
 export * from './donjon-abandonne';
 export * from './epouvantail';
 export * from './etable';
+export * from './feu-de-camp';
 export * from './fontaine';
 export * from './fontaine-de-bambou';
 export * from './garnison-des-monts';

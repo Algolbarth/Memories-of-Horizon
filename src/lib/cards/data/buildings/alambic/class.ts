@@ -19,8 +19,8 @@ export class Alambic extends Building {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let reserve = copy(this.owner().zone("Inventaire").cards);
-            for (const card of reserve) {
+            let inventory = copy(this.owner().zone("Inventaire").cards);
+            for (const card of inventory) {
                 if (card instanceof Item && card.isFamily("Potion")) {
                     if (card.name == "Concoction") {
                         for (const stat of card.stats) {

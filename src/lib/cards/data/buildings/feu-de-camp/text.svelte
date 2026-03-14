@@ -8,9 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand posé : se place sur le terrain adverse.
-
-<br />
-<br />
-
-Quand périt sur le terrain : stocke 10 or chez l'adversaire.
+Quand se prépare sur le terrain : augmente de 3 la force de toutes les créatures sur votre terrain.

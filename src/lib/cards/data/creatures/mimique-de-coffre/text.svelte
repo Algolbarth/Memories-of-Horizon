@@ -9,5 +9,8 @@
 </script>
 
 Quand posé : se place sur le terrain adverse.
+
 <br />
+<br />
+
 Quand périt sur le terrain : l'adversaire pioche 5 cartes et les verrouille.
