@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Au début d'un round : inflige 50 dégâts à l'unité sur le terrain adverse en première position.
+Au début d'un round : inflige 50 dégâts à l'unité en première position sur le terrain adverse.

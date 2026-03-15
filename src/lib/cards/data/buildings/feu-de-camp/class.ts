@@ -10,7 +10,7 @@ export class FeuDeCamp extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Feu", 10]]);
+        this.init([["Or", 12], ["Feu", 12]]);
 
         this.stat("Constitution").init(10);
 
@@ -22,7 +22,8 @@ export class FeuDeCamp extends Building {
             let battlefield = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Creature) {
-                    card.stat("Force").increase(3);
+                    card.stat("Constitution").increase(1);
+                    card.stat("Force").increase(1);
                 }
             }
         }

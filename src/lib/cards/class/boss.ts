@@ -6,5 +6,6 @@ export class Boss extends Creature {
         super(system);
 
         this.trait("Légendaire").init(true);
+        this.trait("Boss").init(true);
     };
 };

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand se prépare sur le terrain : augmente de 3 la force de toutes les créatures sur votre terrain.
+Quand se prépare sur le terrain : augmente de 1 la constitution et la force de toutes les créatures sur votre terrain.

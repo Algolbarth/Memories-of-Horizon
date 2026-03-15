@@ -180,6 +180,8 @@ Loup des neiges
 Wyverne des neiges 
 Manteau de laine 
 Toundra : lieu pour les cartes d'élément Glace.
+Yéti : créature bête, quand posé : génère Riposte dans l'inventaire.
+Abominable yéti : créature bête, quand se prépare : génère Riposte dans l'inventaire. 
 Robustesse: action, augmente de 50 la constitution et la force ou augmente de 50 la résistance.
 
 ### Lumiere

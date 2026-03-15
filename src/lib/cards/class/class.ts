@@ -9,6 +9,7 @@ import { Entity } from "$lib/game/entity";
 import { Zone } from "$lib/game/zone";
 import type { Unit } from "./unit";
 import type { Creature } from "./creature";
+import type { Component } from "svelte";
 
 export class Card {
     name: string = "Carte";
@@ -25,7 +26,7 @@ export class Card {
     slot: number | undefined;
     zone: Zone | undefined;
     entity: Entity | undefined;
-    text: __sveltets_2_IsomorphicComponent<{ system: System; card: Card; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string> | undefined;
+    text: Component | undefined;
     cache: boolean = false;
     alternative_form: string | undefined;
     second_life: boolean = false;
@@ -36,6 +37,14 @@ export class Card {
         this.addTrait("Légendaire", false);
 
         this.addTrait("Rare", false);
+
+        this.addTrait("Commune", false);
+        this.trait("Commune").value = function () {
+            if (this.card.trait("Légendaire").value() || this.card.trait("rare").value()) {
+                return false;
+            }
+            return true;
+        };
 
         this.addStat("Persistance", 0);
 
@@ -365,7 +374,7 @@ export class Card {
 
     otherMillEffect: Function | undefined;
 
-    canDestroy = () => {
+    canBeDestroyed = () => {
         if (!this.trait("Légendaire").value()) {
             return true;
         }

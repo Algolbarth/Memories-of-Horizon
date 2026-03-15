@@ -10,7 +10,7 @@
 	export let card: Card;
 
 	function selectCondition(target: Card) {
-		if (target instanceof Creature && target.canDestroy()) {
+		if (target instanceof Creature && target.canBeDestroyed()) {
 			return true;
 		}
 		return false;

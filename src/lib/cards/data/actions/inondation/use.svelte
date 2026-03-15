@@ -10,7 +10,7 @@
 	export let card: Card;
 
 	function selectCondition(target: Card) {
-		if (target instanceof Building && target.canDestroy() && !target.isElement("Eau")) {
+		if (target instanceof Building && target.canBeDestroyed() && !target.isElement("Eau")) {
 			return true;
 		}
 		return false;

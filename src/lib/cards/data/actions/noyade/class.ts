@@ -17,7 +17,7 @@ export class Noyade extends Action {
 
     canUse = () => {
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && card.canDestroy() && !card.isElement("Eau")) {
+            if (card instanceof Creature && card.canBeDestroyed() && !card.isElement("Eau")) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class Noyade extends Action {
             let target = undefined;
 
             for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.canDestroy() && !card.isElement("Eau")) {
+                if (target == undefined && card instanceof Creature && card.canBeDestroyed() && !card.isElement("Eau")) {
                     target = card;
                 }
             }

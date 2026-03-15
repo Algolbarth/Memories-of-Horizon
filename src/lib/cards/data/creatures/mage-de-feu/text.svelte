@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Quand une carte alliée de famille Sort est posée : si sur le terrain : inflige 5 dégâts à l'unité sur le terrain adverse en première position.
+Quand une carte alliée de famille Sort est posée : si sur le terrain : inflige 5 dégâts à l'unité en première position sur le terrain adverse.

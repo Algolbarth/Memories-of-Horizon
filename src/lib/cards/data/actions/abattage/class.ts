@@ -16,7 +16,7 @@ export class Abattage extends Action {
 
     canUse = () => {
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && card.stat("Vitalité").value() > 0) {
+            if (card instanceof Creature && card.canBeDestroyed()) {
                 return true;
             }
         }
@@ -27,7 +27,7 @@ export class Abattage extends Action {
         let target: undefined | Creature = undefined;
 
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && card.canDestroy() && (target == undefined || (target != undefined && card.stat("Vitalité").value() > target.stat("Vitalité").value()))) {
+            if (card instanceof Creature && card.canBeDestroyed() && (target == undefined || (target != undefined && card.stat("Vitalité").value() > target.stat("Vitalité").value()))) {
                 target = card;
             }
         }

@@ -8,4 +8,4 @@
 	export let card: Card;
 </script>
 
-Tant qu'il est placé sur le terrain en première position : double sa force et son endurance.
+Tant que placé en première position sur le terrain : double sa force et son endurance.

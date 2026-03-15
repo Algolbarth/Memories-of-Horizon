@@ -19,7 +19,7 @@ export class Desarmer extends Action {
         for (const card of this.adversary().zone("Terrain").cards) {
             if (card instanceof Creature) {
                 for (const e of card.equipments) {
-                    if (e.canDestroy()) {
+                    if (e.canBeDestroyed()) {
                         return true;
                     }
                 }
@@ -38,7 +38,7 @@ export class Desarmer extends Action {
             for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
                     for (const e of card.equipments) {
-                        if (e.canDestroy()) {
+                        if (e.canBeDestroyed()) {
                             target = card;
                         }
                     }
@@ -55,7 +55,7 @@ export class Desarmer extends Action {
         this.targeting(target);
 
         for (const equipment of target.equipments) {
-            if (equipment.canDestroy()) {
+            if (equipment.canBeDestroyed()) {
                 equipment.destroy();
             }
         }

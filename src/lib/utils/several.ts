@@ -1,5 +1,5 @@
 export function several(value: number, name_list: string[], emplacement: string = "before") {
-    let text = "";
+    let text: string = "";
 
     if (!["before", "after", "none"].includes(emplacement)) {
         console.log("aucun emplacement reconnu pour la fonction several");

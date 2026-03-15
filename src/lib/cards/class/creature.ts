@@ -11,6 +11,8 @@ export class Creature extends Unit {
     constructor(system: System) {
         super(system);
 
+        this.addTrait("Boss", false);
+
         this.addTrait("Pacifiste", false);
         this.trait("Pacifiste").value = function () {
             if (this.card.stat("Agilité").value() == 0) {
