@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Charisme extends Action {
@@ -12,7 +11,7 @@ export class Charisme extends Action {
 
         this.init([["Or", 30]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente d'autant la constitution et la force d'une créature sur votre terrain que 10 fois la protection de cette créature.`);
     };
 
     canUse = () => {

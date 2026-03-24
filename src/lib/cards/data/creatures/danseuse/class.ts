@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Danseuse extends Creature {
     name = "Danseuse";
@@ -15,7 +14,7 @@ export class Danseuse extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Au début de la phase de combat : Augmente de 1 son esquive pendant ce tour.`);
     };
 
     startBattleEffect = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Reine extends Creature {
@@ -16,7 +15,7 @@ export class Reine extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 100 la constitution et la force d'une créature sur votre terrain.`);
     };
 
     select = () => {

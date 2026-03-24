@@ -1,8 +1,6 @@
 import type { System } from '$lib/system/class';
-import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Restaurant extends Building {
@@ -16,7 +14,9 @@ export class Restaurant extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand posé : Choisit un objet de famille Nourriture de niveau 2 ou moins dans votre inventaire.`);
+        this.addText(`Quand se prépare sur le terrain : Génère un objet de même nom que l'objet choisi dans votre inventaire.`);
+        this.addText(`[details {Objet choisi : {card:{card.product}}}]`, () => { return this.product != undefined; });
     };
 
     select = () => {

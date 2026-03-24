@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Architecte extends Creature {
     name = "Architecte";
@@ -18,7 +17,9 @@ export class Architecte extends Creature {
         this.stat("Force").init(5);
         this.stat("Endurance").init(3);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 bâtiment.`,
+            `Augmente de 20 la constitution de ce bâtiment.`]);
     };
 
     useEffect = () => {
@@ -31,7 +32,7 @@ export class Architecte extends Creature {
         let cards = this.owner().draw(1, readCondition);
 
         if (cards[0] != undefined) {
-            cards[0].costReduce(20);
+            cards[0].stat("Constitution").increase(20);
         }
 
         this.move("Terrain");

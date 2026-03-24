@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class BottesIgnifugees extends Equipment {
     name = "Bottes ignifugées";
@@ -13,7 +12,8 @@ export class BottesIgnifugees extends Equipment {
 
         this.equipStat("Vitesse").init(2);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Produit autant de feu que de cartes d'élément Feu sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

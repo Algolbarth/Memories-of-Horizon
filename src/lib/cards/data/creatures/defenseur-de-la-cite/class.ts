@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class DefenseurDeLaCite extends Creature {
     name = "Défenseur de la cité";
@@ -18,7 +17,7 @@ export class DefenseurDeLaCite extends Creature {
         this.stat("Force").init(10);
         this.stat("Endurance").init(5);
 
-        this.text = Text;
+        this.addText(`Quand un bâtiment allié est posé : Augmente de 2 son endurance.`);
     };
 
     otherPoseEffect = (card: Card) => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class Tresor extends Item {
     name = "Trésor";
@@ -10,7 +9,9 @@ export class Tresor extends Item {
 
         this.init([["Or", 20]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 5 cartes.`,
+            `Produit 10 or.`]);
     };
 
     useEffect = () => {
@@ -20,4 +21,4 @@ export class Tresor extends Item {
         this.move("Défausse");
         this.pose();
     };
-}
+};

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class GestionDesStocks extends Action {
     name = "Gestion des stocks";
@@ -10,7 +9,7 @@ export class GestionDesStocks extends Action {
 
         this.init([["Or", 75]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Si votre inventaire est rempli : Augmente de 2 la taille de votre inventaire.`);
     };
 
     canUse = () => {
@@ -26,4 +25,4 @@ export class GestionDesStocks extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

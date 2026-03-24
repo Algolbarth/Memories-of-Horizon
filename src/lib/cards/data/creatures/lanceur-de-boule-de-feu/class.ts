@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class LanceurDeBouleDeFeu extends Creature {
     name = "Lanceur de boule de feu";
@@ -16,7 +15,7 @@ export class LanceurDeBouleDeFeu extends Creature {
         this.stat("Force").init(10);
         this.stat("Magie").init(15);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Boule de feu} sur votre pile.`);
     };
 
     startPhaseEffect = () => {

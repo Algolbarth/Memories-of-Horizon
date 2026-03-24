@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Chaudron extends Building {
     name = "Chaudron";
@@ -12,7 +11,7 @@ export class Chaudron extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Mélange} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

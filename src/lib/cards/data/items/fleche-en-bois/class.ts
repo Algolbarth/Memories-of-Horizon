@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class FlecheEnBois extends Item {
@@ -12,7 +11,7 @@ export class FlecheEnBois extends Item {
 
         this.init([["Or", 5]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige 10 dégâts à une unité sur le terrain adverse.`);
     };
 
     canUse = () => {

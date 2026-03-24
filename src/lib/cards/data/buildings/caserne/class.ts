@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Caserne extends Building {
     name = "Caserne";
@@ -12,7 +11,7 @@ export class Caserne extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Au début d'une manche : Génère {card:Soldat} sur votre terrain.`);
     };
 
     roundEffect = () => {

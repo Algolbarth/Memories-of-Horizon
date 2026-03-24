@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class NoixDeCoco extends Item {
@@ -10,11 +9,13 @@ export class NoixDeCoco extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Eau", 10]]);
+        this.init([["Or", 12], ["Eau", 12]]);
 
         this.initFamily(["Nourriture", "Plante"]);
 
-        this.text = Text;
+        this.addText([
+            "Quand posé : Soigne 50 blessures à une créature sur le terrain.",
+            "[satiety {Augmente jusqu'à 1 l'étourdissement de cette créature à la place.}]"]);
     };
 
     canUse = () => {
@@ -84,7 +85,7 @@ export class NoixDeCoco extends Item {
             target.stat("Étourdissement").fix(1);
         }
         else {
-            target.heal(40);
+            target.heal(50);
         }
 
         this.move("Défausse");

@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Archonte extends Creature {
     name = "Archonte";
@@ -17,7 +16,7 @@ export class Archonte extends Creature {
         this.stat("Force").init(5);
         this.stat("Endurance").init(3);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 10 l'endurance de toutes les unités sur votre terrain.`);
     };
 
     useEffect = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class Trefle extends Item {
     name = "Trèfle";
@@ -12,7 +11,7 @@ export class Trefle extends Item {
 
         this.initFamily(["Plante"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Découvre 4 cartes.`);
     };
 
     useEffect = () => {

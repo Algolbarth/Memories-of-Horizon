@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Brochet extends Creature {
     name = "Brochet";
@@ -17,7 +16,9 @@ export class Brochet extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 créature de famille Poisson.`,
+            `Augmente de 1 sa constitution et sa force pour chaque créature de famille Poisson sur votre pile.`]);
     };
 
     useEffect = () => {

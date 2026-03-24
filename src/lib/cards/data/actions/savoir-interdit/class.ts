@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class SavoirInterdit extends Action {
     name = "Savoir interdit";
@@ -10,7 +9,9 @@ export class SavoirInterdit extends Action {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Réduit de 1 la taille de votre terrain.`,
+            `Augmente de 1 la taille de votre inventaire.`]);
     };
 
     canUse = () => {

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class CoupDeBoule extends Action {
     name = "Coup de boule";
@@ -11,7 +10,7 @@ export class CoupDeBoule extends Action {
 
         this.init([["Or", 15]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige à l'unité avec la plus haute vitalité sur le terrain adverse autant de dégâts que la force la plus haute parmi les créatures sur votre terrain.`);
     };
 
     canUse = () => {

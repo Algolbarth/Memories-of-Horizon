@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class BouleDeFeu extends Spell {
@@ -12,7 +11,9 @@ export class BouleDeFeu extends Spell {
 
         this.init([["Or", 8], ["Feu", 8]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Inflige 30 dégâts à une unité sur le terrain adverse.`,
+            `[sorcery {15, inflige 60 dégâts à la place.}]`]);
     };
 
     canUse = () => {

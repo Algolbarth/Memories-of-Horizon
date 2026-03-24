@@ -1,16 +1,11 @@
 import type { System } from '$lib/system/class';
 import { Druid } from '$lib/cards/class/druid';
-import Text from './text.svelte';
 
 class DruideMarchand extends Druid {
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 25]]);
-
-        this.initFamily(["Druide"]);
-
-        this.text = Text;
     };
 };
 
@@ -25,6 +20,8 @@ export class DruideMarchandHumain extends DruideMarchand {
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
+
+        this.addText(`Quand se prépare sur le terrain : Augmente de 1 votre production d'or.`);
     };
 
     startPhaseEffect = () => {

@@ -10,7 +10,7 @@
 	export let card: Card;
 
 	function selectCondition(target: Card) {
-		if (target instanceof Creature && (target.isDamaged() || target.stat("Étourdissement").value() == 0)) {
+		if (target instanceof Creature) {
 			return true;
 		}
 		return false;

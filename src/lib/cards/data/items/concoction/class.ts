@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Concoction extends Item {
@@ -25,7 +24,28 @@ export class Concoction extends Item {
 
         this.trait("Rare").init(true);
 
-        this.text = Text;
+        this.addText(`Quand posé : Applique des effets en fonction des différentes valeurs d'infusion.`);
+        this.addText([
+            `[details
+            
+            {[if {card.stat("Infusion de mana").value() > 0, Produit {card.stat("Infusion de mana").value()} mana.{jump:1}}]
+
+            [if {card.stat("Infusion interdite").value() > 0, Génère {card:Homonculus} sur votre terrain. Fixe à {card.stat("Infusion interdite").value()} la constitution et la force de cette carte.{jump:1}}]
+
+            [if {card.stat("Infusion explosive").value() > 0, Inflige {card.stat("Infusion explosive").value() * 2} dégâts à une unité sur le terrain.{jump:1}}]
+
+            [if {card.stat("Infusion de soin").value() > 0, Soigne {card.stat("Infusion de soin").value() * 2} blessures à une créature sur le terrain.{jump:1}}]
+
+            [if {card.stat("Infusion de force").value() > 0, Augmente de {card.stat("Infusion de force").value() * 4} la force d'une créature sur le terrain pendant ce tour.{jump:1}}]
+
+            [if {card.stat("Infusion d'endurance").value() > 0, Augmente de {card.stat("Infusion d'endurance").value() * 2} l'endurance d'une créature sur le terrain pendant ce tour.{jump:1}}]
+
+            [if {card.stat("Infusion de résistance").value() > 0, Augmente de {card.stat("Infusion de résistance").value() * 2} la résistance d'une créature sur le terrain pendant ce tour.{jump:1}}]
+
+            [if {card.stat("Infusion parfumée").value() > 0, Augmente de {Math.floor(card.stat("Infusion parfumée").value() / 5)} la protection d'une créature sur le terrain pendant ce tour.}]}]`,
+        ], () => {
+            return this.hasInfusion();
+        });
     };
 
     canUse = () => {

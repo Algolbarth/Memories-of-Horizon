@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
 export class ForceDeLaFamille extends Action {
@@ -12,7 +11,7 @@ export class ForceDeLaFamille extends Action {
 
         this.init([["Or", 65]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Si toutes les créatures sur votre terrain partagent au moins une famille en commun : Augmente de 1 la constitution et la force de toutes les créatures sur votre terrain pour chaque créature sur votre terrain.`);
     };
 
     canUse = () => {

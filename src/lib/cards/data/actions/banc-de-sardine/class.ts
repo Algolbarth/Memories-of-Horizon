@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class BancDeSardine extends Action {
     name = "Banc de sardine";
@@ -10,7 +9,7 @@ export class BancDeSardine extends Action {
 
         this.init([["Or", 10], ["Eau", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Génère 5 {card:Sardine} dans votre inventaire.`);
     };
 
     useEffect = () => {

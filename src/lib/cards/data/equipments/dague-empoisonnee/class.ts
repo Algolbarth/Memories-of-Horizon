@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class DagueEmpoisonnee extends Equipment {
@@ -15,7 +14,10 @@ export class DagueEmpoisonnee extends Equipment {
 
         this.initFamily(["Arme"]);
 
-        this.text = Text;
+        this.addChoice([
+            `S'équipe à une créature sur votre terrain.`,
+            `Augmente de 5 le poison et augmente de 10 la toxicité d'une créature sur le terrain adverse.`]);
+        this.addText(`Quand le porteur attaque une créature : Augmente de 3 la toxicité de la créature attaquée.`);
     };
 
     canUse = () => {

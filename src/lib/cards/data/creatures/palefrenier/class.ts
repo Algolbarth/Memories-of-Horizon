@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Palefrenier extends Creature {
     name = "Palefrenier";
@@ -16,7 +15,9 @@ export class Palefrenier extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Génère {card:Monture de chevalier} sur votre pile.`,
+            `Réduit de 40 le coût de cette carte.`]);
     };
 
     useEffect = () => {

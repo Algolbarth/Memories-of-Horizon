@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Salade extends Item {
@@ -15,7 +14,9 @@ export class Salade extends Item {
 
         this.initFamily(["Nourriture", "Plante"]);
 
-        this.text = Text;
+        this.addText([
+            "Quand posé : Soigne 10 blessures à une créature sur votre terrain pour chaque carte de familles Nourriture et Plante dans votre défausse.",
+            "[satiety {Augmente de 5 la constitution et la force de cette créature pour chaque carte de familles Nourriture et Plante dans votre défausse à la place.}]"]);
     };
 
     canUse = () => {

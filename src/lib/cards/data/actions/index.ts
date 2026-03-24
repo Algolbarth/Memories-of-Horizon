@@ -15,7 +15,7 @@ export * from './braquage';
 export * from './brise-garde';
 export * from './brulage-dirige';
 export * from './bucher-des-vanites';
-export * from './canon-aeau';
+export * from './canon-a-eau';
 export * from './cauteriser';
 export * from './cercle-druidique';
 export * from './cercles-magiques';

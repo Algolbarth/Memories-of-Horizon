@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Conquete extends Action {
     name = "Conquête";
@@ -10,7 +9,7 @@ export class Conquete extends Action {
 
         this.init([["Or", 75]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Si votre terrain est rempli : Augmente de 2 la taille de votre terrain.`);
     };
 
     canUse = () => {

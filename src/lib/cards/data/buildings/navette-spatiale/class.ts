@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class NavetteSpatiale extends Building {
     name = "Navette spatiale";
@@ -14,7 +13,7 @@ export class NavetteSpatiale extends Building {
 
         this.stat("Constitution").init(40);
 
-        this.text = Text;
+        this.addText(`Quand posé et quand se prépare sur le terrain : Stocke 1 flux.`);
     };
 
     useEffect = () => {

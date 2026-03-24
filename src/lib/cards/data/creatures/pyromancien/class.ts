@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Pyromancien extends Creature {
     name = "Pyromancien";
@@ -16,7 +15,7 @@ export class Pyromancien extends Creature {
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand une carte alliée d'élément Feu est posée : Si sur le terrain : Augmente de 5 sa force.`);
     };
 
     otherPoseEffect = (card: Card) => {

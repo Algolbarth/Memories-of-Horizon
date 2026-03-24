@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Croissance extends Action {
@@ -12,7 +11,9 @@ export class Croissance extends Action {
 
         this.init([["Or", 30], ["Végétal", 30]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Augmente de 75 la constitution d'une créature sur votre terrain.`,
+            `Augmente de 50 la constitution et la force d'une créature sur votre terrain.`]);
     };
 
     canUse = () => {

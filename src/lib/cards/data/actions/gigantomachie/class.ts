@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Gigantomachie extends Action {
     name = "Gigantomachie";
@@ -13,7 +12,7 @@ export class Gigantomachie extends Action {
 
         this.initFamily(["Géant"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige 5 dégâts à toutes les unités de niveau 5 ou moins sur le terrain pour chaque unités de niveau 5 ou plus sur le terrain.`);
     };
 
     canUse = () => {

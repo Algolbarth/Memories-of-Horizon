@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Hydratation extends Action {
@@ -12,7 +11,9 @@ export class Hydratation extends Action {
 
         this.init([["Or", 8], ["Eau", 8]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 15 la constitution et la force d'une créature d'élément Eau sur votre terrain.`,
+            `[source {15, augmente de 30 à la place.}]`]);
     };
 
     canUse = () => {

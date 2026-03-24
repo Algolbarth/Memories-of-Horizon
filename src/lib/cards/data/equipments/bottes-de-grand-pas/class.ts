@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from '$lib/cards/utils/equip-text.svelte';
 
 export class BottesDeGrandPas extends Equipment {
     name = "Bottes de grand pas";
@@ -14,6 +13,6 @@ export class BottesDeGrandPas extends Equipment {
 
         this.equipStat("Vitesse").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };
 };

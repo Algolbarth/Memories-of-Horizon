@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Bucheron extends Creature {
     name = "Bûcheron";
@@ -16,7 +15,7 @@ export class Bucheron extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand une autre unité d'élément Végétal périt : Stocke 2 végétal.`);
     };
 
     otherPerishEffect = (card: Card) => {

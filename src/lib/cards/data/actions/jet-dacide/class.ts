@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class JetDAcide extends Action {
@@ -12,7 +11,7 @@ export class JetDAcide extends Action {
 
         this.init([["Or", 20]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Réduit de 20 l'endurance d'une unité sur le terrain adverse.`);
     };
 
     canUse = () => {

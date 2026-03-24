@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Building } from '$lib/cards/class/building';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Brique extends Item {
@@ -13,7 +12,9 @@ export class Brique extends Item {
 
         this.init([["Or", 6], ["Terre", 6]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Soigne 20 blessures à un bâtiment sur votre terrain.`,
+            `Inflige 20 dégâts à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {

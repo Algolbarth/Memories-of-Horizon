@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Porte extends Building {
     name = "Porte";
@@ -12,7 +11,7 @@ export class Porte extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.text = Text;
+        this.addText(`Quand périt : Pioche 1 carte et la verrouille.`);
     };
 
     perishEffect = () => {

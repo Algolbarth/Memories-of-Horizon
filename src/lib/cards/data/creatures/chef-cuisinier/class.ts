@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class ChefCuisinier extends Creature {
     name = "Chef cuisinier";
@@ -16,7 +15,7 @@ export class ChefCuisinier extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand une carte alliée de famille Nourriture est posée : Si sur le terrain : Produit 10 ressources de chaque élément de cette carte.`);
     };
 
     otherPoseEffect = (card: Card) => {

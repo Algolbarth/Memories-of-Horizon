@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Incantation extends Action {
@@ -12,7 +11,9 @@ export class Incantation extends Action {
 
         this.init([["Or", 5]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Produit autant de mana que la magie d'une créature sur votre terrain ayant une valeur d'étourdissement nulle.`,
+            `Augmente jusqu'à 1 l'étourdissement de cette créature.`]);
     };
 
     canUse = () => {

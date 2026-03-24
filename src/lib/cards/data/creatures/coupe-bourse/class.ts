@@ -1,7 +1,6 @@
 import type { Card } from '$lib/cards/class/class';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class CoupeBourse extends Creature {
     name = "Coupe-bourse";
@@ -16,7 +15,8 @@ export class CoupeBourse extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Vol à la tire} dans votre inventaire.`);
+        this.addText(`Quand {card:Vol à la tire} est posée : Si sur le terrain : Augmente de 10 sa vente en or.`);
     };
 
     startPhaseEffect = () => {

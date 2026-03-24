@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class VoyageInitiatique extends Action {
     name = "Voyage initiatique";
@@ -12,7 +11,10 @@ export class VoyageInitiatique extends Action {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 créature de niveau 5 ou moins.`,
+            `Réduit de 25 le coût de cette créature.`,
+            `Augmente de 25 la constitution et la force de cette créature.`]);
     };
 
     useEffect = () => {
@@ -32,4 +34,4 @@ export class VoyageInitiatique extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

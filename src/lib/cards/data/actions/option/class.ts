@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Option extends Action {
@@ -11,7 +10,9 @@ export class Option extends Action {
 
         this.init([["Or", 8]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Pioche 3 cartes.`,
+            `Découvre 1 carte.`]);
     };
 
     select = () => {

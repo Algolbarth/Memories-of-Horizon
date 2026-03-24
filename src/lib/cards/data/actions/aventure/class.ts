@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Aventure extends Action {
     name = "Aventure";
@@ -11,7 +10,7 @@ export class Aventure extends Action {
 
         this.init([["Or", 15]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Pioche 1 action, 1 bâtiment, 1 créature, 1 lieu et 1 objet.`);
     };
 
     useEffect = () => {

@@ -1,5 +1,4 @@
 import type { System } from '$lib/system/class';
-import Text from './text.svelte';
 import { Druid } from '$lib/cards/class/druid';
 
 class DruideDesPlaines extends Druid {
@@ -7,10 +6,6 @@ class DruideDesPlaines extends Druid {
         super(system);
 
         this.init([["Or", 25]]);
-
-        this.initFamily(["Druide"]);
-
-        this.text = Text;
     };
 };
 
@@ -25,6 +20,8 @@ export class DruideDesPlainesHumain extends DruideDesPlaines {
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
+
+        this.addText(`Quand se prépare sur le terrain : Pioche 2 cartes.`);
     };
 
     startPhaseEffect = () => {

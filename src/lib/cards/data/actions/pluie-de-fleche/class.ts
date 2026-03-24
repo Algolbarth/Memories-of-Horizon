@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class PluieDeFleche extends Action {
     name = "Pluie de flèche";
@@ -11,7 +10,7 @@ export class PluieDeFleche extends Action {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige 5 dégâts à toutes les unités sur le terrain adverse.`);
     };
 
     canUse = () => {

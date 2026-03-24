@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class HommeDAffaires extends Creature {
     name = "Homme d'affaires";
@@ -16,7 +15,7 @@ export class HommeDAffaires extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand une autre carte alliée est vendue : Produit 5 or.`);
     };
 
     otherSellEffect = (card: Card) => {

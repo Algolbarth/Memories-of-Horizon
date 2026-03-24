@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Location } from '$lib/cards/class/location';
-import Text from './text.svelte';
 
 export class MerDEther extends Location {
     name = "Mer d'ether";
@@ -11,6 +10,6 @@ export class MerDEther extends Location {
         this.level = 20;
         this.trait("Légendaire").init(true);
 
-        this.text = Text;
+        this.addText(`Si actif : Tout est possible.`);
     };
 };

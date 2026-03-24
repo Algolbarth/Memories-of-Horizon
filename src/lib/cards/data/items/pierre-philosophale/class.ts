@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class PierrePhilosophale extends Item {
     name = "Pierre philosophale";
@@ -10,7 +9,7 @@ export class PierrePhilosophale extends Item {
 
         this.init([["Or", 5]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Dépense jusqu'à 5 flux pour augmenter d'autant votre production d'or.`);
     };
 
     canUse = () => {

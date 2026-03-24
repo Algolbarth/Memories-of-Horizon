@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import { copy } from '$lib/utils';
 
 export class MeuleAGrains extends Item {
@@ -11,7 +10,9 @@ export class MeuleAGrains extends Item {
 
         this.init([["Or", 5]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Meule toutes les cartes sur votre pile.`,
+            `Produit autant d'or que de cartes meulées.`]);
     };
 
     useEffect = () => {

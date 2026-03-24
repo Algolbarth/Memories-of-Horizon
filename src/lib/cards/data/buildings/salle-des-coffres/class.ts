@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class SalleDesCoffres extends Building {
     name = "Salle des coffres";
@@ -12,7 +11,7 @@ export class SalleDesCoffres extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand posé et quand se prépare sur le terrain : Génère 2 {card:Coffre en bois} dans votre inventaire.`);
     };
 
     useEffect = () => {

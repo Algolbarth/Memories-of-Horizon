@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PluieDeCailloux extends Spell {
@@ -12,7 +11,12 @@ export class PluieDeCailloux extends Spell {
 
         this.init([["Or", 15], ["Terre", 15]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Remplit votre terrain de {card:Élémentaire de caillou}.`,
+            `Inflige 5 dégâts à toutes les unités sur le terrain adverse.`],
+            undefined,
+            `[sorcery {30, les deux effets s'activent à la place.}]`
+        );
     };
 
     canUse = () => {

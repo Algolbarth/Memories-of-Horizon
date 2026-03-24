@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class BulleProtectrice extends Spell {
@@ -12,7 +11,9 @@ export class BulleProtectrice extends Spell {
 
         this.init([["Or", 5], ["Eau", 5]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 20 la garde d'une créature sur votre terrain pendant ce tour.`,
+            `[sorcery {10, augmente de 20 la garde à la place.}]`]);
     };
 
     canUse = () => {

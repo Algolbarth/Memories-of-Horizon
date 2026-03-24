@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import type { Card } from '$lib/cards/class/class';
 
 export class Banque extends Building {
@@ -15,7 +14,8 @@ export class Banque extends Building {
 
         this.addStat("Intérêts", 5);
 
-        this.text = Text;
+        this.addText(`Quand une autre carte alliée est vendue : Augmente de 1 ses intérêts et augmente de 5 sa vente en or.`);
+        this.addText(`Quand se prépare sur le terrain : Produit autant d'or que ses intérêts.`);
     };
 
     otherSellEffect = (card: Card) => {

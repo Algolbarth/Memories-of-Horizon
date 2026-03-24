@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PotionDeSoin extends Item {
@@ -16,7 +15,8 @@ export class PotionDeSoin extends Item {
 
         this.addStat("Infusion", 5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Soigne 2 blessures à une créature sur votre terrain pour chaque valeur d'infusion.`);
+        this.addText(`[details {Soigne {card.stat("Infusion").value() * 2} blessures à une créature sur votre terrain.}]`);
     };
 
     canUse = () => {

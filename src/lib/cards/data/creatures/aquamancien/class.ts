@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Aquamancien extends Creature {
     name = "Aquamancien";
@@ -16,7 +15,7 @@ export class Aquamancien extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand une autre carte alliée d'élément Eau est posée : Si sur le terrain : Stocke 2 eau.`);
     };
 
     otherPoseEffect = (card: Card) => {

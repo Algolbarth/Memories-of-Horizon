@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class Rapiere extends Equipment {
     name = "Rapière";
@@ -12,7 +11,8 @@ export class Rapiere extends Equipment {
 
         this.initFamily(["Arme"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Au début de la phase de combat : Si équipé et que le porteur est sur le terrain : Remplit la jauge critique du porteur.`);
     };
 
     startBattleEffect = () => {

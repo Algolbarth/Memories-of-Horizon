@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class BuletteBriseRoc extends Creature {
     name = "Bulette brise-roc";
@@ -16,7 +15,7 @@ export class BuletteBriseRoc extends Creature {
         this.stat("Force").init(15);
         this.stat("Endurance").init(25);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Contre} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

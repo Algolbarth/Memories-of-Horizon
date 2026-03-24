@@ -2,7 +2,6 @@ import { Card } from '$lib/cards/class/class';
 import { Unit } from '$lib/cards/class/unit';
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
 export class LacDeLave extends Building {
@@ -15,7 +14,8 @@ export class LacDeLave extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.text = Text;
+        this.addText(`Quand une créature d'élément Feu est posée : Augmente de 5 la force de cette créature.`);
+        this.addText(`Quand une unité qui n'est pas d'élément Feu est posée : Inflige 5 dégâts à cette unité.`);
     };
 
     otherPoseEffect = (card: Card) => {

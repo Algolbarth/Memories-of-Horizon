@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class ElementaireDeCaillou extends Creature {
@@ -18,7 +17,9 @@ export class ElementaireDeCaillou extends Creature {
         this.stat("Force").init(2);
         this.stat("Endurance").init(1);
 
-        this.text = Text;
+        this.addChoice([
+            `Se place sur votre terrain.`,
+            `Se détruit pour infliger 6 dégâts à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {

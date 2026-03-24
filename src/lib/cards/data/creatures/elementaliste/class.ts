@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Elementaliste extends Creature {
     name = "Élémentaliste";
@@ -16,7 +15,9 @@ export class Elementaliste extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 carte de famille Élémentaire.`,
+            `Réduit le coût de cette carte de 20.`]);
     };
 
     useEffect = () => {

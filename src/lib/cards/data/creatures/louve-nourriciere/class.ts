@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class LouveNourriciere extends Creature {
     name = "Louve nourricière";
@@ -15,7 +14,7 @@ export class LouveNourriciere extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère 2 {card:Louveteau} sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

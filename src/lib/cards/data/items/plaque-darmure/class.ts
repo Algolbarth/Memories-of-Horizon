@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
 import type { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PlaqueDArmure extends Item {
@@ -12,7 +11,7 @@ export class PlaqueDArmure extends Item {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 10 l'endurance d'une carte de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {

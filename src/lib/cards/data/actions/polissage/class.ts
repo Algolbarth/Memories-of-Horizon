@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import type { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Polissage extends Action {
@@ -12,7 +11,7 @@ export class Polissage extends Action {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 10 la résistance d'une carte de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {

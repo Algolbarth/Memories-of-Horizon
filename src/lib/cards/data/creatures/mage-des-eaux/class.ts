@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class MageDesEaux extends Creature {
     name = "Mage des eaux";
@@ -9,19 +8,21 @@ export class MageDesEaux extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Eau", 20]]);
+        this.init([["Or", 12], ["Eau", 12]]);
 
         this.initFamily(["Ondin", "Mage"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
-        this.stat("Magie").init(5);
+        this.stat("Magie").init(10);
 
-        this.text = Text;
+        this.addText([
+            `Quand se prépare sur le terrain : Pioche 1 carte de famille Sort.`,
+            `[sorcery {5, réduit le coût de cette carte de 10.}]`]);
     };
 
-    otherPoseEffect = (c: Card) => {
-        if (this.isArea("Terrain") && c.isFamily("Sort") && this.isAlly(c)) {
+    startPhaseEffect = () => {
+        if (this.isArea("Terrain")) {
             let readCondition = (card: Card) => {
                 if (card.isFamily("Sort")) {
                     return true;

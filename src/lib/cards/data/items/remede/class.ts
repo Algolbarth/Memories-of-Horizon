@@ -3,7 +3,6 @@ import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
 import type { Stat } from '$lib/cards/class/stat';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Remede extends Item {
@@ -14,7 +13,7 @@ export class Remede extends Item {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Retire un effet négatif d'une créature sur votre terrain.`);
     };
 
     canUse = () => {

@@ -5,7 +5,7 @@
 
 	export let card: Card;
 
-	let ratio_crit: number = card.stat("Critique").value();
+	$: ratio_crit = card.stat("Critique").value();
 </script>
 
 <div class="box">
@@ -65,6 +65,8 @@
 		color: transparent;
 
 		height: 1em;
+
+		margin-top: 0.5em;
 
 		border: solid;
 		border-color: black;

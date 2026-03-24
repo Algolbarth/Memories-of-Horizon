@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Inondation extends Action {
@@ -12,7 +11,7 @@ export class Inondation extends Action {
 
         this.init([["Or", 35], ["Eau", 35]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Détruit un bâtiment qui n'est pas d'élément Eau sur le terrain adverse.`);
     };
 
     canUse = () => {

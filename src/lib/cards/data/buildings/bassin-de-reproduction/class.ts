@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class BassinDeReproduction extends Building {
     name = "Bassin de reproduction";
@@ -14,7 +13,7 @@ export class BassinDeReproduction extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Au début d'une manche : Génère {card:Ondin} sur votre terrain.`);
     };
 
     roundEffect = () => {

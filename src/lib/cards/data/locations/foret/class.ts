@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Location } from '$lib/cards/class/location';
-import Text from './text.svelte';
 
 export class Foret extends Location {
     name = "Forêt";
@@ -11,7 +10,7 @@ export class Foret extends Location {
 
         this.init([["Or", 15], ["Végétal", 15]]);
 
-        this.text = Text;
+        this.addText(`Si actif : Les cartes piochables sont d'élément Végétal.`);
     };
 
     canRead = (card: Card) => {
@@ -20,4 +19,4 @@ export class Foret extends Location {
         }
         return false;
     };
-}
+};

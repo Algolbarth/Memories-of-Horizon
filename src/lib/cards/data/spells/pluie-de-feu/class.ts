@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 
 export class PluieDeFeu extends Spell {
     name = "Pluie de feu";
@@ -13,7 +12,9 @@ export class PluieDeFeu extends Spell {
 
         this.initFamily(["Sort"]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Inflige 10 dégâts à toutes les unités sur le terrain adverse.`,
+            `[sorcery {50, inflige 20 dégâts à la place.}]`]);
     };
 
     canUse = () => {

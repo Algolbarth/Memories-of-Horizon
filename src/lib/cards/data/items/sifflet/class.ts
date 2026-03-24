@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
 
@@ -12,7 +11,9 @@ export class Sifflet extends Item {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 créature de famille Bête.`,
+            `Réduit de 15 le coût de cette créature.`]);
     };
 
     useEffect = () => {

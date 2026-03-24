@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Restockage extends Action {
     name = "Restockage";
@@ -10,7 +9,7 @@ export class Restockage extends Action {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Actualise votre pile.`);
     };
 
     useEffect = () => {

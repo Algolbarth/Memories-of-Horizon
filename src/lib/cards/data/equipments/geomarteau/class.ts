@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class Geomarteau extends Equipment {
     name = "Géomarteau";
@@ -18,7 +17,8 @@ export class Geomarteau extends Equipment {
             return true;
         };
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur attaque : Augmente de 3 ses secousses. Inflige autant de dégâts à toutes les unités sur le terrain adverse que ses secousses.`);
     };
 
     fightEffect = () => {

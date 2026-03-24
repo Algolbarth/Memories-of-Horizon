@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class MaitreChien extends Creature {
     name = "Maître chien";
@@ -15,7 +14,8 @@ export class MaitreChien extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Génère 2 {card:Chien} sur votre terrain.`);
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Chien} sur votre terrain.`);
     };
 
     useEffect = () => {

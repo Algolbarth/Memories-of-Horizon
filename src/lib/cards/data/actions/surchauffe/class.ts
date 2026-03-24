@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Surchauffe extends Action {
@@ -12,7 +11,7 @@ export class Surchauffe extends Action {
 
         this.init([["Or", 12], ["Feu", 12]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige 100 dégâts et augmente de 100 la force d'une créature sur le terrain.`);
     };
 
     canUse = () => {

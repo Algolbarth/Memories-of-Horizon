@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Pont extends Building {
     name = "Pont";
@@ -14,7 +13,7 @@ export class Pont extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand une créature alliée est posée : Si sur le terrain : Pioche 1 carte.`);
     };
 
     otherPoseEffect = (card: Card) => {

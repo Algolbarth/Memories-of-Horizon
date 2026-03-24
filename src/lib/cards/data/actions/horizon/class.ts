@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Horizon extends Action {
     name = "Horizon";
@@ -11,7 +10,8 @@ export class Horizon extends Action {
 
         this.init([["Or", 300]]);
 
-        this.text = Text;
+        this.addText(`Quand une carte alliée est posée : Si dans la pile : Réduit son coût de 10.`);
+        this.addText(`Quand posé : Augmente de 1 la taille de toutes vos zones.`);
     };
 
     otherPoseEffect = (card: Card) => {
@@ -29,4 +29,4 @@ export class Horizon extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

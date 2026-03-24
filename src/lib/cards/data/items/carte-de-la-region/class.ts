@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class CarteDeLaRegion extends Item {
     name = "Carte de la région";
@@ -10,7 +9,7 @@ export class CarteDeLaRegion extends Item {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Pioche autant de carte que nécessaire pour remplir votre pile.`);
     };
 
     canUse = () => {

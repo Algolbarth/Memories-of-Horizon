@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from '$lib/cards/utils/equip-text.svelte';
 
 export class BouclierEnCuir extends Equipment {
     name = "Bouclier en cuir";
@@ -14,6 +13,6 @@ export class BouclierEnCuir extends Equipment {
 
         this.equipStat("Endurance").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };
 };

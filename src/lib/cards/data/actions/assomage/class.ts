@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Assomage extends Action {
@@ -10,9 +9,9 @@ export class Assomage extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.`);
     };
 
     canUse = () => {

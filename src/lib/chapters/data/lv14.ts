@@ -7,20 +7,22 @@ export class Lv14_MageFeu extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
-        this.addRessource("Or", 525);
-        this.addRessource("Feu", 325);
+        this.addRessource("Or", 530);
+        this.addRessource("Feu", 320);
 
         let cards = [];
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 15; i++) {
             cards.push("Mage de feu");
-        }
-        for (let i = 1; i <= 10; i++) {
-            cards.push("Cercles magiques");
         }
         for (let i = 1; i <= 10; i++) {
             cards.push("Boule de feu");
         }
-        cards.push("Pluie de feu");
+        for (let i = 1; i <= 2; i++) {
+            cards.push("Baguette d'archimage");
+        }
+        for (let i = 1; i <= 2; i++) {
+            cards.push("Pluie de feu");
+        }
         let deck = new ChapterDeck(system, "Mages de feu", ["Mage de feu", "Cercles magiques", "Boule de feu", "Pluie de feu"]);
         this.addStep(70, ["Volcan"], 40, deck, cards, ["Une rumeur concernant des membres rebels d'une école de la magie de feu se répend dans la région.", "En vous rendant dans l'établissement, le directeur vous explique la situation et vous conseille de fouiller les ruines de l'ancienne école.", "Vous y trouvez une ancienne salle abandonnée, la chaleur suffocante émanant des murs rongés par des flammes mystiques.", "Au centre, les mages vêtus de robes écarlates commencent à incanter."]);
     };

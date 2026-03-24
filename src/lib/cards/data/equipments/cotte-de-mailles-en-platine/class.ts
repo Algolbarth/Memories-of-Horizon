@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from '$lib/cards/utils/equip-text.svelte';
 
 export class CotteDeMaillesEnPlatine extends Equipment {
     name = "Cotte de mailles en platine";
@@ -15,6 +14,6 @@ export class CotteDeMaillesEnPlatine extends Equipment {
         this.equipStat("Vitalité").init(75);
         this.equipStat("Endurance").init(50);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };
 };

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class ParcheminDeSagesse extends Item {
     name = "Parchemin de sagesse";
@@ -10,7 +9,7 @@ export class ParcheminDeSagesse extends Item {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Quand posé : Pioche autant de carte que votre intelligence cumulée.`);
     };
 
     canUse = () => {

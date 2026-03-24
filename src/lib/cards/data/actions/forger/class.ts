@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Forger extends Action {
     name = "Forger";
@@ -11,7 +10,7 @@ export class Forger extends Action {
 
         this.init([["Or", 8]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Découvre 1 carte de famille Équipement.`);
     };
 
     useEffect = () => {
@@ -25,4 +24,4 @@ export class Forger extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

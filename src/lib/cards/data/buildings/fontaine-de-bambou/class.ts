@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class FontaineDeBambou extends Building {
     name = "Fontaine de bambou";
@@ -12,7 +11,7 @@ export class FontaineDeBambou extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Écoulement} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

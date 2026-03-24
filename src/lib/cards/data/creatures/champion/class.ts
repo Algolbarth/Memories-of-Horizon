@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Champion extends Creature {
     name = "Champion";
@@ -16,7 +15,7 @@ export class Champion extends Creature {
         this.stat("Force").init(5);
         this.stat("Endurance").init(5);
 
-        this.text = Text;
+        this.addText(`Tant que placé en première position sur le terrain : Double sa force et son endurance.`);
 
         this.stat("Force").effect = function (total: number) {
             if (this.card.system.game != undefined && this.card.isArea("Terrain") && this.card.emplacement() == 0) {

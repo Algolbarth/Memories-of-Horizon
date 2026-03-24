@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Satellite extends Building {
     name = "Satellite";
@@ -15,7 +14,8 @@ export class Satellite extends Building {
         this.stat("Constitution").init(1);
         this.addStat("Puissance", 1);
 
-        this.text = Text;
+        this.addText(`Quand arrive sur le terrain : Augmente d'autant sa constitution et sa puissance que de flux possédé.`);
+        this.addText(`Au début d'une manche : Inflige autant de dégâts à l'unité sur le terrain adverse en première position que sa puissance.`);
     };
 
     addEffect = (zone: string) => {

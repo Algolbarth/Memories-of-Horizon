@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Baleine extends Creature {
     name = "Baleine";
@@ -15,7 +14,7 @@ export class Baleine extends Creature {
         this.stat("Constitution").init(75);
         this.stat("Force").init(50);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente d'autant sa constitution que votre production d'eau.`);
     };
 
     useEffect = () => {

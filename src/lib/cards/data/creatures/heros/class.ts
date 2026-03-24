@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Heros extends Creature {
     name = "Héros";
@@ -16,7 +15,7 @@ export class Heros extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand une autre créature alliée est posée : Si sur le terrain : Augmente de 10 sa constitution et sa force.`);
     };
 
     otherPoseEffect = (card: Card) => {

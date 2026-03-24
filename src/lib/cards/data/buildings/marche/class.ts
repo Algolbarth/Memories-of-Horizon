@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Marche extends Building {
     name = "Marché";
@@ -13,7 +12,7 @@ export class Marche extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Réduit de 10 le coût en or de toutes les cartes sur votre pile.`);
     };
 
     startPhaseEffect = () => {

@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Titan extends Creature {
     name = "Titan";
@@ -16,7 +15,7 @@ export class Titan extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 25 la constitution et la force de toutes les créatures de niveau 5 ou plus sur votre terrain.`);
     };
 
     useEffect = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Ondin extends Creature {
     name = "Ondin";
@@ -15,7 +14,7 @@ export class Ondin extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand arrive sur le terrain : Produit 5 eau.`);
     };
 
     addEffect = (zone: string) => {

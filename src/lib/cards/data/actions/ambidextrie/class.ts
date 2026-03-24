@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Ambidextrie extends Action {
@@ -12,7 +11,7 @@ export class Ambidextrie extends Action {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 le maniement d'une créature sur votre terrain ayant exactement un maniement de 1.`);
     };
 
     canUse = () => {

@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Defrichage extends Action {
     name = "Défrichage";
@@ -12,7 +11,9 @@ export class Defrichage extends Action {
 
         this.init([["Or", 62], ["Végétal", 62]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 1 la taille de votre terrain.`,
+            `Augmente d'autant la constitution de toutes les créatures sur votre terrain que la taille de votre terrain.`]);
     };
 
     useEffect = () => {

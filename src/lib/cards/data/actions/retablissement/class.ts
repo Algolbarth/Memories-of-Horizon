@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Retablissement extends Action {
@@ -12,7 +11,7 @@ export class Retablissement extends Action {
 
         this.init([["Or", 100]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Soigne toutes les blessures d'une unité sur votre terrain.`);
     };
 
     canUse = () => {

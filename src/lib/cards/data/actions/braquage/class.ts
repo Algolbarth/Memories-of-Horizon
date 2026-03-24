@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Braquage extends Action {
@@ -12,7 +11,9 @@ export class Braquage extends Action {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Produit autant de ressources que la vente d'un bâtiment sur votre terrain.`,
+            `Fixe à 0 la vente de ce bâtiment.`]);
     };
 
     canUse = () => {

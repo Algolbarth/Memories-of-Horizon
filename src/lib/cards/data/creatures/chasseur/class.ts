@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Chasseur extends Creature {
     name = "Chasseur";
@@ -9,20 +8,20 @@ export class Chasseur extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30]]);
+        this.init([["Or", 18]]);
 
         this.initFamily(["Humain"]);
 
-        this.stat("Constitution").init(5);
-        this.stat("Force").init(5);
+        this.stat("Constitution").init(10);
+        this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand une autre créature alliée de famille Bête périt : Si sur le terrain : Augmente de 1 sa constitution et sa force.`);
     };
 
     otherPerishEffect = (card: Card) => {
         if (this.isArea("Terrain") && card instanceof Creature && this.isAlly(card) && card.isFamily("Bête")) {
-            this.stat("Constitution").increase(3);
-            this.stat("Force").increase(3);
+            this.stat("Constitution").increase(1);
+            this.stat("Force").increase(1);
         }
     };
 };

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Iconoclaste extends Creature {
     name = "Iconoclaste";
@@ -16,7 +15,7 @@ export class Iconoclaste extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand une autre carte alliée est meulée : Augmente de 1 sa constitution et sa force.`);
     };
 
     otherMillEffect = (card: Card) => {

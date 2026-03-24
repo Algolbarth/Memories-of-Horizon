@@ -16,6 +16,10 @@ export class Druid extends Creature {
         this.trait("Forme druidique").value = function () {
             return !this.card.trait("Forme animale").value();
         };
+
+        this.addChoice([
+            `Se place sur votre terrain.`,
+            `Se transforme en {card:{card.alternative_form}} et se place sur votre terrain.`]);
     };
 
     select = () => {

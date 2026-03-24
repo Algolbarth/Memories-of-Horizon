@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PotionParfumee extends Item {
@@ -16,7 +15,8 @@ export class PotionParfumee extends Item {
 
         this.addStat("Infusion", 5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 la protection d'une créature sur le terrain pendant ce tour pour toutes les 5 valeur d'infusion.`);
+        this.addText(`[details {Augmente de {Math.floor(card.stat("Infusion").value() / 5)} la protection d'une créature sur le terrain pendant ce tour.}]`);
     };
 
     canUse = () => {

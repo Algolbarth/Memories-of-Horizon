@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
 export class Multisoin extends Action {
@@ -12,7 +11,7 @@ export class Multisoin extends Action {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Soigne 5 blessures à toutes les créatures sur votre terrain.`);
     };
 
     canUse = () => {

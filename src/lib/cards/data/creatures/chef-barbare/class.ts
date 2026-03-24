@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class ChefBarbare extends Creature {
     name = "Chef barbare";
@@ -16,7 +15,7 @@ export class ChefBarbare extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.text = Text;
+        this.addText(`Quand attaque : Augmente de 5 la force de toutes les créatures sur votre terrain.`);
     };
 
     fightEffect = () => {

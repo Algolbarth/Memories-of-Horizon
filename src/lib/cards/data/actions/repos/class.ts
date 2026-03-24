@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Repos extends Action {
@@ -12,7 +11,9 @@ export class Repos extends Action {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Place une créature sur votre terrain sur la pile.`,
+            `Soigne toutes les blessures de cette créature.`]);
     };
 
     canUse = () => {
@@ -46,9 +47,9 @@ export class Repos extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.fullHeal();
-
         target.move("Pile");
+
+        target.fullHeal();
 
         this.move("Défausse");
         this.pose();

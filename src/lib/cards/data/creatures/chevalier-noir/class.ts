@@ -1,8 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Knight, MountedKnight } from '$lib/cards/class/knight';
-import Text from './text.svelte';
-import Text2 from './text2.svelte';
 import Use from './use.svelte';
 
 export class ChevalierNoir extends Knight {
@@ -21,7 +19,7 @@ export class ChevalierNoir extends Knight {
         this.stat("Endurance").init(5);
         this.stat("Résistance").init(5);
 
-        this.text = Text2;
+        this.addText(`Quand périt : [prime {20, fixe à 1 sa santé et reste sur le terrain.}]`);
     };
 
     perishEffect = () => {
@@ -48,7 +46,10 @@ export class ChevalierNoirMonte extends MountedKnight {
         this.stat("Force").init(20);
         this.stat("Vitesse").init(1);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Inflige autant de dégâts que possible à une unité sur le terrain adverse.`,
+            `Dépense autant d'or que de dégâts infligés.`]);
+        this.addText(`Quand périt : Se réincarne en {card:Chevalier noir}.`);
     };
 
     select = () => {

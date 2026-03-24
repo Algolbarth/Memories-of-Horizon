@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Torche extends Item {
@@ -12,7 +11,9 @@ export class Torche extends Item {
 
         this.init([["Or", 6], ["Feu", 6]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Augmente de 2 votre production de feu.`,
+            `Inflige 20 dégâts à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {

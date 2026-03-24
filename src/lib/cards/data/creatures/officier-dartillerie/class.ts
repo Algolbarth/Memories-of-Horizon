@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class OfficierDArtillerie extends Creature {
     name = "Officier d'artillerie";
@@ -13,7 +12,7 @@ export class OfficierDArtillerie extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Tir de canon} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

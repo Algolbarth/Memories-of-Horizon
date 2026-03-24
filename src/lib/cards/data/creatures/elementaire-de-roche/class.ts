@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class ElementaireDeRoche extends Creature {
@@ -18,7 +17,9 @@ export class ElementaireDeRoche extends Creature {
         this.stat("Force").init(40);
         this.stat("Endurance").init(10);
 
-        this.text = Text;
+        this.addChoice([
+            `Se place sur votre terrain.`,
+            `Se détruit pour infliger 5 dégâts à toutes les unités sur le terrain adverse.`]);
     };
 
     canUse = () => {

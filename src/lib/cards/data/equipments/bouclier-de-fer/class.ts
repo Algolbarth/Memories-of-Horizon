@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from '$lib/cards/utils/equip-text.svelte';
 
 export class BouclierDeFer extends Equipment {
     name = "Bouclier de fer";
@@ -14,6 +13,6 @@ export class BouclierDeFer extends Equipment {
 
         this.equipStat("Endurance").init(25);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };
 };

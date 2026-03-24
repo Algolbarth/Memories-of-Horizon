@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import type { Unit } from '$lib/cards/class/unit';
 import Use from './use.svelte';
 
@@ -13,7 +12,9 @@ export class BucherDesVanites extends Action {
 
         this.init([["Or", 15], ["Feu", 15]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Meule toutes les cartes sur votre pile.`,
+            `Inflige autant de dégâts à une unité sur le terrain adverse que 10 fois le nombre de cartes meulées.`]);
     };
 
     canUse = () => {

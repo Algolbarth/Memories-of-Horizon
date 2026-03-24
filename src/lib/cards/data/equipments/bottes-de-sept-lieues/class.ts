@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class BottesDeSeptLieues extends Equipment {
@@ -16,7 +15,8 @@ export class BottesDeSeptLieues extends Equipment {
 
         this.equipStat("Vitesse").init(7);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature de famille Géant sur votre terrain.`);
+        this.addText(`Au début d'une manche : Si équipé et que le porteur est sur le terrain : Augmente de 7 la constitution et la force du porteur.`);
     };
 
     canUse = () => {

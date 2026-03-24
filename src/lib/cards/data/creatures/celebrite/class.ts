@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Celebrite extends Creature {
     name = "Célébrité";
@@ -15,7 +14,7 @@ export class Celebrite extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Génère 2 {card:Garde} sur votre terrain.`);
     };
 
     useEffect = () => {

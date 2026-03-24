@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class LanceIncendiaire extends Equipment {
     name = "Lance incendiaire";
@@ -13,7 +12,10 @@ export class LanceIncendiaire extends Equipment {
 
         this.initFamily(["Arme"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText([
+            `Quand le porteur attaque : Augmente de 5 la brûlure de l'unité attaquée.`,
+            `Réduit d'autant l'endurance de l'unité attaquée que la brûlure de celle-ci.`]);
     };
 
     fightEffect = (defender: Unit) => {

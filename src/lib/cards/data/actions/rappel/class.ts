@@ -2,7 +2,6 @@ import { Card } from '$lib/cards/class/class';
 import { Unit } from '$lib/cards/class/unit';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Rappel extends Action {
@@ -13,7 +12,9 @@ export class Rappel extends Action {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Place sur votre pile une carte située dans votre défausse.`,
+            `Si c'est une unité, fixe à 1 la santé de cette carte.`]);
     };
 
     canUse = () => {

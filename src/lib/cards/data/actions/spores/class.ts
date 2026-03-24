@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Spores extends Action {
@@ -12,7 +11,7 @@ export class Spores extends Action {
 
         this.init([["Or", 3], ["Végétal", 2]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 5 le poison d'une créature sur le terrain adverse.`);
     };
 
     canUse = () => {

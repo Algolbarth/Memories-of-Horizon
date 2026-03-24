@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class Blason extends Item {
     name = "Blason";
@@ -11,7 +10,7 @@ export class Blason extends Item {
 
         this.init([["Or", 30]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 3 l'endurance de toutes les créatures sur votre terrain.`);
     };
 
     canUse = () => {

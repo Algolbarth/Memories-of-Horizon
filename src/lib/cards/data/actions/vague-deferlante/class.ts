@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class VagueDeferlante extends Action {
     name = "Vague déferlante";
@@ -11,7 +10,9 @@ export class VagueDeferlante extends Action {
 
         this.init([["Or", 12], ["Eau", 12]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Inflige 5 dégâts à toutes les unités sur le terrain adverse.`,
+            `[source {25, inflige 10 dégâts à la place.}]`]);
     };
 
     canUse = () => {

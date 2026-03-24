@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import { Building } from '$lib/cards/class/building';
 
 export class SoldatNain extends Creature {
@@ -18,7 +17,7 @@ export class SoldatNain extends Creature {
         this.stat("Force").init(10);
         this.stat("Endurance").init(5);
 
-        this.text = Text;
+        this.addText(`Quand arrive sur le terrain : Augmente de 2 sa constitution et sa force pour chaque bâtiment sur votre terrain.`);
     };
 
     addEffect = (zone: string) => {

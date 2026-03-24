@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Bandit extends Creature {
     name = "Bandit";
@@ -15,7 +14,7 @@ export class Bandit extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : [prime {5, augmente de 5 sa constitution et sa force.}]`);
     };
 
     useEffect = () => {

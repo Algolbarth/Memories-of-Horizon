@@ -1,7 +1,5 @@
 import type { System } from '$lib/system/class';
-import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class MageDeFeu extends Creature {
     name = "Mage de feu";
@@ -9,20 +7,20 @@ export class MageDeFeu extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Feu", 20]]);
+        this.init([["Or", 12], ["Feu", 12]]);
 
         this.initFamily(["Gobelin", "Mage"]);
 
         this.stat("Constitution").init(3);
         this.stat("Force").init(20);
-        this.stat("Magie").init(5);
+        this.stat("Magie").init(10);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Réduit de 1 sa magie.`);
     };
 
-    otherPoseEffect = (card: Card) => {
-        if (this.isArea("Terrain") && card.isFamily("Sort") && this.isAlly(card) && this.adversary().zone("Terrain").cards.length > 0) {
-            this.adversary().zone("Terrain").cards[0].damageByEffect(5);
+    startPhaseEffect = () => {
+        if (this.isArea("Terrain")) {
+            this.stat("Magie").decrease(1);
         }
     };
 };

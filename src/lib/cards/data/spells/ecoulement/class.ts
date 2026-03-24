@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 
 export class Ecoulement extends Spell {
     name = "Écoulement";
@@ -10,7 +9,9 @@ export class Ecoulement extends Spell {
 
         this.init([["Or", 8], ["Eau", 8]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 3 votre production d'eau.`,
+            `[sorcery {10, augmente de 5 votre production d'eau à la place.}]`]);
     };
 
     useEffect = () => {

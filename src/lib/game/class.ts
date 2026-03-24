@@ -412,6 +412,7 @@ export class Game {
     endBattle = () => {
         this.phase = "Préparation";
         this.fighter = undefined;
+        this.system.view.reset();
         this.stopAuto();
 
         this.endTurn();
@@ -530,9 +531,9 @@ export class Game {
 
 class Use {
     card: Card | undefined = undefined;
-    svelte: Component | undefined = undefined;
+    svelte: __sveltets_2_IsomorphicComponent<{ system: System; game: Game; card: Card; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string> | undefined = undefined;
 
-    set = (card: Card, svelte: Component) => {
+    set = (card: Card, svelte: __sveltets_2_IsomorphicComponent<{ system: System; game: Game; card: Card; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string>) => {
         this.card = card;
         this.svelte = svelte;
     };

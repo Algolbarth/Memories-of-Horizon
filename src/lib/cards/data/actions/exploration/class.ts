@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Exploration extends Action {
     name = "Exploration";
@@ -10,7 +9,7 @@ export class Exploration extends Action {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 la taille de votre terrain.`);
     };
 
     useEffect = () => {
@@ -19,4 +18,4 @@ export class Exploration extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

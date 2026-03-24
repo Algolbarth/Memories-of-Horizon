@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class BaguetteExplosive extends Equipment {
     name = "Baguette explosive";
@@ -15,7 +14,8 @@ export class BaguetteExplosive extends Equipment {
 
         this.equipStat("Magie").init(25);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur attaque : Inflige autant de dégâts à l'unité attaquée que la magie du porteur.`);
     };
 
     fightEffect = (defender: Unit) => {

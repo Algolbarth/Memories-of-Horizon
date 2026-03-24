@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class BibliothequeElfique extends Building {
     name = "Bibliothèque elfique";
@@ -16,7 +15,7 @@ export class BibliothequeElfique extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand une créature de famille Elfe est posée : Si sur le terrain : Augmente de 1 son intelligence.`);
     };
 
     otherPoseEffect = (card: Card) => {

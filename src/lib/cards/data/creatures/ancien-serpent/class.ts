@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class AncienSerpent extends Creature {
     name = "Ancien serpent";
@@ -15,7 +14,7 @@ export class AncienSerpent extends Creature {
         this.stat("Constitution").init(15);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Mue} sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

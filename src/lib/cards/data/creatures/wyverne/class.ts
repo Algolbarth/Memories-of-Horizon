@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Wyverne extends Creature {
     name = "Wyverne";
@@ -17,7 +16,7 @@ export class Wyverne extends Creature {
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
 
-        this.text = Text;
+        this.addText(`Quand une carte alliée est posée : Si dans la pile : Réduit son coût de 5.`);
     };
 
     otherPoseEffect = (card: Card) => {

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Negociant extends Creature {
@@ -17,7 +16,7 @@ export class Negociant extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Verrouille et réduit de 10 le coût en or d'une carte sur votre pile.`);
     };
 
     select = () => {

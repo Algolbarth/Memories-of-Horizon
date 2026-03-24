@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class CoffreEnBois extends Item {
     name = "Coffre en bois";
@@ -10,7 +9,7 @@ export class CoffreEnBois extends Item {
 
         this.init([["Or", 5]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Pioche 2 cartes.`);
     };
 
     useEffect = () => {

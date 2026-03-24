@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PotionExplosive extends Item {
@@ -16,7 +15,8 @@ export class PotionExplosive extends Item {
 
         this.addStat("Infusion", 5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige 2 dégâts à une unité sur le terrain adverse pour chaque valeur d'infusion.`);
+        this.addText(`[details {Inflige {card.stat("Infusion").value() * 2} dégâts à une unité sur le terrain adverse.}]`);
     };
 
     canUse = () => {

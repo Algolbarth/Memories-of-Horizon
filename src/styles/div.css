@@ -122,3 +122,9 @@ span.box_title {
 span.details {
   color: rgb(255, 255, 255);
 }
+
+ul {
+  display: block;
+  list-style-type: disc;
+  margin: 0;
+}

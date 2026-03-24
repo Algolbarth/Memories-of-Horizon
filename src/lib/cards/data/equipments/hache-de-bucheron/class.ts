@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class HacheDeBucheron extends Equipment {
     name = "Hache de bûcheron";
@@ -15,7 +14,8 @@ export class HacheDeBucheron extends Equipment {
 
         this.equipStat("Adresse").init(20);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand une unité d'élément Végétal périt : Si équipé et que le porteur est sur le terrain : Augmente de 5 la force du porteur.`);
     };
 
     otherPerishEffect = (card: Card) => {

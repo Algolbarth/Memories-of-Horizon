@@ -67,10 +67,7 @@ export class System {
     addFamiliesToFilter = () => {
         for (let i = 0; i < this.filter.families.length; i++) {
             let j = i;
-            while (
-                j > 1 &&
-                this.filter.families[j - 1].localeCompare(this.filter.families[j]) > 0
-            ) {
+            while (j > 0 && this.filter.families[j - 1].localeCompare(this.filter.families[j], "fr") > 0) {
                 let swap = this.filter.families[j];
                 this.filter.families[j] = this.filter.families[j - 1];
                 this.filter.families[j - 1] = swap;
@@ -138,10 +135,10 @@ export class System {
             }
         }
 
-        this.checIffAtLeastOnChapterByLevel();
+        this.checkIfAtLeastOnChapterByLevel();
     };
 
-    checIffAtLeastOnChapterByLevel = () => {
+    checkIfAtLeastOnChapterByLevel = () => {
         let index: number = 0;
         for (const level of this.chapters.instance) {
             if (index > 0 && level.length == 0) {

@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
 export class Bivouac extends Building {
@@ -14,7 +13,7 @@ export class Bivouac extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Soigne 10 blessures à toutes les créatures sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Grenouille extends Creature {
     name = "Grenouille";
@@ -13,7 +12,7 @@ export class Grenouille extends Creature {
         this.stat("Constitution").init(2);
         this.stat("Force").init(2);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Se place dans l'inventaire.`);
     };
 
     startPhaseEffect = () => {

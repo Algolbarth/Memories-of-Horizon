@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class Egide extends Equipment {
     name = "Égide";
@@ -21,6 +20,7 @@ export class Egide extends Equipment {
             }
         };
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Augmente l'endurance du porteur de 10 fois la protection du porteur.`);
     };
 };

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Fromage extends Item {
@@ -14,7 +13,9 @@ export class Fromage extends Item {
 
         this.initFamily(["Nourriture"]);
 
-        this.text = Text;
+        this.addText([
+            "Quand posé : Soigne 10 blessures à une créature sur le terrain.",
+            "[satiety {génère 2 {card:Souris} sur le terrain à la place.}]"]);
     };
 
     canUse = () => {

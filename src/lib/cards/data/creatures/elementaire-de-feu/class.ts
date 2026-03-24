@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class ElementaireDeFeu extends Creature {
     name = "Élémentaire de feu";
@@ -14,7 +13,8 @@ export class ElementaireDeFeu extends Creature {
 
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
-        this.text = Text;
+
+        this.addText(`Quand périt : Réduit votre production de feu de 3.`);
     };
 
     perishEffect = () => {

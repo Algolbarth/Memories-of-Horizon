@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Cheval extends Creature {
@@ -17,7 +16,7 @@ export class Cheval extends Creature {
         this.stat("Force").init(5);
         this.stat("Vitesse").init(1);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 la vitesse d'une créature sur votre terrain.`);
     };
 
     select = () => {

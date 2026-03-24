@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Nexus extends Building {
     name = "Nexus";
@@ -16,7 +15,7 @@ export class Nexus extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand une créature alliée de famille Élémentaire est posée : Si sur le terrain : Augmente de 1 votre production de ressources de chaque élément de cette carte.`);
     };
 
     otherPoseEffect = (card: Card) => {

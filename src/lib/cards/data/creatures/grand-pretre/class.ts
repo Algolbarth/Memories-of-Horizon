@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class GrandPretre extends Creature {
@@ -17,7 +16,9 @@ export class GrandPretre extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText([
+            `Augmente de 10 la constitution de toutes les créatures sur votre terrain.`,
+            `Soigne 20 blessures à toutes les créatures sur votre terrain.`]);
     };
 
     select = () => {

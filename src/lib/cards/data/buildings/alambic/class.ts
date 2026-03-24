@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import { Item } from '$lib/cards/class/item';
 
 export class Alambic extends Building {
@@ -14,7 +13,7 @@ export class Alambic extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Augmente de 1 les infusions de toutes les objets de famille Potion dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

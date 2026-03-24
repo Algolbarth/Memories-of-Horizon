@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Sage extends Creature {
     name = "Sage";
@@ -16,7 +15,7 @@ export class Sage extends Creature {
         this.stat("Force").init(5);
         this.stat("Intelligence").init(1);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Augmente de 1 son intelligence.`);
     };
 
     startPhaseEffect = () => {

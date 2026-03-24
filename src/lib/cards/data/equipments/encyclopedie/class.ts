@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class Encyclopedie extends Equipment {
     name = "Encyclopédie";
@@ -14,7 +13,8 @@ export class Encyclopedie extends Equipment {
 
         this.equipStat("Intelligence").init(2);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Pioche 1 action.`);
     };
 
     startPhaseEffect = () => {

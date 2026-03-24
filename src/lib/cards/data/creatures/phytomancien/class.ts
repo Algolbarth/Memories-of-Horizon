@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Phytomancien extends Creature {
     name = "Phytomancien";
@@ -16,7 +15,7 @@ export class Phytomancien extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand une autre carte alliée d'élément Végétal est posée : Si sur le terrain : Augmente de 3 sa constitution.`);
     };
 
     otherPoseEffect = (card: Card) => {

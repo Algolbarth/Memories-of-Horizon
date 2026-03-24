@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Warg extends Creature {
     name = "Warg";
@@ -15,7 +14,7 @@ export class Warg extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(40);
 
-        this.text = Text;
+        this.addText(`Quand posé : Génère {card:Frappe} dans votre inventaire.`);
     };
 
     useEffect = () => {

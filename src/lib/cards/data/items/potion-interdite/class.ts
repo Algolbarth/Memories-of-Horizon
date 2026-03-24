@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class PotionInterdite extends Item {
     name = "Potion interdite";
@@ -14,7 +13,10 @@ export class PotionInterdite extends Item {
 
         this.addStat("Infusion", 5);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Génère {card:Homonculus} sur votre terrain.`,
+            `Fixe la constitution et la force de cette carte à sa valeur d'infusion.`]);
+        this.addText(`[details {Fixe à {card.stat("Infusion").value()} la constitution et la force de {card:Homonculus}.}]`);
     };
 
     useEffect = () => {

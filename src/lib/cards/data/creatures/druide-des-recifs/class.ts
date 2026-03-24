@@ -1,16 +1,11 @@
 import type { System } from '$lib/system/class';
 import { Druid } from '$lib/cards/class/druid';
-import Text from './text.svelte';
 
 class DruideDesRecifs extends Druid {
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 30], ["Eau", 30]]);
-
-        this.initFamily(["Druide"]);
-
-        this.text = Text;
     };
 };
 
@@ -25,6 +20,8 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
 
         this.stat("Constitution").init(30);
         this.stat("Force").init(30);
+
+        this.addText(`Quand se prépare sur le terrain : Augmente de 1 votre production d'eau.`);
     };
 
     startPhaseEffect = () => {

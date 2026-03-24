@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Bulette extends Creature {
     name = "Bulette";
@@ -16,7 +15,7 @@ export class Bulette extends Creature {
         this.stat("Force").init(10);
         this.stat("Endurance").init(15);
 
-        this.text = Text;
+        this.addText(`Quand posé : Génère {card:Contre} dans votre inventaire.`);
     };
 
     useEffect = () => {

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class TirHydraulique extends Action {
@@ -12,7 +11,9 @@ export class TirHydraulique extends Action {
 
         this.init([["Or", 8], ["Eau", 8]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Inflige 30 dégâts à une unité sur le terrain adverse.`,
+            `[source {15, inflige 60 dégâts à la place.}]`]);
     };
 
     canUse = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class EcritCalcines extends Item {
     name = "Écrits calcinés";
@@ -10,7 +9,9 @@ export class EcritCalcines extends Item {
 
         this.init([["Or", 6], ["Feu", 6]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Si votre pile est vide : Découvre 5 cartes.`,
+            `[resolve {125, découvre autant de carte que nécessaire pour remplir la pile à la place.}]`]);
     };
 
     canUse = () => {

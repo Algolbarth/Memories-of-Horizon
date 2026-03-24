@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Boss } from '$lib/cards/class/boss';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Raido extends Boss {
     name = "Raido, chef brutal";
@@ -17,7 +16,9 @@ export class Raido extends Boss {
         this.stat("Force").init(10);
         this.stat("Constitution").init(50);
 
-        this.text = Text;
+        this.addText(`Quand une autre créature alliée est posée : Si sur le terrain : Augmente de 5 la constitution et la force de cette créature.`);
+        this.addText(`Quand une unité adverse périt : Produit autant d'or que la constitution max de cette créature.`);
+        this.addText(`Quand joue : Dépense autant d'or que possible et augmente d'autant sa constitution et sa force.`);
     };
 
     otherPoseEffect = (card: Card) => {

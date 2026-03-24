@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class MasseDePierre extends Equipment {
     name = "Masse de pierre";
@@ -14,7 +13,8 @@ export class MasseDePierre extends Equipment {
 
         this.equipStat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur attaque : Augmente de 5 l'endurance du porteur.`);
     };
 
     fightEffect = () => {

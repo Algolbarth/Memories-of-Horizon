@@ -6,7 +6,7 @@
 	import { Equipment } from "../class/equipment";
 	import Caracteristics from "./caracteristics.svelte";
 	import Description from "./description.svelte";
-	import Effet from "./effet.svelte";
+	import Effet from "./effect.svelte";
 	import Equipments from "./equipments.svelte";
 	import EquipStat from "./equip-stat.svelte";
 	import EquipTrait from "./equip-trait.svelte";
@@ -40,7 +40,7 @@
 
 				<div style="max-height: 80vh;" class="scroll">
 					<Caracteristics bind:card bind:system />
-					{#if card.text != undefined}
+					{#if card.effects.length > 0}
 						<Effet bind:card bind:system />
 					{/if}
 

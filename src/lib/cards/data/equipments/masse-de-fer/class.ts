@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class MasseDeFer extends Equipment {
     name = "Masse de fer";
@@ -15,7 +14,8 @@ export class MasseDeFer extends Equipment {
         this.equipStat("Force").init(5);
         this.equipStat("Vitalité").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur attaque : Augmente de 5 la constitution et la force du porteur.`);
     };
 
     fightEffect = () => {

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Dresseur extends Creature {
     name = "Dresseur";
@@ -16,7 +15,9 @@ export class Dresseur extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 créature de famille Bête.`,
+            `Augmente de 20 la constitution et la force de cette créature.`]);
     };
 
     useEffect = () => {

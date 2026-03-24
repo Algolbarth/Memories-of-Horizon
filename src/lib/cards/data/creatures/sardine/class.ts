@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Sardine extends Creature {
     name = "Sardine";
@@ -16,7 +15,7 @@ export class Sardine extends Creature {
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);
 
-        this.text = Text;
+        this.addText(`Quand posé : Pioche 1 créature de famille Poisson.`);
     };
 
     useEffect = () => {

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Parade extends Action {
@@ -12,7 +11,7 @@ export class Parade extends Action {
 
         this.init([["Or", 20]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 l'esquive d'une créature sur votre terrain.`);
     };
 
     canUse = () => {

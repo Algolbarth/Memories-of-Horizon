@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 import { copy } from '$lib/utils';
 
 export class Couronne extends Equipment {
@@ -12,7 +11,8 @@ export class Couronne extends Equipment {
 
         this.init([["Or", 100]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Augmente de 5 la constitution et la force du porteur pour chaque créature sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

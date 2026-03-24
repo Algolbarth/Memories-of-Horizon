@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class FioleDeCristal extends Item {
@@ -11,7 +10,7 @@ export class FioleDeCristal extends Item {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 25 l'infusion d'un objet de famille Potion (sauf {card:Concoction} dans votre inventaire.`);
     };
 
     canUse = () => {

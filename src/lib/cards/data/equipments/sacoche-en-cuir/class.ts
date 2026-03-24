@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class SacocheEnCuir extends Equipment {
     name = "Sacoche en cuir";
@@ -10,7 +9,8 @@ export class SacocheEnCuir extends Equipment {
 
         this.init([["Or", 20]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Découvre 2 cartes.`);
     };
 
     startPhaseEffect = () => {

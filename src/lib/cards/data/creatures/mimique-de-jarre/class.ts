@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class MimiqueDeJarre extends Creature {
     name = "Mimique de jarre";
@@ -13,7 +12,8 @@ export class MimiqueDeJarre extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : Se place sur le terrain adverse.`);
+        this.addText(`Quand périt sur le terrain : Stocke 10 or chez l'adversaire.`);
     };
 
     useEffect = () => {

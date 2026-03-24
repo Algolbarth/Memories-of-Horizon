@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class HerbesMedicinales extends Item {
@@ -14,7 +13,7 @@ export class HerbesMedicinales extends Item {
 
         this.initFamily(["Plante"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Soigne 50 blessures à une créature sur votre terrain.`);
     };
 
     canUse = () => {

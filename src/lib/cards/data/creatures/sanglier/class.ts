@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Sanglier extends Creature {
     name = "Sanglier";
@@ -16,7 +15,7 @@ export class Sanglier extends Creature {
         this.stat("Constitution").init(25);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 5 sa force pour chaque créature de famille Bête sur votre terrain.`);
     };
 
     useEffect = () => {

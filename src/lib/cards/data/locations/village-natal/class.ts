@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Location } from '$lib/cards/class/location';
-import Text from './text.svelte';
 
 export class VillageNatal extends Location {
     name = "Village natal";
@@ -11,7 +10,7 @@ export class VillageNatal extends Location {
 
         this.init([["Or", 30]]);
 
-        this.text = Text;
+        this.addText(`Si actif : Les cartes piochables sont de niveau 1.`);
     };
 
     canRead = (card: Card) => {

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class WyverneMage extends Creature {
     name = "Wyverne mage";
@@ -18,7 +17,7 @@ export class WyverneMage extends Creature {
         this.stat("Force").init(20);
         this.stat("Magie").init(5);
 
-        this.text = Text;
+        this.addText(`Quand une carte alliée de famille Sort est posée : Si dans la pile : Réduit son coût de 6.`);
     };
 
     otherPoseEffect = (card: Card) => {

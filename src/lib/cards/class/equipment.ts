@@ -44,6 +44,7 @@ export class Equipment extends Item {
         this.addEquipStat("Poison", 0);
         this.addEquipStat("Toxicité", 0);
 
+        this.addEquipTrait("Commune", false);
         this.addEquipTrait("Rare", false);
         this.addEquipTrait("Légendaire", false);
     };
@@ -174,6 +175,8 @@ export class Equipment extends Item {
     destroyBearerEffect: Function | undefined;
 
     dieBearerEffect: Function | undefined;
+
+    perishBearerEffect: Function | undefined;
 
     playEffect: Function | undefined;
 

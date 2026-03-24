@@ -2,7 +2,6 @@ import type { Card } from '$lib/cards/class/class';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Cadeau extends Item {
@@ -13,7 +12,7 @@ export class Cadeau extends Item {
 
         this.init([["Or", 15]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Pioche 5 cartes du même niveau qu'une créature sur votre terrain.`);
     };
 
     canUse = () => {

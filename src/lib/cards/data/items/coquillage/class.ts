@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class Coquillage extends Item {
     name = "Coquillage";
@@ -10,7 +9,7 @@ export class Coquillage extends Item {
 
         this.init([["Or", 10], ["Eau", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Réduit de 5 votre production d'eau pour augmenter de 5 votre production d'or.`);
     };
 
     canUse = () => {

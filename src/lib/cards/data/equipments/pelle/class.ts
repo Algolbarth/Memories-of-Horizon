@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class Pelle extends Equipment {
     name = "Pelle";
@@ -11,7 +10,8 @@ export class Pelle extends Equipment {
 
         this.init([["Or", 18], ["Terre", 18]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Découvre 1 carte d'élément Terre et produit 10 terre.`);
     };
 
     startPhaseEffect = () => {

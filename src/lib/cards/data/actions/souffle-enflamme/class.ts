@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class SouffleEnflamme extends Action {
@@ -12,7 +11,7 @@ export class SouffleEnflamme extends Action {
 
         this.init([["Or", 15], ["Feu", 15]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige 20 dégâts à une unité sur le terrain adverse et aux unités adjacentes de cette unité.`);
     };
 
     canUse = () => {

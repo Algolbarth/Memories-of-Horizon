@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Silo extends Building {
     name = "Silo";
@@ -12,7 +11,7 @@ export class Silo extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Meule à grains} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

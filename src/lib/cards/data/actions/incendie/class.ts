@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Incendie extends Action {
     name = "Incendie";
@@ -11,7 +10,7 @@ export class Incendie extends Action {
 
         this.init([["Or", 40], ["Feu", 40]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 5 la brûlure de toutes les unités sur le terrain adverse.`);
     };
 
     canUse = () => {

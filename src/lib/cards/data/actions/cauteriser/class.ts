@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Cauteriser extends Action {
@@ -12,7 +11,7 @@ export class Cauteriser extends Action {
 
         this.init([["Or", 10], ["Feu", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Fixe la vitalité d'une créature sur le terrain adverse à la santé de cette créature.`);
     };
 
     canUse = () => {

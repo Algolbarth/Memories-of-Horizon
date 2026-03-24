@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class LivreDeRecette extends Item {
     name = "Livre de recette";
@@ -11,7 +10,9 @@ export class LivreDeRecette extends Item {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Découvre 3 cartes de famille Nourriture.`,
+            `[resolve {20, découvre 5 cartes de famille Nourriture à la place.}]`]);
     };
 
     useEffect = () => {

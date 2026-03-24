@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
+import type { Card } from '$lib/cards/class/class';
 
 export class Geomancien extends Creature {
     name = "Geomancien";
@@ -16,7 +16,7 @@ export class Geomancien extends Creature {
         this.stat("Force").init(5);
         this.stat("Endurance").init(3);
 
-        this.text = Text;
+        this.addText(`Quand une autre carte alliée d'élément Terre est posée : Si sur le terrain : Augmente de 2 son endurance.`);
     };
 
     otherPoseEffect = (card: Card) => {

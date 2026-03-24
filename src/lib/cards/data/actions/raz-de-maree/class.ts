@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class RazDeMaree extends Action {
     name = "Raz-de-marée";
@@ -11,7 +10,9 @@ export class RazDeMaree extends Action {
 
         this.init([["Or", 50], ["Eau", 50]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Inflige 20 dégâts à toutes les unités sur le terrain adverse.`,
+            `Dépense autant d'eau que possible et inflige 1 dégât supplémentaire pour chaque 5 eau dépensé.`]);
     };
 
     canUse = () => {
@@ -36,4 +37,4 @@ export class RazDeMaree extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

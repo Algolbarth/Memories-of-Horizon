@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class LanceurOrbital extends Building {
     name = "Lanceur orbital";
@@ -14,7 +13,7 @@ export class LanceurOrbital extends Building {
 
         this.stat("Constitution").init(50);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Satellite} sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

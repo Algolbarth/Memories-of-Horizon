@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class MonstreErrant extends Action {
     name = "Monstre errant";
@@ -12,7 +11,9 @@ export class MonstreErrant extends Action {
 
         this.init([["Or", 55]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 créature.`,
+            `Augmente de 100 la constitution et la force de cette créature.`]);
     };
 
     useEffect = () => {
@@ -31,4 +32,4 @@ export class MonstreErrant extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

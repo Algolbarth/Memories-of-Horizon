@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class ChevaliereImperiale extends Equipment {
     name = "Chevalière impériale";
@@ -12,6 +11,7 @@ export class ChevaliereImperiale extends Equipment {
 
         this.equipElements = ["Neutre"];
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Le porteur est d'élément Neutre.`);
     };
 };

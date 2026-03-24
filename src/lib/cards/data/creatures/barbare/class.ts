@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Barbare extends Creature {
     name = "Barbare";
@@ -8,17 +7,17 @@ export class Barbare extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 20]]);
 
         this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand attaque : Augmente de 5 sa force.`);
     };
 
     fightEffect = () => {
-        this.stat("Force").increase(2);
+        this.stat("Force").increase(5);
     };
 };

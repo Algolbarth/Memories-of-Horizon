@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class EnseignementElfique extends Spell {
@@ -14,7 +13,9 @@ export class EnseignementElfique extends Spell {
 
         this.initFamily(["Elfe"]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 5 l'intelligence d'une créature sur votre terrain.`,
+            `[sorcery {25, augmente de 10 l'intelligence à la place.}]`]);
     };
 
     canUse = () => {

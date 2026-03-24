@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import { Druid } from '$lib/cards/class/druid';
 
 class DruideDesBois extends Druid {
@@ -9,8 +8,6 @@ class DruideDesBois extends Druid {
         super(system);
 
         this.init([["Or", 25], ["Végétal", 25]]);
-
-        this.text = Text;
     };
 };
 
@@ -25,6 +22,8 @@ export class DruideDesBoisElfe extends DruideDesBois {
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
+
+        this.addText(`Quand une action alliée est posée : Si sur le terrain : Augmente de 6 sa constitution.`);
     };
 
     otherPoseEffect = (card: Card) => {

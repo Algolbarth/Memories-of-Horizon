@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Boxeur extends Creature {
     name = "Boxeur";
@@ -15,7 +14,7 @@ export class Boxeur extends Creature {
         this.stat("Constitution").init(20);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Au début d'une manche : Augmente d'autant sa force pendant cette manche que 10 fois le numéro de la manche.`);
     };
 
     roundEffect = () => {

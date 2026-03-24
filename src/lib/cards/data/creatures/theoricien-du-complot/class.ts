@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class TheoricienDuComplot extends Creature {
     name = "Théoricien du complot";
@@ -16,7 +15,7 @@ export class TheoricienDuComplot extends Creature {
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand une carte alliée est meulée : Si sur le terrain : Produit 1 or et 1 feu.`);
     };
 
     otherMillEffect = (card: Card) => {

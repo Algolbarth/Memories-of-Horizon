@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class BoulePuante extends Action {
@@ -13,7 +12,7 @@ export class BoulePuante extends Action {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Réduit de 5 la protection d'une créature sur le terrain adverse.`);
     };
 
     canUse = () => {

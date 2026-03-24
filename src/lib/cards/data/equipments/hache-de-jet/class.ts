@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class HacheDeJet extends Equipment {
@@ -17,7 +16,9 @@ export class HacheDeJet extends Equipment {
 
         this.equipStat("Adresse").init(25);
 
-        this.text = Text;
+        this.addChoice([
+            `S'équipe à une créature sur votre terrain.`,
+            `Inflige 50 dégâts à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {

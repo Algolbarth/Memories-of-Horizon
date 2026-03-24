@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Opportunite extends Action {
@@ -12,7 +11,9 @@ export class Opportunite extends Action {
 
         this.init([["Or", 8]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Découvre 1 carte.`,
+            `Augmente de 1 l'initiative d'une créature sur votre terrain pendant ce tour.`]);
     };
 
     select = () => {

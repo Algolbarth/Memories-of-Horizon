@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class LoupDesMontagnes extends Creature {
     name = "Loup des montagnes";
@@ -15,10 +15,10 @@ export class LoupDesMontagnes extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(15);
 
-        this.text = Text;
+        this.addText(`Quand attaque une unité ayant une endurance nulle : Augmente sa force de 5.`);
     };
 
-    fightEffect = (defender) => {
+    fightEffect = (defender: Unit) => {
         if (defender.stat("Endurance").value() > 0) {
             this.stat('Force').increase(5);
         }

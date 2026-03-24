@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from '$lib/cards/utils/equip-text.svelte';
 
 export class BaguetteDeMage extends Equipment {
     name = "Baguette de mage";
@@ -14,6 +13,6 @@ export class BaguetteDeMage extends Equipment {
 
         this.equipStat("Magie").init(15);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };
 };

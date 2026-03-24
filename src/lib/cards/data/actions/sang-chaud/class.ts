@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class SangChaud extends Action {
@@ -12,7 +11,7 @@ export class SangChaud extends Action {
 
         this.init([["Or", 12], ["Feu", 12]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Remplit la jauge critique d'une créature sur votre terrain.`);
     };
 
     canUse = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class ManuelDeMagie extends Equipment {
     name = "Manuel de magie";
@@ -12,7 +11,8 @@ export class ManuelDeMagie extends Equipment {
 
         this.equipStat("Magie").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Génère {card:Incantation} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

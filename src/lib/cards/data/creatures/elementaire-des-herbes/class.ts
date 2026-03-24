@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class ElementaireDesHerbes extends Creature {
     name = "Élémentaire des herbes";
@@ -15,7 +14,7 @@ export class ElementaireDesHerbes extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand périt : Augmente de 15 la constitution et la force de la créature sur votre terrain la plus en avant.`);
     };
 
     perishEffect = () => {

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PluieDeMeteorites extends Action {
@@ -12,7 +11,9 @@ export class PluieDeMeteorites extends Action {
 
         this.init([["Or", 120]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Stocke 10 flux.`,
+            `Inflige 20 dégâts à toutes les unités sur le terrain adverse.`]);
     };
 
     canUse = () => {

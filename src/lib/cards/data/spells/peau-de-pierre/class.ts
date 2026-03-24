@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PeauDePierre extends Spell {
@@ -12,7 +11,9 @@ export class PeauDePierre extends Spell {
 
         this.init([["Or", 8], ["Terre", 8]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 15 l'endurance d'une créature sur votre terrain.`,
+            `[sorcery {15, augmente de 30 l'endurance à la place.}]`]);
     };
 
     canUse = () => {

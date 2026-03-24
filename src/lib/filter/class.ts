@@ -105,7 +105,32 @@ export class Filter {
     };
 
     filterByEffect(card: Card) {
-        return (this.select_effect == "" || (card.text != undefined && card.text.toLowerCase().includes(this.select_effect.toLowerCase())));
+        if (this.select_effect == "") {
+            return true;
+        }
+
+        let text: string = "";
+        for (const effect of card.effects) {
+            if (effect.condition()) {
+                text = text + effect.text;
+            }
+
+        }
+
+        text = text.replaceAll("[satiety ", "Satieté");
+        text = text.replaceAll("[resolve ", "Résolution");
+        text = text.replaceAll("[source ", "Source");
+        text = text.replaceAll("[prime ", "Prime");
+        text = text.replaceAll("[sorcery ", "Sorcellerie");
+        text = text.replaceAll("[choice ", "").replaceAll("[option ", "");
+        text = text.replaceAll("{card:", "");
+        text = text.replaceAll("{jump:1}", "");
+        text = text.replaceAll("{variable:", "");
+        text = text.replaceAll("[if ", "");
+        text = text.replaceAll("[details ", "");
+        text = text.replaceAll("]", "").replaceAll("}", "").replaceAll("{", "");;
+
+        return text.toLowerCase().includes(this.select_effect.toLowerCase());
     };
 
     filterByLevel(card: Card) {
@@ -187,7 +212,7 @@ export class Filter {
         if (type == "Nom") {
             for (let i = 0; i < tab.length; i++) {
                 let j = i;
-                while (j > 0 && tab[j].name < tab[j - 1].name) {
+                while (j > 0 && tab[j - 1].name.localeCompare(tab[j].name, "fr") > 0) {
                     let swap = tab[j];
                     tab[j] = tab[j - 1];
                     tab[j - 1] = swap;

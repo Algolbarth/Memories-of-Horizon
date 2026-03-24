@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class LigneEnergetique extends Action {
@@ -15,7 +14,7 @@ export class LigneEnergetique extends Action {
 
         this.initFamily(["Élémentaire"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Produit 5 fois plus de ressources que de créatures de famille Élémentaires sur votre terrain possédant au moins les éléments d'une créature de famille Élémentaire sur votre terrain.`);
     };
 
     canUse = () => {

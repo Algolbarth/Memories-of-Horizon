@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class BonhommeBiscuit extends Creature {
     name = "Bonhomme biscuit";
@@ -16,7 +15,7 @@ export class BonhommeBiscuit extends Creature {
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);
 
-        this.text = Text;
+        this.addText(`Quand un objet de famille Nourriture est utilisé sur lui : Augmente de 5 sa constitution et sa force.`);
     };
 
     targetEffect = (card: Card) => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Pretre extends Creature {
@@ -16,7 +15,9 @@ export class Pretre extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addChoice([
+            `Augmente de 15 la constitution d'une créature sur votre terrain.`,
+            `Soigne 20 blessures d'une créature sur votre terrain.`]);
     };
 
     select = () => {

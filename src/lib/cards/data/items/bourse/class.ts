@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class Bourse extends Item {
     name = "Bourse";
@@ -12,7 +11,7 @@ export class Bourse extends Item {
 
         this.getSale("Or").base = 0;
 
-        this.text = Text;
+        this.addText(`Quand se prépare dans l'inventaire : Augmente de 5 sa vente en or.`);
     };
 
     canUse = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class PanneauDeDirection extends Building {
     name = "Panneau de direction";
@@ -12,7 +11,7 @@ export class PanneauDeDirection extends Building {
 
         this.stat("Constitution").init(5);
 
-        this.text = Text;
+        this.addText(`Quand votre pile est actualisée : Pioche 1 carte.`);
     };
 
     refreshStackEffect = () => {

@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class CollierEnDentDeLoup extends Equipment {
     name = "Collier en dent de loup";
@@ -10,11 +9,12 @@ export class CollierEnDentDeLoup extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 50]]);
+        this.init([["Or", 80]]);
 
         this.initFamily(["Bête"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand une créature alliée de famille Bête périt : Si équipé et que le porteur est sur le terrain : Augmente de 20 la force du porteur.`);
     };
 
     otherPerishEffect = (card: Card) => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Troubadour extends Creature {
@@ -16,7 +15,7 @@ export class Troubadour extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 20 la constitution et la force d'une créature sur votre terrain pendant ce tour.`);
     };
 
     select = () => {

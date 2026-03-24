@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Catapulte extends Building {
     name = "Catapulte";
@@ -12,7 +11,7 @@ export class Catapulte extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Au début d'une manche : Inflige 20 dégâts à l'unité en première position sur le terrain adverse.`);
     };
 
     roundEffect = () => {

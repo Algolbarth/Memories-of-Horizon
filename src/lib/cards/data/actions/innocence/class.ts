@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Innocence extends Action {
@@ -12,7 +11,7 @@ export class Innocence extends Action {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Retire la protection d'une unité sur votre terrain.`);
     };
 
     canUse = () => {

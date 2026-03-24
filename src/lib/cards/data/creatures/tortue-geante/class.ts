@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class TortueGéante extends Creature {
     name = "Tortue géante";
@@ -16,7 +15,7 @@ export class TortueGéante extends Creature {
         this.stat("Force").init(5);
         this.stat("Endurance").init(5);
 
-        this.text = Text;
+        this.addText(`Quand périt : Génère {card:Carapace de tortue} dans votre inventaire.`);
     };
 
     perishEffect = () => {

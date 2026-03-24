@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class Palmes extends Equipment {
     name = "Palmes";
@@ -13,7 +12,8 @@ export class Palmes extends Equipment {
 
         this.equipStat("Vitesse").init(2);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Produit autant d'eau que de cartes d'élément Eau sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

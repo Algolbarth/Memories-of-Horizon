@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PetiteFille extends Creature {
@@ -16,7 +15,7 @@ export class PetiteFille extends Creature {
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 la protection d'une créature sur votre terrain.`);
     };
 
     select = () => {

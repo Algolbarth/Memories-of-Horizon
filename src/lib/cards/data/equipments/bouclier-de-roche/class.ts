@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class BouclierDeRoche extends Equipment {
     name = "Bouclier de roche";
@@ -14,7 +13,8 @@ export class BouclierDeRoche extends Equipment {
 
         this.equipStat("Endurance").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur est attaqué : Augmente de 2 l'endurance du porteur.`);
     };
 
     defendEffect = () => {

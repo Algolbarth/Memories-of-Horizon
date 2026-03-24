@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Chimere extends Creature {
     name = "Chimère";
@@ -16,7 +15,7 @@ export class Chimere extends Creature {
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 10 sa constitution et sa force pour chaque famille différentes parmi les créatures sur votre terrain.`);
     };
 
     useEffect = () => {

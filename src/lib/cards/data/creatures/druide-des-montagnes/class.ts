@@ -1,16 +1,11 @@
 import type { System } from '$lib/system/class';
 import { Druid } from '$lib/cards/class/druid';
-import Text from './text.svelte';
 
 class DruideDesMontagnes extends Druid {
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 30], ["Terre", 30]]);
-
-        this.initFamily(["Druide"]);
-
-        this.text = Text;
     };
 };
 
@@ -26,6 +21,8 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
         this.stat("Endurance").init(10);
+
+        this.addText(`Quand se prépare sur le terrain : Augmente sa constitution et sa force de 10.`);
     };
 
     startPhaseEffect = () => {

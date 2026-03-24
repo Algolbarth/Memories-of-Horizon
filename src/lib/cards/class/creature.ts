@@ -225,6 +225,40 @@ export class Creature extends Unit {
         }
     };
 
+    perish = () => {
+        if (this.perishEffect != undefined) {
+            this.perishEffect();
+        }
+
+        for (const equipment of this.equipments) {
+            if (equipment.perishBearerEffect != undefined) {
+                equipment.perishBearerEffect();
+            }
+        }
+
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const zone of entity.zones) {
+                let cpy = copy(zone.cards);
+                for (const card of cpy) {
+                    if (card != this) {
+                        card.otherPerish(this);
+                    }
+                }
+            }
+        }
+
+        if (this.second_life == false) {
+            this.move("Défausse");
+
+            if (this.system.view.card == this) {
+                this.system.view.reset();
+            }
+        }
+        else {
+            this.second_life = false;
+        }
+    };
+
     otherPerish = (card: Unit) => {
         if (this.otherPerishEffect != undefined) {
             this.otherPerishEffect(card);

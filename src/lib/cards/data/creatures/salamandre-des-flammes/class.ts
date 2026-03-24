@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class SalamandreDesFlammes extends Creature {
     name = "Salamandre des flammes";
@@ -15,7 +14,7 @@ export class SalamandreDesFlammes extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Enflammer} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

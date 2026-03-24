@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class ElementaireDEau extends Creature {
     name = "Élémentaire d'eau";
@@ -15,7 +14,7 @@ export class ElementaireDEau extends Creature {
         this.stat("Constitution").init(15);
         this.stat("Force").init(15);
 
-        this.text = Text;
+        this.addText(`Quand posé : [source {5, augmente de 5 sa constitution et sa force}].`);
     };
 
     addEffect = (zone: string) => {

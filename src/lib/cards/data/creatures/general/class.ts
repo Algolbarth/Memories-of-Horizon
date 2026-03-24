@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class General extends Creature {
     name = "Général";
@@ -16,7 +15,7 @@ export class General extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Augmente de 5 la constitution et la force de toutes les créatures sur votre terrain.`);
     };
 
     startPhaseEffect = () => {

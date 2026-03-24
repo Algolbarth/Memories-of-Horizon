@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Knight, MountedKnight } from '$lib/cards/class/knight';
-import Text from './text.svelte';
 
 export class Chevalier extends Knight {
     name = "Chevalier";
@@ -35,6 +34,6 @@ export class ChevalierMonte extends MountedKnight {
         this.stat("Force").init(20);
         this.stat("Vitesse").init(1);
 
-        this.text = Text;
+        this.addText(`Quand périt : Se réincarne en {card:Chevalier}.`);
     };
 };

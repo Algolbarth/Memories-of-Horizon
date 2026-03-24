@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Crochetage extends Action {
     name = "Crochetage";
@@ -8,9 +7,9 @@ export class Crochetage extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 5]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Réduit de 1 le niveau de votre pile pendant ce tour.`);
     };
 
     useEffect = () => {

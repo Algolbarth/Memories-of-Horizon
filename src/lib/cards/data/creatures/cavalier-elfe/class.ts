@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class CavalierElfe extends Creature {
     name = "Cavalier elfe";
@@ -16,7 +15,7 @@ export class CavalierElfe extends Creature {
         this.stat("Force").init(20);
         this.stat("Vitesse").init(1);
 
-        this.text = Text;
+        this.addText(`Quand posé : [resolve {20, augmente de 1 sa vitesse.}]`);
     };
 
     useEffect = () => {

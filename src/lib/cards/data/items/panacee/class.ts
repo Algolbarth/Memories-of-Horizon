@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Panacee extends Item {
@@ -12,7 +11,7 @@ export class Panacee extends Item {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Retire tous les effets négatifs d'une créature sur votre terrain.`);
     };
 
     canUse = () => {

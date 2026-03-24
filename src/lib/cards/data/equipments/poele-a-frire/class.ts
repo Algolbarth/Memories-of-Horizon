@@ -3,7 +3,6 @@ import { copy } from '$lib/utils';
 import type { Unit } from '$lib/cards/class/unit';
 import { Equipment } from '$lib/cards/class/equipment';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class PoeleAFrire extends Equipment {
     name = "Poêle à frire";
@@ -13,7 +12,8 @@ export class PoeleAFrire extends Equipment {
 
         this.init([["Or", 20], ["Feu", 20]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur attaque : Inflige 10 dégâts à l'unité attaquée pour chaque objet de famille Nourriture dans votre défausse.`);
     };
 
     fightEffect = (defender: Unit) => {

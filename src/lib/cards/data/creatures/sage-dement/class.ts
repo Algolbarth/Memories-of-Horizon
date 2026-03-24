@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class SageDement extends Creature {
     name = "Sage dément";
@@ -15,7 +14,7 @@ export class SageDement extends Creature {
         this.stat("Constitution").init(3);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Tant que votre pile est vide : Augmente de 25 son intelligence.`);
 
         this.stat("Intelligence").effect = function (total: number) {
             if (this.card.system.game != undefined && this.card.owner().zone("Pile").cards.length == 0) {

@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Thon extends Creature {
     name = "Thon";
@@ -17,7 +16,9 @@ export class Thon extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 créature de famille Poisson.`,
+            `Produit 3 eau pour chaque créature de famille Poisson sur votre pile.`]);
     };
 
     useEffect = () => {

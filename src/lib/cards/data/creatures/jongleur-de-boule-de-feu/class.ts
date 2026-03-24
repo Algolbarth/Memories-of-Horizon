@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class JongleurDeBouleDeFeu extends Creature {
     name = "Jongleur de boule de feu";
@@ -17,7 +16,7 @@ export class JongleurDeBouleDeFeu extends Creature {
         this.stat("Force").init(10);
         this.stat("Magie").init(15);
 
-        this.text = Text;
+        this.addText(`Quand {card:Boule de feu} est posée : Si sur le terrain : Génère {card:Boule de feu} sur votre pile.`);
     };
 
     otherPoseEffect = (card: Card) => {

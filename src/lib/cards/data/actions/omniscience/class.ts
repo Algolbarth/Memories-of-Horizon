@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Omniscience extends Action {
     name = "Omniscience";
@@ -10,7 +9,7 @@ export class Omniscience extends Action {
 
         this.init([["Or", 150]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Découvre autant de carte que nécessaire pour remplir votre pile.`);
     };
 
     canUse = () => {

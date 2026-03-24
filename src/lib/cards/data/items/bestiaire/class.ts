@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class Bestiaire extends Item {
     name = "Bestiaire";
@@ -12,7 +11,9 @@ export class Bestiaire extends Item {
 
         this.init([["Or", 25]]);
 
-        this.text = Text;
+        this.addText([
+            "Quand posé : Découvre 3 créatures.",
+            "[resolve {20, découvre 5 créatures à la place.}]"]);
     };
 
     useEffect = () => {

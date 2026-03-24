@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class Grimoire extends Equipment {
     name = "Grimoire";
@@ -11,7 +10,8 @@ export class Grimoire extends Equipment {
 
         this.init([["Or", 6]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Pioche 1 carte de famille Sort.`);
     };
 
     startPhaseEffect = () => {

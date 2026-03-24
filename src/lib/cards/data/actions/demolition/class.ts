@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Demolition extends Action {
@@ -12,7 +11,7 @@ export class Demolition extends Action {
 
         this.init([["Or", 80]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Détruit un bâtiment sur le terrain adverse.`);
     };
 
     canUse = () => {

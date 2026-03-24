@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class TheVert extends Item {
@@ -10,11 +9,13 @@ export class TheVert extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Végétal", 8]]);
+        this.init([["Or", 5], ["Végétal", 5]]);
 
         this.initFamily(["Nourriture", "Plante"]);
 
-        this.text = Text;
+        this.addText([
+            "Quand posé : Soigne 20 blessures à une créature sur votre terrain.",
+            "[satiety {Augmente de 2 l'intelligence de cette créature à la place.}]"]);
     };
 
     canUse = () => {

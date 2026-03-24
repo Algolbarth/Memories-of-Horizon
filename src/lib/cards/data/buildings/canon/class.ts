@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Canon extends Building {
     name = "Canon";
@@ -12,7 +11,7 @@ export class Canon extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.text = Text;
+        this.addText(`Au début d'une manche : Inflige 50 dégâts à l'unité en première position sur le terrain adverse.`);
     };
 
     roundEffect = () => {

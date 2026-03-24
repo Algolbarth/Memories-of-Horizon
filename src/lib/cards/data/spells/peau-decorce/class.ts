@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class PeauDEcorce extends Spell {
@@ -12,7 +11,9 @@ export class PeauDEcorce extends Spell {
 
         this.init([["Or", 8], ["Végétal", 8]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 20 la constitution d'une créature sur votre terrain.`,
+            `[sorcery {15, augmente de 45 la constitution à la place.}]`]);
     };
 
     canUse = () => {

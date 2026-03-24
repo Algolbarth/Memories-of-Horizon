@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class CleEnOr extends Item {
     name = "Clé en or";
@@ -10,7 +9,7 @@ export class CleEnOr extends Item {
 
         this.init([["Or", 15]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 le niveau de votre pile pendant ce tour.`);
     };
 
     useEffect = () => {

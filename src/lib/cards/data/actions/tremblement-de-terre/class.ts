@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class TremblementDeTerre extends Action {
     name = "Tremblement de terre";
@@ -11,7 +10,7 @@ export class TremblementDeTerre extends Action {
 
         this.init([["Or", 12], ["Terre", 12]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Inflige 10 dégâts à toutes les unités sur le terrain.`);
     };
 
     canUse = () => {

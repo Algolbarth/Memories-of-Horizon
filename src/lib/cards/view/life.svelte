@@ -1,12 +1,12 @@
 <script lang="ts">
-    import type { Unit } from "../class/class";
+    import type { Unit } from "../class/unit";
 
     export let card: Unit;
 
-    let total_life: number = card.stat("Vitalité").value() + card.stat("Garde").value();
-    let ratio_life: number = (100 * card.stat("Santé").value()) / total_life;
-    let ratio_hit: number = (100 * (card.stat("Vitalité").value() - card.stat("Santé").value())) / total_life;
-    let ratio_guard: number = (100 * card.stat("Garde").value()) / total_life;
+    $: total_life = card.stat("Vitalité").value() + card.stat("Garde").value();
+    $: ratio_life = (100 * card.stat("Santé").value()) / total_life;
+    $: ratio_hit = (100 * (card.stat("Vitalité").value() - card.stat("Santé").value())) / total_life;
+    $: ratio_guard = (100 * card.stat("Garde").value()) / total_life;
 </script>
 
 <div class="lifebar">
@@ -47,6 +47,8 @@
         color: transparent;
 
         height: 1em;
+
+        margin-top: 0.5em;
 
         border: solid;
         border-width: 0.25vmin;

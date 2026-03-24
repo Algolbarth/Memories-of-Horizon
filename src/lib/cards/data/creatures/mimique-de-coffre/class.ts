@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class MimiqueDeCoffre extends Creature {
     name = "Mimique de coffre";
@@ -13,7 +12,8 @@ export class MimiqueDeCoffre extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Se place sur le terrain adverse.`);
+        this.addText(`Quand périt sur le terrain : L'adversaire pioche 5 cartes et les verrouille.`);
     };
 
     useEffect = () => {

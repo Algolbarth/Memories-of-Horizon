@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Stratège extends Creature {
     name = "Stratège";
@@ -18,7 +17,7 @@ export class Stratège extends Creature {
         this.stat("Force").init(5);
         this.stat("Intelligence").init(2);
 
-        this.text = Text;
+        this.addText(`Quand posé : Pioche 2 actions.`);
     };
 
     useEffect = () => {

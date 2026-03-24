@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class Innovation extends Action {
     name = "Innovation";
@@ -10,7 +9,7 @@ export class Innovation extends Action {
 
         this.init([["Or", 75]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Si votre pile est remplie : Augmente de 2 la taille de votre pile.`);
     };
 
     canUse = () => {
@@ -26,4 +25,4 @@ export class Innovation extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

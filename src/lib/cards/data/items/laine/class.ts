@@ -1,7 +1,6 @@
 import type { Unit } from '$lib/cards/class/unit';
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Laine extends Item {
@@ -12,7 +11,7 @@ export class Laine extends Item {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 5 l'endurance et la résistance d'une unité sur votre terrain.`);
     };
 
     canUse = () => {

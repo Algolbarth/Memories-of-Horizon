@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class ElementaireExplosif extends Creature {
     name = "Élémentaire explosif";
@@ -16,7 +15,7 @@ export class ElementaireExplosif extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.text = Text;
+        this.addText(`Quand périt : Réduit votre production de feu de 5 pour infliger 5 dégâts à toutes les unités adverse.`);
     };
 
     perishEffect = () => {

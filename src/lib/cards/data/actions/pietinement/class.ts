@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Pietinement extends Action {
     name = "Piétinement";
@@ -11,7 +10,7 @@ export class Pietinement extends Action {
 
         this.init([["Or", 80]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Détruit la créature sur le terrain adverse ayant la force la plus haute.`);
     };
 
     canUse = () => {

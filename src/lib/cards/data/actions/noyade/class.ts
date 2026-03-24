@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Noyade extends Action {
@@ -12,7 +11,7 @@ export class Noyade extends Action {
 
         this.init([["Or", 40], ["Eau", 40]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Détruit une créature qui n'est pas d'élément Eau sur le terrain adverse.`);
     };
 
     canUse = () => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import type { Card } from '$lib/cards/class/class';
 
 export class Dauphin extends Creature {
@@ -16,7 +15,9 @@ export class Dauphin extends Creature {
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Pioche 1 créature.`,
+            `Réduit d'autant le coût de cette créature que votre production d'eau.`]);
     };
 
     useEffect = () => {

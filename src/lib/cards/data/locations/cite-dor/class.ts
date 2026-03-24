@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Location } from '$lib/cards/class/location';
-import Text from './text.svelte';
 
 export class CiteDOr extends Location {
     name = "Cité d'or";
@@ -11,7 +10,7 @@ export class CiteDOr extends Location {
 
         this.init([["Or", 100]]);
 
-        this.text = Text;
+        this.addText(`Si actif : Les cartes piochables sont du même niveau que la pile.`);
     };
 
     canRead = (card: Card) => {

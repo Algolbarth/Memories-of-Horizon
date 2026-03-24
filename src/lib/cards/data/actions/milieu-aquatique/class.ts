@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
 export class MilieuAquatique extends Action {
@@ -12,7 +11,9 @@ export class MilieuAquatique extends Action {
 
         this.init([["Or", 25], ["Eau", 25]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 5 la constitution et la force de toutes les créatures d'élément Eau sur votre terrain.`,
+            `[source {50, augmente de 10 à la place.}]`]);
     };
 
     canUse = () => {

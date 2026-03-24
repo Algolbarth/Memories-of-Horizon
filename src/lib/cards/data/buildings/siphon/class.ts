@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 
 export class Siphon extends Building {
     name = "Siphon";
@@ -13,7 +12,7 @@ export class Siphon extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.text = Text;
+        this.addText(`Quand une autre carte d'élément Eau alliée est posée : Si sur le terrain : Augmente de 5 sa vente en eau.`);
     };
 
     otherPoseEffect = (card: Card) => {

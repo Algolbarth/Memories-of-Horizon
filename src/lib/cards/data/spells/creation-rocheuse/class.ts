@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Spell } from '$lib/cards/class/spell';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class CreationRocheuse extends Spell {
@@ -11,7 +10,12 @@ export class CreationRocheuse extends Spell {
 
         this.init([["Or", 30], ["Terre", 30]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Génère {card:Élémentaire de roche} sur votre terrain.`,
+            `Génère {card:Mur de roche} sur votre terrain.`],
+            undefined,
+            `[sorcery {50, les deux effets s'activent à la place.}]`
+        );
     };
 
     canUse = () => {

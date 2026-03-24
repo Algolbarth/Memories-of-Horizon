@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Druid } from '$lib/cards/class/druid';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class BatonDeDruide extends Equipment {
@@ -14,7 +13,8 @@ export class BatonDeDruide extends Equipment {
 
         this.initFamily(["Druide"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature de famille Druide sur votre terrain.`);
+        this.addText(`Au début de la phase de combat et à la fin de la phase de préparation adverse : Si équipé et si le porteur est sur le terrain : Transforme en sa forme alternative le porteur.`);
     };
 
     canUse = () => {

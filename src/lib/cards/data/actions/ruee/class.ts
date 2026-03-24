@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
 export class Ruee extends Action {
@@ -12,7 +11,7 @@ export class Ruee extends Action {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 1 la vitesse de toutes les créatures sur votre terrain pendant ce tour.`);
     };
 
     canUse = () => {

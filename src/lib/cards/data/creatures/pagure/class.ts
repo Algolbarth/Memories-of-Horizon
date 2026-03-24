@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Pagure extends Creature {
@@ -15,7 +14,9 @@ export class Pagure extends Creature {
         this.stat("Force").init(2);
         this.stat("Endurance").init(3);
 
-        this.text = Text;
+        this.addChoice([
+            `Génère {card:Coquillage} dans votre inventaire.`,
+            `Génère {card:Conque} dans votre inventaire.`]);
     };
 
     select = () => {

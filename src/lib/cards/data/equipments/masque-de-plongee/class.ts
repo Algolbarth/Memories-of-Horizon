@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class MasqueDePlongee extends Equipment {
     name = "Masque de plongée";
@@ -12,7 +11,8 @@ export class MasqueDePlongee extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Augmente jusqu'à 10 la garde du porteur et génère {card:Bulle protectrice} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

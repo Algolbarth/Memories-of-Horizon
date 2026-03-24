@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Vigilance extends Action {
@@ -12,7 +11,9 @@ export class Vigilance extends Action {
 
         this.init([["Or", 12]]);
 
-        this.text = Text;
+        this.addChoice([
+            `Augmente de 10 l'endurance d'une créature sur votre terrain.`,
+            `Augmente de 10 la résistance d'une créature sur votre terrain.`]);
     };
 
     canUse = () => {

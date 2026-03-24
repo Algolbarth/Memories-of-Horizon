@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Malefice extends Action {
@@ -12,7 +11,7 @@ export class Malefice extends Action {
 
         this.init([["Or", 50]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Transforme en {card:Grenouille} une créature sur le terrain adverse.`);
     };
 
     canUse = () => {

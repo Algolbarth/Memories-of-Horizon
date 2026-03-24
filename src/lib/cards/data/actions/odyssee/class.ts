@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Odyssee extends Action {
@@ -12,7 +11,9 @@ export class Odyssee extends Action {
 
         this.init([["Or", 100]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Place une créature sur votre terrain sur la pile.`,
+            `Augmente de 200 la constitution et la force de cette créature.`]);
     };
 
     canUse = () => {

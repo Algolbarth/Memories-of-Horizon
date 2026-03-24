@@ -13,7 +13,7 @@ export class StandardDeck extends Deck {
 
         for (let i = 0; i < cards.length; i++) {
             let j = i;
-            while (j > 0 && cards[j] < cards[j - 1]) {
+            while (j > 0 && cards[j - 1].localeCompare(cards[j], "fr") > 0) {
                 let swap = cards[j];
                 cards[j] = cards[j - 1];
                 cards[j - 1] = swap;

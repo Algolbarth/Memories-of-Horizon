@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Knight } from '$lib/cards/class/knight';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class MontureDeChevalier extends Creature {
@@ -17,7 +16,7 @@ export class MontureDeChevalier extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : Place dans l'inventaire et transforme en sa forme alternative une créature de famille Chevalier à terre sur votre terrain.`);
     };
 
     select = () => {

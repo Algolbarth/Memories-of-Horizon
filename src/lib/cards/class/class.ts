@@ -9,7 +9,7 @@ import { Entity } from "$lib/game/entity";
 import { Zone } from "$lib/game/zone";
 import type { Unit } from "./unit";
 import type { Creature } from "./creature";
-import type { Component } from "svelte";
+import { Effect } from "./effect";
 
 export class Card {
     name: string = "Carte";
@@ -26,7 +26,7 @@ export class Card {
     slot: number | undefined;
     zone: Zone | undefined;
     entity: Entity | undefined;
-    text: Component | undefined;
+    effects: Effect[] = [];
     cache: boolean = false;
     alternative_form: string | undefined;
     second_life: boolean = false;
@@ -40,7 +40,7 @@ export class Card {
 
         this.addTrait("Commune", false);
         this.trait("Commune").value = function () {
-            if (this.card.trait("Légendaire").value() || this.card.trait("rare").value()) {
+            if (this.card.trait("Légendaire").value() || this.card.trait("Rare").value()) {
                 return false;
             }
             return true;
@@ -436,6 +436,10 @@ export class Card {
 
         if (this.second_life == false) {
             this.move("Défausse");
+
+            if (this.system.view.card == this) {
+                this.system.view.reset();
+            }
         }
         else {
             this.second_life = false;
@@ -629,5 +633,51 @@ export class Card {
         }
         console.log("error");
         return new Entity(this.system);
+    };
+
+    addText = (lines: string[] | string, condition: (() => boolean) | undefined = undefined) => {
+        let text: string[] = [];
+
+        if (typeof lines === "string") {
+            text = [lines];
+        }
+        else {
+            text = lines;
+        }
+
+        this.effects.push(new Effect(this, text, condition, "text"));
+    };
+
+    addChoice = (choices: string[], before: string[] | string | undefined = undefined, after: string[] | string | undefined = undefined, condition: (() => boolean) | undefined = undefined) => {
+        let text: string = "";
+
+        if (before == undefined) {
+            text = text + "Quand posé : Au choix : ";
+        }
+        else if (typeof before === "string") {
+            text = text + before;
+        }
+        else {
+            for (const line of before) {
+                text = text + line;
+            }
+        }
+
+        text = text + "[choice {";
+        for (const choice of choices) {
+            text = text + "[option {" + choice + "}]";
+        }
+        text = text + "}]";
+
+        if (typeof after === "string") {
+            text = text + after;
+        }
+        else if (after != undefined) {
+            for (const line of after) {
+                text = text + line;
+            }
+        }
+
+        this.effects.push(new Effect(this, [text], condition, "choice"));
     };
 };

@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class CommissairePriseur extends Creature {
     name = "Commissaire priseur";
@@ -16,7 +15,7 @@ export class CommissairePriseur extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.text = Text;
+        this.addText(`Quand se prépare sur le terrain : Augmente de 10 la vente en or de toutes les cartes dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

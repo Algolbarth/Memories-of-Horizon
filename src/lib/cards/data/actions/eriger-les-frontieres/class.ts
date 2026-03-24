@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 
 export class ErigerLesFrontieres extends Action {
     name = "Ériger les frontières";
@@ -11,7 +10,9 @@ export class ErigerLesFrontieres extends Action {
 
         this.init([["Or", 75], ["Terre", 75]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente de 1 la taille de votre terrain.`,
+            `Augmente d'autant l'endurance de toutes les unités sur le terrain adverse que la taille de votre terrain.`]);
     };
 
     useEffect = () => {

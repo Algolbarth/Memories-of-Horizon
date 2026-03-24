@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class ElementaireDesEboulis extends Creature {
@@ -9,15 +8,17 @@ export class ElementaireDesEboulis extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Terre", 25]]);
+        this.init([["Terre", 30]]);
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(15);
-        this.stat("Force").init(15);
+        this.stat("Constitution").init(20);
+        this.stat("Force").init(20);
         this.stat("Endurance").init(5);
 
-        this.text = Text;
+        this.addChoice([
+            `Se place sur votre terrain.`,
+            `Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.`]);
     };
 
     canUse = () => {

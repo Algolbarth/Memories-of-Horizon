@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 
 export class PotionDeMana extends Item {
     name = "Potion de mana";
@@ -14,7 +13,8 @@ export class PotionDeMana extends Item {
 
         this.addStat("Infusion", 5);
 
-        this.text = Text;
+        this.addText(`Quand posé : Produit 1 mana pour chaque valeur d'infusion.`);
+        this.addText(`[details {Produit {card.stat("Infusion").value()} mana.}]`);
     };
 
     useEffect = () => {

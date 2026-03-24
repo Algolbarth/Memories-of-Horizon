@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Lion extends Creature {
     name = "Lion";
@@ -16,7 +15,7 @@ export class Lion extends Creature {
         this.stat("Constitution").init(20);
         this.stat("Force").init(20);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 5 la constitution et la force de toutes les créatures de famille Bête sur le terrain.`);
     };
 
     useEffect = () => {

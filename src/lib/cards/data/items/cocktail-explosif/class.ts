@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class CocktailExplosif extends Item {
@@ -12,7 +11,7 @@ export class CocktailExplosif extends Item {
 
         this.init([["Or", 25], ["Feu", 25]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Augmente de 10 la brûlure d'une unité sur le terrain adverse et aux unités adjacentes.`);
     };
 
     canUse = () => {

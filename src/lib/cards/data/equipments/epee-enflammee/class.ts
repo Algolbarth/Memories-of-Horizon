@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class EpeeEnflammee extends Equipment {
     name = "Épée enflammée";
@@ -15,7 +14,8 @@ export class EpeeEnflammee extends Equipment {
 
         this.equipStat("Force").init(50);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur attaque : Inflige 50 dégâts à l'unité attaquée.`);
     };
 
     fightEffect = (defender: Unit) => {

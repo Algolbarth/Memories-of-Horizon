@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import type { Item } from '$lib/cards/class/item';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Melange extends Action {
@@ -12,7 +11,7 @@ export class Melange extends Action {
 
         this.init([["Or", 10]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Fusionne 2 objets de famille Potion dans votre inventaire en {card:Concoction}.`);
     };
 
     canUse = () => {

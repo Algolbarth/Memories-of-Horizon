@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
 import { Building } from '$lib/cards/class/building';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Eboulement extends Action {
@@ -11,9 +10,11 @@ export class Eboulement extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Terre", 10]]);
+        this.init([["Or", 12], ["Terre", 12]]);
 
-        this.text = Text;
+        this.addText([
+            `Quand posé : Augmente jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.`,
+            `Si cette créature a son étourdissement à 1 ou plus, lui inflige 50 dégâts à la place.`]);
     };
 
     canUse = () => {
@@ -46,7 +47,7 @@ export class Eboulement extends Action {
         this.targeting(target);
 
         if (target instanceof Building && target.stat("Étourdissement").value() >= 1) {
-            target.damageByEffect(20);
+            target.damageByEffect(50);
         }
         else {
             target.stat("Étourdissement").fix(1);

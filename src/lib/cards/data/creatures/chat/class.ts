@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class Chat extends Creature {
     name = "Chat";
@@ -15,7 +14,7 @@ export class Chat extends Creature {
         this.stat("Constitution").init(3);
         this.stat("Force").init(3);
 
-        this.text = Text;
+        this.addText(`Quand attaque : Stocke 1 or.`);
     };
 
     fightEffect = () => {

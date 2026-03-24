@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class HeaumeDePlatine extends Equipment {
     name = "Heaume de platine";
@@ -12,7 +11,8 @@ export class HeaumeDePlatine extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Augmente jusqu'à 100 la garde du porteur.`);
     };
 
     startPhaseEffect = () => {

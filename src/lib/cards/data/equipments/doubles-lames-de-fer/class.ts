@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from '$lib/cards/utils/equip-text.svelte';
 
 export class DoublesLamesDeFer extends Equipment {
     name = "Doubles lames de fer";
@@ -15,6 +14,6 @@ export class DoublesLamesDeFer extends Equipment {
         this.equipStat("Force").init(10);
         this.equipStat("Agilité").init(1);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };
 };

@@ -9,6 +9,7 @@ export * from './bibliotheque-elfique';
 export * from './bibliotheque-incendiee';
 export * from './bivouac';
 export * from './boutique';
+export * from './cairn';
 export * from './canon';
 export * from './carriere-de-pierre';
 export * from './cascade';

@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 import Use from './use.svelte';
 
 export class Metamorphose extends Action {
@@ -14,7 +13,7 @@ export class Metamorphose extends Action {
 
         this.initFamily(["Druide"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Transforme en sa forme alternative une créature de famille Druide sur votre terrain.`);
     };
 
     canUse = () => {

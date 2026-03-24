@@ -33,7 +33,7 @@
 				selectAction(undefined);
 			}}
 		>
-			Se place sur le terrain
+			Se place sur votre terrain
 		</button>
 
 		<br />

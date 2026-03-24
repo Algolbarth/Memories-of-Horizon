@@ -2,7 +2,6 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Building } from '$lib/cards/class/building';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class NidDeWyverne extends Building {
     name = "Nid de wyverne";
@@ -16,7 +15,9 @@ export class NidDeWyverne extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.text = Text;
+        this.addText([
+            `Quand se prépare sur le terrain : Pioche 1 créature de famille Wyverne et la verrouille.`,
+            `Réduit de 15 le coût de cette carte et la verrouille.`]);
     };
 
     startPhaseEffect = () => {

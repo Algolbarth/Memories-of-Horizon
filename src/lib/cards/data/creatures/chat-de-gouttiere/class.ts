@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class ChatDeGouttiere extends Creature {
     name = "Chat de gouttière";
@@ -15,7 +14,8 @@ export class ChatDeGouttiere extends Creature {
         this.stat("Constitution").init(3);
         this.stat("Force").init(15);
 
-        this.text = Text;
+        this.addText(`Quand attaque : Stocke 1 or.`);
+        this.addText(`Quand une autre créature alliée de famille Bête attaque : Augmente de 3 la force de cette créature pendant ce tour.`);
     };
 
     fightEffect = () => {

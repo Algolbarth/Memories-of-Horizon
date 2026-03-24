@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class CasqueEnCuir extends Equipment {
     name = "Casque en cuir";
@@ -12,7 +11,8 @@ export class CasqueEnCuir extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Augmente jusqu'à 5 la garde du porteur.`);
     };
 
     startPhaseEffect = () => {

@@ -1,7 +1,6 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Text from './text.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
 export class TourneeGenerale extends Action {
@@ -12,7 +11,7 @@ export class TourneeGenerale extends Action {
 
         this.init([["Or", 100]]);
 
-        this.text = Text;
+        this.addText(`Quand posé : Génère autant de {card:Bière} dans l'inventaire que de créature sur votre terrain.`);
     };
 
     canUse = () => {
@@ -37,4 +36,4 @@ export class TourneeGenerale extends Action {
         this.move("Défausse");
         this.pose();
     };
-}
+};

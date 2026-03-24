@@ -1,7 +1,6 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/class';
 import { Creature } from '$lib/cards/class/creature';
-import Text from './text.svelte';
 
 export class MageDeLaNature extends Creature {
     name = "Mage de la nature";
@@ -17,7 +16,7 @@ export class MageDeLaNature extends Creature {
         this.stat("Force").init(5);
         this.stat("Magie").init(5);
 
-        this.text = Text;
+        this.addText(`Quand une carte alliée de famille Sort est posée : Si sur le terrain : Pioche 1 créature du même niveau que ce sort.`);
     };
 
     otherPoseEffect = (c: Card) => {

@@ -1,6 +1,5 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
-import Text from './text.svelte';
 
 export class MasseMagique extends Equipment {
     name = "Masse magique";
@@ -15,7 +14,8 @@ export class MasseMagique extends Equipment {
         this.equipStat("Force").init(20);
         this.equipStat("Magie").init(10);
 
-        this.text = Text;
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
+        this.addText(`Quand le porteur attaque : Stocke 5 mana.`);
     };
 
     fightEffect = () => {
