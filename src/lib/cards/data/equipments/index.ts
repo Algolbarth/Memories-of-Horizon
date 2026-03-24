@@ -1,6 +1,7 @@
 export * from './alchimanach';
 export * from './anneau-en-or';
 export * from './bague-de-fiancaille';
+export * from './bague-de-mana';
 export * from './baguette-darchimage';
 export * from './baguette-de-mage';
 export * from './baguette-de-maleficience';
