@@ -14,7 +14,7 @@ export class Marchand extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé et quand se prépare sur le terrain : Augmente de 1 votre production d'or.`);
+        this.addText(`Quand posé ou quand se prépare sur le terrain : Augmente de 1 votre production d'or.`);
     };
 
     useEffect = () => {

@@ -14,7 +14,7 @@ export class ServeuseDeTaverne extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé et quand se prépare sur le terrain : Génère {card:Bière} dans votre inventaire.`);
+        this.addText(`Quand posé ou quand se prépare sur le terrain : Génère {card:Bière} dans votre inventaire.`);
     };
 
     useEffect = () => {

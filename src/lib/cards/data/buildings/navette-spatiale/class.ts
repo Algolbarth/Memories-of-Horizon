@@ -13,7 +13,7 @@ export class NavetteSpatiale extends Building {
 
         this.stat("Constitution").init(40);
 
-        this.addText(`Quand posé et quand se prépare sur le terrain : Stocke 1 flux.`);
+        this.addText(`Quand posé ou quand se prépare sur le terrain : Stocke 1 flux.`);
     };
 
     useEffect = () => {

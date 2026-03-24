@@ -14,7 +14,7 @@ export class BatonDeDruide extends Equipment {
         this.initFamily(["Druide"]);
 
         this.addText(`Quand posé : S'équipe à une créature de famille Druide sur votre terrain.`);
-        this.addText(`Au début de la phase de combat et à la fin de la phase de préparation adverse : Si équipé et si le porteur est sur le terrain : Transforme en sa forme alternative le porteur.`);
+        this.addText(`Au début de la phase de combat ou à la fin de la phase de préparation adverse : Si équipé et si le porteur est sur le terrain : Transforme en sa forme alternative le porteur.`);
     };
 
     canUse = () => {

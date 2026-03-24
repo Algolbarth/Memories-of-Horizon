@@ -11,7 +11,7 @@ export class SalleDesCoffres extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Quand posé et quand se prépare sur le terrain : Génère 2 {card:Coffre en bois} dans votre inventaire.`);
+        this.addText(`Quand posé ou quand se prépare sur le terrain : Génère 2 {card:Coffre en bois} dans votre inventaire.`);
     };
 
     useEffect = () => {

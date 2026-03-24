@@ -109,6 +109,7 @@ export * from './mage';
 export * from './mage-de-feu';
 export * from './mage-de-la-nature';
 export * from './mage-des-eaux';
+export * from './mage-elfe';
 export * from './mage-terrestre';
 export * from './maire';
 export * from './maitre-chien';
