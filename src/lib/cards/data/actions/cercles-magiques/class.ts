@@ -1,7 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class CerclesMagiques extends Action {
     name = "Cercles magiques";
@@ -9,16 +9,14 @@ export class CerclesMagiques extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 10]]);
 
-        this.addText(`Quand posé : Augmente de 10 la magie d'une créature sur votre terrain.`);
+        this.addText(`Quand posé : Augmente de 10 la magie d'une unité sur votre terrain pendant ce tour.`);
     };
 
     canUse = () => {
-        for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature) {
-                return true;
-            }
+        if (this.owner().zone("Terrain").cards.length > 0) {
+            return true;
         }
         return false;
     };
@@ -28,24 +26,14 @@ export class CerclesMagiques extends Action {
             this.system.game.use.set(this, Use);
         }
         else {
-            let target = undefined;
-
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+            this.useEffect(this.owner().zone("Terrain").cards[0]);
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.stat("Magie").increase(10);
+        target.stat("Magie").turn += 10;
 
         this.move("Défausse");
         this.pose();

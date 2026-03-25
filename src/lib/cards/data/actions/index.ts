@@ -3,6 +3,7 @@ export * from './affaiblissement';
 export * from './agrandissement-dinventaire';
 export * from './aiguisage';
 export * from './ambidextrie';
+export * from './amplification-magique';
 export * from './assomage';
 export * from './autodafe';
 export * from './aventure';

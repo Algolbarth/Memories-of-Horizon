@@ -9,7 +9,10 @@
 	export let card: Card;
 
 	function selectCondition(target: Card) {
-		return true;
+		if (target.isFamily("Mage")) {
+			return true;
+		}
+		return false;
 	}
 
 	function selectAction(target: Card) {
