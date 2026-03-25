@@ -10,5 +10,7 @@ export class Barricade extends Building {
         this.init([["Or", 10]]);
 
         this.stat("Constitution").init(20);
+
+        this.initFamily(["Mur"]);
     };
 };

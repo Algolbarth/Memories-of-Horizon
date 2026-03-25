@@ -11,5 +11,7 @@ export class MurDePierre extends Building {
 
         this.stat("Constitution").init(30);
         this.stat("Endurance").init(10);
+
+        this.initFamily(["Mur"]);
     };
 };

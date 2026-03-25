@@ -10,5 +10,7 @@ export class MurDeBrique extends Building {
         this.init([["Or", 25]]);
 
         this.stat("Constitution").init(50);
+
+        this.initFamily(["Mur"]);
     };
 };

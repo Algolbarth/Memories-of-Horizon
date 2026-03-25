@@ -11,5 +11,7 @@ export class MurailleDeMarbre extends Building {
 
         this.stat("Constitution").init(100);
         this.stat("Endurance").init(50);
+
+        this.initFamily(["Mur"]);
     };
 };

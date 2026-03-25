@@ -11,5 +11,7 @@ export class MurDeRoche extends Building {
 
         this.stat("Constitution").init(50);
         this.stat("Endurance").init(25);
+
+        this.initFamily(["Mur"]);
     };
 };

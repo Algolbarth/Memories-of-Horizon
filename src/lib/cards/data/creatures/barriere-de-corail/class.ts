@@ -13,5 +13,7 @@ export class BarriereDeCorail extends Creature {
         this.stat("Régénération").init(20);
         this.stat("Initiative").init(0);
         this.stat("Maîtrise").init(0);
+
+        this.initFamily(["Mur"]);
     };
 };

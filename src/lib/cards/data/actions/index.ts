@@ -45,6 +45,7 @@ export * from './exploration';
 export * from './extension-de-territoire';
 export * from './force-de-la-famille';
 export * from './forger';
+export * from './fortification';
 export * from './frappe';
 export * from './gestion-des-stocks';
 export * from './gigantomachie';
