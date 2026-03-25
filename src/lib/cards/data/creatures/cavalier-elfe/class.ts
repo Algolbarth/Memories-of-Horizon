@@ -23,7 +23,7 @@ export class CavalierElfe extends Creature {
             this.stat("Vitesse").increase(1);
         }
 
-        this.move("Défausse");
+        this.move("Terrain");
         this.pose();
     };
 };

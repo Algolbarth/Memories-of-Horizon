@@ -11,7 +11,7 @@ export class RobeDeMage extends Equipment {
 
         this.initFamily(["Armure", "Mage"]);
 
-        this.equipStat("Vitalité").init(20);
+        this.equipStat("Constitution").init(20);
         this.equipStat("Résistance").init(15);
         this.equipStat("Magie").init(10);
 

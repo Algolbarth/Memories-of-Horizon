@@ -11,7 +11,7 @@ export class PlastronEnCuir extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Vitalité").init(10);
+        this.equipStat("Constitution").init(10);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };

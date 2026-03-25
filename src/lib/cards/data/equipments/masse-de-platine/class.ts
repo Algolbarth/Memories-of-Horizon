@@ -12,7 +12,7 @@ export class MasseDePlatine extends Equipment {
         this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(20);
-        this.equipStat("Vitalité").init(20);
+        this.equipStat("Constitution").init(20);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
         this.addText(`Quand le porteur attaque : Augmente de 20 la constitution et la force du porteur.`);

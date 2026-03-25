@@ -11,7 +11,7 @@ export class TuniqueDeCuir extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Vitalité").init(20);
+        this.equipStat("Constitution").init(20);
         this.equipStat("Endurance").init(8);
         this.equipStat("Résistance").init(8);
 

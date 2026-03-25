@@ -11,7 +11,7 @@ export class Rembourrage extends Action {
 
         this.init([["Or", 10]]);
 
-        this.addText(`Quand posé : Augmente de 10 la vitalité d'une carte de famille Armure dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 10 la constitution d'une carte de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {
@@ -45,7 +45,7 @@ export class Rembourrage extends Action {
     useEffect = (target: Equipment) => {
         this.targeting(target);
 
-        target.equipStat("Vitalité").increase(10);
+        target.equipStat("Constitution").increase(10);
 
         this.move("Défausse");
         this.pose();

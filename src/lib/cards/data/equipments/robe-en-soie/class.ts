@@ -11,7 +11,7 @@ export class RobeEnSoie extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Vitalité").init(25);
+        this.equipStat("Constitution").init(25);
         this.equipStat("Résistance").init(12);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);

@@ -11,7 +11,7 @@ export class MassueDeChene extends Equipment {
 
         this.initFamily(["Arme"]);
 
-        this.equipStat("Vitalité").init(15);
+        this.equipStat("Constitution").init(15);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
         this.addText(`Quand le porteur attaque : Augmente de 10 la constitution du porteur.`);

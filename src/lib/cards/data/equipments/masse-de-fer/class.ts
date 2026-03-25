@@ -12,7 +12,7 @@ export class MasseDeFer extends Equipment {
         this.initFamily(["Arme"]);
 
         this.equipStat("Force").init(5);
-        this.equipStat("Vitalité").init(5);
+        this.equipStat("Constitution").init(5);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
         this.addText(`Quand le porteur attaque : Augmente de 5 la constitution et la force du porteur.`);

@@ -11,7 +11,7 @@ export class GanteletsDeFer extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Vitalité").init(30);
+        this.equipStat("Constitution").init(30);
         this.equipStat("Endurance").init(15);
         this.equipStat("Maîtrise").init(1);
 

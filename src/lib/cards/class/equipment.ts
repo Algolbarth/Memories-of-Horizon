@@ -17,19 +17,37 @@ export class Equipment extends Item {
 
         this.initFamily(["Équipement"]);
 
-        this.addEquipStat("Force", 0);
         this.addEquipStat("Vitalité", 0);
+        this.equipStat("Vitalité").display = function () {
+            return false;
+        };
+
+        this.addEquipStat("Constitution", 0);
+        this.equipStat("Constitution").increase = function (value: number) {
+            this.add += value;
+            this.card.equipStat("Vitalité").increase(value);
+        };
+        this.equipStat("Constitution").decrease = function (value: number) {
+            this.add -= value;
+            this.card.equipStat("Vitalité").decrease(value);
+        };
+        this.equipStat("Constitution").init = function (value: number) {
+            this.base = value;
+            this.card.equipStat("Vitalité").init(value);
+        };
+
         this.addEquipStat("Régénération", 0);
         this.addEquipStat("Endurance", 0);
         this.addEquipStat("Résistance", 0);
         this.addEquipStat("Épine", 0);
         this.addEquipStat("Maîtrise", 0);
-        this.addEquipStat("Agilité", 0);
         this.addEquipStat("Vitesse", 0);
         this.addEquipStat("Protection", 0);
-        this.addEquipStat("Maniement", 0);
         this.addEquipStat("Magie", 0);
         this.addEquipStat("Intelligence", 0);
+        this.addEquipStat("Force", 0);
+        this.addEquipStat("Agilité", 0);
+        this.addEquipStat("Maniement", 0);
         this.addEquipStat("Percée", 0);
         this.addEquipStat("Adresse", 0);
         this.addEquipStat("Intensité", 0);
@@ -82,8 +100,8 @@ export class Equipment extends Item {
 
         target.equip(this);
 
-        if (this.equipStat("Vitalité").value() > 0) {
-            target.stat("Santé").increase(this.equipStat("Vitalité").value());
+        if (this.equipStat("Constitution").value() > 0) {
+            target.stat("Santé").increase(this.equipStat("Constitution").value());
         }
         if (this.equipStat("Maîtrise").value() > 0) {
             target.stat("Initiative").increase(this.equipStat("Maîtrise").value());

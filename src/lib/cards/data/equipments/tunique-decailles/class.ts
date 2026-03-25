@@ -11,7 +11,7 @@ export class TuniqueDEcailles extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Vitalité").init(75);
+        this.equipStat("Constitution").init(75);
         this.equipStat("Endurance").init(25);
         this.equipStat("Résistance").init(25);
 

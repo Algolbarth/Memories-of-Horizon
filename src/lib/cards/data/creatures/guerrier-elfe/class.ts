@@ -24,7 +24,7 @@ export class GuerrierElfe extends Creature {
             this.stat("Force").increase(10);
         }
 
-        this.move("Défausse");
+        this.move("Terrain");
         this.pose();
     };
 };

@@ -11,7 +11,7 @@ export class OursNoir extends Creature {
 
         this.initFamily(["Bête"]);
 
-        this.stat("Constitution").init(50);
+        this.stat("Constitution").init(45);
         this.stat("Force").init(30);
     };
 };

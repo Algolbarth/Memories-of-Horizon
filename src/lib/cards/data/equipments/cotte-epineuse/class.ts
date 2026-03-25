@@ -11,7 +11,7 @@ export class CotteEpineuse extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Vitalité").init(20);
+        this.equipStat("Constitution").init(20);
         this.equipStat("Endurance").init(10);
         this.equipStat("Épine").init(10);
 
