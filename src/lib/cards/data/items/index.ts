@@ -1,4 +1,5 @@
 export * from './banniere';
+export * from './barbele';
 export * from './bestiaire';
 export * from './biere';
 export * from './biscuit';
