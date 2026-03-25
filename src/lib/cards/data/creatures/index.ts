@@ -155,6 +155,7 @@ export * from './soldat';
 export * from './soldat-nain';
 export * from './souris';
 export * from './stratege';
+export * from './taureau';
 export * from './theoricien-du-complot';
 export * from './thon';
 export * from './titan';
