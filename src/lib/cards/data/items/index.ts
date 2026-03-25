@@ -39,6 +39,7 @@ export * from './panacee';
 export * from './parchemin-de-sagesse';
 export * from './pierre-philosophale';
 export * from './piment';
+export * from './plan-de-construction';
 export * from './plaque-darmure';
 export * from './poire';
 export * from './pomme';
