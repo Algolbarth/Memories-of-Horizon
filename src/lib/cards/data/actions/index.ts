@@ -49,6 +49,7 @@ export * from './fortification';
 export * from './frappe';
 export * from './gestion-des-stocks';
 export * from './gigantomachie';
+export * from './griffure';
 export * from './horizon';
 export * from './hydratation';
 export * from './incantation';

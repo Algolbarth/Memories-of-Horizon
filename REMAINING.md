@@ -51,7 +51,6 @@ Armagicien : Créature humain, magie.
 Trône : bâtiment.
 Sort vivant : Créature sort.
 Morsure : action.
-Griffure : action.
 
 ### Feu
 Pyromane : quand attaque : enflamme l'unité attaquée.
