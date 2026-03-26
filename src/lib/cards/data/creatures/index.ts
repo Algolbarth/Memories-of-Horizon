@@ -91,6 +91,7 @@ export * from './guerrier';
 export * from './guerrier-elfe';
 export * from './guerrier-geant';
 export * from './guerrier-gobelin';
+export * from './herisson';
 export * from './heros';
 export * from './homme-daffaires';
 export * from './homonculus';

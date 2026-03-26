@@ -7,12 +7,12 @@ export class Ourson extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Terre", 10]]);
+        this.init([["Or", 5], ["Terre", 5]]);
 
         this.initFamily(["Bête"]);
 
-        this.stat("Constitution").init(15);
-        this.stat("Force").init(15);
+        this.stat("Constitution").init(5);
+        this.stat("Force").init(5);
         this.stat("Endurance").init(5);
     };
 };

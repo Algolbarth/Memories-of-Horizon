@@ -71,19 +71,17 @@ Pommier : Créature plante, 0 atk inactif, quand se prépare sur le terrain : G�
 Manteau de ronce : objet équipement, augmente l'épine du porteur.
 Élémentaire de ronce.
 Cochon truffier : Créature bête, quand posé : fouille 1 carte.
-Hérisson : Créature bête, épine.
 Don naturel : action, détruit un élémentaire végétal sur votre terrain et produit autant de végétal que sa vente.
 
 ### Eau
 Saumon : Créature poisson.
 Mégalodon: creature poisson.
-Leviathan : quand posé : Change l'élément terre de toutes les unités sur le terrain en élément eau. augmente sa force pour chaque unité d'élément eau sur le terrain. quand une unité d'élément terre arrive sur le terrain : Change l'élément terre en élément eau et augmente sa force.
+Leviathan.
 
 ### Terre
-Jet de pierre : inflige des dégâts et applique paralysie à une créature sur le terrain adverse.
-Taupe : Créature bête, quand posé : fouille 1 carte.
-Mère ours : Créature bête, protection.
-Ourson : Créature bête.
+Jet de pierre.
+Taupe : Créature bête, quand se prépare : génère Creuser dans votre inventaire.
+Béhémoth.
 
 ### Air
 Sylphe : quand arrive sur le terrain : pioche une carte.

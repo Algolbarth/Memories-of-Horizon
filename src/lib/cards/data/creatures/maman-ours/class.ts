@@ -14,12 +14,12 @@ export class MamanOurs extends Creature {
         this.stat("Constitution").init(30);
         this.stat("Force").init(30);
         this.stat("Endurance").init(10);
+        this.stat("Protection").init(1);
+
+        this.addText(`Quand périt : Génère {card:Ourson} sur votre terrain.`);
     };
 
     perishEffect = () => {
-        if (this.isArea("Terrain")) {
-            this.owner().getCard("Ourson").add("Terrain");
-            this.owner().getCard("Ourson").add("Terrain");
-        }
+        this.owner().getCard("Ourson").add("Terrain");
     };
 };
