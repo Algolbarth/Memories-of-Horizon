@@ -121,6 +121,7 @@ export * from './mimique-de-coffre';
 export * from './mimique-de-jarre';
 export * from './monture-de-chevalier';
 export * from './mouton';
+export * from './mur-de-haie';
 export * from './nain';
 export * from './negociant';
 export * from './officier-dartillerie';
