@@ -66,6 +66,7 @@ export * from './menace';
 export * from './metamorphose';
 export * from './milieu-aquatique';
 export * from './monstre-errant';
+export * from './morsure';
 export * from './mue';
 export * from './multisoin';
 export * from './musculation';
