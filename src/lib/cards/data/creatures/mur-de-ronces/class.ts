@@ -1,15 +1,16 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 
-export class MurDeHaie extends Creature {
-    name = "Mur de haie";
+export class MurDeRonces extends Creature {
+    name = "Mur de ronces";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Végétal", 8]]);
+        this.init([["Or", 25], ["Végétal", 25]]);
 
-        this.stat("Constitution").init(30);
+        this.stat("Constitution").init(50);
+        this.stat("Épine").init(10);
         this.stat("Initiative").init(0);
         this.stat("Maîtrise").init(0);
 
