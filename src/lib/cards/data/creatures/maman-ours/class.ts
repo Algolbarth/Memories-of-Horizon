@@ -1,18 +1,25 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 
-export class OursBrun extends Creature {
-    name = "Ours brun";
+export class MamanOurs extends Creature {
+    name = "Maman ours";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Terre", 20]]);
+        this.init([["Or", 30], ["Terre", 30]]);
 
         this.initFamily(["Bête"]);
 
         this.stat("Constitution").init(30);
         this.stat("Force").init(30);
         this.stat("Endurance").init(10);
+    };
+
+    perishEffect = () => {
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Ourson").add("Terrain");
+            this.owner().getCard("Ourson").add("Terrain");
+        }
     };
 };
