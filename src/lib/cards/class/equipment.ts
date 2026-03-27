@@ -95,7 +95,7 @@ export class Equipment extends Item {
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect: Function = (target: Creature) => {
         this.targeting(target);
 
         target.equip(this);

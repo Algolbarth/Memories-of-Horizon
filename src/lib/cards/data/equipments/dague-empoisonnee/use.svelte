@@ -50,7 +50,7 @@
 				choice = "damage";
 			}}
 		>
-			Augmente de 5 le poison et de 10 la toxicité d'une créature sur le terrain adverse
+			Augmente de 5 le poison et de 15 la toxicité d'une créature sur le terrain adverse
 		</button>
 	</div>
 {:else if choice == "equip"}

@@ -8,17 +8,17 @@ export class Pyromane extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Feu", 20]]);
+        this.init([["Or", 12], ["Feu", 12]]);
 
         this.initFamily(["Gobelin"]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(3);
         this.stat("Force").init(10);
 
-        this.addText(`Quand attaque : Augmente de 5 la brûlure de l'unité attaquée.`);
+        this.addText(`Quand attaque : Augmente de 3 la brûlure de l'unité attaquée.`);
     };
 
     fightEffect = (defender: Unit) => {
-        defender.stat("Brûlure").increase(5);
+        defender.stat("Brûlure").increase(3);
     };
 };

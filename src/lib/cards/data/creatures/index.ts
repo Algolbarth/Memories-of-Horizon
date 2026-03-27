@@ -171,6 +171,7 @@ export * from './tortue-geante';
 export * from './troubadour';
 export * from './vache';
 export * from './vestale';
+export * from './vipere';
 export * from './voleur';
 export * from './warg';
 export * from './warg-alpha';
