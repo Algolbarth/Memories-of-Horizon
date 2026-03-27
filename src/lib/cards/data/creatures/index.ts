@@ -144,6 +144,7 @@ export * from './pretre';
 export * from './prince';
 export * from './princesse';
 export * from './pyromancien';
+export * from './pyromane';
 export * from './reine';
 export * from './renard';
 export * from './roi';
