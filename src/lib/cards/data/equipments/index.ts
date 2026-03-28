@@ -51,6 +51,7 @@ export * from './eventail-de-couteaux';
 export * from './faux-de-paysan';
 export * from './gantelets-de-fer';
 export * from './gantelets-en-cuir';
+export * from './gants-de-coton';
 export * from './geomarteau';
 export * from './grand-carquois';
 export * from './grimoire';

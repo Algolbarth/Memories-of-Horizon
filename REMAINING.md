@@ -52,7 +52,6 @@ Trône : bâtiment.
 Sort vivant : Créature sort.
 
 ### Feu
-Pyromane : quand attaque : enflamme l'unité attaquée.
 Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts et enflamme une unité adverse.
 Jarre de flamme : objet.
@@ -60,9 +59,6 @@ Jarre de flamme : objet.
 ### Vegetal
 Fiole de poison : empoisonne et augmente la toxicité d'une créature sur le terrain adverse.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
-Vipère : Créature reptile, quand attaque : empoisonne le porteur.
-Mur de haie : Créature plante. 0 atk inactif 
-Mur de ronces : Créature plante. 0 atk inactif, épine
 Plante carnivore : Créature plante. 0 atk inactif, au début du round : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain.
 Plante vénéneuse : Créature plante, 0 atk inactif, au début du round : applique poison à la créature adverse la plus en avant sur le terrain.
 Jardinier : Créature elfe, quand se prépare sur le terrain : soigne toutes les créatures alliées de famille Plante sur le terrain.
