@@ -176,6 +176,7 @@ export * from './vipere';
 export * from './voleur';
 export * from './warg';
 export * from './warg-alpha';
+export * from './warg-en-chasse';
 export * from './wyverne';
 export * from './wyverne-mage';
 export * from './wyverne-marine';
