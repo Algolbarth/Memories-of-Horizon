@@ -85,6 +85,7 @@ export * from './geomancien';
 export * from './gobelin';
 export * from './gorille';
 export * from './gorille-dos-argente';
+export * from './gorille-enrage';
 export * from './grand-pretre';
 export * from './grand-requin-blanc';
 export * from './grenouille';
