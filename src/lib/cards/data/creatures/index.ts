@@ -20,6 +20,7 @@ export * from './brochet';
 export * from './bucheron';
 export * from './bulette';
 export * from './bulette-brise-roc';
+export * from './bulette-fouisseuse';
 export * from './capitaine-de-la-garde';
 export * from './cartographe';
 export * from './cavalier';
