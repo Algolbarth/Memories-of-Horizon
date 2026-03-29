@@ -3,24 +3,24 @@ import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
 import Use from './use.svelte';
 
-export class Vin extends Item {
-    name = "Vin";
+export class Whisky extends Item {
+    name = "Whisky";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 12], ["Feu", 12]]);
 
         this.initFamily(["Nourriture"]);
 
         this.addText([
             "Quand posé : Soigne 50 blessures à une créature sur votre terrain.",
-            "[satiety {Remplit la jauge critique de cette créature à la place.}]"]);
+            "[satiety {Augmente de 1 l'intensité de cette créature à la place.}]"]);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && (card.isDamaged() || card.stat("Critique").value() < 100)) {
+            if (card instanceof Creature) {
                 return true;
             }
         }
@@ -29,7 +29,7 @@ export class Vin extends Item {
 
     canSatiety = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && (card.isFullLife() && card.stat("Critique").value() < 100)) {
+            if (card instanceof Creature && card.isFullLife()) {
                 return true;
             }
         }
@@ -59,7 +59,7 @@ export class Vin extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            target.stat("Critique").set(100);
+            target.stat("Intensité").increase(1);
         }
         else {
             target.heal(50);

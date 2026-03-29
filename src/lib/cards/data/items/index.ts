@@ -66,3 +66,4 @@ export * from './torche';
 export * from './trefle';
 export * from './tresor';
 export * from './vin';
+export * from './whisky';

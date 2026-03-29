@@ -15,7 +15,7 @@ export class Biscuit extends Item {
 
         this.addText([
             "Quand posé : Soigne 20 blessures à une créature sur votre terrain.",
-            "[satiety {génère {card:Bonhomme biscuit} sur votre terrain à la place.}]"]);
+            "[satiety {Génère {card:Bonhomme biscuit} sur votre terrain à la place.}]"]);
     };
 
     canUse = () => {

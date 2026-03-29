@@ -15,7 +15,7 @@ export class Fromage extends Item {
 
         this.addText([
             "Quand posé : Soigne 10 blessures à une créature sur le terrain.",
-            "[satiety {génère 2 {card:Souris} sur le terrain à la place.}]"]);
+            "[satiety {Génère 2 {card:Souris} sur le terrain à la place.}]"]);
     };
 
     canUse = () => {

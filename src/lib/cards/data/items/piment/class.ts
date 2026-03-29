@@ -9,28 +9,46 @@ export class Piment extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 6], ["Feu", 6]]);
+        this.init([["Or", 8], ["Feu", 8]]);
 
         this.initFamily(["Nourriture", "Plante"]);
 
         this.addText([
-            "Quand posé : Soigne 25 blessures à une créature sur votre terrain.",
-            "[satiety {Augmente de 0.5 l'intensité de cette créature à la place.}]"]);
+            "Quand posé : Soigne 30 blessures à une créature sur le terrain.",
+            "[satiety {Augmente de 10 la brûlure de cette créature à la place.}]"]);
     };
 
     canUse = () => {
-        for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature) {
-                return true;
+        if (this.owner().is_player) {
+            for (const entity of [this.owner(), this.adversary()]) {
+                for (const card of entity.zone("Terrain").cards) {
+                    if (card instanceof Creature) {
+                        return true;
+                    }
+                }
+            }
+        }
+        else {
+            for (const card of this.owner().zone("Terrain").cards) {
+                if (card instanceof Creature && card.isDamaged()) {
+                    return true;
+                }
+            }
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (card instanceof Creature) {
+                    return true;
+                }
             }
         }
         return false;
     };
 
     canSatiety = () => {
-        for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && card.isFullLife()) {
-                return true;
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const card of entity.zone("Terrain").cards) {
+                if (card instanceof Creature && card.isFullLife()) {
+                    return true;
+                }
             }
         }
         return false;
@@ -43,8 +61,14 @@ export class Piment extends Item {
         else {
             let target = undefined;
 
-            for (const card of this.owner().zone("Terrain").cards) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (target == undefined && card instanceof Creature) {
+                    target = card;
+                }
+            }
+
+            for (const card of this.owner().zone("Terrain").cards) {
+                if (target == undefined && card instanceof Creature && card.isDamaged()) {
                     target = card;
                 }
             }
@@ -59,10 +83,10 @@ export class Piment extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            target.stat("Intensité").increase(0.5);
+            target.stat("Brûlure").increase(10);
         }
         else {
-            target.heal(25);
+            target.heal(30);
         }
 
         this.move("Défausse");

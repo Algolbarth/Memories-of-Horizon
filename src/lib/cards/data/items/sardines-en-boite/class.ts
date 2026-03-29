@@ -15,7 +15,7 @@ export class SardinesEnBoite extends Item {
 
         this.addText([
             "Quand posé : Soigne 10 blessures à une créature sur votre terrain.",
-            "[satiety {produit 5 eau à la place.}]"]);
+            "[satiety {Produit 5 eau à la place.}]"]);
     };
 
     canUse = () => {
