@@ -18,7 +18,7 @@ export class Geomarteau extends Equipment {
         };
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur attaque : Augmente de 3 ses secousses. Inflige autant de dégâts à toutes les unités sur le terrain adverse que ses secousses.`);
+        this.addText(`Quand le porteur attaque : Augmente de 3 ses secousses. Inflige autant de dégâts spéciaux à toutes les unités sur le terrain adverse que ses secousses.`);
     };
 
     fightEffect = () => {
@@ -26,7 +26,7 @@ export class Geomarteau extends Equipment {
 
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
-            card.damageByEffect(this.stat("Secousses").value());
+            card.specialDamage(this.stat("Secousses").value(), this);
         }
     };
 };

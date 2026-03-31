@@ -18,7 +18,7 @@ export class HacheDeJet extends Equipment {
 
         this.addChoice([
             `S'équipe à une créature sur votre terrain.`,
-            `Inflige 50 dégâts à une unité sur le terrain adverse.`]);
+            `Inflige 50 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -64,7 +64,7 @@ export class HacheDeJet extends Equipment {
             target.equip(this);
         }
         else if (choice == "damage") {
-            target.damageByEffect(50);
+            target.specialDamage(50, this);
             this.move("Défausse");
         }
 

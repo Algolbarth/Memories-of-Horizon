@@ -32,6 +32,6 @@
 			selectAction("effect");
 		}}
 	>
-		Se détruit pour infliger 5 dégâts à toutes les unités adverses
+		Se détruit pour infliger 5 dégâts spéciaux à toutes les unités adverses
 	</button>
 </div>

@@ -15,10 +15,10 @@ export class MasseDArmesSulfurique extends Equipment {
         this.equipStat("Force").init(25);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur attaque : Inflige autant de dégâts à l'unité attaquée que la force du porteur.`);
+        this.addText(`Quand le porteur attaque : Inflige autant de dégâts spéciaux à l'unité attaquée que la force du porteur.`);
     };
 
     fightEffect = (defender: Unit) => {
-        defender.damageByEffect(this.bearer.stat("Force").value());
+        defender.specialDamage(this.bearer.stat("Force").value(), this);
     };
 };

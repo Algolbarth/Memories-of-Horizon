@@ -120,19 +120,35 @@ export class Unit extends Card {
         return this.stat("Santé").value() < this.stat("Vitalité").value();
     };
 
-    damageByEffect = (value: number) => {
-        value -= this.stat("Résistance").value();
-        if (value < 0) {
-            value = 0;
+    specialDamage = (value: number, source: Card) => {
+        let damage_reduction: number = this.stat("Résistance").value() - source.stat("Pénétration").value();
+        if (damage_reduction < 0) {
+            damage_reduction = 0;
         }
-        return this.damage(value);
+
+        let damage: number = value - damage_reduction;
+        if (damage < 0) {
+            damage = 0;
+        }
+
+        return this.damage(damage, source);
     };
 
-    physicalDamage = (value: number) => {
-        return this.damage(value);
+    physicalDamage = (value: number, source: Card) => {
+        let damage_reduction: number = this.stat("Endurance").value() - source.stat("Percée").value();
+        if (damage_reduction < 0) {
+            damage_reduction = 0;
+        }
+
+        let damage: number = value - damage_reduction;
+        if (damage < 0) {
+            damage = 0;
+        }
+
+        return this.damage(damage, source);
     };
 
-    damage = (value: number) => {
+    damage = (value: number, source: Card) => {
         let result = {
             value: value,
             die: false
@@ -235,7 +251,7 @@ export class Unit extends Card {
         }
 
         if (this.stat("Épine").value() > 0) {
-            attacker.damage(this.stat("Épine").value());
+            attacker.specialDamage(this.stat("Épine").value(), this);
         }
     };
 

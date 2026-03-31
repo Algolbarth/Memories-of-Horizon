@@ -13,7 +13,7 @@ export class PoeleAFrire extends Equipment {
         this.init([["Or", 20], ["Feu", 20]]);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur attaque : Inflige 10 dégâts à l'unité attaquée pour chaque objet de famille Nourriture dans votre défausse.`);
+        this.addText(`Quand le porteur attaque : Inflige 10 dégâts spéciaux à l'unité attaquée pour chaque objet de famille Nourriture dans votre défausse.`);
     };
 
     fightEffect = (defender: Unit) => {
@@ -26,6 +26,6 @@ export class PoeleAFrire extends Equipment {
             }
         }
 
-        defender.damageByEffect(damage);
+        defender.specialDamage(damage, this);
     };
 };

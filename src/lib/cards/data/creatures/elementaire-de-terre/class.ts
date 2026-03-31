@@ -19,7 +19,7 @@ export class ElementaireDeTerre extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            `Se détruit pour infliger 30 dégâts à une unité sur le terrain adverse.`]);
+            `Se détruit pour infliger 30 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -50,7 +50,7 @@ export class ElementaireDeTerre extends Creature {
         else if (choice == "effect" && target != undefined) {
             this.targeting(target);
 
-            target.damageByEffect(30);
+            target.specialDamage(30, this);
             this.destroy();
         }
 

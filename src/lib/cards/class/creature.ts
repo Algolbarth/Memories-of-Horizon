@@ -42,8 +42,6 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat("Percée", 0);
-
         this.addStat("Critique", 0);
         this.stat("Critique").display = function () {
             if (this.condition() || this.card.stat("Adresse").value() > 0) {
@@ -352,7 +350,7 @@ export class Creature extends Unit {
                 damage = 0;
             }
 
-            let damage_result = defender.physicalDamage(damage);
+            let damage_result = defender.physicalDamage(damage, this);
 
             if (damage_result.die) {
                 is_die = true;
@@ -403,7 +401,7 @@ export class Creature extends Unit {
         }
 
         if (this.stat("Épine").value() > 0) {
-            attacker.damage(this.stat("Épine").value());
+            attacker.specialDamage(this.stat("Épine").value(), this);
         }
     };
 

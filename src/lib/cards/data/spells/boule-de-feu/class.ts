@@ -12,8 +12,8 @@ export class BouleDeFeu extends Spell {
         this.init([["Or", 8], ["Feu", 8]]);
 
         this.addText([
-            `Quand posé : Inflige 30 dégâts à une unité sur le terrain adverse.`,
-            `[sorcery {15, inflige 60 dégâts à la place.}]`]);
+            `Quand posé : Inflige 30 dégâts spéciaux à une unité sur le terrain adverse.`,
+            `[sorcery {15, inflige 60 dégâts spéciaux à la place.}]`]);
     };
 
     canUse = () => {
@@ -37,10 +37,10 @@ export class BouleDeFeu extends Spell {
 
         if (this.owner().ressource("Mana").total() >= 15) {
             this.owner().ressource("Mana").spend(15);
-            target.damageByEffect(60);
+            target.specialDamage(60, this);
         }
         else {
-            target.damageByEffect(30);
+            target.specialDamage(30, this);
         }
 
         this.move("Défausse");

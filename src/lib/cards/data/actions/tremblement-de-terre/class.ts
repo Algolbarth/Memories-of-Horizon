@@ -10,7 +10,7 @@ export class TremblementDeTerre extends Action {
 
         this.init([["Or", 12], ["Terre", 12]]);
 
-        this.addText(`Quand posé : Inflige 10 dégâts à toutes les unités sur le terrain.`);
+        this.addText(`Quand posé : Inflige 10 dégâts spéciaux à toutes les unités sur le terrain.`);
     };
 
     canUse = () => {
@@ -26,7 +26,7 @@ export class TremblementDeTerre extends Action {
         let double_battlefield = battlefield.concat(adversary_battlefield);
 
         for (const card of double_battlefield) {
-            card.damageByEffect(10);
+            card.specialDamage(10, this);
         }
 
         this.move("Défausse");

@@ -32,6 +32,6 @@
 			selectAction("damage");
 		}}
 	>
-		Inflige 6 dégâts à toutes les unités sur le terrain adverse
+		Inflige 6 dégâts spéciaux à toutes les unités sur le terrain adverse
 	</button>
 </div>

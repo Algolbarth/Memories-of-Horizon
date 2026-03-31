@@ -15,7 +15,7 @@ export class LacDeLave extends Building {
         this.stat("Constitution").init(10);
 
         this.addText(`Quand une créature d'élément Feu est posée : Augmente de 5 la force de cette créature.`);
-        this.addText(`Quand une unité qui n'est pas d'élément Feu est posée : Inflige 5 dégâts à cette unité.`);
+        this.addText(`Quand une unité qui n'est pas d'élément Feu est posée : Inflige 5 dégâts spéciaux à cette unité.`);
     };
 
     otherPoseEffect = (card: Card) => {
@@ -24,7 +24,7 @@ export class LacDeLave extends Building {
                 card.stat("Force").increase(5);
             }
             else {
-                card.damageByEffect(5);
+                card.specialDamage(5, this);
             }
         }
     };

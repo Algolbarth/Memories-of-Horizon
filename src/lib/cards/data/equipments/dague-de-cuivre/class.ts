@@ -18,7 +18,7 @@ export class DagueDeCuivre extends Equipment {
 
         this.addChoice([
             `S'équipe à une créature sur votre terrain.`,
-            `Inflige 5 dégâts à une unité sur le terrain adverse.`]);
+            `Inflige 5 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -64,7 +64,7 @@ export class DagueDeCuivre extends Equipment {
             target.equip(this);
         }
         else if (choice == "damage") {
-            target.damageByEffect(5);
+            target.specialDamage(5, this);
             this.move("Défausse");
         }
 

@@ -14,7 +14,7 @@ export class Morsure extends Action {
 
         this.addText([
             `Quand posé : Augmente de 25 la force d'une créature sur votre terrain.`,
-            `Inflige 25 dégâts à une unité sur le terrain adverse.`]);
+            `Inflige 25 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -62,7 +62,7 @@ export class Morsure extends Action {
 
         this.targeting(opponent);
 
-        opponent.damageByEffect(25);
+        opponent.specialDamage(25, this);
 
         this.move("Défausse");
         this.pose();

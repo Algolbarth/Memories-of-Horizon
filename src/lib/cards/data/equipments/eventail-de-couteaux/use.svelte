@@ -44,7 +44,7 @@
 				selectAction(undefined);
 			}}
 		>
-			Inflige 3 dégâts à toutes les unités sur le terrain adverse
+			Inflige 3 dégâts spéciaux à toutes les unités sur le terrain adverse
 		</button>
 	</div>
 {:else if choice == "equip"}

@@ -11,12 +11,12 @@ export class Canon extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.addText(`Au début d'une manche : Inflige 50 dégâts à l'unité en première position sur le terrain adverse.`);
+        this.addText(`Au début d'une manche : Inflige 50 dégâts spéciaux à l'unité en première position sur le terrain adverse.`);
     };
 
     roundEffect = () => {
         if (this.isArea("Terrain")) {
-            this.adversary().zone("Terrain").cards[0].damageByEffect(50);
+            this.adversary().zone("Terrain").cards[0].specialDamage(50, this);
         }
     };
 };

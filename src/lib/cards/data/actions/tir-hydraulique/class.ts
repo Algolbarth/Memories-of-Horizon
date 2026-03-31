@@ -12,8 +12,8 @@ export class TirHydraulique extends Action {
         this.init([["Or", 8], ["Eau", 8]]);
 
         this.addText([
-            `Quand posé : Inflige 30 dégâts à une unité sur le terrain adverse.`,
-            `[source {15, inflige 60 dégâts à la place.}]`]);
+            `Quand posé : Inflige 30 dégâts spéciaux à une unité sur le terrain adverse.`,
+            `[source {15, inflige 60 dégâts spéciaux à la place.}]`]);
     };
 
     canUse = () => {
@@ -37,10 +37,10 @@ export class TirHydraulique extends Action {
 
         if (this.owner().ressource("Eau").total() >= 15) {
             this.owner().ressource("Eau").spend(15);
-            target.damageByEffect(60);
+            target.specialDamage(60, this);
         }
         else {
-            target.damageByEffect(30);
+            target.specialDamage(30, this);
         }
 
         this.move("Défausse");

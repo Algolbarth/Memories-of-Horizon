@@ -13,8 +13,8 @@ export class PluieDeFeu extends Spell {
         this.initFamily(["Sort"]);
 
         this.addText([
-            `Quand posé : Inflige 10 dégâts à toutes les unités sur le terrain adverse.`,
-            `[sorcery {50, inflige 20 dégâts à la place.}]`]);
+            `Quand posé : Inflige 10 dégâts spéciaux à toutes les unités sur le terrain adverse.`,
+            `[sorcery {50, inflige 20 dégâts spéciaux à la place.}]`]);
     };
 
     canUse = () => {
@@ -36,7 +36,7 @@ export class PluieDeFeu extends Spell {
 
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
-            card.damageByEffect(damage);
+            card.specialDamage(damage, this);
         }
 
         this.move("Défausse");

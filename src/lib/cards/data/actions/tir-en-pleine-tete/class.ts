@@ -11,7 +11,7 @@ export class TirEnPleineTete extends Action {
 
         this.init([["Or", 15]]);
 
-        this.addText(`Quand posé : Inflige autant de dégâts à une créature sur le terrain adverse que 10 fois la protection de cette créature.`);
+        this.addText(`Quand posé : Inflige autant de dégâts spéciaux à une créature sur le terrain adverse que 10 fois la protection de cette créature.`);
     };
 
     canUse = () => {

@@ -18,7 +18,7 @@ export class EventailDeCouteaux extends Equipment {
 
         this.addChoice([
             `S'équipe à une créature sur votre terrain.`,
-            `Inflige 3 dégâts à toutes les unités sur le terrain adverse.`]);
+            `Inflige 3 dégâts spéciaux à toutes les unités sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -66,7 +66,7 @@ export class EventailDeCouteaux extends Equipment {
         else if (choice == "damage") {
             let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
-                card.damageByEffect(3);
+                card.specialDamage(3, this);
             }
             this.move("Défausse");
         }

@@ -11,7 +11,7 @@ export class RazDeMaree extends Action {
         this.init([["Or", 50], ["Eau", 50]]);
 
         this.addText([
-            `Quand posé : Inflige 20 dégâts à toutes les unités sur le terrain adverse.`,
+            `Quand posé : Inflige 20 dégâts spéciaux à toutes les unités sur le terrain adverse.`,
             `Dépense autant d'eau que possible et inflige 1 dégât supplémentaire pour chaque 5 eau dépensé.`]);
     };
 
@@ -31,7 +31,7 @@ export class RazDeMaree extends Action {
 
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
-            card.damageByEffect(value);
+            card.specialDamage(value, this);
         }
 
         this.move("Défausse");

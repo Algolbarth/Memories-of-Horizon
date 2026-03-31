@@ -13,7 +13,7 @@ export class PluieDeMeteorites extends Action {
 
         this.addChoice([
             `Stocke 10 flux.`,
-            `Inflige 20 dégâts à toutes les unités sur le terrain adverse.`]);
+            `Inflige 20 dégâts spéciaux à toutes les unités sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -44,7 +44,7 @@ export class PluieDeMeteorites extends Action {
         else if (choice == "damage") {
             let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
-                card.damageByEffect(20);
+                card.specialDamage(20, this);
             }
         }
 

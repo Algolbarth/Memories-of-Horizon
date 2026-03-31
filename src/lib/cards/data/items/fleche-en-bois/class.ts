@@ -11,7 +11,7 @@ export class FlecheEnBois extends Item {
 
         this.init([["Or", 5]]);
 
-        this.addText(`Quand posé : Inflige 10 dégâts à une unité sur le terrain adverse.`);
+        this.addText(`Quand posé : Inflige 10 dégâts spéciaux à une unité sur le terrain adverse.`);
     };
 
     canUse = () => {
@@ -40,7 +40,7 @@ export class FlecheEnBois extends Item {
             }
         }
 
-        target.damageByEffect(10 + 5 * nb_tower);
+        target.specialDamage(10 + 5 * nb_tower, this);
 
         this.move("Défausse");
         this.pose();

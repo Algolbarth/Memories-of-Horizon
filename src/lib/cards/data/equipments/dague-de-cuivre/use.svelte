@@ -47,7 +47,7 @@
 				choice = "damage";
 			}}
 		>
-			Inflige 5 dégâts à une unité sur le terrain adverse
+			Inflige 5 dégâts spéciaux à une unité sur le terrain adverse
 		</button>
 	</div>
 {:else if choice == "equip"}

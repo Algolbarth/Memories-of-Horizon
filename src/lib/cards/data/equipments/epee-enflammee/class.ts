@@ -15,10 +15,10 @@ export class EpeeEnflammee extends Equipment {
         this.equipStat("Force").init(50);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur attaque : Inflige 50 dégâts à l'unité attaquée.`);
+        this.addText(`Quand le porteur attaque : Inflige 50 dégâts spéciaux à l'unité attaquée.`);
     };
 
     fightEffect = (defender: Unit) => {
-        defender.damageByEffect(50);
+        defender.specialDamage(50, this);
     };
 };

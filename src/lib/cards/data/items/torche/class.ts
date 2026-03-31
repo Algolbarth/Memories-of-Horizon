@@ -13,7 +13,7 @@ export class Torche extends Item {
 
         this.addChoice([
             `Augmente de 2 votre production de feu.`,
-            `Inflige 20 dégâts à une unité sur le terrain adverse.`]);
+            `Inflige 20 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -44,7 +44,7 @@ export class Torche extends Item {
         else if (choice == "damage" && target != undefined) {
             this.targeting(target);
 
-            target.damageByEffect(20);
+            target.specialDamage(20, this);
         }
 
         this.move("Défausse");

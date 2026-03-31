@@ -19,7 +19,7 @@ export class ElementaireDeCaillou extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            `Se détruit pour infliger 6 dégâts à une unité sur le terrain adverse.`]);
+            `Se détruit pour infliger 6 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -50,7 +50,7 @@ export class ElementaireDeCaillou extends Creature {
         else if (choice == "effect" && target != undefined) {
             this.targeting(target);
 
-            target.damageByEffect(5);
+            target.specialDamage(5, this);
             this.destroy();
         }
 

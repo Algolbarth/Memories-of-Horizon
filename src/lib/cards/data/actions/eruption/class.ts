@@ -11,7 +11,7 @@ export class Eruption extends Action {
 
         this.init([["Or", 75], ["Feu", 75]]);
 
-        this.addText(`Quand posé : Inflige 300 dégâts à une unité sur le terrain adverse.`);
+        this.addText(`Quand posé : Inflige 300 dégâts spéciaux à une unité sur le terrain adverse.`);
     };
 
     canUse = () => {
@@ -33,7 +33,7 @@ export class Eruption extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.damageByEffect(300);
+        target.specialDamage(300, this);
 
         this.move("Défausse");
         this.pose();

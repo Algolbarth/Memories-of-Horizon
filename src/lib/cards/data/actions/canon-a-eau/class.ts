@@ -12,8 +12,8 @@ export class CanonAEau extends Action {
         this.init([["Or", 25], ["Eau", 25]]);
 
         this.addText([
-            `Quand posé : Inflige 100 dégâts à une unité sur le terrain adverse.`,
-            `Dépense autant d'eau que possible et inflige 2 fois plus de dégâts supplémentaires.`]);
+            `Quand posé : Inflige 100 dégâts spéciaux à une unité sur le terrain adverse.`,
+            `Dépense autant d'eau que possible et inflige 2 fois plus de dégâts spéciaux supplémentaires.`]);
     };
 
     canUse = () => {
@@ -40,7 +40,7 @@ export class CanonAEau extends Action {
         value += 2 * this.owner().ressource("Eau").total();
         this.owner().ressource("Eau").spend(this.owner().ressource("Eau").total());
 
-        target.damageByEffect(value);
+        target.specialDamage(value, this);
 
         this.move("Défausse");
         this.pose();

@@ -13,7 +13,7 @@ export class PluieDeCailloux extends Spell {
 
         this.addChoice([
             `Remplit votre terrain de {card:Élémentaire de caillou}.`,
-            `Inflige 5 dégâts à toutes les unités sur le terrain adverse.`],
+            `Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`],
             undefined,
             `[sorcery {30, les deux effets s'activent à la place.}]`
         );
@@ -51,7 +51,7 @@ export class PluieDeCailloux extends Spell {
 
             let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
-                card.damageByEffect(5);
+                card.specialDamage(5, this);
             }
         }
         else {
@@ -64,7 +64,7 @@ export class PluieDeCailloux extends Spell {
             else if (choice == "damage") {
                 let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
                 for (const card of adversary_battlefield) {
-                    card.damageByEffect(5);
+                    card.specialDamage(5, this);
                 }
             }
         }

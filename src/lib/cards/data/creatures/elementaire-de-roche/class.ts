@@ -19,7 +19,7 @@ export class ElementaireDeRoche extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            `Se détruit pour infliger 5 dégâts à toutes les unités sur le terrain adverse.`]);
+            `Se détruit pour infliger 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -50,7 +50,7 @@ export class ElementaireDeRoche extends Creature {
         else if (choice == "effect") {
             let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
-                card.damageByEffect(5);
+                card.specialDamage(5, this);
             }
             this.destroy();
         }

@@ -15,8 +15,8 @@ export class PotionExplosive extends Item {
 
         this.addStat("Infusion", 5);
 
-        this.addText(`Quand posé : Inflige 2 dégâts à une unité sur le terrain adverse pour chaque valeur d'infusion.`);
-        this.addText(`[details {Inflige {card.stat("Infusion").value() * 2} dégâts à une unité sur le terrain adverse.}]`);
+        this.addText(`Quand posé : Inflige 2 dégâts spéciaux à une unité sur le terrain adverse pour chaque valeur d'infusion.`);
+        this.addText(`[details {Inflige {card.stat("Infusion").value() * 2} dégâts spéciaux à une unité sur le terrain adverse.}]`);
     };
 
     canUse = () => {
@@ -38,7 +38,7 @@ export class PotionExplosive extends Item {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.damageByEffect(this.stat("Infusion").value() * 2);
+        target.specialDamage(this.stat("Infusion").value() * 2, this);
 
         this.move("Défausse");
         this.pose();

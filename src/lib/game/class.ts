@@ -4,7 +4,6 @@ import { copy } from '../utils';
 import type { System } from '../system/class';
 import type { Card } from '../cards/class/class';
 import { Unit } from '../cards/class/unit';
-import type { Component } from 'svelte';
 import type { TrainEntity } from '../training/train';
 import { Creature } from '../cards/class/creature';
 import { Deck } from '../deck/class';
@@ -266,7 +265,7 @@ export class Game {
 
                     if (card instanceof Creature) {
                         if (card.stat("Poison").value() > 0) {
-                            card.damageByEffect(card.stat("Toxicité").value());
+                            card.specialDamage(card.stat("Toxicité").value(), this);
                             card.stat("Poison").decrease(1);
                         }
                     }

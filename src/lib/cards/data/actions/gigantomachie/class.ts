@@ -12,7 +12,7 @@ export class Gigantomachie extends Action {
 
         this.initFamily(["Géant"]);
 
-        this.addText(`Quand posé : Inflige 5 dégâts à toutes les unités de niveau 5 ou moins sur le terrain pour chaque unités de niveau 5 ou plus sur le terrain.`);
+        this.addText(`Quand posé : Inflige 5 dégâts spéciaux à toutes les unités de niveau 5 ou moins sur le terrain pour chaque unités de niveau 5 ou plus sur le terrain.`);
     };
 
     canUse = () => {
@@ -57,7 +57,7 @@ export class Gigantomachie extends Action {
         for (const zone of [battlefield, adversary_battlefield]) {
             for (const card of zone) {
                 if (card.level < 5) {
-                    card.damageByEffect(5 * nb_level_5);
+                    card.specialDamage(5 * nb_level_5, this);
                 }
             }
         }

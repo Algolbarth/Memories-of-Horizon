@@ -11,7 +11,7 @@ export class Bombe extends Item {
 
         this.init([["Or", 25]]);
 
-        this.addText(`Quand posé : Inflige 50 dégâts à une unité sur le terrain adverse.`);
+        this.addText(`Quand posé : Inflige 50 dégâts spéciaux à une unité sur le terrain adverse.`);
     };
 
     canUse = () => {
@@ -33,7 +33,7 @@ export class Bombe extends Item {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.damageByEffect(50);
+        target.specialDamage(50, this);
 
         this.move("Défausse");
         this.pose();

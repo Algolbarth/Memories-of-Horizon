@@ -47,8 +47,8 @@ export class ChevalierNoirMonte extends MountedKnight {
         this.stat("Vitesse").init(1);
 
         this.addText([
-            `Quand posé : Inflige autant de dégâts que possible à une unité sur le terrain adverse.`,
-            `Dépense autant d'or que de dégâts infligés.`]);
+            `Quand posé : Inflige autant de dégâts spéciaux que possible à une unité sur le terrain adverse.`,
+            `Dépense autant d'or que de dégâts spéciaux infligés.`]);
         this.addText(`Quand périt : Se réincarne en {card:Chevalier noir}.`);
     };
 
@@ -79,7 +79,7 @@ export class ChevalierNoirMonte extends MountedKnight {
             }
             this.owner().ressource("Or").spend(value);
 
-            target.damageByEffect(value);
+            target.specialDamage(value, this);
         }
 
         this.move("Terrain");

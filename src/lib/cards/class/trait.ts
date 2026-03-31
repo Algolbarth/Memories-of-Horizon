@@ -1,5 +1,6 @@
 import type { Card } from "./class";
 import { Creature } from "./creature";
+import type { Equipment } from "./equipment";
 
 export class Trait {
     name: string;
@@ -37,5 +38,14 @@ export class Trait {
 
     init = (value: boolean) => {
         this.base = value;
+    };
+};
+
+export class EquipTrait extends Trait {
+    card: Equipment;
+
+    constructor(name: string, value: boolean, card: Equipment) {
+        super(name, value, card);
+        this.card = card;
     };
 };

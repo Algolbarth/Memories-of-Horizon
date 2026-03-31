@@ -46,6 +46,9 @@ export class Card {
             return true;
         };
 
+        this.addStat("Pénétration", 0);
+        this.addStat("Percée", 0);
+
         this.addStat("Persistance", 0);
 
         for (const ressource of system.ressources.list) {

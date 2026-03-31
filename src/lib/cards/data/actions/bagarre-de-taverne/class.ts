@@ -12,7 +12,7 @@ export class BagarreDeTaverne extends Action {
         this.init([["Or", 25]]);
 
         this.addText([
-            `Quand posé : Inflige 5 dégâts à toutes les unités sur votre terrain.`,
+            `Quand posé : Inflige 5 dégâts spéciaux à toutes les unités sur votre terrain.`,
             `Augmente de 10 la force de toutes les créatures sur votre terrain.`]);
     };
 
@@ -26,7 +26,7 @@ export class BagarreDeTaverne extends Action {
     useEffect = () => {
         let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
-            card.damageByEffect(5);
+            card.specialDamage(5, this);
             if (card instanceof Creature) {
                 card.stat("Force").increase(10);
             }

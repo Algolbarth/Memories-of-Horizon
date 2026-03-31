@@ -10,7 +10,7 @@ export class PluieDeFleche extends Action {
 
         this.init([["Or", 25]]);
 
-        this.addText(`Quand posé : Inflige 5 dégâts à toutes les unités sur le terrain adverse.`);
+        this.addText(`Quand posé : Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`);
     };
 
     canUse = () => {
@@ -23,7 +23,7 @@ export class PluieDeFleche extends Action {
     useEffect = () => {
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
-            card.damageByEffect(5);
+            card.specialDamage(5, this);
         }
 
         this.move("Défausse");

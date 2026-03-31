@@ -22,6 +22,7 @@ export * from './cercle-druidique';
 export * from './cercles-magiques';
 export * from './charisme';
 export * from './cibler';
+export * from './combustion';
 export * from './conquete';
 export * from './consolider';
 export * from './contre';

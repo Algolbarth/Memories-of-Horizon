@@ -10,7 +10,7 @@ export class CoupDeBoule extends Action {
 
         this.init([["Or", 15]]);
 
-        this.addText(`Quand posé : Inflige à l'unité avec la plus haute vitalité sur le terrain adverse autant de dégâts que la force la plus haute parmi les créatures sur votre terrain.`);
+        this.addText(`Quand posé : Inflige à l'unité avec la plus haute vitalité sur le terrain adverse autant de dégâts spéciaux que la force la plus haute parmi les créatures sur votre terrain.`);
     };
 
     canUse = () => {
@@ -41,7 +41,7 @@ export class CoupDeBoule extends Action {
             }
         }
 
-        target.damageByEffect(value);
+        target.specialDamage(value, this);
 
         this.move("Défausse");
         this.pose();

@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
-import { Stat } from './stat';
-import { Trait } from './trait';
+import { EquipStat } from './stat';
+import { EquipTrait } from './trait';
 import { Creature } from './creature';
 import { Item } from './item';
 import Use from '../utils/equip-use.svelte';
@@ -8,8 +8,8 @@ import Use from '../utils/equip-use.svelte';
 export class Equipment extends Item {
     equipElements: string[] = [];
     equipFamilies: string[] = [];
-    equipTraits: Trait[] = [];
-    equipStats: Stat[] = [];
+    equipTraits: EquipTrait[] = [];
+    equipStats: EquipStat[] = [];
     bearer: Creature | undefined = undefined;
 
     constructor(system: System) {
@@ -49,6 +49,7 @@ export class Equipment extends Item {
         this.addEquipStat("Agilité", 0);
         this.addEquipStat("Maniement", 0);
         this.addEquipStat("Percée", 0);
+        this.addEquipStat("Pénétration", 0);
         this.addEquipStat("Adresse", 0);
         this.addEquipStat("Intensité", 0);
 
@@ -142,11 +143,11 @@ export class Equipment extends Item {
                 return stat;
             }
         }
-        return new Stat(name, 0, 0, this);
+        return new EquipStat(name, 0, 0, this);
     };
 
     addEquipStat = (name: string, value: number) => {
-        let stat: Stat = new Stat(name, value, 0, this);
+        let stat: EquipStat = new EquipStat(name, value, 0, this);
         stat.value = function () {
             return this.base + this.add;
         };
@@ -168,11 +169,11 @@ export class Equipment extends Item {
                 return trait;
             }
         }
-        return new Trait(name, false, this);
+        return new EquipTrait(name, false, this);
     };
 
     addEquipTrait = (name: string, value: boolean) => {
-        let trait = new Trait(name, value, this);
+        let trait: EquipTrait = new EquipTrait(name, value, this);
         trait.value = function () {
             return this.base;
         };

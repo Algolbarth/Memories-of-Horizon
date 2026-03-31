@@ -11,7 +11,7 @@ export class TirDeCanon extends Action {
 
         this.init([["Or", 50]]);
 
-        this.addText(`Quand posé : Inflige 100 dégâts à une unité sur le terrain adverse.`);
+        this.addText(`Quand posé : Inflige 100 dégâts spéciaux à une unité sur le terrain adverse.`);
     };
 
     canUse = () => {
@@ -33,7 +33,7 @@ export class TirDeCanon extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.damageByEffect(100);
+        target.specialDamage(100, this);
 
         this.move("Défausse");
         this.pose();

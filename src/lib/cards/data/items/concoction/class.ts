@@ -32,7 +32,7 @@ export class Concoction extends Item {
 
             [if {card.stat("Infusion interdite").value() > 0, Génère {card:Homonculus} sur votre terrain. Fixe à {card.stat("Infusion interdite").value()} la constitution et la force de cette carte.{jump:1}}]
 
-            [if {card.stat("Infusion explosive").value() > 0, Inflige {card.stat("Infusion explosive").value() * 2} dégâts à une unité sur le terrain.{jump:1}}]
+            [if {card.stat("Infusion explosive").value() > 0, Inflige {card.stat("Infusion explosive").value() * 2} dégâts spéciaux à une unité sur le terrain.{jump:1}}]
 
             [if {card.stat("Infusion de soin").value() > 0, Soigne {card.stat("Infusion de soin").value() * 2} blessures à une créature sur le terrain.{jump:1}}]
 
@@ -131,7 +131,7 @@ export class Concoction extends Item {
         if (target != undefined) {
             this.targeting(target);
 
-            target.damageByEffect(this.stat("Infusion explosive").value() * 2);
+            target.specialDamage(this.stat("Infusion explosive").value() * 2, this);
 
             if (target instanceof Creature) {
                 target.heal(this.stat("Infusion de soin").value() * 2);

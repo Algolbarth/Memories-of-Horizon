@@ -14,7 +14,7 @@ export class Brique extends Item {
 
         this.addChoice([
             `Soigne 20 blessures à un bâtiment sur votre terrain.`,
-            `Inflige 20 dégâts à une unité sur le terrain adverse.`]);
+            `Inflige 20 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -58,7 +58,7 @@ export class Brique extends Item {
             target.heal(20);
         }
         else if (choice == "damage") {
-            target.damageByEffect(20);
+            target.specialDamage(20, this);
         }
 
         this.move("Défausse");

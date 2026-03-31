@@ -10,7 +10,7 @@ export class Autodafe extends Action {
 
         this.init([["Or", 15], ["Feu", 15]]);
 
-        this.addText([`Quand posé : Meule toutes les cartes sur votre pile.`, `Inflige autant de dégâts à toutes les unités sur le terrain adverse que de cartes meulées.`]);
+        this.addText([`Quand posé : Meule toutes les cartes sur votre pile.`, `Inflige autant de dégâts spéciaux à toutes les unités sur le terrain adverse que de cartes meulées.`]);
     };
 
     canUse = () => {
@@ -31,7 +31,7 @@ export class Autodafe extends Action {
 
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
-            card.damageByEffect(value);
+            card.specialDamage(value, this);
         }
 
         this.move("Défausse");

@@ -29,18 +29,18 @@ Guilde des voleurs : bâtiment, quand une unité alliée est vendue : Génère V
 Marchand de miracle : Créature humain, quand trois cartes alliées de même nom sont vendues à la suite durant cette phase de préparation : Génère une carte du même nom dans l'inventaire.
 
 ### Neutre
-Colère : inflige autant dégâts que les blessures du meneur.
+Colère : inflige autant dégâts spéciaux que les blessures du meneur.
 Envie : vole une carte dans l'inventaire adverse.
 Orgueil : remplit le jauge critique d'une créature et lui augmente son intensité.
 Avarice : détruit une créature sur votre terrain et augmente la constitution et la force d'une autre créature sur votre terrain d'autant que la constitution et la force de la créature détruite.
-Gourmandise : inflige à une créature sur le terrain adverse autant de dégâts que de créatures qui partagent au moins une famille avec elle.
+Gourmandise : inflige à une créature sur le terrain adverse autant de dégâts spéciaux que de créatures qui partagent au moins une famille avec elle.
 Paresse : soigne une créature alliée d'autant que la différence entre sa vitalité et sa force.
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
 Sauvage : Créature humain : si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
 Crocs baveux : action bête, augmente le vol de vie d'une créature de famille Bête sur votre terrain.
 Arbalète : objet équipement, génère des carreaux dans l'inventaire qui scalent selon la force du mob.
-Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts à l'unité attaquée.
-Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts à l'unité attaquée.
+Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts spéciaux à l'unité attaquée.
+Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts spéciaux à l'unité attaquée.
 Pistolet double : objet équipement
 Dague magique : objet équipement, s'équipe à une créature sur votre terrain OU produit X mana.
 Dispersion : action, enlève les équipements + les stats temporaires d'une créature sur le terrain adverse.
@@ -52,14 +52,14 @@ Trône : bâtiment.
 Sort vivant : Créature sort.
 
 ### Feu
-Combustion : inflige des dégâts et dépense les brûlures d'une unité adverse.
-Flèche de feu : inflige des dégâts et enflamme une unité adverse.
+Combustion : inflige des dégâts spéciaux et dépense les brûlures d'une unité adverse.
+Flèche de feu : inflige des dégâts spéciaux et enflamme une unité adverse.
 Jarre de flamme : objet.
 
 ### Vegetal
 Fiole de poison : empoisonne et augmente la toxicité d'une créature sur le terrain adverse.
 Dose mortelle : détruit une créature adverse empoisonnée sur le terrain qui a suffisamment de poison sur elle.
-Plante carnivore : Créature plante. 0 atk inactif, au début du round : inflige 5 dégâts à la créature adverse la plus en avant sur le terrain.
+Plante carnivore : Créature plante. 0 atk inactif, au début du round : inflige 5 dégâts spéciaux à la créature adverse la plus en avant sur le terrain.
 Plante vénéneuse : Créature plante, 0 atk inactif, au début du round : applique poison à la créature adverse la plus en avant sur le terrain.
 Jardinier : Créature elfe, quand se prépare sur le terrain : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : Créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
@@ -92,6 +92,7 @@ Mage des airs
 Hibours : Créature bête oiseau 
 Ascension : pioche une créature wyverne et la verrouille.
 Ile volante : Lieu pour les cartes d'élément Air.
+Atterissage: action, enlève 1 esquive pour soigner complétement une créature sur votre terrain.
 
 ### Mort
 Revenant 
@@ -144,22 +145,23 @@ Satyre : quand arrive sur le terrain : augmente sa constitution et sa force pend
 Acolyte satyre : quand posé : augmente la constitution et la force d'une créature sur votre terrain pendant ce tour.
 Barde satyre : quand posé : augmente la constitution et la force de toutes les créatures alliées sur le terrain pendant ce tour.
 Cage d'éclair : action, applique une paralysie à une créature sur le terrain adverse.
-Eclair : action sort, inflige des dégâts à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts.
-Chaînes d'éclairs : action sort, inflige des dégâts à une créature sur le terrain adverse et aux créatures adjacentes. sorcellerie : inflige des dégâts à plus de créatures.
+Eclair : action sort, inflige des dégâts spéciaux à l'unité adverse la plus en avant. sorcellerie : inflige plus de dégâts spéciaux.
+Chaînes d'éclairs : action sort, inflige des dégâts spéciaux à une créature sur le terrain adverse et aux créatures adjacentes. sorcellerie : inflige des dégâts spéciaux à plus de créatures.
 Bottes d'éclair : objet équipement, augmente la vitesse du porteur.
 Lames d'éclairs : objet équipement, augmente l'agilité du porteur.
 Lances de foudre : objet équipement, augmente la force du porteur selon sa vitesse.
 Centaure : Créature, vitesse.
 Meneur centaure : Créature, quand posé : augmente la vitesse de toutes les créatures alliées sur le terrain.
-Chasseur centaure : Créature, quand attaque : inflige autant de dégâts que sa vitesse à la créature attaquée.
+Chasseur centaure : Créature, quand attaque : inflige autant de dégâts spéciaux que sa vitesse à la créature attaquée.
 Rabatteur centaure : Créature, quand posé : augmente la vitesse d'une créature sur votre terrain.
 Cyclope 
 Wyverne de foudre 
 Mage de foudre 
 Plateau : Lieu pour les cartes d'élément Foudre.
-Électromancien : Créature, quand une carte alliée Foudre est posée : inflige des dégâts à l'unité sur le terrain adverse la plus en avant.
+Électromancien : Créature, quand une carte alliée Foudre est posée : inflige des dégâts spéciaux à l'unité sur le terrain adverse la plus en avant.
 Plat instantanné : objet nouriture, soigne. satieté : augmente la force pendant ce tour.
 Café : objet nouriture, soigne. satieté : augmente la vitesse.
+Champ de force: action, augmente de 1 l'esquive de toutes les unités alliées pendant ce tour.
 
 ### Glace
 Goliath : résistance.
@@ -178,14 +180,14 @@ Robustesse: action, augmente de 50 la constitution et la force ou augmente de 50
 
 ### Lumiere
 Aasimar : Créature, régénération.
-Rayon de lumière : action, inflige des dégâts à une créature sur le terrain adverse OU soigne une créature sur votre terrain.
-Nova sagénère : action, inflige des dégâts à toutes les créatures sur le terrain adverse. soigne toutes les créatures alliées sur le terrain.
+Rayon de lumière : action, inflige des dégâts spéciaux à une créature sur le terrain adverse OU soigne une créature sur votre terrain.
+Nova sagénère : action, inflige des dégâts spéciaux à toutes les créatures sur le terrain adverse. soigne toutes les créatures alliées sur le terrain.
 Fidèle 
 Prière : action, pioche des cartes OU soigne une créature sur votre terrain.
 Cierge : objet, pioche des cartes OU produit de la lumière.
 Paladin : Créature, garde.
 Luxomancien : Créature, quand une carte alliée Lumière est posée : .
-Elementaire de lumière : Créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts.
+Elementaire de lumière : Créature, 0 atk, quand attaque : si pas blessé alors inflige des dégâts spéciaux.
 Épée de pure lumière : objet équipement, Quand le porteur attaque : si pas blessée alors inflige des dégaâts.
 Révélations de lumière : action, révèle toutes les cartes dans l'inventaire et étourdis toutes les créatures sur le terrain.
 Wyverne blanche 

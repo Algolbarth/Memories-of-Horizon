@@ -11,7 +11,7 @@ export class SouffleEnflamme extends Action {
 
         this.init([["Or", 15], ["Feu", 15]]);
 
-        this.addText(`Quand posé : Inflige 20 dégâts à une unité sur le terrain adverse et aux unités adjacentes de cette unité.`);
+        this.addText(`Quand posé : Inflige 20 dégâts spéciaux à une unité sur le terrain adverse et aux unités adjacentes de cette unité.`);
     };
 
     canUse = () => {
@@ -33,13 +33,13 @@ export class SouffleEnflamme extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.damageByEffect(20);
+        target.specialDamage(20, this);
         if (target.slot != undefined && target.zone) {
             if (target.slot > 0) {
-                target.zone.cards[target.slot - 1].damageByEffect(20);
+                target.zone.cards[target.slot - 1].specialDamage(20, this);
             }
             if (target.slot < target.zone.cards.length - 1) {
-                target.zone.cards[target.slot + 1].damageByEffect(20);
+                target.zone.cards[target.slot + 1].specialDamage(20, this);
             }
         }
 

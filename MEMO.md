@@ -32,6 +32,7 @@ X Vitesse => 10X
 X Agilité => 25X
 X Maitrise => 25X
 X Percée => X/4
+X Pénétration => X/4
 X Intelligence => 5X
 X Initiative => 5X
 X Poison => X
@@ -39,7 +40,8 @@ X Toxicité => 3X/2
 X Brûlure => 3X/2
 X Épine => 5X/2
 
-Inflige X dégâts => X/2
+Inflige X dégâts physiques => X/2
+Inflige X dégâts spéciaux => X/2
 Soigne X blessures  => X/2
 Remplit la jauge critique => 25
 

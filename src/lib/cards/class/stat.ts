@@ -1,5 +1,6 @@
 import type { Card } from "./class";
 import { Creature } from "./creature";
+import type { Equipment } from "./equipment";
 
 export class Stat {
     name: string;
@@ -94,5 +95,14 @@ export class Stat {
         this.add = 0;
         this.turn = 0;
         this.round = 0;
+    };
+};
+
+export class EquipStat extends Stat {
+    card: Equipment;
+
+    constructor(name: string, value: number, min: number, card: Equipment) {
+        super(name, value, min, card);
+        this.card = card;
     };
 };

@@ -11,12 +11,12 @@ export class Catapulte extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Au début d'une manche : Inflige 20 dégâts à l'unité en première position sur le terrain adverse.`);
+        this.addText(`Au début d'une manche : Inflige 20 dégâts spéciaux à l'unité en première position sur le terrain adverse.`);
     };
 
     roundEffect = () => {
         if (this.isArea("Terrain")) {
-            this.adversary().zone("Terrain").cards[0].damageByEffect(20);
+            this.adversary().zone("Terrain").cards[0].specialDamage(20, this);
         }
     };
 };

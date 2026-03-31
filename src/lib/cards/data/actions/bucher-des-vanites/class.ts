@@ -14,7 +14,7 @@ export class BucherDesVanites extends Action {
 
         this.addText([
             `Quand posé : Meule toutes les cartes sur votre pile.`,
-            `Inflige autant de dégâts à une unité sur le terrain adverse que 10 fois le nombre de cartes meulées.`]);
+            `Inflige autant de dégâts spéciaux à une unité sur le terrain adverse que 10 fois le nombre de cartes meulées.`]);
     };
 
     canUse = () => {
@@ -54,7 +54,7 @@ export class BucherDesVanites extends Action {
             value++;
         }
 
-        target.damageByEffect(10 * value);
+        target.specialDamage(10 * value, this);
 
         this.move("Défausse");
         this.pose();

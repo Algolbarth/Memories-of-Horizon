@@ -11,8 +11,8 @@ export class VagueDeferlante extends Action {
         this.init([["Or", 12], ["Eau", 12]]);
 
         this.addText([
-            `Quand posé : Inflige 5 dégâts à toutes les unités sur le terrain adverse.`,
-            `[source {25, inflige 10 dégâts à la place.}]`]);
+            `Quand posé : Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`,
+            `[source {25, inflige 10 dégâts spéciaux à la place.}]`]);
     };
 
     canUse = () => {
@@ -31,7 +31,7 @@ export class VagueDeferlante extends Action {
 
         let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
-            card.damageByEffect(value);
+            card.specialDamage(value, this);
         }
 
         this.move("Défausse");

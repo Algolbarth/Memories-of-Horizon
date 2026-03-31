@@ -14,7 +14,7 @@ export class Griffure extends Action {
 
         this.addText([
             `Quand posé : Augmente de 10 la force d'une créature sur votre terrain.`,
-            `Inflige 10 dégâts à une unité sur le terrain adverse.`]);
+            `Inflige 10 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -62,7 +62,7 @@ export class Griffure extends Action {
 
         this.targeting(opponent);
 
-        opponent.damageByEffect(10);
+        opponent.specialDamage(10, this);
 
         this.move("Défausse");
         this.pose();

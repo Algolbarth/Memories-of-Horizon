@@ -12,7 +12,7 @@ export class TourDArcher extends Building {
         this.stat("Constitution").init(25);
 
         this.addText(`Quand se prépare sur le terrain : Génère {card:Flèche en bois} dans votre inventaire.`);
-        this.addText(`Quand {card:Flèche en bois} est posée : Si sur le terrain : Augmente de 5 les dégâts de cette carte.`);
+        this.addText(`Quand {card:Flèche en bois} est posée : Si sur le terrain : Augmente de 5 les dégâts spéciaux de cette carte.`);
     };
 
     startPhaseEffect = () => {

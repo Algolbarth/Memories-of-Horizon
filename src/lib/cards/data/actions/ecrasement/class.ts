@@ -12,7 +12,7 @@ export class Ecrasement extends Action {
 
         this.init([["Or", 25]]);
 
-        this.addText(`Quand posé : Inflige à une unité sur le terrain adverse autant de dégâts que la vitalité la plus haute parmi les créatures sur votre terrain.`);
+        this.addText(`Quand posé : Inflige à une unité sur le terrain adverse autant de dégâts spéciaux que la vitalité la plus haute parmi les créatures sur votre terrain.`);
     };
 
     canUse = () => {
@@ -57,7 +57,7 @@ export class Ecrasement extends Action {
             }
         }
 
-        target.damageByEffect(value);
+        target.specialDamage(value, this);
 
         this.move("Défausse");
         this.pose();

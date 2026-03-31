@@ -1,30 +1,23 @@
 import type { System } from '$lib/system/class';
+import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
 
-export class Surchauffe extends Action {
-    name = "Surchauffe";
+export class Combustion extends Action {
+    name = "Combustion";
 
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 12], ["Feu", 12]]);
 
-        this.addText(`Quand posé : Inflige 100 dégâts spéciaux et augmente de 100 la force d'une créature sur le terrain.`);
+        this.addText(`Quand posé : Inflige autant de dégâts physiques à une unité sur le terrain adverse que 5 fois la brûlure de cette unité.`);
     };
 
     canUse = () => {
-        for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature) {
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card.stat("Brûlure").value() > 0) {
                 return true;
-            }
-        }
-        if (this.owner().is_player) {
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (card instanceof Creature) {
-                    return true;
-                }
             }
         }
         return false;
@@ -38,8 +31,8 @@ export class Surchauffe extends Action {
             let target = undefined;
 
             for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
+                if (card.stat("Brûlure").value() > 0) {
+                    return true;
                 }
             }
 
@@ -49,11 +42,10 @@ export class Surchauffe extends Action {
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.stat("Force").increase(100);
-        target.specialDamage(100, this);
+        target.physicalDamage(5 * target.stat("Brûlure").value(), this);
 
         this.move("Défausse");
         this.pose();
