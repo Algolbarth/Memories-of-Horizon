@@ -52,7 +52,6 @@ Trône : bâtiment.
 Sort vivant : Créature sort.
 
 ### Feu
-Combustion : inflige des dégâts spéciaux et dépense les brûlures d'une unité adverse.
 Flèche de feu : inflige des dégâts spéciaux et enflamme une unité adverse.
 Jarre de flamme : objet.
 

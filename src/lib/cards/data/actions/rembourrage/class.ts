@@ -9,9 +9,9 @@ export class Rembourrage extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 15]]);
 
-        this.addText(`Quand posé : Augmente de 10 la constitution d'une carte de famille Armure dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 30 la constitution d'une carte de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {
@@ -45,7 +45,7 @@ export class Rembourrage extends Action {
     useEffect = (target: Equipment) => {
         this.targeting(target);
 
-        target.equipStat("Constitution").increase(10);
+        target.equipStat("Constitution").increase(30);
 
         this.move("Défausse");
         this.pose();

@@ -9,9 +9,9 @@ export class PlaqueDArmure extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 20]]);
 
-        this.addText(`Quand posé : Augmente de 10 l'endurance d'une carte de famille Armure dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 25 l'endurance d'une carte de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {
@@ -45,7 +45,7 @@ export class PlaqueDArmure extends Item {
     useEffect = (target: Equipment) => {
         this.targeting(target);
 
-        target.equipStat("Endurance").increase(10);
+        target.equipStat("Endurance").increase(25);
 
         this.move("Défausse");
         this.pose();

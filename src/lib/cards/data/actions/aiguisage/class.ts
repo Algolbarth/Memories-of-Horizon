@@ -9,9 +9,9 @@ export class Aiguisage extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 20]]);
 
-        this.addText(`Quand posé : Augmente de 20 la force d'une carte de famille Arme dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 50 la force d'une carte de famille Arme dans votre inventaire.`);
     };
 
     canUse = () => {
@@ -45,7 +45,7 @@ export class Aiguisage extends Action {
     useEffect = (target: Equipment) => {
         this.targeting(target);
 
-        target.equipStat("Force").increase(20);
+        target.equipStat("Force").increase(50);
 
         this.move("Défausse");
         this.pose();

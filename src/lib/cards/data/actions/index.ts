@@ -1,5 +1,6 @@
 export * from './abattage';
 export * from './affaiblissement';
+export * from './affutage';
 export * from './agrandissement-dinventaire';
 export * from './aiguisage';
 export * from './ambidextrie';
