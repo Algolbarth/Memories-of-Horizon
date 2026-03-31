@@ -73,7 +73,7 @@ export class Unit extends Card {
 
         this.addStat("Vitesse", 0);
 
-        this.addStat("Protection", 0);
+        this.addStat("Charisme", 0);
 
         this.addStat("Esquive", 0);
 

@@ -14,16 +14,16 @@ export class CapitaineDeLaGarde extends Creature {
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
-        this.stat("Protection").init(1);
+        this.stat("Charisme").init(1);
 
-        this.addText(`Quand posé : Augmente de 1 la protection de toutes les créatures sur le terrain ayant une protection non nulle.`);
+        this.addText(`Quand posé : Augmente de 1 le charisme de toutes les créatures de charisme 1 ou plus sur le terrain.`);
     };
 
     useEffect = () => {
         let battlefield = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
-            if (card instanceof Creature && card.stat("Protection").value() > 0) {
-                card.stat("Protection").increase(1);
+            if (card instanceof Creature && card.stat("Charisme").value() > 0) {
+                card.stat("Charisme").increase(1);
             }
         }
         this.move("Terrain");

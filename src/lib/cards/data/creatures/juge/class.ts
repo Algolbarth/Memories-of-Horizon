@@ -15,7 +15,9 @@ export class Juge extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé : Fixe la protection d'une créature sur le terrain à 1 + la plus grande protection parmi les unités sur le terrain.`);
+        this.addText([
+            `Quand posé : Fixe le charisme d'une créature sur le terrain au plus haut charisme parmi les unités sur le terrain.`,
+            `Augmente de 1 le charisme de cette créature.`]);
     };
 
     select = () => {
@@ -59,16 +61,16 @@ export class Juge extends Creature {
         if (target != undefined) {
             this.targeting(target);
 
-            let max_protection = 0;
+            let max_charisma: number = 0;
             for (const entity of [this.owner(), this.adversary()]) {
                 for (const card of entity.zone("Terrain").cards) {
-                    if (card.stat("Protection").value() > max_protection) {
-                        max_protection = card.stat("Protection").value();
+                    if (card.stat("Charisme").value() > max_charisma) {
+                        max_charisma = card.stat("Charisme").value();
                     }
                 }
             }
 
-            target.stat("Protection").set(max_protection + 1);
+            target.stat("Charisme").set(max_charisma + 1);
         }
 
         this.move("Terrain");

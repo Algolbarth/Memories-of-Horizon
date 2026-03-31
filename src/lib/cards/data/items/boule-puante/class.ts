@@ -12,12 +12,12 @@ export class BoulePuante extends Action {
 
         this.init([["Or", 25]]);
 
-        this.addText(`Quand posé : Réduit de 5 la protection d'une créature sur le terrain adverse.`);
+        this.addText(`Quand posé : Réduit de 5 le charisme d'une créature sur le terrain adverse.`);
     };
 
     canUse = () => {
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && card.stat("Protection").value() > 0) {
+            if (card instanceof Creature && card.stat("Charisme").value() > 0) {
                 return true;
             }
         }
@@ -32,7 +32,7 @@ export class BoulePuante extends Action {
             let target = undefined;
 
             for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.stat("Protection").value() > 0) {
+                if (target == undefined && card instanceof Creature && card.stat("Charisme").value() > 0) {
                     return true;
                 }
             }
@@ -46,7 +46,7 @@ export class BoulePuante extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.stat("Protection").decrease(5);
+        target.stat("Charisme").decrease(5);
 
         this.move("Défausse");
         this.pose();

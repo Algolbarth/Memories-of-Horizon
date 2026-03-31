@@ -297,7 +297,7 @@ export class Creature extends Unit {
         let target: Unit | undefined = undefined;
 
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Unit && (target == undefined || card.stat("Protection").value() > target.stat("Protection").value())) {
+            if (card instanceof Unit && (target == undefined || card.stat("Charisme").value() > target.stat("Charisme").value())) {
                 target = card;
             }
         }

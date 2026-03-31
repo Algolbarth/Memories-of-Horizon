@@ -3,20 +3,20 @@ import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
 
-export class Charisme extends Action {
-    name = "Charisme";
+export class Confiance extends Action {
+    name = "Confiance";
 
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 30]]);
 
-        this.addText(`Quand posé : Augmente d'autant la constitution et la force d'une créature sur votre terrain que 10 fois la protection de cette créature.`);
+        this.addText(`Quand posé : Augmente d'autant la constitution et la force d'une créature sur votre terrain que 10 fois le charisme de cette créature.`);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && card.stat("Protection").value() > 0) {
+            if (card instanceof Creature && card.stat("Charisme").value() > 0) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class Charisme extends Action {
             let target = undefined;
 
             for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.stat("Protection").value() > 0) {
+                if (target == undefined && card instanceof Creature && card.stat("Charisme").value() > 0) {
                     target = card;
                 }
             }
@@ -45,8 +45,8 @@ export class Charisme extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Constitution").increase(10 * target.stat("Protection").value());
-        target.stat("Force").increase(10 * target.stat("Protection").value());
+        target.stat("Constitution").increase(10 * target.stat("Charisme").value());
+        target.stat("Force").increase(10 * target.stat("Charisme").value());
 
         this.move("Défausse");
         this.pose();

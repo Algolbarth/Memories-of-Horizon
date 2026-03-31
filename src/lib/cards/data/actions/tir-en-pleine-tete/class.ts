@@ -11,12 +11,12 @@ export class TirEnPleineTete extends Action {
 
         this.init([["Or", 15]]);
 
-        this.addText(`Quand posé : Inflige autant de dégâts spéciaux à une créature sur le terrain adverse que 10 fois la protection de cette créature.`);
+        this.addText(`Quand posé : Inflige autant de dégâts spéciaux à une créature sur le terrain adverse que 10 fois le charisme de cette créature.`);
     };
 
     canUse = () => {
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && card.stat("Protection").value() > 0) {
+            if (card instanceof Creature && card.stat("Charisme").value() > 0) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class TirEnPleineTete extends Action {
             let target = undefined;
 
             for (const card of this.owner().adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.stat("Protection").value() > 0) {
+                if (target == undefined && card instanceof Creature && card.stat("Charisme").value() > 0) {
                     target = card;
                 }
             }
@@ -45,7 +45,7 @@ export class TirEnPleineTete extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.damage(target.stat("Protection").value() * 10);
+        target.damage(target.stat("Charisme").value() * 10);
 
         this.move("Défausse");
         this.pose();

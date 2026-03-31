@@ -10,6 +10,6 @@ export class Epouvantail extends Building {
         this.init([["Or", 25]]);
 
         this.stat("Constitution").init(10);
-        this.stat("Protection").init(2);
+        this.stat("Charisme").init(2);
     };
 };

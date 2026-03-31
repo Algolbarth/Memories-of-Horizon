@@ -13,6 +13,6 @@ export class Garde extends Creature {
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
-        this.stat("Protection").init(1);
+        this.stat("Charisme").init(1);
     };
 };

@@ -12,7 +12,7 @@ export class Contre extends Action {
 
         this.init([["Or", 25]]);
 
-        this.addText(`Quand posé : Inflige à une unité sur le terrain adverse le double de dégâts spéciaux que la valeur d'endurance la plus haute parmi les créatures sur votre terrain.`);
+        this.addText(`Quand posé : Inflige autant de dégâts spéciaux à une unité sur le terrain adverse que le double de la plus haute endurance parmi les créatures sur votre terrain.`);
     };
 
     canUse = () => {

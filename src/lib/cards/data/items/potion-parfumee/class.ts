@@ -15,8 +15,8 @@ export class PotionParfumee extends Item {
 
         this.addStat("Infusion", 5);
 
-        this.addText(`Quand posé : Augmente de 1 la protection d'une créature sur le terrain pendant ce tour pour toutes les 5 valeur d'infusion.`);
-        this.addText(`[details {Augmente de {Math.floor(card.stat("Infusion").value() / 5)} la protection d'une créature sur le terrain pendant ce tour.}]`);
+        this.addText(`Quand posé : Augmente de 1 le charisme d'une créature sur le terrain pendant ce tour pour toutes les 5 valeur d'infusion.`);
+        this.addText(`[details {Augmente de {Math.floor(card.stat("Infusion").value() / 5)} le charisme d'une créature sur le terrain pendant ce tour.}]`);
     };
 
     canUse = () => {
@@ -55,7 +55,7 @@ export class PotionParfumee extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Protection").turn += Math.floor(this.stat("Infusion").value() / 5);
+        target.stat("Charisme").turn += Math.floor(this.stat("Infusion").value() / 5);
 
         this.move("Défausse");
         this.pose();

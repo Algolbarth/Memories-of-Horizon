@@ -11,7 +11,7 @@ export class Cibler extends Action {
 
         this.init([["Or", 10]]);
 
-        this.addText(`Quand posé : Augmente de 1 la protection d'une unité sur le terrain adverse.`);
+        this.addText(`Quand posé : Augmente de 1 le charisme d'une unité sur le terrain adverse.`);
     };
 
     canUse = () => {
@@ -43,7 +43,7 @@ export class Cibler extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.stat("Protection").add += 1;
+        target.stat("Charisme").add += 1;
 
         this.move("Défausse");
         this.pose();

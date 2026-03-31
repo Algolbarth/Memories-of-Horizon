@@ -42,7 +42,7 @@ export class Equipment extends Item {
         this.addEquipStat("Épine", 0);
         this.addEquipStat("Maîtrise", 0);
         this.addEquipStat("Vitesse", 0);
-        this.addEquipStat("Protection", 0);
+        this.addEquipStat("Charisme", 0);
         this.addEquipStat("Magie", 0);
         this.addEquipStat("Intelligence", 0);
         this.addEquipStat("Force", 0);

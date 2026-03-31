@@ -10,12 +10,12 @@ export class Decapitation extends Action {
 
         this.init([["Or", 80]]);
 
-        this.addText(`Quand posé : Détruit la créature sur le terrain adverse ayant la protection la plus haute.`);
+        this.addText(`Quand posé : Détruit la créature sur le terrain adverse ayant le plus haut charisme.`);
     };
 
     canUse = () => {
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && card.canBeDestroyed() && card.stat("Protection").value() > 0) {
+            if (card instanceof Creature && card.canBeDestroyed() && card.stat("Charisme").value() > 0) {
                 return true;
             }
         }
@@ -25,7 +25,7 @@ export class Decapitation extends Action {
     useEffect = () => {
         let target: undefined | Creature = undefined;
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && card.canBeDestroyed() && ((target == undefined && card.stat("Protection").value() > 0) || (target != undefined && card.stat("Protection").value() > target.stat("Protection").value()))) {
+            if (card instanceof Creature && card.canBeDestroyed() && ((target == undefined && card.stat("Charisme").value() > 0) || (target != undefined && card.stat("Charisme").value() > target.stat("Charisme").value()))) {
                 target = card;
             }
         }

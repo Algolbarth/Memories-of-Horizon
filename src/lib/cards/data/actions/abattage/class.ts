@@ -10,7 +10,7 @@ export class Abattage extends Action {
 
         this.init([["Or", 80]]);
 
-        this.addText(`Quand posé : Détruit la créature sur le terrain adverse ayant la vitalité la plus haute.`);
+        this.addText(`Quand posé : Détruit la créature sur le terrain adverse ayant la plus haute vitalité.`);
     };
 
     canUse = () => {

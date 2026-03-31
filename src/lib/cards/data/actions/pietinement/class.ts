@@ -10,7 +10,7 @@ export class Pietinement extends Action {
 
         this.init([["Or", 80]]);
 
-        this.addText(`Quand posé : Détruit la créature sur le terrain adverse ayant la force la plus haute.`);
+        this.addText(`Quand posé : Détruit la créature sur le terrain adverse ayant la plus haute force.`);
     };
 
     canUse = () => {

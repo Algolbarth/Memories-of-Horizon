@@ -25,7 +25,7 @@ X Intensité => 20X
 X Magie => 2X
 X Esquive => 20X
 Augmente jusqu'à X la Garde => X/2
-X Protection => 10X
+X Charisme => 10X
 X Endurance => X
 X Résistance => X
 X Vitesse => 10X
@@ -56,7 +56,7 @@ X à chaque action/attaque => 4X
 X pendant ce tour => X/2
 X pendant ce round => X/3
 
-X choix parmis de effets de coût Y => Y + (XY/10)
+X choix parmi de effets de coût Y => Y + (XY/10)
 
 résolution d'un effet coutant X => 2X
 

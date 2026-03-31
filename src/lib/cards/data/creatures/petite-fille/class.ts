@@ -15,7 +15,7 @@ export class PetiteFille extends Creature {
         this.stat("Constitution").init(1);
         this.stat("Force").init(1);
 
-        this.addText(`Quand posé : Augmente de 1 la protection d'une créature sur votre terrain.`);
+        this.addText(`Quand posé : Augmente de 1 le charisme d'une créature sur votre terrain.`);
     };
 
     select = () => {
@@ -57,7 +57,7 @@ export class PetiteFille extends Creature {
         if (target != undefined) {
             this.targeting(target);
 
-            target.stat("Protection").increase(1);
+            target.stat("Charisme").increase(1);
         }
 
         this.move("Terrain");

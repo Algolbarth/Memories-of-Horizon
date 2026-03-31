@@ -15,7 +15,7 @@ export class Tomate extends Item {
 
         this.addText([
             "Quand posé : Soigne 20 blessures à une créature sur le terrain.",
-            "[satiety {Augmente de 1 la protection de cette créature à la place.}]"]);
+            "[satiety {Augmente de 1 le charisme de cette créature à la place.}]"]);
     };
 
     canUse = () => {
@@ -82,7 +82,7 @@ export class Tomate extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            target.stat("Protection").increase(1);
+            target.stat("Charisme").increase(1);
         }
         else {
             target.heal(20);

@@ -11,7 +11,7 @@ export class Menace extends Action {
 
         this.init([["Or", 50]]);
 
-        this.addText(`Quand posé : Augmente de 5 la protection d'une créature sur le terrain.`);
+        this.addText(`Quand posé : Augmente de 5 le charisme d'une créature sur le terrain.`);
     };
 
     canUse = () => {
@@ -43,7 +43,7 @@ export class Menace extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.stat("Protection").increase(5);
+        target.stat("Charisme").increase(5);
 
         this.move("Défausse");
         this.pose();

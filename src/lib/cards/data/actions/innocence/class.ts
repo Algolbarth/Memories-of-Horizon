@@ -11,12 +11,12 @@ export class Innocence extends Action {
 
         this.init([["Or", 25]]);
 
-        this.addText(`Quand posé : Retire la protection d'une unité sur votre terrain.`);
+        this.addText(`Quand posé : Retire le charisme d'une unité sur votre terrain.`);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card.stat("Protection").value() > 0) {
+            if (card.stat("Charisme").value() > 0) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class Innocence extends Action {
             let target = undefined;
 
             for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card.stat("Protection").value() > 0) {
+                if (target == undefined && card.stat("Charisme").value() > 0) {
                     target = card;
                 }
             }
@@ -45,7 +45,7 @@ export class Innocence extends Action {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        target.stat("Protection").set(0);
+        target.stat("Charisme").set(0);
 
         this.move("Défausse");
         this.pose();

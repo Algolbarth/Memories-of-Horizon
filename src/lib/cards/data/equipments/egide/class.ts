@@ -13,7 +13,7 @@ export class Egide extends Equipment {
 
         this.equipStat("Endurance").value = function () {
             if (this.card.bearer != undefined) {
-                return this.card.bearer.stat("Protection").value() * 10;
+                return this.card.bearer.stat("Charisme").value() * 10;
             }
             else {
                 return 0;
@@ -21,6 +21,6 @@ export class Egide extends Equipment {
         };
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Augmente l'endurance du porteur de 10 fois la protection du porteur.`);
+        this.addText(`Augmente l'endurance du porteur de 10 fois le charisme du porteur.`);
     };
 };

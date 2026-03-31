@@ -10,7 +10,7 @@ export class Filter {
     types: string[] = ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"];
     families: string[] = [];
     elements: string[] = [];
-    stats: string[] = ["Aucune", "Adresse", "Agilité", "Constitution", "Endurance", "Épine", "Force", "Garde", "Intelligence", "Intensité", "Magie", "Maîtrise", "Maniement", "Pénétration", "Percée", "Protection", "Régénération", "Résistance", "Vitesse"];
+    stats: string[] = ["Aucune", "Adresse", "Agilité", "Charisme", "Constitution", "Endurance", "Épine", "Force", "Garde", "Intelligence", "Intensité", "Magie", "Maîtrise", "Maniement", "Pénétration", "Percée", "Régénération", "Résistance", "Vitesse"];
 
     select_name: string = "";
 

@@ -195,7 +195,7 @@ Terre sagénère : Lieu pour les cartes d'élément Lumière.
 
 ### Ombre
 Drow 
-Limace : Créature ombre, supprime la protection des créatures qu'elle force.
+Limace : Créature ombre, supprime le charisme des créatures qu'elle force.
 Vampire 
 Oni 
 Wyverne noire 
@@ -323,7 +323,7 @@ Eclipse solaire : révèle toutes les cartes dans l'inventaire adverse et en dé
 # Boss
 
 Zenoh : boss de niv 2, quand attaque gagne autant de force que d'or et quand tue produit autant d'or que de santé 
-Ousen : boss de niv 4, génèrer des soldats avec des effets selon le type de carte posé (créature : protection, action : vitesse, bâtiment : force, objet : santé) 
+Ousen : boss de niv 4, génèrer des soldats avec des effets selon le type de carte posé (créature : charisme, action : vitesse, bâtiment : force, objet : santé) 
 Gyoun : boss de niv 4, avec des cavaliers, quand se fait attaquer : augmente la force des cavaliers, quand un cavalier attaque : augmente la constitution de gyoun
 
 # Lore
@@ -561,7 +561,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Gyoun` : Guerrier d'élite elfe, surnomme le colosse de jade.
 `Go Houmei` : archonte naine, connue pour son génie tactique lors de siège. surnommée la reine des tours.
 `Ordo` : Goliath utilisant une lance et une épée. utilise un mécanisme en glace (similaire à une moto) pour se déplacer.
-`Kouen` : avien parmis les meilleurs archers de l'horizon. utilise ses flèches pour communiquer avec ses alliés.
+`Kouen` : avien parmi les meilleurs archers de l'horizon. utilise ses flèches pour communiquer avec ses alliés.
 `Ouquidekin` : Grand guerrier alishtar. communique avec l'esprit de sa femme.
 `Bombay` : djinn chat dieu des rêves. Il a l'apparence de l'hypnomiaou dark dans sw.
 `Déesse de la loi` : peut appliquer des règles sur les entités avec lesquelles elle a une interaction (vision, proche). Si la règle est un droit lors c un buff : si la règle est un devoir alors c une obligation : si la règle est une loi alors il y a une sanction si pas respectée. Les règles s'appliquent toujours à elle en plus des cibles. À l'apparence d'Amitus.

@@ -42,7 +42,7 @@ export class Concoction extends Item {
 
             [if {card.stat("Infusion de résistance").value() > 0, Augmente de {card.stat("Infusion de résistance").value() * 2} la résistance d'une créature sur le terrain pendant ce tour.{jump:1}}]
 
-            [if {card.stat("Infusion parfumée").value() > 0, Augmente de {Math.floor(card.stat("Infusion parfumée").value() / 5)} la protection d'une créature sur le terrain pendant ce tour.}]}]`,
+            [if {card.stat("Infusion parfumée").value() > 0, Augmente de {Math.floor(card.stat("Infusion parfumée").value() / 5)} le charisme d'une créature sur le terrain pendant ce tour.}]}]`,
         ], () => {
             return this.hasInfusion();
         });
@@ -138,7 +138,7 @@ export class Concoction extends Item {
                 target.stat("Force").turn += this.stat("Infusion de force").value() * 4;
                 target.stat("Endurance").turn += this.stat("Infusion d'endurance").value() * 2;
                 target.stat("Résistance").turn += this.stat("Infusion de résistance").value() * 2;
-                target.stat("Protection").turn += Math.floor(this.stat("Infusion parfumée").value() / 5);
+                target.stat("Charisme").turn += Math.floor(this.stat("Infusion parfumée").value() / 5);
             }
         }
 

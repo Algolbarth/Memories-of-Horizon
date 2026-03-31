@@ -9,7 +9,7 @@
 	export let card: Card;
 
 	function selectCondition(target: Card) {
-		if (target.stat("Protection").value() > 0) {
+		if (target.stat("Charisme").value() > 0) {
 			return true;
 		}
 		return false;
