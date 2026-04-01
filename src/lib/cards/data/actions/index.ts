@@ -43,6 +43,7 @@ export * from './enflammer';
 export * from './entrainement';
 export * from './eriger-les-frontieres';
 export * from './eruption';
+export * from './eteindre';
 export * from './exploration';
 export * from './extension-de-territoire';
 export * from './fondre';
