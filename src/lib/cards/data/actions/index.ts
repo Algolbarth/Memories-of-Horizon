@@ -45,6 +45,7 @@ export * from './eriger-les-frontieres';
 export * from './eruption';
 export * from './exploration';
 export * from './extension-de-territoire';
+export * from './fondre';
 export * from './force-de-la-famille';
 export * from './forger';
 export * from './fortification';
