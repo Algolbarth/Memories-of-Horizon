@@ -36,6 +36,7 @@ export * from './decapitation';
 export * from './defrichage';
 export * from './demolition';
 export * from './desarmer';
+export * from './dose-mortelle';
 export * from './eboulement';
 export * from './ecrasement';
 export * from './elimination';

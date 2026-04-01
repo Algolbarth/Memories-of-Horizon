@@ -3,20 +3,20 @@ import { Action } from '$lib/cards/class/action';
 import Use from './use.svelte';
 import { Creature } from '$lib/cards/class/creature';
 
-export class Eteindre extends Action {
-    name = "Éteindre";
+export class DoseMortelle extends Action {
+    name = "Dose mortelle";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Eau", 25]]);
+        this.init([["Or", 25]]);
 
-        this.addText(`Quand posé : Réduit de 60 la force et vide la jauge critique d'une créature sur le terrain adverse.`);
+        this.addText(`Quand posé : Détruit une créature ayant sa vitalité inférieure ou égale au produit de son poison et de sa toxicité.`);
     };
 
     canUse = () => {
         for (const card of this.adversary().zone("Terrain").cards) {
-            if (card instanceof Creature && (card.stat("Force").value() > 0 || card.stat("Critique").value() > 0)) {
+            if (card instanceof Creature && card.stat("Poison").value() * card.stat("Toxicité").value() >= card.stat("Vitalité").value()) {
                 return true;
             }
         }
@@ -31,8 +31,8 @@ export class Eteindre extends Action {
             let target = undefined;
 
             for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && (card.stat("Force").value() > 0 || card.stat("Critique").value() > 0)) {
-                    target = card;
+                if (card instanceof Creature && card.stat("Poison").value() * card.stat("Toxicité").value() >= card.stat("Vitalité").value()) {
+                    return true;
                 }
             }
 
@@ -45,8 +45,7 @@ export class Eteindre extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Force").decrease(60);
-        target.stat("Critique").set(0);
+        target.destroy();
 
         this.move("Défausse");
         this.pose();

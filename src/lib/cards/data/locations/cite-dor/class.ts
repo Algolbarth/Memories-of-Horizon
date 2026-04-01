@@ -8,7 +8,7 @@ export class CiteDOr extends Location {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 100]]);
+        this.init([["Or", 50]]);
 
         this.addText(`Si actif : Les cartes piochables sont du même niveau que la pile.`);
     };
