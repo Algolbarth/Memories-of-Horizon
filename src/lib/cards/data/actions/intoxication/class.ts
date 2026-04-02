@@ -11,7 +11,7 @@ export class Intoxication extends Action {
 
         this.init([["Or", 8]]);
 
-        this.addText(`Quand posé : Augmente de 5 la toxicité d'une créature sur le terrain adverse.`);
+        this.addText(`Quand posé : Augmente de 5 la toxicité d'une créature empoisonnée sur le terrain adverse.`);
     };
 
     canUse = () => {

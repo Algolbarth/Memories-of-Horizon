@@ -158,6 +158,7 @@ export * from './salamandre-des-flammes';
 export * from './sanglier';
 export * from './sardine';
 export * from './senateur';
+export * from './serpent-arboricole';
 export * from './serrurier';
 export * from './serveuse-de-taverne';
 export * from './soldat';

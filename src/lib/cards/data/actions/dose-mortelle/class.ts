@@ -9,7 +9,7 @@ export class DoseMortelle extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 50]]);
 
         this.addText(`Quand posé : Détruit une créature ayant sa vitalité inférieure ou égale au produit de son poison et de sa toxicité.`);
     };

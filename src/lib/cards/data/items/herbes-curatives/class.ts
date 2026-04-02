@@ -11,12 +11,12 @@ export class HerbesCuratives extends Item {
 
         this.init([["Or", 10], ["Végétal", 10]]);
 
-        this.addText(`Quand posé : Retire le poison, la toxicité et la brûlure d'une créature sur votre terrain.`);
+        this.addText(`Quand posé : Retire le poison et la brûlure d'une créature sur votre terrain.`);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && (card.stat("Poison").value() > 0 || card.stat("Brûlure").value() > 0 || card.stat("Toxicité").value() > 1)) {
+            if (card instanceof Creature && (card.stat("Poison").value() > 0 || card.stat("Brûlure").value() > 0)) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class HerbesCuratives extends Item {
             let target = undefined;
 
             for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && (card.stat("Poison").value() > 0 || card.stat("Brûlure").value() > 0 || card.stat("Toxicité").value() > 1)) {
+                if (target == undefined && card instanceof Creature && (card.stat("Poison").value() > 0 || card.stat("Brûlure").value() > 0)) {
                     target = card;
                 }
             }
@@ -46,7 +46,6 @@ export class HerbesCuratives extends Item {
         this.targeting(target);
 
         target.stat("Poison").set(0);
-        target.stat("Toxicité").set(1);
         target.stat("Brûlure").set(0);
 
         this.move("Défausse");

@@ -67,7 +67,15 @@ export class Creature extends Unit {
         this.stat("Poison").debuff = true;
 
         this.addStat("Toxicité", 1, 1);
-        this.stat("Toxicité").debuff = true;
+        this.stat("Toxicité").restriction = function (total: number) {
+            if (this.card.stat("Poison").value() > 0) {
+                return total;
+            }
+            else {
+                this.set(1);
+                return 1;
+            }
+        };
         this.stat("Toxicité").display = function () {
             if (this.condition() || this.card.stat("Poison").value() > 0) {
                 return true;

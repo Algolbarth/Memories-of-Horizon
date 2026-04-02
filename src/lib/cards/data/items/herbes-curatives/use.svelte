@@ -10,7 +10,7 @@
 	export let card: Card;
 
 	function selectCondition(target: Card) {
-		if (target instanceof Creature && (target.stat("Poison").value() > 0 || target.stat("Brûlure").value() > 0 || target.stat("Toxicité").value() > 1)) {
+		if (target instanceof Creature && (target.stat("Poison").value() > 0 || target.stat("Brûlure").value() > 0)) {
 			return true;
 		}
 		return false;

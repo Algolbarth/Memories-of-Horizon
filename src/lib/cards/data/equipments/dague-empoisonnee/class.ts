@@ -10,14 +10,14 @@ export class DagueEmpoisonnee extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 35]]);
+        this.init([["Or", 8]]);
 
         this.initFamily(["Arme"]);
 
         this.addChoice([
             `S'équipe à une créature sur votre terrain.`,
-            `Augmente de 5 le poison et augmente de 15 la toxicité d'une créature sur le terrain adverse.`]);
-        this.addText(`Quand le porteur attaque une créature : Augmente de 5 la toxicité de la créature attaquée.`);
+            `Augmente de 5 le poison d'une créature sur le terrain adverse.`]);
+        this.addText(`Quand le porteur attaque une créature empoisonnée : Augmente de 1 la toxicité de la créature attaquée.`);
     };
 
     canUse = () => {
@@ -68,7 +68,6 @@ export class DagueEmpoisonnee extends Equipment {
         }
         else if (choice == "damage") {
             target.stat("Poison").increase(5);
-            target.stat("Toxicité").increase(15);
             this.move("Défausse");
         }
 
@@ -76,8 +75,8 @@ export class DagueEmpoisonnee extends Equipment {
     };
 
     fightEffect = (defender: Unit) => {
-        if (defender instanceof Creature) {
-            defender.stat("Toxicité").increase(5);
+        if (defender instanceof Creature && defender.stat("Poison").value() > 0) {
+            defender.stat("Toxicité").increase(1);
         }
     };
 };

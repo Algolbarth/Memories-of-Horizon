@@ -32,6 +32,8 @@ export class Stat {
             total = this.effect(total);
         }
 
+        total = this.restriction(total);
+
         if (total < this.min) {
             total = this.min;
         }
@@ -95,6 +97,10 @@ export class Stat {
         this.add = 0;
         this.turn = 0;
         this.round = 0;
+    };
+
+    restriction = (total: number) => {
+        return total;
     };
 };
 

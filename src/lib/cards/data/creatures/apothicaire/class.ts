@@ -17,7 +17,7 @@ export class Apothicaire extends Creature {
 
         this.addChoice([
             `Augmente de 10 la régénération d'une créature sur votre terrain.`,
-            `Augmente de 10 la toxicité d'une créature sur le terrain adverse.`]);
+            `Augmente de 10 la toxicité d'une créature empoisonnée sur le terrain adverse.`]);
     };
 
     select = () => {
@@ -30,7 +30,7 @@ export class Apothicaire extends Creature {
                 }
             }
             for (const card of this.adversary().zone("Terrain").cards) {
-                if (check == false && card instanceof Creature) {
+                if (check == false && card instanceof Creature && card.stat("Poison").value() > 0) {
                     check = true;
                 }
             }
@@ -52,7 +52,7 @@ export class Apothicaire extends Creature {
             }
 
             for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
+                if (target == undefined && card instanceof Creature && card.stat("Poison").value() > 0) {
                     target = card;
                 }
             }
