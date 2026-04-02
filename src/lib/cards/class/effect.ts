@@ -31,11 +31,11 @@ export class Effect {
 
         while (i < input.length) {
             if (input[i] === "[") {
-                const nameMatch = input.slice(i).match(/^\[(\w+)\s*\{/);
+                const name_match = input.slice(i).match(/^\[(\w+)\s*\{/);
 
-                if (nameMatch) {
-                    const blockType: string = nameMatch[1];
-                    const start: number = i + nameMatch[0].length - 1;
+                if (name_match) {
+                    const block_type: string = name_match[1];
+                    const start: number = i + name_match[0].length - 1;
 
                     let depth: number = 1;
                     let j: number = start + 1;
@@ -51,7 +51,7 @@ export class Effect {
                     const { arg, content } = splitArgs(inside);
 
                     parts.push({
-                        type: blockType,
+                        type: block_type,
                         arg: arg,
                         children: this.parser(content)
                     });
