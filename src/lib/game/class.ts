@@ -244,38 +244,36 @@ export class Game {
 
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
+                let cpy: Card[] = copy(zone.cards);
                 for (const card of cpy) {
 
                     if (card.roundEffect != undefined) {
                         card.roundEffect();
                     }
 
-                    if (card instanceof Creature) {
-                        for (const e of card.equipments) {
-                            if (e.roundEffect != undefined) {
-                                e.roundEffect();
+                    if (card instanceof Unit) {
+                        if (card instanceof Creature) {
+                            for (const e of card.equipments) {
+                                if (e.roundEffect != undefined) {
+                                    e.roundEffect();
+                                }
                             }
                         }
-                    }
 
-                    if (card.stat("Régénération").value() > 0) {
-                        card.heal(card.stat("Régénération").value());
-                    }
-
-                    if (card instanceof Creature) {
-                        if (card.stat("Poison").value() > 0) {
-                            card.specialDamage(card.stat("Toxicité").value(), this);
-                            card.stat("Poison").decrease(1);
+                        if (card.stat("Régénération").value() > 0) {
+                            card.heal(card.stat("Régénération").value());
                         }
-                    }
 
-                    if (card.stat("Brûlure").value() > 0) {
-                        let damage = card.stat("Brûlure").value() - card.stat("Endurance").value();
-                        if (damage < 0) {
-                            damage = 0;
+                        if (card instanceof Creature) {
+                            if (card.stat("Poison").value() > 0) {
+                                card.specialDamage(card.stat("Toxicité").value(), card);
+                                card.stat("Poison").decrease(1);
+                            }
                         }
-                        card.damage(damage);
+
+                        if (card.stat("Brûlure").value() > 0) {
+                            card.physicalDamage(card.stat("Brûlure").value(), card);
+                        }
                     }
                 }
             }

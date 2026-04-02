@@ -69,11 +69,12 @@ Don naturel : action, détruit un élémentaire végétal sur votre terrain et p
 
 ### Eau
 Saumon : Créature poisson.
-Mégalodon: creature poisson.
-Leviathan.
+Mégalodon : creature poisson.
+Leviathan : créature.
 
 ### Terre
-Jet de pierre.
+Jet de pierre : action.
+Creuser : action, tuteur.
 Taupe : Créature bête, quand se prépare : génère Creuser dans votre inventaire.
 Béhémoth.
 

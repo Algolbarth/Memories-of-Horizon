@@ -17,7 +17,7 @@ export class NidDeWyverne extends Building {
 
         this.addText([
             `Quand se prépare sur le terrain : Pioche 1 créature de famille Wyverne et la verrouille.`,
-            `Réduit de 15 le coût de cette carte et la verrouille.`]);
+            `Réduit de 15 le coût de cette carte.`]);
     };
 
     startPhaseEffect = () => {

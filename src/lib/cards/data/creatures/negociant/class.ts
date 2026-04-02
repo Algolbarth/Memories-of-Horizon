@@ -16,7 +16,7 @@ export class Negociant extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé : Verrouille et réduit de 10 le coût en or d'une carte sur votre pile.`);
+        this.addText(`Quand posé : Réduit de 10 le coût en or d'une carte sur votre pile et la verrouille.`);
     };
 
     select = () => {

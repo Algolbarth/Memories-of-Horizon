@@ -11,7 +11,9 @@ export class Pelle extends Equipment {
         this.init([["Or", 18], ["Terre", 18]]);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain : Découvre 1 carte d'élément Terre et produit 10 terre.`);
+        this.addText([
+            `Quand le porteur se prépare sur le terrain : Découvre 1 carte d'élément Terre.`,
+            `Produit 10 terre.`]);
     };
 
     startPhaseEffect = () => {

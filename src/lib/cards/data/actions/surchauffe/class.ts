@@ -11,7 +11,9 @@ export class Surchauffe extends Action {
 
         this.init([["Or", 12], ["Feu", 12]]);
 
-        this.addText(`Quand posé : Inflige 100 dégâts spéciaux et augmente de 100 la force d'une créature sur le terrain.`);
+        this.addText([
+            `Quand posé : Inflige 100 dégâts spéciaux à une créature sur le terrain.`,
+            `Augmente de 100 la force de cette créature.`]);
     };
 
     canUse = () => {
@@ -52,8 +54,8 @@ export class Surchauffe extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Force").increase(100);
         target.specialDamage(100, this);
+        target.stat("Force").increase(100);
 
         this.move("Défausse");
         this.pose();
