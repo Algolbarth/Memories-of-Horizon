@@ -13,7 +13,7 @@ export class CanonAEau extends Action {
 
         this.addText([
             `Quand posé : Inflige 100 dégâts spéciaux à une unité sur le terrain adverse.`,
-            `Dépense autant d'eau que possible et inflige 2 fois plus de dégâts spéciaux supplémentaires.`]);
+            `[source_inf {1, Inflige 2 dégâts spéciaux supplémentaires.}]`]);
     };
 
     canUse = () => {

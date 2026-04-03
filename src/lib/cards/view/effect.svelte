@@ -97,23 +97,44 @@
 							{/if}
 						{/if}
 
-						{#if part.type === "prime"}
+						{#if part.type === "prime" || part.type == "prime_inf"}
 							{#if system.game != undefined && card.owner().ressource("Or").total() >= part.arg}
 								<span style={"color:var(--prime_effect)"}>
-									Prime {part.arg} : {@render render(part.children)}
+									Prime
+									{#if part.type == "prime_inf"}infinie{/if}
+									{part.arg} : {@render render(part.children)}
 								</span>
 							{:else}
-								Prime {part.arg} : {@render render(part.children)}
+								Prime
+								{#if part.type == "prime_inf"}infinie{/if}
+								{part.arg} : {@render render(part.children)}
 							{/if}
 						{/if}
 
-						{#if part.type === "source"}
+						{#if part.type === "source" || part.type == "source_inf"}
 							{#if system.game != undefined && card.owner().ressource("Eau").total() >= part.arg}
 								<span style={"color:var(--source_effect)"}>
-									Source {part.arg} : {@render render(part.children)}
+									Source
+									{#if part.type == "source_inf"}infinie{/if}
+									{part.arg} : {@render render(part.children)}
 								</span>
 							{:else}
-								Source {part.arg} : {@render render(part.children)}
+								Source {#if part.type == "source_inf"}infinie{/if}
+								{part.arg} : {@render render(part.children)}
+							{/if}
+						{/if}
+
+						{#if part.type === "blaze" || part.type == "blaze_inf"}
+							{#if system.game != undefined && card.owner().ressource("Feu").production >= part.arg}
+								<span style={"color:var(--blaze_effect)"}>
+									Embrasement
+									{#if part.type == "blaze_inf"}infini{/if}
+									{part.arg} : {@render render(part.children)}
+								</span>
+							{:else}
+								Embrasement
+								{#if part.type == "blaze_inf"}infini{/if}
+								{part.arg} : {@render render(part.children)}
 							{/if}
 						{/if}
 

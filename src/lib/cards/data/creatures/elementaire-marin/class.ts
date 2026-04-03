@@ -14,7 +14,7 @@ export class ElementaireMarin extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.addText(`Quand se prépare sur le terrain : [source {10, augmente de 10 sa constitution et sa force}].`);
+        this.addText(`Quand se prépare sur le terrain : [source {10, Augmente de 10 sa constitution et sa force.}]`);
     };
 
     startPhaseEffect = () => {

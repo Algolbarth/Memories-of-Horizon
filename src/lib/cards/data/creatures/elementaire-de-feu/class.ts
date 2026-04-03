@@ -11,15 +11,18 @@ export class ElementaireDeFeu extends Creature {
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(25);
-        this.stat("Force").init(25);
+        this.stat("Constitution").init(15);
+        this.stat("Force").init(15);
 
-        this.addText(`Quand périt : Réduit votre production de feu de 3.`);
+        this.addText(`Quand arrive sur le terrain : [blaze {2, Augmente sa constitution et sa force.}]`);
     };
 
-    perishEffect = () => {
-        if (this.owner().ressource("Feu").production >= 3) {
-            this.owner().ressource("Feu").decrease(3);
+    addEffect = (zone: string) => {
+        if (zone == "Terrain" && this.owner().ressource("Feu").production >= 2) {
+            this.owner().ressource("Feu").decrease(2);
+
+            this.stat("Constitution").increase(10);
+            this.stat("Force").increase(10);
         }
     };
 };

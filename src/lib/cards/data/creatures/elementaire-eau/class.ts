@@ -14,12 +14,13 @@ export class ElementaireDEau extends Creature {
         this.stat("Constitution").init(15);
         this.stat("Force").init(15);
 
-        this.addText(`Quand posé : [source {5, augmente de 5 sa constitution et sa force}].`);
+        this.addText(`Quand arrive sur le terrain : [source {5, Augmente de 5 sa constitution et sa force.}]`);
     };
 
     addEffect = (zone: string) => {
         if (zone == "Terrain" && this.owner().ressource("Eau").total() >= 5) {
             this.owner().ressource("Eau").spend(5);
+
             this.stat("Constitution").increase(5);
             this.stat("Force").increase(5);
         }

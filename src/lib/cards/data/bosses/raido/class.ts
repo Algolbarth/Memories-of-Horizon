@@ -18,9 +18,7 @@ export class Raido extends Boss {
 
         this.addText(`Quand une autre créature alliée est posée : Si sur le terrain : Augmente de 5 la constitution et la force de cette créature.`);
         this.addText(`Quand une unité sur le terrain adverse périt : Produit autant d'or que la constitution max de cette créature.`);
-        this.addText([
-            `Quand joue : Dépense autant d'or que possible.`,
-            `Augmente d'autant sa constitution et sa force que d'or dépensé.`]);
+        this.addText(`Quand joue : [prime_inf {1, Augmente de 1 sa constitution et sa force.}]`);
     };
 
     otherPoseEffect = (card: Card) => {

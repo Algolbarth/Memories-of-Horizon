@@ -15,10 +15,10 @@ export class ElementaireExplosif extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.addText(`Quand périt : Réduit votre production de feu de 5 pour infliger 5 dégâts spéciaux à toutes les unités adverse.`);
+        this.addText(`Quand posé : [blaze {5, Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.}]`);
     };
 
-    perishEffect = () => {
+    useEffect = () => {
         if (this.owner().ressource("Feu").production >= 5) {
             this.owner().ressource("Feu").decrease(5);
 
@@ -27,5 +27,8 @@ export class ElementaireExplosif extends Creature {
                 card.specialDamage(5, this);
             }
         }
+
+        this.move("Terrain");
+        this.pose();
     };
 };
