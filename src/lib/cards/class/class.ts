@@ -49,6 +49,8 @@ export class Card {
         this.addStat("Pénétration", 0);
         this.addStat("Percée", 0);
 
+        this.addStat("Ascension", 0);
+
         this.addStat("Persistance", 0);
 
         for (const ressource of system.ressources.list) {
@@ -651,7 +653,7 @@ export class Card {
         this.effects.push(new Effect(this, text, condition, "text"));
     };
 
-    addChoice = (choices: string[], before: string[] | string | undefined = undefined, after: string[] | string | undefined = undefined, condition: (() => boolean) | undefined = undefined) => {
+    addChoice = (choices: (string | string[])[], before: string[] | string | undefined = undefined, after: string[] | string | undefined = undefined, condition: (() => boolean) | undefined = undefined) => {
         let text: string = "";
 
         if (before == undefined) {
@@ -668,7 +670,17 @@ export class Card {
 
         text = text + "[choice {";
         for (const choice of choices) {
-            text = text + "[option {" + choice + "}]";
+            if (typeof choice === "string") {
+                text = text + "[option {" + choice + "}]";
+            }
+            else {
+                text = text + "[option {";
+                for (const line of choice) {
+                    text = text + line + "<br />";
+                }
+                text = text + "}]";
+            }
+
         }
         text = text + "}]";
 

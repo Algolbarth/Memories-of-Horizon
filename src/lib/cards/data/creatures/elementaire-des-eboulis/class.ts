@@ -18,7 +18,7 @@ export class ElementaireDesEboulis extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            `Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.`]);
+            [`Augmente jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.`, `Se détruit.`]]);
     };
 
     canUse = () => {

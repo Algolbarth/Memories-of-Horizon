@@ -37,7 +37,7 @@
 				{#snippet render(parts: any)}
 					{#each parts as part}
 						{#if part.type === "text"}
-							{part.value}
+							{@html part.value}
 						{/if}
 
 						{#if part.type === "choice"}

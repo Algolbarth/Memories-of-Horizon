@@ -18,10 +18,10 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			selectAction("creature");
+			selectAction("battlefield");
 		}}
 	>
-		Se place sur votre terrain
+		Se place sur votre terrain.
 	</button>
 
 	<br />
@@ -29,11 +29,13 @@
 	<button
 		class="big choice"
 		on:click={() => {
-			selectAction("effect");
+			selectAction("stack");
 		}}
 	>
-		Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse
+		Augmente de 15 sa force et sa constitution.
 		<br />
-		Se détruit
+		Augmente de 1 son ascension
+		<br />
+		Se place sur votre pile.
 	</button>
 </div>

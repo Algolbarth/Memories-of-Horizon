@@ -40,7 +40,9 @@
 				choice = "effect";
 			}}
 		>
-			Se détruit pour infliger 30 dégâts spéciaux à une unité sur le terrain adverse
+			Inflige 30 dégâts spéciaux à une unité sur le terrain adverse
+			<br />
+			Se détruit
 		</button>
 	</div>
 {:else}

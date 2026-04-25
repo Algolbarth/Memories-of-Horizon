@@ -19,7 +19,7 @@ export class Druid extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            `Se transforme en {card:{card.alternative_form}} et se place sur votre terrain.`]);
+            [`Se transforme en {card:{card.alternative_form}}.`, `Se place sur votre terrain.`]]);
     };
 
     select = () => {

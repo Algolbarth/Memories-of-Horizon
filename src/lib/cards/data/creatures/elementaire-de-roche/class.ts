@@ -19,7 +19,7 @@ export class ElementaireDeRoche extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            `Se détruit pour infliger 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`]);
+            [`Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`, `Se détruit.`]]);
     };
 
     canUse = () => {

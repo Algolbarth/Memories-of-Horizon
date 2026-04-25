@@ -44,7 +44,9 @@
 				choice = "effect";
 			}}
 		>
-			Se détruit pour augmenter jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse
+			Augmente jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse
+			<br />
+			Se détruit
 		</button>
 	</div>
 {:else}

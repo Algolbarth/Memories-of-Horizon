@@ -32,6 +32,8 @@
             selectAction("transform");
         }}
     >
-        Se transforme en {card.alternative_form} et se place sur votre terrain
+        Se transforme en {card.alternative_form}
+        <br />
+        Se place sur votre terrain
     </button>
 </div>
