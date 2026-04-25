@@ -25,6 +25,7 @@ export class System {
     bosses: Bosses = new Bosses(this);
     standard_decks: Deck[] = [];
     wild_decks: Deck[] = [];
+    train_deck: Deck = new Deck(this);
     game: undefined | Game;
     train: Train = new Train(this);
     deck: Deck | undefined;
@@ -151,6 +152,13 @@ export class System {
     importDecks = () => {
         for (const deck of Object.keys(decks)) {
             this.standard_decks.push(new decks[deck](this));
+        }
+
+        this.train_deck.name = "Deck d'entraînement";
+        for (const card of this.cards.instance) {
+            if (card.trait("Commune").value()) {
+                this.train_deck.add(card.name);
+            }
         }
 
         this.train = new Train(this);

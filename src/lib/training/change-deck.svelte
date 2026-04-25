@@ -9,6 +9,7 @@
 	export let entity: TrainEntity;
 
 	let decks: Deck[] = [];
+	decks.push(system.train_deck);
 	for (const deck of system.standard_decks) {
 		decks.push(deck);
 	}

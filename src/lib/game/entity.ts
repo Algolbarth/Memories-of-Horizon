@@ -30,6 +30,7 @@ export class Entity {
     is_player: boolean = false;
     is_bot: boolean = true;
     opponent: Entity;
+    nb_cards_read_turn: number = 0;
 
     constructor(system: System, opponent: Entity | undefined = undefined) {
         this.system = system;
@@ -105,14 +106,22 @@ export class Entity {
         return nameList;
     };
 
+    read = (nameList: string[], array: Card[]) => {
+        if (nameList.length > 0) {
+            let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
+            card.add("Pile");
+            array.push(card);
+
+            this.nb_cards_read_turn++;
+        }
+
+        return array;
+    };
+
     draw = (number: number, readCondition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
         let nameList: string[] = this.cardList(readCondition, drawer);
 
-        if (nameList.length > 0) {
-            let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
-            card?.add("Pile");
-            array.push(card);
-        }
+        array = this.read(nameList, array);
 
         if (number > 1) {
             array = this.draw(number - 1, readCondition, drawer, array);
@@ -129,11 +138,7 @@ export class Entity {
             }
         }
 
-        if (nameList.length > 0) {
-            let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
-            card.add("Pile");
-            array.push(card);
-        }
+        array = this.read(nameList, array);
 
         if (number > 1) {
             array = this.discover(number - 1, readCondition, drawer, array);

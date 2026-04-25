@@ -154,6 +154,10 @@ export class Game {
             ressource.current = ressource.production;
         }
 
+        for (const entity of [this.player, this.bot]) {
+            entity.nb_cards_read_turn = 0;
+        }
+
         if (this.mode != "Entraînement") {
             this.player.refreshStack();
         }

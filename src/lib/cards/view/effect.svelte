@@ -87,6 +87,16 @@
 							{/if}
 						{/if}
 
+						{#if part.type === "luck"}
+							{#if system.game != undefined && card.owner().nb_cards_read_turn >= part.arg}
+								<span style={"color:var(--luck_effect)"}>
+									Chance {part.arg} : {@render render(part.children)}
+								</span>
+							{:else}
+								Chance {part.arg} : {@render render(part.children)}
+							{/if}
+						{/if}
+
 						{#if part.type === "resolve"}
 							{#if system.game != undefined && card.owner().totalIntelligence() >= part.arg}
 								<span style={"color:var(--resolve_effect)"}>

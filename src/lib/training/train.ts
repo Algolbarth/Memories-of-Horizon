@@ -7,7 +7,7 @@ export class Train {
     add = new Train_Add();
 
     constructor(system: System) {
-        let deck = system.standard_decks[0];
+        let deck = system.train_deck;
 
         this.player = this.entity(deck);
         this.player.gold = 200;
