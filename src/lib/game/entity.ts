@@ -94,34 +94,56 @@ export class Entity {
     };
 
     cardList = (readCondition: (Function | undefined) = undefined, drawer: Card | undefined) => {
-        let nameList: string[] = [];
+        let name_list: string[] = [];
 
         for (const c of this.deck.cards) {
             let card = this.system.cards.getByName(c);
             if ((this.is_bot || (this.place != undefined && this.place.canRead(card))) && card.level <= this.zone("Pile").level() && (readCondition == undefined || readCondition(card, drawer))) {
-                nameList.push(c);
+                name_list.push(c);
             }
         }
 
-        return nameList;
+        return name_list;
     };
 
-    read = (nameList: string[], array: Card[]) => {
-        if (nameList.length > 0) {
-            let card: Card = this.getCard(nameList[Math.floor(Math.random() * nameList.length)]);
-            card.add("Pile");
-            array.push(card);
+    read = (name_list: string[]) => {
+        let card: Card = this.getCard(name_list[Math.floor(Math.random() * name_list.length)]);
 
-            this.nb_cards_read_turn++;
+        card.add("Pile");
+
+        this.nb_cards_read_turn++;
+
+        for (const entity of [this, this.adversary()]) {
+            for (const zone of entity.zones) {
+                for (const c of zone.cards) {
+                    if (c.readCardEffect != undefined) {
+                        c.readCardEffect(card);
+                    }
+                }
+            }
         }
 
-        return array;
+        return card;
     };
 
     draw = (number: number, readCondition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
-        let nameList: string[] = this.cardList(readCondition, drawer);
+        let name_list: string[] = this.cardList(readCondition, drawer);
 
-        array = this.read(nameList, array);
+        if (name_list.length > 0) {
+            let card = this.read(name_list);
+
+            for (const entity of [this, this.adversary()]) {
+                for (const zone of entity.zones) {
+                    for (const c of zone.cards) {
+                        if (c.drawCardEffect != undefined) {
+                            c.drawCardEffect(card);
+                        }
+                    }
+                }
+            }
+
+            array.push(card);
+        }
 
         if (number > 1) {
             array = this.draw(number - 1, readCondition, drawer, array);
@@ -130,15 +152,29 @@ export class Entity {
     };
 
     discover = (number: number, readCondition: (Function | undefined) = undefined, drawer: (Card | undefined) = undefined, array: Card[] = []) => {
-        let nameList: string[] = this.cardList(readCondition, drawer);
+        let name_list: string[] = this.cardList(readCondition, drawer);
 
         for (const card of this.zone("Pile").cards) {
-            if (nameList.includes(card.name)) {
-                nameList.splice(nameList.indexOf(card.name), 1);
+            if (name_list.includes(card.name)) {
+                name_list.splice(name_list.indexOf(card.name), 1);
             }
         }
 
-        array = this.read(nameList, array);
+        if (name_list.length > 0) {
+            let card = this.read(name_list);
+
+            for (const entity of [this, this.adversary()]) {
+                for (const zone of entity.zones) {
+                    for (const c of zone.cards) {
+                        if (c.discoverCardEffect != undefined) {
+                            c.discoverCardEffect(card);
+                        }
+                    }
+                }
+            }
+
+            array.push(card);
+        }
 
         if (number > 1) {
             array = this.discover(number - 1, readCondition, drawer, array);

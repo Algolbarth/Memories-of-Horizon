@@ -483,6 +483,12 @@ export class Card {
 
     refreshStackEffect: Function | undefined;
 
+    readCardEffect: Function | undefined;
+
+    drawCardEffect: Function | undefined;
+
+    discoverCardEffect: Function | undefined;
+
     description = () => {
         return "...";
     };
