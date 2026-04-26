@@ -18,6 +18,7 @@ export * from './catapulte';
 export * from './chambre-du-tresor';
 export * from './charrette';
 export * from './chaudron';
+export * from './chaudron-de-bonne-fortune';
 export * from './donjon-abandonne';
 export * from './epouvantail';
 export * from './etable';
