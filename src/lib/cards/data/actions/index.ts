@@ -33,6 +33,7 @@ export * from './crochetage';
 export * from './croissance';
 export * from './cycle-de-eau';
 export * from './decapitation';
+export * from './defense-ultime';
 export * from './defrichage';
 export * from './demolition';
 export * from './desarmer';
