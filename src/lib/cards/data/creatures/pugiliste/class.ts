@@ -1,8 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 
-export class Boxeur extends Creature {
-    name = "Boxeur";
+export class Pugiliste extends Creature {
+    name = "Pugiliste";
 
     constructor(system: System) {
         super(system);

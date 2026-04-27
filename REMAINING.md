@@ -75,6 +75,7 @@ Leviathan : créature.
 ### Terre
 Jet de pierre : action.
 Creuser : action, tuteur.
+Escalader : action, tuteur.
 Taupe : Créature bête, quand se prépare : génère Creuser dans votre inventaire.
 Béhémoth.
 

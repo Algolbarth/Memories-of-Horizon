@@ -13,7 +13,7 @@ export class BulleProtectrice extends Spell {
 
         this.addText([
             `Quand posé : Augmente de 20 la garde d'une créature sur votre terrain pendant ce tour.`,
-            `[sorcery {10, augmente de 20 la garde à la place.}]`]);
+            `[sorcery {10, Augmente de 20 la garde à la place.}]`]);
     };
 
     canUse = () => {

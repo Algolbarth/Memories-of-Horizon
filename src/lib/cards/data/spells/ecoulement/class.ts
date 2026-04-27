@@ -11,7 +11,7 @@ export class Ecoulement extends Spell {
 
         this.addText([
             `Quand posé : Augmente de 3 votre production d'eau.`,
-            `[sorcery {10, augmente de 5 votre production d'eau à la place.}]`]);
+            `[sorcery {10, Augmente de 5 votre production d'eau à la place.}]`]);
     };
 
     useEffect = () => {

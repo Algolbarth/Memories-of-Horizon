@@ -14,7 +14,7 @@ export class Bandit extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé : [prime {5, augmente de 5 sa constitution et sa force.}]`);
+        this.addText(`Quand posé : [prime {5, Augmente de 5 sa constitution et sa force.}]`);
     };
 
     useEffect = () => {

@@ -19,6 +19,6 @@ export class TatouageTribal extends Equipment {
         };
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Augmente la force du porteur de 20 fois le charisme du porteur.`);
+        this.addText(`Augmente d'autant la force du porteur que 20 fois le charisme du porteur.`);
     };
 };

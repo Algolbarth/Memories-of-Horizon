@@ -13,7 +13,7 @@ export class PeauDePierre extends Spell {
 
         this.addText([
             `Quand posé : Augmente de 15 l'endurance d'une créature sur votre terrain.`,
-            `[sorcery {15, augmente de 30 l'endurance à la place.}]`]);
+            `[sorcery {15, Augmente de 30 l'endurance à la place.}]`]);
     };
 
     canUse = () => {

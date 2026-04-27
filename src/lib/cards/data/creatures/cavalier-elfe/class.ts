@@ -15,7 +15,7 @@ export class CavalierElfe extends Creature {
         this.stat("Force").init(20);
         this.stat("Vitesse").init(1);
 
-        this.addText(`Quand posé : [resolve {20, augmente de 1 sa vitesse.}]`);
+        this.addText(`Quand posé : [resolve {20, Augmente de 1 sa vitesse.}]`);
     };
 
     useEffect = () => {

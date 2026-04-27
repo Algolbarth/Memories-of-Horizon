@@ -22,7 +22,7 @@ export class DruideDesMontagnesNain extends DruideDesMontagnes {
         this.stat("Force").init(20);
         this.stat("Endurance").init(10);
 
-        this.addText(`Quand se prépare sur le terrain : Augmente sa constitution et sa force de 10.`);
+        this.addText(`Quand se prépare sur le terrain : Augmente de 10 sa constitution et sa force.`);
     };
 
     startPhaseEffect = () => {

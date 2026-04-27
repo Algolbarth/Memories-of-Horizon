@@ -18,7 +18,7 @@ export class Ecuyer extends Creature {
 
         this.addText([
             `Quand posé : Augmente de 50 la force d'une créature de famille Chevalier sur votre terrain.`,
-            `Si cette créature est à terre, augmente de 35 la constitution de cette créature à la place.`]);
+            `Si cette créature est à terre : Augmente de 35 la constitution de cette créature à la place.`]);
     };
 
     select = () => {

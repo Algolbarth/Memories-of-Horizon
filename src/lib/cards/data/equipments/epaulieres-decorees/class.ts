@@ -21,6 +21,6 @@ export class EpaulieresDecorees extends Equipment {
         };
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Augmente la résistance du porteur de 10 fois le charisme du porteur.`);
+        this.addText(`Augmente d'autant la résistance du porteur que 10 fois le charisme du porteur.`);
     };
 };

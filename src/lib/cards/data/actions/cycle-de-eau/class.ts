@@ -15,7 +15,7 @@ export class CycleDeLEau extends Action {
             `Augmente de 1 la taille de votre inventaire.`,
             `Augmente de 1 la taille de votre terrain.`],
             undefined,
-            "[source {100, augmente de 1 la taille de votre pile, de votre inventaire et de votre terrain à la place.}]");
+            "[source {100, Augmente de 1 la taille de votre pile, de votre inventaire et de votre terrain à la place.}]");
     };
 
     select = () => {

@@ -16,7 +16,7 @@ export class MageElfe extends Creature {
         this.stat("Magie").init(5);
         this.stat("Intelligence").init(2);
 
-        this.addText(`Quand se prépare sur le terrain : [resolve {8, augmente de 1 sa magie.}]`);
+        this.addText(`Quand se prépare sur le terrain : [resolve {8, Augmente de 1 sa magie.}]`);
     };
 
     startPhaseEffect = () => {

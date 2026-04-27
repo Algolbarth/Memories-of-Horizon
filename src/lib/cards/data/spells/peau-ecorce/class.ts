@@ -13,7 +13,7 @@ export class PeauDEcorce extends Spell {
 
         this.addText([
             `Quand posé : Augmente de 20 la constitution d'une créature sur votre terrain.`,
-            `[sorcery {15, augmente de 45 la constitution à la place.}]`]);
+            `[sorcery {15, Augmente de 45 la constitution à la place.}]`]);
     };
 
     canUse = () => {

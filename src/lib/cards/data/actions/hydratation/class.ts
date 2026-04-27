@@ -13,7 +13,7 @@ export class Hydratation extends Action {
 
         this.addText([
             `Quand posé : Augmente de 15 la constitution et la force d'une créature d'élément Eau sur votre terrain.`,
-            `[source {15, augmente de 30 à la place.}]`]);
+            `[source {15, Augmente de 30 à la place.}]`]);
     };
 
     canUse = () => {

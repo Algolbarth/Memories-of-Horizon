@@ -13,7 +13,7 @@ export class MilieuAquatique extends Action {
 
         this.addText([
             `Quand posé : Augmente de 5 la constitution et la force de toutes les créatures d'élément Eau sur votre terrain.`,
-            `[source {50, augmente de 10 à la place.}]`]);
+            `[source {50, Augmente de 10 à la place.}]`]);
     };
 
     canUse = () => {

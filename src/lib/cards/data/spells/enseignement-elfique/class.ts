@@ -15,7 +15,7 @@ export class EnseignementElfique extends Spell {
 
         this.addText([
             `Quand posé : Augmente de 5 l'intelligence d'une créature sur votre terrain.`,
-            `[sorcery {25, augmente de 10 l'intelligence à la place.}]`]);
+            `[sorcery {25, Augmente de 10 l'intelligence à la place.}]`]);
     };
 
     canUse = () => {

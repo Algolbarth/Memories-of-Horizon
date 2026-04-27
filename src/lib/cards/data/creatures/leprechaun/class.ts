@@ -18,6 +18,8 @@ export class Leprechaun extends Creature {
     };
 
     startPhaseEffect = () => {
-        this.owner().getCard("Trèfle").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Trèfle").add("Inventaire");
+        }
     };
 };

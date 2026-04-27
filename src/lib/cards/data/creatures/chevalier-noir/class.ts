@@ -46,9 +46,7 @@ export class ChevalierNoirMonte extends MountedKnight {
         this.stat("Force").init(20);
         this.stat("Vitesse").init(1);
 
-        this.addText([
-            `Quand posé : Inflige autant de dégâts spéciaux que possible à une unité sur le terrain adverse.`,
-            `Dépense autant d'or que de dégâts spéciaux infligés.`]);
+        this.addText(`Quand posé : [prime_inf {1, Inflige 1 dégât spécial à une unité sur le terrain adverse.}]`);
         this.addText(`Quand périt : Se réincarne en {card:Chevalier noir}.`);
     };
 
@@ -71,7 +69,7 @@ export class ChevalierNoirMonte extends MountedKnight {
         }
     };
 
-    useEffect = (target: Unit) => {
+    useEffect = (target: Unit | undefined) => {
         if (target != undefined) {
             let value = target.stat("Santé").value();
             if (this.owner().ressource("Or").total() < value) {
