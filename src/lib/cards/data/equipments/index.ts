@@ -94,6 +94,7 @@ export * from './sac-en-toile';
 export * from './sac-sans-fond';
 export * from './sacoche-en-cuir';
 export * from './sandales';
+export * from './tatouage-tribal';
 export * from './trident';
 export * from './trousseau-de-cles';
 export * from './tunique-de-cuir';
