@@ -69,6 +69,7 @@ export * from './lance-incendiaire';
 export * from './manteau-esquive';
 export * from './manuel-de-magie';
 export * from './masque-de-plongee';
+export * from './masque-grimacant';
 export * from './masse-armes-sulfurique';
 export * from './masse-de-fer';
 export * from './masse-de-pierre';

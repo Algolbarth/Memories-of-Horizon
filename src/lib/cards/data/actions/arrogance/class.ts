@@ -3,8 +3,8 @@ import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
 
-export class Confiance extends Action {
-    name = "Confiance";
+export class Arrogance extends Action {
+    name = "Arrogance";
 
     constructor(system: System) {
         super(system);

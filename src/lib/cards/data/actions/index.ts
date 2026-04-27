@@ -23,7 +23,7 @@ export * from './cercle-druidique';
 export * from './cercles-magiques';
 export * from './cibler';
 export * from './combustion';
-export * from './confiance';
+export * from './arrogance';
 export * from './conquete';
 export * from './consolider';
 export * from './contre';

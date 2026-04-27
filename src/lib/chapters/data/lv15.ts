@@ -14,7 +14,7 @@ export class Lv15_Champion extends Chapter {
             cards.push("Fiole de corindon");
         }
         cards.push("Potion parfumée");
-        let deck = new ChapterDeck(system, "Champion", ["Confiance"]);
+        let deck = new ChapterDeck(system, "Champion", ["Arrogance"]);
         this.addStep(75, ["Ville"], 20, deck, cards, ["Dans une taverne animée, un homme bien habillé entre en scène, son regard rempli de mépris.", "Il se vante d'avoir maîtrisé l'art secret des parfums magiques, qui, selon lui, lui confèrent une force et une beauté surhumaines.", "Alors que les clients doutent de lui, il rit et se moque de chacun d'eux. ", "Il se pulvérise un parfum étrange, déclenchant une aura de pouvoir autour de lui."]);
     };
 };
