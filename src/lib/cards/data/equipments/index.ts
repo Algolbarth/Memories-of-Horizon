@@ -66,6 +66,7 @@ export * from './heaume-de-platine';
 export * from './lance-de-fer';
 export * from './lance-de-platine';
 export * from './lance-incendiaire';
+export * from './manteau-de-ronces';
 export * from './manteau-esquive';
 export * from './manuel-de-magie';
 export * from './masque-de-plongee';
