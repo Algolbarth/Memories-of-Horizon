@@ -32,7 +32,9 @@
 			selectAction("stack");
 		}}
 	>
-		Augmente de 15 sa constitution et sa régénération.
+		Augmente de 75 sa constitution.
+		<br />
+		Augmente de 10 son épine.
 		<br />
 		Augmente de 1 son ascension
 		<br />
