@@ -36,6 +36,7 @@ export * from './chat-errant';
 export * from './chat-noir';
 export * from './chef-barbare';
 export * from './chef-cuisinier';
+export * from './chef-de-bande';
 export * from './chef-de-clan';
 export * from './cheval';
 export * from './cheval-de-guerre';
