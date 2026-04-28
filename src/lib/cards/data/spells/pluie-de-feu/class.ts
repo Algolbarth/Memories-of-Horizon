@@ -14,7 +14,7 @@ export class PluieDeFeu extends Spell {
 
         this.addText([
             `Quand posé : Inflige 10 dégâts spéciaux à toutes les unités sur le terrain adverse.`,
-            `[sorcery {50, inflige 20 dégâts spéciaux à la place.}]`]);
+            `[sorcery {50, Inflige 20 dégâts spéciaux à la place.}]`]);
     };
 
     canUse = () => {

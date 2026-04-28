@@ -13,7 +13,7 @@ export class Bestiaire extends Item {
 
         this.addText([
             "Quand posé : Découvre 3 créatures.",
-            "[resolve {20, découvre 5 créatures à la place.}]"]);
+            "[resolve {20, Découvre 5 créatures à la place.}]"]);
     };
 
     useEffect = () => {

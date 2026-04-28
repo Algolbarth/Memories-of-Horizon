@@ -15,7 +15,7 @@ export class PluieDeCailloux extends Spell {
             `Remplit votre terrain de {card:Élémentaire de caillou}.`,
             `Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`],
             undefined,
-            `[sorcery {30, les deux effets s'activent à la place.}]`
+            `[sorcery {30, Active les deux effets à la place.}]`
         );
     };
 

@@ -12,7 +12,7 @@ export class VagueDeferlante extends Action {
 
         this.addText([
             `Quand posé : Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.`,
-            `[source {25, inflige 10 dégâts spéciaux à la place.}]`]);
+            `[source {25, Inflige 10 dégâts spéciaux à la place.}]`]);
     };
 
     canUse = () => {

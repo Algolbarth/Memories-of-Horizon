@@ -18,7 +18,7 @@ export class MageDesEaux extends Creature {
 
         this.addText([
             `Quand se prépare sur le terrain : Pioche 1 carte de famille Sort.`,
-            `[sorcery {5, réduit de 10 le coût de cette carte.}]`]);
+            `[sorcery {5, Réduit de 10 le coût de cette carte.}]`]);
     };
 
     startPhaseEffect = () => {

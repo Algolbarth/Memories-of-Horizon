@@ -13,7 +13,7 @@ export class TirHydraulique extends Action {
 
         this.addText([
             `Quand posé : Inflige 30 dégâts spéciaux à une unité sur le terrain adverse.`,
-            `[source {15, inflige 60 dégâts spéciaux à la place.}]`]);
+            `[source {15, Inflige 60 dégâts spéciaux à la place.}]`]);
     };
 
     canUse = () => {

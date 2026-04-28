@@ -14,7 +14,7 @@ export class CreationRocheuse extends Spell {
             `Génère {card:Élémentaire de roche} sur votre terrain.`,
             `Génère {card:Mur de roche} sur votre terrain.`],
             undefined,
-            `[sorcery {50, les deux effets s'activent à la place.}]`
+            `[sorcery {50, Active les deux effets à la place.}]`
         );
     };
 

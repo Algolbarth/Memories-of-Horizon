@@ -11,7 +11,7 @@ export class Livre extends Item {
 
         this.addText([
             `Quand posé : Découvre 1 carte.`,
-            `[resolve {10, découvre 2 cartes à la place.}]`]);
+            `[resolve {10, Découvre 2 cartes à la place.}]`]);
     };
 
     useEffect = () => {

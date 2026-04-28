@@ -11,7 +11,7 @@ export class EcritCalcines extends Item {
 
         this.addText([
             `Quand posé : Si votre pile est vide : Découvre 5 cartes.`,
-            `[resolve {125, découvre autant de carte que nécessaire pour remplir la pile à la place.}]`]);
+            `[resolve {125, Découvre autant de carte que nécessaire pour remplir la pile à la place.}]`]);
     };
 
     canUse = () => {

@@ -83,6 +83,7 @@ export * from './explorateur';
 export * from './fermier';
 export * from './forgeron';
 export * from './garde';
+export * from './garde-epine';
 export * from './geant';
 export * from './general';
 export * from './geomancien';

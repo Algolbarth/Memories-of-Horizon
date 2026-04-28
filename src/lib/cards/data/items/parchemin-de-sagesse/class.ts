@@ -9,7 +9,7 @@ export class ParcheminDeSagesse extends Item {
 
         this.init([["Or", 10]]);
 
-        this.addText(`Quand posé : Quand posé : Pioche autant de carte que votre intelligence cumulée.`);
+        this.addText(`Quand posé : Pioche autant de carte que votre intelligence cumulée.`);
     };
 
     canUse = () => {
