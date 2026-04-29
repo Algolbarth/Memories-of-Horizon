@@ -18,7 +18,7 @@ export class ElementaireDeRacines extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            [`Augmente de 15 sa constitution et sa régénération.`, `Augmente de 1 son ascension.`, `Se place sur votre pile.`],
+            `Éveil : Augmente de 15 sa constitution et sa régénération.`,
         ]);
     };
 
@@ -54,7 +54,7 @@ export class ElementaireDeRacines extends Creature {
             this.stat("Constitution").increase(15);
             this.stat("Régénération").increase(15);
 
-            this.stat("Ascension").increase(1);
+            this.stat("Éveil").increase(1);
 
             this.move("Pile");
         }

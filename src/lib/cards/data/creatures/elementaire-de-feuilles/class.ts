@@ -17,7 +17,7 @@ export class ElementaireDeFeuilles extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            [`Augmente de 15 sa force et sa constitution.`, `Augmente de 1 son ascension.`, `Se place sur votre pile.`],
+            `Éveil : Augmente de 15 sa force et sa constitution.`,
         ]);
     };
 
@@ -53,7 +53,7 @@ export class ElementaireDeFeuilles extends Creature {
             this.stat("Constitution").increase(15);
             this.stat("Force").increase(15);
 
-            this.stat("Ascension").increase(1);
+            this.stat("Éveil").increase(1);
 
             this.move("Pile");
         }

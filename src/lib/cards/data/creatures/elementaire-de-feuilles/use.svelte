@@ -32,10 +32,6 @@
 			selectAction("stack");
 		}}
 	>
-		Augmente de 15 sa force et sa constitution.
-		<br />
-		Augmente de 1 son ascension
-		<br />
-		Se place sur votre pile.
+		Éveil : Augmente de 15 sa force et sa constitution.
 	</button>
 </div>

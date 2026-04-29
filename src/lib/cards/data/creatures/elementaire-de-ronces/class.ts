@@ -18,7 +18,7 @@ export class ElementaireDeRonces extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            [`Augmente de 75 sa constitution.`, `Augmente de 10 son épine.`, `Augmente de 1 son ascension.`, `Se place sur votre pile.`],
+            [`Éveil : Augmente de 75 sa constitution.`, `Augmente de 10 son épine.`],
         ]);
     };
 
@@ -54,7 +54,7 @@ export class ElementaireDeRonces extends Creature {
             this.stat("Constitution").increase(75);
             this.stat("Épine").increase(10);
 
-            this.stat("Ascension").increase(1);
+            this.stat("Éveil").increase(1);
 
             this.move("Pile");
         }

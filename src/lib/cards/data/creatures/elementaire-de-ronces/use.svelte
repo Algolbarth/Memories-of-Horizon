@@ -32,12 +32,8 @@
 			selectAction("stack");
 		}}
 	>
-		Augmente de 75 sa constitution.
+		Éveil : Augmente de 75 sa constitution.
 		<br />
 		Augmente de 10 son épine.
-		<br />
-		Augmente de 1 son ascension
-		<br />
-		Se place sur votre pile.
 	</button>
 </div>

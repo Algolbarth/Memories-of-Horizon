@@ -87,6 +87,7 @@ export * from './plastron-en-cuir';
 export * from './plastron-en-fer';
 export * from './plastron-en-platine';
 export * from './poele-a-frire';
+export * from './porte-bonheur';
 export * from './rapiere';
 export * from './robe-de-mage';
 export * from './robe-de-velours';

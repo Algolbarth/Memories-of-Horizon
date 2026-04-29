@@ -49,7 +49,7 @@ export class Card {
         this.addStat("Pénétration", 0);
         this.addStat("Percée", 0);
 
-        this.addStat("Ascension", 0);
+        this.addStat("Éveil", 0);
 
         this.addStat("Persistance", 0);
 

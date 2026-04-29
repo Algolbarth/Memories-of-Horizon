@@ -215,6 +215,7 @@ export class Filter {
 
         text = text.replaceAll("[satiety ", "Satieté");
         text = text.replaceAll("[resolve ", "Résolution");
+        text = text.replaceAll("[luck ", "Chance");
         text = text.replaceAll("[prime ", "Prime").replaceAll("[prime_inf ", "Prime infinie");
         text = text.replaceAll("[source ", "Source").replaceAll("[source_inf ", "Source infinie");
         text = text.replaceAll("[blaze ", "Embrasement").replaceAll("[blaze_inf ", "Embrasement infini");
