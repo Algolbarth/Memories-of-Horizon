@@ -46,6 +46,8 @@ export class Card {
             return true;
         };
 
+        this.addTrait("Limité", false);
+
         this.addStat("Pénétration", 0);
         this.addStat("Percée", 0);
 

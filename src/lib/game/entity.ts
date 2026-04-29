@@ -97,8 +97,20 @@ export class Entity {
         let name_list: string[] = [];
 
         for (const c of this.deck.cards) {
-            let card = this.system.cards.getByName(c);
-            if ((this.is_bot || (this.place != undefined && this.place.canRead(card))) && card.level <= this.zone("Pile").level() && (readCondition == undefined || readCondition(card, drawer))) {
+            let card: Card = this.system.cards.getByName(c);
+
+            let limited: boolean = false;
+            if (card.trait("Limité").value()) {
+                for (const zone of this.zones) {
+                    for (const c of zone.cards) {
+                        if (c.name == card.name) {
+                            limited = true;
+                        }
+                    }
+                }
+            }
+
+            if ((this.is_bot || (this.place != undefined && this.place.canRead(card))) && card.level <= this.zone("Pile").level() && !limited && (readCondition == undefined || readCondition(card, drawer))) {
                 name_list.push(c);
             }
         }

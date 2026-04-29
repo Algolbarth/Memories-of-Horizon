@@ -8,7 +8,7 @@ export class Capitale extends Location {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 50]]);
+        this.init([["Or", 100]]);
 
         this.addText(`Si actif : Les cartes piochables sont de niveau 10 ou plus.`);
     };
