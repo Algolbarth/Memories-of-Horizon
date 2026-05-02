@@ -14,7 +14,7 @@ export class LigneEnergetique extends Action {
 
         this.initFamily(["Élémentaire"]);
 
-        this.addText(`Quand posé : Produit 5 fois plus de ressources que de créatures de famille Élémentaires sur votre terrain possédant au moins les éléments d'une créature de famille Élémentaire sur votre terrain.`);
+        this.addText(`Quand posé : Produit 5 fois plus de ressources que de créatures de famille Élémentaire sur votre terrain possédant au moins les éléments d'une créature de famille Élémentaire sur votre terrain.`);
     };
 
     canUse = () => {

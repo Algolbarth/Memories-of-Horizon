@@ -42,6 +42,7 @@ export * from './eboulement';
 export * from './ecrasement';
 export * from './elimination';
 export * from './enflammer';
+export * from './enseignement-elfique';
 export * from './entrainement';
 export * from './eriger-les-frontieres';
 export * from './eruption';

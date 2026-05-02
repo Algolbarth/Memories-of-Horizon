@@ -1,26 +1,26 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import { Spell } from '$lib/cards/class/spell';
+import { Action } from '$lib/cards/class/action';
 import Use from './use.svelte';
 
-export class EnseignementElfique extends Spell {
+export class EnseignementElfique extends Action {
     name = "Enseignement elfique";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Végétal", 8]]);
+        this.init([["Or", 5], ["Végétal", 5]]);
 
         this.initFamily(["Elfe"]);
 
         this.addText([
-            `Quand posé : Augmente de 5 l'intelligence d'une créature sur votre terrain.`,
-            `[sorcery {25, Augmente de 10 l'intelligence à la place.}]`]);
+            `Quand posé : Augmente de 5 la magie d'une créature de famille Elfe sur votre terrain.`,
+            `[resolve {20, Augmente de 10 la magie à la place.}]`]);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature) {
+            if (card instanceof Creature && card.isFamily("Elfe")) {
                 return true;
             }
         }
@@ -35,7 +35,7 @@ export class EnseignementElfique extends Spell {
             let target = undefined;
 
             for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
+                if (target == undefined && card instanceof Creature && card.isFamily("Elfe")) {
                     target = card;
                 }
             }
@@ -49,12 +49,11 @@ export class EnseignementElfique extends Spell {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        if (this.owner().ressource("Mana").total() >= 25) {
-            this.owner().ressource("Mana").spend(25);
-            target.stat("Intelligence").increase(10);
+        if (this.owner().totalIntelligence() >= 20) {
+            target.stat("Magie").increase(10);
         }
         else {
-            target.stat("Intelligence").increase(5);
+            target.stat("Magie").increase(5);
         }
 
         this.move("Défausse");
