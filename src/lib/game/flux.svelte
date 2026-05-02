@@ -12,7 +12,7 @@
 
 	let number_selected: string = "1";
 	let numbers: string[] = ["1", "5", "10", "100", "Max"];
-	let elements: string[] = ["Feu", "Air", "Végétal", "Eau", "Terre", "Mort", "Arcane", "Foudre", "Lumière", "Metal", "Glace", "Ombre"];
+	let elements: string[] = ["Feu", "Air", "Nature", "Eau", "Terre", "Mort", "Arcane", "Foudre", "Lumière", "Metal", "Glace", "Ombre"];
 </script>
 
 <div class="window">

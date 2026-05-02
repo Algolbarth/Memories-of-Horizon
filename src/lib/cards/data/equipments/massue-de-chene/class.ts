@@ -7,7 +7,7 @@ export class MassueDeChene extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 18], ["Végétal", 18]]);
+        this.init([["Or", 18], ["Nature", 18]]);
 
         this.initFamily(["Arme"]);
 

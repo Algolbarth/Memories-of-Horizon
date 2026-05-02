@@ -7,7 +7,7 @@ export class MageElfe extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 12], ["Végétal", 12]]);
+        this.init([["Or", 12], ["Nature", 12]]);
 
         this.initFamily(["Elfe", "Mage"]);
 

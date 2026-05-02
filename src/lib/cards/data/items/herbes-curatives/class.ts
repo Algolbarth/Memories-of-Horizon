@@ -9,7 +9,7 @@ export class HerbesCuratives extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Végétal", 10]]);
+        this.init([["Or", 10], ["Nature", 10]]);
 
         this.addText(`Quand posé : Retire le poison et la brûlure d'une créature sur votre terrain.`);
     };

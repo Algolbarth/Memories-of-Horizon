@@ -7,7 +7,7 @@ export class Plaine extends Location {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30]]);
+        this.init([["Or", 10]]);
 
         this.addText(`Si actif : Toutes les cartes sont piochables.`);
     };

@@ -52,7 +52,6 @@ Trône : bâtiment.
 Sort vivant : Créature sort.
 
 ### Feu
-Flèche de feu : inflige des dégâts spéciaux et enflamme une unité adverse.
 Jarre de flamme : objet.
 
 ### Vegetal
@@ -62,10 +61,8 @@ Plante vénéneuse : Créature plante, 0 atk inactif, au début du round : appli
 Jardinier : Créature elfe, quand se prépare sur le terrain : soigne toutes les créatures alliées de famille Plante sur le terrain.
 Botaniste : Créature elfe, quand posé : pioche une créature de famille Plante et réduit son cout.
 Pommier : Créature plante, 0 atk inactif, quand se prépare sur le terrain : Génère Pomme dans l'inventaire.
-Manteau de ronce : objet équipement, augmente l'épine du porteur.
-Élémentaire de ronce.
 Cochon truffier : Créature bête, quand posé : fouille 1 carte.
-Don naturel : action, détruit un élémentaire végétal sur votre terrain et produit autant de végétal que sa vente.
+Don naturel : action, détruit un élémentaire nature sur votre terrain et produit autant de nature que sa vente.
 
 ### Eau
 Saumon : Créature poisson.
@@ -211,7 +208,6 @@ Salamandre d'acide
 Salamandre fumante 
 Grande salamandre 
 Souffle de flammes toxiques 
-Plage : Lieu pour les cartes d'élément Eau et Feu.
 
 ### Feu/Terre
 Pillard du désert : quand se fait attaquer : produit de la terre. Quand attaque : produit du feu.
@@ -220,7 +216,6 @@ Assassin du désert
 Ver des sables : quand attaque : détruit la carte dans l'inventaire adverse en première position. quand est attaquée : détruit la carte dans l'inventaire en première position.
 Élémentaire de sable 
 Golem de lave 
-Désert : Lieu pour les cartes d'élément Feu et Terre.
 Peau magmatique : Convertit l'endurance en force.
 Coeur de pierre : Convertit la force en endurance.
 
@@ -253,7 +248,6 @@ Mage des spores de feu
 Feu de forêt 
 Guerrier aux écorces incandescantes 
 Druide des racines noires 
-Savane : Lieu pour les cartes d'élément Feu et Végétal.
 
 ### Feu/Mort
 Démon 
@@ -261,8 +255,6 @@ Diablotin
 Pacte démoniaque 
 Epée vorpale 
 Enfers : Lieu pour les cartes d'élément Feu et Mort.
-
-Jungle : Lieu pour les cartes d'élément Feu, Végétal, Eau ou Terre.
 
 ### Eau/Terre
 Tortue terrestre 
@@ -272,7 +264,6 @@ Golem de boue
 ### Eau/Vegetal
 Élémentaire d'algue 
 Castor 
-Mangroves : Lieu pour les cartes d'élément Eau et Végétal.
 
 ### Eau/Glace
 Requin arctique : poisson 
@@ -282,7 +273,7 @@ Banquise : Lieu pour les cartes d'élément Glace et Eau.
 
 ### Air/Vegetal
 Oiseau floral : Créature oiseau plante.
-Jardin suspendu : Lieu pour les cartes d'élément Végétal et Air.
+Jardin suspendu : Lieu pour les cartes d'élément Nature et Air.
 
 ### Air/Ombre
 Chauve-souris : Créature bête.
@@ -294,7 +285,6 @@ Vélociraptor
 Stégosaure 
 Blaireau : Créature, bête : quand joue : si camouflé : s'applique paralysie et augmente sa constitution et sa force.
 Terrier : bâtiment, bête : applique camouflage à la créature bête sur votre terrain la plus en avant qui ne possède pas camouflage.
-Ruines antiques : Lieu pour les cartes d'élément Végétal et Terre.
 
 ### Terre/Glace
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie.
@@ -308,7 +298,7 @@ Cheveux de dryades : augmente la régénération d'une créature sur votre terra
 Champignon 
 Homme champignon 
 Tréant carmin 
-Foret noire : Lieu pour les cartes d'élément Végétal et Ombre.
+Foret noire : Lieu pour les cartes d'élément Nature et Ombre.
 
 ### Air/Lumiere
 Ange 
@@ -342,7 +332,7 @@ les guerriers nains utilisent principalement des masses pour briser la roche, et
 affrontent souvent les minotaures, plus nomades et s'attaquant aux structures sur leur passages.
 
 ## Lore des elfes
-peuple affilié à l'élement Végétal, vivent dans les forêts.
+peuple affilié à l'élement Nature, vivent dans les forêts.
 plus vieux que les humains, métabolisme efficace mais plus fragile aux maladies.
 s'organise en communauté, en symbiose avec un écosystème particulier (si ecosystème différent alors autre communauté).
 les plus vieux elfes de la communauté, les doyens, conseillent et président.

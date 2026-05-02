@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import type { Equipment } from '$lib/cards/class/equipment';
+import { Equipment } from '$lib/cards/class/equipment';
 import Use from './use.svelte';
 
 export class PlaqueDArmure extends Item {
@@ -11,12 +11,12 @@ export class PlaqueDArmure extends Item {
 
         this.init([["Or", 20]]);
 
-        this.addText(`Quand posé : Augmente de 25 l'endurance d'une carte de famille Armure dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 25 l'endurance d'un objet de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Inventaire").cards) {
-            if (card.isFamily("Armure")) {
+            if (card instanceof Equipment && card.isFamily("Armure")) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class PlaqueDArmure extends Item {
             let target = undefined;
 
             for (const card of this.owner().zone("Inventaire").cards) {
-                if (target == undefined && card.isFamily("Armure")) {
+                if (target == undefined && card instanceof Equipment && card.isFamily("Armure")) {
                     target = card;
                 }
             }

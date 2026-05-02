@@ -8,7 +8,7 @@ export class Doyen extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 55], ["Végétal", 55]]);
+        this.init([["Or", 55], ["Nature", 55]]);
 
         this.initFamily(["Elfe"]);
 

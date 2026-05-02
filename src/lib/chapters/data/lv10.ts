@@ -22,7 +22,7 @@ export class Lv10_Gyoun extends Chapter {
         super(system, game, number);
 
         this.addRessource("Or", 200);
-        this.addRessource("Végétal", 200);
+        this.addRessource("Nature", 200);
 
         let deck = new ChapterDeck(system, "Colosse de jade", ["Croissance"]);
         this.addStep(50, ["Forêt"], 10, deck, ["Gyoun, colosse de jade"], ["Autrefois le lieutenant d'un chef de guerre légendaire, le puissant Gyoun est parti en retraite dans la région.", "Celui qui a falli faire tomber des royaumes veux connaitre votre valeur", "Le colosse de jade s'élève une dernière fois, soyez brave."]);

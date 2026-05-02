@@ -3,13 +3,14 @@
 	import Zone from "$lib/game/zone.svelte";
 	import type { System } from "$lib/system/class";
 	import type { Card } from "$lib/cards/class/class";
+	import { Equipment } from "$lib/cards/class/equipment";
 
 	export let system: System;
 	export let game: Game;
 	export let card: Card;
 
 	function selectCondition(target: Card) {
-		if (target.isFamily("Armure")) {
+		if (target instanceof Equipment && target.isFamily("Arme")) {
 			return true;
 		}
 		return false;

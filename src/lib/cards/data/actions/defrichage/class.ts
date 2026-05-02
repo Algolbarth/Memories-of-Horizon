@@ -9,7 +9,7 @@ export class Defrichage extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 62], ["Végétal", 62]]);
+        this.init([["Or", 62], ["Nature", 62]]);
 
         this.addText([
             `Quand posé : Augmente de 1 la taille de votre terrain.`,

@@ -9,7 +9,7 @@ export class BibliothequeElfique extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Végétal", 25]]);
+        this.init([["Or", 25], ["Nature", 25]]);
 
         this.initFamily(["Elfe"]);
 

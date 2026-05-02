@@ -1,22 +1,22 @@
 import type { System } from '$lib/system/class';
-import { Action } from '$lib/cards/class/action';
-import type { Equipment } from '$lib/cards/class/equipment';
+import { Equipment } from '$lib/cards/class/equipment';
 import Use from './use.svelte';
+import { Item } from '$lib/cards/class/item';
 
-export class Rembourrage extends Action {
-    name = "Rembourrage";
+export class ResineAbrasive extends Item {
+    name = "Résine abrasive";
 
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 15]]);
 
-        this.addText(`Quand posé : Augmente de 30 la constitution d'une carte de famille Armure dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 20 l'adresse d'un objet de famille Arme dans votre inventaire.`);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Inventaire").cards) {
-            if (card.isFamily("Armure")) {
+            if (card instanceof Equipment && card.isFamily("Arme")) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class Rembourrage extends Action {
             let target = undefined;
 
             for (const card of this.owner().zone("Inventaire").cards) {
-                if (target == undefined && card.isFamily("Armure")) {
+                if (target == undefined && card instanceof Equipment && card.isFamily("Arme")) {
                     target = card;
                 }
             }
@@ -45,7 +45,7 @@ export class Rembourrage extends Action {
     useEffect = (target: Equipment) => {
         this.targeting(target);
 
-        target.equipStat("Constitution").increase(30);
+        target.equipStat("Adresse").increase(20);
 
         this.move("Défausse");
         this.pose();

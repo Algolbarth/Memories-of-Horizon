@@ -8,7 +8,7 @@ export class Dresseur extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Végétal", 10]]);
+        this.init([["Or", 10], ["Nature", 10]]);
 
         this.initFamily(["Elfe"]);
 

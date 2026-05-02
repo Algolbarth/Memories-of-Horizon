@@ -9,7 +9,7 @@ export class Biodiversite extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 35], ["Végétal", 35]]);
+        this.init([["Or", 35], ["Nature", 35]]);
 
         this.addText(`Quand posé : Augmente de 5 la constitution et la force de toutes les créatures sur votre terrain pour chaque famille différentes parmi elles.`);
     };

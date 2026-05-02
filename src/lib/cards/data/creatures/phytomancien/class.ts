@@ -8,18 +8,18 @@ export class Phytomancien extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 12], ["Végétal", 12]]);
+        this.init([["Or", 12], ["Nature", 12]]);
 
         this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
 
-        this.addText(`Quand une autre carte alliée d'élément Végétal est posée : Si sur le terrain : Augmente de 3 sa constitution.`);
+        this.addText(`Quand une autre carte alliée d'élément Nature est posée : Si sur le terrain : Augmente de 3 sa constitution.`);
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.isArea("Terrain") && card.isElement("Végétal") && this.isAlly(card)) {
+        if (this.isArea("Terrain") && card.isElement("Nature") && this.isAlly(card)) {
             this.stat("Constitution").increase(3);
         }
     };

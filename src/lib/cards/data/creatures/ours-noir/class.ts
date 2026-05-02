@@ -7,7 +7,7 @@ export class OursNoir extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Végétal", 20]]);
+        this.init([["Or", 20], ["Nature", 20]]);
 
         this.initFamily(["Bête"]);
 

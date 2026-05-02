@@ -9,7 +9,7 @@ export class SavoirAncestral extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 12], ["Végétal", 12]]);
+        this.init([["Or", 12], ["Nature", 12]]);
 
         this.addText([
             `Quand posé : Augmente de 5 l'intelligence d'une créature sur votre terrain.`,

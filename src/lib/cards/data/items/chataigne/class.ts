@@ -9,7 +9,7 @@ export class Chataigne extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 6], ["Végétal", 6]]);
+        this.init([["Or", 6], ["Nature", 6]]);
 
         this.initFamily(["Nourriture", "Plante"]);
 

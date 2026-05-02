@@ -8,7 +8,7 @@ export class ElementaireDeFeuilles extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Végétal", 15]]);
+        this.init([["Nature", 15]]);
 
         this.initFamily(["Élémentaire", "Plante"]);
 

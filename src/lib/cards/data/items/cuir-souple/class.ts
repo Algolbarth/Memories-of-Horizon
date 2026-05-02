@@ -1,22 +1,22 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import type { Equipment } from '$lib/cards/class/equipment';
+import { Equipment } from '$lib/cards/class/equipment';
 import Use from './use.svelte';
 
-export class Affutage extends Action {
-    name = "Affûtage";
+export class CuirSouple extends Action {
+    name = "Cuir souple";
 
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 15]]);
 
-        this.addText(`Quand posé : Augmente de 20 l'adresse d'une carte de famille Arme dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 30 la constitution d'un objet de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Inventaire").cards) {
-            if (card.isFamily("Arme")) {
+            if (card instanceof Equipment && card.isFamily("Armure")) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class Affutage extends Action {
             let target = undefined;
 
             for (const card of this.owner().zone("Inventaire").cards) {
-                if (target == undefined && card.isFamily("Arme")) {
+                if (target == undefined && card instanceof Equipment && card.isFamily("Armure")) {
                     target = card;
                 }
             }
@@ -45,7 +45,7 @@ export class Affutage extends Action {
     useEffect = (target: Equipment) => {
         this.targeting(target);
 
-        target.equipStat("Adresse").increase(20);
+        target.equipStat("Constitution").increase(30);
 
         this.move("Défausse");
         this.pose();

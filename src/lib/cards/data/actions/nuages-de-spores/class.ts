@@ -9,7 +9,7 @@ export class NuageDeSpores extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Végétal", 25]]);
+        this.init([["Or", 25], ["Nature", 25]]);
 
         this.addText(`Quand posé : Augmente de 5 le poison de toutes les créatures sur le terrain adverse.`);
     };

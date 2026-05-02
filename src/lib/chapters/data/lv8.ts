@@ -25,6 +25,6 @@ export class Lv8_DucYousei extends Chapter {
         this.addRessource("Feu", 125);
 
         let deck = new ChapterDeck(system, "Duc", ["Cri de guerre"]);
-        this.addStep(40, ["Volcan"], 10, deck, ["Duc Yousei"], ["Yousei est un gobelin sauvage, un chef de guerre dont la seule passion est la fureur de la guerre.", "Né sur un champ de bataille, il a gravé son nom dans les annales de l'Empire par un instinct infaillible et son furieux désir de se battre.", "Nommé général et duc après une série de victoires écrasantes, il ne cherche ni gloire ni pouvoir, seulement l'adrénaline du champ de bataille.", "Sa réputation est loin de celle d'un guerrier qui frappe sans réfléchir, mais celle d'un guerrier suivant ses propres règles."]);
+        this.addStep(40, ["Terres ignées"], 10, deck, ["Duc Yousei"], ["Yousei est un gobelin sauvage, un chef de guerre dont la seule passion est la fureur de la guerre.", "Né sur un champ de bataille, il a gravé son nom dans les annales de l'Empire par un instinct infaillible et son furieux désir de se battre.", "Nommé général et duc après une série de victoires écrasantes, il ne cherche ni gloire ni pouvoir, seulement l'adrénaline du champ de bataille.", "Sa réputation est loin de celle d'un guerrier qui frappe sans réfléchir, mais celle d'un guerrier suivant ses propres règles."]);
     };
 };

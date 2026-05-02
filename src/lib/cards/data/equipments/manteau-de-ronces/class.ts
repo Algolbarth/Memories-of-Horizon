@@ -7,7 +7,7 @@ export class ManteauDeRonces extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 50], ["Végétal", 50]]);
+        this.init([["Or", 50], ["Nature", 50]]);
 
         this.initFamily(["Armure"]);
 

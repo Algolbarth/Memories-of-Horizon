@@ -8,7 +8,7 @@ export class GorilleEnrage extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40], ["Végétal", 40]]);
+        this.init([["Or", 40], ["Nature", 40]]);
 
         this.initFamily(["Bête"]);
 

@@ -29,8 +29,12 @@ def check_items(path):
     return nb_item
 
 def check_all():
+    nb_cards = 0
     for DIRECTORY in DIRECTORIES:
         PATH = CARD_DIRECTORY + "/" + DIRECTORY
-        print(f"{check_items(PATH)} {DIRECTORY}")
+        nb_items = check_items(PATH)
+        nb_cards += nb_items
+        print(f"{nb_items} {DIRECTORY}")
+    print(f"{nb_cards} cards")
 
 check_all()

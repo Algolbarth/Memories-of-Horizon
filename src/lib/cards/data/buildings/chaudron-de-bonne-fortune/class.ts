@@ -8,7 +8,7 @@ export class ChaudronDeBonneFortune extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30], ["Végétal", 30]]);
+        this.init([["Or", 30], ["Nature", 30]]);
 
         this.initFamily(["Elfe"]);
 

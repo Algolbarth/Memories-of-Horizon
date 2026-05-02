@@ -9,7 +9,7 @@ export class Spores extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 3], ["Végétal", 2]]);
+        this.init([["Or", 3], ["Nature", 2]]);
 
         this.addText(`Quand posé : Augmente de 5 le poison d'une créature sur le terrain adverse.`);
     };

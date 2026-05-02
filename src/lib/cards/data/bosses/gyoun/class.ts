@@ -8,7 +8,7 @@ export class Gyoun extends Boss {
         super(system);
 
         this.level = 10;
-        this.elements.base = ["Végétal"];
+        this.elements.base = ["Nature"];
         this.initFamily(["Elfe"]);
 
         this.stat("Force").init(100);

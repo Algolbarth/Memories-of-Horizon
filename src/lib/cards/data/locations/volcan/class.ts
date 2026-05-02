@@ -8,13 +8,13 @@ export class Volcan extends Location {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Feu", 15]]);
+        this.init([["Or", 10], ["Feu", 10], ["Terre", 10]]);
 
-        this.addText(`Si actif : Les cartes piochables sont d'élément Feu.`);
+        this.addText(`Si actif : Les cartes piochables sont d'élément Feu et d'élément Terre.`);
     };
 
     canRead = (card: Card) => {
-        if (card.isElement("Feu")) {
+        if (card.isElement("Feu") && card.isElement("Terre")) {
             return true;
         }
         return false;

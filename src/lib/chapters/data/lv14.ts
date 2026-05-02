@@ -24,7 +24,7 @@ export class Lv14_MageFeu extends Chapter {
             cards.push("Pluie de feu");
         }
         let deck = new ChapterDeck(system, "Mages de feu", ["Mage de feu", "Cercles magiques", "Boule de feu", "Pluie de feu"]);
-        this.addStep(70, ["Volcan"], 40, deck, cards, ["Une rumeur concernant des membres rebels d'une école de la magie de feu se répend dans la région.", "En vous rendant dans l'établissement, le directeur vous explique la situation et vous conseille de fouiller les ruines de l'ancienne école.", "Vous y trouvez une ancienne salle abandonnée, la chaleur suffocante émanant des murs rongés par des flammes mystiques.", "Au centre, les mages vêtus de robes écarlates commencent à incanter."]);
+        this.addStep(70, ["Terres ignées"], 40, deck, cards, ["Une rumeur concernant des membres rebels d'une école de la magie de feu se répend dans la région.", "En vous rendant dans l'établissement, le directeur vous explique la situation et vous conseille de fouiller les ruines de l'ancienne école.", "Vous y trouvez une ancienne salle abandonnée, la chaleur suffocante émanant des murs rongés par des flammes mystiques.", "Au centre, les mages vêtus de robes écarlates commencent à incanter."]);
     };
 };
 

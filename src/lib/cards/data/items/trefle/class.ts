@@ -7,7 +7,7 @@ export class Trefle extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Végétal", 8]]);
+        this.init([["Or", 8], ["Nature", 8]]);
 
         this.initFamily(["Plante"]);
 

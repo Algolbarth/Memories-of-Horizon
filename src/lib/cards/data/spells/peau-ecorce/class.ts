@@ -9,7 +9,7 @@ export class PeauDEcorce extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Végétal", 8]]);
+        this.init([["Or", 8], ["Nature", 8]]);
 
         this.addText([
             `Quand posé : Augmente de 20 la constitution d'une créature sur votre terrain.`,

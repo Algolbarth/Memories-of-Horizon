@@ -8,13 +8,13 @@ export class Foret extends Location {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Végétal", 15]]);
+        this.init([["Or", 15], ["Nature", 15]]);
 
-        this.addText(`Si actif : Les cartes piochables sont d'élément Végétal.`);
+        this.addText(`Si actif : Les cartes piochables sont d'élément Nature.`);
     };
 
     canRead = (card: Card) => {
-        if (card.isElement("Végétal")) {
+        if (card.isElement("Nature")) {
             return true;
         }
         return false;

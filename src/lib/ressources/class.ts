@@ -5,7 +5,7 @@ export class RessourceList {
         new Ressource("Eau", "rgba(50, 50, 200, 1)", true),
         new Ressource("Air", "rgba(150, 150, 150, 1)"),
         new Ressource("Terre", "rgba(100, 50, 0, 1)", true),
-        new Ressource("Végétal", "rgba(0, 150, 0, 1)"),
+        new Ressource("Nature", "rgba(0, 150, 0, 1)"),
         new Ressource("Mort", "rgba(0, 0, 100, 1)", true),
         new Ressource("Arcane", "rgba(150, 0, 255, 1)"),
         new Ressource("Metal", "rgba(50, 50, 50, 1)", true),

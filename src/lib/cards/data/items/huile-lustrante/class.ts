@@ -1,22 +1,22 @@
 import type { System } from '$lib/system/class';
-import { Action } from '$lib/cards/class/action';
-import type { Equipment } from '$lib/cards/class/equipment';
+import { Item } from '$lib/cards/class/item';
+import { Equipment } from '$lib/cards/class/equipment';
 import Use from './use.svelte';
 
-export class Aiguisage extends Action {
-    name = "Aiguisage";
+export class HuileLustrante extends Item {
+    name = "Huile lustrante";
 
     constructor(system: System) {
         super(system);
 
         this.init([["Or", 20]]);
 
-        this.addText(`Quand posé : Augmente de 50 la force d'une carte de famille Arme dans votre inventaire.`);
+        this.addText(`Quand posé : Augmente de 25 la résistance d'un objet de famille Armure dans votre inventaire.`);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Inventaire").cards) {
-            if (card.isFamily("Arme")) {
+            if (card instanceof Equipment && card.isFamily("Armure")) {
                 return true;
             }
         }
@@ -31,7 +31,7 @@ export class Aiguisage extends Action {
             let target = undefined;
 
             for (const card of this.owner().zone("Inventaire").cards) {
-                if (target == undefined && card.isFamily("Arme")) {
+                if (target == undefined && card instanceof Equipment && card.isFamily("Armure")) {
                     target = card;
                 }
             }
@@ -45,7 +45,7 @@ export class Aiguisage extends Action {
     useEffect = (target: Equipment) => {
         this.targeting(target);
 
-        target.equipStat("Force").increase(50);
+        target.equipStat("Résistance").increase(25);
 
         this.move("Défausse");
         this.pose();

@@ -8,19 +8,19 @@ export class Bucheron extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Végétal", 15]]);
+        this.init([["Or", 15], ["Nature", 15]]);
 
         this.initFamily(["Elfe"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
 
-        this.addText(`Quand une autre unité d'élément Végétal périt : Stocke 2 végétal.`);
+        this.addText(`Quand une autre unité d'élément Nature périt : Stocke 2 nature.`);
     };
 
     otherPerishEffect = (card: Card) => {
-        if (this.isArea("Terrain") && card.isElement("Végétal")) {
-            this.owner().ressource("Végétal").stock(2);
+        if (this.isArea("Terrain") && card.isElement("Nature")) {
+            this.owner().ressource("Nature").stock(2);
         }
     };
 };
