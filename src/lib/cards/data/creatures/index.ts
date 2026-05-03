@@ -82,6 +82,7 @@ export * from './empereur';
 export * from './epaulard';
 export * from './explorateur';
 export * from './fermier';
+export * from './fidele-serviteur';
 export * from './forgeron';
 export * from './garde';
 export * from './garde-epine';

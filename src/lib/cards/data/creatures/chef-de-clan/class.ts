@@ -10,7 +10,7 @@ export class ChefDeClan extends Creature {
 
         this.init([["Or", 55], ["Feu", 55]]);
 
-        this.initFamily(["Gobelin"]);
+        this.initFamily(["Gobelin", "Commandant"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);

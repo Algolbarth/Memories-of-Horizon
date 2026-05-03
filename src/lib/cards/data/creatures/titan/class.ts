@@ -10,7 +10,7 @@ export class Titan extends Creature {
 
         this.init([["Or", 250]]);
 
-        this.initFamily(["Géant"]);
+        this.initFamily(["Géant", "Commandant"]);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

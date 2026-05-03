@@ -10,7 +10,7 @@ export class Consul extends Creature {
 
         this.init([["Or", 55], ["Eau", 55]]);
 
-        this.initFamily(["Ondin"]);
+        this.initFamily(["Ondin", "Commandant"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);

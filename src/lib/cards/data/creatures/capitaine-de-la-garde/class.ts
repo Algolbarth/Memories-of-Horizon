@@ -10,7 +10,7 @@ export class CapitaineDeLaGarde extends Creature {
 
         this.init([["Or", 70]]);
 
-        this.initFamily(["Humain"]);
+        this.initFamily(["Humain", "Commandant"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);

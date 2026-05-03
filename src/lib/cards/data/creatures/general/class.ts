@@ -10,7 +10,7 @@ export class General extends Creature {
 
         this.init([["Or", 110]]);
 
-        this.initFamily(["Humain"]);
+        this.initFamily(["Humain", "Commandant"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);

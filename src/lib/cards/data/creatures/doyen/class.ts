@@ -10,7 +10,7 @@ export class Doyen extends Creature {
 
         this.init([["Or", 55], ["Nature", 55]]);
 
-        this.initFamily(["Elfe"]);
+        this.initFamily(["Elfe", "Commandant"]);
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(5);

@@ -11,12 +11,12 @@ export class GrandPretre extends Creature {
 
         this.init([["Or", 125]]);
 
-        this.initFamily(["Humain"]);
+        this.initFamily(["Humain", "Commandant"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText([
+        this.addChoice([
             `Augmente de 10 la constitution de toutes les créatures sur votre terrain.`,
             `Soigne 20 blessures à toutes les créatures sur votre terrain.`]);
     };

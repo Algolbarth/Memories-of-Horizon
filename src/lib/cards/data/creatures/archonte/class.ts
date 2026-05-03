@@ -10,7 +10,7 @@ export class Archonte extends Creature {
 
         this.init([["Or", 55], ["Terre", 55]]);
 
-        this.initFamily(["Nain"]);
+        this.initFamily(["Nain", "Commandant"]);
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);

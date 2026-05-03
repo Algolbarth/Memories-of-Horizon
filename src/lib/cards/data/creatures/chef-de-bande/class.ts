@@ -10,7 +10,7 @@ export class ChefDeBande extends Creature {
 
         this.init([["Or", 50]]);
 
-        this.initFamily(["Humain"]);
+        this.initFamily(["Humain", "Commandant"]);
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);

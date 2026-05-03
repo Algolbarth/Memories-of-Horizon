@@ -11,7 +11,7 @@ export class Empereur extends Creature {
 
         this.init([["Or", 500]]);
 
-        this.initFamily(["Humain"]);
+        this.initFamily(["Humain", "Commandant"]);
 
         this.stat("Constitution").init(100);
         this.stat("Force").init(100);
