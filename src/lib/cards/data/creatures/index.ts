@@ -129,6 +129,7 @@ export * from './maitre-chien';
 export * from './maman-ours';
 export * from './marchand';
 export * from './mendiant';
+export * from './mere-wyverne';
 export * from './mimique-de-coffre';
 export * from './mimique-de-jarre';
 export * from './monture-de-chevalier';

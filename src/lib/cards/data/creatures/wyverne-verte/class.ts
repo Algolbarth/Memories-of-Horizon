@@ -16,7 +16,7 @@ export class WyverneVerte extends Creature {
         this.stat("Constitution").init(35);
         this.stat("Force").init(20);
 
-        this.addText(`Quand une carte alliée d'élément Nature est posée : Si dans la pile : Réduit son coût de 6.`);
+        this.addText(`Quand une carte alliée d'élément Nature est posée : Si sur la pile : Réduit de 6 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {

@@ -1,4 +1,4 @@
-import type { Card } from "../cards/class/class";
+import type { Card } from "$lib/cards/class/class";
 
 export class Zone {
     name: string;
@@ -16,5 +16,21 @@ export class Zone {
 
     isNotFull = () => {
         return !this.isFull();
+    };
+
+    increase = (value: number) => {
+        if (this.size != undefined) {
+            this.size += value;
+        }
+    };
+
+    decrease = (value: number) => {
+        if (this.size != undefined) {
+            this.size -= value;
+
+            if (this.size <= 0) {
+                this.size = 1;
+            }
+        }
     };
 };

@@ -12,13 +12,13 @@ export class Marche extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Quand se prépare sur le terrain : Réduit de 10 le coût en or de toutes les cartes sur votre pile.`);
+        this.addText(`Quand se prépare sur le terrain : Réduit de 5 le coût en or de toutes les cartes sur votre pile.`);
     };
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let inventory = copy(this.owner().zone("Pile").cards);
-            for (const card of inventory) {
+            let stack = copy(this.owner().zone("Pile").cards);
+            for (const card of stack) {
                 card.getCost("Or").decrease(5);
             }
         }

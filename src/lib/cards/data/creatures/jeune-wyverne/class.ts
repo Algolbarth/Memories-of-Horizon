@@ -11,12 +11,12 @@ export class JeuneWyverne extends Creature {
         this.level = 1;
         this.init([["Or", 30]]);
 
-        this.initFamily(["Reptile"]);
+        this.initFamily(["Reptile", "Wyverne"]);
 
         this.stat("Constitution").init(15);
         this.stat("Force").init(15);
 
-        this.addText(`Quand une carte alliée de niveau 1 est posée : Si dans la pile : Réduit son coût de 3.`);
+        this.addText(`Quand une carte alliée de niveau 1 est posée : Si sur la pile : Réduit de 3 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
