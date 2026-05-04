@@ -117,6 +117,7 @@ export * from './loup-des-montagnes';
 export * from './loup-gris';
 export * from './louve-nourriciere';
 export * from './louveteau';
+export * from './lutteur';
 export * from './mage';
 export * from './mage-de-feu';
 export * from './mage-de-la-nature';

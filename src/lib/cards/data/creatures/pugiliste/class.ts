@@ -1,23 +1,23 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 
-export class Pugiliste extends Creature {
-    name = "Pugiliste";
+export class Lutteur extends Creature {
+    name = "Lutteur";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15], ["Feu", 15]]);
+        this.init([["Or", 15], ["Terre", 15]]);
 
-        this.initFamily(["Gobelin"]);
+        this.initFamily(["Nain"]);
 
         this.stat("Constitution").init(20);
         this.stat("Force").init(5);
 
-        this.addText(`Au début d'une manche : Augmente d'autant sa force pendant cette manche que 10 fois le numéro de la manche.`);
+        this.addText(`Au début d'une manche : Augmente d'autant son endurance pendant cette manche que 5 fois le numéro de la manche.`);
     };
 
     roundEffect = () => {
-        this.stat("Force").round += this.system.game.round * 10;
+        this.stat("Endurance").round += this.system.game.round * 5;
     };
 };
