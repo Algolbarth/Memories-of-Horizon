@@ -1,6 +1,7 @@
 export * from './alchimiste';
 export * from './ancien-serpent';
 export * from './ancienne-wyverne';
+export * from './ancienne-wyverne-marine';
 export * from './ancienne-wyverne-rouge';
 export * from './apothicaire';
 export * from './aquamancien';

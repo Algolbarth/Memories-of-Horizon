@@ -16,9 +16,8 @@ export class WyverneMarine extends Creature {
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
 
-        this.addText([
-            `Quand une carte alliée d'élément Eau est posée : Si sur la pile : Réduit de 10 son coût.`,
-            `Quand posé : Produit 25 eau.`]);
+        this.addText(`Quand une carte alliée d'élément Eau est posée : Si sur la pile : Réduit de 10 son coût.`);
+        this.addText(`Quand posé : Produit 25 eau.`);
     };
 
     otherPoseEffect = (card: Card) => {
