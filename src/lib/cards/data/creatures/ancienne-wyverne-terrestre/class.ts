@@ -15,10 +15,10 @@ export class AncienneWyverneTerrestre extends Creature {
 
         this.stat("Constitution").init(100);
         this.stat("Force").init(100);
-        this.stat("Endurance").init(70);
+        this.stat("Endurance").init(30);
 
         this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Réduit de 50 son coût.`);
-        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Augmente de 10 son endurance.`);
+        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Augmente de 15 son endurance.`);
     };
 
     otherPoseEffect = (card: Card) => {
@@ -27,7 +27,7 @@ export class AncienneWyverneTerrestre extends Creature {
                 this.costReduce(50);
             }
             else if (this.isArea("Terrain")) {
-                this.stat("Endurance").increase(10);
+                this.stat("Endurance").increase(15);
             }
         }
     };

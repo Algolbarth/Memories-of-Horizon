@@ -4,6 +4,7 @@ export * from './ancienne-wyverne';
 export * from './ancienne-wyverne-marine';
 export * from './ancienne-wyverne-rouge';
 export * from './ancienne-wyverne-terrestre';
+export * from './ancienne-wyverne-verte';
 export * from './apothicaire';
 export * from './aquamancien';
 export * from './archimage';
