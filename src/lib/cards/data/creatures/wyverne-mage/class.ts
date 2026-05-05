@@ -8,21 +8,21 @@ export class WyverneMage extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.level = 3;
-        this.init([["Or", 60]]);
+        this.level = 5;
+        this.init([["Or", 90]]);
 
         this.initFamily(["Reptile", "Wyverne", "Mage"]);
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
-        this.stat("Magie").init(5);
+        this.stat("Constitution").init(30);
+        this.stat("Force").init(30);
+        this.stat("Magie").init(10);
 
-        this.addText(`Quand une carte alliée de famille Sort est posée : Si sur la pile : Réduit de 6 son coût.`);
+        this.addText(`Quand une carte alliée de famille Sort est posée : Si sur la pile : Réduit de 10 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isFamily("Sort")) {
-            this.costReduce(6);
+            this.costReduce(10);
         }
     };
 };

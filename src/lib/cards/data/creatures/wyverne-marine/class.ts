@@ -8,27 +8,27 @@ export class WyverneMarine extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.level = 3;
-        this.init([["Or", 30], ["Eau", 30]]);
+        this.level = 5;
+        this.init([["Or", 45], ["Eau", 45]]);
 
         this.initFamily(["Reptile", "Wyverne"]);
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
 
         this.addText([
-            `Quand une carte alliée d'élément Eau est posée : Si sur la pile : Réduit de 6 son coût.`,
-            `Quand posé : Produit 10 eau.`]);
+            `Quand une carte alliée d'élément Eau est posée : Si sur la pile : Réduit de 10 son coût.`,
+            `Quand posé : Produit 25 eau.`]);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Eau")) {
-            this.costReduce(6);
+            this.costReduce(10);
         }
     };
 
     useEffect = () => {
-        this.owner().ressource("Eau").produce(10);
+        this.owner().ressource("Eau").produce(25);
 
         this.move("Terrain");
         this.pose();

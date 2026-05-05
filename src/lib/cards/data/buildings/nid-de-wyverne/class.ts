@@ -9,15 +9,15 @@ export class NidDeWyverne extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 60]]);
 
         this.initFamily(["Wyverne"]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(20);
 
         this.addText([
-            `Quand se prépare sur le terrain : Pioche 1 créature de famille Wyverne et la verrouille.`,
-            `Réduit de 15 le coût de cette carte.`]);
+            `Quand se prépare sur le terrain : Pioche 2 créature de famille Wyverne et les verrouillent.`,
+            `Réduit de 20 le coût de ces cartes.`]);
     };
 
     startPhaseEffect = () => {
@@ -28,11 +28,10 @@ export class NidDeWyverne extends Building {
                 }
                 return false;
             };
-            let cards = this.owner().draw(1, readCondition);
+            let cards = this.owner().draw(2, readCondition);
 
-            if (cards[0] != undefined) {
-                cards[0].costReduce(15);
-                cards[0].lock();
+            for (const card of cards) {
+                card.costReduce(20);
             }
         }
     };

@@ -8,21 +8,21 @@ export class WyverneTerrestre extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.level = 3;
-        this.init([["Or", 30], ["Terre", 30]]);
+        this.level = 5;
+        this.init([["Or", 45], ["Terre", 45]]);
 
         this.initFamily(["Reptile", "Wyverne"]);
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(20);
-        this.stat("Endurance").init(10);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
+        this.stat("Endurance").init(25);
 
-        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Réduit de 6 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Réduit de 10 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Terre")) {
-            this.costReduce(6);
+            this.costReduce(10);
         }
     };
 };

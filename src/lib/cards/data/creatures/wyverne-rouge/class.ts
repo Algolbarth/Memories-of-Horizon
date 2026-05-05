@@ -8,20 +8,20 @@ export class WyverneRouge extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.level = 3;
-        this.init([["Or", 30], ["Feu", 30]]);
+        this.level = 5;
+        this.init([["Or", 45], ["Feu", 45]]);
 
         this.initFamily(["Reptile", "Wyverne"]);
 
-        this.stat("Constitution").init(20);
-        this.stat("Force").init(40);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(75);
 
-        this.addText(`Quand une carte alliée d'élément Feu est posée : Si sur la pile : Réduit de 6 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Feu est posée : Si sur la pile : Réduit de 10 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Feu")) {
-            this.costReduce(6);
+            this.costReduce(10);
         }
     };
 };

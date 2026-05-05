@@ -10,7 +10,7 @@ export class MereWyverne extends Creature {
         super(system);
 
         this.level = 15;
-        this.init([["Or", 300]]);
+        this.init([["Or", 270]]);
 
         this.initFamily(["Reptile", "Wyverne"]);
 

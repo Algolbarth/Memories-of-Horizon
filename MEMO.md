@@ -42,7 +42,7 @@ X Épine => 5X/2
 
 Inflige X dégâts physiques => X/2
 Inflige X dégâts spéciaux => X/2
-Soigne X blessures  => X/2
+Soigne X blessures => X/2
 Remplit la jauge critique => 25
 
 X sur toutes les créatures/cartes alliées dans une zone => 10X
