@@ -96,6 +96,7 @@ export * from './gorille-enrage';
 export * from './grand-pretre';
 export * from './grand-requin-blanc';
 export * from './grande-wyverne';
+export * from './grande-wyverne-rouge';
 export * from './grande-wyverne-verte';
 export * from './grenouille';
 export * from './guerrier';
