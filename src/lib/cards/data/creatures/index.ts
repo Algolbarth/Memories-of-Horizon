@@ -200,6 +200,7 @@ export * from './warg';
 export * from './warg-alpha';
 export * from './warg-en-chasse';
 export * from './wyverne';
+export * from './wyverne-doree';
 export * from './wyverne-mage';
 export * from './wyverne-marine';
 export * from './wyverne-rouge';
