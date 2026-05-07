@@ -16,7 +16,7 @@ export class BuletteFouisseuse extends Creature {
         this.stat("Force").init(15);
         this.stat("Endurance").init(15);
 
-        this.addText(`Quand {card:Contre} est posée : Si sur le terrain : Augmente de 10 son endurance.`);
+        this.addText(`Quand un {card:Contre} allié est posé : Si sur le terrain : Augmente de 10 son endurance.`);
     };
 
     otherPoseEffect = (card: Card) => {

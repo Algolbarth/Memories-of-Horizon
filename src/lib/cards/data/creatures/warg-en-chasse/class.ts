@@ -15,7 +15,7 @@ export class WargEnChasse extends Creature {
         this.stat("Constitution").init(20);
         this.stat("Force").init(40);
 
-        this.addText(`Quand {card:Frappe} est posée : Si sur le terrain : Augmente de 20 sa force.`);
+        this.addText(`Quand une {card:Frappe} alliée est posée : Si sur le terrain : Augmente de 20 sa force.`);
     };
 
     otherPoseEffect = (card: Card) => {

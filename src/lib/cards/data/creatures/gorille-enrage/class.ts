@@ -15,7 +15,7 @@ export class GorilleEnrage extends Creature {
         this.stat("Constitution").init(35);
         this.stat("Force").init(20);
 
-        this.addText(`Quand {card:Écrasement} est posée : Si sur le terrain : Augmente de 15 sa constitution.`);
+        this.addText(`Quand un {card:Écrasement} allié est posé : Si sur le terrain : Augmente de 15 sa constitution.`);
     };
 
     otherPoseEffect = (card: Card) => {

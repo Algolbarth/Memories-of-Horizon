@@ -15,8 +15,8 @@ export class Serrurier extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand {card:Clé en or} est posée : Si sur le terrain : Augmente de 1 le niveau de votre pile pendant ce tour.`);
-        this.addText(`Quand {card:Crochetage} est posée : Si sur le terrain : Réduit de 1 le niveau de votre pile pendant ce tour.`);
+        this.addText(`Quand une {card:Clé en or} alliée est posée : Si sur le terrain : Augmente de 1 le niveau de votre pile pendant ce tour.`);
+        this.addText(`Quand un {card:Crochetage} allié est posé : Si sur le terrain : Réduit de 1 le niveau de votre pile pendant ce tour.`);
     };
 
     otherPoseEffect = (card: Card) => {

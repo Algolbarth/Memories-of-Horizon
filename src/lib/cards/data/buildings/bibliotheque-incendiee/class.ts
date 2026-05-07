@@ -12,7 +12,7 @@ export class BibliothequeIncendiee extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Quand {card:Autodafé} ou {card:Bûcher des vanités} est posé : Génère {card:Écrits calcinés} dans votre inventaire.`);
+        this.addText(`Quand un {card:Autodafé} ou un {card:Bûcher des vanités} allié est posé : Génère {card:Écrits calcinés} dans votre inventaire.`);
     };
 
     otherPoseEffect = (card: Card) => {

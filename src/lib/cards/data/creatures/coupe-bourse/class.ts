@@ -16,7 +16,7 @@ export class CoupeBourse extends Creature {
         this.stat("Force").init(5);
 
         this.addText(`Quand se prépare sur le terrain : Génère {card:Vol à la tire} dans votre inventaire.`);
-        this.addText(`Quand {card:Vol à la tire} est posée : Si sur le terrain : Augmente de 10 sa vente en or.`);
+        this.addText(`Quand un {card:Vol à la tire} allié est posé : Si sur le terrain : Augmente de 10 sa vente en or.`);
     };
 
     startPhaseEffect = () => {

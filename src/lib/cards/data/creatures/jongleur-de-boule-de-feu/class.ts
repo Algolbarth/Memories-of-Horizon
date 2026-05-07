@@ -8,7 +8,7 @@ export class JongleurDeBouleDeFeu extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Feu", 20]]);
+        this.init([["Or", 25], ["Feu", 25]]);
 
         this.initFamily(["Gobelin"]);
 
@@ -16,11 +16,11 @@ export class JongleurDeBouleDeFeu extends Creature {
         this.stat("Force").init(10);
         this.stat("Magie").init(15);
 
-        this.addText(`Quand {card:Boule de feu} est posée : Si sur le terrain : Génère {card:Boule de feu} sur votre pile.`);
+        this.addText(`Quand une {card:Boule de feu} alliée est posée : Si sur le terrain : Génère {card:Boule de feu} sur votre pile.`);
     };
 
     otherPoseEffect = (card: Card) => {
-        if (this.isAlly(card) && card.name == "Boule de feu") {
+        if (this.isArea("Terrain") && this.isAlly(card) && card.name == "Boule de feu") {
             this.owner().getCard("Boule de feu").add("Pile");
         }
     };

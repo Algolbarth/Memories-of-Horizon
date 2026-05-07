@@ -44,19 +44,24 @@ Inflige X dégâts physiques => X/2
 Inflige X dégâts spéciaux => X/2
 Soigne X blessures => X/2
 Remplit la jauge critique => 25
+Enlève X malus => 10
+Enlève tous les malus => 50
 
-X sur toutes les créatures/cartes alliées dans une zone => 10X
+X sur toutes les créatures/cartes alliées/adverses dans une zone => 10X
 X sur toutes les créatures/cartes dans une zone => 20X
 
 X à chaque étape de préparation => 2X
 X à chaque étape de combat => 2X
 X à chaque round => 3X
 X à chaque action/attaque => 4X
+X à chaque fois qu'une carte alliée est posée => 10X
+X à chaque fois qu'une carte alliée avec condition est posée => 8X
+X à chaque fois qu'une carte alliée spécifique (nommée) est posée => 5X
 
 X pendant ce tour => X/2
 X pendant ce round => X/3
 
-X choix parmi de effets de coût Y => Y + (XY/10)
+X choix parmi de effets de coût Y => Y + (X*Y/10)
 
 résolution d'un effet coutant X => 2X
 

@@ -15,7 +15,7 @@ export class Ouroboros extends Creature {
         this.stat("Force").init(15);
 
         this.addText(`Quand se prépare sur le terrain : Génère {card:Pierre philosophale} dans votre inventaire.`);
-        this.addText(`Quand {card:Pierre philosophale} est posée : Si sur le terrain : Augmente d'autant sa constitution et sa force que le flux dépensé.`);
+        this.addText(`Quand une {card:Pierre philosophale} alliée est posée : Si sur le terrain : Augmente d'autant sa constitution et sa force que le flux dépensé.`);
     };
 
     startPhaseEffect = () => {
