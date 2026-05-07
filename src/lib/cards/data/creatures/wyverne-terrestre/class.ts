@@ -17,12 +17,12 @@ export class WyverneTerrestre extends Creature {
         this.stat("Force").init(25);
         this.stat("Endurance").init(25);
 
-        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Réduit de 10 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Réduit de 5 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Terre")) {
-            this.costReduce(10);
+            this.costReduce(5);
         }
     };
 };

@@ -17,12 +17,12 @@ export class WyverneMage extends Creature {
         this.stat("Force").init(30);
         this.stat("Magie").init(10);
 
-        this.addText(`Quand une carte alliée de famille Sort est posée : Si sur la pile : Réduit de 10 son coût.`);
+        this.addText(`Quand une carte alliée de famille Sort est posée : Si sur la pile : Réduit de 5 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isFamily("Sort")) {
-            this.costReduce(10);
+            this.costReduce(5);
         }
     };
 };

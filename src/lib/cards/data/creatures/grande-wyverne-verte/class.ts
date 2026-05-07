@@ -16,13 +16,13 @@ export class GrandeWyverneVerte extends Creature {
         this.stat("Constitution").init(100);
         this.stat("Force").init(50);
 
-        this.addText(`Quand une carte alliée d'élément Nature est posée : Si sur la pile : Réduit de 20 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Nature est posée : Si sur la pile : Réduit de 10 son coût.`);
         this.addText(`Quand se prépare sur le terrain : Augmente de 15 sa constitution.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Nature")) {
-            this.costReduce(20);
+            this.costReduce(10);
         }
     };
 

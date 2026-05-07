@@ -16,13 +16,13 @@ export class GrandeWyverneMarine extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.addText(`Quand une carte alliée d'élément Eau est posée : Si sur la pile : Réduit de 20 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Eau est posée : Si sur la pile : Réduit de 10 son coût.`);
         this.addText(`Quand se prépare sur le terrain : Produit 25 eau.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Eau")) {
-            this.costReduce(20);
+            this.costReduce(10);
         }
     };
 

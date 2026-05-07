@@ -17,13 +17,13 @@ export class GrandeWyverneTerrestre extends Creature {
         this.stat("Force").init(50);
         this.stat("Endurance").init(30);
 
-        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Réduit de 20 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Terre est posée : Si sur la pile : Réduit de 10 son coût.`);
         this.addText(`Quand se prépare sur le terrain : Augmente de 10 son endurance.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Terre")) {
-            this.costReduce(20);
+            this.costReduce(10);
         }
     };
 

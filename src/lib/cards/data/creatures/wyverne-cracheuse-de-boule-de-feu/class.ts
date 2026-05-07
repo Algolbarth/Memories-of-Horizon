@@ -16,14 +16,14 @@ export class WyverneCracheuseDeBouleDeFeu extends Creature {
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
 
-        this.addText(`Quand une {card:Boule de feu} alliée est posée : Si sur la pile : Réduit de 20 son coût.`);
+        this.addText(`Quand une {card:Boule de feu} alliée est posée : Si sur la pile : Réduit de 10 son coût.`);
         this.addText(`Quand une {card:Boule de feu} alliée est posée : Si sur le terrain : Augmente de 30 sa force pendant ce tour.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isAlly(card) && card.name == "Boule de feu") {
             if (this.isArea("Pile")) {
-                this.costReduce(20);
+                this.costReduce(10);
             }
             else if (this.isArea("Terrain")) {
                 this.stat("Force").turn += 30;

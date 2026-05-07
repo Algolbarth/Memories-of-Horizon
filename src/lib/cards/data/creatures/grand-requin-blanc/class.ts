@@ -17,7 +17,7 @@ export class GrandRequinBlanc extends Creature {
         this.stat("Force").init(50);
 
         this.addText([
-            `Quand posé : Pioche 3 créature de famille Poisson.`,
+            `Quand posé : Pioche 3 créatures de famille Poisson.`,
             `Augmente de 5 sa constitution et sa force pour chaque créature de famille Poisson sur votre pile.`]);
     };
 

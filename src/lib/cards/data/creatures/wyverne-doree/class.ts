@@ -16,13 +16,13 @@ export class WyverneDoree extends Creature {
         this.stat("Constitution").init(40);
         this.stat("Force").init(40);
 
-        this.addText(`Quand une carte alliée d'élément Neutre est posée : Si sur la pile : Réduit de 10 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Neutre est posée : Si sur la pile : Réduit de 5 son coût.`);
         this.addText(`Quand posé : Augmente de 2 votre production d'or.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Neutre")) {
-            this.costReduce(10);
+            this.costReduce(5);
         }
     };
 

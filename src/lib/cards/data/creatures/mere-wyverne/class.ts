@@ -14,16 +14,16 @@ export class MereWyverne extends Creature {
 
         this.initFamily(["Reptile", "Wyverne"]);
 
-        this.stat("Constitution").init(50);
-        this.stat("Force").init(50);
+        this.stat("Constitution").init(70);
+        this.stat("Force").init(70);
 
-        this.addText(`Quand une carte alliée de famille Wyverne est posée : Si sur la pile : Réduit de 30 son coût.`);
+        this.addText(`Quand une carte alliée de famille Wyverne est posée : Si sur la pile : Réduit de 15 son coût.`);
         this.addText(`Quand se prépare sur le terrain : Réduit de 5 le coût de toutes les cartes de famille Wyverne sur votre pile.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isFamily("Wyverne")) {
-            this.costReduce(5);
+            this.costReduce(15);
         }
     };
 

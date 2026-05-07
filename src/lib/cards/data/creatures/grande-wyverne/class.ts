@@ -16,13 +16,13 @@ export class GrandeWyverne extends Creature {
         this.stat("Constitution").init(80);
         this.stat("Force").init(80);
 
-        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit de 20 son coût.`);
+        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit de 10 son coût.`);
         this.addText(`Quand se prépare sur le terrain : Augmente de 10 sa constitution et sa force.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card)) {
-            this.costReduce(20);
+            this.costReduce(10);
         }
     };
 

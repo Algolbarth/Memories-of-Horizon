@@ -16,14 +16,14 @@ export class AncienneWyverneDoree extends Creature {
         this.stat("Constitution").init(200);
         this.stat("Force").init(200);
 
-        this.addText(`Quand une carte alliée d'élément Neutre est posée : Si sur la pile : Réduit de 50 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Neutre est posée : Si sur la pile : Réduit de 25 son coût.`);
         this.addText(`Quand une carte alliée d'élément Neutre est posée : Si sur le terrain : Augmente de 1 votre production d'or.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isAlly(card) && card.isElement("Neutre")) {
             if (this.isArea("Pile")) {
-                this.costReduce(50);
+                this.costReduce(25);
             }
             else if (this.isArea("Terrain")) {
                 this.owner().ressource("Or").increase(1);

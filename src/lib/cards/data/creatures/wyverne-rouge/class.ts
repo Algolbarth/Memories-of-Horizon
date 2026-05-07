@@ -16,12 +16,12 @@ export class WyverneRouge extends Creature {
         this.stat("Constitution").init(25);
         this.stat("Force").init(75);
 
-        this.addText(`Quand une carte alliée d'élément Feu est posée : Si sur la pile : Réduit de 10 son coût.`);
+        this.addText(`Quand une carte alliée d'élément Feu est posée : Si sur la pile : Réduit de 5 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card.isElement("Feu")) {
-            this.costReduce(10);
+            this.costReduce(5);
         }
     };
 };

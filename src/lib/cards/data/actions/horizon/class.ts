@@ -10,13 +10,13 @@ export class Horizon extends Action {
 
         this.init([["Or", 400]]);
 
-        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit son coût de 40.`);
+        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit de 20 son coût.`);
         this.addText(`Quand posé : Augmente de 1 la taille de toutes vos zones.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card)) {
-            this.costReduce(40);
+            this.costReduce(20);
         }
     };
 

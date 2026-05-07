@@ -18,13 +18,13 @@ export class WyverneDesToits extends Creature {
         this.stat("Constitution").init(25);
         this.stat("Force").init(25);
 
-        this.addText(`Quand un bâtiment allié est posé : Si sur la pile : Réduit de 20 son coût.`);
+        this.addText(`Quand un bâtiment allié est posé : Si sur la pile : Réduit de 10 son coût.`);
         this.addText(`Quand attaque : Inflige 5 dégâts spéciaux à l'unité attaquée pour chaque bâtiment sur votre terrain.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card) && card instanceof Building) {
-            this.costReduce(20);
+            this.costReduce(10);
         }
     };
 

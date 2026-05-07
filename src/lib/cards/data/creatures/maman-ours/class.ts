@@ -21,5 +21,6 @@ export class MamanOurs extends Creature {
 
     perishEffect = () => {
         this.owner().getCard("Ourson").add("Terrain");
+        this.owner().getCard("Ourson").add("Terrain");
     };
 };

@@ -16,12 +16,12 @@ export class Wyverne extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit de 10 son coût.`);
+        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit de 5 son coût.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isArea("Pile") && this.isAlly(card)) {
-            this.costReduce(10);
+            this.costReduce(5);
         }
     };
 };

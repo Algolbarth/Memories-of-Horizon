@@ -16,14 +16,14 @@ export class AncienneWyverne extends Creature {
         this.stat("Constitution").init(150);
         this.stat("Force").init(150);
 
-        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit de 50 son coût.`);
+        this.addText(`Quand une carte alliée est posée : Si sur la pile : Réduit de 25 son coût.`);
         this.addText(`Quand une carte alliée est posée : Si sur le terrain : Augmente de 10 sa constitution et sa force.`);
     };
 
     otherPoseEffect = (card: Card) => {
         if (this.isAlly(card)) {
             if (this.isArea("Pile")) {
-                this.costReduce(50);
+                this.costReduce(25);
             }
             else if (this.isArea("Terrain")) {
                 this.stat("Constitution").increase(10);
