@@ -250,6 +250,17 @@ export class Unit extends Card {
             this.defendEffect(attacker);
         }
 
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const zone of entity.zones) {
+                let cpy = copy(zone.cards);
+                for (const card of cpy) {
+                    if (card != this) {
+                        card.otherDefend(this, attacker);
+                    }
+                }
+            }
+        }
+
         if (this.stat("Épine").value() > 0) {
             attacker.specialDamage(this.stat("Épine").value(), this);
         }

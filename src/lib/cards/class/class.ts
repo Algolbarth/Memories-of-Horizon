@@ -483,6 +483,14 @@ export class Card {
 
     otherFightEffect: Function | undefined;
 
+    otherDefend = (defender: Unit, attacker: Creature) => {
+        if (this.otherDefendEffect != undefined) {
+            this.otherDefendEffect(defender, attacker);
+        }
+    };
+
+    otherDefendEffect: Function | undefined;
+
     refreshStackEffect: Function | undefined;
 
     readCardEffect: Function | undefined;

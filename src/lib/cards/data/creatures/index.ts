@@ -205,6 +205,7 @@ export * from './wyverne';
 export * from './wyverne-cracheuse-de-boule-de-feu';
 export * from './wyverne-des-toits';
 export * from './wyverne-doree';
+export * from './wyverne-epineuse';
 export * from './wyverne-mage';
 export * from './wyverne-marine';
 export * from './wyverne-pelagique';

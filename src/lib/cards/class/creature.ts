@@ -408,8 +408,31 @@ export class Creature extends Unit {
             }
         }
 
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const zone of entity.zones) {
+                let cpy = copy(zone.cards);
+                for (const card of cpy) {
+                    if (card != this) {
+                        card.otherDefend(this, attacker);
+                    }
+                }
+            }
+        }
+
         if (this.stat("Épine").value() > 0) {
             attacker.specialDamage(this.stat("Épine").value(), this);
+        }
+    };
+
+    otherDefend = (defender: Unit, attacker: Creature) => {
+        if (this.otherDefendEffect != undefined) {
+            this.otherDefendEffect(defender, attacker);
+        }
+
+        for (const equipment of this.equipments) {
+            if (equipment.otherDefendEffect != undefined) {
+                equipment.otherDefendEffect(defender, attacker);
+            }
         }
     };
 

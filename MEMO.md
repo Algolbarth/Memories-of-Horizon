@@ -54,6 +54,7 @@ X à chaque étape de préparation => 2X
 X à chaque étape de combat => 2X
 X à chaque round => 3X
 X à chaque action/attaque => 4X
+X à chaque fois qu'il se fait attaqué => 5X
 X à chaque fois qu'une carte alliée est posée => 10X
 X à chaque fois qu'une carte alliée avec condition est posée => 8X
 X à chaque fois qu'une carte alliée spécifique (nommée) est posée => 5X
