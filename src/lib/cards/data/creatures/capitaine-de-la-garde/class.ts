@@ -8,12 +8,12 @@ export class CapitaineDeLaGarde extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 70]]);
+        this.init([["Or", 85]]);
 
         this.initFamily(["Humain", "Commandant"]);
 
-        this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
         this.stat("Charisme").init(1);
 
         this.addText(`Quand posé : Augmente de 1 le charisme de toutes les créatures de charisme 1 ou plus sur le terrain.`);
@@ -26,6 +26,7 @@ export class CapitaineDeLaGarde extends Creature {
                 card.stat("Charisme").increase(1);
             }
         }
+
         this.move("Terrain");
         this.pose();
     };

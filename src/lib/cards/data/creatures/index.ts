@@ -92,6 +92,7 @@ export * from './fidele-serviteur';
 export * from './forgeron';
 export * from './garde';
 export * from './garde-epine';
+export * from './garde-royal';
 export * from './geant';
 export * from './general';
 export * from './geomancien';
