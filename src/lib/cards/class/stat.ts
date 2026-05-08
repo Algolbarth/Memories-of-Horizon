@@ -1,4 +1,4 @@
-import type { Card } from "./class";
+import type { Card } from "./card";
 import { Creature } from "./creature";
 import type { Equipment } from "./equipment";
 

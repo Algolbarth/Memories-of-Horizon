@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import type { Card } from '$lib/cards/class/class';
+import type { Card } from '$lib/cards/class/card';
 import { Location } from '$lib/cards/class/location';
 
 export class TerresIgnees extends Location {

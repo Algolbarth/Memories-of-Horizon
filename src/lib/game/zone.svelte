@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 	import type { Entity } from "./entity";
 	import type { Game } from "./class";
 	import Preview from "./preview.svelte";

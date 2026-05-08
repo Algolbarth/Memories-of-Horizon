@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import type { Card } from '$lib/cards/class/class';
+import type { Card } from '$lib/cards/class/card';
 import { Action } from '$lib/cards/class/action';
 
 export class Forger extends Action {

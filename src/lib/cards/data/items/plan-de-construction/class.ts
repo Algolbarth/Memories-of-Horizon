@@ -1,7 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
 import { Building } from '$lib/cards/class/building';
-import type { Card } from '$lib/cards/class/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class PlanDeConstruction extends Item {
     name = "Plan de construction";

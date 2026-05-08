@@ -1,4 +1,4 @@
-import { Card } from '$lib/cards/class/class';
+import { Card } from '$lib/cards/class/card';
 import { Unit } from '$lib/cards/class/unit';
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';

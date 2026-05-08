@@ -1,4 +1,4 @@
-import type { Card } from "./class";
+import type { Card } from "./card";
 
 export class Cost {
     name: string;

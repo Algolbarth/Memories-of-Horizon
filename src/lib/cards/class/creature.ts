@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import { Card } from './class';
+import { Card } from './card';
 import { Unit } from './unit';
 import type { Equipment } from './equipment';
 import { copy } from '$lib/utils';

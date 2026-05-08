@@ -1,7 +1,7 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import type { Creature } from './creature';
-import { Card } from './class';
+import { Card } from './card';
 
 export class Unit extends Card {
     constructor(system: System) {

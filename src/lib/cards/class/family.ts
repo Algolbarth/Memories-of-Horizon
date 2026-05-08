@@ -1,5 +1,5 @@
 import { deleteDuplicate } from "$lib/utils";
-import type { Card } from "./class";
+import type { Card } from "./card";
 import { Creature } from "./creature";
 
 export class Families {

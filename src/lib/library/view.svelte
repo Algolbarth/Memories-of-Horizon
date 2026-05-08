@@ -3,8 +3,8 @@
 	import Dropdown from "../utils/dropdown.svelte";
 	import View from "../cards/view/main.svelte";
 	import { several } from "../utils";
-	import type { System } from "../system/class";
-	import type { Card } from "../cards/class/class";
+	import type { System } from "$lib/system/class";
+	import type { Card } from "$lib/cards/class/card";
 
 	export let system: System;
 

@@ -515,6 +515,7 @@ export class Card {
     stat = (name: string) => {
         let check = this.checkStat(name);
         if (check == undefined) {
+            console.log(name + " n'est pas une stat pour " + this.name);
             return new Stat(name, 0, 0, this);
         }
         return check;

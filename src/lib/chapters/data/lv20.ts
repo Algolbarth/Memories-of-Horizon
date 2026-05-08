@@ -11,11 +11,11 @@ export class Lv20_Archimere extends Chapter {
         this.addRessource("Nature", 1500);
 
         let cards = [];
-        for (let i = 1; i <= 10; i++) {
-            cards.push("Élémentaire des racines");
-        }
         for (let i = 1; i <= 5; i++) {
             cards.push("Archimère");
+        }
+        for (let i = 1; i <= 10; i++) {
+            cards.push("Élémentaire de racines");
         }
         for (let i = 1; i <= 10; i++) {
             cards.push("Druide des bois (forme elfe)");

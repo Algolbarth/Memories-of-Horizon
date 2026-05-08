@@ -1,4 +1,4 @@
-import type { System } from "../system/class";
+import type { System } from "$lib/system/class";
 import { Deck } from "./class";
 
 export class StandardDeck extends Deck {

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 	import { several } from "../utils";
 	import type { Entity } from "./entity";
 	import type { Game } from "./class";

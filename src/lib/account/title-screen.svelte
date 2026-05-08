@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Logo from "../menu/logo.svelte";
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 	import { Account } from "./account";
 
 	export let system: System;

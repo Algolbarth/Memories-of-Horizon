@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import { Card } from '$lib/cards/class/class';
+import { Card } from '$lib/cards/class/card';
 import { Creature } from '$lib/cards/class/creature';
 
 export class TheoricienDuComplot extends Creature {

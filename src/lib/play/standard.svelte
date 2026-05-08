@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { Game } from "../game/class";
+	import { Game } from "$lib/game/class";
 	import View from "../deck/preview.svelte";
 	import { several } from "../utils";
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 
 	export let system: System;
 

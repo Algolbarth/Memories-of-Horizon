@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
-import type { Card } from '$lib/cards/class/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Banque extends Building {
     name = "Banque";

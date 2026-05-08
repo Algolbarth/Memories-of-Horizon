@@ -10,6 +10,6 @@
 
 <style>
     img.logo {
-        height: 40vh;
+        height: 20vw;
     }
 </style>

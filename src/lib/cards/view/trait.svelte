@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { System } from "$lib/system/class";
-	import type { Card } from "../class/class";
+	import type { Card } from "../class/card";
 
 	export let system: System;
 	export let card: Card;

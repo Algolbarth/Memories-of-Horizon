@@ -1,6 +1,6 @@
 import { Equipment } from "$lib/cards/class/equipment";
-import type { Card } from "../cards/class/class";
-import type { System } from "../system/class";
+import type { Card } from "$lib/cards/class/card";
+import type { System } from "$lib/system/class";
 
 export class Filter {
     system: System;

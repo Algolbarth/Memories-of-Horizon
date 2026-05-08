@@ -1,5 +1,5 @@
-import { Deck } from "../deck/class";
-import type { System } from "../system/class";
+import { Deck } from "$lib/deck/class";
+import type { System } from "$lib/system/class";
 
 export class Train {
     player: TrainEntity;

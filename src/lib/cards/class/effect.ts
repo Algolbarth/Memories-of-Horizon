@@ -1,5 +1,5 @@
 import type { System } from "$lib/system/class";
-import type { Card } from "./class";
+import type { Card } from "./card";
 
 export class Effect {
     type: string;

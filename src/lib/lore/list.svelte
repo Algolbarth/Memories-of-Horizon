@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Story } from "./class";
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 	import View from "./view.svelte";
 
 	export let system: System;

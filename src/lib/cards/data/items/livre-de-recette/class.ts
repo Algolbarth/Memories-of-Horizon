@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import type { Card } from '$lib/cards/class/class';
+import type { Card } from '$lib/cards/class/card';
 import { Item } from '$lib/cards/class/item';
 
 export class LivreDeRecette extends Item {

@@ -1,4 +1,4 @@
-import type { System } from "../system/class";
+import type { System } from "$lib/system/class";
 
 export function save(system: System) {
     if (system.account) {

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 	import { several } from "../utils";
-	import { Deck } from "../deck/class";
+	import { Deck } from "$lib/deck/class";
 	import View from "../deck/preview.svelte";
 	import type { TrainEntity } from "./train";
 

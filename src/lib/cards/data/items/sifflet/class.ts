@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import type { Card } from '$lib/cards/class/class';
+import type { Card } from '$lib/cards/class/card';
 import { Creature } from '$lib/cards/class/creature';
 
 export class Sifflet extends Item {

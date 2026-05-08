@@ -1,6 +1,6 @@
-import { Deck } from "../deck/class";
-import type { Game } from "../game/class";
-import type { System } from "../system/class";
+import { Deck } from "$lib/deck/class";
+import type { Game } from "$lib/game/class";
+import type { System } from "$lib/system/class";
 
 export class Chapter {
     steps: Step[] = [];

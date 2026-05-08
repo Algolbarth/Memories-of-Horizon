@@ -2,7 +2,7 @@
 	import type { Game } from "$lib/game/class";
 	import Zone from "$lib/game/zone.svelte";
 	import type { System } from "$lib/system/class";
-	import type { Card } from "$lib/cards/class/class";
+	import type { Card } from "$lib/cards/class/card";
 	import { Creature } from "$lib/cards/class/creature";
 	import type { Unit } from "$lib/cards/class/unit";
 

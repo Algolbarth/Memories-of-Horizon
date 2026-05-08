@@ -1,6 +1,6 @@
 import { Account } from "./account";
-import { Deck } from "../deck/class";
-import type { System } from "../system/class";
+import { Deck } from "$lib/deck/class";
+import type { System } from "$lib/system/class";
 
 let step: number;
 let save: string;

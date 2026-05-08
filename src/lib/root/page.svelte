@@ -21,7 +21,7 @@
 	import ListDecks from "../deck/list.svelte";
 	import Deck from "../deck/view.svelte";
 	import Add from "../deck/add-card.svelte";
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 
 	export let system: System;
 </script>

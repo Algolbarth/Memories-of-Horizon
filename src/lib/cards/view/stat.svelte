@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Card } from "../class/class";
+	import type { Card } from "../class/card";
 	import { Unit } from "../class/unit";
 	import Life from "./life.svelte";
 

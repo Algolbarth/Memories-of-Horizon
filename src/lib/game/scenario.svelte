@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Chapter } from "../chapters/class";
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 	import Typewriter from "./typewriter.svelte";
 
 	export let system: System;

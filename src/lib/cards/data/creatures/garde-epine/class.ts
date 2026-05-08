@@ -13,7 +13,7 @@ export class GardeDEpine extends Creature {
 
         this.stat("Constitution").init(50);
         this.stat("Force").init(15);
-        this.stat("Protection").init(1);
+        this.stat("Charisme").init(1);
 
         this.addText(`Quand posé : [resolve {50, Augmente de 10 son épine.}]`);
     };

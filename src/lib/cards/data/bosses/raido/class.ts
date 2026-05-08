@@ -1,5 +1,5 @@
 import type { System } from '$lib/system/class';
-import type { Card } from '$lib/cards/class/class';
+import type { Card } from '$lib/cards/class/card';
 import { Boss } from '$lib/cards/class/boss';
 import { Creature } from '$lib/cards/class/creature';
 

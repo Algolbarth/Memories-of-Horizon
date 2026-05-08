@@ -1,8 +1,8 @@
-import type { Card } from "../cards/class/class";
-import { Creature } from "../cards/class/creature";
-import type { Location } from "../cards/class/location";
-import { Deck } from "../deck/class";
-import type { System } from "../system/class";
+import type { Card } from "$lib/cards/class/card";
+import { Creature } from "$lib/cards/class/creature";
+import type { Location } from "$lib/cards/class/location";
+import { Deck } from "$lib/deck/class";
+import type { System } from "$lib/system/class";
 import { copy } from "../utils";
 import { Stack } from "./stack";
 import { Zone } from "./zone";

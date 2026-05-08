@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { Game } from "$lib/game/class";
     import type { System } from "$lib/system/class";
-    import type { Card } from "../class/class";
+    import type { Card } from "../class/card";
 
     // svelte-ignore export_let_unused
     export let system: System;

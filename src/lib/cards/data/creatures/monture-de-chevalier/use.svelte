@@ -2,7 +2,7 @@
 	import type { Game } from "$lib/game/class";
 	import Zone from "$lib/game/zone.svelte";
 	import type { System } from "$lib/system/class";
-	import type { Card } from "$lib/cards/class/class";
+	import type { Card } from "$lib/cards/class/card";
 	import { Knight } from "$lib/cards/class/knight";
 
 	export let system: System;

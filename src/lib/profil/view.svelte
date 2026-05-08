@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Account } from "../account/account";
-	import type { System } from "../system/class";
+	import type { System } from "$lib/system/class";
 	import { several } from "../utils";
 	import Time from "./time.svelte";
 
