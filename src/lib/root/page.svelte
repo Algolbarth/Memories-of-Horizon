@@ -19,7 +19,7 @@
 	import GameOver from "../game/game-over.svelte";
 	import ModeDecks from "../deck/select-mode.svelte";
 	import ListDecks from "../deck/list.svelte";
-	import Deck from "../deck/view.svelte";
+	import Deck from "../deck/test.svelte";
 	import Add from "../deck/add-card.svelte";
 	import type { System } from "$lib/system/class";
 

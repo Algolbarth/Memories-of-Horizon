@@ -1,276 +1,122 @@
 <script lang="ts">
-	import Filter from "../filter/view.svelte";
-	import Dropdown from "../utils/dropdown.svelte";
-	import View from "../cards/view/main.svelte";
-	import { several } from "../utils";
 	import type { System } from "$lib/system/class";
-	import type { Deck } from "./class";
-	import { StandardDeck } from "./standard";
+	import { several } from "../utils";
+	import { Deck } from "./class";
 
 	export let system: System;
-	export let deck: Deck;
 
-	let name: string = deck.name;
-	let filter_window: boolean = false;
-	let sort_type: string = "Personnalisé";
-	let card_list: string[] = [];
-
-	filterFunction();
-
-	function filterFunction() {
-		card_list = system.filter.filterString(deck.cards, sort_type);
-	}
-
-	function close() {
-		if (deck instanceof StandardDeck) {
-			system.page = "StandardDecks";
-		} else {
-			system.page = "WildDecks";
-		}
-	}
+	$: deck = system.view.quick == undefined ? system.view.card : system.view.quick;
 </script>
 
-<div class="taskbar">
-	<div>
-		<button
-			class="square close"
-			on:click={() => {
-				system.view.reset();
-				system.filter.resetSelection();
-				system.page = "Menu";
-			}}
-		>
-			X
-		</button>
-
-		<button
-			class="square return"
-			on:click={() => {
-				system.view.reset();
-				system.filter.resetSelection();
-				close();
-			}}
-		>
-			↩
-		</button>
-	</div>
-
-	<div>
-		{#if deck instanceof StandardDeck}
-			<button class="taskbar">Deck Standard</button>
-		{:else}
-			<button class="taskbar">Deck Libre</button>
-		{/if}
-	</div>
-</div>
-
-<div id="head" class="zone side">
-	<div>
-		{#if deck instanceof StandardDeck}
-			{deck.name}
-		{:else}
-			<input type="text" bind:value={name} />
-			{#if name != deck.name}
-				<button
-					on:click={() => {
-						if (deck != undefined && name != undefined) {
-							deck.changeName(name, 0);
-						}
-					}}
-				>
-					Renommer
-				</button>
-			{/if}
-		{/if}
-
-		<br />
-
-		<button
-			on:click={() => {
-				if (deck != undefined) {
-					system.view.reset();
-					system.deck = deck.clone();
-					name = system.deck.name;
-				}
-			}}
-		>
-			Cloner
-		</button>
-	</div>
-
-	<div style="text-align:right;">
-		{#if !(deck instanceof StandardDeck)}
-			<button
-				class="delete"
-				on:click={() => {
-					if (deck != undefined) {
-						system.view.reset();
-						deck.delete();
-						system.page = "WildDecks";
-					}
-				}}
-			>
-				Supprimer
-			</button>
-		{/if}
-	</div>
-</div>
-
-<div class="zone side">
-	<div class="zone_taskbar">
-		<div class="display:flex;align-items:center;">
-			{#if deck.cards.length == 0}
-				0 Carte
-			{:else}
-				{card_list.length}
-				/
-				{several(deck.cards.length, ["Carte"])}
-				-
-				<button
-					on:click={() => {
-						filter_window = true;
-					}}
-				>
-					Filtrer
-				</button>
-				- Trier par
-				<Dropdown
-					array={["Personnalisé", "Nom", "Niveau"]}
-					selected={sort_type}
-					selecting={function (element: string) {
-						sort_type = element;
-						filterFunction();
-					}}
-				/>
-			{/if}
-		</div>
-
-		<div style="text-align:right;">
-			{#if deck.isEditable()}
-				<button
-					class="active"
-					on:click={() => {
-						system.view.reset();
-						system.page = "Add";
-					}}
-				>
-					Modifier les cartes
-				</button>
-			{/if}
-		</div>
-	</div>
-
-	<div id="list" class="scroll">
-		{#each card_list as card, i}
-			<div class="preview">
-				<div>
-					<button
-						on:click={() => {
-							system.view.card = system.cards.getByName(card);
-						}}
-						on:mouseenter={() => {
-							system.view.quick = system.cards.getByName(card);
-						}}
-						on:mouseleave={() => {
-							system.view.quick = undefined;
-						}}
-					>
-						{card}
-					</button>
+{#if deck != undefined && deck instanceof Deck}
+	<div id="shadow">
+		<div id="body">
+			<div id="cover">
+				<div class="inside">
+					<div class="box center" style="text-align:center">
+						{deck.name}
+					</div>
 				</div>
+			</div>
 
-				<div style="text-align:right;">
-					{#if deck.isEditable() && system.filter.isReset() && sort_type == "Personnalisé"}
-						{#if i > 0}
-							<button
-								class="active"
-								on:click={() => {
-									if (deck != undefined) {
-										let temp = deck.cards[i - 1];
-										deck.cards[i - 1] = card;
-										deck.cards[i] = temp;
-
-										temp = card_list[i - 1];
-										card_list[i - 1] = card;
-										card_list[i] = temp;
-
-										sort_type = "Personnalisé";
-									}
-								}}
-							>
-								&#9650
-							</button>
+			<div id="content">
+				<div class="inside inside-bottom">
+					<div class="box">
+						{#if deck.cards.length > 0}
+							{several(deck.cards.length, ["carte"])}
 						{:else}
-							<button class="desactivate">&#9650</button>
+							Vide
 						{/if}
+					</div>
 
-						{#if i < deck.cards.length - 1}
-							<button
-								class="active"
-								on:click={() => {
-									if (deck != undefined) {
-										let temp = deck.cards[i + 1];
-										deck.cards[i + 1] = card;
-										deck.cards[i] = temp;
-
-										temp = card_list[i + 1];
-										card_list[i + 1] = card;
-										card_list[i] = temp;
-
-										sort_type = "Personnalisé";
-									}
-								}}
-							>
-								&#9660
-							</button>
-						{:else}
-							<button class="desactivate">&#9660</button>
-						{/if}
+					{#if deck != system.train_deck}
+						<div class="box">
+							{several(deck.victory + deck.defeat, ["parties", "jouées"])}
+							<br />
+							{several(deck.victory, ["gagnée"])}
+							<br />
+							{several(deck.defeat, ["perdue"])}
+						</div>
 					{/if}
 				</div>
 			</div>
-		{/each}
+		</div>
 	</div>
-</div>
-
-<div id="view">
-	<View bind:system />
-</div>
-
-{#if filter_window}
-	<Filter bind:system bind:filter_window {filterFunction} only_common={true} />
 {/if}
 
 <style>
-	#head {
+	#shadow {
+		width: 40vw;
+		height: 90vh;
+		margin: 2.5vh;
+	}
+
+	#shadow::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		width: 40vw;
+		height: 90vh;
+		border: solid;
+		border-width: 10px;
+		box-shadow: 0px 15px 15px rgba(0, 0, 0, 1);
+		opacity: 0;
+		transition: opacity 1s ease-in-out;
+	}
+
+	#shadow:hover::before {
+		transition: opacity 0.5s ease-in-out;
+		opacity: 1;
+	}
+
+	#body {
+		position: relative;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+
+		border: solid;
+		border-width: 10px;
+
+		width: 100%;
+		height: 100%;
+
+		background-color: var(--deck);
+		background-image: var(--leather);
+
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
+		transition: all 0.5s ease-in-out;
+		grid-template-rows: 0.25fr 0.75fr;
 	}
 
-	.delete {
-		color: red;
+	#body:hover {
+		transition: all 1s ease-in-out;
+		box-shadow: none;
 	}
 
-	.delete:hover {
-		color: gold;
+	#cover {
+		position: relative;
+		border: solid;
+		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
+		padding: 0.5em;
 	}
 
-	.zone {
-		margin-bottom: 1vw;
+	#content {
+		padding: 1vw;
 	}
 
-	#list {
-		max-height: 70vh;
+	div.box {
+		background-image: var(--scroll);
+		border-style: solid;
 	}
 
-	.preview {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+	div.inside {
+		border: dashed;
+		position: relative;
+		height: 95%;
+		padding-left: 0.5em;
+		padding-right: 0.5em;
 	}
 
-	#view {
-		position: fixed;
-		top: 0;
-		left: 54vw;
+	div.inside-bottom {
+		padding-top: 0.5em;
 	}
 </style>

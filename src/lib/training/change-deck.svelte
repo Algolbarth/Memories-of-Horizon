@@ -2,25 +2,35 @@
 	import type { System } from "$lib/system/class";
 	import { several } from "../utils";
 	import { Deck } from "$lib/deck/class";
-	import View from "../deck/preview.svelte";
+	import View from "../deck/view.svelte";
 	import type { TrainEntity } from "./train";
+	import Preview from "$lib/deck/preview.svelte";
 
 	export let system: System;
 	export let entity: TrainEntity;
 
-	let decks: Deck[] = [];
-	decks.push(system.train_deck);
+	let deck_list: Deck[] = [];
+	deck_list.push(system.train_deck);
 	for (const deck of system.standard_decks) {
-		decks.push(deck);
+		deck_list.push(deck);
 	}
 	for (const deck of system.wild_decks) {
-		decks.push(deck);
+		deck_list.push(deck);
 	}
+	let side_view: string = "right";
 
 	function close() {
 		system.view.reset();
 		system.train.add.reset();
 		system = system;
+	}
+
+	function check_side(index: number) {
+		if (index % 5 > 2) {
+			side_view = "left";
+		} else {
+			side_view = "right";
+		}
 	}
 </script>
 
@@ -53,78 +63,58 @@
 			</div>
 		</div>
 
-		<div class="zone side">
+		<div class="zone">
 			<div class="zone_taskbar">
 				<div>
-					{several(decks.length, ["Deck"])}
+					{several(deck_list.length, ["Deck"])}
 				</div>
 			</div>
 
 			<div id="list" class="scroll">
-				{#each decks as deck, i}
-					<div class="preview">
-						<div>
-							<button
-								on:mouseenter={() => {
-									system.view.quick = deck;
-								}}
-								on:mouseleave={() => {
-									system.view.quick = undefined;
-								}}
-								on:click={() => {
-									system.view.card = deck;
-								}}
-							>
-								{deck.name}
-							</button>
-						</div>
-
-						<div style="text-align:right">
-							{#if entity.deck != deck}
-								<button
-									on:click={() => {
-										entity.deck = deck;
-										system.view.reset();
-										system.train.add.reset();
-									}}
-								>
-									Changer
-								</button>
-							{/if}
-						</div>
-					</div>
+				{#each deck_list as deck, index}
+					<Preview
+						bind:system
+						bind:deck
+						bind:side_view
+						can_deplace={false}
+						{index}
+						fonction={() => {
+							entity.deck = deck;
+							system.view.reset();
+							system.train.add.reset();
+						}}
+					/>
 				{/each}
 			</div>
 		</div>
 	</div>
 </div>
 
-<div id="view">
+<div id="view" class={side_view}>
 	<View bind:system />
 </div>
 
 <style>
 	#list {
-		max-height: 80vh;
-	}
-
-	.preview {
-		border-radius: 0;
-
-		background-color: var(--deck_preview);
-		background-image: var(--leather);
-
+		height: 80vh;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.preview:hover {
-		background-color: var(--deck_preview_hover);
+		grid-template-columns: repeat(5, 1fr);
+		grid-template-rows: repeat(3, calc(80vh / 3));
+		grid-auto-rows: calc(80vh / 3);
+		overflow-y: auto;
+		scroll-snap-type: y mandatory;
 	}
 
 	#view {
 		position: fixed;
 		top: 0;
+	}
+
+	.left {
+		left: 0;
+	}
+
+	.right {
 		left: 54vw;
 	}
 </style>

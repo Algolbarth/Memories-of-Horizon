@@ -7,17 +7,21 @@ export class StandardDeck extends Deck {
 
         this.name = name;
 
-        for (const card of this.cards) {
-            system.cards.getByName(card);
-        }
-
         for (let i = 0; i < cards.length; i++) {
-            let j = i;
-            while (j > 0 && cards[j - 1].localeCompare(cards[j], "fr") > 0) {
-                let swap = cards[j];
-                cards[j] = cards[j - 1];
-                cards[j - 1] = swap;
-                j--;
+            let card = system.cards.getByName(cards[i]);
+            if (card.name == cards[i]) {
+                let j = i;
+                while (j > 0 && cards[j - 1].localeCompare(cards[j], "fr") > 0) {
+                    let swap = cards[j];
+                    cards[j] = cards[j - 1];
+                    cards[j - 1] = swap;
+                    j--;
+                }
+            }
+            else {
+                console.log("Invalid card in " + name + " deck");
+                cards.splice(i, 1);
+                i--;
             }
         }
 

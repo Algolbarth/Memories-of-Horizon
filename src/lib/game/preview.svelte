@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Card } from "../cards/class";
+	import type { Card } from "$lib/cards/class/card";
 	import { Creature } from "$lib/cards/class/creature";
 	import { Location } from "$lib/cards/class/location";
 	import type { System } from "$lib/system/class";
