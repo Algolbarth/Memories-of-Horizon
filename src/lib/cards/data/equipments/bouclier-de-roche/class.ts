@@ -7,17 +7,17 @@ export class BouclierDeRoche extends Equipment {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Terre", 10]]);
+        this.init([["Or", 25], ["Terre", 25]]);
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Endurance").init(10);
+        this.equipStat("Endurance").init(25);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur est attaqué : Augmente de 2 l'endurance du porteur.`);
+        this.addText(`Quand le porteur est attaqué : Augmente de 5 l'endurance du porteur.`);
     };
 
     defendEffect = () => {
-        this.bearer.stat("Endurance").increase(2);
+        this.bearer.stat("Endurance").increase(5);
     };
 };

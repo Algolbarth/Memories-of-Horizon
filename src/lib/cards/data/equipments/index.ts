@@ -22,6 +22,7 @@ export * from './bouclier-de-fer';
 export * from './bouclier-de-platine';
 export * from './bouclier-de-roche';
 export * from './bouclier-en-cuir';
+export * from './bouclier-epine';
 export * from './bouee';
 export * from './brassard-de-sante';
 export * from './carapace-de-tortue';
