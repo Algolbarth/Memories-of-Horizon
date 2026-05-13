@@ -1,4 +1,4 @@
-import { Account } from "./account";
+import { Account } from "../profil/account";
 import { Deck } from "$lib/deck/class";
 import type { System } from "$lib/system/class";
 

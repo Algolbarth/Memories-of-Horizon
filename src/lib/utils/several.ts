@@ -13,7 +13,12 @@ export function several(value: number, name_list: string[], emplacement: string 
     for (const name of name_list) {
         text += " " + name;
         if (value > 1) {
-            text += "s";
+            if (name.endsWith("eu")) {
+                text += "x";
+            }
+            else {
+                text += "s";
+            }
         }
     }
 

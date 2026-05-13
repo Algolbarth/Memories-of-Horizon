@@ -1,3 +1,4 @@
+import type { Card } from "$lib/cards/class/card";
 import type { System } from "$lib/system/class";
 
 export class Deck {
@@ -6,11 +7,33 @@ export class Deck {
     victory: number = 0;
     defeat: number = 0;
     system: System;
+    levels: [string, number][] = [];
+    most_popular_level: number = 0;
+    elements: [string, number][] = [];
+    types: [string, number][] = [
+        ["Créature", 0],
+        ["Bâtiment", 0],
+        ["Action", 0],
+        ["Objet", 0],
+        ["Lieu", 0],
+    ];
 
     constructor(system: System) {
         this.system = system;
 
         this.name = this.changeName("Nouveau deck", 0);
+
+        for (let i = 1; i <= 20; i++) {
+            this.levels.push(["" + i, 0]);
+        }
+        for (const element of this.system.ressources.list) {
+            if (!["Or", "Mana", "Flux"].includes(element.name)) {
+                this.elements.push([element.name, 0]);
+            }
+            else if (element.name == "Or") {
+                this.elements.push(["Neutre", 0]);
+            }
+        }
     };
 
     changeName = (name: string, iterations: number): string => {
@@ -40,6 +63,42 @@ export class Deck {
     add = (name: string) => {
         if (!this.check(name)) {
             this.cards.push(name);
+
+            for (const level of this.levels) {
+                level[1] = 0;
+            }
+            for (const element of this.elements) {
+                element[1] = 0;
+            }
+            for (const type of this.types) {
+                type[1] = 0;
+            }
+
+            for (const card_name of this.cards) {
+                let card: Card = this.system.cards.getByName(card_name);
+
+                for (const level of this.levels) {
+                    if (card.level == parseInt(level[0])) {
+                        level[1] += 1;
+
+                        if (level[1] > this.most_popular_level) {
+                            this.most_popular_level = level[1];
+                        }
+                    }
+                }
+
+                for (const element of this.elements) {
+                    if (card.isElement(element[0])) {
+                        element[1] += 1;
+                    }
+                }
+
+                for (const type of this.types) {
+                    if (type[0] == card.type) {
+                        type[1] += 1;
+                    }
+                }
+            }
         }
     };
 

@@ -12,12 +12,11 @@
 
 	let name: string = deck.name;
 	let filter_window: boolean = false;
-	let sort_type: string = "Personnalisé";
 	let sort_types: string[] = ["Personnalisé", "Nom", "Niveau"];
 	if (deck instanceof StandardDeck) {
-		sort_type = "Nom";
 		sort_types = ["Nom", "Niveau"];
 	}
+	let sort_type: string = sort_types[0];
 	let card_list: string[] = [];
 
 	filterFunction();

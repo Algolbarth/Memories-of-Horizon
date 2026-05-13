@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { save } from "../account/save";
+	import { save } from "../title-screen/save";
 	import type { System } from "$lib/system/class";
 	import Logo from "./logo.svelte";
 

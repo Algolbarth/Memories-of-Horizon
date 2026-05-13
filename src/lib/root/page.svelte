@@ -1,8 +1,8 @@
 <script lang="ts">
-	import BlackScreen from "../account/black-screen.svelte";
-	import TitleScreen from "../account/title-screen.svelte";
-	import Login from "../account/login.svelte";
-	import Register from "../account/register.svelte";
+	import BlackScreen from "../title-screen/black-screen.svelte";
+	import TitleScreen from "../title-screen/title-screen.svelte";
+	import Login from "../title-screen/login.svelte";
+	import Register from "../title-screen/register.svelte";
 	import Menu from "../menu/menu.svelte";
 	import Play from "../play/view.svelte";
 	import Wild from "../play/wild.svelte";
@@ -19,7 +19,7 @@
 	import GameOver from "../game/game-over.svelte";
 	import ModeDecks from "../deck/select-mode.svelte";
 	import ListDecks from "../deck/list.svelte";
-	import Deck from "../deck/test.svelte";
+	import Deck from "../deck/card-list.svelte";
 	import Add from "../deck/add-card.svelte";
 	import type { System } from "$lib/system/class";
 

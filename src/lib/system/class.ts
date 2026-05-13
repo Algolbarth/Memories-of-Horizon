@@ -11,7 +11,7 @@ import type { Story } from "../lore/class";
 import { Game } from "$lib/game/class";
 import { Card } from "$lib/cards/class/card";
 import { Chapter } from "../chapters/class";
-import type { Account } from "../account/account";
+import type { Account } from "../profil/account";
 import { Filter } from "../filter/class";
 
 export class System {

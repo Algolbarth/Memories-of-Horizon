@@ -13,31 +13,79 @@
 		<div id="body">
 			<div id="cover">
 				<div class="inside">
-					<div class="box center" style="text-align:center">
+					<div class="box name center" style="text-align:center">
 						{deck.name}
 					</div>
 				</div>
 			</div>
 
 			<div id="content">
-				<div class="inside inside-bottom">
+				<div class="inside inside-bottom scroll">
+					{#if deck != system.train_deck}
+						<div class="box score">
+							<div class="cost">
+								{several(deck.victory + deck.defeat, ["Partie", "jouée"])}
+							</div>
+
+							{#if deck.victory + deck.defeat > 0}
+								<div class="cost">
+									{several(deck.victory, ["Victoire"])}
+								</div>
+
+								<div class="cost">
+									{several(deck.defeat, ["Défaite"])}
+								</div>
+							{/if}
+						</div>
+					{/if}
+
 					<div class="box">
 						{#if deck.cards.length > 0}
-							{several(deck.cards.length, ["carte"])}
+							{several(deck.cards.length, ["Carte"])}
 						{:else}
 							Vide
 						{/if}
 					</div>
 
-					{#if deck != system.train_deck}
-						<div class="box">
-							{several(deck.victory + deck.defeat, ["parties", "jouées"])}
-							<br />
-							{several(deck.victory, ["gagnée"])}
-							<br />
-							{several(deck.defeat, ["perdue"])}
+					<div class="box">
+						<div class="histo">
+							<div class="chart">
+								{#each deck.levels as level}
+									<div class="col">
+										{#if level[1] > 0}
+											<span class="count">{level[1]}</span>
+											<div class="bar" style="height:{Math.round((level[1] / deck.most_popular_level) * 100)}%"></div>
+										{/if}
+									</div>
+								{/each}
+							</div>
+
+							<div class="labels">
+								{#each deck.levels as level}
+									<span>{level[0]}</span>
+								{/each}
+							</div>
 						</div>
-					{/if}
+					</div>
+
+					<div class="box elements">
+						{#each deck.elements as element}
+							{#if element[1] > 0}
+								<div class="cost" style={"background-color:" + system.ressources.find("", element[0])?.color + ";color:" + (system.ressources.find("", element[0])?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
+									{element[1]}
+									{[element[0]]}
+								</div>
+							{/if}
+						{/each}
+					</div>
+
+					<div class="box types">
+						{#each deck.types as type}
+							<div class="cost">
+								{several(type[1], [type[0]])}
+							</div>
+						{/each}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -58,7 +106,7 @@
 		width: 40vw;
 		height: 90vh;
 		border: solid;
-		border-width: 10px;
+		border-width: 0.5em;
 		box-shadow: 0px 15px 15px rgba(0, 0, 0, 1);
 		opacity: 0;
 		transition: opacity 1s ease-in-out;
@@ -74,7 +122,7 @@
 		display: grid;
 
 		border: solid;
-		border-width: 10px;
+		border-width: 0.5em;
 
 		width: 100%;
 		height: 100%;
@@ -84,7 +132,7 @@
 
 		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
 		transition: all 0.5s ease-in-out;
-		grid-template-rows: 0.25fr 0.75fr;
+		grid-template-rows: 1fr 3fr;
 	}
 
 	#body:hover {
@@ -101,6 +149,7 @@
 
 	#content {
 		padding: 1vw;
+		height: 67.5vh;
 	}
 
 	div.box {
@@ -108,15 +157,105 @@
 		border-style: solid;
 	}
 
+	div.score {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.2em;
+	}
+
 	div.inside {
 		border: dashed;
 		position: relative;
-		height: 95%;
+		height: 97.5%;
 		padding-left: 0.5em;
 		padding-right: 0.5em;
 	}
 
 	div.inside-bottom {
 		padding-top: 0.5em;
+	}
+
+	div.name {
+		background-image: none;
+		background-color: gold;
+	}
+
+	div.name:hover {
+		background-color: goldenrod;
+	}
+
+	div.chart {
+		display: flex;
+		align-items: flex-end;
+		gap: 0.1em;
+		height: 10em;
+		border-bottom: 0.1em solid #000;
+		margin-bottom: 0.3em;
+	}
+
+	div.col {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.1em;
+		flex: 1;
+		height: 100%;
+		justify-content: flex-end;
+	}
+
+	div.bar {
+		width: 100%;
+		background-color: var(--card);
+		background-image: var(--paper);
+		border: solid;
+		border-width: 0.1em 0.1em 0 0.1em;
+		border-radius: 2px 2px 0 0;
+		transition: background 0.15s;
+	}
+
+	div.bar:hover {
+		background-color: var(--card_hover);
+	}
+
+	span.count {
+		font-size: 1em;
+		color: #000;
+		min-height: 14px;
+	}
+
+	div.labels {
+		display: flex;
+		gap: 0.1em;
+	}
+
+	div.labels span {
+		flex: 1;
+		text-align: center;
+		font-size: 1em;
+		color: #000;
+	}
+
+	div.elements {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 0.2em;
+	}
+
+	div.types {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.2em;
+	}
+
+	div.cost {
+		display: inline;
+		padding: 0.2em;
+
+		border: solid;
+		border-color: black;
+		border-width: 0.2vmin;
+		border-radius: 5px;
+
+		background-image: var(--paper);
 	}
 </style>

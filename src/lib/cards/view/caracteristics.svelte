@@ -45,7 +45,7 @@
 
 {#if costs(card).length > 0 || sales(card).length > 0}
 	<div class="box">
-		<div class="little-container">
+		<div class="container">
 			{#if costs(card).length > 0}
 				{#each costs(card) as cost}
 					<div class="cost" style={"background-color:" + system.ressources.find(cost.name)?.color + ";color:" + (system.ressources.find(cost.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
@@ -59,7 +59,7 @@
 
 		<hr />
 
-		<div class="little-container">
+		<div class="container">
 			{#if sales(card).length > 0}
 				{#each sales(card) as sell, i}
 					<div class="cost" style={"background-color:" + system.ressources.find(sell.name)?.color + ";color:" + (system.ressources.find(sell.name)?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
@@ -84,11 +84,6 @@
 </div>
 
 <style>
-	div.little-container {
-		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-	}
-
 	div.container {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
