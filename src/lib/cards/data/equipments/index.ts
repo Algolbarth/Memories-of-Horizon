@@ -27,6 +27,7 @@ export * from './bouee';
 export * from './brassard-de-sante';
 export * from './carapace-de-tortue';
 export * from './carquois';
+export * from './casque-a-pic';
 export * from './casque-en-cuir';
 export * from './ceinture-de-cuir';
 export * from './chapeau-de-mage';
