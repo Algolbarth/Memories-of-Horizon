@@ -16,6 +16,7 @@ export * from './aventurier';
 export * from './bagarreur';
 export * from './baleine';
 export * from './bandit';
+export * from './bandit-a-cheval';
 export * from './barbare';
 export * from './barde';
 export * from './barriere-de-corail';
