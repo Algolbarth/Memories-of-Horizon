@@ -27,6 +27,7 @@ export * from './fontaine';
 export * from './fontaine-de-bambou';
 export * from './garnison-des-monts';
 export * from './guilde-des-aventuriers';
+export * from './guilde-des-marchands';
 export * from './lac-de-lave';
 export * from './lanceur-orbital';
 export * from './maison';
