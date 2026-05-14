@@ -32,6 +32,7 @@ export * from './casque-en-cuir';
 export * from './ceinture-de-cuir';
 export * from './chapeau-de-mage';
 export * from './chevaliere-imperiale';
+export * from './coiffe-extravagante';
 export * from './collier-de-metamorphe';
 export * from './collier-en-dent-de-loup';
 export * from './cotte-de-mailles-en-fer';

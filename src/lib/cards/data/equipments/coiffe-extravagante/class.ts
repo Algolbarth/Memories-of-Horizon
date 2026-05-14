@@ -1,26 +1,25 @@
 import type { System } from '$lib/system/class';
 import { Equipment } from '$lib/cards/class/equipment';
 
-export class CasqueAPic extends Equipment {
-    name = "Casque à pic";
+export class CoiffeExtravagante extends Equipment {
+    name = "Coiffe extravagante";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25], ["Terre", 25]]);
+        this.init([["Or", 50]]);
 
         this.initFamily(["Armure"]);
 
-        this.equipStat("Endurance").init(10);
-        this.equipStat("Épine").init(10);
+        this.equipStat("Charisme").init(2);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain : Augmente jusqu'à 15 la garde du porteur.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Augmente d'autant la garde du porteur que la magie de celui-ci.`);
     };
 
     startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            this.bearer.stat("Garde").fix(15);
+            this.bearer.stat("Garde").fix(10 * this.bearer.stat("Charisme").value());
         }
     };
 };
