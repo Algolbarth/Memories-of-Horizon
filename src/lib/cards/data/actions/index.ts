@@ -31,6 +31,7 @@ export * from './crochetage';
 export * from './croissance';
 export * from './cycle-de-eau';
 export * from './decapitation';
+export * from './declaration-de-guerre';
 export * from './defense-ultime';
 export * from './defrichage';
 export * from './demolition';
