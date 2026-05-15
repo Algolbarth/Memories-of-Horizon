@@ -1,13 +1,13 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 
-export class BanditACheval extends Creature {
-    name = "Bandit à cheval";
+export class VoleurDeChevaux extends Creature {
+    name = "Voleur de chevaux";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 25]]);
 
         this.initFamily(["Humain"]);
 
@@ -15,6 +15,7 @@ export class BanditACheval extends Creature {
         this.stat("Force").init(20);
 
         this.addText(`Quand posé : [prime {10, Augmente de 1 sa vitesse.}]`);
+        this.addText(`Quand attaque : Augmente de 5 sa vente en or.`);
     };
 
     useEffect = () => {
@@ -26,5 +27,9 @@ export class BanditACheval extends Creature {
 
         this.move("Terrain");
         this.pose();
+    };
+
+    fightEffect = () => {
+        this.getSale("Or").increase(5);
     };
 };

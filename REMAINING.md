@@ -54,7 +54,7 @@ Sort vivant : Créature sort.
 ### Feu
 Jarre de flamme : objet.
 
-### Vegetal
+### Nature
 Fiole de poison : empoisonne et augmente la toxicité d'une créature sur le terrain adverse.
 Plante carnivore : Créature plante. 0 atk inactif, au début du round : inflige 5 dégâts spéciaux à la créature adverse la plus en avant sur le terrain.
 Plante vénéneuse : Créature plante, 0 atk inactif, au début du round : applique poison à la créature adverse la plus en avant sur le terrain.
@@ -234,7 +234,7 @@ Aigle de feu
 Proto dragon : Créature wyverne dragon 
 Cimes volcaniques : Lieu pour les cartes d'élément Feu et Air.
 
-### Feu/Vegetal
+### Feu/Nature
 Lézard : Quand périt : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans l'inventaire.
@@ -261,7 +261,7 @@ Tortue terrestre
 Barrage 
 Golem de boue
 
-### Eau/Vegetal
+### Eau/Nature
 Élémentaire d'algue 
 Castor 
 
@@ -271,14 +271,14 @@ Kraken
 Tentacule 
 Banquise : Lieu pour les cartes d'élément Glace et Eau.
 
-### Air/Vegetal
+### Air/Nature
 Oiseau floral : Créature oiseau plante.
 Jardin suspendu : Lieu pour les cartes d'élément Nature et Air.
 
 ### Air/Ombre
 Chauve-souris : Créature bête.
 
-### Terre/Vegetal
+### Terre/Nature
 Tyranosaure 
 Brachiosaure 
 Vélociraptor 
@@ -290,11 +290,11 @@ Terrier : bâtiment, bête : applique camouflage à la créature bête sur votre
 Nain du glacier : immunité à l'étourdissement, au gel et à la paralysie.
 Glacier : Lieu pour les cartes d'élément Glace et Terre.
 
-## Vegetal/Lumière
+## Nature/Lumière
 Dryade
 Cheveux de dryades : augmente la régénération d'une créature sur votre terrain.
 
-### Vegetal/Ombre
+### Nature/Ombre
 Champignon 
 Homme champignon 
 Tréant carmin 

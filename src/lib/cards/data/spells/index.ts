@@ -2,6 +2,7 @@ export * from './boule-de-feu';
 export * from './bulle-protectrice';
 export * from './creation-rocheuse';
 export * from './ecoulement';
+export * from './lien-unisson';
 export * from './peau-de-pierre';
 export * from './peau-ecorce';
 export * from './pluie-de-cailloux';
