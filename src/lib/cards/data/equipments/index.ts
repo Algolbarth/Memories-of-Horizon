@@ -41,6 +41,7 @@ export * from './cotte-epineuse';
 export * from './couronne';
 export * from './dague-de-cuivre';
 export * from './dague-empoisonnee';
+export * from './diademe';
 export * from './doubles-hachettes-barbare';
 export * from './doubles-lames-de-fer';
 export * from './egide';
