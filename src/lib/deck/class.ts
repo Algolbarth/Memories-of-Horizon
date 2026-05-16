@@ -61,44 +61,62 @@ export class Deck {
     };
 
     add = (name: string) => {
-        if (!this.check(name)) {
+        if (!this.checkDuplicate(name)) {
             this.cards.push(name);
+            this.setCategories();
+        }
+    };
+
+    addList = (name_list: string[]) => {
+        for (const name of name_list) {
+            if (!this.checkDuplicate(name)) {
+                this.cards.push(name);
+            }
+        }
+
+        this.setCategories();
+    };
+
+    setCategories = () => {
+        this.resetCategories();
+
+        for (const card_name of this.cards) {
+            let card: Card = this.system.cards.getByName(card_name);
 
             for (const level of this.levels) {
-                level[1] = 0;
+                if (card.level == parseInt(level[0])) {
+                    level[1] += 1;
+
+                    if (level[1] > this.most_popular_level) {
+                        this.most_popular_level = level[1];
+                    }
+                }
             }
+
             for (const element of this.elements) {
-                element[1] = 0;
+                if (card.isElement(element[0])) {
+                    element[1] += 1;
+                }
             }
+
             for (const type of this.types) {
-                type[1] = 0;
-            }
-
-            for (const card_name of this.cards) {
-                let card: Card = this.system.cards.getByName(card_name);
-
-                for (const level of this.levels) {
-                    if (card.level == parseInt(level[0])) {
-                        level[1] += 1;
-
-                        if (level[1] > this.most_popular_level) {
-                            this.most_popular_level = level[1];
-                        }
-                    }
-                }
-
-                for (const element of this.elements) {
-                    if (card.isElement(element[0])) {
-                        element[1] += 1;
-                    }
-                }
-
-                for (const type of this.types) {
-                    if (type[0] == card.type) {
-                        type[1] += 1;
-                    }
+                if (type[0] == card.type) {
+                    type[1] += 1;
                 }
             }
+        }
+    };
+
+    resetCategories = () => {
+        for (const level of this.levels) {
+            level[1] = 0;
+        }
+        this.most_popular_level = 0;
+        for (const element of this.elements) {
+            element[1] = 0;
+        }
+        for (const type of this.types) {
+            type[1] = 0;
         }
     };
 
@@ -110,7 +128,7 @@ export class Deck {
         }
     };
 
-    check = (name: string) => {
+    checkDuplicate = (name: string) => {
         for (const card of this.cards) {
             if (card == name) {
                 return true;

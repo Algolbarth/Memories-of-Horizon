@@ -129,7 +129,7 @@
 
 <style>
 	#list {
-		max-height: 80vh;
+		height: 80vh;
 	}
 
 	.preview {

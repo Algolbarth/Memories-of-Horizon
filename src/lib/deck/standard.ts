@@ -25,9 +25,7 @@ export class StandardDeck extends Deck {
             }
         }
 
-        for (const card of cards) {
-            this.add(card);
-        }
+        this.addList(cards);
     };
 
     isEditable = () => {

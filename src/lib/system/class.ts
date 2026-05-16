@@ -155,11 +155,13 @@ export class System {
         }
 
         this.train_deck.name = "Deck d'entraînement";
+        let card_list: string[] = [];
         for (const card of this.cards.instance) {
             if (card.trait("Commune").value()) {
-                this.train_deck.add(card.name);
+                card_list.push(card.name);
             }
         }
+        this.train_deck.addList(card_list);
 
         this.train = new Train(this);
     };

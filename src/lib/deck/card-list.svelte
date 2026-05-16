@@ -264,7 +264,7 @@
 	}
 
 	#list {
-		max-height: 70vh;
+		height: 70vh;
 	}
 
 	.preview {
