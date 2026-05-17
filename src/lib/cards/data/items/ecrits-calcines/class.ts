@@ -9,6 +9,8 @@ export class EcritCalcines extends Item {
 
         this.init([["Or", 6], ["Feu", 6]]);
 
+        this.initFamily(["Livre"]);
+
         this.addText([
             `Quand posé : Si votre pile est vide : Découvre 5 cartes.`,
             `[resolve {125, Découvre autant de carte que nécessaire pour remplir la pile à la place.}]`]);

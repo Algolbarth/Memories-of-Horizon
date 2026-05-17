@@ -10,6 +10,8 @@ export class LivreDeRecette extends Item {
 
         this.init([["Or", 25]]);
 
+        this.initFamily(["Livre"]);
+
         this.addText([
             `Quand posé : Découvre 3 cartes de famille Nourriture.`,
             `[resolve {20, Découvre 5 cartes de famille Nourriture à la place.}]`]);

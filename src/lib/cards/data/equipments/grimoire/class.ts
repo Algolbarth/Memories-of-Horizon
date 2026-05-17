@@ -10,6 +10,8 @@ export class Grimoire extends Equipment {
 
         this.init([["Or", 6]]);
 
+        this.initFamily(["Livre"]);
+
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
         this.addText(`Quand le porteur se prépare sur le terrain : Pioche 1 carte de famille Sort.`);
     };

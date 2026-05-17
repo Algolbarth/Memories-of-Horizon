@@ -11,6 +11,8 @@ export class Encyclopedie extends Equipment {
 
         this.init([["Or", 15]]);
 
+        this.initFamily(["Livre"]);
+
         this.equipStat("Intelligence").init(2);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);

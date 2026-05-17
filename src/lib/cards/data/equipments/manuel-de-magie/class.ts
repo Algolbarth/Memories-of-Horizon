@@ -9,6 +9,8 @@ export class ManuelDeMagie extends Equipment {
 
         this.init([["Or", 20]]);
 
+        this.initFamily(["Livre", "Mage"]);
+
         this.equipStat("Magie").init(5);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);

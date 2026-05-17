@@ -125,6 +125,7 @@ export * from './jongleur-de-boule-de-feu';
 export * from './juge';
 export * from './lanceur-de-boule-de-feu';
 export * from './leprechaun';
+export * from './libraire';
 export * from './lion';
 export * from './loup-des-montagnes';
 export * from './loup-gris';

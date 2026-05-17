@@ -11,6 +11,8 @@ export class Bestiaire extends Item {
 
         this.init([["Or", 25]]);
 
+        this.initFamily(["Livre"]);
+
         this.addText([
             "Quand posé : Découvre 3 créatures.",
             "[resolve {20, Découvre 5 créatures à la place.}]"]);

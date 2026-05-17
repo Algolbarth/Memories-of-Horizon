@@ -2,8 +2,8 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/card';
 import { Creature } from '$lib/cards/class/creature';
 
-export class Forgeron extends Creature {
-    name = "Forgeron";
+export class Libraire extends Creature {
+    name = "Libraire";
 
     constructor(system: System) {
         super(system);
@@ -15,12 +15,12 @@ export class Forgeron extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé : Pioche 3 cartes de famille Équipement.`);
+        this.addText(`Quand posé : Pioche 3 cartes de famille Livre.`);
     };
 
     useEffect = () => {
         let readCondition = (card: Card) => {
-            if (card.isFamily("Équipement")) {
+            if (card.isFamily("Livre")) {
                 return true;
             }
             return false;
