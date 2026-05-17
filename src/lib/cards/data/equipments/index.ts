@@ -39,6 +39,7 @@ export * from './cotte-de-mailles-en-fer';
 export * from './cotte-de-mailles-en-platine';
 export * from './cotte-epineuse';
 export * from './couronne';
+export * from './couronne-de-laurier';
 export * from './dague-de-cuivre';
 export * from './dague-empoisonnee';
 export * from './diademe';
