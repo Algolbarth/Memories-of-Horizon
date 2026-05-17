@@ -8,6 +8,7 @@ export * from './blason';
 export * from './bombe';
 export * from './boule-puante';
 export * from './bourse';
+export * from './brioche';
 export * from './brique';
 export * from './cadeau';
 export * from './carte-de-la-region';
