@@ -33,6 +33,7 @@ export * from './fleche-enflammee';
 export * from './fromage';
 export * from './herbes-curatives';
 export * from './herbes-medicinales';
+export * from './herbier';
 export * from './huile-lustrante';
 export * from './laine';
 export * from './lait';
