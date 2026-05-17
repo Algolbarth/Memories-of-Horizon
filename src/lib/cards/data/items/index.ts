@@ -5,6 +5,7 @@ export * from './bestiaire';
 export * from './biere';
 export * from './biscuit';
 export * from './blason';
+export * from './boite-de-chocolat';
 export * from './bombe';
 export * from './boule-puante';
 export * from './bourse';
