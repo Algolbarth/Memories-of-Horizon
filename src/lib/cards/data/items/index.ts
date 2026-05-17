@@ -32,6 +32,7 @@ export * from './fleche-empoisonnee';
 export * from './fleche-en-bois';
 export * from './fleche-enflammee';
 export * from './fromage';
+export * from './gateau';
 export * from './herbes-curatives';
 export * from './herbes-medicinales';
 export * from './herbier';
