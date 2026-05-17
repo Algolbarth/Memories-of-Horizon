@@ -1,6 +1,8 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
+import type { Card } from '$lib/cards/class/card';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Autodafe extends Action {
     name = "Autodafé";
@@ -23,13 +25,13 @@ export class Autodafe extends Action {
     useEffect = () => {
         let value = 0;
 
-        let stack = copy(this.owner().zone("Pile").cards);
+        let stack: Card[] = copy(this.owner().zone("Pile").cards);
         for (const card of stack) {
             card.mill();
             value++;
         }
 
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
             card.specialDamage(value, this);
         }

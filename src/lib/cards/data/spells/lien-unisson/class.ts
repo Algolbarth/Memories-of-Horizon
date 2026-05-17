@@ -3,6 +3,7 @@ import { Creature } from '$lib/cards/class/creature';
 import { Spell } from '$lib/cards/class/spell';
 import Use from './use.svelte';
 import { copy } from '$lib/utils';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class LienDUnisson extends Spell {
     name = "Lien d'unisson";
@@ -61,7 +62,7 @@ export class LienDUnisson extends Spell {
         if (this.owner().ressource("Mana").total() >= 150) {
             this.owner().ressource("Mana").spend(150);
 
-            let battlefield = copy(this.owner().zone("Terrain").cards);
+            let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Creature) {
                     card.stat("Constitution").increase(25);

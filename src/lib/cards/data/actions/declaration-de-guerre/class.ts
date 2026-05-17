@@ -2,6 +2,7 @@ import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class DeclarationDeGuerre extends Action {
     name = "Déclaration de guerre";
@@ -30,14 +31,14 @@ export class DeclarationDeGuerre extends Action {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 card.stat("Force").increase(10);
             }
         }
 
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
             card.specialDamage(10, this);
         }

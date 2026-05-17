@@ -2,6 +2,7 @@ import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class BagarreDeTaverne extends Action {
     name = "Bagarre de taverne";
@@ -24,7 +25,7 @@ export class BagarreDeTaverne extends Action {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             card.specialDamage(5, this);
             if (card instanceof Creature) {

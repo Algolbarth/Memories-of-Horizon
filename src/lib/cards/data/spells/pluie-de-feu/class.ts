@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Spell } from '$lib/cards/class/spell';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class PluieDeFeu extends Spell {
     name = "Pluie de feu";
@@ -34,7 +35,7 @@ export class PluieDeFeu extends Spell {
             damage = 10;
         }
 
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
             card.specialDamage(damage, this);
         }

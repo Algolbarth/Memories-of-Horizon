@@ -2,6 +2,7 @@ import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
 import { Item } from '$lib/cards/class/item';
+import type { Card } from '$lib/cards/class/card';
 
 export class Alambic extends Building {
     name = "Alambic";
@@ -18,7 +19,7 @@ export class Alambic extends Building {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let inventory = copy(this.owner().zone("Inventaire").cards);
+            let inventory: Card[] = copy(this.owner().zone("Inventaire").cards);
             for (const card of inventory) {
                 if (card instanceof Item && card.isFamily("Potion")) {
                     if (card.name == "Concoction") {

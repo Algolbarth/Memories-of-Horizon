@@ -3,6 +3,7 @@ import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import type { Unit } from '$lib/cards/class/unit';
 import Use from './use.svelte';
+import type { Card } from '$lib/cards/class/card';
 
 export class BucherDesVanites extends Action {
     name = "Bûcher des vanités";
@@ -48,7 +49,7 @@ export class BucherDesVanites extends Action {
 
         let value = 0;
 
-        let stack = copy(this.owner().zone("Pile").cards);
+        let stack: Card[] = copy(this.owner().zone("Pile").cards);
         for (const card of stack) {
             card.mill();
             value++;

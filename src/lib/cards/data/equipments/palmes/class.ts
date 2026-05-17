@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Equipment } from '$lib/cards/class/equipment';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Palmes extends Equipment {
     name = "Palmes";
@@ -18,7 +19,7 @@ export class Palmes extends Equipment {
 
     startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            let battlefield = copy(this.owner().zone("Terrain").cards);
+            let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card.isElement("Eau")) {
                     this.owner().ressource("Eau").produce(1);

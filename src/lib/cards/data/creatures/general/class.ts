@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class General extends Creature {
     name = "Général";
@@ -20,7 +21,7 @@ export class General extends Creature {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let battlefield = copy(this.owner().zone("Terrain").cards);
+            let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Creature) {
                     card.stat("Constitution").increase(5);

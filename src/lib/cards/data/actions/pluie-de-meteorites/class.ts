@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class PluieDeMeteorites extends Action {
     name = "Pluie de météorites";
@@ -42,7 +43,7 @@ export class PluieDeMeteorites extends Action {
             this.owner().ressource("Flux").stock(10);
         }
         else if (choice == "damage") {
-            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
                 card.specialDamage(20, this);
             }

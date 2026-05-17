@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import type { Card } from '$lib/cards/class/card';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Brochet extends Creature {
     name = "Brochet";
@@ -30,7 +31,7 @@ export class Brochet extends Creature {
         };
         this.owner().draw(1, readCondition);
 
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isFamily("Poisson")) {
                 this.stat("Constitution").increase(1);

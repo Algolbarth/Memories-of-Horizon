@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
+import type { Card } from '$lib/cards/class/card';
 
 export class CommissairePriseur extends Creature {
     name = "Commissaire priseur";
@@ -20,7 +21,7 @@ export class CommissairePriseur extends Creature {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let inventory = copy(this.owner().zone("Inventaire").cards);
+            let inventory: Card[] = copy(this.owner().zone("Inventaire").cards);
             for (const card of inventory) {
                 card.getSale("Or").increase(10);
             }

@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Equipment } from '$lib/cards/class/equipment';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Geomarteau extends Equipment {
     name = "Géomarteau";
@@ -24,7 +25,7 @@ export class Geomarteau extends Equipment {
     fightEffect = () => {
         this.stat("Secousses").increase(3);
 
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
             card.specialDamage(this.stat("Secousses").value(), this);
         }

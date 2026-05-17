@@ -224,7 +224,7 @@ export class Entity {
     };
 
     refreshStack = () => {
-        let stack = copy(this.zone("Pile").cards);
+        let stack: Card[] = copy(this.zone("Pile").cards);
         for (const card of stack) {
             if (!card.locked) {
                 card.remove();
@@ -303,7 +303,7 @@ export class Entity {
             }
         }
 
-        let stack = copy(this.zone("Pile").cards);
+        let stack: Card[] = copy(this.zone("Pile").cards);
         for (const card of stack) {
             card.buy();
         }

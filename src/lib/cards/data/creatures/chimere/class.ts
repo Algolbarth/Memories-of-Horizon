@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Chimere extends Creature {
     name = "Chimère";
@@ -20,7 +21,7 @@ export class Chimere extends Creature {
 
     useEffect = () => {
         let family_list: string[] = [];
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
 
         for (const card of battlefield) {
             if (card instanceof Creature) {

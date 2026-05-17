@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
 import { copy } from '$lib/utils';
+import type { Card } from '$lib/cards/class/card';
 
 export class MeuleAGrains extends Item {
     name = "Meule à grains";
@@ -18,7 +19,7 @@ export class MeuleAGrains extends Item {
     useEffect = () => {
         let value = 0;
 
-        let stack = copy(this.owner().zone("Pile").cards);
+        let stack: Card[] = copy(this.owner().zone("Pile").cards);
         for (const card of stack) {
             card.mill();
             value++;

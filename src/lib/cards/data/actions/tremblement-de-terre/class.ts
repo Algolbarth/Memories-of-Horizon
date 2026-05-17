@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class TremblementDeTerre extends Action {
     name = "Tremblement de terre";
@@ -21,8 +22,8 @@ export class TremblementDeTerre extends Action {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner().zone("Terrain").cards);
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
         let double_battlefield = battlefield.concat(adversary_battlefield);
 
         for (const card of double_battlefield) {

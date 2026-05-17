@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Incendie extends Action {
     name = "Incendie";
@@ -21,7 +22,7 @@ export class Incendie extends Action {
     };
 
     useEffect = () => {
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
         for (const card of adversary_battlefield) {
             card.stat("Brûlure").increase(5);
         }

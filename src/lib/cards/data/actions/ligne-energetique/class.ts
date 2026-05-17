@@ -3,6 +3,7 @@ import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class LigneEnergetique extends Action {
     name = "Ligne énergétique";
@@ -48,7 +49,7 @@ export class LigneEnergetique extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         let nb_element = 0;
 
         for (const card of battlefield) {

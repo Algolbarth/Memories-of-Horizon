@@ -2,6 +2,7 @@ import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class MilieuAquatique extends Action {
     name = "Milieu aquatique";
@@ -32,7 +33,7 @@ export class MilieuAquatique extends Action {
             value = 10;
         }
 
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isElement("Eau")) {
                 card.stat("Constitution").increase(value);

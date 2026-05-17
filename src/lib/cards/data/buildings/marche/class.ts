@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
+import type { Card } from '$lib/cards/class/card';
 
 export class Marche extends Building {
     name = "Marché";
@@ -12,14 +13,14 @@ export class Marche extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Quand se prépare sur le terrain : Réduit de 5 le coût en or de toutes les cartes sur votre pile.`);
+        this.addText(`Quand se prépare sur le terrain : Réduit de 5 le coût de toutes les cartes sur votre pile.`);
     };
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let stack = copy(this.owner().zone("Pile").cards);
+            let stack: Card[] = copy(this.owner().zone("Pile").cards);
             for (const card of stack) {
-                card.getCost("Or").decrease(5);
+                card.costReduce(5);
             }
         }
     };

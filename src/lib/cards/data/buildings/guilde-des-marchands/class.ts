@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
 import type { Card } from '$lib/cards/class/card';
 import { copy } from '$lib/utils';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class GuildeDesMarchands extends Building {
     name = "Guilde des marchands";
@@ -25,7 +26,7 @@ export class GuildeDesMarchands extends Building {
         }
 
         let value: number = 0;
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card.name == "Marchand") {
                 value++;

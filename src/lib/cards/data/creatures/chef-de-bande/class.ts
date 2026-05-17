@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { copy } from '$lib/utils';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class ChefDeBande extends Creature {
     name = "Chef de bande";
@@ -22,7 +23,7 @@ export class ChefDeBande extends Creature {
         if (this.owner().ressource("Or").total() >= 50) {
             this.owner().ressource("Or").spend(50);
 
-            let battlefield = copy(this.owner().zone("Terrain").cards);
+            let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Creature) {
                     card.stat("Constitution").increase(5);

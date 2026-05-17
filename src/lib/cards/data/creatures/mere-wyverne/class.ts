@@ -29,7 +29,7 @@ export class MereWyverne extends Creature {
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            let stack = copy(this.owner().zone("Pile").cards);
+            let stack: Card[] = copy(this.owner().zone("Pile").cards);
             for (const card of stack) {
                 if (card.isFamily("Wyverne")) {
                     card.costReduce(5);

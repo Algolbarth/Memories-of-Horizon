@@ -2,6 +2,7 @@ import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import type { Card } from '$lib/cards/class/card';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Empereur extends Creature {
     name = "Empereur";
@@ -25,7 +26,7 @@ export class Empereur extends Creature {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
                 this.stat("Constitution").increase(10);

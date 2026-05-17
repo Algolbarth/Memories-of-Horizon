@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class CapitaineDeLaGarde extends Creature {
     name = "Capitaine de la garde";
@@ -20,7 +21,7 @@ export class CapitaineDeLaGarde extends Creature {
     };
 
     useEffect = () => {
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.stat("Charisme").value() > 0) {
                 card.stat("Charisme").increase(1);

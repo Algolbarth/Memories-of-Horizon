@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class Gigantomachie extends Action {
     name = "Gigantomachie";
@@ -19,8 +20,8 @@ export class Gigantomachie extends Action {
         let check_inferior_level_5 = false;
         let check_superior_level_5 = false;
 
-        let battlefield = copy(this.owner().zone("Terrain").cards);
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
 
         for (const zone of [battlefield, adversary_battlefield]) {
             for (const card of zone) {
@@ -43,8 +44,8 @@ export class Gigantomachie extends Action {
     useEffect = () => {
         let nb_level_5 = 0;
 
-        let battlefield = copy(this.owner().zone("Terrain").cards);
-        let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
+        let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
 
         for (const zone of [battlefield, adversary_battlefield]) {
             for (const card of zone) {

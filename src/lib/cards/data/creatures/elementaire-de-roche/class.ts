@@ -2,6 +2,7 @@ import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class ElementaireDeRoche extends Creature {
     name = "Élémentaire de roche";
@@ -48,7 +49,7 @@ export class ElementaireDeRoche extends Creature {
             this.move("Terrain");
         }
         else if (choice == "effect") {
-            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
                 card.specialDamage(5, this);
             }

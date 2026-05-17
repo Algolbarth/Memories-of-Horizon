@@ -3,6 +3,7 @@ import { copy } from '$lib/utils';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class EventailDeCouteaux extends Equipment {
     name = "Éventail de couteaux";
@@ -58,13 +59,12 @@ export class EventailDeCouteaux extends Equipment {
     };
 
     useEffect = (choice: string, target: Creature | undefined) => {
-        this.targeting(target);
-
-        if (choice == "equip") {
+        if (choice == "equip" && target != undefined) {
+            this.targeting(target);
             target.equip(this);
         }
         else if (choice == "damage") {
-            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
                 card.specialDamage(3, this);
             }

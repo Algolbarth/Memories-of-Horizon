@@ -1,6 +1,7 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class ElementaireExplosif extends Creature {
     name = "Élémentaire explosif";
@@ -22,7 +23,7 @@ export class ElementaireExplosif extends Creature {
         if (this.owner().ressource("Feu").production >= 5) {
             this.owner().ressource("Feu").decrease(5);
 
-            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
                 card.specialDamage(5, this);
             }

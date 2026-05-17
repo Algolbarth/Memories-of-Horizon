@@ -3,6 +3,7 @@ import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class CercleDruidique extends Action {
     name = "Cercle druidique";
@@ -50,7 +51,7 @@ export class CercleDruidique extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        let battlefield = copy(this.owner().zone("Terrain").cards);
+        let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         let nb_druid = 0;
         let nb_same_element = 0;
 

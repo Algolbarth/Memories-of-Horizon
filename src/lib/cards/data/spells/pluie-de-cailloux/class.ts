@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Spell } from '$lib/cards/class/spell';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class PluieDeCailloux extends Spell {
     name = "Pluie de cailloux";
@@ -49,7 +50,7 @@ export class PluieDeCailloux extends Spell {
                 this.owner().getCard("Élémentaire de caillou").add("Terrain");
             }
 
-            let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+            let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
                 card.specialDamage(5, this);
             }
@@ -62,7 +63,7 @@ export class PluieDeCailloux extends Spell {
                 }
             }
             else if (choice == "damage") {
-                let adversary_battlefield = copy(this.adversary().zone("Terrain").cards);
+                let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
                 for (const card of adversary_battlefield) {
                     card.specialDamage(5, this);
                 }
