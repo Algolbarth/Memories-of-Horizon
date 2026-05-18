@@ -10,6 +10,7 @@ export * from './boite-de-chocolat';
 export * from './bombe';
 export * from './boule-puante';
 export * from './bourse';
+export * from './boussole';
 export * from './brioche';
 export * from './brique';
 export * from './cadeau';
