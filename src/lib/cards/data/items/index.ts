@@ -71,6 +71,7 @@ export * from './salade';
 export * from './sardines-en-boite';
 export * from './sifflet';
 export * from './tarte-aux-pommes';
+export * from './tataki-de-thon';
 export * from './the-vert';
 export * from './tomate';
 export * from './torche';

@@ -9,7 +9,7 @@ export class ParcheminDeSagesse extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 50]]);
 
         this.addText(`Quand posé : Réduit d'autant le coût d'une carte sur votre pile que 5 fois votre intelligence cumulée.`);
     };
