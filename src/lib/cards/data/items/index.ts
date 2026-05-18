@@ -76,5 +76,6 @@ export * from './tomate';
 export * from './torche';
 export * from './trefle';
 export * from './tresor';
+export * from './viande-rotie';
 export * from './vin';
 export * from './whisky';
