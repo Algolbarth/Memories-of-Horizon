@@ -57,6 +57,7 @@ export * from './plaque-armure';
 export * from './poire';
 export * from './pomme';
 export * from './pomme-de-terre';
+export * from './pot-de-peinture';
 export * from './pot-en-terre-cuite';
 export * from './potion-de-force';
 export * from './potion-de-mana';
