@@ -3,8 +3,8 @@ import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
 import Use from './use.svelte';
 
-export class ViandeRotie extends Item {
-    name = "Viande rôtie";
+export class BoeufGrilee extends Item {
+    name = "Boeuf grillée";
 
     constructor(system: System) {
         super(system);
