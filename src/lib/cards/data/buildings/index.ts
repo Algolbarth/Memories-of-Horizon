@@ -50,6 +50,7 @@ export * from './porte';
 export * from './puit';
 export * from './puit-de-mana';
 export * from './restaurant';
+export * from './restaurant-de-luxe';
 export * from './salle-armes';
 export * from './salle-des-coffres';
 export * from './satellite';
