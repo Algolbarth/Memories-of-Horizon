@@ -50,7 +50,7 @@
   --card: rgb(200, 187, 141);
   --card_box: rgb(190, 150, 48);
   --card_hover: rgb(175, 125, 0);
-  --preview: #cdbc90;
+  --preview: rgb(205, 188, 144);
   --preview_hover: rgb(190, 150, 48);
 
   --menu: rgba(147, 108, 11, 1);
@@ -59,7 +59,6 @@
 
   --deck: rgb(92, 41, 0);
   --deck_preview: rgb(109, 61, 22);
-  --deck_preview_hover: rgb(142, 87, 42);
 
   --attacker: rgb(200, 50, 50);
   --attacker_hover: rgba(150, 50, 50, 1);

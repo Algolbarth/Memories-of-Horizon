@@ -12,7 +12,7 @@
 </script>
 
 <div class={"zone " + (entity == system.train.player ? "left" : "right")}>
-	<div class="preview deck">
+	<div class={"preview deck " + entity.deck.mode}>
 		<div>{entity.deck.name}</div>
 
 		<div style="text-align:right;margin-right:0.5em">
@@ -137,13 +137,27 @@
 		background: var(--life);
 	}
 
+	div.life:hover {
+		background: var(--life);
+	}
+
 	div.deck {
+		transition: none;
 		border-radius: 0;
-
-		background-color: var(--deck_preview);
 		background-image: var(--leather);
-
 		grid-template-columns: 1fr 1fr;
+
+		&.standard {
+			background-color: rgb(150, 75, 0);
+		}
+
+		&.wild {
+			background-color: rgb(100, 50, 0);
+		}
+
+		&.train {
+			background-color: rgb(110, 0, 0);
+		}
 	}
 
 	input[type="number"] {

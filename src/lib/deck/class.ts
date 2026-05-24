@@ -3,6 +3,7 @@ import type { System } from "$lib/system/class";
 
 export class Deck {
     name: string;
+    mode: string;
     cards: string[] = [];
     victory: number = 0;
     defeat: number = 0;
@@ -18,8 +19,9 @@ export class Deck {
         ["Lieu", 0],
     ];
 
-    constructor(system: System) {
+    constructor(system: System, mode: string) {
         this.system = system;
+        this.mode = mode;
 
         this.name = this.changeName("Nouveau deck", 0);
 
@@ -138,7 +140,7 @@ export class Deck {
     };
 
     clone = () => {
-        let deck = new Deck(this.system);
+        let deck = new Deck(this.system, "wild");
         deck.changeName("Clone de " + this.name, 0);
         for (const card of this.cards) {
             deck.add(card);

@@ -56,7 +56,7 @@ div.center {
 }
 
 div.box {
-  transition: all var(--delay) ease-in-out;
+  transition: background-color var(--delay) ease-in-out;
 
   background-color: var(--card_box);
   background-image: var(--paper);
@@ -69,12 +69,12 @@ div.box {
 }
 
 div.box:hover {
-  transition: all var(--delay_hover) ease-in-out;
+  transition: background-color var(--delay_hover) ease-in-out;
   background-color: var(--card_hover);
 }
 
 div.preview {
-  transition: all var(--delay) ease-in-out;
+  transition: background-color var(--delay) ease-in-out;
 
   border: solid;
   border-width: 0.25vmin;
@@ -90,8 +90,7 @@ div.preview {
 }
 
 div.preview:hover {
-  transition: all var(--delay_hover) ease-in-out;
-
+  transition: background-color var(--delay_hover) ease-in-out;
   background-color: var(--preview_hover);
 }
 

@@ -4,7 +4,7 @@
 	import View from "../cards/view/main.svelte";
 	import { several } from "../utils";
 	import type { System } from "$lib/system/class";
-	import type { Card } from "../cards/class";
+	import type { Card } from "$lib/cards/class/card";
 	import type { Deck } from "./class";
 
 	export let system: System;
@@ -73,10 +73,10 @@
 
 	<div id="list" class="scroll">
 		{#each card_list as card}
-			<div class={(deck.check(card.name) ? "present " : "") + "preview"}>
+			<div class={(deck.checkDuplicate(card.name) ? "present " : "") + "preview"}>
 				<div>
 					<button
-						class={deck.check(card.name) ? "present " : ""}
+						class={deck.checkDuplicate(card.name) ? "present " : ""}
 						on:click={() => {
 							system.view.card = card;
 						}}
@@ -92,7 +92,7 @@
 				</div>
 
 				<div style="text-align:right;">
-					{#if !deck.check(card.name)}
+					{#if !deck.checkDuplicate(card.name)}
 						<button
 							class="active"
 							on:click={() => {

@@ -40,7 +40,7 @@ export async function load(files: FileList, system: System) {
 
         let wild_decks: number = readInt();
         for (let i = 0; i < wild_decks; i++) {
-            let deck = new Deck(system);
+            let deck = new Deck(system, "wild");
 
             deck.changeName(readValue(), 0);
 

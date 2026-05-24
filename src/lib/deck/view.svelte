@@ -10,7 +10,7 @@
 
 {#if deck != undefined && deck instanceof Deck}
 	<div id="shadow">
-		<div id="body">
+		<div id="body" class={deck.mode}>
 			<div id="cover">
 				<div class="inside">
 					<div class="box name center" style="text-align:center">
@@ -22,7 +22,7 @@
 			<div id="content">
 				<div class="inside inside-bottom scroll">
 					{#if deck != system.train_deck}
-						<div class="box score">
+						<div class={"box score " + deck.mode}>
 							<div class="cost">
 								{several(deck.victory + deck.defeat, ["Partie", "jouée"])}
 							</div>
@@ -39,7 +39,7 @@
 						</div>
 					{/if}
 
-					<div class="box">
+					<div class={"box " + deck.mode}>
 						{#if deck.cards.length > 0}
 							{several(deck.cards.length, ["Carte"])}
 						{:else}
@@ -47,45 +47,47 @@
 						{/if}
 					</div>
 
-					<div class="box">
-						<div class="histo">
-							<div class="chart">
-								{#each deck.levels as level}
-									<div class="col">
-										{#if level[1] > 0}
-											<span class="count">{level[1]}</span>
-											<div class="bar" style="height:{Math.round((level[1] / deck.most_popular_level) * 100)}%"></div>
-										{/if}
-									</div>
-								{/each}
-							</div>
+					{#if deck.cards.length > 0}
+						<div class={"box " + deck.mode}>
+							<div class="histo">
+								<div class="chart">
+									{#each deck.levels as level}
+										<div class="col">
+											{#if level[1] > 0}
+												<span class="count">{level[1]}</span>
+												<div class="bar" style="height:{Math.round((level[1] / deck.most_popular_level) * 100)}%"></div>
+											{/if}
+										</div>
+									{/each}
+								</div>
 
-							<div class="labels">
-								{#each deck.levels as level}
-									<span>{level[0]}</span>
-								{/each}
+								<div class="labels">
+									{#each deck.levels as level}
+										<span>{level[0]}</span>
+									{/each}
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="box elements">
-						{#each deck.elements as element}
-							{#if element[1] > 0}
-								<div class="cost" style={"background-color:" + system.ressources.find("", element[0])?.color + ";color:" + (system.ressources.find("", element[0])?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
-									{element[1]}
-									{[element[0]]}
+						<div class={"box elements " + deck.mode}>
+							{#each deck.elements as element}
+								{#if element[1] > 0}
+									<div class="cost" style={"background-color:" + system.ressources.find("", element[0])?.color + ";color:" + (system.ressources.find("", element[0])?.light_font ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)")}>
+										{element[1]}
+										{[element[0]]}
+									</div>
+								{/if}
+							{/each}
+						</div>
+
+						<div class={"box types " + deck.mode}>
+							{#each deck.types as type}
+								<div class="cost">
+									{several(type[1], [type[0]])}
 								</div>
-							{/if}
-						{/each}
-					</div>
-
-					<div class="box types">
-						{#each deck.types as type}
-							<div class="cost">
-								{several(type[1], [type[0]])}
-							</div>
-						{/each}
-					</div>
+							{/each}
+						</div>
+					{/if}
 				</div>
 			</div>
 		</div>
@@ -127,12 +129,23 @@
 		width: 100%;
 		height: 100%;
 
-		background-color: var(--deck);
 		background-image: var(--leather);
 
 		box-shadow: 0px 5px 5px rgba(0, 0, 0, 1);
-		transition: all 0.5s ease-in-out;
+		transition: box-shadow 0.5s ease-in-out;
 		grid-template-rows: 1fr 3fr;
+
+		&.standard {
+			background-color: rgb(150, 75, 0);
+		}
+
+		&.wild {
+			background-color: rgb(100, 50, 0);
+		}
+
+		&.train {
+			background-color: rgb(75, 0, 0);
+		}
 	}
 
 	#body:hover {
@@ -155,6 +168,19 @@
 	div.box {
 		background-image: var(--scroll);
 		border-style: solid;
+		transition: none;
+
+		&.standard {
+			background-color: rgb(150, 75, 0);
+		}
+
+		&.wild {
+			background-color: var(--card_hover);
+		}
+
+		&.train {
+			background-color: rgb(150, 7, 7);
+		}
 	}
 
 	div.score {

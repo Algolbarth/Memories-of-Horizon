@@ -341,21 +341,11 @@ export class Creature extends Unit {
 
             defender.defend(this);
 
-            let damage = this.stat("Force").value();
+            let damage: number = this.stat("Force").value();
 
             if (this.stat("Critique").value() == 100) {
                 this.stat("Critique").remove(100);
                 damage = damage * this.stat("Intensité").value();
-            }
-
-            let damage_reduction = defender.stat("Endurance").value() - this.stat("Percée").value();
-            if (damage_reduction < 0) {
-                damage_reduction = 0;
-            }
-
-            damage -= damage_reduction;
-            if (damage < 0) {
-                damage = 0;
             }
 
             let damage_result = defender.physicalDamage(damage, this);

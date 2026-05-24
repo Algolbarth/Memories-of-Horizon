@@ -45,7 +45,7 @@ export class Entity {
             opponent.opponent = this;
         }
 
-        this.deck = new Deck(system);
+        this.deck = new Deck(system, "chapter");
 
         this.setRessources();
     };

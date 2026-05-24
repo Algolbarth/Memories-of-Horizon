@@ -17,7 +17,7 @@ export class Chapter {
         this.system = system;
         this.game = game;
         this.number = number;
-        this.step = new Step(0, [], 0, [], [], new Deck(system));
+        this.step = new Step(0, [], 0, [], [], new Deck(system, "chapter"));
     };
 
     init = () => {

@@ -24,14 +24,6 @@
 		system.train.add.reset();
 		system = system;
 	}
-
-	function check_side(index: number) {
-		if (index % 5 > 2) {
-			side_view = "left";
-		} else {
-			side_view = "right";
-		}
-	}
 </script>
 
 <div class="window">

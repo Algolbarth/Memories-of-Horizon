@@ -25,7 +25,7 @@ export class System {
     bosses: Bosses = new Bosses(this);
     standard_decks: Deck[] = [];
     wild_decks: Deck[] = [];
-    train_deck: Deck = new Deck(this);
+    train_deck: Deck = new Deck(this, "train");
     game: undefined | Game;
     train: Train = new Train(this);
     deck: Deck | undefined;

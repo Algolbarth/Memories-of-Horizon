@@ -3,7 +3,7 @@ import { Deck } from "./class";
 
 export class StandardDeck extends Deck {
     constructor(system: System, name: string, cards: string[]) {
-        super(system);
+        super(system, "standard");
 
         this.name = name;
 

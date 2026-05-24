@@ -92,6 +92,10 @@
 		background: var(--life);
 	}
 
+	div.life:hover {
+		background: var(--life);
+	}
+
 	div.stat {
 		background: var(--background);
 	}

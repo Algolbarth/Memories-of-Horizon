@@ -16,7 +16,7 @@
 	}
 
 	function newDeck() {
-		let deck = new Deck(system);
+		let deck = new Deck(system, "wild");
 		system.wild_decks.push(deck);
 		system.deck = deck;
 		system.page = "Deck";

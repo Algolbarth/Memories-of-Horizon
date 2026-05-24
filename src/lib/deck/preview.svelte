@@ -28,24 +28,34 @@
     >
         <svg class="deck" viewBox="0 0 500 500">
             <defs>
-                <pattern id="leather" patternUnits="userSpaceOnUse" x="0" y="0" width="500" height="500">
-                    <rect x="0" y="0" width="500" height="500" fill="rgb(109, 61, 22)" />
+                <pattern id="standard" patternUnits="userSpaceOnUse" x="0" y="0" width="500" height="500">
+                    <rect x="0" y="0" width="500" height="500" class="standard" />
+                    <image href="/textures/leather.png" x="0" y="0" width="500" height="500" preserveAspectRatio="xMidYMid slice" opacity="0.2" />
+                </pattern>
+
+                <pattern id="wild" patternUnits="userSpaceOnUse" x="0" y="0" width="500" height="500">
+                    <rect x="0" y="0" width="500" height="500" class="wild" />
+                    <image href="/textures/leather.png" x="0" y="0" width="500" height="500" preserveAspectRatio="xMidYMid slice" opacity="0.2" />
+                </pattern>
+
+                <pattern id="train" patternUnits="userSpaceOnUse" x="0" y="0" width="500" height="500">
+                    <rect x="0" y="0" width="500" height="500" class="train" />
                     <image href="/textures/leather.png" x="0" y="0" width="500" height="500" preserveAspectRatio="xMidYMid slice" opacity="0.2" />
                 </pattern>
             </defs>
 
-            <polygon class="face left" points="10,95 250,185 250,500 10,405" />
+            <polygon class={"face left " + deck.mode} points="10,95 250,185 250,500 10,405" />
             <polygon class="points" points="15,105 245,190 245,490 15,400" />
 
-            <polygon class="face right" points="250,275 490,185 490,405 250,500" />
+            <polygon class={"face right " + deck.mode} points="250,275 490,185 490,405 250,500" fill="url(#standard)" />
             <polygon class="points" points="255,280 485,195 485,400 255,490" />
 
             <polygon class="top" points="10,95 250,5 490,95 250,185" />
 
-            <polygon class="face hover" points="250,185 490,95 490,185 250,275" />
+            <polygon class={"face hover " + deck.mode} points="250,185 490,95 490,185 250,275" fill="url(#standard)" />
             <polygon class="points" points="255,190 485,105 485,180 255,265" />
 
-            <polygon class="face cache" points="10,95 250,5 490,95 250,185" />
+            <polygon class={"face cache " + deck.mode} points="10,95 250,5 490,95 250,185" fill="url(#standard)" />
             <polygon class="points" points="25,95 250,10 475,95 250,180" />
 
             <polygon class="face gold" points="350,185 400,165 400,195 350,215" />
@@ -144,15 +154,34 @@
         }
     }
 
-    polygon.cache {
-        fill: url(#leather);
+    rect.standard {
+        fill: rgb(173, 87, 0);
+    }
+
+    rect.wild {
+        fill: rgb(100, 50, 0);
+    }
+
+    rect.train {
+        fill: rgb(100, 0, 0);
     }
 
     polygon.face {
         stroke-width: 3;
         stroke-linejoin: round;
         stroke: black;
-        fill: url(#leather);
+    }
+
+    polygon.standard {
+        fill: url(#standard);
+    }
+
+    polygon.wild {
+        fill: url(#wild);
+    }
+
+    polygon.train {
+        fill: url(#train);
     }
 
     polygon.points {
