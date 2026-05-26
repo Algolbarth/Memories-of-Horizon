@@ -16,6 +16,7 @@ export * from './brique';
 export * from './cadeau';
 export * from './carpacio-de-thon';
 export * from './carte-de-la-region';
+export * from './cendres';
 export * from './chataigne';
 export * from './chocolat';
 export * from './ciment';
