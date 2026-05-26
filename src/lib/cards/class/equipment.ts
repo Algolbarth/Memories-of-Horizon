@@ -137,13 +137,22 @@ export class Equipment extends Item {
         this.slot = undefined;
     };
 
-    equipStat = (name: string) => {
-        for (const stat of this.equipStats) {
-            if (stat.name == name) {
-                return stat;
+    checkEquipStat = (name: string) => {
+        for (const s of this.equipStats) {
+            if (name == s.name) {
+                return s;
             }
         }
-        return new EquipStat(name, 0, 0, this);
+        return undefined;
+    };
+
+    equipStat = (name: string) => {
+        let check = this.checkEquipStat(name);
+        if (check == undefined) {
+            console.log(name + " n'est pas une stat d'équipement pour " + this.name);
+            return new EquipStat(name, 0, 0, this);
+        }
+        return check;
     };
 
     addEquipStat = (name: string, value: number) => {

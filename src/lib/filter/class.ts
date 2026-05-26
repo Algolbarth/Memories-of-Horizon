@@ -10,7 +10,7 @@ export class Filter {
     types: string[] = ["Tous", "Action", "Bâtiment", "Créature", "Objet", "Lieu"];
     families: string[] = [];
     elements: string[] = [];
-    stats: string[] = ["Aucune", "Adresse", "Agilité", "Charisme", "Constitution", "Endurance", "Épine", "Force", "Garde", "Intelligence", "Intensité", "Magie", "Maîtrise", "Maniement", "Pénétration", "Percée", "Régénération", "Résistance", "Vitesse"];
+    stats: string[] = ["Aucune", "Adresse", "Agilité", "Charisme", "Constitution", "Endurance", "Épine", "Force", "Garde", "Intelligence", "Intensité", "Magie", "Maîtrise", "Maniement", "Pénétration", "Percée", "Portée", "Régénération", "Résistance", "Vitesse"];
 
     select_name: string = "";
 
@@ -241,11 +241,15 @@ export class Filter {
         }
 
         if (card instanceof Equipment) {
-            return this.useOperator(card.equipStat(this.select_stat).value(), this.select_stat_operator, this.select_stat_value);
+            if (card.checkEquipStat(this.select_stat)) {
+                return this.useOperator(card.equipStat(this.select_stat).value(), this.select_stat_operator, this.select_stat_value);
+            }
         }
-        else {
+
+        if (card.checkStat(this.select_stat)) {
             return this.useOperator(card.stat(this.select_stat).value(), this.select_stat_operator, this.select_stat_value);
         }
+
     };
 
     useOperator(card_value: number, operator: string, value: number) {

@@ -44,6 +44,10 @@ export class Unit extends Card {
             this.card.stat("Santé").init(value);
             this.card.stat("Vitalité").init(value);
         };
+        this.stat("Constitution").set = function (value: number) {
+            this.card.stat("Santé").set(value);
+            this.card.stat("Vitalité").set(value);
+        };
 
         this.addStat("Garde", 0);
 
@@ -70,6 +74,8 @@ export class Unit extends Card {
             }
             return false;
         };
+
+        this.addStat("Portée", 0);
 
         this.addStat("Vitesse", 0);
 

@@ -248,8 +248,8 @@ export class Game {
 
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
-                let cpy: Card[] = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
 
                     if (card.roundEffect != undefined) {
                         card.roundEffect();
@@ -277,6 +277,10 @@ export class Game {
 
                         if (card.stat("Brûlure").value() > 0) {
                             card.physicalDamage(card.stat("Brûlure").value(), card);
+                        }
+
+                        if (card.stat("Portée").value() > 0) {
+                            card.adversary().zone("Terrain").cards[0].physicalDamage(card.stat("Portée").value(), card);
                         }
                     }
                 }

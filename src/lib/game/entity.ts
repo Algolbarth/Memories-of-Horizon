@@ -106,6 +106,14 @@ export class Entity {
                         if (c.name == card.name) {
                             limited = true;
                         }
+
+                        if (c instanceof Creature) {
+                            for (const e of c.equipments) {
+                                if (e.name == card.name) {
+                                    limited = true;
+                                }
+                            }
+                        }
                     }
                 }
             }

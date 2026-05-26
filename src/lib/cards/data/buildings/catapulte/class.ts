@@ -7,16 +7,9 @@ export class Catapulte extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20], ["Terre", 20]]);
+        this.init([["Or", 10], ["Terre", 10]]);
 
         this.stat("Constitution").init(20);
-
-        this.addText(`Au début d'une manche : Inflige 20 dégâts spéciaux à l'unité en première position sur le terrain adverse.`);
-    };
-
-    roundEffect = () => {
-        if (this.isArea("Terrain")) {
-            this.adversary().zone("Terrain").cards[0].specialDamage(20, this);
-        }
+        this.stat("Portée").init(20);
     };
 };
