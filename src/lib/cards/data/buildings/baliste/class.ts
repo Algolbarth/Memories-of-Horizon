@@ -7,9 +7,9 @@ export class Baliste extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 50]]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(40);
         this.stat("Portée").init(20);
     };
 };

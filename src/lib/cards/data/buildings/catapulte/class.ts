@@ -7,9 +7,10 @@ export class Catapulte extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Terre", 10]]);
+        this.init([["Or", 25], ["Terre", 25]]);
 
         this.stat("Constitution").init(20);
+        this.stat("Endurance").init(10);
         this.stat("Portée").init(20);
     };
 };

@@ -7,9 +7,9 @@ export class Canon extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 35]]);
+        this.init([["Or", 100]]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(50);
         this.stat("Portée").init(50);
     };
 };

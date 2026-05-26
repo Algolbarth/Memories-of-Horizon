@@ -14,7 +14,7 @@ export class Satellite extends Building {
         this.stat("Constitution").init(1);
         this.stat("Portée").init(1);
 
-        this.addText(`Quand arrive sur le terrain : Augmente d'autant sa constitution et sa portée que votre flux.`);
+        this.addText(`Quand arrive sur le terrain : Augmente jusqu'à autant sa constitution et sa portée que votre flux.`);
     };
 
     addEffect = (zone: string) => {
