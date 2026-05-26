@@ -34,6 +34,8 @@ export class Creature extends Unit {
             return true;
         };
 
+        this.addStat("Affliction", 0);
+
         this.addStat("Maniement", 1);
         this.stat("Maniement").condition = function () {
             if (this.value() > 1) {
@@ -341,14 +343,20 @@ export class Creature extends Unit {
 
             defender.defend(this);
 
-            let damage: number = this.stat("Force").value();
+            let physical_damage: number = this.stat("Force").value();
+            let special_damage: number = this.stat("Affliction").value();
 
             if (this.stat("Critique").value() == 100) {
                 this.stat("Critique").remove(100);
-                damage = damage * this.stat("Intensité").value();
+                physical_damage = physical_damage * this.stat("Intensité").value();
+                special_damage = special_damage * this.stat("Intensité").value();
             }
 
-            let damage_result = defender.physicalDamage(damage, this);
+            let damage_result = defender.physicalDamage(physical_damage, this);
+
+            if (!damage_result.die) {
+                damage_result = defender.specialDamage(special_damage, this);
+            }
 
             if (damage_result.die) {
                 is_die = true;

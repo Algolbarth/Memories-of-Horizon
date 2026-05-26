@@ -15,6 +15,7 @@ Remplir la pile => 10 cartes
 Augmente la taille d'une zone de X => 50X
 
 X Force => X/2
+X Affliction => X/2
 X Portée => X/2
 X Vitalité => X/2
 X Constitution (pour une créature) => 3X/2

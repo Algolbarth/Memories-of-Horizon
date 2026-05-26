@@ -40,12 +40,15 @@ export class Equipment extends Item {
         this.addEquipStat("Endurance", 0);
         this.addEquipStat("Résistance", 0);
         this.addEquipStat("Épine", 0);
+        this.addEquipStat("Radiation", 0);
         this.addEquipStat("Maîtrise", 0);
         this.addEquipStat("Vitesse", 0);
         this.addEquipStat("Charisme", 0);
         this.addEquipStat("Magie", 0);
         this.addEquipStat("Intelligence", 0);
         this.addEquipStat("Force", 0);
+        this.addEquipStat("Affliction", 0);
+        this.addEquipStat("Portée", 0);
         this.addEquipStat("Agilité", 0);
         this.addEquipStat("Maniement", 0);
         this.addEquipStat("Percée", 0);
@@ -62,6 +65,7 @@ export class Equipment extends Item {
         this.addEquipStat("Étourdissement", 0);
         this.addEquipStat("Poison", 0);
         this.addEquipStat("Toxicité", 0);
+        this.addEquipStat("Brûlure", 0);
 
         this.addEquipTrait("Commune", false);
         this.addEquipTrait("Rare", false);
