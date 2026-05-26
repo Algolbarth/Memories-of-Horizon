@@ -15,6 +15,7 @@ Remplir la pile => 10 cartes
 Augmente la taille d'une zone de X => 50X
 
 X Force => X/2
+X Portée => X/2
 X Vitalité => X/2
 X Constitution (pour une créature) => 3X/2
 X Constitution (pour un bâtiment) => X/2
@@ -39,6 +40,7 @@ X Poison => X
 X Toxicité => 3X/2
 X Brûlure => 3X/2
 X Épine => 5X/2
+X Radiation => 5X/2
 
 Inflige X dégâts physiques => X/2
 Inflige X dégâts spéciaux => X/2

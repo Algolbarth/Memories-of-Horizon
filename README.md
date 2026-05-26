@@ -98,7 +98,7 @@ deno task tauri build --runner cargo-xwin --target x86_64-pc-windows-msvc
 ## 📜 Roadmap
 Next ajustements, new cards and mechanics are listed here :
 ```
-- New wyverns creatures and synergies
 - New elemental creatures for each element
+- Update general interface
 ```
 Read [Remaining.md](https://github.com/Algolbarth/memories-of-horizon/blob/main/REMAINING.md) to find out about all the features and content currently planned (non-definitive and non-exhaustive list).

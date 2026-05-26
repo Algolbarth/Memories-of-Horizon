@@ -410,6 +410,9 @@ export class Creature extends Unit {
         }
 
         if (this.stat("Épine").value() > 0) {
+            attacker.physicalDamage(this.stat("Épine").value(), this);
+        }
+        if (this.stat("Radiation").value() > 0) {
             attacker.specialDamage(this.stat("Épine").value(), this);
         }
     };

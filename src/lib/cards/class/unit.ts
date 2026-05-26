@@ -59,6 +59,8 @@ export class Unit extends Card {
 
         this.addStat("Épine", 0);
 
+        this.addStat("Radiation", 0);
+
         this.addStat("Initiative", 1);
         this.stat("Initiative").display = function () {
             if (this.card.system.game?.phase == "Combat" || this.value() != this.card.stat("Maîtrise").value()) {
