@@ -8,6 +8,38 @@
 
 	let level: number = zone.level!;
 	let size: number = zone.size!;
+
+	let dragging_index: number | null = null;
+	let drag_over_index: number | null = null;
+
+	function onDragStart(index: number) {
+		dragging_index = index;
+	}
+
+	function onDragOver(event: DragEvent, index: number) {
+		if (dragging_index != null) {
+			event.preventDefault();
+			drag_over_index = index;
+		}
+	}
+
+	function onDrop(index: number) {
+		if (dragging_index != null && dragging_index != index) {
+			const updated = [...zone.cards];
+			const [moved] = updated.splice(dragging_index, 1);
+			updated.splice(index, 0, moved);
+			zone.cards = updated;
+			system = system;
+		}
+
+		dragging_index = null;
+		drag_over_index = null;
+	}
+
+	function onDragEnd() {
+		dragging_index = null;
+		drag_over_index = null;
+	}
 </script>
 
 <div class={"zone " + (is_bot ? "right" : "left")}>
@@ -76,8 +108,8 @@
 		</div>
 	</div>
 
-	{#each zone.cards as card, i}
-		<div class="preview">
+	{#each zone.cards as card, index}
+		<div class="preview" role="listitem" draggable="true" on:dragstart={() => onDragStart(index)} on:dragover={(e) => onDragOver(e, index)} on:drop={() => onDrop(index)} on:dragend={onDragEnd} class:dragging={dragging_index === index} class:drag-over={drag_over_index === index && dragging_index !== index}>
 			{#if !is_bot}
 				<div>
 					<button
@@ -100,79 +132,21 @@
 						<button
 							class="remove"
 							on:click={() => {
-								zone.cards.splice(i, 1);
+								zone.cards.splice(index, 1);
 								system = system;
 							}}
 						>
 							Enlever
 						</button>
 					{/if}
-
-					{#if i > 0}
-						<button
-							class="active"
-							on:click={() => {
-								let temp = zone.cards[i - 1];
-								zone.cards[i - 1] = card;
-								zone.cards[i] = temp;
-							}}
-						>
-							&#9650
-						</button>
-					{:else}
-						<button class="desactivate">&#9650</button>
-					{/if}
-					{#if i < zone.cards.length - 1}
-						<button
-							class="active"
-							on:click={() => {
-								let temp = zone.cards[i + 1];
-								zone.cards[i + 1] = card;
-								zone.cards[i] = temp;
-							}}
-						>
-							&#9660
-						</button>
-					{:else}
-						<button class="desactivate">&#9660</button>
-					{/if}
 				</div>
 			{:else}
 				<div>
-					{#if i > 0}
-						<button
-							class="active"
-							on:click={() => {
-								let temp = zone.cards[i - 1];
-								zone.cards[i - 1] = card;
-								zone.cards[i] = temp;
-							}}
-						>
-							&#9650
-						</button>
-					{:else}
-						<button class="desactivate">&#9650</button>
-					{/if}
-					{#if i < zone.cards.length - 1}
-						<button
-							class="active"
-							on:click={() => {
-								let temp = zone.cards[i + 1];
-								zone.cards[i + 1] = card;
-								zone.cards[i] = temp;
-							}}
-						>
-							&#9660
-						</button>
-					{:else}
-						<button class="desactivate">&#9660</button>
-					{/if}
-
 					{#if zone.name != "Région" || zone.cards.length > 1}
 						<button
 							class="remove"
 							on:click={() => {
-								zone.cards.splice(i, 1);
+								zone.cards.splice(index, 1);
 								system = system;
 							}}
 						>
@@ -235,5 +209,14 @@
 	div.zone_taskbar {
 		grid-template-columns: 1fr 2fr;
 		text-align: left;
+	}
+
+	div.dragging {
+		opacity: 0.4;
+	}
+
+	div.drag-over {
+		outline: 2px dashed currentColor;
+		outline-offset: -3px;
 	}
 </style>

@@ -63,24 +63,7 @@
     </button>
 
     <div class="container">
-        <div style="display:flex;align-items:center;transform: scale(-1, 1)">
-            {#if can_deplace}
-                {#if index > 0}
-                    <button
-                        class="active arrow"
-                        on:click={() => {
-                            let temp = system.wild_decks[index - 1];
-                            system.wild_decks[index - 1] = deck;
-                            system.wild_decks[index] = temp;
-                        }}
-                    >
-                        ➤
-                    </button>
-                {:else}
-                    <button class="desactivate">➤</button>
-                {/if}
-            {/if}
-        </div>
+        <div></div>
 
         <button
             class="name"
@@ -103,24 +86,7 @@
             {deck.name}
         </button>
 
-        <div style="display:flex;align-items:center;">
-            {#if can_deplace}
-                {#if index < system.wild_decks.length - 1}
-                    <button
-                        class="active arrow"
-                        on:click={() => {
-                            let temp = system.wild_decks[index + 1];
-                            system.wild_decks[index + 1] = deck;
-                            system.wild_decks[index] = temp;
-                        }}
-                    >
-                        ➤
-                    </button>
-                {:else}
-                    <button class="desactivate">➤</button>
-                {/if}
-            {/if}
-        </div>
+        <div></div>
     </div>
 </div>
 
@@ -216,13 +182,5 @@
         border-color: black;
         color: black;
         background-color: var(--card_hover);
-    }
-
-    button.arrow {
-        color: var(--link_hover);
-    }
-
-    button.arrow:hover {
-        color: rgba(255, 255, 0, 1);
     }
 </style>

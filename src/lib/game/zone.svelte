@@ -5,6 +5,7 @@
 	import Preview from "./preview.svelte";
 	import { Stack } from "./stack";
 	import type { Zone } from "./zone";
+	import { Creature } from "$lib/cards/class/creature";
 
 	export let system: System;
 	export let game: Game;
@@ -13,6 +14,40 @@
 	export let selectCondition: Function | undefined;
 	export let selectAction: Function | undefined;
 	export let direction: string = "left";
+
+	let dragging_index: number | null = null;
+	let drag_over_index: number | null = null;
+
+	$: can_deplace = (card: any) => game.phase == "Préparation" && selectAction == undefined && (card.isArea("Inventaire") || (card.isArea("Terrain") && card instanceof Creature));
+
+	function onDragStart(index: number) {
+		dragging_index = index;
+	}
+
+	function onDragOver(event: DragEvent, index: number) {
+		if (dragging_index != null) {
+			event.preventDefault();
+			drag_over_index = index;
+		}
+	}
+
+	function onDrop(index: number) {
+		if (dragging_index != null && dragging_index != index) {
+			const updated = [...zone.cards];
+			const [moved] = updated.splice(dragging_index, 1);
+			updated.splice(index, 0, moved);
+			zone.cards = updated;
+			system = system;
+		}
+
+		dragging_index = null;
+		drag_over_index = null;
+	}
+
+	function onDragEnd() {
+		dragging_index = null;
+		drag_over_index = null;
+	}
 </script>
 
 {#if system.game}
@@ -98,8 +133,10 @@
 
 		<div id="list">
 			{#if zone.cards.length > 0}
-				{#each zone.cards as card}
-					<Preview bind:system bind:game bind:card bind:selectCondition bind:selectAction />
+				{#each zone.cards as card, index}
+					<div role="listitem" draggable={can_deplace(card)} on:dragstart={() => can_deplace(card) && onDragStart(index)} on:dragover={(e) => can_deplace(card) && onDragOver(e, index)} on:drop={() => can_deplace(card) && onDrop(index)} on:dragend={onDragEnd} class:dragging={dragging_index === index} class:drag-over={drag_over_index === index && dragging_index !== index}>
+						<Preview bind:system bind:game bind:card bind:selectCondition bind:selectAction />
+					</div>
 				{/each}
 			{:else}
 				Vide
@@ -130,5 +167,14 @@
 	div.infos {
 		display: grid;
 		grid-template-columns: 4.5em 1fr 4em;
+	}
+
+	div.dragging {
+		opacity: 0.4;
+	}
+
+	div.drag-over {
+		outline: 2px dashed currentColor;
+		outline-offset: -3px;
 	}
 </style>

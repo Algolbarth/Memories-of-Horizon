@@ -157,6 +157,7 @@
 
 		&.train {
 			background-color: rgb(110, 0, 0);
+			color: white;
 		}
 	}
 

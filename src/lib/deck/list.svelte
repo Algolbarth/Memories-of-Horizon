@@ -15,11 +15,44 @@
 		can_deplace = true;
 	}
 
+	let dragging_index: number | null = null;
+	let drag_over_index: number | null = null;
+
 	function newDeck() {
 		let deck = new Deck(system, "wild");
 		system.wild_decks.push(deck);
 		system.deck = deck;
 		system.page = "Deck";
+	}
+
+	function onDragStart(index: number) {
+		if (can_deplace) {
+			dragging_index = index;
+		}
+	}
+
+	function onDragOver(event: DragEvent, index: number) {
+		if (can_deplace && dragging_index != null) {
+			event.preventDefault();
+			drag_over_index = index;
+		}
+	}
+
+	function onDrop(index: number) {
+		if (can_deplace && dragging_index != null && dragging_index != index) {
+			const updated = [...decks];
+			const [moved] = updated.splice(dragging_index, 1);
+			updated.splice(index, 0, moved);
+			decks = updated;
+		}
+
+		dragging_index = null;
+		drag_over_index = null;
+	}
+
+	function onDragEnd() {
+		dragging_index = null;
+		drag_over_index = null;
 	}
 </script>
 
@@ -73,18 +106,20 @@
 
 	<div id="list" class="scroll">
 		{#each decks as deck, index}
-			<Preview
-				bind:system
-				bind:deck
-				bind:side_view
-				bind:can_deplace
-				{index}
-				fonction={() => {
-					system.deck = deck;
-					system.view.reset();
-					system.page = "Deck";
-				}}
-			/>
+			<div role="listitem" draggable={can_deplace} on:dragstart={() => onDragStart(index)} on:dragover={(e) => onDragOver(e, index)} on:drop={() => onDrop(index)} on:dragend={onDragEnd} class:dragging={dragging_index === index} class:drag-over={drag_over_index === index && dragging_index !== index}>
+				<Preview
+					bind:system
+					bind:deck
+					bind:side_view
+					bind:can_deplace
+					{index}
+					fonction={() => {
+						system.deck = deck;
+						system.view.reset();
+						system.page = "Deck";
+					}}
+				/>
+			</div>
 		{/each}
 	</div>
 </div>
@@ -115,5 +150,14 @@
 
 	div.right {
 		left: 54vw;
+	}
+
+	div.dragging {
+		opacity: 0.4;
+	}
+
+	div.drag-over {
+		outline: 2px dashed currentColor;
+		outline-offset: -3px;
 	}
 </style>

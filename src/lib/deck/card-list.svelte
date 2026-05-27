@@ -19,6 +19,11 @@
 	let sort_type: string = sort_types[0];
 	let card_list: string[] = [];
 
+	let dragging_index: number | null = null;
+	let drag_over_index: number | null = null;
+
+	$: can_deplace = deck.isEditable() && system.filter.isReset() && sort_type == "Personnalisé";
+
 	filterFunction();
 
 	function filterFunction() {
@@ -31,6 +36,38 @@
 		} else {
 			system.page = "WildDecks";
 		}
+	}
+
+	function onDragStart(index: number) {
+		if (can_deplace) {
+			dragging_index = index;
+		}
+	}
+
+	function onDragOver(event: DragEvent, index: number) {
+		if (can_deplace && dragging_index != null) {
+			event.preventDefault();
+			drag_over_index = index;
+		}
+	}
+
+	function onDrop(index: number) {
+		if (!can_deplace && dragging_index != null && dragging_index != index) {
+			const updated = [...deck.cards];
+			const [moved] = updated.splice(dragging_index, 1);
+			updated.splice(index, 0, moved);
+			deck.cards = updated;
+
+			filterFunction();
+		}
+
+		dragging_index = null;
+		drag_over_index = null;
+	}
+
+	function onDragEnd() {
+		dragging_index = null;
+		drag_over_index = null;
 	}
 </script>
 
@@ -165,8 +202,8 @@
 	</div>
 
 	<div id="list" class="scroll">
-		{#each card_list as card, i}
-			<div class="preview">
+		{#each card_list as card, index}
+			<div role="listitem" class="preview" draggable={can_deplace} on:dragstart={() => onDragStart(index)} on:dragover={(e) => onDragOver(e, index)} on:drop={() => onDrop(index)} on:dragend={onDragEnd} class:dragging={dragging_index === index} class:drag-over={drag_over_index === index && dragging_index !== index}>
 				<div>
 					<button
 						on:click={() => {
@@ -181,56 +218,6 @@
 					>
 						{card}
 					</button>
-				</div>
-
-				<div style="text-align:right;">
-					{#if deck.isEditable() && system.filter.isReset() && sort_type == "Personnalisé"}
-						{#if i > 0}
-							<button
-								class="active"
-								on:click={() => {
-									if (deck != undefined) {
-										let temp = deck.cards[i - 1];
-										deck.cards[i - 1] = card;
-										deck.cards[i] = temp;
-
-										temp = card_list[i - 1];
-										card_list[i - 1] = card;
-										card_list[i] = temp;
-
-										sort_type = "Personnalisé";
-									}
-								}}
-							>
-								&#9650
-							</button>
-						{:else}
-							<button class="desactivate">&#9650</button>
-						{/if}
-
-						{#if i < deck.cards.length - 1}
-							<button
-								class="active"
-								on:click={() => {
-									if (deck != undefined) {
-										let temp = deck.cards[i + 1];
-										deck.cards[i + 1] = card;
-										deck.cards[i] = temp;
-
-										temp = card_list[i + 1];
-										card_list[i + 1] = card;
-										card_list[i] = temp;
-
-										sort_type = "Personnalisé";
-									}
-								}}
-							>
-								&#9660
-							</button>
-						{:else}
-							<button class="desactivate">&#9660</button>
-						{/if}
-					{/if}
 				</div>
 			</div>
 		{/each}
@@ -270,6 +257,15 @@
 	.preview {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.preview.dragging {
+		opacity: 0.4;
+	}
+
+	.preview.drag-over {
+		outline: 2px dashed currentColor;
+		outline-offset: -3px;
 	}
 
 	#view {

@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Card } from "$lib/cards/class/card";
-	import { Creature } from "$lib/cards/class/creature";
 	import { Location } from "$lib/cards/class/location";
 	import type { System } from "$lib/system/class";
 	import type { Game } from "./class";
@@ -96,36 +95,6 @@
 						</button>
 					{:else}
 						<button>Changer</button>
-					{/if}
-				{/if}
-
-				{#if card.isArea("Inventaire") || card.isArea("Terrain")}
-					{#if card.emplacement() > 0 && card instanceof Creature}
-						<button
-							class="active"
-							on:click={() => {
-								card.up();
-								system = system;
-							}}
-						>
-							&#9650
-						</button>
-					{:else}
-						<button class="desactivate">&#9650</button>
-					{/if}
-
-					{#if card.emplacement() < card.area().cards.length - 1 && card instanceof Creature}
-						<button
-							class="active"
-							on:click={() => {
-								card.down();
-								system = system;
-							}}
-						>
-							&#9660
-						</button>
-					{:else}
-						<button class="desactivate">&#9660</button>
 					{/if}
 				{/if}
 			{/if}
