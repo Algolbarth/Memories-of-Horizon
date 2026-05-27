@@ -455,7 +455,7 @@ export class Game {
                         card.stat("Étourdissement").remove(1);
                     }
 
-                    if (card.stat("Brûlure").value() > 0) {
+                    if (card instanceof Unit && card.stat("Brûlure").value() > 0) {
                         card.stat("Brûlure").set(0);
                     }
                 }
