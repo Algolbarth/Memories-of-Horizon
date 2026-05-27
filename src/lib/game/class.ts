@@ -282,6 +282,10 @@ export class Game {
                         if (card.stat("Portée").value() > 0) {
                             card.adversary().zone("Terrain").cards[0].physicalDamage(card.stat("Portée").value(), card);
                         }
+
+                        if (card.stat("Psychisme").value() > 0) {
+                            card.adversary().zone("Terrain").cards[0].specialDamage(card.stat("Psychisme").value(), card);
+                        }
                     }
                 }
             }

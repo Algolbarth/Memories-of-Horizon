@@ -17,6 +17,7 @@ Augmente la taille d'une zone de X => 50X
 X Force => X/2
 X Affliction => X/2
 X Portée => 3X/2
+X Psychisme => 3X/2
 X Vitalité => X/2
 X Constitution (pour une créature) => 3X/2
 X Constitution (pour un bâtiment) => X/2

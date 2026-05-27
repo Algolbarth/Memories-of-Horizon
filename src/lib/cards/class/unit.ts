@@ -79,6 +79,8 @@ export class Unit extends Card {
 
         this.addStat("Portée", 0);
 
+        this.addStat("Psychisme", 0);
+
         this.addStat("Vitesse", 0);
 
         this.addStat("Charisme", 0);
