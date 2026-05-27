@@ -10,9 +10,9 @@ export class TourDeSiege extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 40]]);
+        this.init([["Or", 50]]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(40);
 
         this.addText(`Au début d'une manche : Augmente de 10 la constitution et la force de la créature sur votre terrain la plus en avant.`);
     };

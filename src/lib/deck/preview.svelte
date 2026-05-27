@@ -12,7 +12,7 @@
     function check_side(index: number) {
         if (index % 5 > 2) {
             side_view = "left";
-        } else {
+        } else if (index % 5 < 2) {
             side_view = "right";
         }
     }
@@ -89,7 +89,6 @@
                 system.view.quick = deck;
             }}
             on:mouseleave={() => {
-                check_side(index);
                 system.view.quick = undefined;
             }}
             on:click={() => {

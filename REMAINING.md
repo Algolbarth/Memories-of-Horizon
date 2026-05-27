@@ -7,7 +7,6 @@ Ajouter les options pour afficher des infos lors des combats (ressources, défau
 Ajouter des bruitages (cliquer sur un bouton, afficher une carte, actualiser la pile)  
 Ajouter des stats lors d'une partie (nombres de cartes posées, d'étapes, de phases de combats perdues) 
 Ajouter ces stats pour le compte 
-Ajouter les stats des decks (types de carte, éléments, familles, niveau) 
 Afficher les cartes du deck, les cartes piochables, les cartes découvrables via la pile 
 Ajouter un texte explicatif pour les stats et effets 
 Ajouter un tutoriel dans jouer, avec les mécaniques du jeu 
