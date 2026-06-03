@@ -86,6 +86,7 @@ export * from './elementaire-marin';
 export * from './elementaire-oceanique';
 export * from './elementaliste';
 export * from './elfe';
+export * from './emeutier';
 export * from './empereur';
 export * from './epaulard';
 export * from './explorateur';
