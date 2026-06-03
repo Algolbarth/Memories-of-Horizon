@@ -688,10 +688,10 @@ export class Card {
         text = text + "[choice {";
         for (const choice of choices) {
             if (typeof choice === "string") {
-                text = text + "[option {" + choice + "}]";
+                text = text + "[option {0, " + choice + "}]";
             }
             else {
-                text = text + "[option {";
+                text = text + "[option {0, ";
                 for (const line of choice) {
                     text = text + line + "<br />";
                 }

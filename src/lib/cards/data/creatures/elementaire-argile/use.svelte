@@ -3,7 +3,7 @@
 	import Zone from "$lib/game/zone.svelte";
 	import type { System } from "$lib/system/class";
 	import type { Card } from "$lib/cards/class/card";
-	import { Building } from "$lib/cards/class/building";
+	import { Creature } from "$lib/cards/class/creature";
 
 	export let system: System;
 	export let game: Game;
@@ -12,7 +12,7 @@
 	let choice: string | undefined = undefined;
 
 	function selectCondition(target: Card) {
-		if (target instanceof Building) {
+		if (target instanceof Creature) {
 			return true;
 		}
 		return false;
@@ -44,9 +44,7 @@
 				choice = "effect";
 			}}
 		>
-			Augmente de 25 la constitution d'un bâtiment sur votre terrain
-			<br />
-			Augmente de 15 l'endurance de ce bâtiment
+			Augmente de 10 la constitution, la force et l'endurance d'une créature sur votre terrain
 			<br />
 			Se détruit
 		</button>
