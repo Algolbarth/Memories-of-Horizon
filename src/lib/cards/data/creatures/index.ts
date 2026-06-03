@@ -167,6 +167,7 @@ export * from './petite-fille';
 export * from './phytomancien';
 export * from './pionnier';
 export * from './piquier-gobelin';
+export * from './porte-flambeau';
 export * from './pretre';
 export * from './prince';
 export * from './princesse';
