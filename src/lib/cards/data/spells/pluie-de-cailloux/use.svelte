@@ -21,7 +21,7 @@
 			selectAction("creature");
 		}}
 	>
-		Remplit votre terrain d'Élémentaire de caillou
+		Remplit votre terrain d'Élémentaire de cailloux
 	</button>
 
 	<br />

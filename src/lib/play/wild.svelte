@@ -68,7 +68,6 @@
 				bind:system
 				bind:deck
 				bind:side_view
-				can_deplace={false}
 				{index}
 				fonction={() => {
 					system.view.reset();

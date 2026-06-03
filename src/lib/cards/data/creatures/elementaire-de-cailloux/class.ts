@@ -3,13 +3,13 @@ import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
 
-export class ElementaireDeCaillou extends Creature {
-    name = "Élémentaire de caillou";
+export class ElementaireDeCailloux extends Creature {
+    name = "Élémentaire de cailloux";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Terre", 4]]);
+        this.init([["Terre", 5]]);
 
         this.initFamily(["Élémentaire"]);
 
@@ -19,7 +19,7 @@ export class ElementaireDeCaillou extends Creature {
 
         this.addChoice([
             `Se place sur votre terrain.`,
-            [`Inflige 6 dégâts spéciaux à une unité sur le terrain adverse.`, `Se détruit.`]]);
+            [`Inflige 5 dégâts spéciaux à une unité sur le terrain adverse.`, `Se détruit.`]]);
     };
 
     canUse = () => {

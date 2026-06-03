@@ -111,7 +111,6 @@
 					bind:system
 					bind:deck
 					bind:side_view
-					bind:can_deplace
 					{index}
 					fonction={() => {
 						system.deck = deck;

@@ -7,7 +7,6 @@
     export let fonction: Function;
     export let index: number;
     export let side_view: string;
-    export let can_deplace: boolean;
 
     function check_side(index: number) {
         if (index % 5 > 2) {
