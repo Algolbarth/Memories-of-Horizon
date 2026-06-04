@@ -69,6 +69,7 @@ export * from './druide-des-plaines';
 export * from './druide-des-recifs';
 export * from './druide-marchand';
 export * from './ecuyer';
+export * from './elementaire-ardent';
 export * from './elementaire-argile';
 export * from './elementaire-de-briques';
 export * from './elementaire-de-bulles';

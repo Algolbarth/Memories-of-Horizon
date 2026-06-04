@@ -11,18 +11,18 @@ export class ElementaireMarin extends Creature {
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(50);
-        this.stat("Force").init(50);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
 
-        this.addText(`Quand se prépare sur le terrain : [source {10, Augmente de 10 sa constitution et sa force.}]`);
+        this.addText(`Quand se prépare sur le terrain : [source {15, Augmente de 25 sa constitution et sa force.}]`);
     };
 
     startPhaseEffect = () => {
-        if (this.isArea("Terrain") && this.owner().ressource("Eau").total() >= 10) {
-            this.owner().ressource("Eau").spend(10);
+        if (this.isArea("Terrain") && this.owner().ressource("Eau").total() >= 15) {
+            this.owner().ressource("Eau").spend(15);
 
-            this.stat("Constitution").increase(10);
-            this.stat("Force").increase(10);
+            this.stat("Constitution").increase(25);
+            this.stat("Force").increase(25);
         }
     };
 };

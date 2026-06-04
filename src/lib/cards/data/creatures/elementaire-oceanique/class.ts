@@ -7,14 +7,14 @@ export class ElementaireOceanique extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Eau", 150]]);
+        this.init([["Eau", 500]]);
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(150);
-        this.stat("Force").init(150);
+        this.stat("Constitution").init(100);
+        this.stat("Force").init(100);
 
-        this.addText(`Quand posé : [source_inf {1, Augmente de 1 sa constitution et sa force.}]`);
+        this.addText(`Quand posé : [source_inf {1, Augmente de 5 sa constitution et sa force.}]`);
     };
 
     useEffect = () => {
@@ -22,8 +22,8 @@ export class ElementaireOceanique extends Creature {
 
         this.owner().ressource("Eau").spend(this.owner().ressource("Eau").total());
 
-        this.stat("Constitution").increase(value);
-        this.stat("Force").increase(value);
+        this.stat("Constitution").increase(5 * value);
+        this.stat("Force").increase(5 * value);
 
         this.move("Terrain");
         this.pose();
