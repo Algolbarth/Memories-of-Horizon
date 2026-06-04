@@ -201,6 +201,7 @@ export * from './thon';
 export * from './titan';
 export * from './tortue';
 export * from './tortue-geante';
+export * from './tortue-hydrodorsale';
 export * from './troubadour';
 export * from './vache';
 export * from './vestale';
