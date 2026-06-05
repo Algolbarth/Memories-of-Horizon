@@ -21,7 +21,7 @@
 			selectAction("stockage");
 		}}
 	>
-		Stocke 10 flux
+		Stocke 5 flux
 	</button>
 
 	<br />

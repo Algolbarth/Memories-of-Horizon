@@ -11,16 +11,9 @@ export class NavetteSpatiale extends Building {
 
         this.initFamily(["Astronef"]);
 
-        this.stat("Constitution").init(40);
+        this.stat("Constitution").init(20);
 
-        this.addText(`Quand posé ou quand se prépare sur le terrain : Stocke 1 flux.`);
-    };
-
-    useEffect = () => {
-        this.owner().ressource("Flux").stock(1);
-
-        this.move("Terrain");
-        this.pose();
+        this.addText(`Quand se prépare sur le terrain : Stocke 1 flux.`);
     };
 
     startPhaseEffect = () => {

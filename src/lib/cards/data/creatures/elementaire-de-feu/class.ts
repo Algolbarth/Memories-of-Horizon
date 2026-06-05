@@ -14,12 +14,12 @@ export class ElementaireDeFeu extends Creature {
         this.stat("Constitution").init(15);
         this.stat("Force").init(15);
 
-        this.addText(`Quand arrive sur le terrain : [blaze {2, Augmente de 10 sa constitution et sa force.}]`);
+        this.addText(`Quand arrive sur le terrain : [blaze {1, Augmente de 10 sa constitution et sa force.}]`);
     };
 
     addEffect = (zone: string) => {
-        if (zone == "Terrain" && this.owner().ressource("Feu").production >= 2) {
-            this.owner().ressource("Feu").decrease(2);
+        if (zone == "Terrain" && this.owner().ressource("Feu").production >= 1) {
+            this.owner().ressource("Feu").decrease(1);
 
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);

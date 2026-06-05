@@ -7,21 +7,14 @@ export class Marchand extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 20]]);
+        this.init([["Or", 25]]);
 
         this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé ou quand se prépare sur le terrain : Augmente de 1 votre production d'or.`);
-    };
-
-    useEffect = () => {
-        this.owner().ressource("Or").increase(1);
-
-        this.move("Terrain");
-        this.pose();
+        this.addText(`Quand se prépare sur le terrain : Augmente de 1 votre production d'or.`);
     };
 
     startPhaseEffect = () => {

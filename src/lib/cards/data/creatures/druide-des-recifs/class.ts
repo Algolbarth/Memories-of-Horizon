@@ -18,15 +18,16 @@ export class DruideDesRecifsOndin extends DruideDesRecifs {
 
         this.initFamily(["Ondin"]);
 
-        this.stat("Constitution").init(30);
-        this.stat("Force").init(30);
+        this.stat("Constitution").init(25);
+        this.stat("Force").init(25);
+        this.stat("Endurance").init(5);
 
         this.addText(`Quand se prépare sur le terrain : Augmente de 1 votre production d'eau.`);
     };
 
     startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
-            this.owner().ressource("Eau").increase(2);
+            this.owner().ressource("Eau").increase(1);
         }
     };
 };

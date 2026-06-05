@@ -7,7 +7,7 @@ export class TortueHydrodorsale extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Eau", 10]]);
+        this.init([["Or", 12], ["Eau", 12]]);
 
         this.initFamily(["Reptile"]);
 

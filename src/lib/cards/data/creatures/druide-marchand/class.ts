@@ -5,7 +5,7 @@ class DruideMarchand extends Druid {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 30]]);
     };
 };
 
@@ -18,8 +18,8 @@ export class DruideMarchandHumain extends DruideMarchand {
 
         this.initFamily(["Humain"]);
 
-        this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Constitution").init(5);
+        this.stat("Force").init(5);
 
         this.addText(`Quand se prépare sur le terrain : Augmente de 1 votre production d'or.`);
     };
@@ -41,7 +41,7 @@ export class DruideMarchandBoeuf extends DruideMarchand {
         this.trait("Rare").init(true);
         this.trait("Forme animale").init(true);
 
-        this.stat("Constitution").init(25);
+        this.stat("Constitution").init(35);
         this.stat("Force").init(10);
     };
 };

@@ -7,9 +7,9 @@ export class FontaineDeBambou extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 18], ["Eau", 18]]);
+        this.init([["Or", 30], ["Eau", 30]]);
 
-        this.stat("Constitution").init(10);
+        this.stat("Constitution").init(20);
 
         this.addText(`Quand se prépare sur le terrain : Génère {card:Écoulement} dans votre inventaire.`);
     };

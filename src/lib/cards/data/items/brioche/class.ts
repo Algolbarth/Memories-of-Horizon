@@ -15,7 +15,7 @@ export class Brioche extends Item {
 
         this.addText([
             "Quand posé : Soigne 100 blessures à une créature sur votre terrain.",
-            "[satiety {Augmente de 10 votre production d'or à la place.}]"]);
+            "[satiety {Augmente de 5 votre production d'or à la place.}]"]);
     };
 
     canUse = () => {
@@ -59,7 +59,7 @@ export class Brioche extends Item {
         this.targeting(target);
 
         if (!target.isDamaged()) {
-            target.owner().ressource("Or").increase(10);
+            target.owner().ressource("Or").increase(5);
         }
         else {
             target.heal(100);

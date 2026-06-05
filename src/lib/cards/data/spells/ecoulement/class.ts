@@ -7,20 +7,20 @@ export class Ecoulement extends Spell {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 8], ["Eau", 8]]);
+        this.init([["Or", 12], ["Eau", 12]]);
 
         this.addText([
-            `Quand posé : Augmente de 3 votre production d'eau.`,
-            `[sorcery {10, Augmente de 5 votre production d'eau à la place.}]`]);
+            `Quand posé : Augmente de 2 votre production d'eau.`,
+            `[sorcery {25, Augmente de 5 votre production d'eau à la place.}]`]);
     };
 
     useEffect = () => {
-        if (this.owner().ressource("Mana").total() >= 10) {
-            this.owner().ressource("Mana").spend(10);
+        if (this.owner().ressource("Mana").total() >= 25) {
+            this.owner().ressource("Mana").spend(25);
             this.owner().ressource("Eau").increase(5);
         }
         else {
-            this.owner().ressource("Eau").increase(3);
+            this.owner().ressource("Eau").increase(2);
         }
 
         this.move("Défausse");

@@ -40,7 +40,7 @@
 				choice = "damage";
 			}}
 		>
-			Inflige 20 dégâts spéciaux à une unité sur le terrain adverse
+			Inflige 40 dégâts spéciaux à une unité sur le terrain adverse
 		</button>
 	</div>
 {:else if choice == "damage"}

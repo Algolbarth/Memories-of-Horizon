@@ -7,19 +7,19 @@ export class ElementaireArdent extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Eau", 35]]);
+        this.init([["Feu", 30]]);
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(25);
-        this.stat("Force").init(25);
+        this.stat("Constitution").init(30);
+        this.stat("Force").init(30);
 
         this.addText(`Quand se prépare sur le terrain : [blaze {1, Augmente de 10 sa constitution et sa force.}]`);
     };
 
     startPhaseEffect = () => {
-        if (this.isArea("Terrain") && this.owner().ressource("Feu").production >= 2) {
-            this.owner().ressource("Feu").decrease(2);
+        if (this.isArea("Terrain") && this.owner().ressource("Feu").production >= 1) {
+            this.owner().ressource("Feu").decrease(1);
 
             this.stat("Constitution").increase(10);
             this.stat("Force").increase(10);

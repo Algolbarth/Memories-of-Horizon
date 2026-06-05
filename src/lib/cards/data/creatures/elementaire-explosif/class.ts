@@ -16,7 +16,7 @@ export class ElementaireExplosif extends Creature {
         this.stat("Constitution").init(50);
         this.stat("Force").init(50);
 
-        this.addText(`Quand posé : [blaze {5, Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse.}]`);
+        this.addText(`Quand posé : [blaze {5, Inflige 10 dégâts spéciaux à toutes les unités sur le terrain adverse.}]`);
     };
 
     useEffect = () => {
@@ -25,7 +25,7 @@ export class ElementaireExplosif extends Creature {
 
             let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);
             for (const card of adversary_battlefield) {
-                card.specialDamage(5, this);
+                card.specialDamage(10, this);
             }
         }
 

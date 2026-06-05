@@ -13,8 +13,8 @@ export class AncienneWyverneDoree extends Creature {
 
         this.initFamily(["Reptile", "Wyverne"]);
 
-        this.stat("Constitution").init(200);
-        this.stat("Force").init(200);
+        this.stat("Constitution").init(150);
+        this.stat("Force").init(150);
 
         this.addText(`Quand une carte alliée d'élément Neutre est posée : Si sur la pile : Réduit de 25 son coût.`);
         this.addText(`Quand une carte alliée d'élément Neutre est posée : Si sur le terrain : Augmente de 1 votre production d'or.`);

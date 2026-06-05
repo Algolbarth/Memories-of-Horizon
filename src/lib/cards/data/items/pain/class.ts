@@ -9,12 +9,12 @@ export class Pain extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 5]]);
+        this.init([["Or", 10]]);
 
         this.initFamily(["Nourriture"]);
 
         this.addText([
-            "Quand posé : Soigne 10 blessures à une créature sur votre terrain.",
+            "Quand posé : Soigne 20 blessures à une créature sur votre terrain.",
             "[satiety {Augmente de 1 votre production d'or à la place.}]"]);
     };
 
@@ -62,7 +62,7 @@ export class Pain extends Item {
             target.owner().ressource("Or").increase(1);
         }
         else {
-            target.heal(10);
+            target.heal(20);
         }
 
         this.move("Défausse");

@@ -12,7 +12,7 @@ export class Torche extends Item {
         this.init([["Or", 6], ["Feu", 6]]);
 
         this.addChoice([
-            `Augmente de 2 votre production de feu.`,
+            `Augmente de 1 votre production de feu.`,
             `Inflige 20 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
@@ -39,7 +39,7 @@ export class Torche extends Item {
 
     useEffect = (choice: string, target: Unit | undefined = undefined) => {
         if (choice == "production") {
-            this.owner().ressource("Feu").increase(2);
+            this.owner().ressource("Feu").increase(1);
         }
         else if (choice == "damage" && target != undefined) {
             this.targeting(target);

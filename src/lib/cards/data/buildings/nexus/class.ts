@@ -9,11 +9,11 @@ export class Nexus extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 50]]);
+        this.init([["Or", 100]]);
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(20);
+        this.stat("Constitution").init(40);
 
         this.addText(`Quand une créature alliée de famille Élémentaire est posée : Si sur le terrain : Augmente de 1 votre production de ressources de chaque élément de cette carte.`);
     };

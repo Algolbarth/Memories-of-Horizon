@@ -9,11 +9,11 @@ export class Meteore extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 12]]);
+        this.init([["Or", 25]]);
 
         this.addChoice([
             `Stocke 1 flux.`,
-            `Inflige 20 dégâts spéciaux à une unité sur le terrain adverse.`]);
+            `Inflige 40 dégâts spéciaux à une unité sur le terrain adverse.`]);
     };
 
     canUse = () => {
@@ -44,7 +44,7 @@ export class Meteore extends Item {
         else if (choice == "damage" && target != undefined) {
             this.targeting(target);
 
-            target.specialDamage(20, this);
+            target.specialDamage(40, this);
         }
 
         this.move("Défausse");
