@@ -19,7 +19,7 @@ export class LoupDesMontagnes extends Creature {
     };
 
     fightEffect = (defender: Unit) => {
-        if (defender.stat("Endurance").value() > 0) {
+        if (defender.stat("Endurance").value() == 0) {
             this.stat('Force').increase(5);
         }
     };

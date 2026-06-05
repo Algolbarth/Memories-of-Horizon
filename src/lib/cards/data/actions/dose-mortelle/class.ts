@@ -11,7 +11,7 @@ export class DoseMortelle extends Action {
 
         this.init([["Or", 50]]);
 
-        this.addText(`Quand posé : Détruit une créature ayant sa vitalité inférieure ou égale au produit de son poison et de sa toxicité.`);
+        this.addText(`Quand posé : Détruit une créature empoisonnée ayant sa vitalité inférieure ou égale au produit de son poison et de sa toxicité.`);
     };
 
     canUse = () => {

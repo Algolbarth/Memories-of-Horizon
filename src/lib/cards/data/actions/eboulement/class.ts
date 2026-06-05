@@ -14,7 +14,7 @@ export class Eboulement extends Action {
 
         this.addText([
             `Quand posé : Augmente jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.`,
-            `Si cette créature a son étourdissement à 1 ou plus, lui inflige 50 dégâts spéciaux à la place.`]);
+            `Si cette créature est étourdie, lui inflige 50 dégâts spéciaux à la place.`]);
     };
 
     canUse = () => {

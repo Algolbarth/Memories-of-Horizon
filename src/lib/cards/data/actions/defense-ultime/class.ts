@@ -12,13 +12,13 @@ export class DefenseUltime extends Action {
         this.init([["Or", 50], ["Terre", 50]]);
 
         this.addText([
-            `Quand posé : Augmente de 250 l'endurance d'une créature sur votre terrain ayant une valeur d'étourdissement nulle pendant ce tour.`,
-            `Augmente jusqu'à 1 l'étourdissement de cette créature.`]);
+            `Quand posé : Augmente de 250 l'endurance d'une créature dégagée sur votre terrain pendant ce tour.`,
+            `Engage cette créature pendant ce tour.`]);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && card.stat("Étourdissement").value() == 0) {
+            if (card instanceof Creature && card.stat("Engagement").value() == 0) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ export class DefenseUltime extends Action {
             let target = undefined;
 
             for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.stat("Étourdissement").value() == 0) {
+                if (target == undefined && card instanceof Creature && card.stat("Engagement").value() == 0) {
                     target = card;
                 }
             }
@@ -48,7 +48,7 @@ export class DefenseUltime extends Action {
         this.targeting(target);
 
         target.stat("Endurance").turn += 250;
-        target.stat("Étourdissement").fix(1);
+        target.stat("Engagement").fix(1);
 
         this.move("Défausse");
         this.pose();

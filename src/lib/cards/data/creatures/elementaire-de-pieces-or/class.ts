@@ -7,14 +7,14 @@ export class ElementaireDePiecesDOr extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 150]]);
+        this.init([["Or", 110]]);
 
         this.initFamily(["Élémentaire"]);
 
-        this.stat("Constitution").init(150);
-        this.stat("Force").init(150);
+        this.stat("Constitution").init(10);
+        this.stat("Force").init(10);
 
-        this.addText(`Quand posé : [prime_inf {1, Augmente de 1 sa constitution et sa force.}]`);
+        this.addText(`Quand posé : [prime_inf {1, Augmente de 2 sa constitution et sa force.}]`);
     };
 
     useEffect = () => {

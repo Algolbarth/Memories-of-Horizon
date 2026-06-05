@@ -12,13 +12,13 @@ export class Incantation extends Action {
         this.init([["Or", 5]]);
 
         this.addText([
-            `Quand posé : Produit autant de mana que la magie d'une créature sur votre terrain ayant une valeur d'étourdissement nulle.`,
-            `Augmente jusqu'à 1 l'étourdissement de cette créature.`]);
+            `Quand posé : Produit autant de mana que la magie d'une créature dégagée sur votre terrain.`,
+            `Engage cette créature pendant ce tour.`]);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
+            if (card instanceof Creature && card.stat("Magie").value() > 0 && card.stat("Engagement").value() == 0) {
                 return true;
             }
         }
@@ -33,7 +33,7 @@ export class Incantation extends Action {
             let target = undefined;
 
             for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.stat("Magie").value() > 0 && card.stat("Étourdissement").value() == 0) {
+                if (target == undefined && card instanceof Creature && card.stat("Magie").value() > 0 && card.stat("Engagement").value() == 0) {
                     target = card;
                 }
             }
@@ -48,7 +48,7 @@ export class Incantation extends Action {
         this.targeting(target);
 
         this.owner().ressource("Mana").produce(target.stat("Magie").value());
-        target.stat("Étourdissement").fix(1);
+        target.stat("Engagement").fix(1);
 
         this.move("Défausse");
         this.pose();
