@@ -49,6 +49,7 @@ export class PeauDePierre extends Spell {
 
         if (this.owner().ressource("Mana").total() >= 15) {
             this.owner().ressource("Mana").spend(15);
+
             target.stat("Endurance").increase(30);
         }
         else {

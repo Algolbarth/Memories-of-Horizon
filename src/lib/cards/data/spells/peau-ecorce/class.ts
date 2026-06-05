@@ -49,6 +49,7 @@ export class PeauDEcorce extends Spell {
 
         if (this.owner().ressource("Mana").total() >= 15) {
             this.owner().ressource("Mana").spend(15);
+
             target.stat("Constitution").increase(45);
         }
         else {

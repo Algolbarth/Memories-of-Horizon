@@ -5,7 +5,6 @@ export * from './ambidextrie';
 export * from './amplification-magique';
 export * from './arrogance';
 export * from './assomage';
-export * from './aura-enflammee';
 export * from './autodafe';
 export * from './aventure';
 export * from './bagarre-de-taverne';

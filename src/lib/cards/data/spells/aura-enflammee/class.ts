@@ -1,9 +1,9 @@
 import type { System } from '$lib/system/class';
-import { Action } from '$lib/cards/class/action';
+import { Spell } from '$lib/cards/class/spell';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
 
-export class AuraEnflammee extends Action {
+export class AuraEnflammee extends Spell {
     name = "Aura enflammée";
 
     constructor(system: System) {
@@ -11,7 +11,9 @@ export class AuraEnflammee extends Action {
 
         this.init([["Or", 12], ["Feu", 12]]);
 
-        this.addText(`Quand posé : Augmente de 10 la radiation d'une créature sur votre terrain.`);
+        this.addText([
+            `Quand posé : Augmente de 10 la radiation d'une créature sur votre terrain.`,
+            `[sorcery {25, Augmente de 20 la radiation à la place.}]`]);
     };
 
     canUse = () => {
@@ -45,7 +47,14 @@ export class AuraEnflammee extends Action {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Radiation").increase(10);
+        if (this.owner().ressource("Mana").total() >= 25) {
+            this.owner().ressource("Mana").spend(25);
+
+            target.stat("Radiation").increase(20);
+        }
+        else {
+            target.stat("Radiation").increase(10);
+        }
 
         this.move("Défausse");
         this.pose();

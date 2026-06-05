@@ -1,3 +1,4 @@
+export * from './aura-enflammee';
 export * from './boule-de-feu';
 export * from './bulle-protectrice';
 export * from './creation-rocheuse';
