@@ -9,4 +9,5 @@ export * from './peau-de-pierre';
 export * from './peau-ecorce';
 export * from './pluie-de-cailloux';
 export * from './pluie-de-feu';
+export * from './ronces-envahissantes';
 export * from './savoir-ancestral';
