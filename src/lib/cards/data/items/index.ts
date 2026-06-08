@@ -64,6 +64,7 @@ export * from './pot-de-peinture';
 export * from './pot-en-terre-cuite';
 export * from './potion-de-force';
 export * from './potion-de-mana';
+export * from './potion-de-regeneration';
 export * from './potion-de-resistance';
 export * from './potion-de-soin';
 export * from './potion-endurance';

@@ -14,6 +14,7 @@ export class Concoction extends Item {
         this.initFamily(["Potion"]);
 
         this.addStat("Infusion de soin", 0);
+        this.addStat("Infusion de régénération", 0);
         this.addStat("Infusion de mana", 0);
         this.addStat("Infusion de force", 0);
         this.addStat("Infusion d'endurance", 0);
@@ -29,6 +30,8 @@ export class Concoction extends Item {
             `[details
             
             {[if {card.stat("Infusion de mana").value() > 0, Produit {card.stat("Infusion de mana").value()} mana.{jump:1}}]
+
+            [if {card.stat("Infusion de régénération").value() > 0, Augmente de {card.stat("Infusion de régénération").value() * 3} la régénération d'une créature sur le terrain pendant ce tour.{jump:1}}]
 
             [if {card.stat("Infusion interdite").value() > 0, Génère {card:Homonculus} sur votre terrain. Fixe à {card.stat("Infusion interdite").value()} la constitution et la force de cette carte.{jump:1}}]
 
@@ -135,6 +138,7 @@ export class Concoction extends Item {
 
             if (target instanceof Creature) {
                 target.heal(this.stat("Infusion de soin").value() * 2);
+                target.stat("Régénération").turn += this.stat("Infusion de régénération").value() * 2;
                 target.stat("Force").turn += this.stat("Infusion de force").value() * 4;
                 target.stat("Endurance").turn += this.stat("Infusion d'endurance").value() * 2;
                 target.stat("Résistance").turn += this.stat("Infusion de résistance").value() * 2;
