@@ -17,7 +17,7 @@ export class FideleServiteur extends Creature {
 
         this.addText([
             `Quand posé : Pioche 1 créature de famille Commandant.`,
-            `Réduit de 100 le coût de cette carte.`]);
+            `Réduit de 100 le coût de cette créature.`]);
     };
 
     useEffect = () => {

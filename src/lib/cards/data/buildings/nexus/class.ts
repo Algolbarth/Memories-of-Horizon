@@ -15,7 +15,7 @@ export class Nexus extends Building {
 
         this.stat("Constitution").init(40);
 
-        this.addText(`Quand une créature alliée de famille Élémentaire est posée : Si sur le terrain : Augmente de 1 votre production de ressources de chaque élément de cette carte.`);
+        this.addText(`Quand une créature alliée de famille Élémentaire est posée : Si sur le terrain : Augmente de 1 votre production de ressources de chaque élément de cette créature.`);
     };
 
     otherPoseEffect = (card: Card) => {

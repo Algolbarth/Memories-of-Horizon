@@ -17,7 +17,7 @@ export class Pecheur extends Creature {
 
         this.addText([
             `Quand posé : Pioche 1 créature de famille Poisson.`,
-            `Réduit de 20 le coût de cette carte.`]);
+            `Réduit de 20 le coût de cette créature.`]);
     };
 
     useEffect = () => {
