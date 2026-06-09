@@ -206,8 +206,8 @@ export class Unit extends Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherDie(this);
                     }
@@ -233,8 +233,8 @@ export class Unit extends Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherDetroy(this);
                     }
@@ -262,8 +262,8 @@ export class Unit extends Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherDefend(this, attacker);
                     }

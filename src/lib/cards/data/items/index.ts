@@ -47,6 +47,7 @@ export * from './laine';
 export * from './lait';
 export * from './livre';
 export * from './livre-de-recette';
+export * from './longue-vue';
 export * from './meteore';
 export * from './meule-a-grains';
 export * from './noix-de-coco';

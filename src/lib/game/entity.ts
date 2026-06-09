@@ -245,8 +245,8 @@ export class Entity {
 
         for (const entity of [this, this.opponent]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards = copy(zone.cards);
+                for (const card of cards) {
 
                     if (card.refreshStackEffect != undefined) {
                         card.refreshStackEffect();
@@ -324,7 +324,7 @@ export class Entity {
     };
 
     checkPerpetuite = () => {
-        let defausse = copy(this.zone("Défausse").cards);
+        let defausse: Card[] = copy(this.zone("Défausse").cards);
         for (const card of defausse) {
             if (card.stat("Persistance").value() == 1) {
                 card.remove();
@@ -349,34 +349,38 @@ export class Entity {
 
     startPhase = () => {
         for (const zone of this.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
+            let cards: Card[] = copy(zone.cards);
+            for (const card of cards) {
 
-                if (card.startAdversaryPhaseEffect != undefined) {
-                    card.startAdversaryPhaseEffect();
+                if (card.stat("Perception").value() > 0) {
+                    card.costReduce(card.stat("Perception").value());
                 }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.startAdversaryPhaseEffect != undefined) {
-                            e.startAdversaryPhaseEffect();
-                        }
-                    }
-                }
-            }
-        }
-        for (const zone of this.opponent.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
 
                 if (card.startPhaseEffect != undefined) {
                     card.startPhaseEffect();
                 }
 
                 if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.startPhaseEffect != undefined) {
-                            e.startPhaseEffect();
+                    for (const equipment of card.equipments) {
+                        if (equipment.startPhaseEffect != undefined) {
+                            equipment.startPhaseEffect();
+                        }
+                    }
+                }
+            }
+        }
+        for (const zone of this.opponent.zones) {
+            let cards: Card[] = copy(zone.cards);
+            for (const card of cards) {
+
+                if (card.startAdversaryPhaseEffect != undefined) {
+                    card.startAdversaryPhaseEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const equipment of card.equipments) {
+                        if (equipment.startAdversaryPhaseEffect != undefined) {
+                            equipment.startAdversaryPhaseEffect();
                         }
                     }
                 }
@@ -386,34 +390,34 @@ export class Entity {
 
     endPhase = () => {
         for (const zone of this.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
-
-                if (card.endAdversaryPhaseEffect != undefined) {
-                    card.endAdversaryPhaseEffect();
-                }
-
-                if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.endAdversaryPhaseEffect != undefined) {
-                            e.endAdversaryPhaseEffect();
-                        }
-                    }
-                }
-            }
-        }
-        for (const zone of this.opponent.zones) {
-            let cpy = copy(zone.cards);
-            for (const card of cpy) {
+            let cards: Card[] = copy(zone.cards);
+            for (const card of cards) {
 
                 if (card.endPhaseEffect != undefined) {
                     card.endPhaseEffect();
                 }
 
                 if (card instanceof Creature) {
-                    for (const e of card.equipments) {
-                        if (e.endPhaseEffect != undefined) {
-                            e.endPhaseEffect();
+                    for (const equipment of card.equipments) {
+                        if (equipment.endPhaseEffect != undefined) {
+                            equipment.endPhaseEffect();
+                        }
+                    }
+                }
+            }
+        }
+        for (const zone of this.opponent.zones) {
+            let cards: Card[] = copy(zone.cards);
+            for (const card of cards) {
+
+                if (card.endAdversaryPhaseEffect != undefined) {
+                    card.endAdversaryPhaseEffect();
+                }
+
+                if (card instanceof Creature) {
+                    for (const equipment of card.equipments) {
+                        if (equipment.endAdversaryPhaseEffect != undefined) {
+                            equipment.endAdversaryPhaseEffect();
                         }
                     }
                 }

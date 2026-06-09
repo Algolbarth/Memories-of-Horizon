@@ -43,6 +43,7 @@ X Toxicité => 3X/2
 X Brûlure => 3X/2
 X Épine => 5X/2
 X Radiation => 5X/2
+X Perception => 2X
 
 Inflige X dégâts physiques => X/2
 Inflige X dégâts spéciaux => X/2

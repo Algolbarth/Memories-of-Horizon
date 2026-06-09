@@ -202,8 +202,8 @@ export class Game {
 
             for (const entity of [this.player, this.bot]) {
                 for (const zone of entity.zones) {
-                    let cpy = copy(zone.cards);
-                    for (const card of cpy) {
+                    let cards: Card[] = copy(zone.cards);
+                    for (const card of cards) {
 
                         if (card.startBattleEffect != undefined) {
                             card.startBattleEffect();
@@ -383,8 +383,8 @@ export class Game {
 
         for (const entity of [this.player, this.bot]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
 
                     card.elements.round = [];
 
@@ -436,8 +436,8 @@ export class Game {
             entity.zone("Pile").turn_level = 0;
 
             for (const zone of entity.zones) {
-                let cpy: Card[] = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
 
                     card.elements.turn = [];
 

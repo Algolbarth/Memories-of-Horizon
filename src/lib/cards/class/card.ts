@@ -55,6 +55,8 @@ export class Card {
 
         this.addStat("Persistance", 0);
 
+        this.addStat("Perception", 0);
+
         for (const ressource of system.ressources.list) {
             this.cost.push(new Cost(ressource.name, this));
             this.sale.push(new Cost(ressource.name, this));
@@ -290,8 +292,8 @@ export class Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherSell(this);
                     }
@@ -334,8 +336,8 @@ export class Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherPose(this);
                     }
@@ -359,8 +361,8 @@ export class Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherMill(this);
                     }
@@ -395,8 +397,8 @@ export class Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherDetroy(this);
                     }
@@ -432,8 +434,8 @@ export class Card {
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const zone of entity.zones) {
-                let cpy = copy(zone.cards);
-                for (const card of cpy) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
                     if (card != this) {
                         card.otherPerish(this);
                     }
