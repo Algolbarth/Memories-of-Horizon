@@ -28,7 +28,7 @@ export class Raido extends Boss {
         }
     };
 
-    otherPerishEffect = (card: Card) => {
+    otherDieEffect = (card: Card) => {
         if (this.isArea("Terrain") && this.isNotAlly(card)) {
             this.owner().ressource("Or").produce(card.stat("Vitalité").value());
         }

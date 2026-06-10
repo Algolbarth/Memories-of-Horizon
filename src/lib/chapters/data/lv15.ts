@@ -9,7 +9,7 @@ export class Lv15_Champion extends Chapter {
 
         this.addRessource("Or", 1000);
 
-        let cards = ["Champion", "Égide"];
+        let cards: string[] = ["Champion", "Égide"];
         for (let i = 1; i <= 8; i++) {
             cards.push("Fiole de corindon");
         }

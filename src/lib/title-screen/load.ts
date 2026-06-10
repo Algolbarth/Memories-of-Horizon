@@ -30,25 +30,25 @@ export async function load(files: FileList, system: System) {
         system.settings.auto_speed = readInt();
         system.settings.show_card_description = readBool();
 
-        let standard_decks: number = readInt();
-        for (let i = 0; i < standard_decks; i++) {
+        let nb_standard_decks: number = readInt();
+        for (let i = 0; i < nb_standard_decks; i++) {
             let deck = system.standard_decks[i];
 
             deck.victory = readInt();
             deck.defeat = readInt();
         }
 
-        let wild_decks: number = readInt();
-        for (let i = 0; i < wild_decks; i++) {
-            let deck = new Deck(system, "wild");
+        let nb_wild_decks: number = readInt();
+        for (let i = 0; i < nb_wild_decks; i++) {
+            let deck: Deck = new Deck(system, "wild");
 
             deck.changeName(readValue(), 0);
 
             deck.victory = readInt();
             deck.defeat = readInt();
 
-            let cards = readInt();
-            for (let j = 0; j < cards; j++) {
+            let nb_cards: number = readInt();
+            for (let j = 0; j < nb_cards; j++) {
                 let name = readValue();
                 if (system.cards.getByName(name) != undefined) {
                     deck.add(name);
@@ -65,7 +65,7 @@ export async function load(files: FileList, system: System) {
 };
 
 function readValue() {
-    let value = '';
+    let value: string = '';
     while (save[step] != '_' && step < save.length) {
         value += save[step];
         step++;
@@ -76,22 +76,24 @@ function readValue() {
 };
 
 function readInt() {
-    let value = readValue();
+    let value: string = readValue();
     if (value != undefined) {
         return parseInt(value);
     } else {
+        console.log("Ce nombre n'est pas défini correctement");
         return 0;
     }
 };
 
 function readBool() {
-    let value = readValue();
+    let value: string = readValue();
     if (value == 'true') {
         return true;
     } else if (value == 'false') {
         return false;
     }
     else {
-        return true;
+        console.log(value + " n'est pas un boolean");
+        return false;
     }
 };

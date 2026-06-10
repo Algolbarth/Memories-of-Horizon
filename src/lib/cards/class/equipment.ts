@@ -56,6 +56,7 @@ export class Equipment extends Item {
         this.addEquipStat("Pénétration", 0);
         this.addEquipStat("Adresse", 0);
         this.addEquipStat("Intensité", 0);
+        this.addEquipStat("Perception", 0);
 
         this.addEquipStat("Santé", 0);
         this.addEquipStat("Initiative", 0);
@@ -68,6 +69,7 @@ export class Equipment extends Item {
         this.addEquipStat("Poison", 0);
         this.addEquipStat("Toxicité", 0);
         this.addEquipStat("Brûlure", 0);
+        this.addEquipStat("Éveil", 0);
 
         this.addEquipTrait("Commune", false);
         this.addEquipTrait("Rare", false);
@@ -208,9 +210,9 @@ export class Equipment extends Item {
 
     destroyBearerEffect: Function | undefined;
 
-    dieBearerEffect: Function | undefined;
+    defeatBearerEffect: Function | undefined;
 
-    perishBearerEffect: Function | undefined;
+    dieBearerEffect: Function | undefined;
 
     playEffect: Function | undefined;
 

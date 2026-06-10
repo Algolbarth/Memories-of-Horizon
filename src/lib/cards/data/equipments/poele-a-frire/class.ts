@@ -3,6 +3,7 @@ import { copy } from '$lib/utils';
 import type { Unit } from '$lib/cards/class/unit';
 import { Equipment } from '$lib/cards/class/equipment';
 import { Item } from '$lib/cards/class/item';
+import type { Card } from '$lib/cards/class/card';
 
 export class PoeleAFrire extends Equipment {
     name = "Poêle à frire";
@@ -19,8 +20,8 @@ export class PoeleAFrire extends Equipment {
     fightEffect = (defender: Unit) => {
         let damage: number = 0;
 
-        let defausse = copy(this.owner().zone("Défausse").cards);
-        for (const card of defausse) {
+        let discard: Card[] = copy(this.owner().zone("Défausse").cards);
+        for (const card of discard) {
             if (card instanceof Item && card.isFamily("Nourriture")) {
                 damage += 10;
             }

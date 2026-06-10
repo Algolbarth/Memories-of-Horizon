@@ -1,5 +1,4 @@
 import { ChapterDeck } from '$lib/deck/chapter';
-import { Deck } from '$lib/deck/class';
 import type { Game } from '$lib/game/class';
 import type { System } from '$lib/system/class';
 import { Chapter } from '../class';
@@ -10,7 +9,7 @@ export class Lv18_Prince extends Chapter {
 
         this.addRessource("Or", 2000);
 
-        let cards = ["Princesse"];
+        let cards: string[] = ["Princesse"];
         for (let i = 1; i <= 60; i++) {
             cards.push("Chevalier");
         }

@@ -28,7 +28,7 @@ export class NidDeWyverne extends Building {
                 }
                 return false;
             };
-            let cards = this.owner().draw(2, readCondition);
+            let cards: Card[] = this.owner().draw(2, readCondition);
 
             for (const card of cards) {
                 card.costReduce(20);

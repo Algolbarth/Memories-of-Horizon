@@ -406,7 +406,7 @@ export class Card {
             }
         }
 
-        this.perish();
+        this.die();
     };
 
     destroyEffect: Function | undefined;
@@ -419,17 +419,17 @@ export class Card {
 
     otherDestroyEffect: Function | undefined;
 
-    otherDie = (card: Unit) => {
-        if (this.otherDieEffect != undefined) {
-            this.otherDieEffect(card);
+    otherDefeat = (card: Unit) => {
+        if (this.otherDefeatEffect != undefined) {
+            this.otherDefeatEffect(card);
         }
     };
 
-    otherDieEffect: Function | undefined;
+    otherDefeatEffect: Function | undefined;
 
-    perish = () => {
-        if (this.perishEffect != undefined) {
-            this.perishEffect();
+    die = () => {
+        if (this.dieEffect != undefined) {
+            this.dieEffect();
         }
 
         for (const entity of [this.owner(), this.adversary()]) {
@@ -437,7 +437,7 @@ export class Card {
                 let cards: Card[] = copy(zone.cards);
                 for (const card of cards) {
                     if (card != this) {
-                        card.otherPerish(this);
+                        card.otherDie(this);
                     }
                 }
             }
@@ -455,15 +455,15 @@ export class Card {
         }
     };
 
-    perishEffect: Function | undefined;
+    dieEffect: Function | undefined;
 
-    otherPerish = (card: Unit) => {
-        if (this.otherPerishEffect != undefined) {
-            this.otherPerishEffect(card);
+    otherDie = (card: Card) => {
+        if (this.otherDieEffect != undefined) {
+            this.otherDieEffect(card);
         }
     };
 
-    otherPerishEffect: Function | undefined;
+    otherDieEffect: Function | undefined;
 
     startPhaseEffect: Function | undefined;
 

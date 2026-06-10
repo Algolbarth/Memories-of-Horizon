@@ -15,10 +15,10 @@ export class TortueGéante extends Creature {
         this.stat("Force").init(5);
         this.stat("Endurance").init(5);
 
-        this.addText(`Quand périt : Génère {card:Carapace de tortue} dans votre inventaire.`);
+        this.addText(`Quand meurt : Génère {card:Carapace de tortue} dans votre inventaire.`);
     };
 
-    perishEffect = () => {
+    dieEffect = () => {
         this.owner().getCard("Carapace de tortue").add("Inventaire");
     };
 };

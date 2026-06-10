@@ -10,7 +10,7 @@ export class Lv17_Geomarteau extends Chapter {
         this.addRessource("Or", 1100);
         this.addRessource("Terre", 400);
 
-        let cards = [];
+        let cards: string[] = [];
         for (let i = 1; i <= 3; i++) {
             cards.push("Chevalier géant", "Ambidextrie", "Gantelets de fer", "Géomarteau", "Ténacité");
         }

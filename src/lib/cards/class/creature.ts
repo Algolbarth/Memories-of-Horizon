@@ -177,7 +177,7 @@ export class Creature extends Unit {
             }
         }
 
-        this.perish();
+        this.die();
     };
 
     otherDetroy = (card: Card) => {
@@ -192,13 +192,50 @@ export class Creature extends Unit {
         }
     };
 
-    die = () => {
+    defeat = () => {
         this.stat("Santé").init(0);
 
         if (this.type == "Créature") {
             this.stat("Initiative").set(this.stat("Maîtrise").value());
         }
 
+        if (this.defeatEffect != undefined) {
+            this.defeatEffect();
+        }
+
+        for (const equipment of this.equipments) {
+            if (equipment.defeatBearerEffect != undefined) {
+                equipment.defeatBearerEffect();
+            }
+        }
+
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const zone of entity.zones) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
+                    if (card != this) {
+                        card.otherDefeat(this);
+                    }
+                }
+            }
+        }
+
+        this.die();
+    };
+
+    otherDefeat = (card: Unit) => {
+        if (this.otherDefeatEffect != undefined) {
+            this.otherDefeatEffect(card);
+        }
+
+        for (const equipment of this.equipments) {
+            if (equipment.otherDefeatEffect != undefined) {
+                equipment.otherDefeatEffect(card);
+            }
+        }
+    };
+
+    die = () => {
         if (this.dieEffect != undefined) {
             this.dieEffect();
         }
@@ -220,43 +257,6 @@ export class Creature extends Unit {
             }
         }
 
-        this.perish();
-    };
-
-    otherDie = (card: Unit) => {
-        if (this.otherDieEffect != undefined) {
-            this.otherDieEffect(card);
-        }
-
-        for (const equipment of this.equipments) {
-            if (equipment.otherDieEffect != undefined) {
-                equipment.otherDieEffect(card);
-            }
-        }
-    };
-
-    perish = () => {
-        if (this.perishEffect != undefined) {
-            this.perishEffect();
-        }
-
-        for (const equipment of this.equipments) {
-            if (equipment.perishBearerEffect != undefined) {
-                equipment.perishBearerEffect();
-            }
-        }
-
-        for (const entity of [this.owner(), this.adversary()]) {
-            for (const zone of entity.zones) {
-                let cards: Card[] = copy(zone.cards);
-                for (const card of cards) {
-                    if (card != this) {
-                        card.otherPerish(this);
-                    }
-                }
-            }
-        }
-
         if (this.second_life == false) {
             this.move("Défausse");
 
@@ -269,14 +269,14 @@ export class Creature extends Unit {
         }
     };
 
-    otherPerish = (card: Unit) => {
-        if (this.otherPerishEffect != undefined) {
-            this.otherPerishEffect(card);
+    otherDie = (card: Card) => {
+        if (this.otherDieEffect != undefined) {
+            this.otherDieEffect(card);
         }
 
         for (const equipment of this.equipments) {
-            if (equipment.otherPerishEffect != undefined) {
-                equipment.otherPerishEffect(card);
+            if (equipment.otherDieEffect != undefined) {
+                equipment.otherDieEffect(card);
             }
         }
     };

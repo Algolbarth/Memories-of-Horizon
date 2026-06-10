@@ -1,5 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
+import type { Card } from '$lib/cards/class/card';
 
 export class MimiqueDeCoffre extends Creature {
     name = "Mimique de coffre";
@@ -21,9 +22,9 @@ export class MimiqueDeCoffre extends Creature {
         this.pose();
     };
 
-    perishEffect = () => {
+    dieEffect = () => {
         if (this.isArea("Terrain")) {
-            let cards = this.adversary().draw(5);
+            let cards: Card[] = this.adversary().draw(5);
             for (const c of cards) {
                 c.lock();
             }

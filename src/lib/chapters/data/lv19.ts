@@ -11,7 +11,7 @@ export class Lv19_ChevalierGeant extends Chapter {
 
         this.addRessource("Or", 2540);
 
-        let cards = [];
+        let cards: string[] = [];
         for (let i = 1; i <= 7; i++) {
             cards.push("Chevalier géant (monté)");
         }

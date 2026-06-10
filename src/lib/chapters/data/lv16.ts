@@ -10,7 +10,7 @@ export class Lv16_Barbare extends Chapter {
         this.addRessource("Or", 1190);
         this.addRessource("Feu", 60);
 
-        let cards = [];
+        let cards: string[] = [];
         for (let i = 1; i <= 5; i++) {
             cards.push("Chef barbare");
         }

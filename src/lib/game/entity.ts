@@ -245,7 +245,7 @@ export class Entity {
 
         for (const entity of [this, this.opponent]) {
             for (const zone of entity.zones) {
-                let cards = copy(zone.cards);
+                let cards: Card[] = copy(zone.cards);
                 for (const card of cards) {
 
                     if (card.refreshStackEffect != undefined) {
@@ -324,8 +324,8 @@ export class Entity {
     };
 
     checkPerpetuite = () => {
-        let defausse: Card[] = copy(this.zone("Défausse").cards);
-        for (const card of defausse) {
+        let discard: Card[] = copy(this.zone("Défausse").cards);
+        for (const card of discard) {
             if (card.stat("Persistance").value() == 1) {
                 card.remove();
             }

@@ -23,7 +23,7 @@ export class MountedKnight extends Knight {
         this.trait("En selle").init(true);
     };
 
-    perishEffect = () => {
+    dieEffect = () => {
         this.reincarnate(this.alternative_form);
     };
 };

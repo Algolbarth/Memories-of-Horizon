@@ -22,7 +22,7 @@ export class PotEnTerreCuite extends Item {
             }
             return false;
         };
-        let cards = this.owner().draw(3, readCondition, this);
+        let cards: Card[] = this.owner().draw(3, readCondition, this);
         for (const card of cards) {
             card.costReduce(10);
         }

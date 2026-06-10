@@ -34,6 +34,6 @@ export class ChevalierGeantMonte extends MountedKnight {
         this.stat("Force").init(150);
         this.stat("Vitesse").init(5);
 
-        this.addText(`Quand périt : Se réincarne en {card:Chevalier géant}.`);
+        this.addText(`Quand meurt : Se réincarne en {card:Chevalier géant}.`);
     };
 };

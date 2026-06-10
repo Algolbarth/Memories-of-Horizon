@@ -1,5 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
+import type { Card } from '$lib/cards/class/card';
 
 export class LongueVue extends Item {
     name = "Longue-vue";
@@ -15,7 +16,7 @@ export class LongueVue extends Item {
     };
 
     useEffect = () => {
-        let cards = this.owner().draw(1);
+        let cards: Card[] = this.owner().draw(1);
         if (cards[0] != undefined) {
             cards[0].lock();
             cards[0].stat("Perception").increase(20);

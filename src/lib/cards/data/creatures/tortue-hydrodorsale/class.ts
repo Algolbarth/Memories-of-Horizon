@@ -16,10 +16,10 @@ export class TortueHydrodorsale extends Creature {
         this.stat("Endurance").init(5);
         this.stat("Garde").init(20);
 
-        this.addText(`Quand périt : Génère {card:Bulle protectrice} dans votre inventaire.`);
+        this.addText(`Quand meurt : Génère {card:Bulle protectrice} dans votre inventaire.`);
     };
 
-    perishEffect = () => {
+    dieEffect = () => {
         this.owner().getCard("Bulle protectrice").add("Inventaire");
     };
 };

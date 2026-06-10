@@ -9,7 +9,7 @@ export class Lv12_Reine extends Chapter {
 
         this.addRessource("Or", 600);
 
-        let cards = ["Chevalier royal (monté)"];
+        let cards: string[] = ["Chevalier royal (monté)"];
         for (let i = 1; i <= 3; i++) {
             cards.push("Reine");
         }

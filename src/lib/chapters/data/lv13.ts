@@ -11,7 +11,7 @@ export class Lv13_Generaux extends Chapter {
 
         this.addRessource("Or", 710);
 
-        let cards = [];
+        let cards: string[] = [];
         cards.push("Bombardement");
         for (let i = 1; i <= 5; i++) {
             cards.push("Chevalier d'élite (monté)");

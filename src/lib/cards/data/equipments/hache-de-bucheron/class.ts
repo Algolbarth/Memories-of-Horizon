@@ -18,7 +18,7 @@ export class HacheDeBucheron extends Equipment {
         this.addText(`Quand une unité d'élément Nature périt : Si équipé et que le porteur est sur le terrain : Augmente de 5 la force du porteur.`);
     };
 
-    otherPerishEffect = (card: Card) => {
+    otherDieEffect = (card: Card) => {
         if (this.bearer != undefined && this.bearer.isArea("Terrain") && card.isElement("Nature")) {
             this.bearer.stat("Force").increase(5);
         }

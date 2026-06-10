@@ -16,10 +16,10 @@ Ajouter la paralysie, le gel et la cécité (gel => X tours, paralysie => X acti
 
 ## À ajouter
 ### Mimique
-Mimique de puit : se pose sur le terrain adverse. Quand périt : augmente votre production d'eau adverse.
+Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente votre production d'eau adverse.
 Mimique de pomme : se pose sur le terrain adverse. Quand périt au combat : augmente la constitution de la créature attaquante.
-Mimique de livre : se pose sur le terrain adverse. Quand périt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
-Mimique : se pose sur le terrain adverse. Quand périt : Génère humain sur le terrain adverse.
+Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
+Mimique : se pose sur le terrain adverse. Quand meurt : Génère humain sur le terrain adverse.
 
 ### Voleur
 Cape de voleur : quand se prépare sur le terrain : augmente la vente en or du porteur.
@@ -234,7 +234,7 @@ Proto dragon : Créature wyverne dragon
 Cimes volcaniques : Lieu pour les cartes d'élément Feu et Air.
 
 ### Feu/Nature
-Lézard : Quand périt : ajoute une Queue de lézard dans l'inventaire.
+Lézard : Quand meurt : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard vert : quand se fait attaquer : ajoute une Queue de lézard dans l'inventaire.
 Grand lézard rouge : quand attaque : ajoute une Queue de lézard dans l'inventaire.
 Queue de lézard : augmente la force ou la constitution d'une créature sur votre terrain.

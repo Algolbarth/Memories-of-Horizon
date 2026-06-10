@@ -182,7 +182,7 @@ export class Unit extends Card {
 
             if (this.stat("Santé").value() <= 0) {
                 result.die = true;
-                this.die();
+                this.defeat();
             }
         }
         else {
@@ -193,15 +193,15 @@ export class Unit extends Card {
         return result;
     };
 
-    die = () => {
+    defeat = () => {
         this.stat("Santé").init(0);
 
         if (this.type == "Créature") {
             this.stat("Initiative").set(this.stat("Maîtrise").value());
         }
 
-        if (this.dieEffect != undefined) {
-            this.dieEffect();
+        if (this.defeatEffect != undefined) {
+            this.defeatEffect();
         }
 
         for (const entity of [this.owner(), this.adversary()]) {
@@ -209,16 +209,16 @@ export class Unit extends Card {
                 let cards: Card[] = copy(zone.cards);
                 for (const card of cards) {
                     if (card != this) {
-                        card.otherDie(this);
+                        card.otherDefeat(this);
                     }
                 }
             }
         }
 
-        this.perish();
+        this.die();
     };
 
-    dieEffect: Function | undefined;
+    defeatEffect: Function | undefined;
 
     destroy = () => {
         this.stat("Santé").init(0);
@@ -242,7 +242,7 @@ export class Unit extends Card {
             }
         }
 
-        this.perish();
+        this.die();
     };
 
     play = () => {

@@ -10,7 +10,7 @@ export class Lv20_Archimere extends Chapter {
         this.addRessource("Or", 1500);
         this.addRessource("Nature", 1500);
 
-        let cards = [];
+        let cards: string[] = [];
         for (let i = 1; i <= 5; i++) {
             cards.push("Archimère");
         }

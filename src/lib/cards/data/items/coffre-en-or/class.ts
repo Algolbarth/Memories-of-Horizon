@@ -22,7 +22,7 @@ export class CoffreEnOr extends Item {
             }
             return false;
         };
-        let cards = this.owner().draw(2, readCondition, this);
+        let cards: Card[] = this.owner().draw(2, readCondition, this);
         for (const card of cards) {
             card.costReduce(20);
         }

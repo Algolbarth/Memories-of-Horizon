@@ -18,7 +18,7 @@ export class Bucheron extends Creature {
         this.addText(`Quand une autre unité d'élément Nature périt : Stocke 2 nature.`);
     };
 
-    otherPerishEffect = (card: Card) => {
+    otherDieEffect = (card: Card) => {
         if (this.isArea("Terrain") && card.isElement("Nature")) {
             this.owner().ressource("Nature").stock(2);
         }

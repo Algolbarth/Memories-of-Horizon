@@ -3,6 +3,7 @@ import { copy } from '$lib/utils';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
 import Use from './use.svelte';
+import type { Card } from '$lib/cards/class/card';
 
 export class Salade extends Item {
     name = "Salade";
@@ -61,8 +62,8 @@ export class Salade extends Item {
 
         let nb_food: number = 0;
 
-        let defausse = copy(this.owner().zone("Défausse").cards);
-        for (const card of defausse) {
+        let discard: Card[] = copy(this.owner().zone("Défausse").cards);
+        for (const card of discard) {
             if (card.isFamily("Nourriture") && card.isFamily("Plante")) {
                 nb_food++;
             }

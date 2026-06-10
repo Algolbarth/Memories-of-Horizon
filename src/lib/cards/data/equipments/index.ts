@@ -1,5 +1,6 @@
 export * from './alchimanach';
 export * from './anneau-en-or';
+export * from './arbalete';
 export * from './arc-composite';
 export * from './arc-de-corindon';
 export * from './arc-de-cristal';

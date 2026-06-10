@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/card';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
+import { Knight } from '$lib/cards/class/knight';
 
 export class Adoubement extends Action {
     name = "Adoubement";
@@ -26,9 +27,9 @@ export class Adoubement extends Action {
             }
             return false;
         };
-        let cards = this.owner().draw(1, readCondition);
+        let cards: Card[] = this.owner().draw(1, readCondition);
         if (cards[0] != undefined) {
-            if (cards[0].trait("À terre").value()) {
+            if (cards[0] instanceof Knight && cards[0].trait("À terre").value()) {
                 cards[0].transform(cards[0].alternative_form);
             }
             cards[0].costReduce(50);

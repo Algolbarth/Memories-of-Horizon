@@ -9,7 +9,7 @@ export class Lv11_Princesse extends Chapter {
 
         this.addRessource("Or", 500);
 
-        let cards = [];
+        let cards: string[] = [];
         for (let i = 1; i <= 3; i++) {
             cards.push("Princesse");
         }

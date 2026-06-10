@@ -10,7 +10,7 @@ export class Lv14_MageFeu extends Chapter {
         this.addRessource("Or", 530);
         this.addRessource("Feu", 320);
 
-        let cards = [];
+        let cards: string[] = [];
         for (let i = 1; i <= 15; i++) {
             cards.push("Mage de feu");
         }

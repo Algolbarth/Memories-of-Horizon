@@ -18,7 +18,7 @@ export class Chasseur extends Creature {
         this.addText(`Quand une autre créature alliée de famille Bête périt : Si sur le terrain : Augmente de 1 sa constitution et sa force.`);
     };
 
-    otherPerishEffect = (card: Card) => {
+    otherDieEffect = (card: Card) => {
         if (this.isArea("Terrain") && card instanceof Creature && this.isAlly(card) && card.isFamily("Bête")) {
             this.stat("Constitution").increase(1);
             this.stat("Force").increase(1);

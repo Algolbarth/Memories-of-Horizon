@@ -1,5 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
+import type { Card } from '$lib/cards/class/card';
 
 export class Porte extends Building {
     name = "Porte";
@@ -11,11 +12,11 @@ export class Porte extends Building {
 
         this.stat("Constitution").init(10);
 
-        this.addText(`Quand périt : Pioche 1 carte et la verrouille.`);
+        this.addText(`Quand meurt : Pioche 1 carte et la verrouille.`);
     };
 
-    perishEffect = () => {
-        let cards = this.owner().draw(1);
+    dieEffect = () => {
+        let cards: Card[] = this.owner().draw(1);
         for (const c of cards) {
             c.lock();
         }

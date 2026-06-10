@@ -23,7 +23,7 @@ export class MonstreErrant extends Action {
             }
             return false;
         };
-        let cards = this.owner().draw(1, readCondition);
+        let cards: Card[] = this.owner().draw(1, readCondition);
         if (cards[0] != undefined) {
             cards[0].stat("Constitution").increase(100);
             cards[0].stat("Force").increase(100);

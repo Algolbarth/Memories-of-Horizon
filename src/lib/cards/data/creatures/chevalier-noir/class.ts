@@ -19,10 +19,10 @@ export class ChevalierNoir extends Knight {
         this.stat("Endurance").init(5);
         this.stat("Résistance").init(5);
 
-        this.addText(`Quand périt : [prime {20, fixe à 1 sa santé et reste sur le terrain.}]`);
+        this.addText(`Quand meurt : [prime {20, fixe à 1 sa santé et reste sur le terrain.}]`);
     };
 
-    perishEffect = () => {
+    dieEffect = () => {
         if (this.owner().ressource("Or").total() >= 20) {
             this.owner().ressource("Or").spend(20);
             this.stat("Santé").init(1);
@@ -47,7 +47,7 @@ export class ChevalierNoirMonte extends MountedKnight {
         this.stat("Vitesse").init(1);
 
         this.addText(`Quand posé : [prime_inf {1, Inflige 1 dégât spécial à une unité sur le terrain adverse.}]`);
-        this.addText(`Quand périt : Se réincarne en {card:Chevalier noir}.`);
+        this.addText(`Quand meurt : Se réincarne en {card:Chevalier noir}.`);
     };
 
     select = () => {

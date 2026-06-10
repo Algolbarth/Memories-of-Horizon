@@ -21,7 +21,7 @@ export class MimiqueDeJarre extends Creature {
         this.pose();
     };
 
-    perishEffect = () => {
+    dieEffect = () => {
         if (this.isArea("Terrain")) {
             this.adversary().ressource("Or").stock(10);
         }

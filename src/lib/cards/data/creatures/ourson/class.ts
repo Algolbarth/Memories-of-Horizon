@@ -16,16 +16,19 @@ export class Ourson extends Creature {
         this.stat("Force").init(3);
         this.stat("Endurance").init(2);
 
-        this.addText(`Quand périt : Pioche 1 créature de famille Bête.`);
+        this.addText(`Quand meurt : Pioche 1 créature de famille Bête et la verrouille.`);
     };
 
-    perishEffect = () => {
+    dieEffect = () => {
         let readCondition = (card: Card) => {
             if (card instanceof Creature && card.isFamily("Bête")) {
                 return true;
             }
             return false;
         };
-        this.owner().draw(1, readCondition);
+        let cards: Card[] = this.owner().draw(1, readCondition);
+        for (const c of cards) {
+            c.lock();
+        }
     };
 };

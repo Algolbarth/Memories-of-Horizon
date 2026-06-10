@@ -17,7 +17,7 @@ export class CollierEnDentDeLoup extends Equipment {
         this.addText(`Quand une créature alliée de famille Bête périt : Si équipé et que le porteur est sur le terrain : Augmente de 20 la force du porteur.`);
     };
 
-    otherPerishEffect = (card: Card) => {
+    otherDieEffect = (card: Card) => {
         if (this.bearer != undefined && this.bearer.isArea("Terrain") && card instanceof Creature && this.bearer.isAlly(card) && card.isFamily("Bête")) {
             this.bearer.stat("Force").increase(20);
         }
