@@ -14,7 +14,7 @@ export class CollierEnDentDeLoup extends Equipment {
         this.initFamily(["Bête"]);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand une créature alliée de famille Bête périt : Si équipé et que le porteur est sur le terrain : Augmente de 20 la force du porteur.`);
+        this.addText(`Quand une créature alliée de famille Bête meurt : Si équipé et que le porteur est sur le terrain : Augmente de 20 la force du porteur.`);
     };
 
     otherDieEffect = (card: Card) => {

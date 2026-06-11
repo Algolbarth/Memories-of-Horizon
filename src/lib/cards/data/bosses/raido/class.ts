@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/card';
 import { Boss } from '$lib/cards/class/boss';
 import { Creature } from '$lib/cards/class/creature';
+import { Unit } from '$lib/cards/class/unit';
 
 export class Raido extends Boss {
     name = "Raido, chef brutal";
@@ -17,7 +18,7 @@ export class Raido extends Boss {
         this.stat("Constitution").init(50);
 
         this.addText(`Quand une autre créature alliée est posée : Si sur le terrain : Augmente de 5 la constitution et la force de cette créature.`);
-        this.addText(`Quand une unité sur le terrain adverse périt : Produit autant d'or que la constitution max de cette créature.`);
+        this.addText(`Quand une unité adverse meurt : Produit autant d'or que la constitution max de cette créature.`);
         this.addText(`Quand joue : [prime_inf {1, Augmente de 1 sa constitution et sa force.}]`);
     };
 
@@ -29,7 +30,7 @@ export class Raido extends Boss {
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.isArea("Terrain") && this.isNotAlly(card)) {
+        if (this.isArea("Terrain") && this.isNotAlly(card) && card instanceof Unit) {
             this.owner().ressource("Or").produce(card.stat("Vitalité").value());
         }
     };

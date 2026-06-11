@@ -8,14 +8,14 @@ export class Chasseur extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 18]]);
+        this.init([["Or", 20]]);
 
         this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Force").init(15);
 
-        this.addText(`Quand une autre créature alliée de famille Bête périt : Si sur le terrain : Augmente de 1 sa constitution et sa force.`);
+        this.addText(`Quand une autre créature alliée de famille Bête meurt : Si sur le terrain : Augmente de 1 sa constitution et sa force.`);
     };
 
     otherDieEffect = (card: Card) => {

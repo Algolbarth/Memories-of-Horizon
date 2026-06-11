@@ -15,11 +15,11 @@ export class Bucheron extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(5);
 
-        this.addText(`Quand une autre unité d'élément Nature périt : Stocke 2 nature.`);
+        this.addText(`Quand une unité adverse d'élément Nature meurt : Stocke 2 nature.`);
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.isArea("Terrain") && card.isElement("Nature")) {
+        if (this.isArea("Terrain") && card.isElement("Nature") && this.isNotAlly(card)) {
             this.owner().ressource("Nature").stock(2);
         }
     };

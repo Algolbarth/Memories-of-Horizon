@@ -17,7 +17,7 @@ Ajouter la paralysie, le gel et la cécité (gel => X tours, paralysie => X acti
 ## À ajouter
 ### Mimique
 Mimique de puit : se pose sur le terrain adverse. Quand meurt : augmente votre production d'eau adverse.
-Mimique de pomme : se pose sur le terrain adverse. Quand périt au combat : augmente la constitution de la créature attaquante.
+Mimique de pomme : se pose sur le terrain adverse. Quand meurt au combat : augmente la constitution de la créature attaquante.
 Mimique de livre : se pose sur le terrain adverse. Quand meurt : augmente l'intelligence adverse jusqu'à la fin de l'étape.
 Mimique : se pose sur le terrain adverse. Quand meurt : Génère humain sur le terrain adverse.
 
@@ -112,7 +112,7 @@ Araignée
 Mère pondeuse 
 Infestation : si le terrain est rempli d'insecte, augmente la taille du terrain.
 Wyverne zombie 
-Wyverne squelette : quand une créature alliée périt : réduit son coût de 5.
+Wyverne squelette : quand une créature alliée meurt : réduit son coût de 5.
 Nécromancien : quand une carte alliée Mort est posée : Génère Squelette sur le terrain.
 Nécromage 
 Mage des morts 

@@ -13,7 +13,7 @@ export class MimiqueDeJarre extends Creature {
         this.stat("Force").init(10);
 
         this.addText(`Quand posé : Se place sur le terrain adverse.`);
-        this.addText(`Quand périt sur le terrain : Stocke 10 or chez l'adversaire.`);
+        this.addText(`Quand meurt sur le terrain : Stocke 10 or chez l'adversaire.`);
     };
 
     useEffect = () => {

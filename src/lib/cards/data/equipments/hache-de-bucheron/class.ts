@@ -15,11 +15,11 @@ export class HacheDeBucheron extends Equipment {
         this.equipStat("Adresse").init(20);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand une unité d'élément Nature périt : Si équipé et que le porteur est sur le terrain : Augmente de 5 la force du porteur.`);
+        this.addText(`Quand une unité adverse d'élément Nature meurt : Si équipé et que le porteur est sur le terrain : Augmente de 5 la force du porteur.`);
     };
 
     otherDieEffect = (card: Card) => {
-        if (this.bearer != undefined && this.bearer.isArea("Terrain") && card.isElement("Nature")) {
+        if (this.bearer != undefined && this.bearer.isArea("Terrain") && card.isElement("Nature") && this.isNotAlly(card)) {
             this.bearer.stat("Force").increase(5);
         }
     };

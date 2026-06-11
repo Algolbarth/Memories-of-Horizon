@@ -14,7 +14,7 @@ export class MimiqueDeCoffre extends Creature {
         this.stat("Force").init(5);
 
         this.addText(`Quand posé : Se place sur le terrain adverse.`);
-        this.addText(`Quand périt sur le terrain : L'adversaire pioche 5 cartes et les verrouille.`);
+        this.addText(`Quand meurt sur le terrain : L'adversaire pioche 5 cartes et les verrouille.`);
     };
 
     useEffect = () => {

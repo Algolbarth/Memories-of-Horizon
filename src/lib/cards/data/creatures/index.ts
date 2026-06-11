@@ -151,6 +151,7 @@ export * from './mendiant';
 export * from './mere-wyverne';
 export * from './mimique-de-coffre';
 export * from './mimique-de-jarre';
+export * from './minotaure';
 export * from './monture-de-chevalier';
 export * from './mouton';
 export * from './mur-de-ronces';
