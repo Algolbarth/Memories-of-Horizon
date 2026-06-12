@@ -78,6 +78,7 @@ export * from './morsure';
 export * from './mue';
 export * from './multisoin';
 export * from './musculation';
+export * from './nourrir';
 export * from './noyade';
 export * from './nuages-de-spores';
 export * from './odyssee';

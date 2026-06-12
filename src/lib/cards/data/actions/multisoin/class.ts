@@ -10,9 +10,9 @@ export class Multisoin extends Action {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 25]]);
+        this.init([["Or", 50]]);
 
-        this.addText(`Quand posé : Soigne 5 blessures à toutes les créatures sur votre terrain.`);
+        this.addText(`Quand posé : Soigne 10 blessures à toutes les créatures sur votre terrain.`);
     };
 
     canUse = () => {
@@ -28,9 +28,10 @@ export class Multisoin extends Action {
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {
-                card.heal(5);
+                card.heal(10);
             }
         }
+
         this.move("Défausse");
         this.pose();
     };
