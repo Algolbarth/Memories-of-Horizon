@@ -30,7 +30,7 @@ export class Adoubement extends Action {
         let cards: Card[] = this.owner().draw(1, readCondition);
         if (cards[0] != undefined) {
             if (cards[0] instanceof Knight && cards[0].trait("À terre").value()) {
-                cards[0].transform(cards[0].alternative_form);
+                cards[0] = cards[0].transform(cards[0].alternative_form);
             }
             cards[0].costReduce(50);
         }

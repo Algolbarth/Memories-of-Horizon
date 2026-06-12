@@ -33,10 +33,10 @@ export class Druid extends Creature {
 
     useEffect = (choice: string) => {
         if (choice == "transform") {
-            this.transform(this.alternative_form);
+            let transformation = this.transform(this.alternative_form);
 
-            this.area().cards[this.emplacement()].move("Terrain");
-            this.area().cards[this.emplacement()].pose();
+            transformation.move("Terrain");
+            transformation.pose();
         }
         else if (choice == "place") {
             this.move("Terrain");

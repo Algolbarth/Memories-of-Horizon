@@ -86,6 +86,7 @@ export * from './omniscience';
 export * from './opportunite';
 export * from './option';
 export * from './parade';
+export * from './parler-aux-betes';
 export * from './peupler';
 export * from './pietinement';
 export * from './pluie-de-fleche';
