@@ -49,7 +49,7 @@ export class ForceDeLaFamille extends Action {
     };
 
     useEffect = () => {
-        let nb_creature = 0;
+        let nb_creature: number = 0;
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
 
         for (const card of battlefield) {

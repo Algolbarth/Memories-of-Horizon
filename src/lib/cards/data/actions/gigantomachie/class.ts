@@ -42,7 +42,7 @@ export class Gigantomachie extends Action {
     };
 
     useEffect = () => {
-        let nb_level_5 = 0;
+        let nb_level_5: number = 0;
 
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);

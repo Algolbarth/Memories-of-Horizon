@@ -48,7 +48,7 @@ export class CouteauDeChasse extends Item {
 
     useEffect = (choice: string, target: Unit | undefined = undefined) => {
         if (choice == "production") {
-            let nb_beast = 0;
+            let nb_beast: number = 0;
             for (const card of this.owner().zone("Défausse").cards) {
                 if (card instanceof Creature && card.isFamily("Bête")) {
                     nb_beast++;

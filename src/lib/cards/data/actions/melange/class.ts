@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import type { Item } from '$lib/cards/class/item';
 import Use from './use.svelte';
+import type { Concoction } from '../../items';
 
 export class Melange extends Action {
     name = "Mélange";
@@ -15,7 +16,7 @@ export class Melange extends Action {
     };
 
     canUse = () => {
-        let nb_potion = 0;
+        let nb_potion: number = 0;
         for (const card of this.owner().zone("Inventaire").cards) {
             if (card.isFamily("Potion")) {
                 nb_potion++;
@@ -54,7 +55,7 @@ export class Melange extends Action {
         potion_1.remove();
         potion_2.remove();
 
-        let concoction = this.owner().getCard("Concoction");
+        let concoction: Concoction = this.owner().getCard("Concoction");
         concoction.infuse(potion_1);
         concoction.infuse(potion_2);
 

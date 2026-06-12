@@ -50,7 +50,7 @@ export class LigneEnergetique extends Action {
         this.targeting(target);
 
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
-        let nb_element = 0;
+        let nb_element: number = 0;
 
         for (const card of battlefield) {
             let check = true;

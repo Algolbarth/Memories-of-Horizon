@@ -1,11 +1,11 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
-import { Spell } from '$lib/cards/class/spell';
+import { Action } from '$lib/cards/class/action';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import type { Card } from '$lib/cards/class/card';
 
-export class Peupler extends Spell {
+export class Peupler extends Action {
     name = "Peupler";
 
     constructor(system: System) {
@@ -26,7 +26,7 @@ export class Peupler extends Spell {
     };
 
     useEffect = () => {
-        let nb_creature = 0;
+        let nb_creature: number = 0;
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {

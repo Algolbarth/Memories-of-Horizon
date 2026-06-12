@@ -22,6 +22,7 @@ export * from './cauteriser';
 export * from './cercle-druidique';
 export * from './cercles-magiques';
 export * from './cibler';
+export * from './colonisation';
 export * from './combustion';
 export * from './conquete';
 export * from './consolider';

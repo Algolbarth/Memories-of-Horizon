@@ -52,8 +52,8 @@ export class CercleDruidique extends Action {
         this.targeting(target);
 
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
-        let nb_druid = 0;
-        let nb_same_element = 0;
+        let nb_druid: number = 0;
+        let nb_same_element: number = 0;
 
         for (const card of battlefield) {
             let check = true;

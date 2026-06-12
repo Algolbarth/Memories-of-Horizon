@@ -45,7 +45,7 @@ export class PluieDeCailloux extends Spell {
         if (this.owner().ressource("Mana").total() >= 30) {
             this.owner().ressource("Mana").spend(30);
 
-            let nb_creature = this.owner().zone("Terrain").size - this.owner().zone("Terrain").cards.length;
+            let nb_creature: number = this.owner().zone("Terrain").size - this.owner().zone("Terrain").cards.length;
             for (let i = 0; i < nb_creature; i++) {
                 this.owner().getCard("Élémentaire de cailloux").add("Terrain");
             }
@@ -57,7 +57,7 @@ export class PluieDeCailloux extends Spell {
         }
         else {
             if (choice == "creature") {
-                let nb_creature = this.owner().zone("Terrain").size - this.owner().zone("Terrain").cards.length;
+                let nb_creature: number = this.owner().zone("Terrain").size - this.owner().zone("Terrain").cards.length;
                 for (let i = 0; i < nb_creature; i++) {
                     this.owner().getCard("Élémentaire de cailloux").add("Terrain");
                 }
