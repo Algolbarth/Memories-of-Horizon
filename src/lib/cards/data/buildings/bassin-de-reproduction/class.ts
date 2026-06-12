@@ -13,10 +13,10 @@ export class BassinDeReproduction extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Au début d'une manche : Génère {card:Ondin} sur votre terrain.`);
+        this.addText(`Quand se prépare sur le terrain : Génère {card:Ondin} sur votre terrain.`);
     };
 
-    roundEffect = () => {
+    startPhaseEffect = () => {
         if (this.isArea("Terrain")) {
             this.owner().getCard("Ondin").add("Terrain");
         }

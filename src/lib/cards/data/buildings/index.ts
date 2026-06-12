@@ -10,6 +10,7 @@ export * from './bibliotheque-incendiee';
 export * from './bivouac';
 export * from './boutique';
 export * from './cairn';
+export * from './camp-de-gobelin';
 export * from './canon';
 export * from './carriere-de-pierre';
 export * from './cascade';

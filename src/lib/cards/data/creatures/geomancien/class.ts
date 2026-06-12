@@ -3,7 +3,7 @@ import { Creature } from '$lib/cards/class/creature';
 import type { Card } from '$lib/cards/class/card';
 
 export class Geomancien extends Creature {
-    name = "Geomancien";
+    name = "Géomancien";
 
     constructor(system: System) {
         super(system);

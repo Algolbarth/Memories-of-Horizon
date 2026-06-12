@@ -20,6 +20,6 @@ export class CouronneDeLaurier extends Equipment {
         };
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Augmente d'autant la force du porteur que 2 fois le charisme du porteur.`);
+        this.addText(`Augmente d'autant l'intelligence du porteur que 2 fois le charisme du porteur.`);
     };
 };
