@@ -12,6 +12,8 @@ export * from './archimage';
 export * from './archimere';
 export * from './architecte';
 export * from './archonte';
+export * from './artilleur';
+export * from './artilleur-nain';
 export * from './aventurier';
 export * from './bagarreur';
 export * from './baleine';
