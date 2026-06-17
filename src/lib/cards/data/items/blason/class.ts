@@ -9,9 +9,9 @@ export class Blason extends Item {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 30]]);
+        this.init([["Or", 50]]);
 
-        this.addText(`Quand posé : Augmente de 3 l'endurance de toutes les créatures sur votre terrain.`);
+        this.addText(`Quand posé : Augmente de 5 l'endurance de toutes les créatures sur votre terrain.`);
     };
 
     canUse = () => {
@@ -24,7 +24,7 @@ export class Blason extends Item {
     useEffect = () => {
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
-            card.stat("Endurance").increase(3);
+            card.stat("Endurance").increase(5);
         }
 
         this.move("Défausse");
