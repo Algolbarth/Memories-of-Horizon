@@ -23,6 +23,7 @@ dist-ssr
 *.sw?
 
 # Build
+release
 build
 .svelte-kit
 /package
