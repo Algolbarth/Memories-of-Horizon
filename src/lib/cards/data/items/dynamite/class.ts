@@ -1,10 +1,10 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
-import { Action } from '$lib/cards/class/action';
+import { Item } from '$lib/cards/class/item';
 import Use from './use.svelte';
 
-export class TirDeCanon extends Action {
-    name = "Tir de canon";
+export class Dynamite extends Item {
+    name = "Dynamite";
 
     constructor(system: System) {
         super(system);

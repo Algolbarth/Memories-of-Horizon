@@ -12,6 +12,7 @@ export * from './boutique';
 export * from './cairn';
 export * from './camp-de-gobelin';
 export * from './canon';
+export * from './canon-mortier';
 export * from './carriere-de-pierre';
 export * from './cascade';
 export * from './caserne';

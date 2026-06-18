@@ -35,6 +35,7 @@ export * from './carquois';
 export * from './casque-a-pic';
 export * from './casque-en-cuir';
 export * from './ceinture-de-cuir';
+export * from './ceinture-explosif';
 export * from './chapeau-de-mage';
 export * from './chevaliere-imperiale';
 export * from './coiffe-extravagante';

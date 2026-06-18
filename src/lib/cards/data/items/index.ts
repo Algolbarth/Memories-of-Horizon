@@ -30,6 +30,7 @@ export * from './coquillage';
 export * from './cor-de-guerre';
 export * from './couteau-de-chasse';
 export * from './cuir-souple';
+export * from './dynamite';
 export * from './ecrits-calcines';
 export * from './fiole-de-corindon';
 export * from './fiole-de-cristal';

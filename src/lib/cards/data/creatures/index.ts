@@ -159,7 +159,6 @@ export * from './mouton';
 export * from './mur-de-ronces';
 export * from './nain';
 export * from './negociant';
-export * from './officier-artillerie';
 export * from './ondin';
 export * from './ondin-des-rivieres';
 export * from './ouroboros';
