@@ -13,7 +13,7 @@ export class Geomarteau extends Equipment {
 
         this.initFamily(["Arme"]);
 
-        this.addStat("Secousses", 0);
+        this.addStat(601, "Secousses", 0);
         this.stat("Secousses").display = () => {
             return true;
         };

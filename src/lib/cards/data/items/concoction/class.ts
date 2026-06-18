@@ -13,15 +13,15 @@ export class Concoction extends Item {
         this.level = 1;
         this.initFamily(["Potion"]);
 
-        this.addStat("Infusion de soin", 0);
-        this.addStat("Infusion de régénération", 0);
-        this.addStat("Infusion de mana", 0);
-        this.addStat("Infusion de force", 0);
-        this.addStat("Infusion d'endurance", 0);
-        this.addStat("Infusion de résistance", 0);
-        this.addStat("Infusion interdite", 0);
-        this.addStat("Infusion explosive", 0);
-        this.addStat("Infusion parfumée", 0);
+        this.addStat(601, "Infusion de soin", 0);
+        this.addStat(602, "Infusion de régénération", 0);
+        this.addStat(603, "Infusion de mana", 0);
+        this.addStat(604, "Infusion de force", 0);
+        this.addStat(605, "Infusion d'endurance", 0);
+        this.addStat(606, "Infusion de résistance", 0);
+        this.addStat(607, "Infusion interdite", 0);
+        this.addStat(608, "Infusion explosive", 0);
+        this.addStat(609, "Infusion parfumée", 0);
 
         this.trait("Rare").init(true);
 

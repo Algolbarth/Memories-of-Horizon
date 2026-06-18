@@ -11,13 +11,8 @@ export class HeaumeDeFer extends Equipment {
 
         this.initFamily(["Armure"]);
 
-        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain : Augmente jusqu'à 25 la garde du porteur.`);
-    };
+        this.equipStat("Vigueur").init(25);
 
-    startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            this.bearer.stat("Garde").fix(25);
-        }
+        this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
     };
 };

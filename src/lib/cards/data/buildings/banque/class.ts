@@ -12,7 +12,7 @@ export class Banque extends Building {
 
         this.stat("Constitution").init(50);
 
-        this.addStat("Intérêts", 5);
+        this.addStat(601, "Intérêts", 5);
 
         this.addText([
             `Quand une autre carte alliée est vendue : Augmente de 1 ses intérêts.`,

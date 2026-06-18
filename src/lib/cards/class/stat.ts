@@ -3,6 +3,7 @@ import { Creature } from "./creature";
 import type { Equipment } from "./equipment";
 
 export class Stat {
+    code: number;
     name: string;
     base: number;
     add: number = 0;
@@ -12,7 +13,8 @@ export class Stat {
     card: Card;
     debuff: boolean = false;
 
-    constructor(name: string, value: number, min: number, card: Card) {
+    constructor(code: number, name: string, value: number, min: number, card: Card) {
+        this.code = code;
         this.name = name;
         this.base = value;
         this.min = min;
@@ -108,7 +110,7 @@ export class EquipStat extends Stat {
     card: Equipment;
 
     constructor(name: string, value: number, min: number, card: Equipment) {
-        super(name, value, min, card);
+        super(0, name, value, min, card);
         this.card = card;
     };
 };

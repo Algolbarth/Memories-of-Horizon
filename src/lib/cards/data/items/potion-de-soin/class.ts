@@ -13,7 +13,7 @@ export class PotionDeSoin extends Item {
 
         this.initFamily(["Potion"]);
 
-        this.addStat("Infusion", 5);
+        this.addStat(601, "Infusion", 5);
 
         this.addText(`Quand posé : Soigne 2 blessures à une créature sur votre terrain pour chaque valeur d'infusion.`);
         this.addText(`[details {Soigne {card.stat("Infusion").value() * 2} blessures à une créature sur votre terrain.}]`);

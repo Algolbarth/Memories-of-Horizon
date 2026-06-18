@@ -13,7 +13,7 @@ export class PotionExplosive extends Item {
 
         this.initFamily(["Potion"]);
 
-        this.addStat("Infusion", 5);
+        this.addStat(601, "Infusion", 5);
 
         this.addText(`Quand posé : Inflige 2 dégâts spéciaux à une unité sur le terrain adverse pour chaque valeur d'infusion.`);
         this.addText(`[details {Inflige {card.stat("Infusion").value() * 2} dégâts spéciaux à une unité sur le terrain adverse.}]`);

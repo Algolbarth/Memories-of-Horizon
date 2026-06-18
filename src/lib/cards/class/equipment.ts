@@ -17,11 +17,11 @@ export class Equipment extends Item {
 
         this.initFamily(["Équipement"]);
 
+        this.addEquipStat("Santé", 0);
         this.addEquipStat("Vitalité", 0);
         this.equipStat("Vitalité").display = function () {
             return false;
         };
-
         this.addEquipStat("Constitution", 0);
         this.equipStat("Constitution").increase = function (value: number) {
             this.add += value;
@@ -35,41 +35,51 @@ export class Equipment extends Item {
             this.base = value;
             this.card.equipStat("Vitalité").init(value);
         };
+        this.addEquipStat("Garde", 0);
 
         this.addEquipStat("Régénération", 0);
+        this.addEquipStat("Vigueur", 0);
+
+        this.addEquipStat("Esquive", 0);
         this.addEquipStat("Endurance", 0);
         this.addEquipStat("Résistance", 0);
+
+        this.addEquipStat("Charisme", 0);
+
         this.addEquipStat("Épine", 0);
         this.addEquipStat("Radiation", 0);
-        this.addEquipStat("Maîtrise", 0);
-        this.addEquipStat("Vitesse", 0);
-        this.addEquipStat("Charisme", 0);
-        this.addEquipStat("Magie", 0);
-        this.addEquipStat("Intelligence", 0);
+
         this.addEquipStat("Force", 0);
-        this.addEquipStat("Affliction", 0);
         this.addEquipStat("Portée", 0);
-        this.addEquipStat("Psychisme", 0);
-        this.addEquipStat("Agilité", 0);
-        this.addEquipStat("Maniement", 0);
         this.addEquipStat("Percée", 0);
+
+        this.addEquipStat("Affliction", 0);
+        this.addEquipStat("Psychisme", 0);
         this.addEquipStat("Pénétration", 0);
+
+        this.addEquipStat("Critique", 0);
         this.addEquipStat("Adresse", 0);
         this.addEquipStat("Intensité", 0);
+
+        this.addEquipStat("Vitesse", 0);
+        this.addEquipStat("Initiative", 0);
+        this.addEquipStat("Maîtrise", 0);
+        this.addEquipStat("Agilité", 0);
+
+        this.addEquipStat("Maniement", 0);
+        this.addEquipStat("Magie", 0);
+        this.addEquipStat("Intelligence", 0);
         this.addEquipStat("Perception", 0);
 
-        this.addEquipStat("Santé", 0);
-        this.addEquipStat("Initiative", 0);
-        this.addEquipStat("Garde", 0);
         this.addEquipStat("Persistance", 0);
-        this.addEquipStat("Esquive", 0);
-        this.addEquipStat("Critique", 0);
+        this.addEquipStat("Amélioration", 0);
+        this.addEquipStat("Éveil", 0);
+
         this.addEquipStat("Étourdissement", 0);
         this.addEquipStat("Engagement", 0);
         this.addEquipStat("Poison", 0);
         this.addEquipStat("Toxicité", 0);
         this.addEquipStat("Brûlure", 0);
-        this.addEquipStat("Éveil", 0);
 
         this.addEquipTrait("Commune", false);
         this.addEquipTrait("Rare", false);

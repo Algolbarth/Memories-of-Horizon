@@ -15,17 +15,17 @@ export class Unit extends Card {
             return false;
         };
 
-        this.addStat("Santé", 1);
+        this.addStat(101, "Santé", 1);
         this.stat("Santé").display = () => {
             return false;
         };
 
-        this.addStat("Vitalité", 1, 1);
+        this.addStat(102, "Vitalité", 1, 1);
         this.stat("Vitalité").display = () => {
             return false;
         };
 
-        this.addStat("Constitution", 0);
+        this.addStat(103, "Constitution", 0);
         this.stat("Constitution").display = () => {
             return false;
         };
@@ -49,19 +49,18 @@ export class Unit extends Card {
             this.card.stat("Vitalité").set(value);
         };
 
-        this.addStat("Garde", 0);
+        this.addStat(104, "Garde", 0);
 
-        this.addStat("Régénération", 0);
+        this.addStat(111, "Régénération", 0);
+        this.addStat(112, "Vigueur", 0);
 
-        this.addStat("Endurance", 0);
+        this.addStat(122, "Endurance", 0);
+        this.addStat(123, "Résistance", 0);
 
-        this.addStat("Résistance", 0);
+        this.addStat(141, "Épine", 0);
+        this.addStat(142, "Radiation", 0);
 
-        this.addStat("Épine", 0);
-
-        this.addStat("Radiation", 0);
-
-        this.addStat("Initiative", 1);
+        this.addStat(302, "Initiative", 1);
         this.stat("Initiative").display = function () {
             if (this.card.system.game?.phase == "Combat" || this.value() != this.card.stat("Maîtrise").value()) {
                 return true;
@@ -69,7 +68,7 @@ export class Unit extends Card {
             return false;
         };
 
-        this.addStat("Maîtrise", 1);
+        this.addStat(303, "Maîtrise", 1);
         this.stat("Maîtrise").condition = function () {
             if (this.value() > 1) {
                 return true;
@@ -77,21 +76,20 @@ export class Unit extends Card {
             return false;
         };
 
-        this.addStat("Portée", 0);
+        this.addStat(202, "Portée", 0);
+        this.addStat(212, "Psychisme", 0);
 
-        this.addStat("Psychisme", 0);
+        this.addStat(301, "Vitesse", 0);
 
-        this.addStat("Vitesse", 0);
+        this.addStat(131, "Charisme", 0);
 
-        this.addStat("Charisme", 0);
+        this.addStat(121, "Esquive", 0);
 
-        this.addStat("Esquive", 0);
+        this.addStat(402, "Magie", 0);
 
-        this.addStat("Magie", 0);
+        this.addStat(403, "Intelligence", 0);
 
-        this.addStat("Intelligence", 0);
-
-        this.addStat("Brûlure", 0);
+        this.addStat(713, "Brûlure", 0);
         this.stat("Brûlure").debuff = true;
     };
 

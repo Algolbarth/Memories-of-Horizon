@@ -11,14 +11,14 @@ export class MasqueDePlongee extends Equipment {
 
         this.initFamily(["Armure"]);
 
+        this.equipStat("Vigueur").init(10);
+
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain : Augmente jusqu'à 10 la garde du porteur et génère {card:Bulle protectrice} dans votre inventaire.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Génère {card:Bulle protectrice} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            this.bearer.stat("Garde").fix(10);
-
             this.owner().getCard("Bulle protectrice").add("Inventaire");
         }
     };

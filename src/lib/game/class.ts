@@ -428,8 +428,8 @@ export class Game {
     };
 
     endTurn = () => {
-        this.player.checkPerpetuite();
-        this.bot.checkPerpetuite();
+        this.player.checkPersistance();
+        this.bot.checkPersistance();
 
         for (const entity of [this.player, this.bot]) {
 
@@ -453,6 +453,10 @@ export class Game {
 
                     if (card instanceof Creature && card.stat("Étourdissement").value() > 0) {
                         card.stat("Étourdissement").remove(1);
+                    }
+
+                    if (card instanceof Creature && card.stat("Engagement").value() > 0) {
+                        card.stat("Engagement").remove(1);
                     }
 
                     if (card instanceof Unit && card.stat("Brûlure").value() > 0) {

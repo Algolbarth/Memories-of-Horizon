@@ -13,7 +13,7 @@ export class PotionParfumee extends Item {
 
         this.initFamily(["Potion"]);
 
-        this.addStat("Infusion", 5);
+        this.addStat(601, "Infusion", 5);
 
         this.addText(`Quand posé : Augmente de 1 le charisme d'une créature sur le terrain pendant ce tour pour toutes les 5 valeur d'infusion.`);
         this.addText(`[details {Augmente de {Math.floor(card.stat("Infusion").value() / 5)} le charisme d'une créature sur le terrain pendant ce tour.}]`);

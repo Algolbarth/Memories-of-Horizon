@@ -11,7 +11,7 @@ export class PotionInterdite extends Item {
 
         this.initFamily(["Potion"]);
 
-        this.addStat("Infusion", 5);
+        this.addStat(601, "Infusion", 5);
 
         this.addText([
             `Quand posé : Génère {card:Homonculus} sur votre terrain.`,

@@ -1,6 +1,7 @@
 import type { Card } from "$lib/cards/class/card";
 import { Creature } from "$lib/cards/class/creature";
 import type { Location } from "$lib/cards/class/location";
+import { Unit } from "$lib/cards/class/unit";
 import { Deck } from "$lib/deck/class";
 import type { System } from "$lib/system/class";
 import { copy } from "../utils";
@@ -323,7 +324,7 @@ export class Entity {
         this.refreshStack();
     };
 
-    checkPerpetuite = () => {
+    checkPersistance = () => {
         let discard: Card[] = copy(this.zone("Défausse").cards);
         for (const card of discard) {
             if (card.stat("Persistance").value() == 1) {
@@ -336,7 +337,7 @@ export class Entity {
     };
 
     totalIntelligence = () => {
-        let total = 0;
+        let total: number = 0;
         for (const card of this.zone("Terrain").cards) {
             total += card.stat("Intelligence").value();
         }
@@ -352,8 +353,12 @@ export class Entity {
             let cards: Card[] = copy(zone.cards);
             for (const card of cards) {
 
-                if (card.stat("Perception").value() > 0) {
+                if (zone.name == "Pile" && card.stat("Perception").value() > 0) {
                     card.costReduce(card.stat("Perception").value());
+                }
+
+                if (card instanceof Unit && card.stat("Vigueur").value() > 0) {
+                    card.stat("Garde").fix(card.stat("Vigueur").value());
                 }
 
                 if (card.startPhaseEffect != undefined) {

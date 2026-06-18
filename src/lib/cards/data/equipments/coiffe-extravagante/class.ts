@@ -12,14 +12,16 @@ export class CoiffeExtravagante extends Equipment {
         this.initFamily(["Armure"]);
 
         this.equipStat("Charisme").init(2);
+        this.equipStat("Vigueur").value = function () {
+            if (this.card.bearer != undefined) {
+                return this.card.bearer.stat("Charisme").value() * 10;
+            }
+            else {
+                return 0;
+            }
+        };
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain : Augmente d'autant la garde du porteur que la magie de celui-ci.`);
-    };
-
-    startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            this.bearer.stat("Garde").fix(10 * this.bearer.stat("Charisme").value());
-        }
+        this.addText(`Augmente d'autant la vigueur du porteur que 10 fois le charisme du porteur.`);
     };
 };

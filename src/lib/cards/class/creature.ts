@@ -21,7 +21,7 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat("Agilité", 1);
+        this.addStat(304, "Agilité", 1);
         this.stat("Agilité").condition = function () {
             if (this.value() > 1) {
                 return true;
@@ -29,14 +29,14 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat("Force", 0);
+        this.addStat(201, "Force", 0);
         this.stat("Force").display = function () {
             return true;
         };
 
-        this.addStat("Affliction", 0);
+        this.addStat(211, "Affliction", 0);
 
-        this.addStat("Maniement", 1);
+        this.addStat(401, "Maniement", 1);
         this.stat("Maniement").condition = function () {
             if (this.value() > 1) {
                 return true;
@@ -44,7 +44,7 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat("Critique", 0);
+        this.addStat(221, "Critique", 0);
         this.stat("Critique").display = function () {
             if (this.condition() || this.card.stat("Adresse").value() > 0) {
                 return true;
@@ -52,9 +52,9 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat("Adresse", 0);
+        this.addStat(222, "Adresse", 0);
 
-        this.addStat("Intensité", 2);
+        this.addStat(223, "Intensité", 2);
         this.stat("Intensité").display = function () {
             if (this.value() != 2 || this.card.stat("Adresse").value() > 0 || this.card.stat("Critique").value() > 0) {
                 return true;
@@ -62,15 +62,15 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat("Étourdissement", 0);
+        this.addStat(701, "Étourdissement", 0);
         this.stat("Étourdissement").debuff = true;
 
-        this.addStat("Engagement", 0);
+        this.addStat(702, "Engagement", 0);
 
-        this.addStat("Poison", 0);
+        this.addStat(711, "Poison", 0);
         this.stat("Poison").debuff = true;
 
-        this.addStat("Toxicité", 1, 1);
+        this.addStat(712, "Toxicité", 1, 1);
         this.stat("Toxicité").restriction = function (total: number) {
             if (this.card.stat("Poison").value() > 0) {
                 return total;

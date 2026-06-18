@@ -2,6 +2,7 @@ import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
 import Use from './use.svelte';
+import type { Unit } from '$lib/cards/class/unit';
 
 export class BriseGarde extends Action {
     name = "Brise garde";
@@ -42,7 +43,7 @@ export class BriseGarde extends Action {
         }
     };
 
-    useEffect = (target: Creature) => {
+    useEffect = (target: Unit) => {
         this.targeting(target);
 
         target.stat("Garde").set(0);

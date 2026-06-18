@@ -13,7 +13,7 @@ export class PotionDeResistance extends Item {
 
         this.initFamily(["Potion"]);
 
-        this.addStat("Infusion", 5);
+        this.addStat(601, "Infusion", 5);
 
         this.addText(`Quand posé : Augmente de 2 la résistance d'une créature sur votre terrain pendant ce tour pour chaque valeur d'infusion.`);
         this.addText(`[details {Augmente de {card.stat("Infusion").value() * 2} la résistance d'une créature sur votre terrain pendant ce tour.}]`);

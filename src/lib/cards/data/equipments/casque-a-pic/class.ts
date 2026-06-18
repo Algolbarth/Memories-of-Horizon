@@ -13,14 +13,8 @@ export class CasqueAPic extends Equipment {
 
         this.equipStat("Endurance").init(10);
         this.equipStat("Épine").init(10);
+        this.equipStat("Vigueur").init(15);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain : Augmente jusqu'à 15 la garde du porteur.`);
-    };
-
-    startPhaseEffect = () => {
-        if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            this.bearer.stat("Garde").fix(15);
-        }
     };
 };

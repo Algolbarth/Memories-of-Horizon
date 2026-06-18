@@ -37,7 +37,6 @@ Paresse : soigne une créature alliée d'autant que la différence entre sa vita
 Roi mage : quand posé : augmente la magie de toutes les créatures alliées sur le terrain.
 Sauvage : Créature humain : si n'est pas équipé : son endurance et sa force de base est égale à la moitié de sa vitalité.
 Crocs baveux : action bête, augmente le vol de vie d'une créature de famille Bête sur votre terrain.
-Arbalète : objet équipement, génère des carreaux dans l'inventaire qui scalent selon la force du mob.
 Pistolet : objet équipement, Au début de la phase de combat, fixe ses compteurs à 3. quand attaque : dépense 1 compteur pour infliger 5 dégâts spéciaux à l'unité attaquée.
 Fusil : objet équipement, Au début de la phase de combat, fixe ses compteurs à 1. quand attaque : dépense 1 compteur pour infliger 15 dégâts spéciaux à l'unité attaquée.
 Pistolet double : objet équipement

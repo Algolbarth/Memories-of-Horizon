@@ -48,14 +48,14 @@ export class Card {
 
         this.addTrait("Limité", false);
 
-        this.addStat("Pénétration", 0);
-        this.addStat("Percée", 0);
+        this.addStat(203, "Percée", 0);
+        this.addStat(213, "Pénétration", 0);
 
-        this.addStat("Éveil", 0);
+        this.addStat(404, "Perception", 0);
 
-        this.addStat("Persistance", 0);
-
-        this.addStat("Perception", 0);
+        this.addStat(501, "Persistance", 0);
+        this.addStat(502, "Amélioration", 0);
+        this.addStat(503, "Éveil", 0);
 
         for (const ressource of system.ressources.list) {
             this.cost.push(new Cost(ressource.name, this));
@@ -518,13 +518,31 @@ export class Card {
         let check = this.checkStat(name);
         if (check == undefined) {
             console.log(name + " n'est pas une stat pour " + this.name);
-            return new Stat(name, 0, 0, this);
+            return new Stat(0, name, 0, 0, this);
         }
         return check;
     };
 
-    addStat = (name: string, value: number, min: number = 0) => {
-        this.stats.push(new Stat(name, value, min, this));
+    addStat = (code: number, name: string, value: number, min: number = 0) => {
+        for (const stat of this.stats) {
+            if (stat.code == code) {
+                console.log("Le code " + code + " est déjà pris par la stat " + stat.name);
+                return 0;
+            }
+            if (stat.name == name) {
+                console.log("La stat " + name + " existe déjà");
+                return 0;
+            }
+        }
+
+        let stat: Stat = new Stat(code, name, value, min, this);
+        for (let i = 0; i < this.stats.length; i++) {
+            if (this.stats[i].code > stat.code) {
+                this.stats.splice(i, 0, stat);
+                return 0;
+            }
+        }
+        this.stats.push(stat);
     };
 
     displayStat = () => {
