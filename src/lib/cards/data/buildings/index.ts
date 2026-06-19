@@ -28,6 +28,7 @@ export * from './feu-de-camp';
 export * from './fontaine';
 export * from './fontaine-de-bambou';
 export * from './garnison-des-monts';
+export * from './grue-de-chantier';
 export * from './guilde-des-aventuriers';
 export * from './guilde-des-marchands';
 export * from './lac-de-lave';
