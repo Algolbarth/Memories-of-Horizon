@@ -17,6 +17,7 @@ export * from './carriere-de-pierre';
 export * from './cascade';
 export * from './caserne';
 export * from './catapulte';
+export * from './ceinture-asteroides';
 export * from './chambre-du-tresor';
 export * from './charrette';
 export * from './chaudron';
