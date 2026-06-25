@@ -195,7 +195,8 @@ export class Unit extends Card {
 
     defeat = () => {
         this.stat("Santé").init(0);
-
+        this.stat("Engagement").set(0);
+        this.stat("Brûlure").set(0);
         this.stat("Initiative").set(this.stat("Maîtrise").value());
 
         if (this.defeatEffect != undefined) {
@@ -218,39 +219,10 @@ export class Unit extends Card {
 
     defeatEffect: Function | undefined;
 
-    die = () => {
-        if (this.dieEffect != undefined) {
-            this.dieEffect();
-        }
-
-        for (const entity of [this.owner(), this.adversary()]) {
-            for (const zone of entity.zones) {
-                let cards: Card[] = copy(zone.cards);
-                for (const card of cards) {
-                    if (card != this) {
-                        card.otherDie(this);
-                    }
-                }
-            }
-        }
-
-        this.stat("Brûlure").set(0);
-
-        if (this.second_life == false) {
-            this.move("Défausse");
-
-            if (this.system.view.card == this) {
-                this.system.view.reset();
-            }
-        }
-        else {
-            this.second_life = false;
-        }
-    };
-
     destroy = () => {
         this.stat("Santé").init(0);
-
+        this.stat("Engagement").set(0);
+        this.stat("Brûlure").set(0);
         this.stat("Initiative").set(this.stat("Maîtrise").value());
 
         if (this.destroyEffect != undefined) {
@@ -269,6 +241,34 @@ export class Unit extends Card {
         }
 
         this.die();
+    };
+
+    die = () => {
+        if (this.dieEffect != undefined) {
+            this.dieEffect();
+        }
+
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const zone of entity.zones) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
+                    if (card != this) {
+                        card.otherDie(this);
+                    }
+                }
+            }
+        }
+
+        if (this.second_life == false) {
+            this.move("Défausse");
+
+            if (this.system.view.card == this) {
+                this.system.view.reset();
+            }
+        }
+        else {
+            this.second_life = false;
+        }
     };
 
     play = () => {

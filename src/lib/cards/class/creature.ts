@@ -149,7 +149,10 @@ export class Creature extends Unit {
 
     destroy = () => {
         this.stat("Santé").init(0);
-
+        this.stat("Étourdissement").set(0);
+        this.stat("Engagement").set(0);
+        this.stat("Poison").set(0);
+        this.stat("Brûlure").set(0);
         this.stat("Initiative").set(this.stat("Maîtrise").value());
 
         if (this.destroyEffect != undefined) {
@@ -190,10 +193,11 @@ export class Creature extends Unit {
 
     defeat = () => {
         this.stat("Santé").init(0);
-
-        if (this.type == "Créature") {
-            this.stat("Initiative").set(this.stat("Maîtrise").value());
-        }
+        this.stat("Étourdissement").set(0);
+        this.stat("Engagement").set(0);
+        this.stat("Poison").set(0);
+        this.stat("Brûlure").set(0);
+        this.stat("Initiative").set(this.stat("Maîtrise").value());
 
         if (this.defeatEffect != undefined) {
             this.defeatEffect();
@@ -252,11 +256,6 @@ export class Creature extends Unit {
                 }
             }
         }
-
-        this.stat("Étourdissement").set(0);
-        this.stat("Engagement").set(0);
-        this.stat("Poison").set(0);
-        this.stat("Brûlure").set(0);
 
         if (this.second_life == false) {
             this.move("Défausse");
