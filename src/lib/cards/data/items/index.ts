@@ -14,6 +14,7 @@ export * from './boussole';
 export * from './brioche';
 export * from './brique';
 export * from './cadeau';
+export * from './capsule-de-survie';
 export * from './carpacio-de-thon';
 export * from './carte-de-la-region';
 export * from './cendres';
