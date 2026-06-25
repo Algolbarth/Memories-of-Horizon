@@ -17,7 +17,7 @@ export class MasseDePierre extends Equipment {
         this.addText(`Quand le porteur attaque : Augmente de 5 l'endurance du porteur.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.bearer.stat("Endurance").increase(5);
     };
 };

@@ -74,7 +74,7 @@ export class DagueEmpoisonnee extends Equipment {
         this.pose();
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         if (defender instanceof Creature && defender.stat("Poison").value() > 0) {
             defender.stat("Toxicité").increase(1);
         }

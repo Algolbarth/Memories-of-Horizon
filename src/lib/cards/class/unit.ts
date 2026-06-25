@@ -89,6 +89,8 @@ export class Unit extends Card {
 
         this.addStat(403, "Intelligence", 0);
 
+        this.addStat(702, "Engagement", 0);
+
         this.addStat(713, "Brûlure", 0);
         this.stat("Brûlure").debuff = true;
     };
@@ -194,9 +196,7 @@ export class Unit extends Card {
     defeat = () => {
         this.stat("Santé").init(0);
 
-        if (this.type == "Créature") {
-            this.stat("Initiative").set(this.stat("Maîtrise").value());
-        }
+        this.stat("Initiative").set(this.stat("Maîtrise").value());
 
         if (this.defeatEffect != undefined) {
             this.defeatEffect();
@@ -218,12 +218,40 @@ export class Unit extends Card {
 
     defeatEffect: Function | undefined;
 
+    die = () => {
+        if (this.dieEffect != undefined) {
+            this.dieEffect();
+        }
+
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const zone of entity.zones) {
+                let cards: Card[] = copy(zone.cards);
+                for (const card of cards) {
+                    if (card != this) {
+                        card.otherDie(this);
+                    }
+                }
+            }
+        }
+
+        this.stat("Brûlure").set(0);
+
+        if (this.second_life == false) {
+            this.move("Défausse");
+
+            if (this.system.view.card == this) {
+                this.system.view.reset();
+            }
+        }
+        else {
+            this.second_life = false;
+        }
+    };
+
     destroy = () => {
         this.stat("Santé").init(0);
 
-        if (this.type == "Créature") {
-            this.stat("Initiative").set(this.stat("Maîtrise").value());
-        }
+        this.stat("Initiative").set(this.stat("Maîtrise").value());
 
         if (this.destroyEffect != undefined) {
             this.destroyEffect();
@@ -269,8 +297,17 @@ export class Unit extends Card {
             }
         }
 
+        let damage_result = {
+            value: 0,
+            die: false
+        };
+
         if (this.stat("Épine").value() > 0) {
-            attacker.specialDamage(this.stat("Épine").value(), this);
+            damage_result = attacker.physicalDamage(this.stat("Épine").value(), this);
+        }
+
+        if (!damage_result.die && this.stat("Radiation").value() > 0) {
+            damage_result = attacker.specialDamage(this.stat("Radiation").value(), this);
         }
     };
 

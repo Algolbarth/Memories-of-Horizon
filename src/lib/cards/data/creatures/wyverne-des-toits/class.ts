@@ -28,7 +28,7 @@ export class WyverneDesToits extends Creature {
         }
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         let damage: number = 0;
         for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Building) {

@@ -22,7 +22,7 @@ export class Geomarteau extends Equipment {
         this.addText(`Quand le porteur attaque : Augmente de 3 ses secousses. Inflige autant de dégâts spéciaux à toutes les unités sur le terrain adverse que ses secousses.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.stat("Secousses").increase(3);
 
         let adversary_battlefield: Unit[] = copy(this.adversary().zone("Terrain").cards);

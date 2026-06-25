@@ -18,7 +18,7 @@ export class LanceIncendiaire extends Equipment {
             `Réduit d'autant l'endurance de l'unité attaquée que la brûlure de celle-ci.`]);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         defender.stat("Brûlure").increase(5);
         defender.stat("Endurance").decrease(defender.stat("Brûlure").value());
     };

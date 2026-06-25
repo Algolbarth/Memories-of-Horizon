@@ -17,7 +17,7 @@ export class Voleur extends Creature {
         this.addText(`Quand attaque : Augmente de 5 sa vente en or.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.getSale("Or").increase(5);
     };
 };

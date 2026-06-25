@@ -226,7 +226,7 @@ export class Equipment extends Item {
 
     playEffect: Function | undefined;
 
-    fightEffect: Function | undefined;
+    attackEffect: Function | undefined;
 
     killEffect: Function | undefined;
 

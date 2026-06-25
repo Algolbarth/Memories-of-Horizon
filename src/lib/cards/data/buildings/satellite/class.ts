@@ -9,7 +9,7 @@ export class Satellite extends Building {
 
         this.init([["Or", 50]]);
 
-        this.initFamily(["Astronef"]);
+        this.initFamily(["Machine", "Spatial"]);
 
         this.stat("Constitution").init(1);
         this.stat("Psychisme").init(1);

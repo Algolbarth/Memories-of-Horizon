@@ -17,7 +17,7 @@ export class Chat extends Creature {
         this.addText(`Quand attaque : Stocke 1 or.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.owner().ressource("Or").stock(1);
     };
 };

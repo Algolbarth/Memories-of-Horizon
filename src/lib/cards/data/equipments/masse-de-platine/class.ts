@@ -18,7 +18,7 @@ export class MasseDePlatine extends Equipment {
         this.addText(`Quand le porteur attaque : Augmente de 20 la constitution et la force du porteur.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.bearer.stat("Constitution").increase(20);
         this.bearer.stat("Force").increase(20);
     };

@@ -18,7 +18,7 @@ export class MasseMagique extends Equipment {
         this.addText(`Quand le porteur attaque : Stocke 5 mana.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.owner().ressource("Mana").stock(5);
     };
 };

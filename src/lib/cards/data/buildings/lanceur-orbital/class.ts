@@ -7,11 +7,11 @@ export class LanceurOrbital extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 125]]);
+        this.init([["Or", 150]]);
 
-        this.initFamily(["Astronef"]);
+        this.initFamily(["Machine", "Spatial"]);
 
-        this.stat("Constitution").init(50);
+        this.stat("Constitution").init(100);
 
         this.addText(`Quand se prépare sur le terrain : Génère {card:Satellite} sur votre terrain.`);
     };

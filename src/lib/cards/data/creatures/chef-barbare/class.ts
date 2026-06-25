@@ -19,7 +19,7 @@ export class ChefBarbare extends Creature {
         this.addText(`Quand attaque : Augmente de 5 la force de toutes les créatures sur votre terrain.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature) {

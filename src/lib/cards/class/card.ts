@@ -477,13 +477,13 @@ export class Card {
 
     roundEffect: Function | undefined;
 
-    otherFight = (card: Creature) => {
-        if (this.otherFightEffect != undefined) {
-            this.otherFightEffect(card);
+    otherAttack = (card: Creature) => {
+        if (this.otherAttackEffect != undefined) {
+            this.otherAttackEffect(card);
         }
     };
 
-    otherFightEffect: Function | undefined;
+    otherAttackEffect: Function | undefined;
 
     otherDefend = (defender: Unit, attacker: Creature) => {
         if (this.otherDefendEffect != undefined) {

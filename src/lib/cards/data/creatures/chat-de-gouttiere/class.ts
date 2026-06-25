@@ -18,11 +18,11 @@ export class ChatDeGouttiere extends Creature {
         this.addText(`Quand une autre créature alliée de famille Bête attaque : Augmente de 3 la force de cette créature pendant ce tour.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.owner().ressource("Or").stock(1);
     };
 
-    otherFightEffect = (card: Creature) => {
+    otherAttackEffect = (card: Creature) => {
         if (card.isAlly(this) && card.isFamily("Bête")) {
             card.stat("Force").turn += 3;
         }

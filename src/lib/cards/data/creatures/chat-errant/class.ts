@@ -22,7 +22,7 @@ export class ChatErrant extends Creature {
         this.owner().getCard("Chat").add("Terrain");
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.owner().ressource("Or").stock(1);
     };
 };

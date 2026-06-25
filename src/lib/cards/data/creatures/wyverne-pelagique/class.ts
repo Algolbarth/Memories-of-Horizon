@@ -41,7 +41,7 @@ export class WyvernePelagique extends Creature {
         this.pose();
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         let damage: number = 0;
         for (const card of this.owner().zone("Pile").cards) {
             if (card instanceof Creature && card.isFamily("Poisson")) {

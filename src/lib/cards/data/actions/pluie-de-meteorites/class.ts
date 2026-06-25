@@ -12,6 +12,8 @@ export class PluieDeMeteorites extends Action {
 
         this.init([["Or", 120]]);
 
+        this.initFamily(["Spatial"]);
+
         this.addChoice([
             `Stocke 5 flux.`,
             `Inflige 20 dégâts spéciaux à toutes les unités sur le terrain adverse.`]);

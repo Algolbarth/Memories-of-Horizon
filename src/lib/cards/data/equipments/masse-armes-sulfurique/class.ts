@@ -18,7 +18,7 @@ export class MasseDArmesSulfurique extends Equipment {
         this.addText(`Quand le porteur attaque : Inflige autant de dégâts spéciaux à l'unité attaquée que la force du porteur.`);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         defender.specialDamage(this.bearer.stat("Force").value(), this);
     };
 };

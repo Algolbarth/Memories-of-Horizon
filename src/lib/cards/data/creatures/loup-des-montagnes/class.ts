@@ -18,7 +18,7 @@ export class LoupDesMontagnes extends Creature {
         this.addText(`Quand attaque une unité ayant une endurance nulle : Augmente de 5 sa force.`);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         if (defender.stat("Endurance").value() == 0) {
             this.stat('Force').increase(5);
         }

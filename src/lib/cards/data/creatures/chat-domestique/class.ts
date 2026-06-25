@@ -18,11 +18,11 @@ export class ChatDomestique extends Creature {
         this.addText(`Quand une autre créature alliée de famille Bête attaque : Stocke 1 or.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.owner().ressource("Or").stock(1);
     };
 
-    otherFightEffect = (card: Creature) => {
+    otherAttackEffect = (card: Creature) => {
         if (card.isAlly(this) && card.isFamily("Bête")) {
             this.owner().ressource("Or").stock(1);
         }

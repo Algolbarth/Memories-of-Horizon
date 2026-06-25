@@ -20,7 +20,7 @@ export class SerpentArboricole extends Creature {
             `Augmente de 5 la toxicité de la créature attaquée pendant ce tour.`]);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         if (defender instanceof Creature) {
             defender.stat("Poison").increase(1);
             defender.stat("Toxicité").turn += 5;

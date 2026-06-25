@@ -65,8 +65,6 @@ export class Creature extends Unit {
         this.addStat(701, "Étourdissement", 0);
         this.stat("Étourdissement").debuff = true;
 
-        this.addStat(702, "Engagement", 0);
-
         this.addStat(711, "Poison", 0);
         this.stat("Poison").debuff = true;
 
@@ -152,9 +150,7 @@ export class Creature extends Unit {
     destroy = () => {
         this.stat("Santé").init(0);
 
-        if (this.type == "Créature") {
-            this.stat("Initiative").set(this.stat("Maîtrise").value());
-        }
+        this.stat("Initiative").set(this.stat("Maîtrise").value());
 
         if (this.destroyEffect != undefined) {
             this.destroyEffect();
@@ -257,6 +253,11 @@ export class Creature extends Unit {
             }
         }
 
+        this.stat("Étourdissement").set(0);
+        this.stat("Engagement").set(0);
+        this.stat("Poison").set(0);
+        this.stat("Brûlure").set(0);
+
         if (this.second_life == false) {
             this.move("Défausse");
 
@@ -301,7 +302,7 @@ export class Creature extends Unit {
         let defender: Unit | undefined = this.findTarget();
 
         if (defender != undefined) {
-            this.fight(defender);
+            this.attack(defender);
         }
     };
 
@@ -317,18 +318,18 @@ export class Creature extends Unit {
         return target;
     };
 
-    fight = (defender: Unit) => {
+    attack = (defender: Unit) => {
         let is_die: boolean = defender.zone!.name != "Terrain";
         let nb_hit: number = this.stat("Agilité").value();
 
         while (!is_die && nb_hit > 0) {
 
-            if (this.fightEffect != undefined) {
-                this.fightEffect(defender);
+            if (this.attackEffect != undefined) {
+                this.attackEffect(defender);
             }
             for (const e of this.equipments) {
-                if (e.fightEffect != undefined) {
-                    e.fightEffect(defender);
+                if (e.attackEffect != undefined) {
+                    e.attackEffect(defender);
                 }
             }
 
@@ -337,7 +338,7 @@ export class Creature extends Unit {
                     let cards: Card[] = copy(zone.cards);
                     for (const card of cards) {
                         if (card != this) {
-                            card.otherFight(this);
+                            card.otherAttack(this);
                         }
                     }
                 }
@@ -369,16 +370,16 @@ export class Creature extends Unit {
         }
     };
 
-    fightEffect: Function | undefined;
+    attackEffect: Function | undefined;
 
-    otherFight = (card: Creature) => {
-        if (this.otherFightEffect != undefined) {
-            this.otherFightEffect(card);
+    otherAttack = (card: Creature) => {
+        if (this.otherAttackEffect != undefined) {
+            this.otherAttackEffect(card);
         }
 
         for (const equipment of this.equipments) {
-            if (equipment.otherFightEffect != undefined) {
-                equipment.otherFightEffect(card);
+            if (equipment.otherAttackEffect != undefined) {
+                equipment.otherAttackEffect(card);
             }
         }
     };
@@ -419,11 +420,17 @@ export class Creature extends Unit {
             }
         }
 
+        let damage_result = {
+            value: 0,
+            die: false
+        };
+
         if (this.stat("Épine").value() > 0) {
-            attacker.physicalDamage(this.stat("Épine").value(), this);
+            damage_result = attacker.physicalDamage(this.stat("Épine").value(), this);
         }
-        if (this.stat("Radiation").value() > 0) {
-            attacker.specialDamage(this.stat("Épine").value(), this);
+
+        if (!damage_result.die && this.stat("Radiation").value() > 0) {
+            damage_result = attacker.specialDamage(this.stat("Radiation").value(), this);
         }
     };
 

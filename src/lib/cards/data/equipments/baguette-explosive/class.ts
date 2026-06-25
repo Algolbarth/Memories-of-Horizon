@@ -18,7 +18,7 @@ export class BaguetteExplosive extends Equipment {
         this.addText(`Quand le porteur attaque : Inflige autant de dégâts spéciaux à l'unité attaquée que la magie du porteur.`);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         defender.specialDamage(this.bearer.stat("Magie").value(), this);
     };
 };

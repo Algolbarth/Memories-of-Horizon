@@ -9,6 +9,8 @@ export class CeintureDAsteroides extends Building {
 
         this.init([["Or", 150]]);
 
+        this.initFamily(["Spatial"]);
+
         this.stat("Constitution").init(100);
         this.stat("Épine").init(20);
 

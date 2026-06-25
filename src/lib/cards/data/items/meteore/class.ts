@@ -11,6 +11,8 @@ export class Meteore extends Item {
 
         this.init([["Or", 25]]);
 
+        this.initFamily(["Spatial"]);
+
         this.addChoice([
             `Stocke 1 flux.`,
             `Inflige 40 dégâts spéciaux à une unité sur le terrain adverse.`]);

@@ -17,7 +17,7 @@ export class PoeleAFrire extends Equipment {
         this.addText(`Quand le porteur attaque : Inflige 10 dégâts spéciaux à l'unité attaquée pour chaque objet de famille Nourriture dans votre défausse.`);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         let damage: number = 0;
 
         let discard: Card[] = copy(this.owner().zone("Défausse").cards);

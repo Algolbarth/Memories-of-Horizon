@@ -17,7 +17,7 @@ export class MassueDeChene extends Equipment {
         this.addText(`Quand le porteur attaque : Augmente de 10 la constitution du porteur.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.bearer.stat("Constitution").increase(10);
     };
 };

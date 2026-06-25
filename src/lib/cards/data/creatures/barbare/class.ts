@@ -17,7 +17,7 @@ export class Barbare extends Creature {
         this.addText(`Quand attaque : Augmente de 5 sa force.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.stat("Force").increase(5);
     };
 };

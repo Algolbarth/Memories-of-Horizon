@@ -3,9 +3,10 @@
 ## Ressources
 produit X ressource => X
 stocke X ressource => 3X/2
-augmente de X votre production d'une ressource => 5X
+augmente de X votre production d'une ressource => 10X
 réduit le cout d'une carte de X => X
 augmente la vente d'une carte de X => X/2
+stocke X flux => 20X
 
 ## Pioche
 pioche X cartes => 2X

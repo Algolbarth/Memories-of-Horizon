@@ -29,7 +29,7 @@ export class VoleurDeChevaux extends Creature {
         this.pose();
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.getSale("Or").increase(5);
     };
 };

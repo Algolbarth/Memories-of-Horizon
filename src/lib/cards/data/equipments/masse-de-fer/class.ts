@@ -18,7 +18,7 @@ export class MasseDeFer extends Equipment {
         this.addText(`Quand le porteur attaque : Augmente de 5 la constitution et la force du porteur.`);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.bearer.stat("Constitution").increase(5);
         this.bearer.stat("Force").increase(5);
     };

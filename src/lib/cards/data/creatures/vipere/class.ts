@@ -20,7 +20,7 @@ export class Vipere extends Creature {
             `Augmente de 1 la toxicité de la créature attaquée pendant ce tour.`]);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         if (defender instanceof Creature) {
             defender.stat("Poison").increase(1);
             defender.stat("Toxicité").turn += 1;

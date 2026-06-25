@@ -29,7 +29,7 @@ export class ChatNoir extends Creature {
         this.owner().ressource("Or").decrease(5);
     };
 
-    fightEffect = () => {
+    attackEffect = () => {
         this.owner().ressource("Or").produce(1);
         this.owner().ressource("Or").stock(1);
         this.owner().ressource("Or").increase(1);

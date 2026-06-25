@@ -18,7 +18,7 @@ export class Pyromane extends Creature {
         this.addText(`Quand attaque : Augmente de 3 la brûlure de l'unité attaquée.`);
     };
 
-    fightEffect = (defender: Unit) => {
+    attackEffect = (defender: Unit) => {
         defender.stat("Brûlure").increase(3);
     };
 };

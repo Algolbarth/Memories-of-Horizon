@@ -264,27 +264,37 @@ export class Game {
                             }
                         }
 
-                        if (card.stat("Régénération").value() > 0) {
-                            card.heal(card.stat("Régénération").value());
-                        }
+                        if (card.stat("Santé").value() > 0) {
+                            if (card.stat("Régénération").value() > 0) {
+                                card.heal(card.stat("Régénération").value());
+                            }
 
-                        if (card instanceof Creature) {
-                            if (card.stat("Poison").value() > 0) {
-                                card.specialDamage(card.stat("Toxicité").value(), card);
-                                card.stat("Poison").decrease(1);
+                            if (card instanceof Creature) {
+                                if (card.stat("Poison").value() > 0) {
+                                    card.stat("Poison").decrease(1);
+                                    card.specialDamage(card.stat("Toxicité").value(), card);
+                                }
+                            }
+
+                            if (card.stat("Brûlure").value() > 0) {
+                                card.physicalDamage(card.stat("Brûlure").value(), card);
                             }
                         }
 
-                        if (card.stat("Brûlure").value() > 0) {
-                            card.physicalDamage(card.stat("Brûlure").value(), card);
-                        }
+                        if (zone.name == "Terrain" && card.adversary().zone("Terrain").cards.length > 0) {
+                            let unit: Unit = card.adversary().zone("Terrain").cards[0];
+                            let damage_result = {
+                                value: 0,
+                                die: false
+                            };
 
-                        if (card.stat("Portée").value() > 0) {
-                            card.adversary().zone("Terrain").cards[0].physicalDamage(card.stat("Portée").value(), card);
-                        }
+                            if (card.stat("Portée").value() > 0) {
+                                damage_result = unit.physicalDamage(card.stat("Portée").value(), card);
+                            }
 
-                        if (card.stat("Psychisme").value() > 0) {
-                            card.adversary().zone("Terrain").cards[0].specialDamage(card.stat("Psychisme").value(), card);
+                            if (!damage_result.die && card.stat("Psychisme").value() > 0) {
+                                damage_result = unit.specialDamage(card.stat("Psychisme").value(), card);
+                            }
                         }
                     }
                 }
