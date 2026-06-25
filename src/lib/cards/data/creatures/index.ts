@@ -197,6 +197,7 @@ export * from './serveuse-de-taverne';
 export * from './soldat';
 export * from './soldat-nain';
 export * from './souris';
+export * from './spationaute';
 export * from './stratege';
 export * from './taureau';
 export * from './theoricien-du-complot';
