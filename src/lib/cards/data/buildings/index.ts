@@ -25,6 +25,7 @@ export * from './chaudron-de-bonne-fortune';
 export * from './donjon-abandonne';
 export * from './epouvantail';
 export * from './etable';
+export * from './extracteur-elementaire';
 export * from './feu-de-camp';
 export * from './fontaine';
 export * from './fontaine-de-bambou';

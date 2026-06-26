@@ -9,7 +9,7 @@ export class LanceurOrbital extends Building {
 
         this.init([["Or", 150]]);
 
-        this.initFamily(["Machine", "Spatial"]);
+        this.initFamily(["Spatial"]);
 
         this.stat("Constitution").init(100);
 
