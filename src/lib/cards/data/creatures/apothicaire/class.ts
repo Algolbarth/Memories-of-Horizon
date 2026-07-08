@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Apothicaire extends Creature {
     name = "Apothicaire";
@@ -20,58 +21,82 @@ export class Apothicaire extends Creature {
             `Augmente de 10 la toxicité d'une créature empoisonnée sur le terrain adverse.`]);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            let check = false;
+    userInterface = () => {
+        let check = false;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (check == false && card instanceof Creature) {
-                    check = true;
-                }
-            }
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (check == false && card instanceof Creature && card.stat("Poison").value() > 0) {
-                    check = true;
-                }
-            }
-
-            if (check) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(undefined, undefined);
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature) {
+                check = true;
             }
         }
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature && card.stat("Poison").value() > 0) {
+                check = true;
+            }
+        }
+
+        if (check) {
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Augmente de 10 la régénération d'une créature sur votre terrain"],
+                        () => {
+                            this.changePanel(1);
+                        }),
+                    new Button(["Augmente de 10 la toxicité d'une créature empoisonnée sur le terrain adverse"],
+                        () => {
+                            this.changePanel(2);
+                        })])
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature;
+                    },
+                    (target: Creature) => {
+                        this.useEffect("regeneration", target);
+                        this.closeInterface();
+                    })
+                .addTarget(
+                    [this.adversary().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature && target.stat("Poison").value() > 0;
+                    },
+                    (target: Creature) => {
+                        this.useEffect("toxicity", target);
+                        this.closeInterface();
+                    });
+        }
         else {
-            let target = undefined;
-
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
-                }
-            }
-
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.stat("Poison").value() > 0) {
-                    target = card;
-                }
-            }
-
-            if (target == undefined) {
-                this.useEffect(target, undefined);
-            }
-            else if (target.isAlly(this)) {
-                this.useEffect(target, "regeneration");
-            }
-            else {
-                this.useEffect(target, "toxicity");
-            }
-
-
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Creature | undefined, choice: string | undefined) => {
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
+            }
+        }
+
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature && card.stat("Poison").value() > 0) {
+                target = card;
+            }
+        }
+
+        if (target == undefined) {
+            this.useEffect();
+        }
+        else if (target.isAlly(this)) {
+            this.useEffect("regeneration", target);
+        }
+        else {
+            this.useEffect("toxicity", target);
+        }
+    };
+
+    useEffect = (choice: string | undefined = undefined, target: Creature | undefined = undefined) => {
         if (target != undefined) {
             this.targeting(target);
 

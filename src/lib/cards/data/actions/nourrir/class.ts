@@ -4,7 +4,7 @@ import { Action } from '$lib/cards/class/action';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import type { Card } from '$lib/cards/class/card';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class Nourrir extends Action {
     name = "Nourrir";
@@ -28,7 +28,7 @@ export class Nourrir extends Action {
         return false;
     };
 
-    select = () => {
+    userInterface = () => {
         let check: boolean = false;
         for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.isDamaged()) {
@@ -37,17 +37,40 @@ export class Nourrir extends Action {
         }
 
         if (check) {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("heal");
-            }
+            this.game().user_interface = new UserInterface(this).addChoice([
+                new Button(
+                    ["Pioche 1 carte de famille Nourriture pour chaque créature sur votre terrain"],
+                    () => {
+                        this.useEffect("draw");
+                        this.closeInterface();
+                    }),
+                new Button(
+                    ["Soigne 5 blessures à toutes les créatures sur votre terrain"],
+                    () => {
+                        this.useEffect("heal");
+                        this.closeInterface();
+                    })
+            ]);
         }
         else {
             this.useEffect("draw");
         }
+    };
 
+    autoUse = () => {
+        let check: boolean = false;
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature && card.isDamaged()) {
+                check = true;
+            }
+        }
+
+        if (check) {
+            this.useEffect("heal");
+        }
+        else {
+            this.useEffect("draw");
+        }
     };
 
     useEffect = (choice: string) => {

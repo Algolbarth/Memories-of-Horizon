@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
 import { Building } from '$lib/cards/class/building';
+import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class Pilote extends Creature {
     name = "Pilote";
@@ -19,42 +20,50 @@ export class Pilote extends Creature {
         this.addText(`Quand posé : Augmente de 1 la maîtrise d'un bâtiment de famille Véhicule sur votre terrain.`);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            let check = false;
+    userInterface = () => {
+        let check = false;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (check == false && card instanceof Building && card.isFamily("Véhicule")) {
-                    check = true;
-                }
-            }
-
-            if (check) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(undefined);
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Building && card.isFamily("Véhicule")) {
+                check = true;
             }
         }
+
+        if (check) {
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Building && target.isFamily("Véhicule");
+                    },
+                    (target: Building) => {
+                        this.useEffect(target);
+                        this.closeInterface();
+                    });
+        }
         else {
-            let target = undefined;
-
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Building && card.isFamily("Véhicule")) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
-            else {
-                this.useEffect(undefined);
-            }
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Building | undefined) => {
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Building && card.isFamily("Véhicule")) {
+                target = card;
+            }
+        }
+
+        if (target != undefined) {
+            this.useEffect(target);
+        }
+        else {
+            this.useEffect();
+        }
+    };
+
+    useEffect = (target: Building | undefined = undefined) => {
         if (target != undefined) {
             this.targeting(target);
 

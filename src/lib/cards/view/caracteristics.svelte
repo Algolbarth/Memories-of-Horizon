@@ -53,7 +53,7 @@
 					</div>
 				{/each}
 			{:else}
-				<div class="cost" style="background-color:transparent;">Rien</div>
+				<div class="cost" style="background-color:transparent;">Gratuit</div>
 			{/if}
 		</div>
 
@@ -67,7 +67,7 @@
 					</div>
 				{/each}
 			{:else}
-				<div class="cost" style="background-color:transparent;">Rien</div>
+				<div class="cost" style="background-color:transparent;">Sans-valeur</div>
 			{/if}
 		</div>
 	</div>

@@ -1,9 +1,9 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import type { Unit } from '$lib/cards/class/unit';
-import Use from './use.svelte';
+import { Unit } from '$lib/cards/class/unit';
 import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class BucherDesVanites extends Action {
     name = "Bûcher des vanités";
@@ -25,23 +25,21 @@ export class BucherDesVanites extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            let target = undefined;
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Unit) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
 
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
-        }
+    autoUse = () => {
+        this.useEffect(this.adversary().zone("Terrain").cards[0]);
     };
 
     useEffect = (target: Unit) => {

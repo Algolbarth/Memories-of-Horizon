@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Spell } from '$lib/cards/class/spell';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class CreationRocheuse extends Spell {
     name = "Création rocheuse";
@@ -25,17 +25,32 @@ export class CreationRocheuse extends Spell {
         return false;
     };
 
-    select = () => {
+    userInterface = () => {
         if (this.owner().ressource("Mana").total() >= 50) {
             this.useEffect();
         }
         else {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("creature");
-            }
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Génère Élémentaire de roche sur votre terrain"],
+                        () => {
+                            this.useEffect("creature");
+                            this.closeInterface();
+                        }),
+                    new Button(["Génère Mur de roche sur votre terrain"],
+                        () => {
+                            this.useEffect("building");
+                            this.closeInterface();
+                        })]);
+        }
+    };
+
+    autoUse = () => {
+        if (this.owner().ressource("Mana").total() >= 50) {
+            this.useEffect();
+        }
+        else {
+            this.useEffect("creature");
         }
     };
 

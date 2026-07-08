@@ -2,7 +2,7 @@ import { Card } from '$lib/cards/class/card';
 import { Unit } from '$lib/cards/class/unit';
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class Rappel extends Action {
     name = "Rappel";
@@ -24,23 +24,21 @@ export class Rappel extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            let target = undefined;
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Défausse")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Card) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
 
-            for (const card of this.owner().zone("Défausse").cards) {
-                if (target == undefined) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
-        }
+    autoUse = () => {
+        this.useEffect(this.owner().zone("Défausse").cards[0]);
     };
 
     useEffect = (target: Card) => {

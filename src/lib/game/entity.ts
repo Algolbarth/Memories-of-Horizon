@@ -18,11 +18,11 @@ export class Entity {
         }
     };
     zones: Zone[] = [
-        new Zone("Région", 3),
-        new Stack(),
-        new Zone("Inventaire", 10),
-        new Zone("Terrain", 10),
-        new Zone("Défausse")
+        new Zone(this, "Région", 3),
+        new Stack(this),
+        new Zone(this, "Inventaire", 10),
+        new Zone(this, "Terrain", 10),
+        new Zone(this, "Défausse")
     ];
     ressources: EntityRessource[] = [];
     place: Location | undefined = undefined;
@@ -320,8 +320,6 @@ export class Entity {
         for (const ressource of this.ressources) {
             ressource.current = ressource.production;
         }
-
-        this.refreshStack();
     };
 
     checkPersistance = () => {

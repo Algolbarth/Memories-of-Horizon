@@ -210,7 +210,6 @@ export class Filter {
             if (effect.condition()) {
                 text = text + effect.text;
             }
-
         }
 
         text = text.replaceAll("[satiety ", "Satieté");
@@ -249,7 +248,6 @@ export class Filter {
         if (card.checkStat(this.select_stat)) {
             return this.useOperator(card.stat(this.select_stat).value(), this.select_stat_operator, this.select_stat_value);
         }
-
     };
 
     useOperator(card_value: number, operator: string, value: number) {

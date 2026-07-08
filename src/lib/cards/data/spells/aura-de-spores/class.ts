@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Spell } from '$lib/cards/class/spell';
-import Use from './use.svelte';
 import { Creature } from '$lib/cards/class/creature';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class AuraDeSpores extends Spell {
     name = "Aura de spores";
@@ -20,8 +21,13 @@ export class AuraDeSpores extends Spell {
     };
 
     canUse = () => {
-        for (const entity of [this.owner(), this.adversary()]) {
-            for (const card of entity.zone("Terrain").cards) {
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature) {
+                return true;
+            }
+        }
+        if (this.owner().is_player) {
+            for (const card of this.adversary().zone("Terrain").cards) {
                 if (card instanceof Creature) {
                     return true;
                 }
@@ -30,22 +36,48 @@ export class AuraDeSpores extends Spell {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Augmente de 10 la radiation d'une créature sur votre terrain"],
+                    () => {
+                        this.changePanel(1);
+                    }),
+                new Button(["Augmente de 5 le poison d'une créature sur le terrain adverse"],
+                    () => {
+                        this.changePanel(2);
+                    })])
+            .addTarget(
+                [this.owner().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature;
+                },
+                (target: Creature) => {
+                    this.useEffect("radiation", target);
+                    this.closeInterface();
+                })
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature;
+                },
+                (target: Creature) => {
+                    this.useEffect("poison", target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect("radiation", target);
-            }
+        if (target != undefined) {
+            this.useEffect("radiation", target);
         }
     };
 

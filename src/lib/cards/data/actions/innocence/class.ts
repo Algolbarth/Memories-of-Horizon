@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
-import type { Unit } from '$lib/cards/class/unit';
+import { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Innocence extends Action {
     name = "Innocence";
@@ -23,22 +24,30 @@ export class Innocence extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Terrain")],
+                (target: Card) => {
+                    return target.stat("Charisme").value() > 0;
+                },
+                (target: Unit) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Unit && card.stat("Charisme").value() > 0) {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card.stat("Charisme").value() > 0) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

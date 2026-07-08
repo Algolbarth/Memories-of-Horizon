@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class ElementaireDeRacines extends Creature {
     name = "Élémentaire de racines";
@@ -23,27 +23,37 @@ export class ElementaireDeRacines extends Creature {
     };
 
     canUse = () => {
-        if (this.owner().zone("Terrain").isNotFull() || this.owner().zone("Pile").isNotFull()) {
+        if (this.owner().zone("Terrain").isNotFull() || (this.owner().is_player && this.owner().zone("Pile").isNotFull())) {
             return true;
         }
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            if (this.owner().zone("Terrain").isNotFull() && this.owner().zone("Pile").isNotFull()) {
-                this.system.game.use.set(this, Use);
-            }
-            else if (this.owner().zone("Terrain").isNotFull()) {
-                this.useEffect("battlefield");
-            }
-            else if (this.owner().zone("Pile").isNotFull()) {
-                this.useEffect("stack");
-            }
+    userInterface = () => {
+        if (this.owner().zone("Terrain").isNotFull() && this.owner().zone("Pile").isNotFull()) {
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Se place sur votre terrain"],
+                        () => {
+                            this.useEffect("creature");
+                            this.closeInterface();
+                        }),
+                    new Button(["Éveil : Augmente de 15 sa constitution et sa régénération"],
+                        () => {
+                            this.useEffect("effect");
+                            this.closeInterface();
+                        })]);
         }
         else if (this.owner().zone("Terrain").isNotFull()) {
             this.useEffect("battlefield");
         }
+        else if (this.owner().zone("Pile").isNotFull()) {
+            this.useEffect("stack");
+        }
+    };
+
+    autoUse = () => {
+        this.useEffect("battlefield");
     };
 
     useEffect = (choice: string) => {

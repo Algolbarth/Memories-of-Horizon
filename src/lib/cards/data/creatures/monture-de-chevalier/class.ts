@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Knight } from '$lib/cards/class/knight';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class MontureDeChevalier extends Creature {
     name = "Monture de chevalier";
@@ -19,42 +20,50 @@ export class MontureDeChevalier extends Creature {
         this.addText(`Quand posé : Place dans l'inventaire et transforme en sa forme alternative une créature de famille Chevalier à terre sur votre terrain.`);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            let check = false;
+    userInterface = () => {
+        let check = false;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (check == false && card instanceof Knight && card.trait("À terre").value()) {
-                    check = true;
-                }
-            }
-
-            if (check) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(undefined);
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Knight && card.trait("À terre").value()) {
+                check = true;
             }
         }
+
+        if (check) {
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Knight && target.trait("À terre").value();
+                    },
+                    (target: Knight) => {
+                        this.useEffect(target);
+                        this.closeInterface();
+                    });
+        }
         else {
-            let target = undefined;
-
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Knight && card.trait("À terre").value()) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
-            else {
-                this.useEffect(undefined);
-            }
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Knight | undefined) => {
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Knight && card.trait("À terre").value()) {
+                target = card;
+            }
+        }
+
+        if (target != undefined) {
+            this.useEffect(target);
+        }
+        else {
+            this.useEffect();
+        }
+    };
+
+    useEffect = (target: Knight | undefined = undefined) => {
         if (target != undefined) {
             this.targeting(target);
 

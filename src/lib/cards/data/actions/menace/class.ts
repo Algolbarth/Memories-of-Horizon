@@ -1,7 +1,9 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
+import { Creature } from '$lib/cards/class/creature';
+import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class Menace extends Action {
     name = "Menace";
@@ -15,28 +17,45 @@ export class Menace extends Action {
     };
 
     canUse = () => {
-        if (this.adversary().zone("Terrain").cards.length > 0 || (this.owner().is_player && this.owner().zone("Terrain").cards.length > 0)) {
-            return true;
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature) {
+                return true;
+            }
+        }
+        if (this.owner().is_player) {
+            for (const card of this.adversary().zone("Terrain").cards) {
+                if (card instanceof Creature) {
+                    return true;
+                }
+            }
         }
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Terrain"), this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature;
+                },
+                (target: Creature) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

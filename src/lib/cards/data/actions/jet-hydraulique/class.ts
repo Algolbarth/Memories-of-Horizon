@@ -1,10 +1,11 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
+import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
-export class TirHydraulique extends Action {
-    name = "Tir hydraulique";
+export class JetHydraulique extends Action {
+    name = "Jet hydraulique";
 
     constructor(system: System) {
         super(system);
@@ -23,13 +24,21 @@ export class TirHydraulique extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect(this.adversary().zone("Terrain").cards[0]);
-        }
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Unit) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        this.useEffect(this.adversary().zone("Terrain").cards[0]);
     };
 
     useEffect = (target: Unit) => {

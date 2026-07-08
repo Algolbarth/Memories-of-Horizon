@@ -1,8 +1,8 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Spell } from '$lib/cards/class/spell';
-import Use from './use.svelte';
 import type { Unit } from '$lib/cards/class/unit';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class PluieDeCailloux extends Spell {
     name = "Pluie de cailloux";
@@ -27,21 +27,36 @@ export class PluieDeCailloux extends Spell {
         return false;
     };
 
-    select = () => {
+    userInterface = () => {
         if (this.owner().ressource("Mana").total() >= 30) {
-            this.useEffect(undefined);
+            this.useEffect();
         }
         else {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("damage");
-            }
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Remplit votre terrain d'Élémentaire de cailloux"],
+                        () => {
+                            this.useEffect("creature");
+                            this.closeInterface();
+                        }),
+                    new Button(["Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse"],
+                        () => {
+                            this.useEffect("damage");
+                            this.closeInterface();
+                        })]);
         }
     };
 
-    useEffect = (choice: string | undefined) => {
+    autoUse = () => {
+        if (this.owner().ressource("Mana").total() >= 30) {
+            this.useEffect();
+        }
+        else {
+            this.useEffect("creature");
+        }
+    };
+
+    useEffect = (choice: string | undefined = undefined) => {
         if (this.owner().ressource("Mana").total() >= 30) {
             this.owner().ressource("Mana").spend(30);
 

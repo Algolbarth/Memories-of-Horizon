@@ -1,10 +1,11 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
-import { Action } from '$lib/cards/class/action';
+import { Item } from '$lib/cards/class/item';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
-export class BoulePuante extends Action {
+export class BoulePuante extends Item {
     name = "Boule puante";
 
     constructor(system: System) {
@@ -24,22 +25,30 @@ export class BoulePuante extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature && target.stat("Charisme").value() > 0;
+                },
+                (target: Unit) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature && card.stat("Charisme").value() > 0) {
+                return true;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.stat("Charisme").value() > 0) {
-                    return true;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

@@ -1,6 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
+import { Unit } from '$lib/cards/class/unit';
 
 export class Juge extends Creature {
     name = "Juge";
@@ -20,44 +22,65 @@ export class Juge extends Creature {
             `Augmente de 1 le charisme de cette créature.`]);
     };
 
-    select = () => {
+    userInterface = () => {
+        let check_charisma = false;
         let check = false;
 
         for (const entity of [this.owner(), this.adversary()]) {
             for (const card of entity.zone("Terrain").cards) {
-                if (check == false && card instanceof Creature) {
+                if (card instanceof Creature) {
                     check = true;
                 }
+                else if (check_charisma == false && card instanceof Unit && card.stat("Charisme").value() > 0) {
+                    check_charisma = true;
+                }
             }
         }
 
-        if (check) {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                let target = undefined;
-
-                for (const card of this.adversary().zone("Terrain").cards) {
-                    if (target == undefined && card instanceof Creature) {
-                        target = card;
-                    }
-                }
-
-                if (target != undefined) {
-                    this.useEffect(target);
-                }
-                else {
-                    this.useEffect(undefined);
-                }
-            }
+        if (check && check_charisma) {
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Terrain"), this.adversary().zone("Terrain")],
+                    (target: Card) => {
+                        return true;
+                    },
+                    (target: Creature) => {
+                        this.useEffect(target);
+                        this.closeInterface();
+                    });
         }
         else {
-            this.useEffect(undefined);
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Creature | undefined) => {
+    autoUse = () => {
+        let target = undefined;
+        let check_charisma = false;
+
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const card of entity.zone("Terrain").cards) {
+                if (check_charisma == false && card instanceof Unit && card.stat("Charisme").value() > 0) {
+                    check_charisma = true;
+                }
+            }
+        }
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
+            }
+        }
+
+        if (check_charisma && target != undefined) {
+            this.useEffect(target);
+        }
+        else {
+            this.useEffect();
+        }
+    };
+
+    useEffect = (target: Creature | undefined = undefined) => {
         if (target != undefined) {
             this.targeting(target);
 

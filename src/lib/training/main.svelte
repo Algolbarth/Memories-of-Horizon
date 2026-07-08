@@ -72,7 +72,7 @@
 {/if}
 
 {#if system.train.add.zone == undefined}
-	<div class="center">
+	<div id="view">
 		<View bind:system />
 	</div>
 {/if}
@@ -93,5 +93,11 @@
 
 	button.train:hover {
 		background-color: var(--menu_hover);
+	}
+
+	#view {
+		position: fixed;
+		top: 5vh;
+		left: 30vw;
 	}
 </style>

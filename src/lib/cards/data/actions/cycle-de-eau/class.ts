@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class CycleDeLEau extends Action {
     name = "Cycle de l'eau";
@@ -18,21 +18,34 @@ export class CycleDeLEau extends Action {
             "[source {100, Augmente de 1 la taille de votre pile, de votre inventaire et de votre terrain à la place.}]");
     };
 
-    select = () => {
+    userInterface = () => {
         if (this.owner().ressource("Eau").total() >= 100) {
-            this.useEffect(undefined);
+            this.useEffect();
         }
         else {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
+            let types = ["pile", "inventaire", "terrain"];
+            let choices = [];
+            for (const type of types) {
+                choices.push(new Button(["Augmente de 1 la taille de votre " + type],
+                    () => {
+                        this.useEffect(type.charAt(0).toUpperCase() + type.slice(1));
+                        this.closeInterface();
+                    }));
             }
-            else {
-                this.useEffect("Terrain");
-            }
+
+            this.game().user_interface = new UserInterface(this).addChoice(choices);
         }
     };
 
-    useEffect = (choice: string | undefined) => {
+    autoUse = () => {
+        if (this.owner().ressource("Eau").total() >= 100) {
+            this.useEffect();
+        } else {
+            this.useEffect("Terrain");
+        }
+    };
+
+    useEffect = (choice: string | undefined = undefined) => {
         if (this.owner().ressource("Eau").total() >= 100) {
             this.owner().ressource("Eau").spend(100);
 

@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
 import { Creature } from '$lib/cards/class/creature';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class DoseMortelle extends Action {
     name = "Dose mortelle";
@@ -23,22 +24,30 @@ export class DoseMortelle extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature && target.stat("Poison").value() * target.stat("Toxicité").value() >= target.stat("Vitalité").value();
+                },
+                (target: Creature) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.adversary().zone("Terrain").cards) {
+            if (card instanceof Creature && card.stat("Poison").value() * card.stat("Toxicité").value() >= card.stat("Vitalité").value()) {
+                return true;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (card instanceof Creature && card.stat("Poison").value() * card.stat("Toxicité").value() >= card.stat("Vitalité").value()) {
-                    return true;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

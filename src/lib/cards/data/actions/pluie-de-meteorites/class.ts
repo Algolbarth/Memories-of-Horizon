@@ -1,8 +1,8 @@
 import type { System } from '$lib/system/class';
 import { copy } from '$lib/utils';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
 import type { Unit } from '$lib/cards/class/unit';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class PluieDeMeteorites extends Action {
     name = "Pluie de météorites";
@@ -26,18 +26,28 @@ export class PluieDeMeteorites extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            if (this.adversary().zone("Terrain").cards.length > 0) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("stockage");
-            }
+    userInterface = () => {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Stocke 5 flux"],
+                        () => {
+                            this.useEffect("stockage");
+                            this.closeInterface();
+                        }),
+                    new Button(["Inflige 20 dégâts spéciaux à toutes les unités sur le terrain adverse"],
+                        () => {
+                            this.useEffect("damage");
+                            this.closeInterface();
+                        })]);
         }
         else {
-            this.useEffect("damage");
+            this.useEffect("stockage");
         }
+    };
+
+    autoUse = () => {
+        this.useEffect("damage");
     };
 
     useEffect = (choice: string) => {

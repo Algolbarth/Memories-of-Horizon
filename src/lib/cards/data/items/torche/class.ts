@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Torche extends Item {
     name = "Torche";
@@ -23,17 +24,35 @@ export class Torche extends Item {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            if (this.adversary().zone("Terrain").cards.length > 0) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("production");
-            }
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Augmente de 1 votre production de feu"],
+                    () => {
+                        this.useEffect("production");
+                        this.closeInterface();
+                    }),
+                new Button(["Inflige 20 dégâts spéciaux à une unité sur le terrain adverse"],
+                    () => {
+                        this.changePanel(1);
+                    })])
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Unit) => {
+                    this.useEffect("damage", target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            this.useEffect("damage", this.adversary().zone("Terrain").cards[0]);
         }
         else {
-            this.useEffect("damage", this.adversary().zone("Terrain").cards[0]);
+            this.useEffect("production");
         }
     };
 

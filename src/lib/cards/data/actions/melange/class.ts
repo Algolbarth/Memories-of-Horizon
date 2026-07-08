@@ -1,8 +1,9 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import type { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
+import { Item } from '$lib/cards/class/item';
 import type { Concoction } from '../../items';
+import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class Melange extends Action {
     name = "Mélange";
@@ -18,7 +19,7 @@ export class Melange extends Action {
     canUse = () => {
         let nb_potion: number = 0;
         for (const card of this.owner().zone("Inventaire").cards) {
-            if (card.isFamily("Potion")) {
+            if (card instanceof Item && card.isFamily("Potion")) {
                 nb_potion++;
                 if (nb_potion > 1) {
                     return true;
@@ -28,26 +29,43 @@ export class Melange extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Inventaire")],
+                (target: Card) => {
+                    return target instanceof Item && target.isFamily("Potion");
+                },
+                (target: Item) => {
+                    this.saveChoice(target);
+                    this.changePanel(1);
+                })
+            .addTarget(
+                [this.owner().zone("Inventaire")],
+                (target: Card) => {
+                    return target instanceof Item && target.isFamily("Potion") && target != this.currentInterface().first_choice;
+                },
+                (target: Item) => {
+                    this.useEffect(this.currentInterface().first_choice, target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let potion_1 = undefined;
+        let potion_2 = undefined;
+
+        for (const card of this.owner().zone("Inventaire").cards) {
+            if (potion_1 == undefined && card instanceof Item && card.isFamily("Potion")) {
+                potion_1 = card;
+            }
+            if (card != potion_1 && potion_2 == undefined && card instanceof Item && card.isFamily("Potion")) {
+                potion_2 = card;
+            }
         }
-        else {
-            let potion_1 = undefined;
-            let potion_2 = undefined;
 
-            for (const card of this.owner().zone("Inventaire").cards) {
-                if (potion_1 == undefined && card.isFamily("Potion")) {
-                    potion_1 = card;
-                }
-                if (card != potion_1 && potion_2 == undefined && card.isFamily("Potion")) {
-                    potion_2 = card;
-                }
-            }
-
-            if (potion_1 != undefined && potion_2 != undefined) {
-                this.useEffect(potion_1, potion_2);
-            }
+        if (potion_1 != undefined && potion_2 != undefined) {
+            this.useEffect(potion_1, potion_2);
         }
     };
 

@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Knight, MountedKnight } from '$lib/cards/class/knight';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class ChevalierNoir extends Knight {
     name = "Chevalier noir";
@@ -50,26 +51,34 @@ export class ChevalierNoirMonte extends MountedKnight {
         this.addText(`Quand meurt : Se réincarne en {card:Chevalier noir}.`);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            if (this.adversary().zone("Terrain").cards.length > 0) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(undefined);
-            }
+    userInterface = () => {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return true;
+                    },
+                    (target: Unit) => {
+                        this.useEffect(target);
+                        this.closeInterface();
+                    });
         }
         else {
-            if (this.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.adversary().zone("Terrain").cards[0]);
-            }
-            else {
-                this.useEffect(undefined);
-            }
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Unit | undefined) => {
+    autoUse = () => {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            this.useEffect(this.adversary().zone("Terrain").cards[0]);
+        }
+        else {
+            this.useEffect();
+        }
+    };
+
+    useEffect = (target: Unit | undefined = undefined) => {
         if (target != undefined) {
             let value = target.stat("Santé").value();
             if (this.owner().ressource("Or").total() < value) {

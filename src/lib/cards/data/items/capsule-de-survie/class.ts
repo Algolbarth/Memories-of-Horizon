@@ -1,8 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
 import type { Card } from '$lib/cards/class/card';
 import { Creature } from '$lib/cards/class/creature';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class CapsuleDeSurvie extends Item {
     name = "Capsule de survie";
@@ -20,13 +20,23 @@ export class CapsuleDeSurvie extends Item {
                 `Réduis de 35 le coût de cette créature.`]]);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("draw");
-        }
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Stocke 1 flux"],
+                    () => {
+                        this.useEffect("draw");
+                        this.closeInterface();
+                    }),
+                new Button(["Pioche 1 créature", "Réduis de 35 le coût de cette créature"],
+                    () => {
+                        this.useEffect("location");
+                        this.closeInterface();
+                    })]);
+    };
+
+    autoUse = () => {
+        this.useEffect("draw");
     };
 
     useEffect = (choice: string) => {

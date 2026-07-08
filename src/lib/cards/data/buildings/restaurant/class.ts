@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Building } from '$lib/cards/class/building';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Restaurant extends Building {
     name = "Restaurant";
@@ -19,7 +20,7 @@ export class Restaurant extends Building {
         this.addText(`[details {Objet choisi : {card:{card.product}}}]`, () => { return this.product != undefined; });
     };
 
-    select = () => {
+    userInterface = () => {
         let check = undefined;
 
         for (const card of this.owner().zone("Inventaire").cards) {
@@ -29,22 +30,41 @@ export class Restaurant extends Building {
         }
 
         if (check != undefined) {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(check);
-            }
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Inventaire")],
+                    (target: Card) => {
+                        return target instanceof Item && target.isFamily("Nourriture") && target.level <= 2;
+                    },
+                    (target: Item) => {
+                        this.useEffect(target);
+                        this.closeInterface();
+                    });
         }
         else {
-            this.useEffect(undefined);
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Item | undefined) => {
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Inventaire").cards) {
+            if (target == undefined && card instanceof Item && card.isFamily("Nourriture") && card.level <= 2) {
+                target = card;
+            }
+        }
+
+        if (target != undefined) {
+            this.useEffect(target);
+        }
+    };
+
+    useEffect = (target: Item | undefined = undefined) => {
         if (target != undefined) {
             this.product = target.name;
         }
+
         this.move("Terrain");
         this.pose();
     };

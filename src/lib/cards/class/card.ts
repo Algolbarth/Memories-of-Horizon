@@ -10,6 +10,8 @@ import { Zone } from "$lib/game/zone";
 import type { Unit } from "./unit";
 import type { Creature } from "./creature";
 import { Effect } from "./effect";
+import { Game } from "$lib/game/class";
+import { UserInterface } from "../user-interface/class";
 
 export class Card {
     name: string = "Carte";
@@ -215,34 +217,6 @@ export class Card {
         this.add(zone, entity);
     };
 
-    up = () => {
-        if (this.entity != undefined && this.zone != undefined && this.slot != undefined && this.zone.cards[this.slot - 1] != undefined) {
-            let temp: Card = this.zone.cards[this.slot - 1];
-
-            this.zone.cards[this.slot - 1] = this;
-            this.zone.cards[this.slot] = temp;
-
-            if (temp.slot != undefined) {
-                temp.slot++;
-            }
-            this.slot--;
-        }
-    };
-
-    down = () => {
-        if (this.entity != undefined && this.zone != undefined && this.slot != undefined && this.zone.cards[this.slot + 1] != undefined) {
-            let temp = this.zone.cards[this.slot + 1];
-
-            this.zone.cards[this.slot + 1] = this;
-            this.zone.cards[this.slot] = temp;
-
-            if (temp.slot != undefined) {
-                temp.slot--;
-            }
-            this.slot++;
-        }
-    };
-
     canBuy = () => {
         for (const c of this.cost) {
             if (c.value() > this.owner().ressource(c.name).total()) {
@@ -319,10 +293,17 @@ export class Card {
     };
 
     use = () => {
-        this.select();
+        if (this.owner().is_player && this.userInterface != undefined) {
+            this.userInterface();
+        }
+        else {
+            this.autoUse();
+        }
     };
 
-    select = () => {
+    userInterface: Function | undefined;
+
+    autoUse = () => {
         this.useEffect();
     };
 
@@ -650,7 +631,7 @@ export class Card {
             return this.zone;
         }
         console.log("error");
-        return new Zone("Test");
+        return new Zone(this.owner(), "Test");
     };
 
     emplacement = () => {
@@ -675,6 +656,40 @@ export class Card {
         }
         console.log("error");
         return new Entity(this.system);
+    };
+
+    game = () => {
+        if (this.system.game != undefined) {
+            return this.system.game;
+        }
+        console.log("error");
+        return new Game(this.system, "Test");
+    };
+
+    currentInterface = () => {
+        if (this.system.game != undefined && this.system.game.user_interface != undefined) {
+            return this.system.game.user_interface;
+        }
+        console.log("error");
+        return new UserInterface(this);
+    };
+
+    saveChoice = (choice: any) => {
+        if (this.system.game != undefined && this.system.game.user_interface != undefined) {
+            this.system.game.user_interface.first_choice = choice;
+        }
+    };
+
+    changePanel = (number: number) => {
+        if (this.system.game != undefined && this.system.game.user_interface != undefined) {
+            this.system.game.user_interface.selected_panel = number;
+        }
+    };
+
+    closeInterface = () => {
+        if (this.system.game != undefined) {
+            this.system.game.user_interface = undefined;
+        }
     };
 
     addText = (lines: string[] | string, condition: (() => boolean) | undefined = undefined) => {

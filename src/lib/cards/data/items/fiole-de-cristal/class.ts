@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class FioleDeCristal extends Item {
     name = "Fiole de cristal";
@@ -22,22 +23,30 @@ export class FioleDeCristal extends Item {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Inventaire")],
+                (target: Card) => {
+                    return target instanceof Item && target.isFamily("Potion") && target.name != "Concoction";
+                },
+                (target: Item) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Inventaire").cards) {
+            if (target == undefined && card instanceof Item && card.isFamily("Potion") && card.name != "Concoction") {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.owner().zone("Inventaire").cards) {
-                if (target == undefined && card instanceof Item && card.isFamily("Potion") && card.name != "Concoction") {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

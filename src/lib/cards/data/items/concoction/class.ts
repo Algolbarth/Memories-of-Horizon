@@ -2,7 +2,8 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Concoction extends Item {
     name = "Concoction";
@@ -70,45 +71,58 @@ export class Concoction extends Item {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            let check = false;
+    userInterface = () => {
+        let check = false;
 
-            if (this.stat("Infusion explosive").value() > 0) {
-                if (this.owner().zone("Terrain").cards.length > 0 || this.adversary().zone("Terrain").cards.length > 0) {
+        if (this.stat("Infusion explosive").value() > 0) {
+            if (this.owner().zone("Terrain").cards.length > 0 || this.adversary().zone("Terrain").cards.length > 0) {
+                check = true;
+            }
+        }
+        for (const entity of [this.owner(), this.adversary()]) {
+            for (const card of entity.zone("Terrain").cards) {
+                if (card instanceof Creature) {
                     check = true;
                 }
             }
-            for (const entity of [this.owner(), this.adversary()]) {
-                for (const card of entity.zone("Terrain").cards) {
-                    if (card instanceof Creature) {
-                        check = true;
-                    }
-                }
-            }
+        }
 
-            if (check) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(undefined);
-            }
+        if (check) {
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Terrain"), this.adversary().zone("Terrain")],
+                    (target: Card) => {
+                        if (this.stat("Infusion explosive").value() > 0) {
+                            return true;
+                        }
+                        if (target instanceof Creature) {
+                            return true;
+                        }
+                    },
+                    (target: Unit) => {
+                        this.useEffect(target);
+                        this.closeInterface();
+                    });
         }
         else {
-            let target = undefined;
+            this.useEffect();
+        }
+    };
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
-                }
-            }
+    autoUse = () => {
+        let target = undefined;
 
-            if (target != undefined) {
-                this.useEffect(target);
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
             }
-            else {
-                this.useEffect(undefined);
-            }
+        }
+
+        if (target != undefined) {
+            this.useEffect(target);
+        }
+        else {
+            this.useEffect();
         }
     };
 
@@ -121,7 +135,21 @@ export class Concoction extends Item {
         return false;
     };
 
-    useEffect = (target: Unit | undefined) => {
+    infuse = (potion: Item) => {
+        if (potion.name == "Concoction") {
+            for (const stat of potion.stats) {
+                if (stat.name.includes("Infusion")) {
+                    this.stat(stat.name).increase(stat.value());
+                }
+            }
+        }
+        else {
+            let infusion_name = potion.name.replace('Potion', 'Infusion');
+            this.stat(infusion_name).increase(potion.stat("Infusion").value());
+        }
+    };
+
+    useEffect = (target: Unit | undefined = undefined) => {
         this.owner().ressource("Mana").produce(this.stat("Infusion de mana").value());
 
         if (this.stat("Infusion interdite").value() > 0) {
@@ -148,19 +176,5 @@ export class Concoction extends Item {
 
         this.move("Défausse");
         this.pose();
-    };
-
-    infuse = (potion: Item) => {
-        if (potion.name == "Concoction") {
-            for (const stat of potion.stats) {
-                if (stat.name.includes("Infusion")) {
-                    this.stat(stat.name).increase(stat.value());
-                }
-            }
-        }
-        else {
-            let infusion_name = potion.name.replace('Potion', 'Infusion');
-            this.stat(infusion_name).increase(potion.stat("Infusion").value());
-        }
     };
 };

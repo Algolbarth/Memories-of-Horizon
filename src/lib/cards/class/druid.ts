@@ -1,5 +1,5 @@
 import type { System } from "$lib/system/class";
-import Use from '../utils/druid-use.svelte';
+import { Button, UserInterface } from "../user-interface/class";
 import { Creature } from "./creature";
 
 export class Druid extends Creature {
@@ -22,13 +22,23 @@ export class Druid extends Creature {
             [`Se transforme en {card:{card.alternative_form}}.`, `Se place sur votre terrain.`]]);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("place");
-        }
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Se place sur votre terrain"],
+                    () => {
+                        this.useEffect("place");
+                        this.closeInterface();
+                    }),
+                new Button(["Se transforme en " + this.alternative_form, "Se place sur votre terrain"],
+                    () => {
+                        this.useEffect("transform");
+                        this.closeInterface();
+                    })]);
+    };
+
+    autoUse = () => {
+        this.useEffect("place");
     };
 
     useEffect = (choice: string) => {

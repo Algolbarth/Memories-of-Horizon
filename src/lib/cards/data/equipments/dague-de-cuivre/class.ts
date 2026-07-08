@@ -2,7 +2,8 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import { Equipment } from '$lib/cards/class/equipment';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class DagueDeCuivre extends Equipment {
     name = "Dague de cuivre";
@@ -33,34 +34,58 @@ export class DagueDeCuivre extends Equipment {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["S'équipe à une créature sur votre terrain"],
+                    () => {
+                        this.changePanel(1);
+                    }),
+                new Button(["Inflige 5 dégâts spéciaux à une unité sur le terrain adverse"],
+                    () => {
+                        this.changePanel(2);
+                    })])
+            .addTarget(
+                [this.owner().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature && target.canEquip();
+                },
+                (target: Creature) => {
+                    this.useEffect("equip", target);
+                    this.closeInterface();
+                })
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Unit) => {
+                    this.useEffect("damage", target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature && card.canEquip()) {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.canEquip()) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target, "equip");
-                return 0;
-            }
-
-            if (this.adversary().zone("Terrain").cards.length > 0) {
-                this.useEffect(this.adversary().zone("Terrain").cards[0], "damage");
-            }
+        if (target != undefined) {
+            this.useEffect("equip", target);
+        }
+        else if (this.adversary().zone("Terrain").cards.length > 0) {
+            this.useEffect("damage", this.adversary().zone("Terrain").cards[0]);
         }
     };
 
-    useEffect = (target: Unit, choice: string) => {
+    useEffect = (choice: string, target: Unit) => {
         this.targeting(target);
 
-        if (choice == "equip") {
+        if (choice == "equip" && target instanceof Creature) {
             target.equip(this);
         }
         else if (choice == "damage") {

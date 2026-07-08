@@ -1,8 +1,8 @@
 import { copy } from '$lib/utils';
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
 import type { Unit } from '$lib/cards/class/unit';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class ElementaireDeRoche extends Creature {
     name = "Élémentaire de roche";
@@ -30,14 +30,29 @@ export class ElementaireDeRoche extends Creature {
         return false;
     };
 
-    select = () => {
+    userInterface = () => {
         if (this.adversary().zone("Terrain").cards.length > 0) {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("effect");
-            }
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Se place sur votre terrain"],
+                        () => {
+                            this.useEffect("creature");
+                            this.closeInterface();
+                        }),
+                    new Button(["Inflige 5 dégâts spéciaux à toutes les unités sur le terrain adverse", "Se détruit"],
+                        () => {
+                            this.useEffect("effect");
+                            this.closeInterface();
+                        })]);
+        }
+        else if (this.owner().zone("Terrain").isNotFull()) {
+            this.useEffect("creature");
+        }
+    };
+
+    autoUse = () => {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            this.useEffect("effect");
         }
         else if (this.owner().zone("Terrain").isNotFull()) {
             this.useEffect("creature");

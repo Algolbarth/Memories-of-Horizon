@@ -1,8 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
 import type { Card } from '$lib/cards/class/card';
 import { Location } from '$lib/cards/class/location';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class Boussole extends Item {
     name = "Boussole";
@@ -17,13 +17,23 @@ export class Boussole extends Item {
             `Pioche 1 lieu.`]);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("draw");
-        }
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Pioche 1 carte pour chaque lieu dans votre région"],
+                    () => {
+                        this.useEffect("draw");
+                        this.closeInterface();
+                    }),
+                new Button(["Pioche 1 lieu"],
+                    () => {
+                        this.useEffect("location");
+                        this.closeInterface();
+                    })]);
+    };
+
+    autoUse = () => {
+        this.useEffect("draw");
     };
 
     useEffect = (choice: string) => {

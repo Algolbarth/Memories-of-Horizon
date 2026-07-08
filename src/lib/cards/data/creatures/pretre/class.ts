@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Pretre extends Creature {
     name = "Prêtre";
@@ -20,42 +21,71 @@ export class Pretre extends Creature {
             `Soigne 20 blessures d'une créature sur votre terrain.`]);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            let check = false;
+    userInterface = () => {
+        let check = false;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (check == false && card instanceof Creature) {
-                    check = true;
-                }
-            }
-
-            if (check) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(undefined, undefined);
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature) {
+                check = true;
             }
         }
+
+        if (check) {
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Augmente de 15 la constitution d'une créature sur votre terrain"],
+                        () => {
+                            this.changePanel(1);
+                        }),
+                    new Button(["Soigne 20 blessures d'une créature sur votre terrain"],
+                        () => {
+                            this.changePanel(2);
+                        })])
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature;
+                    },
+                    (target: Creature) => {
+                        this.useEffect("life", target);
+                        this.closeInterface();
+                    })
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature && target.isDamaged();
+                    },
+                    (target: Creature) => {
+                        this.useEffect("heal", target);
+                        this.closeInterface();
+                    });
+        }
         else {
-            let target = undefined;
-
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target, "life");
-            }
-            else {
-                this.useEffect(target, undefined);
-            }
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Creature | undefined, choice: string | undefined) => {
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
+            }
+        }
+
+        if (target == undefined) {
+            this.useEffect();
+        }
+        else if (target.isDamaged()) {
+            this.useEffect("heal", target);
+        }
+        else {
+            this.useEffect("life", target);
+        }
+    };
+
+    useEffect = (choice: string | undefined = undefined, target: Creature | undefined = undefined) => {
         if (target != undefined) {
             this.targeting(target);
 

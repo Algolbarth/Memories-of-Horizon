@@ -7,13 +7,14 @@ import { Unit } from '../cards/class/unit';
 import type { TrainEntity } from '../training/train';
 import { Creature } from '../cards/class/creature';
 import { Deck } from '../deck/class';
+import type { UserInterface } from '$lib/cards/user-interface/class';
 
 export class Game {
     system: System;
     phase: string = "Préparation";
     player: Entity;
     bot: Entity;
-    use: Use = new Use();
+    user_interface: UserInterface | undefined;
     pause: boolean = false;
     mode: string;
     chapter: Chapter | undefined;
@@ -169,6 +170,10 @@ export class Game {
         this.bot.startPhase();
 
         this.bot.play();
+
+        if (this.mode != "Entraînement") {
+            this.bot.refreshStack();
+        }
 
         this.bot.endPhase();
 
@@ -340,7 +345,7 @@ export class Game {
         this.fighter = undefined;
         for (let i = 0; i < entity.zone("Terrain").cards.length; i++) {
             let card = entity.zone("Terrain").cards[i];
-            if (card instanceof Unit && this.fighter == undefined && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Initiative").value() > 0 && speed == card.stat("Vitesse").value()) {
+            if (card instanceof Unit && this.fighter == undefined && card.stat("Étourdissement").value() == 0 && card.stat("Engagement").value() == 0 && card.stat("Initiative").value() > 0 && speed == card.stat("Vitesse").value()) {
                 this.fighter = card;
             }
         }
@@ -367,7 +372,7 @@ export class Game {
 
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
-                if (card.stat("Initiative").value() > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0) && card.stat("Vitesse").value() > best_speed) {
+                if (card.stat("Initiative").value() > 0 && card.stat("Étourdissement").value() == 0 && card.stat("Engagement").value() == 0 && card.stat("Vitesse").value() > best_speed) {
                     best_speed = card.stat("Vitesse").value();
                 }
             }
@@ -379,7 +384,7 @@ export class Game {
     isEndRound = () => {
         for (const entity of [this.player, this.bot]) {
             for (const card of entity.zone("Terrain").cards) {
-                if (card.stat("Initiative").value() > 0 && (card.type != "Créature" || card.stat("Étourdissement").value() == 0)) {
+                if (card.stat("Initiative").value() > 0 && card.stat("Étourdissement").value() == 0 && card.stat("Engagement").value() == 0) {
                     return false;
                 }
             }
@@ -461,16 +466,18 @@ export class Game {
                         trait.turn = false;
                     }
 
-                    if (card instanceof Creature && card.stat("Étourdissement").value() > 0) {
-                        card.stat("Étourdissement").remove(1);
-                    }
+                    if (card instanceof Unit) {
+                        if (card.stat("Étourdissement").value() > 0) {
+                            card.stat("Étourdissement").remove(1);
+                        }
 
-                    if (card instanceof Creature && card.stat("Engagement").value() > 0) {
-                        card.stat("Engagement").remove(1);
-                    }
+                        if (card.stat("Engagement").value() > 0) {
+                            card.stat("Engagement").remove(1);
+                        }
 
-                    if (card instanceof Unit && card.stat("Brûlure").value() > 0) {
-                        card.stat("Brûlure").set(0);
+                        if (card.stat("Brûlure").value() > 0) {
+                            card.stat("Brûlure").set(0);
+                        }
                     }
                 }
             }
@@ -549,20 +556,5 @@ export class Game {
         this.player.deck.defeat += 1;
 
         this.system.page = "GameOver";
-    };
-};
-
-class Use {
-    card: Card | undefined = undefined;
-    svelte: __sveltets_2_IsomorphicComponent<{ system: System; game: Game; card: Card; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string> | undefined = undefined;
-
-    set = (card: Card, svelte: __sveltets_2_IsomorphicComponent<{ system: System; game: Game; card: Card; }, { [evt: string]: CustomEvent<any>; }, {}, {}, string>) => {
-        this.card = card;
-        this.svelte = svelte;
-    };
-
-    reset = () => {
-        this.card = undefined;
-        this.svelte = undefined;
     };
 };

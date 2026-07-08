@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Spell } from '$lib/cards/class/spell';
-import Use from './use.svelte';
 import { Unit } from '$lib/cards/class/unit';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class RoncesEnvahissantes extends Spell {
     name = "Ronces envahissantes";
@@ -19,32 +20,59 @@ export class RoncesEnvahissantes extends Spell {
     };
 
     canUse = () => {
-        for (const entity of [this.owner(), this.adversary()]) {
-            for (const card of entity.zone("Terrain").cards) {
-                if (card instanceof Unit) {
-                    return true;
-                }
+        if (this.owner().zone("Terrain").cards.length > 0) {
+            return true;
+        }
+        if (this.owner().is_player) {
+            if (this.adversary().zone("Terrain").cards.length > 0) {
+                return true;
             }
         }
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Augmente de 10 l'épine d'une unité sur votre terrain"],
+                    () => {
+                        this.changePanel(1);
+                    }),
+                new Button(["Inflige 50 dégâts à une unité sur le terrain adverse"],
+                    () => {
+                        this.changePanel(2);
+                    })])
+            .addTarget(
+                [this.owner().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Unit;
+                },
+                (target: Unit) => {
+                    this.useEffect("thorn", target);
+                    this.closeInterface();
+                })
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Unit;
+                },
+                (target: Unit) => {
+                    this.useEffect("damage", target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Unit) {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect("thorn", target);
-            }
+        if (target != undefined) {
+            this.useEffect("thorn", target);
         }
     };
 

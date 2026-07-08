@@ -78,7 +78,7 @@
 	#shadow {
 		width: 40vw;
 		height: 90vh;
-		margin: 2.5vh;
+		margin-top: 2.5vh;
 	}
 
 	#shadow::before {

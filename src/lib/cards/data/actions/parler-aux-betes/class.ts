@@ -4,7 +4,7 @@ import { Action } from '$lib/cards/class/action';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
 import type { Card } from '$lib/cards/class/card';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class ParlerAuxBetes extends Action {
     name = "Parler aux bêtes";
@@ -28,7 +28,7 @@ export class ParlerAuxBetes extends Action {
         return false;
     };
 
-    select = () => {
+    userInterface = () => {
         let check_beast: boolean = false;
         let check_no_beast: boolean = false;
         for (const card of this.owner().zone("Terrain").cards) {
@@ -43,12 +43,18 @@ export class ParlerAuxBetes extends Action {
         }
 
         if (check_beast && check_no_beast) {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("beast");
-            }
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Pioche 1 créature de famille non-Bête pour chaque créature de famille Bête sur votre terrain"],
+                        () => {
+                            this.useEffect("draw");
+                            this.closeInterface();
+                        }),
+                    new Button(["Pioche 1 créature de famille Bête pour chaque créature de famille non-Bête sur votre terrain"],
+                        () => {
+                            this.useEffect("discover");
+                            this.closeInterface();
+                        })]);
         }
         else if (check_beast) {
             this.useEffect("no-beast");
@@ -56,7 +62,28 @@ export class ParlerAuxBetes extends Action {
         else {
             this.useEffect("beast");
         }
+    };
 
+    autoUse = () => {
+        let check_beast: number = 0;
+        let check_no_beast: number = 0;
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature) {
+                if (card.isFamily("Bête")) {
+                    check_beast++;
+                }
+                else {
+                    check_no_beast++;
+                }
+            }
+        }
+
+        if (check_beast > 0 && check_beast >= check_no_beast) {
+            this.useEffect("no-beast");
+        }
+        else if (check_no_beast > 0) {
+            this.useEffect("beast");
+        };
     };
 
     useEffect = (choice: string) => {
@@ -69,7 +96,6 @@ export class ParlerAuxBetes extends Action {
                 }
             }
 
-            console.log(nb_creature);
             let readCondition = (card: Card) => {
                 if (card.isFamily("Bête")) {
                     return true;
@@ -87,7 +113,6 @@ export class ParlerAuxBetes extends Action {
                 }
             }
 
-            console.log(nb_creature);
             let readCondition = (card: Card) => {
                 if (!card.isFamily("Bête")) {
                     return true;

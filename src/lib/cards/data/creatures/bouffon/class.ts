@@ -1,6 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Bouffon extends Creature {
     name = "Bouffon";
@@ -18,42 +19,50 @@ export class Bouffon extends Creature {
         this.addText(`Quand posé : Augmente de 200 la constitution et la force d'une créature sur votre terrain pendant ce tour.`);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            let check = false;
+    userInterface = () => {
+        let check = false;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (check == false && card instanceof Creature) {
-                    check = true;
-                }
-            }
-
-            if (check) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect(undefined);
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature) {
+                check = true;
             }
         }
+
+        if (check) {
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature;
+                    },
+                    (target: Creature) => {
+                        this.useEffect(target);
+                        this.closeInterface();
+                    });
+        }
         else {
-            let target = undefined;
-
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
-            else {
-                this.useEffect(undefined);
-            }
+            this.useEffect();
         }
     };
 
-    useEffect = (target: Creature | undefined) => {
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
+            }
+        }
+
+        if (target != undefined) {
+            this.useEffect(target);
+        }
+        else {
+            this.useEffect();
+        }
+    };
+
+    useEffect = (target: Creature | undefined = undefined) => {
         if (target != undefined) {
             this.targeting(target);
 

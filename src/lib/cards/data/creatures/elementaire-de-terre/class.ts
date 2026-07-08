@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class ElementaireDeTerre extends Creature {
     name = "Élémentaire de terre";
@@ -29,21 +30,44 @@ export class ElementaireDeTerre extends Creature {
         return false;
     };
 
-    select = () => {
+    userInterface = () => {
         if (this.adversary().zone("Terrain").cards.length > 0) {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                this.useEffect("effect", this.adversary().zone("Terrain").cards[0]);
-            }
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Se place sur votre terrain"],
+                        () => {
+                            this.useEffect("creature");
+                            this.closeInterface();
+                        }),
+                    new Button(["Inflige 30 dégâts spéciaux à une unité sur le terrain adverse", "Se détruit"],
+                        () => {
+                            this.changePanel(1);
+                        })])
+                .addTarget(
+                    [this.adversary().zone("Terrain")],
+                    (target: Card) => {
+                        return true;
+                    },
+                    (target: Creature) => {
+                        this.useEffect("effect", target);
+                        this.closeInterface();
+                    });
         }
         else if (this.owner().zone("Terrain").isNotFull()) {
-            this.useEffect("creature", undefined);
+            this.useEffect("creature");
         }
     };
 
-    useEffect = (choice: string, target: Unit | undefined) => {
+    autoUse = () => {
+        if (this.adversary().zone("Terrain").cards.length > 0) {
+            this.useEffect("effect", this.adversary().zone("Terrain").cards[0]);
+        }
+        else if (this.owner().zone("Terrain").isNotFull()) {
+            this.useEffect("creature");
+        }
+    };
+
+    useEffect = (choice: string, target: Unit | undefined = undefined) => {
         if (choice == "creature") {
             this.move("Terrain");
         }

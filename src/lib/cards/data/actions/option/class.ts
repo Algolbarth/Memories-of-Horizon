@@ -1,6 +1,6 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class Option extends Action {
     name = "Option";
@@ -15,13 +15,23 @@ export class Option extends Action {
             `Découvre 1 carte.`]);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            this.useEffect("draw");
-        }
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Pioche 3 cartes"],
+                    () => {
+                        this.useEffect("draw");
+                        this.closeInterface();
+                    }),
+                new Button(["Découvre 1 carte"],
+                    () => {
+                        this.useEffect("discover");
+                        this.closeInterface();
+                    })]);
+    };
+
+    autoUse = () => {
+        this.useEffect("draw");
     };
 
     useEffect = (choice: string) => {

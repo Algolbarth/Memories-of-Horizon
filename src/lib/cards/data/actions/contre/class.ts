@@ -2,7 +2,8 @@ import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Contre extends Action {
     name = "Contre";
@@ -27,23 +28,21 @@ export class Contre extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            let target = undefined;
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Unit) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
 
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
-        }
+    autoUse = () => {
+        this.useEffect(this.adversary().zone("Terrain").cards[0]);
     };
 
     useEffect = (target: Unit) => {

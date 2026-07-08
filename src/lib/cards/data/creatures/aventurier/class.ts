@@ -1,7 +1,7 @@
 import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/card';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class Aventurier extends Creature {
     name = "Aventurier";
@@ -24,13 +24,23 @@ export class Aventurier extends Creature {
             `Pioche 1 objet.`]);
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        let types = ["action", "bâtiment", "créature", "lieu", "objet"];
+        let choices = [];
+        for (const type of types) {
+            choices.push(new Button(["Pioche 1 " + type],
+                () => {
+                    this.useEffect(type.charAt(0).toUpperCase() + type.slice(1));
+                    this.closeInterface();
+                }));
         }
-        else {
-            this.useEffect("Créature");
-        }
+
+        this.game().user_interface = new UserInterface(this)
+            .addChoice(choices);
+    };
+
+    autoUse = () => {
+        this.useEffect("Créature");
     };
 
     useEffect = (choice: string) => {

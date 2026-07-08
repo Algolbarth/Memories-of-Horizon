@@ -89,6 +89,9 @@ export class Unit extends Card {
 
         this.addStat(403, "Intelligence", 0);
 
+        this.addStat(701, "Étourdissement", 0);
+        this.stat("Étourdissement").debuff = true;
+
         this.addStat(702, "Engagement", 0);
 
         this.addStat(713, "Brûlure", 0);
@@ -100,10 +103,6 @@ export class Unit extends Card {
             return true;
         }
         return false;
-    };
-
-    select = () => {
-        this.useEffect();
     };
 
     useEffect: Function = () => {
@@ -195,6 +194,7 @@ export class Unit extends Card {
 
     defeat = () => {
         this.stat("Santé").init(0);
+        this.stat("Étourdissement").set(0);
         this.stat("Engagement").set(0);
         this.stat("Brûlure").set(0);
         this.stat("Initiative").set(this.stat("Maîtrise").value());
@@ -221,6 +221,7 @@ export class Unit extends Card {
 
     destroy = () => {
         this.stat("Santé").init(0);
+        this.stat("Étourdissement").set(0);
         this.stat("Engagement").set(0);
         this.stat("Brûlure").set(0);
         this.stat("Initiative").set(this.stat("Maîtrise").value());

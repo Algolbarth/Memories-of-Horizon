@@ -1,13 +1,16 @@
 import type { Card } from "$lib/cards/class/card";
+import type { Entity } from "./entity";
 
 export class Zone {
     name: string;
     size: number | undefined;
     cards: Card[] = [];
+    entity: Entity;
 
-    constructor(name: string, size: number | undefined = undefined) {
+    constructor(entity: Entity, name: string, size: number | undefined = undefined) {
         this.name = name;
         this.size = size;
+        this.entity = entity;
     };
 
     isFull = () => {

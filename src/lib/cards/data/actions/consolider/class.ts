@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
-import Use from './use.svelte';
 import { Building } from '$lib/cards/class/building';
+import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class Consolider extends Action {
     name = "Consolider";
@@ -23,22 +24,30 @@ export class Consolider extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Building;
+                },
+                (target: Building) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Building) {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Building) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

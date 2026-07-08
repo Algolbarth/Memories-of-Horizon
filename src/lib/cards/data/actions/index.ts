@@ -113,7 +113,7 @@ export * from './sprint';
 export * from './surchauffe';
 export * from './tenacite';
 export * from './tir-en-pleine-tete';
-export * from './tir-hydraulique';
+export * from './jet-hydraulique';
 export * from './tournee-generale';
 export * from './tremblement-de-terre';
 export * from './vague-deferlante';

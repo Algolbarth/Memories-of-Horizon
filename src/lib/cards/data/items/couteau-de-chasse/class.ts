@@ -1,8 +1,9 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
 import { Creature } from '$lib/cards/class/creature';
+import type { Card } from '$lib/cards/class/card';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class CouteauDeChasse extends Item {
     name = "Couteau de chasse";
@@ -28,7 +29,7 @@ export class CouteauDeChasse extends Item {
         return false;
     };
 
-    select = () => {
+    userInterface = () => {
         let check: boolean = false;
         for (const card of this.owner().zone("Terrain").cards) {
             if (card instanceof Creature && card.isFamily("Bête") && card.canBeDestroyed()) {
@@ -37,13 +38,34 @@ export class CouteauDeChasse extends Item {
         }
 
         if (check) {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Détruit une créature de famille Bête sur votre terrain"],
+                        () => {
+                            this.changePanel(1);
+                        }),
+                    new Button(["Produit 1 or pour chaque créature de famille Bête dans votre défausse"],
+                        () => {
+                            this.useEffect("production");
+                            this.closeInterface();
+                        })])
+                .addTarget(
+                    [this.adversary().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature && target.isFamily("Bête") && target.canBeDestroyed();
+                    },
+                    (target: Unit) => {
+                        this.useEffect("damage", target);
+                        this.closeInterface();
+                    });
         }
         else {
             this.useEffect("production");
         }
+    };
+
+    autoUse = () => {
+        this.useEffect("production");
     };
 
     useEffect = (choice: string, target: Unit | undefined = undefined) => {

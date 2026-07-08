@@ -1,3 +1,4 @@
+import type { Entity } from "./entity";
 import { Zone } from "./zone";
 
 export class Stack extends Zone {
@@ -5,8 +6,8 @@ export class Stack extends Zone {
     turn_level: number = 0;
     upgrade_cost: number = 10;
 
-    constructor() {
-        super("Pile", 10);
+    constructor(entity: Entity) {
+        super(entity, "Pile", 10);
     };
 
     level = () => {

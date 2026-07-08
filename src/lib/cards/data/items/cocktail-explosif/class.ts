@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Item } from '$lib/cards/class/item';
-import Use from './use.svelte';
+import type { Card } from '$lib/cards/class/card';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class CocktailExplosif extends Item {
     name = "Cocktail explosif";
@@ -21,9 +22,22 @@ export class CocktailExplosif extends Item {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Unit) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        if (this.adversary().zone("Terrain").cards.length > 1) {
+            this.useEffect(this.adversary().zone("Terrain").cards[1]);
         }
         else {
             this.useEffect(this.adversary().zone("Terrain").cards[0]);

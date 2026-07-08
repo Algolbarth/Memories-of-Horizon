@@ -1,8 +1,8 @@
 import type { System } from '$lib/system/class';
 import type { Unit } from '$lib/cards/class/unit';
 import { Action } from '$lib/cards/class/action';
-import { Building } from '$lib/cards/class/building';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class Eboulement extends Action {
     name = "Éboulement";
@@ -13,8 +13,8 @@ export class Eboulement extends Action {
         this.init([["Or", 12], ["Terre", 12]]);
 
         this.addText([
-            `Quand posé : Augmente jusqu'à 1 l'étourdissement d'une créature sur le terrain adverse.`,
-            `Si cette créature est étourdie, lui inflige 50 dégâts spéciaux à la place.`]);
+            `Quand posé : Augmente jusqu'à 1 l'étourdissement d'une unité sur le terrain adverse.`,
+            `Si cette unité est étourdie : Lui inflige 50 dégâts spéciaux à la place.`]);
     };
 
     canUse = () => {
@@ -24,29 +24,27 @@ export class Eboulement extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            let target = undefined;
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.adversary().zone("Terrain")],
+                (target: Card) => {
+                    return true;
+                },
+                (target: Unit) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
 
-            for (const card of this.adversary().zone("Terrain").cards) {
-                if (target == undefined) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
-        }
+    autoUse = () => {
+        this.useEffect(this.adversary().zone("Terrain").cards[0]);
     };
 
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        if (target instanceof Building && target.stat("Étourdissement").value() >= 1) {
+        if (target.stat("Étourdissement").value() >= 1) {
             target.specialDamage(50, this);
         }
         else {

@@ -1,7 +1,7 @@
 import type { System } from '$lib/system/class';
 import { Item } from '$lib/cards/class/item';
 import type { Card } from '$lib/cards/class/card';
-import Use from './use.svelte';
+import { UserInterface } from '$lib/cards/user-interface/class';
 
 export class ParcheminDeSagesse extends Item {
     name = "Parchemin de sagesse";
@@ -15,18 +15,41 @@ export class ParcheminDeSagesse extends Item {
     };
 
     canUse = () => {
-        if (this.owner().totalIntelligence() > 0 && this.owner().zone("Pile").cards.length > 0) {
-            return true;
+        if (this.owner().totalIntelligence() == 0) {
+            return false;
+        }
+        for (const card of this.owner().zone("Pile").cards) {
+            if (card.costTotal() > 0) {
+                return true;
+            }
         }
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Pile")],
+                (target: Card) => {
+                    return target.costTotal() > 0;
+                },
+                (target: Card) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Pile").cards) {
+            if (target == undefined && card.costTotal() > 0) {
+                target = card;
+            }
         }
-        else {
-            this.useEffect(this.owner().zone("Pile").cards[0]);
+
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

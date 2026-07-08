@@ -8,14 +8,14 @@ export class Alchimiste extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 15]]);
+        this.init([["Or", 20]]);
 
         this.initFamily(["Humain"]);
 
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Quand posé : Pioche 3 cartes de famille Potion.`);
+        this.addText(`Quand posé : Pioche 5 cartes de famille Potion.`);
     };
 
     useEffect = () => {
@@ -25,7 +25,7 @@ export class Alchimiste extends Creature {
             }
             return false;
         };
-        this.owner().draw(1, readCondition);
+        this.owner().draw(5, readCondition);
 
         this.move("Terrain");
         this.pose();

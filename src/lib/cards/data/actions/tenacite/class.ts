@@ -1,7 +1,8 @@
 import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import { Creature } from '$lib/cards/class/creature';
-import Use from './use.svelte';
+import type { Card } from '$lib/cards/class/card';
+import { Button, UserInterface } from '$lib/cards/user-interface/class';
 
 export class Tenacite extends Action {
     name = "Ténacité";
@@ -25,31 +26,50 @@ export class Tenacite extends Action {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
-        }
-        else {
-            let target = undefined;
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addChoice([
+                new Button(["Augmente de 50 l'endurance d'une créature sur votre terrain"],
+                    () => {
+                        this.saveChoice("endurance");
+                        this.changePanel(1);
+                    }),
+                new Button(["Augmente de 50 la constitution et la force d'une créature sur votre terrain"],
+                    () => {
+                        this.saveChoice("balance");
+                        this.changePanel(1);
+                    })])
+            .addTarget(
+                [this.owner().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature;
+                },
+                (target: Creature) => {
+                    this.useEffect(this.currentInterface().first_choice, target);
+                    this.closeInterface();
+                });
+    };
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature) {
-                    target = card;
-                }
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature) {
+                target = card;
             }
+        }
 
-            if (target != undefined) {
-                if (target.stat("Endurance").value() > target.stat("Vitalité").value()) {
-                    this.useEffect(target, "balance");
-                }
-                else {
-                    this.useEffect(target, "endurance");
-                }
+        if (target != undefined) {
+            if (target.stat("Vitalité").value() <= target.stat("Endurance").value()) {
+                this.useEffect("balance", target);
+            }
+            else {
+                this.useEffect("endurance", target);
             }
         }
     };
 
-    useEffect = (target: Creature, choice: string) => {
+    useEffect = (choice: string, target: Creature) => {
         this.targeting(target);
 
         if (choice == "endurance") {

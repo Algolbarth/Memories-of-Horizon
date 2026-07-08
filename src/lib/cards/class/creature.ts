@@ -62,9 +62,6 @@ export class Creature extends Unit {
             return false;
         };
 
-        this.addStat(701, "Étourdissement", 0);
-        this.stat("Étourdissement").debuff = true;
-
         this.addStat(711, "Poison", 0);
         this.stat("Poison").debuff = true;
 

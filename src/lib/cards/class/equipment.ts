@@ -3,7 +3,8 @@ import { EquipStat } from './stat';
 import { EquipTrait } from './trait';
 import { Creature } from './creature';
 import { Item } from './item';
-import Use from '../utils/equip-use.svelte';
+import { UserInterface } from '../user-interface/class';
+import type { Card } from './card';
 
 export class Equipment extends Item {
     equipElements: string[] = [];
@@ -95,22 +96,30 @@ export class Equipment extends Item {
         return false;
     };
 
-    select = () => {
-        if (this.owner().is_player) {
-            this.system.game.use.set(this, Use);
+    userInterface = () => {
+        this.game().user_interface = new UserInterface(this)
+            .addTarget(
+                [this.owner().zone("Terrain")],
+                (target: Card) => {
+                    return target instanceof Creature && target.canEquip();
+                },
+                (target: Creature) => {
+                    this.useEffect(target);
+                    this.closeInterface();
+                });
+    };
+
+    autoUse = () => {
+        let target = undefined;
+
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (target == undefined && card instanceof Creature && card.canEquip()) {
+                target = card;
+            }
         }
-        else {
-            let target = undefined;
 
-            for (const card of this.owner().zone("Terrain").cards) {
-                if (target == undefined && card instanceof Creature && card.canEquip()) {
-                    target = card;
-                }
-            }
-
-            if (target != undefined) {
-                this.useEffect(target);
-            }
+        if (target != undefined) {
+            this.useEffect(target);
         }
     };
 

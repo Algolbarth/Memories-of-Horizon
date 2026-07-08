@@ -2,7 +2,7 @@
 	import DoubleZone from "./double-zone.svelte";
 	import Entity from "./entity.svelte";
 	import View from "../cards/view/main.svelte";
-	import Use from "./use.svelte";
+	import UserInterface from "../cards/user-interface/use.svelte";
 	import Flux from "./flux.svelte";
 	import Pause from "./pause.svelte";
 	import { onDestroy, onMount } from "svelte";
@@ -167,17 +167,19 @@
 	{/if}
 </div>
 
-{#if game.use.card != undefined && game.use.svelte != undefined}
-	<Use bind:system bind:game />
+{#if game.user_interface != undefined}
+	<UserInterface bind:system bind:game bind:user_interface={game.user_interface} />
 {/if}
 
 {#if show_flux}
 	<Flux bind:system bind:game bind:show_flux />
 {/if}
 
-<div class="center">
-	<View bind:system />
-</div>
+{#if game.user_interface == undefined}
+	<div id="view">
+		<View bind:system />
+	</div>
+{/if}
 
 {#if game.pause}
 	<Pause bind:system bind:game />
@@ -212,5 +214,11 @@
 
 	button.info:hover {
 		color: black;
+	}
+
+	#view {
+		position: fixed;
+		top: 5vh;
+		left: 30vw;
 	}
 </style>

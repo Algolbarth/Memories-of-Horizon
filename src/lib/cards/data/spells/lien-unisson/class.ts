@@ -1,9 +1,10 @@
 import type { System } from '$lib/system/class';
 import { Creature } from '$lib/cards/class/creature';
 import { Spell } from '$lib/cards/class/spell';
-import Use from './use.svelte';
 import { copy } from '$lib/utils';
 import type { Unit } from '$lib/cards/class/unit';
+import { UserInterface } from '$lib/cards/user-interface/class';
+import type { Card } from '$lib/cards/class/card';
 
 export class LienDUnisson extends Spell {
     name = "Lien d'unisson";
@@ -28,32 +29,54 @@ export class LienDUnisson extends Spell {
         return nb_creature > 1 || (nb_creature > 0 && this.owner().ressource("Mana").total() >= 150);
     };
 
-    select = () => {
+    userInterface = () => {
         if (this.owner().ressource("Mana").total() >= 150) {
             this.useEffect();
         }
         else {
-            if (this.owner().is_player) {
-                this.system.game.use.set(this, Use);
-            }
-            else {
-                let target_1 = undefined;
-                let target_2 = undefined;
+            this.game().user_interface = new UserInterface(this)
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature;
+                    },
+                    (target: Creature) => {
+                        this.saveChoice(target);
+                        this.changePanel(1);
+                    })
+                .addTarget(
+                    [this.owner().zone("Terrain")],
+                    (target: Card) => {
+                        return target instanceof Creature && target != this.currentInterface().first_choice;
+                    },
+                    (target: Creature) => {
+                        this.useEffect(this.currentInterface().first_choice, target);
+                        this.closeInterface();
+                    });
+        }
+    };
 
-                for (const card of this.owner().zone("Terrain").cards) {
-                    if (card instanceof Creature) {
-                        if (target_1 == undefined) {
-                            target_1 = card;
-                        }
-                        else if (target_2 == undefined) {
-                            target_2 = card;
-                        }
+    autoUse = () => {
+        if (this.owner().ressource("Mana").total() >= 150) {
+            this.useEffect();
+        }
+        else {
+            let target_1 = undefined;
+            let target_2 = undefined;
+
+            for (const card of this.owner().zone("Terrain").cards) {
+                if (card instanceof Creature) {
+                    if (target_1 == undefined) {
+                        target_1 = card;
+                    }
+                    else if (target_2 == undefined) {
+                        target_2 = card;
                     }
                 }
+            }
 
-                if (target_1 != undefined && target_2 != undefined) {
-                    this.useEffect(target_1, target_2);
-                }
+            if (target_1 != undefined && target_2 != undefined) {
+                this.useEffect(target_1, target_2);
             }
         }
     };
