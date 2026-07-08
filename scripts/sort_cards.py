@@ -10,7 +10,7 @@ def check_items(path):
 
     array = []
     for file in os.listdir(path):
-        if ".svelte" not in file and ".ts" not in file:
+        if "index.ts" not in file:
             array.append(file)
 
     array.sort()
