@@ -10,11 +10,7 @@ With 12 elements, you can combine all the cards to create ultimate synergies.
 
 ## 🕹️ Install
 
-Download release files here :
-
-### [🪟 For Windows](https://github.com/Algolbarth/memories-of-horizon/blob/main/release/windows)
-
-### [🐧 For Linux](https://github.com/Algolbarth/memories-of-horizon/blob/main/release/linux)
+### [Download last version here (🐧 Linus + 🪟 Windows)](https://github.com/Algolbarth/memories-of-horizon/releases)
 
 **Note:** Audio files are not supported by Tauri on Linux at this time, so music is disabled in this version.
 

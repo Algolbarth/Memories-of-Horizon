@@ -82,6 +82,7 @@ export * from './salade.ts';
 export * from './sardines-en-boite.ts';
 export * from './sifflet.ts';
 export * from './tarte-aux-pommes.ts';
+export * from './telescope.ts';
 export * from './terrine-de-porc.ts';
 export * from './the-vert.ts';
 export * from './tomate.ts';
