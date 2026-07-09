@@ -4,22 +4,33 @@ import { Item } from '$lib/cards/class/item';
 import { UserInterface } from '$lib/cards/user-interface/class';
 import type { Card } from '$lib/cards/class/card';
 
-export class HerbesCuratives extends Item {
-    name = "Herbes curatives";
+export class Carotte extends Item {
+    name = "Carotte";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Nature", 10]]);
+        this.init([["Or", 5], ["Terre", 5]]);
 
-        this.initFamily(["Plante"]);
+        this.initFamily(["Nourriture", "Plante"]);
 
-        this.addText(`Quand posé : Retire le poison et la brûlure d'une créature sur votre terrain.`);
+        this.addText([
+            "Quand posé : Soigne 20 blessures à une créature sur votre terrain.",
+            "[satiety {Pioche 1 carte à la place.{jump:1}Augmente de 10 la perception de cette carte.}]"]);
     };
 
     canUse = () => {
         for (const card of this.owner().zone("Terrain").cards) {
-            if (card instanceof Creature && (card.stat("Poison").value() > 0 || card.stat("Brûlure").value() > 0)) {
+            if (card instanceof Creature) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    canSatiety = () => {
+        for (const card of this.owner().zone("Terrain").cards) {
+            if (card instanceof Creature && card.isFullLife()) {
                 return true;
             }
         }
@@ -31,7 +42,7 @@ export class HerbesCuratives extends Item {
             .addTarget(
                 [this.owner().zone("Terrain")],
                 (target: Card) => {
-                    return target instanceof Creature && (target.stat("Poison").value() > 0 || target.stat("Brûlure").value() > 0);
+                    return target instanceof Creature;
                 },
                 (target: Creature) => {
                     this.useEffect(target);
@@ -43,7 +54,7 @@ export class HerbesCuratives extends Item {
         let target = undefined;
 
         for (const card of this.owner().zone("Terrain").cards) {
-            if (target == undefined && card instanceof Creature && (card.stat("Poison").value() > 0 || card.stat("Brûlure").value() > 0)) {
+            if (target == undefined && card instanceof Creature) {
                 target = card;
             }
         }
@@ -56,8 +67,15 @@ export class HerbesCuratives extends Item {
     useEffect = (target: Creature) => {
         this.targeting(target);
 
-        target.stat("Poison").set(0);
-        target.stat("Brûlure").set(0);
+        if (!target.isDamaged()) {
+            let cards: Card[] = this.owner().draw(1);
+            for (const card of cards) {
+                card.stat("Perception").increase(10);
+            }
+        }
+        else {
+            target.heal(20);
+        }
 
         this.move("Défausse");
         this.pose();

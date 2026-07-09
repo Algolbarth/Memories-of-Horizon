@@ -15,6 +15,7 @@ export * from './brioche.ts';
 export * from './brique.ts';
 export * from './cadeau.ts';
 export * from './capsule-de-survie.ts';
+export * from './carotte.ts';
 export * from './carpacio-de-thon.ts';
 export * from './carte-de-la-region.ts';
 export * from './cendres.ts';
