@@ -131,6 +131,7 @@ export * from './jeune-wyverne.ts';
 export * from './jongleur-de-boule-de-feu.ts';
 export * from './juge.ts';
 export * from './lanceur-de-boule-de-feu.ts';
+export * from './lapin.ts';
 export * from './leprechaun.ts';
 export * from './libraire.ts';
 export * from './lion.ts';

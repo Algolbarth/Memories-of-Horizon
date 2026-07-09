@@ -29,6 +29,10 @@ Soigne X blessures => X/2
 Enlève X malus => 10
 Enlève tous les malus => 50
 
+## Triggers
+X quand posé => X
+X quand meurt => X/2
+
 ## Redondance
 X à chaque étape de préparation => 2X
 X à chaque étape de combat => 2X
