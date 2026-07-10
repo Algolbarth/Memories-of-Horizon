@@ -9,20 +9,19 @@ export class Minotaure extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10], ["Terre", 10]]);
+        this.init([["Or", 15], ["Terre", 15]]);
 
         this.initFamily(["Minotaure"]);
 
         this.stat("Constitution").init(10);
-        this.stat("Force").init(15);
+        this.stat("Force").init(10);
 
-        this.addText([`Quand un bâtiment adverse meurt : Si sur le terrain : Augmente de 1 sa constitution et  sa force.`]);
+        this.addText([`Quand un bâtiment adverse meurt : Si sur le terrain : Augmente de 5 sa force.`]);
     };
 
     otherDieEffect = (card: Card) => {
         if (this.isArea("Terrain") && card instanceof Building && this.isNotAlly(card)) {
-            this.stat("Constitution").increase(1);
-            this.stat("Force").increase(1);
+            this.stat("Force").increase(5);
         }
     };
 };

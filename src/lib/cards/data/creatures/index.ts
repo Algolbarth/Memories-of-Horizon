@@ -151,6 +151,7 @@ export * from './maitre-chien.ts';
 export * from './maman-ours.ts';
 export * from './marchand.ts';
 export * from './mendiant.ts';
+export * from './meneur-de-raid.ts';
 export * from './mere-wyverne.ts';
 export * from './mimique-de-coffre.ts';
 export * from './mimique-de-jarre.ts';
