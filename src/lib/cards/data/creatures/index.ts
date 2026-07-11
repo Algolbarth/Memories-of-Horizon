@@ -212,6 +212,7 @@ export * from './tortue-geante';
 export * from './tortue-hydrodorsale';
 export * from './troubadour';
 export * from './vache';
+export * from './vandale';
 export * from './vestale';
 export * from './vipere';
 export * from './voleur';
