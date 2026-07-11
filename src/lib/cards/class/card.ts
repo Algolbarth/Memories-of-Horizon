@@ -630,7 +630,7 @@ export class Card {
         if (this.zone != undefined) {
             return this.zone;
         }
-        console.log("error");
+        console.log(this.name + " n'est pas placée dane zone");
         return new Zone(this.owner(), "Test");
     };
 
@@ -638,7 +638,7 @@ export class Card {
         if (this.slot != undefined) {
             return this.slot;
         }
-        console.log("error");
+        console.log(this.name + " n'est pas placée dane zone");
         return 0;
     };
 
@@ -646,7 +646,7 @@ export class Card {
         if (this.entity != undefined) {
             return this.entity;
         }
-        console.log("error");
+        console.log(this.name + " n'est pas possédée par une entitée");
         return new Entity(this.system);
     };
 
@@ -654,7 +654,7 @@ export class Card {
         if (this.entity != undefined) {
             return this.entity.opponent;
         }
-        console.log("error");
+        console.log(this.name + " n'est pas possédée par une entitée");
         return new Entity(this.system);
     };
 
@@ -662,7 +662,7 @@ export class Card {
         if (this.system.game != undefined) {
             return this.system.game;
         }
-        console.log("error");
+        console.log(this.name + " n'est pas en jeu");
         return new Game(this.system, "Test");
     };
 
@@ -670,7 +670,7 @@ export class Card {
         if (this.system.game != undefined && this.system.game.user_interface != undefined) {
             return this.system.game.user_interface;
         }
-        console.log("error");
+        console.log(this.name + " n'a pas d'interface utilisateur dédiée");
         return new UserInterface(this);
     };
 

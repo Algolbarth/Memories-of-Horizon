@@ -19,7 +19,7 @@ export class StandardDeck extends Deck {
                 }
             }
             else {
-                console.log("Invalid card in " + name + " deck");
+                console.log(cards[i] + " n'est pas une carte existante dans le deck " + name);
                 cards.splice(i, 1);
                 i--;
             }

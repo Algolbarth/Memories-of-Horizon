@@ -94,7 +94,7 @@ export class System {
                 for (const card_name of step.cards) {
                     let card = this.cards.getByName(card_name);
                     if (card == undefined) {
-                        console.log("Invalid card in a chapter : " + card);
+                        console.log(card + " n'est pas une carte existante");
                         error = true;
                     } else {
                         for (let i = 0; i < card.cost.length; i++) {
@@ -109,13 +109,13 @@ export class System {
                             if (cost.name == ressource.name) {
                                 check = true;
                                 if (ressource.value > cost.value) {
-                                    console.log("Invalid ressources in a chapter : " + ressource.name + " " + (ressource.value - cost.value));
+                                    console.log("Il manque des ressources : " + ressource.name + " " + (ressource.value - cost.value));
                                     error = true;
                                 }
                             }
                         }
                         if (!check) {
-                            console.log("Missing ressources in a chapter : " + ressource.name + " " + ressource.value);
+                            console.log("Il manque des ressources : " + ressource.name + " " + ressource.value);
                             error = true;
                         }
                     }
@@ -143,7 +143,7 @@ export class System {
         let index: number = 0;
         for (const level of this.chapters.instance) {
             if (index > 0 && level.length == 0) {
-                console.log("No chapter level " + index);
+                console.log("Il n'y a pas de chapitre de niveau " + index);
             }
             index++;
         }
@@ -198,7 +198,7 @@ class Cards {
                 return new this.class[i](this.system);
             }
         }
-        console.log(name + " is not a card");
+        console.log(name + " n'est pas une carte existante");
         return new Card(this.system);
     };
 };

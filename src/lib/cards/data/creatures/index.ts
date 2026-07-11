@@ -121,6 +121,7 @@ export * from './guerrier';
 export * from './guerrier-elfe';
 export * from './guerrier-geant';
 export * from './guerrier-gobelin';
+export * from './guerrier-minotaure';
 export * from './haie';
 export * from './herisson';
 export * from './heros';

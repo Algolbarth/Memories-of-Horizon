@@ -2,7 +2,7 @@ export function several(value: number, name_list: string[], emplacement: string 
     let text: string = "";
 
     if (!["before", "after", "none"].includes(emplacement)) {
-        console.log("aucun emplacement reconnu pour la fonction several");
+        console.log("Aucun emplacement reconnu pour la fonction several");
         return "ERROR";
     }
 
