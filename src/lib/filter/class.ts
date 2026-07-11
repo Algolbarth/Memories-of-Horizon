@@ -205,6 +205,9 @@ export class Filter {
             return true;
         }
 
+        this.select_effect = this.select_effect.toLowerCase();
+        this.select_effect = this.select_effect.replaceAll("à", "a").replaceAll("û", "u").replaceAll("é", "e").replaceAll("è", "e");
+
         let text: string = "";
         for (const effect of card.effects) {
             if (effect.condition()) {
@@ -225,9 +228,11 @@ export class Filter {
         text = text.replaceAll("{variable:", "");
         text = text.replaceAll("[if ", "");
         text = text.replaceAll("[details ", "");
-        text = text.replaceAll("]", "").replaceAll("}", "").replaceAll("{", "");;
+        text = text.replaceAll("]", "").replaceAll("}", "").replaceAll("{", "");
+        text = text.toLowerCase();
+        text = text.replaceAll("à", "a").replaceAll("û", "u").replaceAll("é", "e").replaceAll("è", "e");
 
-        return text.toLowerCase().includes(this.select_effect.toLowerCase());
+        return text.includes(this.select_effect);
     };
 
     filterByRarity(card: Card) {
@@ -288,6 +293,17 @@ export class Filter {
             for (let i = 0; i < tab.length; i++) {
                 let j = i;
                 while (j > 0 && tab[j].level < tab[j - 1].level) {
+                    let swap = tab[j];
+                    tab[j] = tab[j - 1];
+                    tab[j - 1] = swap;
+                    j--;
+                }
+            }
+        }
+        else if (type == "Coût") {
+            for (let i = 0; i < tab.length; i++) {
+                let j = i;
+                while (j > 0 && tab[j].costTotal() < tab[j - 1].costTotal()) {
                     let swap = tab[j];
                     tab[j] = tab[j - 1];
                     tab[j - 1] = swap;

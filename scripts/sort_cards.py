@@ -11,7 +11,7 @@ def check_items(path):
     array = []
     for file in os.listdir(path):
         if "index.ts" not in file:
-            array.append(file)
+            array.append(file.replace(".ts", ""))
 
     array.sort()
 

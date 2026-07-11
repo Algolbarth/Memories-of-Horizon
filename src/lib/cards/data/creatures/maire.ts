@@ -18,6 +18,8 @@ export class Maire extends Creature {
     };
 
     startPhaseEffect = () => {
-        this.owner().ressource("Or").produce(5 * this.owner().zone("Terrain").cards.length);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Or").produce(5 * this.owner().zone("Terrain").cards.length);
+        }
     };
 };

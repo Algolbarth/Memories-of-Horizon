@@ -50,7 +50,7 @@
 	</button>
 	- Trier par
 	<Dropdown
-		array={["Nom", "Niveau"]}
+		array={["Nom", "Niveau", "Coût"]}
 		selected={sort_type}
 		selecting={function (element: string) {
 			sort_type = element;

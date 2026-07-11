@@ -14,7 +14,7 @@ export class TourDeSiege extends Building {
 
         this.stat("Constitution").init(40);
 
-        this.addText(`Au début d'une manche : Augmente de 10 la constitution et la force de la créature sur votre terrain la plus en avant.`);
+        this.addText(`Au début d'une manche : Si sur le terrain : Augmente de 10 la constitution et la force de la créature sur votre terrain la plus en avant.`);
     };
 
     roundEffect = () => {

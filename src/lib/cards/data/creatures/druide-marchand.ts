@@ -25,7 +25,9 @@ export class DruideMarchandHumain extends DruideMarchand {
     };
 
     startPhaseEffect = () => {
-        this.owner().ressource("Or").increase(1);
+        if (this.isArea("Terrain")) {
+            this.owner().ressource("Or").increase(1);
+        }
     };
 };
 

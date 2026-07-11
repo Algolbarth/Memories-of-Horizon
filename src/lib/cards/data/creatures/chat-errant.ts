@@ -14,12 +14,14 @@ export class ChatErrant extends Creature {
         this.stat("Constitution").init(3);
         this.stat("Force").init(3);
 
-        this.addText(`Au début de la phase de combat : Génère {card:Chat} sur votre terrain.`);
+        this.addText(`Au début de la phase de combat : Si sur le terrain : Génère {card:Chat} sur votre terrain.`);
         this.addText(`Quand attaque : Stocke 1 or.`);
     };
 
     startBattleEffect = () => {
-        this.owner().getCard("Chat").add("Terrain");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Chat").add("Terrain");
+        }
     };
 
     attackEffect = () => {

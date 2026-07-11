@@ -477,7 +477,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Mab` : Goliath jarl de stromhein, membre du conseil. peux génèrer des surfaces glacées faisant office de sol. voulait déclencher une guerre contre les vikings pour leur activité guerrière mais sera convaincue de ne pas le faire par tassarion.
 `Cornedure` : minotaure membre du conseil. considère que le conseil a atteint ses limites et défendra le conseil face à la cabale en terrassant silenus et affrontant oneiros.
 `Chromite` : sphinx membre du conseil, peux se figer en pierre.
-`Dame Morana` :  meneuse de la Horde, membre du conseil et chef des revenants sur le continent. meilleure cavalière du conseil. extrais les pouvoirs des os.
+`Dame Morana` : meneuse de la Horde, membre du conseil et chef des revenants sur le continent. meilleure cavalière du conseil. extrais les pouvoirs des os.
 
 `Luther` : vieux chevalier devenu mercenaire auprès de royaumes. mentor du héros, rencontré durant la campagne des pics brisés.
 `Poncemine` : Gnome spécialisé dans la construction d'un automate invincible dont il a conçu les plans. le héros parvient à stopper la machine inachevée lors de son voyage à Adana, ville des gnomes. accompagne le héros par grattitude mais aussi pour apprendre à perfectionner son automate et prôtéger les plans.
@@ -531,7 +531,7 @@ les guerriers drows utilisent des armures légères pour se déplacer efficaceme
 `Dents jaunes` : revenant centurion avec des dents en or. se véritable apparence est un monstre aveugle doté de nombreuses machoires.
 `Reina` : ancienne servante de Drenza devenue centurion. ne veux pas se mêler de la guerre entre l'empereur et zodd.
 
-`Alexei` :  empereur actuel de l'empire. ancien maitre d'armes, il ne parle jamais et s'exprime par le biais d'Hécate ou par le language des signes.
+`Alexei` : empereur actuel de l'empire. ancien maitre d'armes, il ne parle jamais et s'exprime par le biais d'Hécate ou par le language des signes.
 `Hecate` : servante personnelle et confidante de l'empereur. peux annuler toutes les éléments autour d'elle.
 `Victoria` : aalistar générale de l'empire qui a capturé drenza. veux retrouver reina. peux forger des armes avec la lumière.
 `Milen Kuva` : dieu des maitres d'armes, créateur de la tour de milen kuva. a formé alexei avant qu'il ne devienne empereur.

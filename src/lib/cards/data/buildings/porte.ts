@@ -8,15 +8,15 @@ export class Porte extends Building {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 6]]);
+        this.init([["Or", 10]]);
 
         this.stat("Constitution").init(10);
 
-        this.addText(`Quand meurt : Pioche 1 carte et la verrouille.`);
+        this.addText(`Quand meurt : Pioche 5 cartes et les verrouille.`);
     };
 
     dieEffect = () => {
-        let cards: Card[] = this.owner().draw(1);
+        let cards: Card[] = this.owner().draw(5);
         for (const c of cards) {
             c.lock();
         }

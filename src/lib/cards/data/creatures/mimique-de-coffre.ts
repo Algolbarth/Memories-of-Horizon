@@ -17,6 +17,13 @@ export class MimiqueDeCoffre extends Creature {
         this.addText(`Quand meurt sur le terrain : L'adversaire pioche 5 cartes et les verrouille.`);
     };
 
+    canUse = () => {
+        if (this.adversary().zone("Terrain").isNotFull()) {
+            return true;
+        }
+        return false;
+    };
+
     useEffect = () => {
         this.move("Terrain", this.adversary());
         this.pose();

@@ -8,7 +8,7 @@ export class Lapin extends Creature {
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 5], ["Terre", 5]]);
+        this.init([["Or", 5], ["Nature", 5]]);
 
         this.initFamily(["Bête"]);
 

@@ -19,6 +19,8 @@ export class Emeutier extends Creature {
     };
 
     startPhaseEffect = () => {
-        this.owner().getCard("Brique").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Brique").add("Inventaire");
+        }
     };
 };

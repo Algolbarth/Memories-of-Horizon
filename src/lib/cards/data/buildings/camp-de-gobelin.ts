@@ -13,7 +13,7 @@ export class CampDeGobelin extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Au début d'une manche : Génère {card:Gobelin} sur votre terrain.`);
+        this.addText(`Au début d'une manche : Si sur le terrain : Génère {card:Gobelin} sur votre terrain.`);
     };
 
     roundEffect = () => {

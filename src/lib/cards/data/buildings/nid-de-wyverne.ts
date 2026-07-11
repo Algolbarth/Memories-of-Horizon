@@ -16,7 +16,7 @@ export class NidDeWyverne extends Building {
         this.stat("Constitution").init(20);
 
         this.addText([
-            `Quand se prépare sur le terrain : Pioche 2 créature de famille Wyverne et les verrouillent.`,
+            `Quand se prépare sur le terrain : Pioche 2 créature de famille Wyverne et les verrouille.`,
             `Réduit de 20 le coût de ces cartes.`]);
     };
 

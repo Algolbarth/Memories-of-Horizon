@@ -14,10 +14,12 @@ export class Lutteur extends Creature {
         this.stat("Constitution").init(20);
         this.stat("Force").init(5);
 
-        this.addText(`Au début d'une manche : Augmente d'autant son endurance pendant cette manche que 5 fois le numéro de la manche.`);
+        this.addText(`Au début d'une manche : Si sur le terrain : Augmente d'autant son endurance pendant cette manche que 5 fois le numéro de la manche.`);
     };
 
     roundEffect = () => {
-        this.stat("Endurance").round += this.system.game.round * 5;
+        if (this.isArea("Terrain")) {
+            this.stat("Endurance").round += this.system.game.round * 5;
+        }
     };
 };

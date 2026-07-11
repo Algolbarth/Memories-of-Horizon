@@ -14,10 +14,12 @@ export class Pugiliste extends Creature {
         this.stat("Constitution").init(20);
         this.stat("Force").init(5);
 
-        this.addText(`Au début d'une manche : Augmente d'autant sa force pendant cette manche que 10 fois le numéro de la manche.`);
+        this.addText(`Au début d'une manche : Si sur le terrain : Augmente d'autant sa force pendant cette manche que 10 fois le numéro de la manche.`);
     };
 
     roundEffect = () => {
-        this.stat("Force").round += this.system.game.round * 10;
+        if (this.isArea("Terrain")) {
+            this.stat("Force").round += this.system.game.round * 10;
+        }
     };
 };

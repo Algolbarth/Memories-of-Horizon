@@ -14,10 +14,12 @@ export class Danseuse extends Creature {
         this.stat("Constitution").init(5);
         this.stat("Force").init(5);
 
-        this.addText(`Au début de la phase de combat : Augmente de 1 son esquive pendant ce tour.`);
+        this.addText(`Au début de la phase de combat : Si sur le terrain : Augmente de 1 son esquive pendant ce tour.`);
     };
 
     startBattleEffect = () => {
-        this.stat("Esquive").turn += 1;
+        if (this.isArea("terrain")) {
+            this.stat("Esquive").turn += 1;
+        }
     };
 };

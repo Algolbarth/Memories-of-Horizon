@@ -16,7 +16,7 @@ export class Minotaure extends Creature {
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
 
-        this.addText([`Quand un bâtiment adverse meurt : Si sur le terrain : Augmente de 5 sa force.`]);
+        this.addText(`Quand un bâtiment adverse meurt : Si sur le terrain : Augmente de 5 sa force.`);
     };
 
     otherDieEffect = (card: Card) => {

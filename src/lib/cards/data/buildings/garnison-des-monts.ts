@@ -11,7 +11,7 @@ export class GarnisonDesMonts extends Building {
 
         this.stat("Constitution").init(20);
 
-        this.addText(`Au début d'une manche : Génère {card:Soldat nain} sur votre terrain.`);
+        this.addText(`Au début d'une manche : Si sur le terrain : Génère {card:Soldat nain} sur votre terrain.`);
     };
 
     roundEffect = () => {

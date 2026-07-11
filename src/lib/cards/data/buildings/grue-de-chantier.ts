@@ -13,7 +13,7 @@ export class GrueDeChantier extends Building {
 
         this.stat("Constitution").init(40);
 
-        this.addText(`Au début d'une manche : Augmente de 20 la constitution du bâtiment sur votre terrain le plus en avant.`);
+        this.addText(`Au début d'une manche : Si sur le terrain : Augmente de 20 la constitution du bâtiment sur votre terrain le plus en avant.`);
     };
 
     roundEffect = () => {

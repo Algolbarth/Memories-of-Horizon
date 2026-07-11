@@ -1,19 +1,18 @@
 import type { System } from '$lib/system/class';
-import { Creature } from '$lib/cards/class/creature';
+import { Building } from '$lib/cards/class/building';
 
-export class MimiqueDeJarre extends Creature {
-    name = "Mimique de jarre";
+export class Totem extends Building {
+    name = "Totem";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 10]]);
+        this.init([["Or", 5], ["Terre", 5]]);
 
-        this.stat("Constitution").init(10);
-        this.stat("Force").init(10);
+        this.stat("Constitution").init(20);
 
         this.addText(`Quand posé : Se place sur le terrain adverse.`);
-        this.addText(`Quand meurt sur le terrain : Stocke 10 or chez l'adversaire.`);
+        this.addText(`Quand meurt sur le terrain : Stocke 5 or et 5 terre chez l'adversaire.`);
     };
 
     canUse = () => {
@@ -30,7 +29,8 @@ export class MimiqueDeJarre extends Creature {
 
     dieEffect = () => {
         if (this.isArea("Terrain")) {
-            this.adversary().ressource("Or").stock(10);
+            this.adversary().ressource("Or").stock(5);
+            this.adversary().ressource("Terre").stock(5);
         }
     };
 };

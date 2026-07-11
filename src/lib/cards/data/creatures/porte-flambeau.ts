@@ -18,6 +18,8 @@ export class PorteFlambeau extends Creature {
     };
 
     startPhaseEffect = () => {
-        this.owner().getCard("Torche").add("Inventaire");
+        if (this.isArea("Terrain")) {
+            this.owner().getCard("Torche").add("Inventaire");
+        }
     };
 };
