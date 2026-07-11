@@ -47,6 +47,7 @@ export * from './herbes-curatives';
 export * from './herbes-medicinales';
 export * from './herbier';
 export * from './huile-lustrante';
+export * from './jaspe';
 export * from './laine';
 export * from './lait';
 export * from './livre';
