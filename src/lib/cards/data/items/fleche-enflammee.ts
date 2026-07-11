@@ -27,12 +27,12 @@ export class FlecheEnflamee extends Item {
     userInterface = () => {
         this.game().user_interface = new UserInterface(this)
             .addChoice([
-                new Button(["Augmente de 1 votre production de feu"],
+                new Button(["Augmente de 10 la brûlure d'une unité sur le terrain adverse"],
                     () => {
                         this.saveChoice("burn");
                         this.changePanel(1);
                     }),
-                new Button(["Inflige 20 dégâts spéciaux à une unité sur le terrain adverse"],
+                new Button(["Inflige 30 dégâts spéciaux à une unité sur le terrain adverse"],
                     () => {
                         this.saveChoice("damage");
                         this.changePanel(1);

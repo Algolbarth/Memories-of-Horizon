@@ -78,6 +78,7 @@ export * from './potion-parfumee';
 export * from './poulet-roti';
 export * from './remede';
 export * from './resine-abrasive';
+export * from './rubis';
 export * from './salade';
 export * from './sardines-en-boite';
 export * from './sifflet';
