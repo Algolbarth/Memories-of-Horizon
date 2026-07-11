@@ -4,30 +4,30 @@ import { Equipment } from '$lib/cards/class/equipment';
 import { Button, UserInterface } from '$lib/cards/user-interface/class';
 import type { Card } from '$lib/cards/class/card';
 
-export class Rubis extends Item {
-    name = "Rubis";
+export class Emeraude extends Item {
+    name = "Émeraude";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Feu", 15]]);
+        this.init([["Nature", 15]]);
 
         this.initFamily(["Joyau"]);
 
         this.addChoice([
-            "Augmente de 1 votre production de feu.",
-            "Augmente de 30 la force d'un objet de famille Equipement dans votre inventaire."]);
+            "Augmente de 1 votre production de nature.",
+            "Augmente de 20 la constitution d'un objet de famille Equipement dans votre inventaire."]);
     };
 
     userInterface = () => {
         this.game().user_interface = new UserInterface(this)
             .addChoice([
-                new Button(["Augmente de 1 votre production de feu"],
+                new Button(["Augmente de 1 votre production de nature"],
                     () => {
                         this.saveChoice("production");
                         this.changePanel(1);
                     }),
-                new Button(["Augmente de 30 la force d'un objet de famille Equipement dans votre inventaire"],
+                new Button(["Augmente de 20 la constitution d'un objet de famille Equipement dans votre inventaire"],
                     () => {
                         this.changePanel(1);
                     })])
@@ -61,12 +61,12 @@ export class Rubis extends Item {
 
     useEffect = (choice: string, target: Equipment | undefined = undefined) => {
         if (choice == "production") {
-            this.owner().ressource("Feu").increase(1);
+            this.owner().ressource("Nature").increase(1);
         }
         else if (choice == "equipment" && target != undefined) {
             this.targeting(target);
 
-            target.equipStat("Force").increase(30);
+            target.equipStat("Constitution").increase(20);
         };
 
 
