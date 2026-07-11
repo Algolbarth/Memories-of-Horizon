@@ -1,4 +1,5 @@
 export * from './abattage';
+export * from './absorption';
 export * from './adoubement';
 export * from './affaiblissement';
 export * from './agrandissement-inventaire';
