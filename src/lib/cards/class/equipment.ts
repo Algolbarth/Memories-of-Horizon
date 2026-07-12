@@ -27,10 +27,16 @@ export class Equipment extends Item {
         this.equipStat("Constitution").increase = function (value: number) {
             this.add += value;
             this.card.equipStat("Vitalité").increase(value);
+            if (this.card.bearer != undefined) {
+                this.card.bearer.stat("Santé").increase(value);
+            }
         };
         this.equipStat("Constitution").decrease = function (value: number) {
             this.add -= value;
             this.card.equipStat("Vitalité").decrease(value);
+            if (this.card.bearer != undefined) {
+                this.card.bearer.stat("Santé").decrease(value);
+            }
         };
         this.equipStat("Constitution").init = function (value: number) {
             this.base = value;

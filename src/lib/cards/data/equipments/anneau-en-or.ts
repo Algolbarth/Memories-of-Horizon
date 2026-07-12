@@ -10,13 +10,13 @@ export class AnneauEnOr extends Equipment {
         this.init([["Or", 5]]);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain : Augmente de 2 la constitution et la force du porteur.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Augmente de 2 sa constitution et sa force.`);
     };
 
     startPhaseEffect = () => {
         if (this.bearer != undefined && this.bearer.isArea("Terrain")) {
-            this.bearer.stat("Constitution").increase(2);
-            this.bearer.stat("Force").increase(2);
+            this.equipStat("Constitution").increase(2);
+            this.equipStat("Force").increase(2);
         }
     };
 };

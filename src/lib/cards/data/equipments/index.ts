@@ -94,6 +94,7 @@ export * from './orbe-de-verre';
 export * from './palmes';
 export * from './peau-ours';
 export * from './pelle';
+export * from './pendentif-dore';
 export * from './plastron-en-cuir';
 export * from './plastron-en-fer';
 export * from './plastron-en-platine';
