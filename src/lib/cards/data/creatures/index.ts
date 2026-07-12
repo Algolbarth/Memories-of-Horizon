@@ -96,6 +96,7 @@ export * from './elfe';
 export * from './emeutier';
 export * from './empereur';
 export * from './epaulard';
+export * from './espadon';
 export * from './explorateur';
 export * from './fermier';
 export * from './fidele-serviteur';

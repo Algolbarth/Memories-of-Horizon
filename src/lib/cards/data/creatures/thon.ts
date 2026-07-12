@@ -31,12 +31,14 @@ export class Thon extends Creature {
         };
         this.owner().draw(1, readCondition);
 
+        let value: number = 0;
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isFamily("Poisson")) {
-                this.owner().ressource("Eau").produce(3);
+                value += 3;
             }
         }
+        this.owner().ressource("Eau").produce(3);
 
         this.move("Terrain");
         this.pose();

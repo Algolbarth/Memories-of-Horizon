@@ -31,13 +31,15 @@ export class Brochet extends Creature {
         };
         this.owner().draw(1, readCondition);
 
+        let value: number = 0;
         let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
         for (const card of battlefield) {
             if (card instanceof Creature && card.isFamily("Poisson")) {
-                this.stat("Constitution").increase(1);
-                this.stat("Force").increase(1);
+                value += 1;
             }
         }
+        this.stat("Constitution").increase(value);
+        this.stat("Force").increase(value);
 
         this.move("Terrain");
         this.pose();
