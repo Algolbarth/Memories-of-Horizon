@@ -82,6 +82,7 @@ export * from './remede';
 export * from './resine-abrasive';
 export * from './rubis';
 export * from './salade';
+export * from './saphir';
 export * from './sardines-en-boite';
 export * from './sifflet';
 export * from './tarte-aux-pommes';

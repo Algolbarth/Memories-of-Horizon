@@ -88,6 +88,7 @@ Hibours : Créature bête oiseau
 Ascension : pioche une créature wyverne et la verrouille.
 Ile volante : Lieu pour les cartes d'élément Air.
 Atterissage: action, enlève 1 esquive pour soigner complétement une créature sur votre terrain.
+Cobalt : Adresse
 
 ### Mort
 Revenant 
@@ -117,9 +118,11 @@ Nécromage
 Mage des morts 
 Cimetière : Lieu pour les cartes d'élément Mort.
 Cadavre : objet, découvre 1 créature de famille mort-vivant ou produit X mort.
+Lapis-lazuli : Affliction
 
 ### Arcane
 Git : Créature, quand arrive sur le terrain : Génère un esprit temporaire.
+Amethyste : Magie
 
 ### Metal
 Gnome : Créature, quand arrive sur le terrain : Génère un Mini automate sur le terrain.
@@ -134,6 +137,7 @@ Mage des métaux
 Metallomancien : Créature, quand une carte alliée Metal est posée : augmente sa constitution et sa force.
 Mines : Lieu pour les cartes d'élément Métal.
 Blindage: action, augmente de 50 la constitution et la force ou augmente de 25 l'endurance et la résistance.
+Hématite : Vigueur
 
 ### Foudre
 Satyre : quand arrive sur le terrain : augmente sa constitution et sa force pendant ce tour.
@@ -157,6 +161,7 @@ Plateau : Lieu pour les cartes d'élément Foudre.
 Plat instantanné : objet nouriture, soigne. satieté : augmente la force pendant ce tour.
 Café : objet nouriture, soigne. satieté : augmente la vitesse.
 Champ de force: action, augmente de 1 l'esquive de toutes les unités alliées pendant ce tour.
+Citrine : Vitesse
 
 ### Glace
 Goliath : résistance.
@@ -172,6 +177,7 @@ Toundra : Lieu pour les cartes d'élément Glace.
 Yéti : Créature bête, quand posé : Génère Riposte dans l'inventaire.
 Abominable yéti : Créature bête, quand se prépare : Génère Riposte dans l'inventaire. 
 Robustesse: action, augmente de 50 la constitution et la force ou augmente de 50 la résistance.
+Topaze : Résistance
 
 ### Lumiere
 Aasimar : Créature, régénération.
@@ -188,6 +194,7 @@ Révélations de lumière : action, révèle toutes les cartes dans l'inventaire
 Wyverne blanche 
 Mage de lumière 
 Terre sagénère : Lieu pour les cartes d'élément Lumière.
+Opale : Charisme
 
 ### Ombre
 Drow 
@@ -198,6 +205,7 @@ Wyverne noire
 Ombromancien 
 Mage sombre 
 Caverne : Lieu pour les cartes d'élément Ombre.
+Onyx : Pénétration + Percée
 
 ### Feu/Eau
 Sources chaudes : soigne et augmente la jauge critique de toutes les créatures alliées sur le terrain.
