@@ -86,6 +86,7 @@ export * from './elementaire-de-roche';
 export * from './elementaire-de-ronces';
 export * from './elementaire-de-terre';
 export * from './elementaire-des-eboulis';
+export * from './elementaire-des-vagues';
 export * from './elementaire-eau';
 export * from './elementaire-explosif';
 export * from './elementaire-marin';
