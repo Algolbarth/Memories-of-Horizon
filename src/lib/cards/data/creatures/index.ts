@@ -79,6 +79,7 @@ export * from './elementaire-de-bulles';
 export * from './elementaire-de-cailloux';
 export * from './elementaire-de-feu';
 export * from './elementaire-de-feuilles';
+export * from './elementaire-de-la-source';
 export * from './elementaire-de-pieces-or';
 export * from './elementaire-de-racines';
 export * from './elementaire-de-roche';
