@@ -23,28 +23,30 @@
 				<div class="inside inside-bottom scroll">
 					{#if deck != system.train_deck}
 						<div class={"box score " + deck.mode}>
-							<div class="cost">
+							<div class={"cost " + deck.mode}>
 								{several(deck.victory + deck.defeat, ["Partie", "jouée"])}
 							</div>
 
 							{#if deck.victory + deck.defeat > 0}
-								<div class="cost">
+								<div class={"cost " + deck.mode}>
 									{several(deck.victory, ["Victoire"])}
 								</div>
 
-								<div class="cost">
+								<div class={"cost " + deck.mode}>
 									{several(deck.defeat, ["Défaite"])}
 								</div>
 							{/if}
 						</div>
 					{/if}
 
-					<div class={"box " + deck.mode}>
-						{#if deck.cards.length > 0}
-							{several(deck.cards.length, ["Carte"])}
-						{:else}
-							Vide
-						{/if}
+					<div class={"box score " + deck.mode}>
+						<div class={"cost " + deck.mode}>
+							{#if deck.cards.length > 0}
+								{several(deck.cards.length, ["Carte"])}
+							{:else}
+								Vide
+							{/if}
+						</div>
 					</div>
 
 					{#if deck.cards.length > 0}
@@ -55,7 +57,7 @@
 										<div class="col">
 											{#if level[1] > 0}
 												<span class="count">{level[1]}</span>
-												<div class="bar" style="height:{Math.round((level[1] / deck.most_popular_level) * 100)}%"></div>
+												<div class={"bar " + deck.mode} style="height:{Math.round((level[1] / deck.most_popular_level) * 100)}%"></div>
 											{/if}
 										</div>
 									{/each}
@@ -82,7 +84,7 @@
 
 						<div class={"box types " + deck.mode}>
 							{#each deck.types as type}
-								<div class="cost">
+								<div class={"cost " + deck.mode}>
 									{several(type[1], [type[0]])}
 								</div>
 							{/each}
@@ -231,12 +233,23 @@
 
 	div.bar {
 		width: 100%;
-		background-color: var(--card);
 		background-image: var(--paper);
 		border: solid;
 		border-width: 0.1em 0.1em 0 0.1em;
 		border-radius: 2px 2px 0 0;
 		transition: background 0.15s;
+
+		&.standard {
+			background-color: rgb(150, 75, 0);
+		}
+
+		&.wild {
+			background-color: var(--card_hover);
+		}
+
+		&.train {
+			background-color: rgb(150, 7, 7);
+		}
 	}
 
 	div.bar:hover {
@@ -283,5 +296,17 @@
 		border-radius: 5px;
 
 		background-image: var(--paper);
+
+		&.standard {
+			background-color: rgb(150, 75, 0);
+		}
+
+		&.wild {
+			background-color: var(--card_hover);
+		}
+
+		&.train {
+			background-color: rgb(150, 7, 7);
+		}
 	}
 </style>
