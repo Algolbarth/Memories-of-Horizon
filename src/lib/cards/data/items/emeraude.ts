@@ -20,26 +20,39 @@ export class Emeraude extends Item {
     };
 
     userInterface = () => {
-        this.game().user_interface = new UserInterface(this)
-            .addChoice([
-                new Button(["Augmente de 1 votre production de nature"],
-                    () => {
-                        this.saveChoice("production");
-                        this.changePanel(1);
-                    }),
-                new Button(["Augmente de 20 la constitution d'un objet de famille Equipement dans votre inventaire"],
-                    () => {
-                        this.changePanel(1);
-                    })])
-            .addTarget(
-                [this.owner().zone("Inventaire")],
-                (target: Card) => {
-                    return target instanceof Equipment;
-                },
-                (target: Equipment) => {
-                    this.useEffect("equipment", target);
-                    this.closeInterface();
-                });
+        let check = false;
+        for (const card of this.owner().zone("Inventaire").cards) {
+            if (card instanceof Equipment) {
+                check = true;
+            }
+        }
+
+        if (check) {
+            this.game().user_interface = new UserInterface(this)
+                .addChoice([
+                    new Button(["Augmente de 1 votre production de nature"],
+                        () => {
+                            this.useEffect("production");
+                            this.closeInterface();
+                        }),
+                    new Button(["Augmente de 20 la constitution d'un objet de famille Equipement dans votre inventaire"],
+                        () => {
+                            this.changePanel(1);
+                        })])
+                .addTarget(
+                    [this.owner().zone("Inventaire")],
+                    (target: Card) => {
+                        return target instanceof Equipment;
+                    },
+                    (target: Equipment) => {
+                        this.useEffect("equipment", target);
+                        this.closeInterface();
+                    });
+        }
+        else {
+            this.useEffect("production");
+            this.closeInterface();
+        }
     };
 
     autoUse = () => {

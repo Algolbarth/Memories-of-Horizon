@@ -29,4 +29,9 @@ export class Cost {
         this.add = 0;
         this.turn = 0;
     };
+
+    fix = (value: number) => {
+        this.add = value - this.base;
+        this.turn = 0;
+    };
 };

@@ -130,6 +130,7 @@ export * from './homonculus';
 export * from './humain';
 export * from './iconoclaste';
 export * from './jeune-wyverne';
+export * from './joaillier';
 export * from './jongleur-de-boule-de-feu';
 export * from './juge';
 export * from './lanceur-de-boule-de-feu';
