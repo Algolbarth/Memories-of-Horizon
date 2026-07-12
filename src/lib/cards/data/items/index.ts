@@ -55,6 +55,7 @@ export * from './livre-de-recette';
 export * from './longue-vue';
 export * from './meteore';
 export * from './meule-a-grains';
+export * from './morceau-de-corail';
 export * from './noix-de-coco';
 export * from './pain';
 export * from './panacee';
