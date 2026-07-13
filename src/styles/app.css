@@ -69,6 +69,9 @@
   --return: rgb(32, 32, 161);
   --return_hover: rgb(0, 0, 228);
 
+  --clear: rgb(0, 161, 32);
+  --clear_hover: rgb(0, 228, 0);
+
   --story: rgba(255, 251, 202, 1);
   --pannel: rgb(37, 16, 0);
 

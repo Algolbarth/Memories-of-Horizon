@@ -23,6 +23,7 @@
 	let select_families_logic: boolean = system.filter.select_families_logic;
 
 	let select_effect: string = system.filter.select_effect;
+	let select_effect_order: boolean = system.filter.select_effect_order;
 
 	let select_common: boolean = system.filter.select_common;
 	let select_rare: boolean = system.filter.select_rare;
@@ -35,7 +36,7 @@
 
 <div class="window">
 	<div id="body" class="center">
-		<div style="text-align:right">
+		<div style="text-align:right;">
 			<button
 				class="square close"
 				on:click={() => {
@@ -46,7 +47,7 @@
 			</button>
 		</div>
 
-		<br />
+		<hr class="big" />
 
 		<div id="options">
 			<div class="container simple">
@@ -56,6 +57,8 @@
 					<input type="text" placeholder={'Exemple: "Dragon"'} bind:value={select_name} />
 				</div>
 			</div>
+
+			<hr />
 
 			<div class="container multiple">
 				<div>Niveau</div>
@@ -83,6 +86,8 @@
 					{/if}
 				</div>
 			</div>
+
+			<hr />
 
 			<div class="container multiple">
 				<div>Éléments</div>
@@ -128,6 +133,8 @@
 				</div>
 			</div>
 
+			<hr />
+
 			<div class="container multiple">
 				<div>Type</div>
 
@@ -143,6 +150,8 @@
 
 				<div></div>
 			</div>
+
+			<hr />
 
 			<div class="container multiple">
 				<div>Familles</div>
@@ -188,6 +197,8 @@
 				</div>
 			</div>
 
+			<hr />
+
 			<div class="container simple">
 				<div>Effet</div>
 
@@ -196,28 +207,49 @@
 				</div>
 			</div>
 
+			<br />
+
+			<div class="container simple">
+				<div></div>
+
+				<label class="form-control" for="effect_order">
+					<input type="checkbox" bind:checked={select_effect_order} id="effect_order" />
+					Respecter l'ordre des mots
+				</label>
+			</div>
+
+			<hr />
+
 			{#if !only_common}
 				<div class="container simple">
 					<div>Rareté</div>
 
 					<div class="checkboxes">
 						<div>
-							<input type="checkbox" bind:checked={select_common} id="common" />
-							<label for="common">Commune</label>
+							<label class="form-control" for="common">
+								<input type="checkbox" bind:checked={select_common} id="common" />
+								Commune
+							</label>
 						</div>
 
 						<div>
-							<input type="checkbox" bind:checked={select_rare} id="rare" />
-							<label for="rare">Rare</label>
+							<label class="form-control" for="rare">
+								<input type="checkbox" bind:checked={select_rare} id="rare" />
+								Rare
+							</label>
 						</div>
 
 						<div>
-							<input type="checkbox" bind:checked={select_legendary} id="legendary" />
-							<label for="legendary">Légendaire</label>
+							<label class="form-control" for="legendary">
+								<input type="checkbox" bind:checked={select_legendary} id="legendary" />
+								Légendaire
+							</label>
 						</div>
 					</div>
 				</div>
 			{/if}
+
+			<hr />
 
 			<div class="container multiple">
 				<div>Statistique</div>
@@ -253,25 +285,64 @@
 			</div>
 		</div>
 
-		<br />
+		<hr class="big" />
 
-		<button
-			class="big"
-			on:click={() => {
-				if (only_common) {
-					select_common = true;
-					select_rare = false;
-					select_legendary = false;
-				}
+		<div style="display: grid;grid-template-columns: repeat(2, 1fr);align-items:center;">
+			<div style="text-align:left;">
+				<button
+					class="square clear"
+					on:click={() => {
+						select_name = "";
 
-				system.filter.changeSelection(select_name, select_level, select_level_operator, select_elements, select_elements_logic, select_type, select_families, select_families_logic, select_effect, select_common, select_rare, select_legendary, select_stat_operator, select_stat_value, select_stat);
+						select_level = "Tous";
+						select_level_operator = "=";
 
-				filterFunction();
-				filter_window = false;
-			}}
-		>
-			Valider
-		</button>
+						select_element = "Ajouter";
+						select_elements = [];
+						select_elements_logic = true;
+
+						select_type = "Tous";
+
+						select_family = "Ajouter";
+						select_families = [];
+						select_families_logic = true;
+
+						select_effect = "";
+						select_effect_order = false;
+
+						select_common = true;
+						select_rare = false;
+						select_legendary = false;
+
+						select_stat = "Aucune";
+						select_stat_operator = "≥";
+						select_stat_value = 1;
+					}}
+				>
+					⭯
+				</button>
+			</div>
+
+			<div style="text-align:right;">
+				<button
+					class="big"
+					on:click={() => {
+						if (only_common) {
+							select_common = true;
+							select_rare = false;
+							select_legendary = false;
+						}
+
+						system.filter.changeSelection(select_name, select_level, select_level_operator, select_elements, select_elements_logic, select_type, select_families, select_families_logic, select_effect, select_effect_order, select_common, select_rare, select_legendary, select_stat_operator, select_stat_value, select_stat);
+
+						filterFunction();
+						filter_window = false;
+					}}
+				>
+					Valider
+				</button>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -294,16 +365,16 @@
 		text-align: left;
 	}
 
-	.container {
+	div.container {
 		display: grid;
-		padding-bottom: 1vmin;
+		align-items: center;
 	}
 
-	.simple {
+	div.simple {
 		grid-template-columns: 0.3fr 2fr;
 	}
 
-	.multiple {
+	div.multiple {
 		grid-template-columns: 0.3fr 0.75fr 1.25fr;
 	}
 
@@ -311,13 +382,13 @@
 		color: rgb(82, 82, 82);
 	}
 
-	.checkboxes {
-		text-align: left;
+	div.checkboxes {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
+		align-items: center;
 	}
 
-	.big {
+	button.big {
 		width: 10vw;
 	}
 
@@ -340,5 +411,15 @@
 	.stat {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	hr {
+		color: rgba(0, 0, 0, 0.25);
+	}
+
+	hr.big {
+		color: black;
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 </style>

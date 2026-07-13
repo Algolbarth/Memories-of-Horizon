@@ -154,6 +154,18 @@ button.return:hover {
   border-color: black var(--return) var(--return) black;
 }
 
+button.clear {
+  background-color: var(--clear);
+
+  border-color: var(--clear) black black var(--clear);
+}
+
+button.clear:hover {
+  background-color: var(--clear_hover);
+
+  border-color: black var(--clear) var(--clear) black;
+}
+
 button.active {
   color: var(--active);
 }

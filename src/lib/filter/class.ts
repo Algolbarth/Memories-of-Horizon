@@ -26,14 +26,15 @@ export class Filter {
     select_families_logic: boolean = true;
 
     select_effect: string = "";
+    select_effect_order: boolean = false;
 
     select_common: boolean = true;
     select_rare: boolean = false;
     select_legendary: boolean = false;
 
+    select_stat: string = "Aucune";
     select_stat_operator: string = "≥";
     select_stat_value: number = 1;
-    select_stat: string = "Aucune";
 
     constructor(system: System) {
         this.system = system;
@@ -58,14 +59,15 @@ export class Filter {
         this.select_families_logic = true;
 
         this.select_effect = "";
+        this.select_effect_order = false;
 
         this.select_common = true;
         this.select_rare = false;
         this.select_legendary = false;
 
+        this.select_stat = "Aucune";
         this.select_stat_operator = "≥";
         this.select_stat_value = 1;
-        this.select_stat = "Aucune";
     };
 
     isReset() {
@@ -74,7 +76,7 @@ export class Filter {
             this.select_elements.length > 0 || this.select_elements_logic == false ||
             this.select_type != "Tous" ||
             this.select_families.length > 0 || this.select_families_logic == false ||
-            this.select_effect != "" ||
+            this.select_effect != "" || this.select_effect_order == true ||
             this.select_common == false || this.select_rare == true || this.select_legendary == true ||
             this.select_stat_operator != "≥" || this.select_stat_value > 1 || this.select_stat != "Aucune") {
             return false;
@@ -82,7 +84,7 @@ export class Filter {
         return true;
     };
 
-    changeSelection(name: string, level: string, level_operator: string, elements: string[], elements_logic: boolean, type: string, families: string[], families_logic: boolean, effect: string, common: boolean, rare: boolean, legendary: boolean, stat_operator: string, stat_value: number, stat: string) {
+    changeSelection(name: string, level: string, level_operator: string, elements: string[], elements_logic: boolean, type: string, families: string[], families_logic: boolean, effect: string, effect_order: boolean, common: boolean, rare: boolean, legendary: boolean, stat_operator: string, stat_value: number, stat: string) {
         this.select_name = name;
 
         this.select_level = level;
@@ -97,6 +99,7 @@ export class Filter {
         this.select_families_logic = families_logic;
 
         this.select_effect = effect;
+        this.select_effect_order = effect_order;
 
         this.select_common = common;
         this.select_rare = rare;
@@ -232,7 +235,18 @@ export class Filter {
         text = text.toLowerCase();
         text = text.replaceAll("à", "a").replaceAll("û", "u").replaceAll("é", "e").replaceAll("è", "e");
 
-        return text.includes(this.select_effect);
+        if (!this.select_effect_order) {
+            let parts = this.select_effect.split(" ");
+            for (const part of parts) {
+                if (!text.includes(part)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        else {
+            return text.includes(this.select_effect);
+        }
     };
 
     filterByRarity(card: Card) {
