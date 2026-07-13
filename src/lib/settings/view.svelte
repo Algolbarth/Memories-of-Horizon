@@ -33,7 +33,7 @@
 
 <div class="zone">
 	<div class="music_container">
-		<div class="slidecontainer" style="width: 100%;">
+		<div class="slide_container" style="width: 100%;">
 			<label for="volume"> Musique </label>
 			<input
 				type="range"
@@ -41,7 +41,9 @@
 				max="100"
 				bind:value={system.music.volume}
 				on:change={() => {
-					system.music.current.volume = system.music.volume / 100;
+					if (system.music.current != undefined) {
+						system.music.current.volume = system.music.volume / 100;
+					}
 				}}
 				id="volume"
 			/>
@@ -71,7 +73,7 @@
 
 	<br />
 
-	<div class="slidecontainer">
+	<div class="slide_container">
 		<label for="delay"> Vitesse des combats automatiques </label>
 		<div>
 			<input
@@ -98,6 +100,25 @@
 			Afficher la description des cartes
 		</label>
 	</div>
+
+	<br />
+
+	<button
+		class="square clear"
+		on:click={() => {
+			system.music.volume = 50;
+			if (system.music.current != undefined) {
+				system.music.current.volume = 0.5;
+			}
+
+			system.settings.show_intelligence = false;
+			system.settings.autoplay = false;
+			system.settings.auto_speed = 1000;
+			system.settings.show_card_description = true;
+		}}
+	>
+		⭯
+	</button>
 </div>
 
 <style>
@@ -106,7 +127,7 @@
 		grid-template-columns: 1fr 1fr;
 	}
 
-	div.slidecontainer {
+	div.slide_container {
 		width: 50%;
 		display: grid;
 		grid-template-columns: 17em 10fr 5fr;
