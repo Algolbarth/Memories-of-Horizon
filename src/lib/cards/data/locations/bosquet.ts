@@ -2,8 +2,8 @@ import type { System } from '$lib/system/class';
 import type { Card } from '$lib/cards/class/card';
 import { Location } from '$lib/cards/class/location';
 
-export class Bois extends Location {
-    name = "Bois";
+export class Bosquet extends Location {
+    name = "Bosquet";
 
     constructor(system: System) {
         super(system);

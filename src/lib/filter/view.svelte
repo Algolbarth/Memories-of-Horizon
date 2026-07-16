@@ -415,6 +415,8 @@
 
 	hr {
 		color: rgba(0, 0, 0, 0.25);
+		margin-top: 0.75em;
+		margin-bottom: 0.75em;
 	}
 
 	hr.big {

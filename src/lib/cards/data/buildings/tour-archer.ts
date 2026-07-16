@@ -9,10 +9,10 @@ export class TourDArcher extends Building {
 
         this.init([["Or", 35]]);
 
-        this.stat("Constitution").init(25);
+        this.stat("Constitution").init(20);
+        this.stat("Portée").init(10);
 
         this.addText(`Quand se prépare sur le terrain : Génère {card:Flèche en bois} dans votre inventaire.`);
-        this.addText(`Quand une {card:Flèche en bois} alliée est posée : Si sur le terrain : Augmente de 5 les dégâts spéciaux infligée par cette carte.`);
     };
 
     startPhaseEffect = () => {

@@ -42,14 +42,7 @@ export class FlecheEnBois extends Item {
     useEffect = (target: Unit) => {
         this.targeting(target);
 
-        let nb_tower: number = 0;
-        for (const card of this.owner().zone("Terrain").cards) {
-            if (card.name == "Tour d'archer") {
-                nb_tower++;
-            }
-        }
-
-        target.specialDamage(10 + 5 * nb_tower, this);
+        target.specialDamage(10, this);
 
         this.move("Défausse");
         this.pose();

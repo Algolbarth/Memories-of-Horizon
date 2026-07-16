@@ -1,4 +1,4 @@
-export * from './bois';
+export * from './bosquet';
 export * from './capitale';
 export * from './champ-de-bataille';
 export * from './chef-lieu';

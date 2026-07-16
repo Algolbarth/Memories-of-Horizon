@@ -8,6 +8,7 @@ export * from './ancienne-wyverne-terrestre';
 export * from './ancienne-wyverne-verte';
 export * from './apothicaire';
 export * from './aquamancien';
+export * from './archer-elfe';
 export * from './archimage';
 export * from './archimere';
 export * from './architecte';
