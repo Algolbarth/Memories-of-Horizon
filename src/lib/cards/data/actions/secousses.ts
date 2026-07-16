@@ -3,15 +3,15 @@ import type { System } from '$lib/system/class';
 import { Action } from '$lib/cards/class/action';
 import type { Unit } from '$lib/cards/class/unit';
 
-export class TremblementDeTerre extends Action {
-    name = "Tremblement de terre";
+export class Secousses extends Action {
+    name = "Secousses";
 
     constructor(system: System) {
         super(system);
 
-        this.init([["Or", 65], ["Terre", 65]]);
+        this.init([["Or", 12], ["Terre", 12]]);
 
-        this.addText(`Quand posé : Inflige 50 dégâts spéciaux à toutes les unités sur le terrain.`);
+        this.addText(`Quand posé : Inflige 10 dégâts spéciaux à toutes les unités sur le terrain.`);
     };
 
     canUse = () => {
@@ -27,7 +27,7 @@ export class TremblementDeTerre extends Action {
         let double_battlefield = battlefield.concat(adversary_battlefield);
 
         for (const card of double_battlefield) {
-            card.specialDamage(50, this);
+            card.specialDamage(10, this);
         }
 
         this.move("Défausse");

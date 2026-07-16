@@ -109,6 +109,7 @@ export * from './route-commerciale';
 export * from './ruee';
 export * from './sang-chaud';
 export * from './savoir-interdit';
+export * from './secousses';
 export * from './souffle-enflamme';
 export * from './spores';
 export * from './sprint';
