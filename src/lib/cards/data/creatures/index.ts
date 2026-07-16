@@ -95,6 +95,7 @@ export * from './elementaliste';
 export * from './elfe';
 export * from './emeutier';
 export * from './empereur';
+export * from './enchanteresse';
 export * from './epaulard';
 export * from './espadon';
 export * from './explorateur';

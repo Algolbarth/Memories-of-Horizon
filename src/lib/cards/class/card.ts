@@ -32,6 +32,7 @@ export class Card {
     cache: boolean = false;
     alternative_form: string | undefined;
     second_life: boolean = false;
+    original_form: string | undefined = undefined;
 
     constructor(system: System) {
         this.system = system;
@@ -587,6 +588,13 @@ export class Card {
             stat.add = card.stat(stat.name).add;
             stat.turn = card.stat(stat.name).turn;
             stat.round = card.stat(stat.name).round;
+        }
+
+        if (card.original_form == undefined) {
+            this.original_form = card.name;
+        }
+        else if (card.original_form != this.name) {
+            this.original_form = card.original_form;
         }
 
         return this;

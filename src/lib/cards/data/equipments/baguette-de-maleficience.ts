@@ -10,7 +10,7 @@ export class BaguetteDeMaleficience extends Equipment {
         this.init([["Or", 100]]);
 
         this.addText(`Quand posé : S'équipe à une créature sur votre terrain.`);
-        this.addText(`Quand le porteur se prépare sur le terrain: génère {card:Maléfice} dans votre inventaire.`);
+        this.addText(`Quand le porteur se prépare sur le terrain : Génère {card:Maléfice} dans votre inventaire.`);
     };
 
     startPhaseEffect = () => {

@@ -499,6 +499,13 @@ export class Creature extends Unit {
             }
         }
 
+        if (card.original_form == undefined) {
+            this.original_form = card.name;
+        }
+        else if (card.original_form != this.name) {
+            this.original_form = card.original_form;
+        }
+
         return this;
     };
 };

@@ -253,7 +253,19 @@
 	}
 
 	div.bar:hover {
-		background-color: var(--card_hover);
+		transition: background 0.15s;
+
+		&.standard {
+			background-color: rgb(100, 50, 0);
+		}
+
+		&.wild {
+			background-color: rgb(150, 100, 0);
+		}
+
+		&.train {
+			background-color: rgb(100, 0, 0);
+		}
 	}
 
 	span.count {

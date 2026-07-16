@@ -335,6 +335,13 @@ export class Unit extends Card {
             this.stat('Santé').set(1);
         }
 
+        if (card.original_form == undefined) {
+            this.original_form = card.name;
+        }
+        else if (card.original_form != this.name) {
+            this.original_form = card.original_form;
+        }
+
         return this;
     };
 };

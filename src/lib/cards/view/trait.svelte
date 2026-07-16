@@ -38,6 +38,23 @@
 				</div>
 			</div>
 		{/if}
+
+		{#if card.original_form != undefined && card.original_form != card.alternative_form}
+			<div class="row">
+				<div>Forme originelle</div>
+
+				<div>
+					<button
+						class="active"
+						on:click={() => {
+							system.view.card = system.cards.getByName(card.original_form);
+						}}
+					>
+						{card.original_form}
+					</button>
+				</div>
+			</div>
+		{/if}
 	</div>
 </div>
 
