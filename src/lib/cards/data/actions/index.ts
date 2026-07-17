@@ -32,6 +32,7 @@ export * from './coup-de-boule';
 export * from './cri-de-guerre';
 export * from './crochetage';
 export * from './croissance';
+export * from './cultiver';
 export * from './cycle-de-eau';
 export * from './decapitation';
 export * from './declaration-de-guerre';
