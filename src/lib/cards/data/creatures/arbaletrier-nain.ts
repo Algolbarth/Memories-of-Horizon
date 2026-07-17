@@ -1,11 +1,11 @@
-import type { System } from '$lib/system/class';
-import { Building } from '$lib/cards/class/building';
-import { Creature } from '$lib/cards/class/creature';
-import type { Unit } from '$lib/cards/class/unit';
 import { copy } from '$lib/utils';
+import type { System } from '$lib/system/class';
+import { Creature } from '$lib/cards/class/creature';
+import { Building } from '$lib/cards/class/building';
+import type { Unit } from '$lib/cards/class/unit';
 
-export class DefenseurDeLaCite extends Creature {
-    name = "Défenseur de la cité";
+export class ArbaletrierNain extends Creature {
+    name = "Arbalétrier nain";
 
     constructor(system: System) {
         super(system);
@@ -16,8 +16,11 @@ export class DefenseurDeLaCite extends Creature {
 
         this.stat("Constitution").init(10);
         this.stat("Force").init(10);
+        this.stat("Endurance").init(5);
+        this.stat("Portée").init(5);
+        this.stat("Percée").init(10);
 
-        this.addText(`Quand arrive sur le terrain : Augmente de 5 son endurance pour chaque bâtiment sur votre terrain.`);
+        this.addText(`Quand arrive sur le terrain : Augmente de 2 sa portée pour chaque bâtiment sur votre terrain.`);
     };
 
     addEffect = (zone: string) => {
@@ -25,7 +28,7 @@ export class DefenseurDeLaCite extends Creature {
             let battlefield: Unit[] = copy(this.owner().zone("Terrain").cards);
             for (const card of battlefield) {
                 if (card instanceof Building) {
-                    this.stat("Endurance").increase(5);
+                    this.stat("Portée").increase(2);
                 }
             }
         }
