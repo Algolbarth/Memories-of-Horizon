@@ -61,6 +61,7 @@ export * from './satellite';
 export * from './scierie';
 export * from './silo';
 export * from './siphon';
+export * from './statue';
 export * from './tente';
 export * from './totem';
 export * from './tour-archer';
