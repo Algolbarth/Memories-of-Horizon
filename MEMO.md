@@ -32,6 +32,7 @@ Enlève tous les malus => 50
 ## Triggers
 X quand posé => X
 X quand meurt => X/2
+X quand vendu => X/2
 
 ## Redondance
 X à chaque étape de préparation => 2X
@@ -42,6 +43,7 @@ X à chaque fois qu'il se fait attaqué => 5X
 X à chaque fois qu'une carte alliée est posée => 10X
 X à chaque fois qu'une carte alliée avec condition est posée => 8X
 X à chaque fois qu'une carte alliée spécifique (nommée) est posée => 5X
+X à chaque fois qu'une carte alliée est vendue => 5X
 
 ## Cibles multiples
 X sur toutes les créatures/cartes alliées/adverses dans une zone => 10X

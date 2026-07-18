@@ -15,7 +15,7 @@ export class Banque extends Building {
         this.addStat(601, "Intérêts", 5);
 
         this.addText([
-            `Quand une autre carte alliée est vendue : Augmente de 1 ses intérêts.`,
+            `Quand une autre carte alliée est vendue : Si sur le terrain : Augmente de 1 ses intérêts.`,
             `Augmente de 5 sa vente en or.`]);
         this.addText(`Quand se prépare sur le terrain : Produit autant d'or que ses intérêts.`);
     };

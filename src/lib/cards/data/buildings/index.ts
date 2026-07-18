@@ -49,6 +49,7 @@ export * from './nexus';
 export * from './nid-de-wyverne';
 export * from './officine';
 export * from './panneau-de-direction';
+export * from './passage-secret';
 export * from './pont';
 export * from './porte';
 export * from './puit';
