@@ -10,9 +10,8 @@ export class Lv2_Mur extends Chapter {
 
         this.addRessource("Or", 25);
 
-        let deck = new ChapterDeck(system, "Gardes", ["Garde"]);
-        this.addStep(10, ["Plaine"], 10, deck, ["Garde"], ["Un mur vous barre la route tandis que des gardes s'avancent vers vous."]);
-        this.addStep(10, ["Plaine"], 10, deck, ["Barricade", "Soldat"]);
+        let deck = new ChapterDeck(system, "Gardes", ["Garde", "Barricade", "Soldat"]);
+        this.addStep(10, ["Plaine"], 10, deck, ["Barricade", "Soldat"], ["Un mur vous barre la route tandis que des gardes s'avancent vers vous."]);
     };
 };
 
@@ -39,6 +38,28 @@ export class Lv2_Ferme extends Chapter {
     };
 };
 
+export class Lv2_Barbare extends Chapter {
+    constructor(system: System, game: Game, number: number) {
+        super(system, game, number);
+
+        this.addRessource("Or", 25);
+
+        let deck = new ChapterDeck(system, "Barbare", ["Barbare", "Épée de cuivre"]);
+        this.addStep(10, ["Plaine"], 10, deck, ["Barbare", "Épée de cuivre"], ["Vous voyagez dans une plaine peuplée de peuples barbares."]);
+    };
+};
+
+export class Lv2_Voleur extends Chapter {
+    constructor(system: System, game: Game, number: number) {
+        super(system, game, number);
+
+        this.addRessource("Or", 25);
+
+        let deck = new ChapterDeck(system, "Voleur", ["Voleur", "Dague de cuivre"]);
+        this.addStep(10, ["Ville"], 10, deck, ["Voleur", "Dague de cuivre", "Dague de cuivre"], ["Un voleur tente de vous ôtez votre bourse discrétement mais vous parvenez à le surprendre à temps."]);
+    };
+};
+
 export class Lv2_Raido extends Chapter {
     boss = true;
     level = 2;
@@ -49,7 +70,6 @@ export class Lv2_Raido extends Chapter {
         this.addRessource("Or", 30);
 
         let deck = new ChapterDeck(system, "Chef brutal", ["Bandit", "Entraînement"]);
-        this.addStep(10, ["Plaine"], 10, deck, ["Bandit", "Entraînement", "Bandit", "Entraînement"], ["Un groupe de bandit s'est installé dans une vallée.", "Il s'agirait de Raido à en croire des rescapés d'un village voisin.", "Lui et ses hommes sont connus pour rivaliser avec des soldats entrainés."]);
-        this.addStep(10, ["Plaine"], 10, deck, ["Raido, chef brutal", "Bandit", "Bandit"]);
+        this.addStep(10, ["Plaine"], 10, deck, ["Raido, chef brutal", "Bandit", "Bandit"], ["Un groupe de bandit s'est installé dans une vallée.", "Il s'agirait de Raido à en croire des rescapés d'un village voisin.", "Lui et ses hommes sont connus pour rivaliser avec des soldats entrainés."]);
     };
 };
