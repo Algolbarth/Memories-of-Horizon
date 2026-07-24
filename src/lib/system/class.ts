@@ -91,6 +91,7 @@ export class System {
                         value: 0,
                     });
                 }
+
                 for (const card_name of step.cards) {
                     let card = this.cards.getByName(card_name);
                     if (card == undefined) {
@@ -102,6 +103,7 @@ export class System {
                         }
                     }
                 }
+
                 for (const ressource of ressources) {
                     if (ressource.value > 0) {
                         let check = false;
@@ -120,6 +122,17 @@ export class System {
                         }
                     }
                 }
+
+                for (const line of step.dialogs) {
+                    if (line.length == 0) {
+                        console.log("Une ligne de dialogue est mal renseignée");
+                        error = true;
+                    }
+                }
+                if (step.dialogs.length == 0) {
+                    console.log("Il manque une ligne de dialogue");
+                    error = true;
+                }
             }
 
             let level = chapterInstance.getLevel();
@@ -136,16 +149,16 @@ export class System {
             }
         }
 
-        this.checkIfAtLeastOnChapterByLevel();
+        this.checkIfAtLeastFiveChaptersByLevel();
     };
 
-    checkIfAtLeastOnChapterByLevel = () => {
-        let index: number = 0;
-        for (const level of this.chapters.instance) {
-            if (index > 0 && level.length == 0) {
-                console.log("Il n'y a pas de chapitre de niveau " + index);
+    checkIfAtLeastFiveChaptersByLevel = () => {
+        let level: number = 0;
+        for (const chapters of this.chapters.instance) {
+            if (level > 0 && chapters.length < 5) {
+                console.log("Il n'y a pas assez de chapitre de niveau " + level + " : seulement " + chapters.length);
             }
-            index++;
+            level++;
         }
     };
 
