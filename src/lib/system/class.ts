@@ -92,6 +92,14 @@ export class System {
                     });
                 }
 
+                for (const card_name of step.locations) {
+                    let card = this.cards.getByName(card_name);
+                    if (card == undefined || card.type != "Lieu") {
+                        console.log(card + " n'est pas un lieu existant");
+                        error = true;
+                    }
+                }
+
                 for (const card_name of step.cards) {
                     let card = this.cards.getByName(card_name);
                     if (card == undefined) {

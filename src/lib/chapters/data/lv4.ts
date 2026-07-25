@@ -9,14 +9,14 @@ export class Lv4_ChevalierNoir extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
-        this.addRessource("Or", 75);
+        this.addRessource("Or", 80);
 
-        let deck = new ChapterDeck(system, "Chevaliers", ["Chevalier noir"]);
+        let deck = new ChapterDeck(system, "Chevalier noir", ["Rappel", "Menace", "Arrogance"]);
         this.addStep(20, ["Forêt"], 10, deck, ["Chevalier noir"], ["Le royaume local est terrorisé par un mystérieux chevalier qui menace d'attaquer le château si on ne lui livre pas la princesse.", "Vous décidez d'aller au point de rendez-vous à la place de cette dernière."]);
     };
 };
 
-export class Lv4_Warg extends Chapter {
+export class Lv4_Wargs extends Chapter {
     level = 4;
 
     constructor(system: System, game: Game, number: number) {
@@ -30,7 +30,7 @@ export class Lv4_Warg extends Chapter {
     };
 };
 
-export class Lv4_ElementaireMarin extends Chapter {
+export class Lv4_ElementairesMarins extends Chapter {
     level = 4;
 
     constructor(system: System, game: Game, number: number) {
@@ -39,12 +39,12 @@ export class Lv4_ElementaireMarin extends Chapter {
         this.addRessource("Or", 15);
         this.addRessource("Eau", 65);
 
-        let deck = new ChapterDeck(system, "Élémentaires", ["Élémentaire marin", "Sardines en boîte", "Ondin des rivières"]);
+        let deck = new ChapterDeck(system, "Élémentaires marins", ["Élémentaire marin", "Sardines en boîte", "Ondin des rivières"]);
         this.addStep(20, ["Mer"], 10, deck, ["Élémentaire marin", "Ondin des rivières"], ["En refusant de livrer une offrandre à des ondins, ces derniers invoquent un élémentaire pour vous punir."]);
     };
 };
 
-export class Lv4_Bulette extends Chapter {
+export class Lv4_Bulettes extends Chapter {
     level = 4;
 
     constructor(system: System, game: Game, number: number) {
@@ -58,7 +58,7 @@ export class Lv4_Bulette extends Chapter {
     };
 };
 
-export class Lv4_Gorille extends Chapter {
+export class Lv4_Gorilles extends Chapter {
     level = 4;
 
     constructor(system: System, game: Game, number: number) {

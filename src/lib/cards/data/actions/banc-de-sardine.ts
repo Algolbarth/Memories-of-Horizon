@@ -9,6 +9,8 @@ export class BancDeSardine extends Action {
 
         this.init([["Or", 10], ["Eau", 10]]);
 
+        this.initFamily(["Poisson"]);
+
         this.addText(`Quand posé : Génère 5 {card:Sardine} dans votre inventaire.`);
     };
 

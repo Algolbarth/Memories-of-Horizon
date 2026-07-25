@@ -26,7 +26,7 @@ export class Lv3_Gobelin extends Chapter {
     };
 };
 
-export class Lv3_Ondin extends Chapter {
+export class Lv3_Ondins extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
@@ -38,7 +38,7 @@ export class Lv3_Ondin extends Chapter {
     };
 };
 
-export class Lv3_Elfe extends Chapter {
+export class Lv3_Elfes extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
@@ -50,7 +50,7 @@ export class Lv3_Elfe extends Chapter {
     };
 };
 
-export class Lv3_Nain extends Chapter {
+export class Lv3_Nains extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 

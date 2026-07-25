@@ -25,7 +25,7 @@ export class Lv1_Bandits extends Chapter {
     };
 };
 
-export class Lv1_Loup extends Chapter {
+export class Lv1_Loups extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
@@ -36,7 +36,7 @@ export class Lv1_Loup extends Chapter {
     };
 };
 
-export class Lv1_Chien extends Chapter {
+export class Lv1_Chiens extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
@@ -47,7 +47,7 @@ export class Lv1_Chien extends Chapter {
     };
 };
 
-export class Lv1_Mendiant extends Chapter {
+export class Lv1_Mendiants extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 

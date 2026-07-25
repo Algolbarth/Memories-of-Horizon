@@ -3,7 +3,7 @@ import type { Game } from '$lib/game/class';
 import type { System } from '$lib/system/class';
 import { Chapter } from '../class';
 
-export class Lv2_Mur extends Chapter {
+export class Lv2_Gardes extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
@@ -37,7 +37,7 @@ export class Lv2_Ferme extends Chapter {
     };
 };
 
-export class Lv2_Barbare extends Chapter {
+export class Lv2_Barbares extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
@@ -48,7 +48,7 @@ export class Lv2_Barbare extends Chapter {
     };
 };
 
-export class Lv2_Voleur extends Chapter {
+export class Lv2_Voleurs extends Chapter {
     constructor(system: System, game: Game, number: number) {
         super(system, game, number);
 
