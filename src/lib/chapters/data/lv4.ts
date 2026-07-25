@@ -16,6 +16,62 @@ export class Lv4_ChevalierNoir extends Chapter {
     };
 };
 
+export class Lv4_Warg extends Chapter {
+    level = 4;
+
+    constructor(system: System, game: Game, number: number) {
+        super(system, game, number);
+
+        this.addRessource("Or", 50);
+        this.addRessource("Feu", 25);
+
+        let deck = new ChapterDeck(system, "Wargs", ["Warg", "Morsure", "Griffure", "Frappe"]);
+        this.addStep(20, ["Terres ignées"], 10, deck, ["Warg", "Morsure"], ["Un hurlement rauque résonne à travers la nuit.", "Des wargs rôdent autour du campement du groupe.", "Affamés et méfiants, ils attaquent quiconque s'approche de leur tanière voisine, où gisent les restes de précédents voyageurs."]);
+    };
+};
+
+export class Lv4_ElementaireMarin extends Chapter {
+    level = 4;
+
+    constructor(system: System, game: Game, number: number) {
+        super(system, game, number);
+
+        this.addRessource("Or", 15);
+        this.addRessource("Eau", 65);
+
+        let deck = new ChapterDeck(system, "Élémentaires", ["Élémentaire marin", "Sardines en boîte", "Ondin des rivières"]);
+        this.addStep(20, ["Mer"], 10, deck, ["Élémentaire marin", "Ondin des rivières"], ["En refusant de livrer une offrandre à des ondins, ces derniers invoquent un élémentaire pour vous punir."]);
+    };
+};
+
+export class Lv4_Bulette extends Chapter {
+    level = 4;
+
+    constructor(system: System, game: Game, number: number) {
+        super(system, game, number);
+
+        this.addRessource("Or", 45);
+        this.addRessource("Terre", 35);
+
+        let deck = new ChapterDeck(system, "Bulettes", ["Bulette", "Peau de pierre", "Contre"]);
+        this.addStep(20, ["Montagne"], 10, deck, ["Bulette", "Peau de pierre", "Renforcement"], ["Le sol se met soudain à trembler : une bulette surgit de terre pour attaquer le groupe.", "Le combat sera bref mais brutal."]);
+    };
+};
+
+export class Lv4_Gorille extends Chapter {
+    level = 4;
+
+    constructor(system: System, game: Game, number: number) {
+        super(system, game, number);
+
+        this.addRessource("Or", 50);
+        this.addRessource("Nature", 25);
+
+        let deck = new ChapterDeck(system, "Gorilles", ["Gorille", "Renforcement", "Écrasement"]);
+        this.addStep(20, ["Forêt"], 10, deck, ["Gorille", "Renforcement", "Renforcement"], ["Le groupe surprend un gorille en train de défendre son territoire.", "La créature, aussi intimidante qu'hostile, charge pour vous effrayer."]);
+    };
+};
+
 export class Lv4_Kanki extends Chapter {
     boss = true;
     level = 4;

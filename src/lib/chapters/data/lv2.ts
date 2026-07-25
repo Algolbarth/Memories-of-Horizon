@@ -1,5 +1,4 @@
 import { ChapterDeck } from '$lib/deck/chapter';
-import { Deck } from '$lib/deck/class';
 import type { Game } from '$lib/game/class';
 import type { System } from '$lib/system/class';
 import { Chapter } from '../class';
@@ -44,7 +43,7 @@ export class Lv2_Barbare extends Chapter {
 
         this.addRessource("Or", 25);
 
-        let deck = new ChapterDeck(system, "Barbare", ["Barbare", "Épée de cuivre"]);
+        let deck = new ChapterDeck(system, "Barbares", ["Barbare", "Épée de cuivre"]);
         this.addStep(10, ["Plaine"], 10, deck, ["Barbare", "Épée de cuivre"], ["Vous voyagez dans une plaine peuplée de peuples barbares."]);
     };
 };
@@ -55,7 +54,7 @@ export class Lv2_Voleur extends Chapter {
 
         this.addRessource("Or", 25);
 
-        let deck = new ChapterDeck(system, "Voleur", ["Voleur", "Dague de cuivre"]);
+        let deck = new ChapterDeck(system, "Voleurs", ["Voleur", "Dague de cuivre"]);
         this.addStep(10, ["Ville"], 10, deck, ["Voleur", "Dague de cuivre", "Dague de cuivre"], ["Un voleur tente de vous ôtez votre bourse discrétement mais vous parvenez à le surprendre à temps."]);
     };
 };
