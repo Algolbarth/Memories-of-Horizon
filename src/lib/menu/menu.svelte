@@ -5,6 +5,8 @@
 
 	export let system: System;
 
+	let saved: boolean = false;
+
 	function logout() {
 		system.wild_decks = [];
 		system.account = undefined;
@@ -101,6 +103,10 @@
 					class="big menu"
 					on:click={() => {
 						save(system);
+						saved = true;
+						setTimeout(() => {
+							saved = false;
+						}, 1000);
 					}}
 				>
 					Sauvegarder
@@ -118,6 +124,12 @@
 	</div>
 </div>
 
+{#if saved}
+	<div class="window">
+		<div id="little_body" class="center">Sauvegarde effectuée avec succès</div>
+	</div>
+{/if}
+
 <style>
 	#body {
 		text-align: center;
@@ -131,5 +143,19 @@
 	.column {
 		display: grid;
 		grid-template-rows: repeat(4, 1fr);
+	}
+
+	.window {
+		background: var(--shadow);
+	}
+
+	#little_body {
+		width: 60vw;
+		padding: 1vw;
+		background: var(--zone);
+		background-image: var(--asfalt);
+		border: solid;
+		border-width: 0.5vmin;
+		text-align: center;
 	}
 </style>

@@ -2,16 +2,28 @@
 	import Logo from "../menu/logo.svelte";
 	import type { System } from "$lib/system/class";
 	import { load } from "./load";
+	import { open } from "@tauri-apps/plugin-dialog";
+	import { readTextFile } from "@tauri-apps/plugin-fs";
+	import { localDataDir, join } from "@tauri-apps/api/path";
 
 	export let system: System;
 
-	let files: FileList | null | undefined;
-
 	async function login() {
-		if (files instanceof FileList) {
-			let log = await load(files, system);
+		const localData = await localDataDir();
+		const savesPath = await join(localData, "Memories of Horizon", "Saves");
+
+		const selected = await open({
+			defaultPath: savesPath,
+			multiple: false,
+			filters: [{ name: "MoH", extensions: ["txt"] }],
+		});
+
+		if (selected) {
+			const content = await readTextFile(selected as string);
+			let log = await load(content, system);
 			if (log != undefined) {
 				system = log;
+				system.page = "Menu";
 			}
 		}
 	}
@@ -35,41 +47,7 @@
 	<br />
 	<br />
 
-	Fichier de la save
-
-	<br />
-	<br />
-
-	<label for="images">
-		<span>Choisir un fichier</span>
-		<input type="file" id="images" bind:files />
-	</label>
-
-	<br />
-	<br />
-
-	{#if files != undefined}
-		{files[0].name}
-
-		<br />
-		<br />
-
-		<button
-			class="big"
-			on:click={() => {
-				login();
-			}}
-		>
-			Valider
-		</button>
-	{:else}
-		Aucun fichier selectionné
-
-		<br />
-		<br />
-
-		<button class="big"> Valider </button>
-	{/if}
+	<button on:click={login} class="big">Charger une sauvegarde</button>
 </div>
 
 <style>

@@ -4,8 +4,10 @@
     "npm:@sveltejs/adapter-static@^3.0.6": "3.0.10_@sveltejs+kit@2.53.0__@sveltejs+vite-plugin-svelte@5.1.1___svelte@5.53.2____acorn@8.16.0___vite@6.4.1____picomatch@4.0.3__svelte@5.53.2___acorn@8.16.0__typescript@5.6.3__vite@6.4.1___picomatch@4.0.3__acorn@8.16.0_@sveltejs+vite-plugin-svelte@5.1.1__svelte@5.53.2___acorn@8.16.0__vite@6.4.1___picomatch@4.0.3_svelte@5.53.2__acorn@8.16.0_typescript@5.6.3_vite@6.4.1__picomatch@4.0.3",
     "npm:@sveltejs/kit@^2.9.0": "2.53.0_@sveltejs+vite-plugin-svelte@5.1.1__svelte@5.53.2___acorn@8.16.0__vite@6.4.1___picomatch@4.0.3_svelte@5.53.2__acorn@8.16.0_typescript@5.6.3_vite@6.4.1__picomatch@4.0.3_acorn@8.16.0",
     "npm:@sveltejs/vite-plugin-svelte@5": "5.1.1_svelte@5.53.2__acorn@8.16.0_vite@6.4.1__picomatch@4.0.3",
-    "npm:@tauri-apps/api@2": "2.10.1",
+    "npm:@tauri-apps/api@2": "2.11.1",
     "npm:@tauri-apps/cli@2": "2.10.0",
+    "npm:@tauri-apps/plugin-dialog@^2.7.2": "2.7.2",
+    "npm:@tauri-apps/plugin-fs@^2.5.1": "2.5.1",
     "npm:@tauri-apps/plugin-opener@2": "2.5.3",
     "npm:fs@^0.0.1-security": "0.0.1-security",
     "npm:svelte-check@4": "4.4.3_svelte@5.53.2__acorn@8.16.0_typescript@5.6.3",
@@ -362,8 +364,8 @@
         "vitefu"
       ]
     },
-    "@tauri-apps/api@2.10.1": {
-      "integrity": "sha512-hKL/jWf293UDSUN09rR69hrToyIXBb8CjGaWC7gfinvnQrBVvnLr08FeFi38gxtugAVyVcTa5/FD/Xnkb1siBw=="
+    "@tauri-apps/api@2.11.1": {
+      "integrity": "sha512-M2FPuYND2m+wh5hfW9ZpSdxMPdEJovPBWwoHJmwUpysTYNHaOkVFN419m/K0LIgjb/7KU2vBgsUepJWugQCvAA=="
     },
     "@tauri-apps/cli-darwin-arm64@2.10.0": {
       "integrity": "sha512-avqHD4HRjrMamE/7R/kzJPcAJnZs0IIS+1nkDP5b+TNBn3py7N2aIo9LIpy+VQq0AkN8G5dDpZtOOBkmWt/zjA==",
@@ -436,6 +438,18 @@
         "@tauri-apps/cli-win32-x64-msvc"
       ],
       "bin": true
+    },
+    "@tauri-apps/plugin-dialog@2.7.2": {
+      "integrity": "sha512-pX0IGm1I3I6wc+zeKYcq1GSqogK6okCNX5fOdaNU5ab1AjGS6l1E5wFNjEb7meg7ZFSp0JUs+0jQGQNyOvLrsg==",
+      "dependencies": [
+        "@tauri-apps/api"
+      ]
+    },
+    "@tauri-apps/plugin-fs@2.5.1": {
+      "integrity": "sha512-9Lz+Jopp6QyeEWhlpkMx4R/+P9HgR+AVAI4vOZhlT8Xaymtz8iVI/Ov984/XTqgJz/5gz5NretqPB/XEMS3NhQ==",
+      "dependencies": [
+        "@tauri-apps/api"
+      ]
     },
     "@tauri-apps/plugin-opener@2.5.3": {
       "integrity": "sha512-CCcUltXMOfUEArbf3db3kCE7Ggy1ExBEBl51Ko2ODJ6GDYHRp1nSNlQm5uNCFY5k7/ufaK5Ib3Du/Zir19IYQQ==",
@@ -861,6 +875,8 @@
         "npm:@sveltejs/vite-plugin-svelte@5",
         "npm:@tauri-apps/api@2",
         "npm:@tauri-apps/cli@2",
+        "npm:@tauri-apps/plugin-dialog@^2.7.2",
+        "npm:@tauri-apps/plugin-fs@^2.5.1",
         "npm:@tauri-apps/plugin-opener@2",
         "npm:fs@^0.0.1-security",
         "npm:svelte-check@4",

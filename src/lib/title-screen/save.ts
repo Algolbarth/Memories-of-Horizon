@@ -1,6 +1,7 @@
 import type { System } from "$lib/system/class";
+import { writeTextFile, BaseDirectory, mkdir } from '@tauri-apps/plugin-fs';
 
-export function save(system: System) {
+export async function save(system: System) {
     if (system.account) {
         let text = "MoH_";
 
@@ -38,15 +39,19 @@ export function save(system: System) {
             }
         }
 
-        var element = document.createElement("a");
-        element.setAttribute(
-            "href",
-            "data:text/plain;charset=utf-8," + encodeURIComponent(text),
-        );
-        element.setAttribute("download", "MoH_" + system.account.name);
-        element.style.display = "none";
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
+        const now = new Date();
+        const date = now.toISOString().replace('T', '_').slice(0, 19).replace(/:/g, '-');
+        let filename: string = 'MoH_' + system.account.name + "_" + date + ".txt";
+
+        const folder = 'Memories of Horizon/Saves';
+
+        await mkdir(folder, {
+            baseDir: BaseDirectory.LocalData,
+            recursive: true
+        });
+
+        await writeTextFile(`${folder}/${filename}`, text, {
+            baseDir: BaseDirectory.LocalData
+        });
     }
 };
