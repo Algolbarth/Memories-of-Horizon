@@ -72,6 +72,15 @@
 			</div>
 		</div>
 	{/if}
+
+	{#if system.settings.show_luck}
+		<div class="preview stat">
+			<div>Chance</div>
+			<div style="text-align:right;margin-right:0.5em">
+				{entity.nb_cards_read_turn}
+			</div>
+		</div>
+	{/if}
 </div>
 
 <style>
@@ -97,6 +106,10 @@
 	}
 
 	div.stat {
+		background: var(--background);
+	}
+
+	div.stat:hover {
 		background: var(--background);
 	}
 

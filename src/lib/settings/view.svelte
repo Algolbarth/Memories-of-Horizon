@@ -62,7 +62,12 @@
 	<div class="checkbox-container">
 		<label class="form-control" for="show_intelligence">
 			<input type="checkbox" bind:checked={system.settings.show_intelligence} id="show_intelligence" />
-			Afficher l'intelligence totale
+			Afficher le total d'intelligence
+		</label>
+
+		<label class="form-control" for="show_luck">
+			<input type="checkbox" bind:checked={system.settings.show_luck} id="show_luck" />
+			Afficher le total de chance
 		</label>
 
 		<label class="form-control" for="autoplay">
