@@ -99,6 +99,7 @@ git add src-tauri/tauri.conf.json src-tauri/Cargo.toml src-tauri/Cargo.lock pack
 git commit -m "chore: upgrade version to $NEW_VERSION"
 git tag "v$NEW_VERSION"
 git push
+git push origin "v$NEW_VERSION"
 
 # make github release
 echo -e "\n${BLUE}Création de la GitHub Release v$NEW_VERSION...${NC}"
